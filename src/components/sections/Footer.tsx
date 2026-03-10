@@ -1,9 +1,16 @@
 
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, GraduationCap } from 'lucide-react';
+import { useDoc, getFirestore } from '@/firebase';
 
 export function Footer() {
+  const db = getFirestore();
+  const { data: settings } = useDoc(db ? `settings/global` : null);
+  const schoolName = settings?.schoolName || "ESPF";
+
   return (
     <footer className="bg-primary text-white pt-20 pb-10">
       <div className="container mx-auto px-4">
@@ -12,10 +19,10 @@ export function Footer() {
           <div>
             <h3 className="text-2xl font-headline font-bold mb-6 tracking-tighter flex items-center gap-2">
               <GraduationCap className="text-secondary" />
-              SAINT<span className="text-secondary">JEAN</span>
+              {schoolName}
             </h3>
             <p className="text-white/70 leading-relaxed mb-6">
-              L'excellence pédagogique au service de la réussite de vos enfants depuis 1920.
+              L'excellence pédagogique et sportive au service de la réussite de vos enfants. Sport Études & Réussite Académique.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="p-2 bg-white/10 rounded-full hover:bg-secondary transition-colors"><Facebook size={18} /></Link>
@@ -30,9 +37,9 @@ export function Footer() {
             <h4 className="text-lg font-headline font-bold mb-6">Navigation</h4>
             <ul className="space-y-4">
               <li><Link href="#college" className="text-white/70 hover:text-secondary transition-colors">Collège</Link></li>
-              <li><Link href="#lycee" className="text-white/70 hover:text-secondary transition-colors">Lycée (Général & STMG)</Link></li>
-              <li><Link href="#admission" className="text-white/70 hover:text-secondary transition-colors">Espace Inscriptions</Link></li>
-              <li><Link href="#news" className="text-white/70 hover:text-secondary transition-colors">Agenda Scolaire</Link></li>
+              <li><Link href="#football" className="text-white/70 hover:text-secondary transition-colors">Academy Football Elite</Link></li>
+              <li><Link href="#admission" className="text-white/70 hover:text-secondary transition-colors">Inscriptions</Link></li>
+              <li><Link href="#news" className="text-white/70 hover:text-secondary transition-colors">Agenda & Blog</Link></li>
             </ul>
           </div>
 
@@ -42,15 +49,15 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3 text-white/70">
                 <MapPin size={18} className="text-secondary" />
-                <span>42 Avenue de l'École, 75005 Paris</span>
+                <span>88 Avenue du Sport, 75016 Paris</span>
               </li>
               <li className="flex items-center space-x-3 text-white/70">
                 <Phone size={18} className="text-secondary" />
-                <span>01 23 45 67 89</span>
+                <span>01 88 44 22 00</span>
               </li>
               <li className="flex items-center space-x-3 text-white/70">
                 <Mail size={18} className="text-secondary" />
-                <span>secretariat@saint-jean.edu</span>
+                <span>contact@espf-academy.fr</span>
               </li>
             </ul>
           </div>
@@ -58,7 +65,7 @@ export function Footer() {
           {/* Newsletter */}
           <div>
             <h4 className="text-lg font-headline font-bold mb-6">Lettre d'Information</h4>
-            <p className="text-white/70 mb-4">Inscrivez-vous pour recevoir les actualités de l'établissement.</p>
+            <p className="text-white/70 mb-4">Suivez l'actualité de nos élèves et athlètes.</p>
             <div className="flex">
               <input 
                 type="email" 
@@ -71,7 +78,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-sm text-white/50">
-          <p>© {new Date().getFullYear()} Institution Saint-Jean - Tous droits réservés. <Link href="#" className="hover:text-white underline ml-4">Mentions Légales</Link> | <Link href="#" className="hover:text-white underline ml-2">Règlement Intérieur</Link></p>
+          <p>© {new Date().getFullYear()} {schoolName} - Tous droits réservés.</p>
         </div>
       </div>
     </footer>

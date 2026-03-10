@@ -2,45 +2,33 @@
   "placeholderImages": [
     {
       "id": "hero-school",
-      "description": "Modern high school building and campus",
-      "imageUrl": "https://picsum.photos/seed/school-hero/1920/1080",
-      "imageHint": "modern school"
+      "description": "Campus moderne de l'ESPF",
+      "imageUrl": "https://picsum.photos/seed/espf-hero/1920/1080",
+      "imageHint": "modern school campus"
+    },
+    {
+      "id": "football-academy",
+      "description": "Entraînement de football elite sur terrain professionnel",
+      "imageUrl": "https://picsum.photos/seed/football-elite/1200/800",
+      "imageHint": "soccer training"
     },
     {
       "id": "college-life",
-      "description": "Middle school students in a classroom",
+      "description": "Élèves en classe au collège",
       "imageUrl": "https://picsum.photos/seed/college/600/400",
       "imageHint": "students classroom"
     },
     {
       "id": "bac-general",
-      "description": "High school student studying in a library",
+      "description": "Étudiant en bibliothèque de lycée",
       "imageUrl": "https://picsum.photos/seed/general/600/400",
       "imageHint": "student library"
     },
     {
       "id": "bac-stmg",
-      "description": "Students working on professional business projects",
+      "description": "Projets professionnels STMG",
       "imageUrl": "https://picsum.photos/seed/stmg/600/400",
       "imageHint": "business teamwork"
-    },
-    {
-      "id": "school-life",
-      "description": "Students playing sports on campus",
-      "imageUrl": "https://picsum.photos/seed/sports/600/400",
-      "imageHint": "students sports"
-    },
-    {
-      "id": "news-graduation",
-      "description": "Happy graduates throwing caps",
-      "imageUrl": "https://picsum.photos/seed/grad/600/400",
-      "imageHint": "graduation joy"
-    },
-    {
-      "id": "news-science",
-      "description": "Science laboratory experiment",
-      "imageUrl": "https://picsum.photos/seed/science/600/400",
-      "imageHint": "science lab"
     }
   ]
 }
