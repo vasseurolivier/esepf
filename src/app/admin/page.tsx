@@ -10,11 +10,10 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useFirestore, useDoc, FirebaseClientProvider } from '@/firebase';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, ArrowLeft, Image as ImageIcon, Lock, ShieldCheck } from 'lucide-react';
+import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
-import { cn } from '@/lib/utils';
 
 const ADMIN_PASSWORD = 'Yesacademy888$';
 
@@ -29,7 +28,7 @@ function AdminContent() {
   const [logoUrl, setLogoUrl] = useState('');
   const [isSaving, setIsSaving] = useState(false);
 
-  // Charger les données initiales depuis Firestore
+  // Synchroniser les états avec Firestore
   useEffect(() => {
     if (settings) {
       setSchoolName(settings.schoolName || '');
@@ -152,16 +151,16 @@ function AdminContent() {
 
           <div className="bg-blue-50 border border-blue-200 p-4 rounded-2xl flex items-center gap-3 text-blue-800">
             <ShieldCheck className="text-blue-600" size={20} />
-            <p className="text-sm font-medium">Connexion à la base de données active</p>
+            <p className="text-sm font-medium">Connexion à la base de données active (Firestore)</p>
           </div>
           
           <Card className="border-none shadow-xl rounded-3xl overflow-hidden bg-white">
             <CardHeader className="bg-primary text-white p-8">
               <CardTitle className="text-2xl flex items-center gap-2">
                 <ImageIcon size={24} className="text-secondary" />
-                Réglages Généraux
+                Réglages de Branding
               </CardTitle>
-              <CardDescription className="text-white/70 italic">Ces informations apparaîtront sur toutes les pages du site.</CardDescription>
+              <CardDescription className="text-white/70 italic">Ces informations sont synchronisées en temps réel sur tout le site.</CardDescription>
             </CardHeader>
             <CardContent className="p-8 space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -184,10 +183,10 @@ function AdminContent() {
                       id="logoUrl" 
                       value={logoUrl} 
                       onChange={(e) => setLogoUrl(e.target.value)}
-                      placeholder="https://..."
+                      placeholder="https://... ou data:image/png;base64,..."
                       className="rounded-xl h-12 border-2 focus:border-primary"
                     />
-                    <p className="text-[10px] text-muted-foreground uppercase font-bold tracking-widest">Lien vers votre image ou format Base64.</p>
+                    <p className="text-[10px] text-muted-foreground uppercase font-bold tracking-widest">Copiez le lien de votre image ici.</p>
                   </div>
                 </div>
 
@@ -200,7 +199,7 @@ function AdminContent() {
                         alt="Preview" 
                         className="max-h-full max-w-full object-contain drop-shadow-md"
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src = 'https://placehold.co/400x400?text=Image+Invalide';
+                          (e.target as HTMLImageElement).src = 'https://placehold.co/400x400?text=Logo+Non+Trouvé';
                         }}
                       />
                     ) : (
@@ -220,7 +219,7 @@ function AdminContent() {
                   className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold h-16 rounded-2xl shadow-lg transform active:scale-95 transition-all text-lg"
                 >
                   {isSaving ? <Loader2 className="animate-spin mr-2" /> : <Save className="mr-2" size={24} />}
-                  {isSaving ? 'Enregistrement...' : 'Sauvegarder les modifications'}
+                  {isSaving ? 'Enregistrement en cours...' : 'Sauvegarder les modifications'}
                 </Button>
               </div>
             </CardContent>

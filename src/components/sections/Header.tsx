@@ -49,7 +49,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const db = useFirestore();
-  const { data: settings } = useDoc(db ? `settings/global` : null);
+  const { data: settings } = useDoc(db, 'settings/global');
 
   useEffect(() => {
     setMounted(true);
@@ -87,13 +87,13 @@ export function Header() {
                 </div>
               )}
             </div>
-            <span className="text-3xl font-headline font-bold text-black tracking-tighter">
+            <span className="text-2xl md:text-3xl font-headline font-bold text-black tracking-tighter">
               {schoolName}
             </span>
           </Link>
 
           <div className="hidden lg:block">
-            <h2 className="text-4xl font-serif italic text-black font-medium tracking-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h2 className="text-3xl font-serif italic text-black font-medium tracking-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
               L'excellence de la formation française
             </h2>
           </div>
@@ -107,7 +107,7 @@ export function Header() {
               <div className="w-6 h-6 rounded-full overflow-hidden border border-gray-300">
                 <img src="https://flagcdn.com/w40/fr.png" alt="FR" className="w-full h-full object-cover" />
               </div>
-              <span className="text-sm font-medium text-gray-600">Français</span>
+              <span className="text-sm font-medium text-gray-600">FR</span>
               <ChevronDown size={14} className="text-gray-400" />
             </div>
 
@@ -134,9 +134,9 @@ export function Header() {
               mounted ? (
                 <DropdownMenu key={link.name}>
                   <DropdownMenuTrigger className={cn(
-                    "flex-1 flex items-center justify-center gap-1 text-xs font-bold text-white py-5 hover:bg-white/10 transition-colors focus:outline-none uppercase tracking-widest border-r border-white/10"
+                    "flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 hover:bg-white/10 transition-colors focus:outline-none uppercase tracking-widest border-r border-white/10"
                   )}>
-                    {link.name} <ChevronDown size={14} />
+                    {link.name} <ChevronDown size={12} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
                     {getSubLinks(link.name).map((sub) => (
@@ -152,8 +152,8 @@ export function Header() {
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <div key={link.name} className="flex-1 flex items-center justify-center gap-1 text-xs font-bold text-white py-5 border-r border-white/10 uppercase tracking-widest">
-                  {link.name} <ChevronDown size={14} />
+                <div key={link.name} className="flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 border-r border-white/10 uppercase tracking-widest">
+                  {link.name}
                 </div>
               )
             ) : (
@@ -161,7 +161,7 @@ export function Header() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "flex-1 flex items-center justify-center text-xs font-bold text-white py-5 hover:bg-white/10 transition-colors uppercase tracking-widest border-r border-white/10 last:border-r-0"
+                  "flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 transition-colors uppercase tracking-widest border-r border-white/10 last:border-r-0"
                 )}
               >
                 {link.name}
@@ -181,10 +181,10 @@ export function Header() {
           {navLinks.map((link) => (
             link.hasDropdown ? (
               <div key={link.name} className="space-y-2">
-                <span className="text-lg font-bold text-white/50 uppercase tracking-wider">{link.name}</span>
+                <span className="text-base font-bold text-white/50 uppercase tracking-wider">{link.name}</span>
                 <div className="pl-4 flex flex-col space-y-2">
                   {getSubLinks(link.name).map((sub) => (
-                    <Link key={sub.name} href={sub.href} onClick={() => setIsOpen(false)} className="text-white font-medium hover:text-[#b8955d]">
+                    <Link key={sub.name} href={sub.href} onClick={() => setIsOpen(false)} className="text-white text-sm font-medium hover:text-[#b8955d]">
                       {sub.name}
                     </Link>
                   ))}
@@ -195,7 +195,7 @@ export function Header() {
                 key={link.name}
                 onClick={() => setIsOpen(false)}
                 href={link.href}
-                className="text-lg font-bold text-white hover:text-[#b8955d] uppercase tracking-wider"
+                className="text-base font-bold text-white hover:text-[#b8955d] uppercase tracking-wider"
               >
                 {link.name}
               </Link>

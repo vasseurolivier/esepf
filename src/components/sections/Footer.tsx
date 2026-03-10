@@ -7,7 +7,7 @@ import { useDoc, useFirestore } from '@/firebase';
 
 export function Footer() {
   const db = useFirestore();
-  const { data: settings } = useDoc(db ? `settings/global` : null);
+  const { data: settings } = useDoc(db, 'settings/global');
   const schoolName = settings?.schoolName || "ESEPF";
   const [currentYear, setCurrentYear] = useState<number | null>(null);
 
@@ -40,9 +40,9 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-headline font-bold mb-6">Nos Campus</h4>
             <ul className="space-y-4">
-              <li className="text-white/70 hover:text-secondary transition-colors">ESEPF Evron</li>
-              <li className="text-white/70 hover:text-secondary transition-colors">ESEPF Sainte-Bazeilles</li>
-              <li className="text-white/70 hover:text-secondary transition-colors">ESEPF Sainte-Tulle</li>
+              <li className="text-white/70 hover:text-secondary transition-colors">Campus Evron</li>
+              <li className="text-white/70 hover:text-secondary transition-colors">Campus Sainte-Bazeilles</li>
+              <li className="text-white/70 hover:text-secondary transition-colors">Campus Sainte-Tulle</li>
             </ul>
           </div>
 
@@ -67,8 +67,8 @@ export function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-headline font-bold mb-6">Lettre d'Information</h4>
-            <p className="text-white/70 mb-4">Suivez l'actualité de nos élèves et athlètes sur nos 3 sites.</p>
+            <h4 className="text-lg font-headline font-bold mb-6">Newsletter</h4>
+            <p className="text-white/70 mb-4">Suivez l'actualité de nos élèves et athlètes.</p>
             <div className="flex">
               <input 
                 type="email" 
@@ -81,7 +81,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-sm text-white/50">
-          <p>© {currentYear || '2025'} {schoolName} - 3 Campus : Evron, Sainte-Bazeilles, Sainte-Tulle.</p>
+          <p>© {currentYear || '2025'} {schoolName} - Excellence Française.</p>
         </div>
       </div>
     </footer>

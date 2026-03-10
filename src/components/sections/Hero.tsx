@@ -9,7 +9,7 @@ import { useDoc, useFirestore } from '@/firebase';
 export function Hero() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-school');
   const db = useFirestore();
-  const { data: settings } = useDoc(db ? `settings/global` : null);
+  const { data: settings } = useDoc(db, 'settings/global');
   const schoolName = settings?.schoolName || "ESEPF";
 
   return (
@@ -31,7 +31,7 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <h1 className="text-4xl md:text-6xl lg:text-8xl font-headline font-bold mb-6 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-1000">
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-headline font-bold mb-6 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-1000 uppercase">
           {schoolName} : <br /> Cultiver l'Excellence
         </h1>
         <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-200">
@@ -42,7 +42,7 @@ export function Hero() {
             Découvrir l'Académie Football
           </Button>
           <Button className="min-w-[220px] rounded-[30px] bg-secondary hover:bg-secondary/90 text-white border-none py-7 text-lg font-bold shadow-lg">
-            S'inscrire à l'ESEPF
+            S'inscrire à {schoolName}
           </Button>
         </div>
       </div>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -9,7 +8,7 @@ import { useFirestore, useDoc } from '@/firebase';
 
 export function ThreeAxes() {
   const db = useFirestore();
-  const { data: settings } = useDoc(db ? `settings/global` : null);
+  const { data: settings } = useDoc(db, 'settings/global');
   const logoUrl = settings?.logoUrl;
   const schoolName = settings?.schoolName || "ESEPF";
 
@@ -54,14 +53,13 @@ export function ThreeAxes() {
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                     Notre sport-études offre un cadre scolaire exigeant qui permet aux élèves de concilier projet sportif ambitieux et réussite académique.<br /><br />
-                    Au lycée, la scolarité s'oriente vers la préparation du baccalauréat, avec des exigences renforcées, un accompagnement méthodologique et une aide à l'orientation supérieure.<br /><br />
                     L'objectif est de former des élèves autonomes, curieux et capables de s'épanouir autant sur le terrain qu'en classe.
                   </p>
                   <div className="space-y-2">
-                    <Link href="#college" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
+                    <Link href="/formations/college" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
                       Collège (11 ans - 15 ans)
                     </Link>
-                    <Link href="#lycee" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
+                    <Link href="/formations/lycee" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
                       Lycée (15 ans - 18 ans)
                     </Link>
                   </div>
@@ -78,37 +76,32 @@ export function ThreeAxes() {
                     </div>
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    L'Academy de football propose un programme de formation élite français visant à développer des joueurs complets, capables d'évoluer au plus haut niveau tout en respectant l'exigence du football hexagonal.<br /><br />
-                    L'objectif est de donner à chaque joueur les meilleurs outils pour progresser, se faire repérer et s'inscrire durablement dans un projet de haut niveau.
+                    L'Academy de football propose un programme de formation élite français visant à développer des joueurs complets, capables d'évoluer au plus haut niveau.<br /><br />
+                    L'objectif est de donner à chaque joueur les meilleurs outils pour progresser et s'inscrire dans un projet professionnel.
                   </p>
                   <div className="space-y-2">
-                    <Link href="#football" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
-                      Championnats officiel Français
+                    <Link href="/football-academy/competition" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
+                      Championnats officiels
                     </Link>
-                    <Link href="#football" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
-                      Elite Football programme
+                    <Link href="/football-academy/programme" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
+                      Elite Football Programme
                     </Link>
                   </div>
                 </div>
               </div>
 
-              {/* Axis 3: Langues Étrangères (Bottom) - Moved up to top-[75%] */}
+              {/* Axis 3: Langues Étrangères (Bottom) */}
               <div className="absolute top-[75%] left-1/2 -translate-x-1/2 w-full max-w-4xl text-center z-30">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-center gap-12 mb-8 w-full">
-                    {/* Left Icon */}
                     <div className="bg-secondary/5 border border-secondary/10 p-6 rounded-full shadow-sm translate-y-4">
                       <Languages className="text-secondary" size={40} />
                     </div>
-                    
-                    {/* Center Title */}
                     <div className="flex flex-col items-center">
                       <h3 className="text-3xl font-headline font-bold text-primary tracking-widest uppercase border-b-2 border-muted pb-2 px-12 leading-tight">
                         LANGUES <br /> ÉTRANGÈRES
                       </h3>
                     </div>
-                    
-                    {/* Right Icon */}
                     <div className="bg-secondary/5 border border-secondary/10 p-6 rounded-full shadow-sm translate-y-4">
                       <BookOpen className="text-secondary" size={40} />
                     </div>
@@ -116,16 +109,12 @@ export function ThreeAxes() {
                   
                   <div className="max-w-3xl space-y-6">
                     <p className="text-muted-foreground text-base leading-relaxed">
-                      Notre établissement propose une formation renforcée en français langue étrangère (FLE) et en anglais langue étrangère (EFL) afin d'accompagner au mieux les élèves non francophones ou souhaitant perfectionner leur niveau.
-                    </p>
-                    <p className="text-muted-foreground text-base leading-relaxed">
-                      Les cours sont organisés en petits groupes pour favoriser la participation orale, la compréhension et la progression individuelle. Les enseignants adaptent leurs supports aux besoins de chaque élève, en travaillant aussi bien la grammaire que le vocabulaire et les situations concrètes de communication.
+                      Notre établissement propose une formation renforcée en FLE et en EFL afin d'accompagner au mieux les élèves non francophones vers l'excellence.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Connecting Lines (Decorative) */}
               <svg className="absolute inset-0 w-full h-full -z-10 opacity-10" viewBox="0 0 1000 1100">
                 <line x1="300" y1="200" x2="450" y2="400" stroke="currentColor" strokeWidth="1" />
                 <line x1="700" y1="200" x2="550" y2="400" stroke="currentColor" strokeWidth="1" />
@@ -133,7 +122,7 @@ export function ThreeAxes() {
               </svg>
             </div>
 
-            {/* Mobile Layout (Stacked) */}
+            {/* Mobile Layout */}
             <div className="lg:hidden space-y-16">
               <div className="flex justify-center mb-8">
                 <div className="w-48 h-48 rounded-full border-2 border-secondary/20 p-2 bg-white flex items-center justify-center shadow-xl">
@@ -144,37 +133,11 @@ export function ThreeAxes() {
                   )}
                 </div>
               </div>
-
               <div className="space-y-12">
-                {/* Scolarité */}
                 <div className="text-center px-4">
-                  <h3 className="text-2xl font-headline font-bold text-primary mb-4 border-b-2 border-secondary/20 inline-block pb-1">SCOLARITÉ</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    Notre sport-études offre un cadre scolaire exigeant qui permet aux élèves de concilier projet sportif ambitieux et réussite académique.
-                  </p>
-                  <div className="flex flex-col gap-2 items-center">
-                    <Link href="#college" className="text-primary font-bold border-b border-primary">Collège (11-15 ans)</Link>
-                    <Link href="#lycee" className="text-primary font-bold border-b border-primary">Lycée (15-18 ans)</Link>
-                  </div>
-                </div>
-
-                {/* Football */}
-                <div className="text-center px-4">
-                  <h3 className="text-2xl font-headline font-bold text-primary mb-4 border-b-2 border-secondary/20 inline-block pb-1">FOOTBALL ACADEMY</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    L'Academy de football propose un programme de formation élite français visant à développer des joueurs complets.
-                  </p>
-                  <div className="flex flex-col gap-2 items-center">
-                    <Link href="#football" className="text-primary font-bold border-b border-primary">Championnats officiels</Link>
-                    <Link href="#football" className="text-primary font-bold border-b border-primary">Elite Programme</Link>
-                  </div>
-                </div>
-
-                {/* Langues */}
-                <div className="text-center px-4">
-                  <h3 className="text-2xl font-headline font-bold text-primary mb-4 border-b-2 border-secondary/20 inline-block pb-1">LANGUES ÉTRANGÈRES</h3>
+                  <h3 className="text-2xl font-headline font-bold text-primary mb-4 border-b-2 border-secondary/20 inline-block pb-1 uppercase">{schoolName}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    Formation renforcée en FLE et EFL pour accompagner nos élèves vers l'international.
+                    Scolarité d'excellence, Football Academy de haut niveau et parcours linguistique renforcé.
                   </p>
                 </div>
               </div>
