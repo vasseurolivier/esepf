@@ -7,51 +7,18 @@
       "properties": {
         "logoUrl": {
           "type": "string",
-          "description": "URL de l'image du logo de l'école."
+          "description": "URL de l'image du logo de l'école (Data URI ou URL)."
         },
         "schoolName": {
           "type": "string",
           "description": "Nom officiel de l'établissement."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
         }
       },
       "required": ["schoolName"]
-    },
-    "UserProfile": {
-      "title": "Profil Utilisateur",
-      "description": "Données de profil incluant le rôle administratif.",
-      "type": "object",
-      "properties": {
-        "role": {
-          "type": "string",
-          "enum": ["admin", "editor", "user"],
-          "description": "Le niveau d'accès de l'utilisateur."
-        },
-        "displayName": {
-          "type": "string"
-        }
-      }
-    },
-    "Information": {
-      "title": "Information Publique",
-      "description": "Annonces ou informations générales affichées sur le site.",
-      "type": "object",
-      "properties": {
-        "title": { "type": "string" },
-        "content": { "type": "string" },
-        "date": { "type": "string", "format": "date-time" }
-      }
-    },
-    "Article": {
-      "title": "Article de Blog",
-      "description": "Actualités et articles publiés par l'établissement.",
-      "type": "object",
-      "properties": {
-        "title": { "type": "string" },
-        "excerpt": { "type": "string" },
-        "content": { "type": "string" },
-        "imageUrl": { "type": "string" },
-        "date": { "type": "string", "format": "date-time" }
-      }
     }
   },
   "auth": {
@@ -62,16 +29,12 @@
       "schema": "AppSettings",
       "description": "Document unique contenant les réglages globaux du site."
     },
-    "/users/{userId}": {
-      "schema": "UserProfile",
-      "description": "Données des utilisateurs pour la gestion des rôles."
-    },
     "/informations/{infoId}": {
-      "schema": "Information",
+      "schema": { "type": "object", "properties": { "title": { "type": "string" } } },
       "description": "Collection d'informations publiques."
     },
     "/articles/{articleId}": {
-      "schema": "Article",
+      "schema": { "type": "object", "properties": { "title": { "type": "string" } } },
       "description": "Collection d'articles de blog."
     },
     "/config/{configId}": {

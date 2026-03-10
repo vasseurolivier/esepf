@@ -3,17 +3,17 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     
-    // Paramètres globaux - lecture publique, écriture autorisée pour le prototype
-    // La sécurité est gérée par le mot de passe dans l'interface admin
+    // Paramètres globaux - Lecture publique, écriture autorisée pour le prototype
+    // La sécurité est assurée par le mot de passe Yesacademy888$ dans l'interface admin
     match /settings/global {
       allow read: if true;
       allow write: if true;
     }
     
-    // Autres collections
+    // Collections de contenu - Lecture publique pour les visiteurs
     match /informations/{infoId} {
-      allow read: if true; 
-      allow write: if true; 
+      allow read: if true;
+      allow write: if true;
     }
     
     match /articles/{articleId} {
@@ -26,7 +26,7 @@ service cloud.firestore {
       allow write: if true;
     }
     
-    // Règle par défaut
+    // Règle par défaut : accès refusé pour tout le reste
     match /{document=**} {
       allow read, write: if false;
     }
