@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -43,8 +42,7 @@ const footballSubLinks = [
   { name: "Qu'est-ce que le Sport-Études ?", href: '/football-academy/sport-etudes' },
   { name: 'Le Parcours du Joueur', href: '/football-academy/parcours' },
   { name: 'Accompagnement Physique et Mental', href: '/football-academy/accompagnement' },
-  { name: 'Notre Réseau de Clubs', href: '/football-academy/reseau' },
-  { name: 'Les Métiers du Sport', href: '/football-academy/metiers' },
+  { name: 'Notre Réseau de Clubs', href: '/football-academy/metiers' },
 ];
 
 export function Header() {
@@ -195,8 +193,8 @@ export function Header() {
             ) : (
               <Link
                 key={link.name}
-                href={link.href}
                 onClick={() => setIsOpen(false)}
+                href={link.href}
                 className="text-lg font-bold text-white hover:text-[#b8955d] uppercase tracking-wider"
               >
                 {link.name}
