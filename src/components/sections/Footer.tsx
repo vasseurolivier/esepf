@@ -39,22 +39,21 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-headline font-bold mb-6">Navigation</h4>
+            <h4 className="text-lg font-headline font-bold mb-6">Nos Campus</h4>
             <ul className="space-y-4">
-              <li><Link href="#college" className="text-white/70 hover:text-secondary transition-colors">Collège</Link></li>
-              <li><Link href="#football" className="text-white/70 hover:text-secondary transition-colors">Academy Football Elite</Link></li>
-              <li><Link href="#admission" className="text-white/70 hover:text-secondary transition-colors">Inscriptions</Link></li>
-              <li><Link href="#news" className="text-white/70 hover:text-secondary transition-colors">Agenda & Blog</Link></li>
+              <li className="text-white/70 hover:text-secondary transition-colors">ESEPF Evron</li>
+              <li className="text-white/70 hover:text-secondary transition-colors">ESEPF Sainte-Bazeilles</li>
+              <li className="text-white/70 hover:text-secondary transition-colors">ESEPF Sainte-Tulle</li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-headline font-bold mb-6">Contact</h4>
+            <h4 className="text-lg font-headline font-bold mb-6">Contact Central</h4>
             <ul className="space-y-4">
               <li className="flex items-center space-x-3 text-white/70">
                 <MapPin size={18} className="text-secondary" />
-                <span>88 Avenue du Sport, 75016 Paris</span>
+                <span>Siège : Evron, France</span>
               </li>
               <li className="flex items-center space-x-3 text-white/70">
                 <Phone size={18} className="text-secondary" />
@@ -70,7 +69,7 @@ export function Footer() {
           {/* Newsletter */}
           <div>
             <h4 className="text-lg font-headline font-bold mb-6">Lettre d'Information</h4>
-            <p className="text-white/70 mb-4">Suivez l'actualité de nos élèves et athlètes.</p>
+            <p className="text-white/70 mb-4">Suivez l'actualité de nos élèves et athlètes sur nos 3 sites.</p>
             <div className="flex">
               <input 
                 type="email" 
@@ -83,7 +82,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-sm text-white/50">
-          <p>© {currentYear || '2025'} {schoolName} - Tous droits réservés.</p>
+          <p>© {currentYear || '2025'} {schoolName} - 3 Campus : Evron, Sainte-Bazeilles, Sainte-Tulle.</p>
         </div>
       </div>
     </footer>

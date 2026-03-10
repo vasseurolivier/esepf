@@ -3,6 +3,7 @@ import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
 import { Figures } from '@/components/sections/Figures';
 import { ThreeAxes } from '@/components/sections/ThreeAxes';
+import { Campuses } from '@/components/sections/Campuses';
 import { Programs } from '@/components/sections/Programs';
 import { FootballAcademy } from '@/components/sections/FootballAcademy';
 import { OrientationSimulator } from '@/components/sections/OrientationSimulator';
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <Figures />
         <ThreeAxes />
+        <Campuses />
         <Programs />
         <FootballAcademy />
         <OrientationSimulator />

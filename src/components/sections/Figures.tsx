@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { Users, GraduationCap, School, BookOpen } from 'lucide-react';
+import { Users, GraduationCap, School, MapPin } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 const stats = [
   { icon: <GraduationCap size={40} />, value: '100%', label: 'Réussite au Bac' },
   { icon: <Users size={40} />, value: '850', label: 'Élèves épanouis' },
+  { icon: <MapPin size={40} />, value: '3', label: 'Campus Modernes' },
   { icon: <School size={40} />, value: '30+', label: 'Clubs & Activités' },
-  { icon: <BookOpen size={40} />, value: '100%', label: 'Suivi Personnalisé' },
 ];
 
 export function Figures() {

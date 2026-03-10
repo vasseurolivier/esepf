@@ -10,10 +10,10 @@ import { useDoc, useFirestore } from '@/firebase';
 
 const navLinks = [
   { name: 'Accueil', href: '/' },
+  { name: 'Campus', href: '#campus' },
   { name: 'Formations', href: '#formations' },
   { name: 'Academy Football', href: '#football' },
   { name: 'Vie Scolaire', href: '#vie-scolaire' },
-  { name: 'Actualités', href: '#news' },
 ];
 
 export function Header() {
@@ -37,7 +37,6 @@ export function Header() {
                   alt={`${schoolName} Logo`} 
                   className="h-10 w-auto object-contain"
                   onError={(e) => {
-                    // Fallback to icon if image fails to load
                     (e.target as HTMLImageElement).style.display = 'none';
                   }}
                 />
