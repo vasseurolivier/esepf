@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -7,31 +8,28 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { useFirestore, useDoc, FirebaseClientProvider, useAuth, useUser } from '@/firebase';
+import { useFirestore, useDoc, FirebaseClientProvider } from '@/firebase';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
-import { Save, Loader2, ArrowLeft, Image as ImageIcon, LogIn, LogOut, ShieldCheck, ShieldAlert } from 'lucide-react';
+import { Save, Loader2, ArrowLeft, Image as ImageIcon, Lock, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 import { AIPoweredSummary } from '@/components/admin/AIPoweredSummary';
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+
+const ADMIN_PASSWORD = 'Yesacademy888$';
 
 function AdminContent() {
   const db = useFirestore();
-  const auth = useAuth();
-  const { user, loading: authLoading } = useUser(auth);
   const { data: settings, loading: settingsLoading } = useDoc(db, 'settings/global');
-  const { data: userData, loading: userRoleLoading } = useDoc(db, user ? `users/${user.uid}` : null);
   const { toast } = useToast();
   
+  const [passwordInput, setPasswordInput] = useState('');
+  const [isUnlocked, setIsUnlocked] = useState(false);
   const [schoolName, setSchoolName] = useState('');
   const [logoUrl, setLogoUrl] = useState('');
   const [isSaving, setIsSaving] = useState(false);
-
-  const isAdmin = userData?.role === 'admin';
 
   useEffect(() => {
     if (settings) {
@@ -40,26 +38,19 @@ function AdminContent() {
     }
   }, [settings]);
 
-  const handleLogin = async () => {
-    if (!auth) return;
-    try {
-      const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-      toast({ title: "Connexion réussie", description: "Vérification des droits d'accès..." });
-    } catch (error) {
-      toast({ variant: "destructive", title: "Erreur de connexion", description: "Impossible de se connecter." });
+  const handleUnlock = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (passwordInput === ADMIN_PASSWORD) {
+      setIsUnlocked(true);
+      toast({ title: "Accès autorisé", description: "Bienvenue dans l'espace d'administration." });
+    } else {
+      toast({ variant: "destructive", title: "Accès refusé", description: "Mot de passe incorrect." });
     }
-  };
-
-  const handleLogout = async () => {
-    if (!auth) return;
-    await signOut(auth);
-    toast({ title: "Déconnexion", description: "Vous avez été déconnecté." });
   };
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!db || !isAdmin) return;
+    if (!db) return;
 
     setIsSaving(true);
     const settingsRef = doc(db, 'settings', 'global');
@@ -86,11 +77,48 @@ function AdminContent() {
       });
   };
 
-  if (authLoading || settingsLoading) {
+  if (settingsLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <Loader2 className="animate-spin text-primary w-12 h-12" />
       </div>
+    );
+  }
+
+  if (!isUnlocked) {
+    return (
+      <main className="min-h-screen bg-muted/30 flex flex-col">
+        <Header />
+        <div className="flex-1 flex items-center justify-center p-4">
+          <Card className="w-full max-w-md rounded-3xl shadow-2xl border-none">
+            <CardHeader className="text-center pb-2">
+              <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <Lock className="text-primary" size={32} />
+              </div>
+              <CardTitle className="text-2xl font-headline font-bold">Espace Sécurisé</CardTitle>
+              <CardDescription>Veuillez entrer le mot de passe administrateur.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleUnlock} className="space-y-4">
+                <div className="space-y-2">
+                  <Input 
+                    type="password" 
+                    placeholder="Mot de passe" 
+                    value={passwordInput}
+                    onChange={(e) => setPasswordInput(e.target.value)}
+                    className="h-12 rounded-xl border-muted focus:ring-secondary text-center"
+                    autoFocus
+                  />
+                </div>
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white font-bold h-12 rounded-xl">
+                  Se connecter
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+        <Footer />
+      </main>
     );
   }
 
@@ -102,15 +130,9 @@ function AdminContent() {
           <div className="flex items-center justify-between">
             <h1 className="text-4xl font-headline font-bold text-primary">Administration</h1>
             <div className="flex gap-2">
-              {user ? (
-                <Button variant="outline" size="sm" onClick={handleLogout} className="rounded-full">
-                  <LogOut size={16} className="mr-2" /> Déconnexion
-                </Button>
-              ) : (
-                <Button variant="secondary" size="sm" onClick={handleLogin} className="rounded-full font-bold">
-                  <LogIn size={16} className="mr-2" /> Connexion Admin
-                </Button>
-              )}
+              <Button variant="outline" size="sm" onClick={() => setIsUnlocked(false)} className="rounded-full">
+                <Lock size={16} className="mr-2" /> Verrouiller
+              </Button>
               <Link href="/">
                 <Button variant="outline" size="sm" className="rounded-full">
                   <ArrowLeft size={16} className="mr-2" /> Retour au site
@@ -119,33 +141,12 @@ function AdminContent() {
             </div>
           </div>
 
-          {!user ? (
-            <Alert className="bg-primary/5 border-primary/20">
-              <ShieldAlert className="h-4 w-4 text-primary" />
-              <AlertTitle>Accès Restreint</AlertTitle>
-              <AlertDescription>
-                Veuillez vous connecter pour modifier les paramètres. Vos nouvelles règles de sécurité Firestore exigent une authentification.
-              </AlertDescription>
-            </Alert>
-          ) : !isAdmin && !userRoleLoading ? (
-            <Alert variant="destructive" className="bg-destructive/10 border-destructive/20 text-destructive">
-              <ShieldAlert className="h-4 w-4" />
-              <AlertTitle>Permissions Insuffisantes</AlertTitle>
-              <AlertDescription>
-                Votre compte n'a pas le rôle "admin". Ajoutez le champ `role: "admin"` à votre document dans la collection `users` via la console Firebase.
-                <br /><br />
-                <strong>Votre UID :</strong> <code className="bg-destructive/10 px-2 py-1 rounded">{user.uid}</code>
-              </AlertDescription>
-            </Alert>
-          ) : isAdmin ? (
-            <Alert className="bg-green-50 border-green-200 text-green-800">
-              <ShieldCheck className="h-4 w-4 text-green-600" />
-              <AlertTitle>Accès Autorisé</AlertTitle>
-              <AlertDescription>Vous êtes connecté en tant qu'administrateur.</AlertDescription>
-            </Alert>
-          ) : null}
+          <div className="bg-green-50 border border-green-200 p-4 rounded-2xl flex items-center gap-3 text-green-800">
+            <ShieldCheck className="text-green-600" size={20} />
+            <p className="text-sm font-medium">Session administrateur active</p>
+          </div>
           
-          <Card className={cn("border-none shadow-xl rounded-3xl overflow-hidden bg-white transition-opacity", !isAdmin && "opacity-50 pointer-events-none")}>
+          <Card className="border-none shadow-xl rounded-3xl overflow-hidden bg-white">
             <CardHeader className="bg-primary text-white p-8">
               <CardTitle className="text-2xl flex items-center gap-2">
                 <ImageIcon size={24} className="text-secondary" />
@@ -166,7 +167,6 @@ function AdminContent() {
                     placeholder="Ex: ESEPF"
                     className="rounded-xl h-12 border-muted focus:ring-secondary"
                     required
-                    disabled={!isAdmin}
                   />
                 </div>
 
@@ -178,7 +178,6 @@ function AdminContent() {
                     onChange={(e) => setLogoUrl(e.target.value)}
                     placeholder="Copiez l'adresse de l'image ici"
                     className="rounded-xl h-12 border-muted focus:ring-secondary"
-                    disabled={!isAdmin}
                   />
                 </div>
 
@@ -200,7 +199,7 @@ function AdminContent() {
 
                 <Button 
                   type="submit" 
-                  disabled={isSaving || !isAdmin}
+                  disabled={isSaving}
                   className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold h-14 rounded-xl transition-all shadow-lg text-lg"
                 >
                   {isSaving ? (

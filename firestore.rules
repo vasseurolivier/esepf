@@ -1,44 +1,37 @@
+
 rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Fonction utilitaire pour vérifier si la requête vient d'une page admin
-    // NOTE : Firestore ne supporte pas l'accès aux en-têtes comme request.headers.referer.
-    // Cette fonction est incluse selon votre demande mais bloquera les accès car elle renverra une erreur.
-    function isAdminRequest() {
-      // Cette propriété n'existe pas dans le moteur de règles Firestore.
-      return request.headers.referer.matches('.*/admin.*');
-    }
     
-    // Paramètres globaux - lecture publique, écriture uniquement depuis admin
+    // Paramètres globaux - lecture publique, écriture autorisée pour le prototype
     match /settings/global {
       allow read: if true;
-      // Écriture autorisée selon votre logique demandée (Note: risque de blocage)
-      allow write: if isAdminRequest();
+      allow write: if true;
     }
     
     // Collection pour les images
     match /images/{imageId} {
       allow read: if true; 
-      allow write: if isAdminRequest(); 
+      allow write: if true; 
     }
     
     // Collection pour les informations publiques
     match /informations/{infoId} {
       allow read: if true; 
-      allow write: if isAdminRequest(); 
+      allow write: if true; 
     }
     
     // Collection pour les articles/blog
     match /articles/{articleId} {
       allow read: if true;
-      allow write: if isAdminRequest();
+      allow write: if true;
     }
     
     // Collection pour les données de configuration
     match /config/{configId} {
       allow read: if true;
-      allow write: if isAdminRequest();
+      allow write: if true;
     }
     
     // Données sensibles
