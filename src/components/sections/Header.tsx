@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -6,7 +7,6 @@ import { Menu, X, GraduationCap, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useDoc, useFirestore } from '@/firebase';
-import Image from 'next/image';
 
 const navLinks = [
   { name: 'Accueil', href: '/' },
@@ -31,8 +31,16 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             {logoUrl ? (
-              <div className="relative h-12 w-12 rounded-lg overflow-hidden border border-white/20">
-                <Image src={logoUrl} alt="Logo" fill className="object-contain" />
+              <div className="relative h-12 w-auto min-w-[48px] flex items-center">
+                <img 
+                  src={logoUrl} 
+                  alt={`${schoolName} Logo`} 
+                  className="h-10 w-auto object-contain"
+                  onError={(e) => {
+                    // Fallback to icon if image fails to load
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
               </div>
             ) : (
               <GraduationCap className="text-secondary h-8 w-8" />

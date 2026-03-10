@@ -2,7 +2,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { collection, onSnapshot, Firestore, DocumentData, Query } from 'firebase/firestore';
+import { onSnapshot, DocumentData, Query } from 'firebase/firestore';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 export function useCollection(query: Query | null) {
   const [data, setData] = useState<DocumentData[]>([]);
@@ -21,8 +23,13 @@ export function useCollection(query: Query | null) {
         setData(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
         setLoading(false);
       },
-      (err) => {
-        setError(err);
+      async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+          path: 'query', // Query path is more complex to extract generically
+          operation: 'list',
+        });
+        errorEmitter.emit('permission-error', permissionError);
+        setError(serverError);
         setLoading(false);
       }
     );

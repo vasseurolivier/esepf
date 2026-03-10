@@ -3,6 +3,8 @@
 
 import { useState, useEffect } from 'react';
 import { doc, onSnapshot, Firestore, DocumentData } from 'firebase/firestore';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 export function useDoc(db: Firestore | null, path: string | null) {
   const [data, setData] = useState<DocumentData | null>(null);
@@ -22,8 +24,13 @@ export function useDoc(db: Firestore | null, path: string | null) {
         setData(docSnap.exists() ? docSnap.data() : null);
         setLoading(false);
       },
-      (err) => {
-        setError(err);
+      async (serverError) => {
+        const permissionError = new FirestorePermissionError({
+          path: docRef.path,
+          operation: 'get',
+        });
+        errorEmitter.emit('permission-error', permissionError);
+        setError(serverError);
         setLoading(false);
       }
     );
