@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -7,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { useFirestore, useDoc, FirebaseClientProvider } from '@/firebase';
+import { useFirestore, useDoc } from '@/firebase';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
 import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, ShieldCheck } from 'lucide-react';
@@ -17,7 +18,7 @@ import { FirestorePermissionError } from '@/firebase/errors';
 
 const ADMIN_PASSWORD = 'Yesacademy888$';
 
-function AdminContent() {
+export default function AdminPage() {
   const db = useFirestore();
   const { data: settings, loading: settingsLoading } = useDoc(db, 'settings/global');
   const { toast } = useToast();
@@ -28,7 +29,6 @@ function AdminContent() {
   const [logoUrl, setLogoUrl] = useState('');
   const [isSaving, setIsSaving] = useState(false);
 
-  // Synchroniser les états avec Firestore
   useEffect(() => {
     if (settings) {
       setSchoolName(settings.schoolName || '');
@@ -76,7 +76,7 @@ function AdminContent() {
         toast({ 
           variant: "destructive", 
           title: "Erreur de sauvegarde", 
-          description: "Vérifiez vos règles Firestore ou votre connexion." 
+          description: "Vérifiez vos règles Firestore (Cloud Firestore, pas Realtime Database)." 
         });
       })
       .finally(() => {
@@ -151,7 +151,7 @@ function AdminContent() {
 
           <div className="bg-blue-50 border border-blue-200 p-4 rounded-2xl flex items-center gap-3 text-blue-800">
             <ShieldCheck className="text-blue-600" size={20} />
-            <p className="text-sm font-medium">Connexion à la base de données active (Firestore)</p>
+            <p className="text-sm font-medium">Assurez-vous d'avoir activé "Cloud Firestore" dans la console Firebase.</p>
           </div>
           
           <Card className="border-none shadow-xl rounded-3xl overflow-hidden bg-white">
@@ -172,9 +172,8 @@ function AdminContent() {
                       value={schoolName} 
                       onChange={(e) => setSchoolName(e.target.value)}
                       placeholder="Ex: Institution ESEPF"
-                      className="rounded-xl h-12 border-2 focus:border-primary"
+                      className="rounded-xl h-12 border-2"
                     />
-                    <p className="text-[10px] text-muted-foreground uppercase font-bold tracking-widest">Le nom s'affichera dans le Header et le Hero.</p>
                   </div>
 
                   <div className="space-y-2">
@@ -183,10 +182,9 @@ function AdminContent() {
                       id="logoUrl" 
                       value={logoUrl} 
                       onChange={(e) => setLogoUrl(e.target.value)}
-                      placeholder="https://... ou data:image/png;base64,..."
-                      className="rounded-xl h-12 border-2 focus:border-primary"
+                      placeholder="https://... ou data:image/..."
+                      className="rounded-xl h-12 border-2"
                     />
-                    <p className="text-[10px] text-muted-foreground uppercase font-bold tracking-widest">Copiez le lien de votre image ici.</p>
                   </div>
                 </div>
 
@@ -199,7 +197,7 @@ function AdminContent() {
                         alt="Preview" 
                         className="max-h-full max-w-full object-contain drop-shadow-md"
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src = 'https://placehold.co/400x400?text=Logo+Non+Trouvé';
+                          (e.target as HTMLImageElement).src = 'https://placehold.co/400x400?text=Lien+Invalide';
                         }}
                       />
                     ) : (
@@ -228,13 +226,5 @@ function AdminContent() {
       </div>
       <Footer />
     </main>
-  );
-}
-
-export default function AdminPage() {
-  return (
-    <FirebaseClientProvider>
-      <AdminContent />
-    </FirebaseClientProvider>
   );
 }

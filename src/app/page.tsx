@@ -10,24 +10,21 @@ import { OrientationSimulator } from '@/components/sections/OrientationSimulator
 import { StudentLife } from '@/components/sections/StudentLife';
 import { News } from '@/components/sections/News';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export default function Home() {
   return (
-    <FirebaseClientProvider>
-      <main className="min-h-screen">
-        <Header />
-        <Hero />
-        <Figures />
-        <ThreeAxes />
-        <Campuses />
-        <Programs />
-        <FootballAcademy />
-        <OrientationSimulator />
-        <StudentLife />
-        <News />
-        <Footer />
-      </main>
-    </FirebaseClientProvider>
+    <main className="min-h-screen">
+      <Header />
+      <Hero />
+      <Figures />
+      <ThreeAxes />
+      <Campuses />
+      <Programs />
+      <FootballAcademy />
+      <OrientationSimulator />
+      <StudentLife />
+      <News />
+      <Footer />
+    </main>
   );
 }

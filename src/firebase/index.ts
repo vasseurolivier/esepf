@@ -1,3 +1,4 @@
+
 import { initializeApp, getApps, getApp, FirebaseApp } from 'firebase/app';
 import { getFirestore, Firestore } from 'firebase/firestore';
 import { getAuth, Auth } from 'firebase/auth';
@@ -20,6 +21,3 @@ export { FirebaseClientProvider } from './client-provider';
 export { useCollection } from './firestore/use-collection';
 export { useDoc } from './firestore/use-doc';
 export { useUser } from './auth/use-user';
-
-// Re-export common functions for easier access
-export { getFirestore, getAuth };

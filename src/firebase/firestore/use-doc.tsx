@@ -17,14 +17,17 @@ export function useDoc(db: Firestore | null, path: string | null) {
       return;
     }
 
-    const docRef = doc(db, path);
+    // On s'assure que le path est propre
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    const docRef = doc(db, cleanPath);
+    
     const unsubscribe = onSnapshot(
       docRef,
       (docSnap) => {
         setData(docSnap.exists() ? docSnap.data() : null);
         setLoading(false);
       },
-      async (serverError) => {
+      (serverError) => {
         const permissionError = new FirestorePermissionError({
           path: docRef.path,
           operation: 'get',

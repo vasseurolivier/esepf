@@ -1,3 +1,4 @@
+
 {
   "entities": {
     "AppSettings": {
@@ -7,7 +8,7 @@
       "properties": {
         "logoUrl": {
           "type": "string",
-          "description": "URL de l'image du logo de l'école (Data URI ou URL)."
+          "description": "URL de l'image du logo de l'école."
         },
         "schoolName": {
           "type": "string",
