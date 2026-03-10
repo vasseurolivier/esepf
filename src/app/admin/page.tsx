@@ -11,7 +11,8 @@ import { useFirestore, useDoc, FirebaseClientProvider, useAuth, useUser } from '
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, ArrowLeft, Image as ImageIcon, AlertCircle, LogIn, LogOut, ShieldCheck, ShieldAlert } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { Save, Loader2, ArrowLeft, Image as ImageIcon, LogIn, LogOut, ShieldCheck, ShieldAlert } from 'lucide-react';
 import Link from 'next/link';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
