@@ -3,18 +3,17 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
   { name: 'Accueil', href: '/' },
-  { name: 'Programme', href: '#programs' },
-  { name: 'Admission', href: '#admission' },
-  { name: 'Campus', href: '#campus' },
-  { name: 'International', href: '#international' },
-  { name: 'Entreprises', href: '#business' },
-  { name: 'Blog', href: '#news' },
+  { name: 'Le Collège', href: '#college' },
+  { name: 'Le Lycée', href: '#lycee' },
+  { name: 'Vie Scolaire', href: '#vie-scolaire' },
+  { name: 'Inscriptions', href: '#admission' },
+  { name: 'Actualités', href: '#news' },
 ];
 
 export function Header() {
@@ -26,8 +25,9 @@ export function Header() {
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
+            <GraduationCap className="text-secondary h-8 w-8" />
             <span className="text-2xl font-headline font-bold text-white tracking-tighter">
-              PACK<span className="text-secondary">VISION</span>
+              SAINT<span className="text-secondary">JEAN</span>
             </span>
           </Link>
 
@@ -43,7 +43,7 @@ export function Header() {
               </Link>
             ))}
             <Button className="rounded-[30px] bg-secondary hover:bg-secondary/90 text-white font-bold px-6">
-              CANDIDATER
+              PORTES OUVERTES
             </Button>
           </nav>
 
@@ -78,7 +78,7 @@ export function Header() {
             </Link>
           ))}
           <Button className="w-full rounded-[30px] bg-secondary hover:bg-secondary/90 text-white font-bold py-6">
-            CANDIDATER
+            S'INSCRIRE
           </Button>
         </div>
       </div>

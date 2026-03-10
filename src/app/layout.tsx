@@ -3,8 +3,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'PackVision Campus | L\'École du Packaging et de la Finition',
-  description: 'Une expertise unique en Europe pour les métiers de l\'emballage et de l\'impression.',
+  title: 'Institution Saint-Jean | Collège & Lycée',
+  description: 'Un établissement d\'excellence pour la réussite de nos élèves, du collège au baccalauréat.',
 };
 
 export default function RootLayout({

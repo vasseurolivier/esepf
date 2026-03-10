@@ -7,59 +7,60 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 const articles = [
   {
     id: 1,
-    title: 'Portes Ouvertes 2024',
-    date: '15 Mars 2024',
-    image: 'news-1',
-    excerpt: 'Venez découvrir nos ateliers et échanger avec nos étudiants lors de notre journée portes ouvertes.'
+    title: 'Résultats Bac 2024 : Une année record',
+    date: '10 Juillet 2024',
+    image: 'news-graduation',
+    excerpt: 'Félicitations à nos bacheliers qui obtiennent pour la 5ème année consécutive 100% de réussite.'
   },
   {
     id: 2,
-    title: 'Nouveau Partenariat Industriel',
-    date: '02 Février 2024',
-    image: 'news-2',
-    excerpt: 'PackVision signe un accord majeur avec les leaders mondiaux du packaging écologique.'
+    title: 'Nouveau Laboratoire de Sciences',
+    date: '12 Septembre 2024',
+    image: 'news-science',
+    excerpt: 'L\'établissement investit dans des équipements de pointe pour les spécialités SVT et Physique-Chimie.'
   }
 ];
 
 export function News() {
   return (
-    <section id="news" className="py-24 bg-white">
+    <section id="news" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-4">
           <div>
             <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">Actualités</h2>
             <div className="w-20 h-1.5 bg-secondary rounded-full" />
           </div>
-          <button className="text-secondary font-bold hover:underline">Toute l'actualité →</button>
+          <button className="text-secondary font-bold hover:underline flex items-center">Voir tout le blog <span className="ml-2">→</span></button>
         </div>
 
-        {/* FIREBASE-DATA: actualites */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {articles.map((article, idx) => {
             const imgData = PlaceHolderImages.find(img => img.id === article.image);
             return (
               <ScrollReveal key={article.id} delay={idx * 200}>
-                <article className="flex flex-col lg:flex-row gap-8 items-center">
-                  <div className="relative h-64 w-full lg:w-1/2 rounded-2xl overflow-hidden shrink-0">
+                <article className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                  <div className="relative h-72 w-full overflow-hidden">
                     {imgData && (
                       <Image
                         src={imgData.imageUrl}
                         alt={article.title}
                         fill
-                        className="object-cover"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
                         data-ai-hint={imgData.imageHint}
                       />
                     )}
                   </div>
-                  <div className="flex flex-col">
-                    <span className="text-secondary font-bold text-sm mb-2">{article.date}</span>
-                    <h3 className="text-2xl font-headline font-bold text-primary mb-4 hover:text-secondary cursor-pointer transition-colors">
+                  <div className="p-8">
+                    <span className="text-secondary font-bold text-sm mb-3 block">{article.date}</span>
+                    <h3 className="text-2xl font-headline font-bold text-primary mb-4 group-hover:text-secondary transition-colors">
                       {article.title}
                     </h3>
-                    <p className="text-muted-foreground mb-4">
+                    <p className="text-muted-foreground mb-6 line-relaxed">
                       {article.excerpt}
                     </p>
-                    <button className="text-primary font-bold text-sm underline underline-offset-4 decoration-secondary">Lire l'article</button>
+                    <button className="text-primary font-bold text-sm flex items-center group-hover:translate-x-2 transition-transform">
+                      LIRE LA SUITE <span className="ml-2 text-secondary">→</span>
+                    </button>
                   </div>
                 </article>
               </ScrollReveal>

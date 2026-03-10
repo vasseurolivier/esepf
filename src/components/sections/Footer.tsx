@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, GraduationCap } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -10,11 +10,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* About */}
           <div>
-            <h3 className="text-2xl font-headline font-bold mb-6 tracking-tighter">
-              PACK<span className="text-secondary">VISION</span>
+            <h3 className="text-2xl font-headline font-bold mb-6 tracking-tighter flex items-center gap-2">
+              <GraduationCap className="text-secondary" />
+              SAINT<span className="text-secondary">JEAN</span>
             </h3>
             <p className="text-white/70 leading-relaxed mb-6">
-              L'excellence pédagogique au service des métiers du packaging et de la finition depuis plus de 20 ans.
+              L'excellence pédagogique au service de la réussite de vos enfants depuis 1920.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="p-2 bg-white/10 rounded-full hover:bg-secondary transition-colors"><Facebook size={18} /></Link>
@@ -26,12 +27,12 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-headline font-bold mb-6">Liens Rapides</h4>
+            <h4 className="text-lg font-headline font-bold mb-6">Navigation</h4>
             <ul className="space-y-4">
-              <li><Link href="#programs" className="text-white/70 hover:text-secondary transition-colors">Nos Programmes</Link></li>
-              <li><Link href="#admission" className="text-white/70 hover:text-secondary transition-colors">Admissions</Link></li>
-              <li><Link href="#international" className="text-white/70 hover:text-secondary transition-colors">International</Link></li>
-              <li><Link href="#news" className="text-white/70 hover:text-secondary transition-colors">Actualités</Link></li>
+              <li><Link href="#college" className="text-white/70 hover:text-secondary transition-colors">Collège</Link></li>
+              <li><Link href="#lycee" className="text-white/70 hover:text-secondary transition-colors">Lycée (Général & STMG)</Link></li>
+              <li><Link href="#admission" className="text-white/70 hover:text-secondary transition-colors">Espace Inscriptions</Link></li>
+              <li><Link href="#news" className="text-white/70 hover:text-secondary transition-colors">Agenda Scolaire</Link></li>
             </ul>
           </div>
 
@@ -41,23 +42,23 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3 text-white/70">
                 <MapPin size={18} className="text-secondary" />
-                <span>12 Rue de l'Industrie, 75012 Paris</span>
+                <span>42 Avenue de l'École, 75005 Paris</span>
               </li>
               <li className="flex items-center space-x-3 text-white/70">
                 <Phone size={18} className="text-secondary" />
-                <span>+33 (0)1 23 45 67 89</span>
+                <span>01 23 45 67 89</span>
               </li>
               <li className="flex items-center space-x-3 text-white/70">
                 <Mail size={18} className="text-secondary" />
-                <span>contact@packvision.fr</span>
+                <span>secretariat@saint-jean.edu</span>
               </li>
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-headline font-bold mb-6">Newsletter</h4>
-            <p className="text-white/70 mb-4">Recevez nos dernières actualités et offres de formations.</p>
+            <h4 className="text-lg font-headline font-bold mb-6">Lettre d'Information</h4>
+            <p className="text-white/70 mb-4">Inscrivez-vous pour recevoir les actualités de l'établissement.</p>
             <div className="flex">
               <input 
                 type="email" 
@@ -70,7 +71,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-sm text-white/50">
-          <p>© {new Date().getFullYear()} PackVision Campus - Tous droits réservés. <Link href="#" className="hover:text-white underline ml-4">Mentions Légales</Link> | <Link href="#" className="hover:text-white underline ml-2">RGPD</Link></p>
+          <p>© {new Date().getFullYear()} Institution Saint-Jean - Tous droits réservés. <Link href="#" className="hover:text-white underline ml-4">Mentions Légales</Link> | <Link href="#" className="hover:text-white underline ml-2">Règlement Intérieur</Link></p>
         </div>
       </div>
     </footer>

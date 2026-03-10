@@ -1,0 +1,126 @@
+
+"use client";
+
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
+import { Sparkles, ArrowRight, RefreshCcw } from 'lucide-react';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
+
+const questions = [
+  {
+    id: 1,
+    question: "Qu'est-ce qui t'attire le plus au quotidien ?",
+    options: [
+      { label: "Comprendre comment fonctionne le monde et les sciences", value: "GEN" },
+      { label: "Gérer des projets, comprendre l'économie et le numérique", value: "STMG" },
+      { label: "Découvrir de nouvelles matières et approfondir ma culture", value: "GEN" }
+    ]
+  },
+  {
+    id: 2,
+    question: "Comment préfères-tu travailler ?",
+    options: [
+      { label: "De manière théorique et approfondie", value: "GEN" },
+      { label: "De manière concrète avec des études de cas d'entreprises", value: "STMG" },
+      { label: "Via des projets de groupe et du management", value: "STMG" }
+    ]
+  }
+];
+
+export function OrientationSimulator() {
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState<string[]>([]);
+  const [result, setResult] = useState<string | null>(null);
+
+  const handleAnswer = (value: string) => {
+    const newAnswers = [...answers, value];
+    setAnswers(newAnswers);
+    
+    if (step < questions.length - 1) {
+      setStep(step + 1);
+    } else {
+      calculateResult(newAnswers);
+    }
+  };
+
+  const calculateResult = (finalAnswers: string[]) => {
+    const stmgCount = finalAnswers.filter(a => a === "STMG").length;
+    if (stmgCount >= 1) {
+      setResult("Bac Technologique STMG");
+    } else {
+      setResult("Bac Général");
+    }
+  };
+
+  const reset = () => {
+    setStep(0);
+    setAnswers([]);
+    setResult(null);
+  };
+
+  return (
+    <section id="orientation" className="py-24 bg-primary text-white">
+      <div className="container mx-auto px-4">
+        <ScrollReveal className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-headline font-bold mb-4">Besoin d'aide pour ton orientation ?</h2>
+            <p className="text-white/70 text-lg">Réponds à ces deux questions pour découvrir la filière qui te correspond.</p>
+          </div>
+
+          <Card className="bg-white text-primary border-none shadow-2xl overflow-hidden rounded-3xl">
+            {!result ? (
+              <>
+                <CardHeader className="bg-muted/50 p-8">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Sparkles className="text-secondary" />
+                    <span className="text-sm font-bold text-secondary uppercase tracking-widest">Question {step + 1}/{questions.length}</span>
+                  </div>
+                  <CardTitle className="text-2xl font-headline font-bold">{questions[step].question}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-8">
+                  <RadioGroup className="space-y-4">
+                    {questions[step].options.map((option, i) => (
+                      <div 
+                        key={i} 
+                        className="flex items-center space-x-4 p-4 rounded-xl border-2 border-muted hover:border-secondary hover:bg-secondary/5 cursor-pointer transition-all"
+                        onClick={() => handleAnswer(option.value)}
+                      >
+                        <RadioGroupItem value={option.value} id={`q${step}-o${i}`} className="border-secondary text-secondary" />
+                        <Label htmlFor={`q${step}-o${i}`} className="text-lg font-medium cursor-pointer w-full">{option.label}</Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </CardContent>
+              </>
+            ) : (
+              <CardContent className="p-12 text-center animate-in fade-in duration-500">
+                <div className="bg-secondary/10 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <GraduationCap className="text-secondary w-12 h-12" />
+                </div>
+                <h3 className="text-sm font-bold text-secondary uppercase tracking-widest mb-2">Ton profil correspond au :</h3>
+                <CardTitle className="text-4xl md:text-5xl font-headline font-bold text-primary mb-8">{result}</CardTitle>
+                <p className="text-muted-foreground text-lg mb-10 max-w-md mx-auto">
+                  {result === "Bac Technologique STMG" 
+                    ? "Tu as un profil orienté vers le concret, l'entreprise et la gestion. Cette filière t'ouvrira les portes du management."
+                    : "Tu as un profil curieux et théorique, idéal pour approfondir des spécialités académiques et viser de longues études."
+                  }
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-6 px-8 rounded-full text-lg">
+                    Découvrir ce programme <ArrowRight className="ml-2" />
+                  </Button>
+                  <Button variant="outline" onClick={reset} className="border-2 border-primary text-primary font-bold py-6 px-8 rounded-full text-lg hover:bg-primary/5">
+                    Recommencer <RefreshCcw className="ml-2" />
+                  </Button>
+                </div>
+              </CardContent>
+            )}
+          </Card>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}
