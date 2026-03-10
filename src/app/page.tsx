@@ -1,6 +1,8 @@
+
 import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
 import { Figures } from '@/components/sections/Figures';
+import { ThreeAxes } from '@/components/sections/ThreeAxes';
 import { Programs } from '@/components/sections/Programs';
 import { FootballAcademy } from '@/components/sections/FootballAcademy';
 import { OrientationSimulator } from '@/components/sections/OrientationSimulator';
@@ -16,6 +18,7 @@ export default function Home() {
         <Header />
         <Hero />
         <Figures />
+        <ThreeAxes />
         <Programs />
         <FootballAcademy />
         <OrientationSimulator />
