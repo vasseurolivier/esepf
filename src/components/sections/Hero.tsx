@@ -1,17 +1,16 @@
-
 "use client";
 
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { useDoc, getFirestore } from '@/firebase';
+import { useDoc, useFirestore } from '@/firebase';
 
 export function Hero() {
   const heroImg = PlaceHolderImages.find(img => img.id === 'hero-school');
-  const db = getFirestore();
+  const db = useFirestore();
   const { data: settings } = useDoc(db ? `settings/global` : null);
-  const schoolName = settings?.schoolName || "ESPF";
+  const schoolName = settings?.schoolName || "ESEPF";
 
   return (
     <section className="relative h-[85vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
@@ -43,7 +42,7 @@ export function Hero() {
             Découvrir l'Académie Football
           </Button>
           <Button className="min-w-[220px] rounded-[30px] bg-secondary hover:bg-secondary/90 text-white border-none py-7 text-lg font-bold shadow-lg">
-            S'inscrire à l'ESPF
+            S'inscrire à l'ESEPF
           </Button>
         </div>
       </div>

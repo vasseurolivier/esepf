@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from 'react';
@@ -6,7 +5,7 @@ import Link from 'next/link';
 import { Menu, X, GraduationCap, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { useDoc, getFirestore } from '@/firebase';
+import { useDoc, useFirestore } from '@/firebase';
 import Image from 'next/image';
 
 const navLinks = [
@@ -14,16 +13,15 @@ const navLinks = [
   { name: 'Formations', href: '#formations' },
   { name: 'Academy Football', href: '#football' },
   { name: 'Vie Scolaire', href: '#vie-scolaire' },
-  { name: 'Inscriptions', href: '#admission' },
   { name: 'Actualités', href: '#news' },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const db = getFirestore();
+  const db = useFirestore();
   const { data: settings } = useDoc(db ? `settings/global` : null);
 
-  const schoolName = settings?.schoolName || "ESPF";
+  const schoolName = settings?.schoolName || "ESEPF";
   const logoUrl = settings?.logoUrl;
 
   return (

@@ -1,9 +1,8 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Institution Saint-Jean | Collège & Lycée',
+  title: 'Institution ESEPF | Collège & Lycée',
   description: 'Un établissement d\'excellence pour la réussite de nos élèves, du collège au baccalauréat.',
 };
 

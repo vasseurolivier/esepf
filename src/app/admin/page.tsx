@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -8,13 +7,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { getFirestore, useDoc, FirebaseClientProvider } from '@/firebase';
+import { useFirestore, useDoc, FirebaseClientProvider } from '@/firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Upload, Loader2 } from 'lucide-react';
+import { Save, Loader2 } from 'lucide-react';
 
 function AdminContent() {
-  const db = getFirestore();
+  const db = useFirestore();
   const { data: settings, loading } = useDoc(db ? `settings/global` : null);
   const { toast } = useToast();
   
@@ -24,35 +23,40 @@ function AdminContent() {
 
   useEffect(() => {
     if (settings) {
-      setSchoolName(settings.schoolName || 'ESPF');
+      setSchoolName(settings.schoolName || 'ESEPF');
       setLogoUrl(settings.logoUrl || '');
+    } else if (!loading) {
+      setSchoolName('ESEPF');
     }
-  }, [settings]);
+  }, [settings, loading]);
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!db) return;
 
     setIsSaving(true);
-    try {
-      await setDoc(doc(db, 'settings', 'global'), {
-        schoolName,
-        logoUrl,
-      }, { merge: true });
-      
-      toast({
-        title: "Succès",
-        description: "Les paramètres ont été mis à jour avec succès.",
+    const settingsRef = doc(db, 'settings', 'global');
+    
+    setDoc(settingsRef, {
+      schoolName,
+      logoUrl,
+    }, { merge: true })
+      .then(() => {
+        toast({
+          title: "Succès",
+          description: "Les paramètres ont été mis à jour avec succès.",
+        });
+      })
+      .catch((error) => {
+        toast({
+          variant: "destructive",
+          title: "Erreur",
+          description: "Impossible de sauvegarder les modifications.",
+        });
+      })
+      .finally(() => {
+        setIsSaving(false);
       });
-    } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Erreur",
-        description: "Impossible de sauvegarder les modifications.",
-      });
-    } finally {
-      setIsSaving(false);
-    }
   };
 
   if (loading) {
@@ -74,7 +78,7 @@ function AdminContent() {
             <CardHeader className="bg-primary text-white p-8">
               <CardTitle className="text-2xl">Configuration de l'Établissement</CardTitle>
               <CardDescription className="text-white/70">
-                Personnalisez l'identité visuelle de votre site ESPF.
+                Personnalisez l'identité visuelle de votre site ESEPF.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-8">
@@ -85,7 +89,7 @@ function AdminContent() {
                     id="schoolName" 
                     value={schoolName} 
                     onChange={(e) => setSchoolName(e.target.value)}
-                    placeholder="Ex: ESPF"
+                    placeholder="Ex: ESEPF"
                     className="rounded-xl"
                   />
                 </div>

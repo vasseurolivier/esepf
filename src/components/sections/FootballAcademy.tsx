@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -28,7 +27,7 @@ export function FootballAcademy() {
               Football Academy : <br /><span className="text-secondary">Allier Sport de Haut Niveau & Études</span>
             </h3>
             <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
-              L'ESPF propose un cursus unique pour les jeunes talents du football. Notre académie permet de poursuivre une scolarité d'excellence tout en bénéficiant d'un encadrement sportif digne des plus grands clubs professionnels.
+              L'ESEPF propose un cursus unique pour les jeunes talents du football. Notre académie permet de poursuivre une scolarité d'excellence tout en bénéficiant d'un encadrement sportif digne des plus grands clubs professionnels.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
@@ -62,7 +61,7 @@ export function FootballAcademy() {
               <p className="text-primary font-bold italic">
                 "Plus qu'une école, une rampe de lancement vers le professionnalisme."
               </p>
-              <p className="text-sm text-muted-foreground mt-2">— Directeur Sportif, ESPF Academy</p>
+              <p className="text-sm text-muted-foreground mt-2">— Directeur Sportif, ESEPF Academy</p>
             </div>
           </div>
         </ScrollReveal>

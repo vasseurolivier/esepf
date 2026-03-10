@@ -1,15 +1,14 @@
-
 "use client";
 
 import React from 'react';
 import Link from 'next/link';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, GraduationCap } from 'lucide-react';
-import { useDoc, getFirestore } from '@/firebase';
+import { useDoc, useFirestore } from '@/firebase';
 
 export function Footer() {
-  const db = getFirestore();
+  const db = useFirestore();
   const { data: settings } = useDoc(db ? `settings/global` : null);
-  const schoolName = settings?.schoolName || "ESPF";
+  const schoolName = settings?.schoolName || "ESEPF";
 
   return (
     <footer className="bg-primary text-white pt-20 pb-10">
@@ -57,7 +56,7 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-white/70">
                 <Mail size={18} className="text-secondary" />
-                <span>contact@espf-academy.fr</span>
+                <span>contact@esepf-academy.fr</span>
               </li>
             </ul>
           </div>
