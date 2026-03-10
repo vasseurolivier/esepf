@@ -16,11 +16,17 @@ import {
 
 const navLinks = [
   { name: 'ACCUEIL', href: '/', active: true },
-  { name: 'CAMPUS', href: '/#campus' },
+  { name: 'CAMPUS', href: '#', hasDropdown: true },
   { name: 'FORMATIONS', href: '/#formations' },
   { name: 'FOOTBALL ACADEMY', href: '#', hasDropdown: true },
   { name: 'CAMPS', href: '/#news' },
   { name: 'CONTACT', href: '/#contact' },
+];
+
+const campusSubLinks = [
+  { name: 'Campus Evron', href: '/campus/evron' },
+  { name: 'Campus Sainte-Bazeilles', href: '/campus/sainte-bazeilles' },
+  { name: 'Campus Sainte-Tulle', href: '/campus/sainte-tulle' },
 ];
 
 const footballSubLinks = [
@@ -45,6 +51,12 @@ export function Header() {
 
   const schoolName = settings?.schoolName || "ESEPF";
   const logoUrl = settings?.logoUrl;
+
+  const getSubLinks = (name: string) => {
+    if (name === 'CAMPUS') return campusSubLinks;
+    if (name === 'FOOTBALL ACADEMY') return footballSubLinks;
+    return [];
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-md">
@@ -74,7 +86,7 @@ export function Header() {
             </span>
           </Link>
 
-          {/* Slogan (Center) - Hidden on mobile */}
+          {/* Slogan (Center) */}
           <div className="hidden lg:block">
             <h2 className="text-4xl font-serif italic text-black font-medium tracking-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
               L'excellence de la formation française
@@ -87,7 +99,6 @@ export function Header() {
               Nous rejoindre
             </Button>
             
-            {/* Language Selector Mockup */}
             <div className="hidden md:flex items-center space-x-2 bg-gray-100 px-3 py-2 rounded-lg border border-gray-200">
               <div className="w-6 h-6 rounded-full overflow-hidden border border-gray-300">
                 <img src="https://flagcdn.com/w40/fr.png" alt="FR" className="w-full h-full object-cover" />
@@ -125,7 +136,7 @@ export function Header() {
                     {link.name} <ChevronDown size={14} />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
-                    {footballSubLinks.map((sub) => (
+                    {getSubLinks(link.name).map((sub) => (
                       <DropdownMenuItem key={sub.name} asChild>
                         <Link 
                           href={sub.href}
@@ -170,7 +181,7 @@ export function Header() {
               <div key={link.name} className="space-y-2">
                 <span className="text-lg font-bold text-white/50 uppercase tracking-wider">{link.name}</span>
                 <div className="pl-4 flex flex-col space-y-2">
-                  {footballSubLinks.map((sub) => (
+                  {getSubLinks(link.name).map((sub) => (
                     <Link key={sub.name} href={sub.href} onClick={() => setIsOpen(false)} className="text-white font-medium hover:text-[#b8955d]">
                       {sub.name}
                     </Link>
