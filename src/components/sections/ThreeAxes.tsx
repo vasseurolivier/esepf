@@ -92,8 +92,8 @@ export function ThreeAxes() {
                 </div>
               </div>
 
-              {/* Axis 3: Langues Étrangères (Bottom) */}
-              <div className="absolute top-[82%] left-1/2 -translate-x-1/2 w-full max-w-4xl text-center z-30">
+              {/* Axis 3: Langues Étrangères (Bottom) - Moved up to top-[75%] */}
+              <div className="absolute top-[75%] left-1/2 -translate-x-1/2 w-full max-w-4xl text-center z-30">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-center gap-12 mb-8 w-full">
                     {/* Left Icon */}
@@ -129,7 +129,7 @@ export function ThreeAxes() {
               <svg className="absolute inset-0 w-full h-full -z-10 opacity-10" viewBox="0 0 1000 1100">
                 <line x1="300" y1="200" x2="450" y2="400" stroke="currentColor" strokeWidth="1" />
                 <line x1="700" y1="200" x2="550" y2="400" stroke="currentColor" strokeWidth="1" />
-                <line x1="500" y1="800" x2="500" y2="550" stroke="currentColor" strokeWidth="1" />
+                <line x1="500" y1="750" x2="500" y2="550" stroke="currentColor" strokeWidth="1" />
               </svg>
             </div>
 
