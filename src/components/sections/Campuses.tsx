@@ -3,28 +3,35 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { MapPin } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const campuses = [
   {
+    id: "evron",
     name: "Campus Evron",
     location: "Evron, Mayenne",
     image: "https://picsum.photos/seed/evron-campus/600/400",
-    hint: "school building"
+    hint: "school building",
+    href: "/campus/evron"
   },
   {
+    id: "sainte-bazeilles",
     name: "Campus Sainte-Bazeilles",
     location: "Sainte-Bazeilles, Lot-et-Garonne",
     image: "https://picsum.photos/seed/bazeilles-campus/600/400",
-    hint: "modern campus"
+    hint: "modern campus",
+    href: "/campus/sainte-bazeilles"
   },
   {
+    id: "sainte-tulle",
     name: "Campus Sainte-Tulle",
     location: "Sainte-Tulle, Alpes-de-Haute-Provence",
     image: "https://picsum.photos/seed/tulle-campus/600/400",
-    hint: "school campus"
+    hint: "school campus",
+    href: "/campus/sainte-tulle"
   }
 ];
 
@@ -61,8 +68,8 @@ export function Campuses() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {campuses.map((campus, idx) => (
               <ScrollReveal key={idx} delay={idx * 150}>
-                <div className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white">
-                  <div className="relative h-72 w-full overflow-hidden">
+                <Link href={campus.href} className="group relative block overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white">
+                  <div className="relative h-80 w-full overflow-hidden">
                     <Image
                       src={campus.image}
                       alt={campus.name}
@@ -74,12 +81,17 @@ export function Campuses() {
                   </div>
                   <div className="absolute bottom-0 left-0 p-8 text-white w-full">
                     <h3 className="text-2xl font-headline font-bold mb-2 group-hover:text-secondary transition-colors">{campus.name}</h3>
-                    <div className="flex items-center gap-2 text-white/80">
-                      <MapPin size={18} className="text-secondary" />
-                      <span className="text-sm font-medium">{campus.location}</span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-white/80">
+                        <MapPin size={18} className="text-secondary" />
+                        <span className="text-sm font-medium">{campus.location}</span>
+                      </div>
+                      <div className="bg-secondary text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ArrowRight size={16} />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </ScrollReveal>
             ))}
           </div>
