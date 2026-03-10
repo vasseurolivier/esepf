@@ -1,6 +1,7 @@
+
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, GraduationCap, Settings, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -34,8 +35,13 @@ const footballSubLinks = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const db = useFirestore();
   const { data: settings } = useDoc(db ? `settings/global` : null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const schoolName = settings?.schoolName || "ESEPF";
   const logoUrl = settings?.logoUrl;
@@ -111,26 +117,32 @@ export function Header() {
         <nav className="w-full flex">
           {navLinks.map((link) => (
             link.hasDropdown ? (
-              <DropdownMenu key={link.name}>
-                <DropdownMenuTrigger className={cn(
-                  "flex-1 flex items-center justify-center gap-1 text-xs font-bold text-white py-5 hover:bg-white/10 transition-colors focus:outline-none uppercase tracking-widest border-r border-white/10",
-                  link.active && "bg-[#b8955d]"
-                )}>
+              mounted ? (
+                <DropdownMenu key={link.name}>
+                  <DropdownMenuTrigger className={cn(
+                    "flex-1 flex items-center justify-center gap-1 text-xs font-bold text-white py-5 hover:bg-white/10 transition-colors focus:outline-none uppercase tracking-widest border-r border-white/10",
+                    link.active && "bg-[#b8955d]"
+                  )}>
+                    {link.name} <ChevronDown size={14} />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
+                    {footballSubLinks.map((sub) => (
+                      <DropdownMenuItem key={sub.name} asChild>
+                        <Link 
+                          href={sub.href}
+                          className="text-white hover:bg-[#b8955d] hover:text-white cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider"
+                        >
+                          {sub.name}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <div key={link.name} className="flex-1 flex items-center justify-center gap-1 text-xs font-bold text-white py-5 border-r border-white/10 uppercase tracking-widest">
                   {link.name} <ChevronDown size={14} />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
-                  {footballSubLinks.map((sub) => (
-                    <DropdownMenuItem key={sub.name} asChild>
-                      <Link 
-                        href={sub.href}
-                        className="text-white hover:bg-[#b8955d] hover:text-white cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider"
-                      >
-                        {sub.name}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                </div>
+              )
             ) : (
               <Link
                 key={link.name}
