@@ -1,17 +1,20 @@
+
 "use client";
 
 import React from 'react';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Trophy, Users, Timer, Target } from 'lucide-react';
+import { Trophy, Users, GraduationCap, Route, HeartPulse, Globe, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const academyFeatures = [
-  { icon: <Timer className="text-secondary" />, title: "Horaires Aménagés", desc: "Scolarité le matin, entraînements intensifs l'après-midi." },
-  { icon: <Users className="text-secondary" />, title: "Staff Professionnel", desc: "Entraîneurs diplômés UEFA, préparateurs physiques et kinés." },
-  { icon: <Target className="text-secondary" />, title: "Suivi Individuel", desc: "Analyse vidéo et accompagnement mental personnalisé." },
-  { icon: <Trophy className="text-secondary" />, title: "Détection Pro", desc: "Passerelles avec les plus grands centres de formation européens." },
+  { icon: <Trophy className="text-secondary" />, title: "Compétition Officielle", desc: "Immersion dans les championnats nationaux français." },
+  { icon: <GraduationCap className="text-secondary" />, title: "Sport-Études", desc: "Équilibre parfait entre réussite scolaire et performance." },
+  { icon: <Route className="text-secondary" />, title: "Parcours Joueur", desc: "Suivi personnalisé de la détection au monde pro." },
+  { icon: <HeartPulse className="text-secondary" />, title: "Accompagnement", desc: "Soutien physique et mental de haut niveau." },
+  { icon: <Globe className="text-secondary" />, title: "Réseau de Clubs", desc: "Partenariats exclusifs avec des clubs européens." },
+  { icon: <Briefcase className="text-secondary" />, title: "Métiers du Sport", desc: "Orientation vers les carrières du management sportif." },
 ];
 
 export function FootballAcademy() {
@@ -32,10 +35,12 @@ export function FootballAcademy() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
               {academyFeatures.map((feature, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="mt-1">{feature.icon}</div>
+                <div key={i} className="flex items-start gap-4 p-4 rounded-2xl hover:bg-muted/30 transition-colors group">
+                  <div className="mt-1 transform group-hover:scale-110 transition-transform">
+                    {feature.icon}
+                  </div>
                   <div>
-                    <h4 className="font-bold text-primary mb-1">{feature.title}</h4>
+                    <h4 className="font-bold text-primary mb-1 uppercase text-xs tracking-wider">{feature.title}</h4>
                     <p className="text-sm text-muted-foreground">{feature.desc}</p>
                   </div>
                 </div>
@@ -57,11 +62,11 @@ export function FootballAcademy() {
                 data-ai-hint={footballImg.imageHint}
               />
             )}
-            <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-sm p-6 rounded-2xl border-l-8 border-secondary">
-              <p className="text-primary font-bold italic">
+            <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-sm p-6 rounded-2xl border-l-8 border-secondary">
+              <p className="text-white font-bold italic">
                 "Plus qu'une école, une rampe de lancement vers le professionnalisme."
               </p>
-              <p className="text-sm text-muted-foreground mt-2">— Directeur Sportif, ESEPF Academy</p>
+              <p className="text-sm text-white/70 mt-2">— Direction Technique, ESEPF Academy</p>
             </div>
           </div>
         </ScrollReveal>

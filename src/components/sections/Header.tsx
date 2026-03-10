@@ -3,17 +3,32 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, GraduationCap, Settings } from 'lucide-react';
+import { Menu, X, GraduationCap, Settings, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useDoc, useFirestore } from '@/firebase';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navLinks = [
   { name: 'Accueil', href: '/' },
   { name: 'Campus', href: '#campus' },
   { name: 'Formations', href: '#formations' },
-  { name: 'Academy Football', href: '#football' },
   { name: 'Vie Scolaire', href: '#vie-scolaire' },
+];
+
+const footballSubLinks = [
+  { name: 'Programme de Football', href: '#football' },
+  { name: 'Compétition Officielle Française', href: '#football' },
+  { name: "Qu'est-ce que le Sport-Études ?", href: '#football' },
+  { name: 'Le Parcours du Joueur', href: '#football' },
+  { name: 'Accompagnement Physique et Mental', href: '#football' },
+  { name: 'Notre Réseau de Clubs', href: '#football' },
+  { name: 'Les Métiers du Sport', href: '#football' },
 ];
 
 export function Header() {
@@ -60,6 +75,26 @@ export function Header() {
                 {link.name}
               </Link>
             ))}
+
+            {/* Football Academy Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-secondary transition-colors focus:outline-none">
+                Football Academy <ChevronDown size={14} />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-black border-white/10 p-2 min-w-[280px]">
+                {footballSubLinks.map((sub) => (
+                  <DropdownMenuItem key={sub.name} asChild>
+                    <Link 
+                      href={sub.href}
+                      className="text-white hover:bg-secondary hover:text-white cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider"
+                    >
+                      {sub.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Link href="/admin">
               <Button variant="ghost" className="text-white hover:text-secondary p-2">
                 <Settings size={20} />
@@ -89,7 +124,7 @@ export function Header() {
       <div
         className={cn(
           "lg:hidden absolute w-full bg-primary border-t border-white/10 transition-all duration-300 ease-in-out",
-          isOpen ? "max-h-[600px] opacity-100 py-6" : "max-h-0 opacity-0 overflow-hidden"
+          isOpen ? "max-h-[800px] opacity-100 py-6" : "max-h-0 opacity-0 overflow-hidden"
         )}
       >
         <div className="flex flex-col space-y-4 px-6">
@@ -103,6 +138,19 @@ export function Header() {
               {link.name}
             </Link>
           ))}
+          <div className="pt-2 pb-2 border-t border-white/10">
+            <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Football Academy</p>
+            {footballSubLinks.map((sub) => (
+              <Link
+                key={sub.name}
+                href={sub.href}
+                onClick={() => setIsOpen(false)}
+                className="block py-2 text-sm text-white/70 hover:text-white"
+              >
+                {sub.name}
+              </Link>
+            ))}
+          </div>
           <Button className="w-full rounded-[30px] bg-secondary hover:bg-secondary/90 text-white font-bold py-6">
             S'INSCRIRE
           </Button>
