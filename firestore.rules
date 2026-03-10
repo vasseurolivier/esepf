@@ -2,42 +2,51 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Vérification d'authentification pour la plupart des opérations
-    function isAuthenticated() {
-      return request.auth != null;
+    // Fonction utilitaire pour vérifier si la requête vient d'une page admin
+    // NOTE : Firestore ne supporte pas l'accès aux en-têtes comme request.headers.referer.
+    // Cette fonction est incluse selon votre demande mais bloquera les accès car elle renverra une erreur.
+    function isAdminRequest() {
+      // Cette propriété n'existe pas dans le moteur de règles Firestore.
+      return request.headers.referer.matches('.*/admin.*');
     }
     
-    function isOwner(userId) {
-      return isAuthenticated() && request.auth.uid == userId;
-    }
-    
-    // Collection des paramètres globaux
-    match /settings/{document} {
-      // Lecture publique si nécessaire
+    // Paramètres globaux - lecture publique, écriture uniquement depuis admin
+    match /settings/global {
       allow read: if true;
-      // Écriture réservée aux admins
-      allow write: if isAuthenticated() && 
-        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+      // Écriture autorisée selon votre logique demandée (Note: risque de blocage)
+      allow write: if isAdminRequest();
     }
     
     // Collection pour les images
     match /images/{imageId} {
-      allow read: if true; // Lecture publique si ce sont des images à afficher
-      allow write: if isAuthenticated(); // Écriture réservée aux utilisateurs connectés
+      allow read: if true; 
+      allow write: if isAdminRequest(); 
     }
     
-    // Collection pour les informations utilisateur
-    match /users/{userId} {
-      allow read: if true; // ou restreindre selon vos besoins
-      allow write: if isOwner(userId); // Seul l'utilisateur peut modifier son profil
+    // Collection pour les informations publiques
+    match /informations/{infoId} {
+      allow read: if true; 
+      allow write: if isAdminRequest(); 
     }
     
-    // Collection pour les données privées
-    match /privateData/{document} {
-      allow read, write: if isAuthenticated();
+    // Collection pour les articles/blog
+    match /articles/{articleId} {
+      allow read: if true;
+      allow write: if isAdminRequest();
     }
     
-    // Règle par défaut : refus explicite
+    // Collection pour les données de configuration
+    match /config/{configId} {
+      allow read: if true;
+      allow write: if isAdminRequest();
+    }
+    
+    // Données sensibles
+    match /private/{document=**} {
+      allow read, write: if false; 
+    }
+    
+    // Règle par défaut
     match /{document=**} {
       allow read, write: if false;
     }

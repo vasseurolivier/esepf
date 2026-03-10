@@ -30,6 +30,28 @@
           "type": "string"
         }
       }
+    },
+    "Information": {
+      "title": "Information Publique",
+      "description": "Annonces ou informations générales affichées sur le site.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Article": {
+      "title": "Article de Blog",
+      "description": "Actualités et articles publiés par l'établissement.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "content": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" }
+      }
     }
   },
   "auth": {
@@ -43,6 +65,18 @@
     "/users/{userId}": {
       "schema": "UserProfile",
       "description": "Données des utilisateurs pour la gestion des rôles."
+    },
+    "/informations/{infoId}": {
+      "schema": "Information",
+      "description": "Collection d'informations publiques."
+    },
+    "/articles/{articleId}": {
+      "schema": "Article",
+      "description": "Collection d'articles de blog."
+    },
+    "/config/{configId}": {
+      "schema": { "type": "object", "properties": {} },
+      "description": "Données de configuration diverses."
     }
   }
 }
