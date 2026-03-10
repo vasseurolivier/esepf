@@ -1,5 +1,4 @@
 import { config } from 'dotenv';
 config();
 
-import '@/ai/flows/admin-content-summarizer.ts';
-import '@/ai/flows/generate-logo.ts';
+// Les flux IA ont été supprimés à la demande de l'utilisateur.
