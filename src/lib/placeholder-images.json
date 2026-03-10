@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-packaging",
+      "description": "Industrial printing and packaging machinery",
+      "imageUrl": "https://picsum.photos/seed/esepf1/1920/1080",
+      "imageHint": "industrial printing"
+    },
+    {
+      "id": "program-bachelor",
+      "description": "Packaging design student working on a prototype",
+      "imageUrl": "https://picsum.photos/seed/esepf2/600/400",
+      "imageHint": "packaging design"
+    },
+    {
+      "id": "program-master",
+      "description": "Quality control in packaging production",
+      "imageUrl": "https://picsum.photos/seed/esepf3/600/400",
+      "imageHint": "quality control"
+    },
+    {
+      "id": "program-pro",
+      "description": "Professional training session for industrial finishing",
+      "imageUrl": "https://picsum.photos/seed/esepf4/600/400",
+      "imageHint": "industrial training"
+    },
+    {
+      "id": "news-1",
+      "description": "Graduation ceremony at the packaging school",
+      "imageUrl": "https://picsum.photos/seed/esepf5/600/400",
+      "imageHint": "graduation ceremony"
+    },
+    {
+      "id": "news-2",
+      "description": "New partnership with industrial leaders",
+      "imageUrl": "https://picsum.photos/seed/esepf6/600/400",
+      "imageHint": "business meeting"
+    }
+  ]
 }
