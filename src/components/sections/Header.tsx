@@ -106,14 +106,14 @@ export function Header() {
         </div>
       </div>
 
-      {/* Bottom Bar (Dark Menu) */}
-      <div className="hidden lg:block bg-[#1a1a1a]">
-        <nav className="container mx-auto flex">
+      {/* Bottom Bar (Dark Menu) - Full Width */}
+      <div className="hidden lg:block bg-[#1a1a1a] w-full border-t border-white/5">
+        <nav className="w-full flex">
           {navLinks.map((link) => (
             link.hasDropdown ? (
               <DropdownMenu key={link.name}>
                 <DropdownMenuTrigger className={cn(
-                  "flex items-center gap-1 text-xs font-bold text-white px-8 py-4 hover:bg-white/10 transition-colors focus:outline-none uppercase tracking-widest border-r border-white/5",
+                  "flex-1 flex items-center justify-center gap-1 text-xs font-bold text-white py-5 hover:bg-white/10 transition-colors focus:outline-none uppercase tracking-widest border-r border-white/10",
                   link.active && "bg-[#b8955d]"
                 )}>
                   {link.name} <ChevronDown size={14} />
@@ -136,7 +136,7 @@ export function Header() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-xs font-bold text-white px-8 py-4 hover:bg-white/10 transition-colors uppercase tracking-widest border-r border-white/5",
+                  "flex-1 flex items-center justify-center text-xs font-bold text-white py-5 hover:bg-white/10 transition-colors uppercase tracking-widest border-r border-white/10 last:border-r-0",
                   link.active && "bg-[#b8955d]"
                 )}
               >
