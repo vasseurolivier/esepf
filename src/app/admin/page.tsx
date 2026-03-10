@@ -11,10 +11,11 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useFirestore, useDoc, FirebaseClientProvider } from '@/firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, ArrowLeft } from 'lucide-react';
+import { Save, Loader2, ArrowLeft, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
+import { AIPoweredSummary } from '@/components/admin/AIPoweredSummary';
 
 function AdminContent() {
   const db = useFirestore();
@@ -36,7 +37,14 @@ function AdminContent() {
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!db) return;
+    if (!db) {
+      toast({
+        variant: "destructive",
+        title: "Erreur de connexion",
+        description: "La base de données n'est pas initialisée.",
+      });
+      return;
+    }
 
     setIsSaving(true);
     const settingsRef = doc(db, 'settings', 'global');
@@ -46,6 +54,7 @@ function AdminContent() {
       updatedAt: new Date().toISOString()
     };
     
+    // Mutation non-bloquante selon les guidelines
     setDoc(settingsRef, data, { merge: true })
       .then(() => {
         toast({
@@ -61,11 +70,6 @@ function AdminContent() {
           requestResourceData: data,
         });
         errorEmitter.emit('permission-error', permissionError);
-        toast({
-          variant: "destructive",
-          title: "Erreur de sauvegarde",
-          description: "Vérifiez vos permissions ou la validité du lien.",
-        });
         setIsSaving(false);
       });
   };
@@ -82,9 +86,9 @@ function AdminContent() {
     <main className="min-h-screen bg-muted/30">
       <Header />
       <div className="container mx-auto px-4 py-16">
-        <div className="max-w-2xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h1 className="text-4xl font-headline font-bold text-primary">Espace Administration</h1>
+        <div className="max-w-3xl mx-auto space-y-8">
+          <div className="flex items-center justify-between">
+            <h1 className="text-4xl font-headline font-bold text-primary">Administration</h1>
             <Link href="/">
               <Button variant="outline" size="sm" className="rounded-full">
                 <ArrowLeft size={16} className="mr-2" /> Retour au site
@@ -94,9 +98,12 @@ function AdminContent() {
           
           <Card className="border-none shadow-xl rounded-3xl overflow-hidden">
             <CardHeader className="bg-primary text-white p-8">
-              <CardTitle className="text-2xl">Identité Visuelle</CardTitle>
+              <CardTitle className="text-2xl flex items-center gap-2">
+                <ImageIcon size={24} className="text-secondary" />
+                Identité Visuelle
+              </CardTitle>
               <CardDescription className="text-white/70">
-                Ces modifications seront appliquées instantanément à tout l'établissement ESEPF.
+                Personnalisez le nom et le logo qui apparaîtront sur tout le site ESEPF.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-8">
@@ -108,34 +115,34 @@ function AdminContent() {
                     value={schoolName} 
                     onChange={(e) => setSchoolName(e.target.value)}
                     placeholder="Ex: ESEPF"
-                    className="rounded-xl"
+                    className="rounded-xl h-12"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="logoUrl" className="font-bold text-primary">Lien direct vers votre Logo (URL)</Label>
+                  <Label htmlFor="logoUrl" className="font-bold text-primary">URL du Logo (Lien direct)</Label>
                   <Input 
                     id="logoUrl" 
                     value={logoUrl} 
                     onChange={(e) => setLogoUrl(e.target.value)}
-                    placeholder="https://votre-site.com/logo.png"
-                    className="rounded-xl"
+                    placeholder="https://votre-image.com/logo.png"
+                    className="rounded-xl h-12"
                   />
-                  <p className="text-xs text-muted-foreground mt-1">
-                    Utilisez une URL d'image publique (PNG, JPG ou SVG).
+                  <p className="text-xs text-muted-foreground">
+                    Utilisez un lien direct vers une image publique (PNG, JPG, SVG).
                   </p>
                 </div>
 
                 {logoUrl && (
-                  <div className="p-6 bg-muted/50 rounded-xl border-2 border-dashed border-muted flex flex-col items-center">
-                    <Label className="mb-4 text-xs uppercase font-bold text-muted-foreground">Aperçu du nouveau logo :</Label>
-                    <div className="relative h-24 w-full flex justify-center items-center">
+                  <div className="p-6 bg-white rounded-xl border-2 border-dashed border-muted flex flex-col items-center">
+                    <Label className="mb-4 text-xs uppercase font-bold text-muted-foreground">Aperçu du logo :</Label>
+                    <div className="relative h-20 w-full flex justify-center items-center">
                       <img 
                         src={logoUrl} 
                         alt="Preview" 
                         className="max-h-full max-w-full object-contain"
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src = 'https://placehold.co/200x100?text=Erreur+Image';
+                          (e.target as HTMLImageElement).src = 'https://placehold.co/200x100?text=Logo+Invalide';
                         }}
                       />
                     </div>
@@ -145,14 +152,16 @@ function AdminContent() {
                 <Button 
                   type="submit" 
                   disabled={isSaving}
-                  className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold py-6 rounded-xl transition-all shadow-lg"
+                  className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold h-14 rounded-xl transition-all shadow-lg text-lg"
                 >
                   {isSaving ? <Loader2 className="animate-spin mr-2" /> : <Save className="mr-2" size={20} />}
-                  Enregistrer définitivement
+                  Enregistrer les modifications
                 </Button>
               </form>
             </CardContent>
           </Card>
+
+          <AIPoweredSummary />
         </div>
       </div>
       <Footer />
