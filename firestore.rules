@@ -1,15 +1,43 @@
-
 rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Permet l'accès complet au document global pour la démo
-    // Dans une version de production, on ajouterait 'if request.auth != null'
-    match /settings/global {
-      allow read, write: if true;
+    // Vérification d'authentification pour la plupart des opérations
+    function isAuthenticated() {
+      return request.auth != null;
     }
     
-    // Règle par défaut : accès refusé pour tout le reste
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Collection des paramètres globaux
+    match /settings/{document} {
+      // Lecture publique si nécessaire
+      allow read: if true;
+      // Écriture réservée aux admins
+      allow write: if isAuthenticated() && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // Collection pour les images
+    match /images/{imageId} {
+      allow read: if true; // Lecture publique si ce sont des images à afficher
+      allow write: if isAuthenticated(); // Écriture réservée aux utilisateurs connectés
+    }
+    
+    // Collection pour les informations utilisateur
+    match /users/{userId} {
+      allow read: if true; // ou restreindre selon vos besoins
+      allow write: if isOwner(userId); // Seul l'utilisateur peut modifier son profil
+    }
+    
+    // Collection pour les données privées
+    match /privateData/{document} {
+      allow read, write: if isAuthenticated();
+    }
+    
+    // Règle par défaut : refus explicite
     match /{document=**} {
       allow read, write: if false;
     }

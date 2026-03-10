@@ -1,4 +1,3 @@
-
 {
   "entities": {
     "AppSettings": {
@@ -16,6 +15,21 @@
         }
       },
       "required": ["schoolName"]
+    },
+    "UserProfile": {
+      "title": "Profil Utilisateur",
+      "description": "Données de profil incluant le rôle administratif.",
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": ["admin", "editor", "user"],
+          "description": "Le niveau d'accès de l'utilisateur."
+        },
+        "displayName": {
+          "type": "string"
+        }
+      }
     }
   },
   "auth": {
@@ -25,6 +39,10 @@
     "/settings/global": {
       "schema": "AppSettings",
       "description": "Document unique contenant les réglages globaux du site."
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Données des utilisateurs pour la gestion des rôles."
     }
   }
 }
