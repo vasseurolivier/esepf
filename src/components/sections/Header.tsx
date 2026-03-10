@@ -16,21 +16,21 @@ import {
 
 const navLinks = [
   { name: 'ACCUEIL', href: '/', active: true },
-  { name: 'CAMPUS', href: '#campus' },
-  { name: 'FORMATIONS', href: '#formations' },
-  { name: 'FOOTBALL ACADEMY', href: '#football', hasDropdown: true },
-  { name: 'CAMPS', href: '#news' },
-  { name: 'CONTACT', href: '#contact' },
+  { name: 'CAMPUS', href: '/#campus' },
+  { name: 'FORMATIONS', href: '/#formations' },
+  { name: 'FOOTBALL ACADEMY', href: '#', hasDropdown: true },
+  { name: 'CAMPS', href: '/#news' },
+  { name: 'CONTACT', href: '/#contact' },
 ];
 
 const footballSubLinks = [
-  { name: 'Programme de Football', href: '#football' },
-  { name: 'Compétition Officielle Française', href: '#football' },
-  { name: "Qu'est-ce que le Sport-Études ?", href: '#football' },
-  { name: 'Le Parcours du Joueur', href: '#football' },
-  { name: 'Accompagnement Physique et Mental', href: '#football' },
-  { name: 'Notre Réseau de Clubs', href: '#football' },
-  { name: 'Les Métiers du Sport', href: '#football' },
+  { name: 'Programme de Football', href: '/football-academy/programme' },
+  { name: 'Compétition Officielle Française', href: '/football-academy/competition' },
+  { name: "Qu'est-ce que le Sport-Études ?", href: '/football-academy/sport-etudes' },
+  { name: 'Le Parcours du Joueur', href: '/football-academy/parcours' },
+  { name: 'Accompagnement Physique et Mental', href: '/football-academy/accompagnement' },
+  { name: 'Notre Réseau de Clubs', href: '/football-academy/reseau' },
+  { name: 'Les Métiers du Sport', href: '/football-academy/metiers' },
 ];
 
 export function Header() {
@@ -120,8 +120,7 @@ export function Header() {
               mounted ? (
                 <DropdownMenu key={link.name}>
                   <DropdownMenuTrigger className={cn(
-                    "flex-1 flex items-center justify-center gap-1 text-xs font-bold text-white py-5 hover:bg-white/10 transition-colors focus:outline-none uppercase tracking-widest border-r border-white/10",
-                    link.active && "bg-[#b8955d]"
+                    "flex-1 flex items-center justify-center gap-1 text-xs font-bold text-white py-5 hover:bg-white/10 transition-colors focus:outline-none uppercase tracking-widest border-r border-white/10"
                   )}>
                     {link.name} <ChevronDown size={14} />
                   </DropdownMenuTrigger>
@@ -148,8 +147,7 @@ export function Header() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "flex-1 flex items-center justify-center text-xs font-bold text-white py-5 hover:bg-white/10 transition-colors uppercase tracking-widest border-r border-white/10 last:border-r-0",
-                  link.active && "bg-[#b8955d]"
+                  "flex-1 flex items-center justify-center text-xs font-bold text-white py-5 hover:bg-white/10 transition-colors uppercase tracking-widest border-r border-white/10 last:border-r-0"
                 )}
               >
                 {link.name}
@@ -168,17 +166,27 @@ export function Header() {
       >
         <div className="flex flex-col space-y-4 px-6">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className={cn(
-                "text-lg font-bold text-white hover:text-[#b8955d] uppercase tracking-wider",
-                link.active && "text-[#b8955d]"
-              )}
-            >
-              {link.name}
-            </Link>
+            link.hasDropdown ? (
+              <div key={link.name} className="space-y-2">
+                <span className="text-lg font-bold text-white/50 uppercase tracking-wider">{link.name}</span>
+                <div className="pl-4 flex flex-col space-y-2">
+                  {footballSubLinks.map((sub) => (
+                    <Link key={sub.name} href={sub.href} onClick={() => setIsOpen(false)} className="text-white font-medium hover:text-[#b8955d]">
+                      {sub.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-lg font-bold text-white hover:text-[#b8955d] uppercase tracking-wider"
+              >
+                {link.name}
+              </Link>
+            )
           ))}
           <Button className="w-full rounded-md bg-[#e31e24] text-white font-bold py-6 uppercase tracking-widest">
             Nous rejoindre
