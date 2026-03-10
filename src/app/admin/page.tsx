@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -19,7 +18,7 @@ import { AIPoweredSummary } from '@/components/admin/AIPoweredSummary';
 
 function AdminContent() {
   const db = useFirestore();
-  const { data: settings, loading } = useDoc(db ? `settings/global` : null);
+  const { data: settings, loading } = useDoc(db, 'settings/global');
   const { toast } = useToast();
   
   const [schoolName, setSchoolName] = useState('');
@@ -28,12 +27,10 @@ function AdminContent() {
 
   useEffect(() => {
     if (settings) {
-      setSchoolName(settings.schoolName || 'ESEPF');
+      setSchoolName(settings.schoolName || '');
       setLogoUrl(settings.logoUrl || '');
-    } else if (!loading) {
-      setSchoolName('ESEPF');
     }
-  }, [settings, loading]);
+  }, [settings]);
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,7 +38,7 @@ function AdminContent() {
       toast({
         variant: "destructive",
         title: "Erreur de connexion",
-        description: "La base de données n'est pas initialisée.",
+        description: "La base de données n'est pas prête.",
       });
       return;
     }
@@ -49,17 +46,16 @@ function AdminContent() {
     setIsSaving(true);
     const settingsRef = doc(db, 'settings', 'global');
     const data = {
-      schoolName: schoolName || 'ESEPF',
-      logoUrl: logoUrl,
+      schoolName: schoolName.trim() || 'ESEPF',
+      logoUrl: logoUrl.trim(),
       updatedAt: new Date().toISOString()
     };
     
-    // Mutation non-bloquante selon les guidelines
     setDoc(settingsRef, data, { merge: true })
       .then(() => {
         toast({
-          title: "Succès",
-          description: "Les paramètres ont été sauvegardés durablement.",
+          title: "Succès !",
+          description: "L'identité de l'établissement a été mise à jour.",
         });
         setIsSaving(false);
       })
@@ -103,7 +99,7 @@ function AdminContent() {
                 Identité Visuelle
               </CardTitle>
               <CardDescription className="text-white/70">
-                Personnalisez le nom et le logo qui apparaîtront sur tout le site ESEPF.
+                Personnalisez le nom et le logo de l'institution.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-8">
@@ -116,33 +112,31 @@ function AdminContent() {
                     onChange={(e) => setSchoolName(e.target.value)}
                     placeholder="Ex: ESEPF"
                     className="rounded-xl h-12"
+                    required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="logoUrl" className="font-bold text-primary">URL du Logo (Lien direct)</Label>
+                  <Label htmlFor="logoUrl" className="font-bold text-primary">URL du Logo (Lien direct vers l'image)</Label>
                   <Input 
                     id="logoUrl" 
                     value={logoUrl} 
                     onChange={(e) => setLogoUrl(e.target.value)}
-                    placeholder="https://votre-image.com/logo.png"
+                    placeholder="https://votre-site.com/logo.png"
                     className="rounded-xl h-12"
                   />
-                  <p className="text-xs text-muted-foreground">
-                    Utilisez un lien direct vers une image publique (PNG, JPG, SVG).
-                  </p>
                 </div>
 
                 {logoUrl && (
                   <div className="p-6 bg-white rounded-xl border-2 border-dashed border-muted flex flex-col items-center">
-                    <Label className="mb-4 text-xs uppercase font-bold text-muted-foreground">Aperçu du logo :</Label>
-                    <div className="relative h-20 w-full flex justify-center items-center">
+                    <Label className="mb-4 text-xs uppercase font-bold text-muted-foreground">Aperçu :</Label>
+                    <div className="relative h-24 w-full flex justify-center items-center">
                       <img 
                         src={logoUrl} 
-                        alt="Preview" 
+                        alt="Logo Preview" 
                         className="max-h-full max-w-full object-contain"
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src = 'https://placehold.co/200x100?text=Logo+Invalide';
+                          (e.target as HTMLImageElement).src = 'https://placehold.co/200x100?text=Image+Non+Trouvée';
                         }}
                       />
                     </div>
@@ -155,7 +149,7 @@ function AdminContent() {
                   className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold h-14 rounded-xl transition-all shadow-lg text-lg"
                 >
                   {isSaving ? <Loader2 className="animate-spin mr-2" /> : <Save className="mr-2" size={20} />}
-                  Enregistrer les modifications
+                  Sauvegarder les réglages
                 </Button>
               </form>
             </CardContent>
