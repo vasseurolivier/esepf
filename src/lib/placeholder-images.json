@@ -29,6 +29,12 @@
       "description": "Projets professionnels STMG",
       "imageUrl": "https://picsum.photos/seed/stmg/600/400",
       "imageHint": "business teamwork"
+    },
+    {
+      "id": "campus-panoramic",
+      "description": "Vue panoramique des infrastructures de l'ESPF",
+      "imageUrl": "https://picsum.photos/seed/campus-pan/1920/600",
+      "imageHint": "modern architecture"
     }
   ]
 }
