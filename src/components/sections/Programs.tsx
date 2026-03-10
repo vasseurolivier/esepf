@@ -13,24 +13,24 @@ const programs = [
     title: 'Le Collège',
     subtitle: 'De la 6ème à la 3ème',
     image: 'college-life',
-    desc: 'Un accompagnement personnalisé pour consolider les fondamentaux et développer l\'autonomie.',
-    features: ['Classes à effectifs réduits', 'Aide aux devoirs', 'Activités sportives et culturelles']
+    desc: 'Un accompagnement personnalisé pour consolider les fondamentaux et développer l\'autonomie des jeunes élèves.',
+    features: ['Classes à effectifs réduits', 'Aide aux devoirs intégrée', 'Éveil aux langues et à la culture']
   },
   {
-    id: 'bac-gen',
-    title: 'Bac Général',
-    subtitle: 'Lycée Classique',
+    id: 'lycee',
+    title: 'Le Lycée',
+    subtitle: 'Bac Général & STMG',
     image: 'bac-general',
-    desc: 'Un parcours riche en spécialités pour préparer les élèves aux concours et aux grandes écoles.',
-    features: ['12 spécialités au choix', 'Option Section Européenne', 'Préparation aux concours']
+    desc: 'Une préparation d\'excellence pour le baccalauréat et l\'enseignement supérieur, avec un large choix de spécialités.',
+    features: ['12 spécialités au choix', 'Bac Technologique STMG', 'Parcours d\'orientation individualisé']
   },
   {
-    id: 'bac-stmg',
-    title: 'Bac STMG',
-    subtitle: 'Management et Gestion',
-    image: 'bac-stmg',
-    desc: 'Une formation technologique axée sur le monde de l\'entreprise et les enjeux numériques.',
-    features: ['Immersion professionnelle', 'Management & Marketing', 'Gestion & Finance']
+    id: 'football',
+    title: 'Academy Football',
+    subtitle: 'Élite Sport Études',
+    image: 'football-academy',
+    desc: 'Un programme unique en France alliant scolarité de haut niveau et entraînements intensifs avec des coachs diplômés UEFA.',
+    features: ['Horaires aménagés', 'Staff technique pro', 'Détection et immersion en club']
   }
 ];
 
@@ -42,7 +42,7 @@ export function Programs() {
           <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">Nos Formations</h2>
           <div className="w-20 h-1.5 bg-secondary mx-auto rounded-full" />
           <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-            Découvrez nos parcours adaptés aux ambitions de chaque élève, encadrés par une équipe pédagogique dévouée.
+            Trois piliers d'excellence pour construire l'avenir de nos élèves, du premier cycle secondaire à l'élite sportive.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export function Programs() {
                         ))}
                       </ul>
                       <button className="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg">
-                        En savoir plus sur le programme
+                        Détails de la formation
                       </button>
                     </div>
                   </div>
