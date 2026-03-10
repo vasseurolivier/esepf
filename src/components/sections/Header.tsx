@@ -17,7 +17,7 @@ import {
 const navLinks = [
   { name: 'ACCUEIL', href: '/', active: true },
   { name: 'CAMPUS', href: '#', hasDropdown: true },
-  { name: 'FORMATIONS', href: '/#formations' },
+  { name: 'FORMATIONS', href: '#', hasDropdown: true },
   { name: 'FOOTBALL ACADEMY', href: '#', hasDropdown: true },
   { name: 'CAMPS', href: '/#news' },
   { name: 'CONTACT', href: '/#contact' },
@@ -27,6 +27,14 @@ const campusSubLinks = [
   { name: 'Campus Evron', href: '/campus/evron' },
   { name: 'Campus Sainte-Bazeilles', href: '/campus/sainte-bazeilles' },
   { name: 'Campus Sainte-Tulle', href: '/campus/sainte-tulle' },
+];
+
+const formationsSubLinks = [
+  { name: "CLASSE D'INTEGRATION (élève allophone)", href: '/formations/integration' },
+  { name: 'COLLÈGE ( 11 – 15 ans)', href: '/formations/college' },
+  { name: 'LYCÉE ( 15-18 ans)', href: '/formations/lycee' },
+  { name: 'LANGUES ÉTRANGÈRES', href: '/formations/langues' },
+  { name: 'BACCALAUREAT AMERICAIN', href: '/formations/bac-americain' },
 ];
 
 const footballSubLinks = [
@@ -54,6 +62,7 @@ export function Header() {
 
   const getSubLinks = (name: string) => {
     if (name === 'CAMPUS') return campusSubLinks;
+    if (name === 'FORMATIONS') return formationsSubLinks;
     if (name === 'FOOTBALL ACADEMY') return footballSubLinks;
     return [];
   };
@@ -63,7 +72,6 @@ export function Header() {
       {/* Top Bar (White) */}
       <div className="bg-white py-4 border-b border-gray-100">
         <div className="container mx-auto px-4 flex items-center justify-between">
-          {/* Logo & School Name */}
           <Link href="/" className="flex items-center space-x-3">
             <div className="relative h-14 w-14 flex items-center justify-center">
               {logoUrl ? (
@@ -86,14 +94,12 @@ export function Header() {
             </span>
           </Link>
 
-          {/* Slogan (Center) */}
           <div className="hidden lg:block">
             <h2 className="text-4xl font-serif italic text-black font-medium tracking-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
               L'excellence de la formation française
             </h2>
           </div>
 
-          {/* Right Actions */}
           <div className="flex items-center space-x-4">
             <Button className="hidden sm:flex rounded-md bg-[#e31e24] hover:bg-[#c41a1f] text-white font-bold px-6 py-6 text-base border-none shadow-sm uppercase tracking-wider">
               Nous rejoindre
@@ -123,7 +129,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Bottom Bar (Dark Menu) - Full Width */}
       <div className="hidden lg:block bg-[#1a1a1a] w-full border-t border-white/5">
         <nav className="w-full flex">
           {navLinks.map((link) => (
@@ -168,7 +173,6 @@ export function Header() {
         </nav>
       </div>
 
-      {/* Mobile Nav (Expanded) */}
       <div
         className={cn(
           "lg:hidden absolute w-full bg-[#1a1a1a] border-t border-white/10 transition-all duration-300 ease-in-out z-50",
