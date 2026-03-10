@@ -1,7 +1,7 @@
 
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -35,6 +35,16 @@ const programs = [
 ];
 
 export function Programs() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <section id="formations" className="py-24 bg-background min-h-[600px]"></section>;
+  }
+
   return (
     <section id="formations" className="py-24 bg-background">
       <div className="container mx-auto px-4">

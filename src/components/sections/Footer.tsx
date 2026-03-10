@@ -1,6 +1,7 @@
+
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, GraduationCap } from 'lucide-react';
 import { useDoc, useFirestore } from '@/firebase';
@@ -9,6 +10,11 @@ export function Footer() {
   const db = useFirestore();
   const { data: settings } = useDoc(db ? `settings/global` : null);
   const schoolName = settings?.schoolName || "ESEPF";
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="bg-primary text-white pt-20 pb-10">
@@ -77,7 +83,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-sm text-white/50">
-          <p>© {new Date().getFullYear()} {schoolName} - Tous droits réservés.</p>
+          <p>© {currentYear || '2025'} {schoolName} - Tous droits réservés.</p>
         </div>
       </div>
     </footer>
