@@ -92,7 +92,7 @@ export function ThreeAxes() {
                 </div>
               </div>
 
-              {/* Axis 3: Langues Étrangères (Bottom) - Re-positioned much lower */}
+              {/* Axis 3: Langues Étrangères (Bottom) */}
               <div className="absolute top-[82%] left-1/2 -translate-x-1/2 w-full max-w-4xl text-center z-30">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-center gap-12 mb-8 w-full">
@@ -102,9 +102,11 @@ export function ThreeAxes() {
                     </div>
                     
                     {/* Center Title */}
-                    <h3 className="text-5xl font-headline font-bold text-primary tracking-tighter leading-tight">
-                      LANGUES <br /> ÉTRANGÈRES
-                    </h3>
+                    <div className="flex flex-col items-center">
+                      <h3 className="text-3xl font-headline font-bold text-primary tracking-widest uppercase border-b-2 border-muted pb-2 px-12 leading-tight">
+                        LANGUES <br /> ÉTRANGÈRES
+                      </h3>
+                    </div>
                     
                     {/* Right Icon */}
                     <div className="bg-secondary/5 border border-secondary/10 p-6 rounded-full shadow-sm translate-y-4">
