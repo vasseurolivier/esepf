@@ -11,6 +11,7 @@ export function ThreeAxes() {
   const db = useFirestore();
   const { data: settings } = useDoc(db ? `settings/global` : null);
   const logoUrl = settings?.logoUrl;
+  const schoolName = settings?.schoolName || "ESEPF";
 
   return (
     <section className="py-32 bg-white overflow-hidden">
@@ -19,18 +20,18 @@ export function ThreeAxes() {
           <div className="relative max-w-6xl mx-auto">
             
             {/* Desktop Layout (Circular) */}
-            <div className="hidden lg:block relative h-[1000px]">
+            <div className="hidden lg:block relative h-[1100px]">
               
               {/* Central Circle - Crest */}
-              <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+              <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                 <div className="w-[450px] h-[450px] rounded-full border border-secondary/10 p-12 bg-white flex items-center justify-center shadow-[0_0_50px_rgba(0,0,0,0.05)] relative">
                   <div className="w-full h-full rounded-full border-[12px] border-secondary/5 flex items-center justify-center overflow-hidden p-12 bg-white shadow-inner">
                     {logoUrl ? (
-                      <img src={logoUrl} alt="ESEPF Crest" className="max-w-full max-h-full object-contain" />
+                      <img src={logoUrl} alt={`${schoolName} Crest`} className="max-w-full max-h-full object-contain" />
                     ) : (
                       <div className="text-primary flex flex-col items-center">
                         <GraduationCap size={120} className="text-secondary mb-4" />
-                        <span className="font-headline font-bold text-4xl tracking-tighter">ESEPF</span>
+                        <span className="font-headline font-bold text-4xl tracking-tighter">{schoolName}</span>
                       </div>
                     )}
                   </div>
@@ -91,8 +92,8 @@ export function ThreeAxes() {
                 </div>
               </div>
 
-              {/* Axis 3: Langues Étrangères (Bottom) */}
-              <div className="absolute top-[70%] left-1/2 -translate-x-1/2 w-full max-w-4xl text-center z-30">
+              {/* Axis 3: Langues Étrangères (Bottom) - Re-positioned much lower */}
+              <div className="absolute top-[82%] left-1/2 -translate-x-1/2 w-full max-w-4xl text-center z-30">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-center gap-12 mb-8 w-full">
                     {/* Left Icon */}
@@ -123,10 +124,10 @@ export function ThreeAxes() {
               </div>
 
               {/* Connecting Lines (Decorative) */}
-              <svg className="absolute inset-0 w-full h-full -z-10 opacity-10" viewBox="0 0 1000 1000">
+              <svg className="absolute inset-0 w-full h-full -z-10 opacity-10" viewBox="0 0 1000 1100">
                 <line x1="300" y1="200" x2="450" y2="400" stroke="currentColor" strokeWidth="1" />
                 <line x1="700" y1="200" x2="550" y2="400" stroke="currentColor" strokeWidth="1" />
-                <line x1="500" y1="700" x2="500" y2="550" stroke="currentColor" strokeWidth="1" />
+                <line x1="500" y1="800" x2="500" y2="550" stroke="currentColor" strokeWidth="1" />
               </svg>
             </div>
 
@@ -135,7 +136,7 @@ export function ThreeAxes() {
               <div className="flex justify-center mb-8">
                 <div className="w-48 h-48 rounded-full border-2 border-secondary/20 p-2 bg-white flex items-center justify-center shadow-xl">
                    {logoUrl ? (
-                    <img src={logoUrl} alt="ESEPF Crest" className="max-w-full max-h-full object-contain" />
+                    <img src={logoUrl} alt={`${schoolName} Crest`} className="max-w-full max-h-full object-contain" />
                   ) : (
                     <GraduationCap size={48} className="text-secondary" />
                   )}
