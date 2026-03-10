@@ -1,15 +1,15 @@
+
 rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Permet à tout le monde de lire les réglages (pour afficher le logo sur le site)
-    // Permet la modification des réglages (idéalement restreint à l'admin plus tard)
+    // Permet l'accès complet au document global pour la démo
+    // Dans une version de production, on ajouterait 'if request.auth != null'
     match /settings/global {
-      allow read: if true;
-      allow write: if true;
+      allow read, write: if true;
     }
     
-    // Règle par défaut : accès refusé pour le reste
+    // Règle par défaut : accès refusé pour tout le reste
     match /{document=**} {
       allow read, write: if false;
     }
