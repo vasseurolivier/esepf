@@ -42,11 +42,11 @@ export const translations = {
       college_link: "Collège (11 ans - 15 ans)",
       lycee_link: "Lycée (15 ans - 18 ans)",
       academy_title: "FOOTBALL ACADEMY",
-      academy_desc: "L’Academy de football propose un programme de formation élite français visant à développer des joueurs complets, capables d’évoluer au plus haut niveau tout en respectant l’exigence du football hexagonal. Les séances sont structurées et assuré par des entraîneurs diplômés et expérimentés. Grâce à son statut et à ses partenariats, l’Academy permet à ses joueurs d’accéder aux compétitions officielles françaises, offrant ainsi un cadre compétitif reconnu et formateur. L’objectif est de donner à chaque joueur les meilleurs outils pour progresser, se faire repérer et s’inscrire durablement dans un projet de haut niveau.",
+      academy_desc: "L’Academy de football propose un programme de formation élite français visant à développer des joueurs complets, capables d’évoluer au plus haut niveau tout en respectant l’exigence du football hexagonal. Les séances sont structurées et assuré par des entraîneurs diplômés et expérimentés. Grâce à son statut et à ses partenariats, l’Academy permet à ses joueurs d’accéder aux compétitions officielles françaises, offrant ainsi un cadre compétitif reconnu et formateur. L’objectif est de former des élèves autonomes, curieux et capables de s’épanouir autant sur le terrain qu’en classe.",
       championships: "Championnats officiels",
       elite_prog: "Elite Football Programme",
       languages_title: "LANGUES ÉTRANGÈRES",
-      languages_desc: "Notre établissement propose une formation renforcée en FLE et en EFL pour accompagner les élèves internationaux."
+      languages_desc: "Notre établissement propose une formation renforcée en français langue étrangère (FLE) et en anglais langue étrangère (EFL) afin d’accompagner au mieux les élèves non francophones ou souhaitant perfectionner leur niveau. Les cours sont organisés en petits groupes pour favoriser la participation orale, la compréhension et la progression individuelle. Les enseignants adaptent leurs supports aux besoins de chaque élève, en travaillant aussi bien la grammaire que le vocabulaire et les situations concrètes de communication. Cette approche intensive facilite l’intégration scolaire, la réussite aux examens et l’ouverture à l’international."
     },
     sections: {
       campuses: "Nos 3 Campus",
@@ -257,7 +257,7 @@ export const translations = {
       championships: "Official Leagues",
       elite_prog: "Elite Football Programme",
       languages_title: "FOREIGN LANGUAGES",
-      languages_desc: "We offer reinforced training in FLE and EFL for international students."
+      languages_desc: "Our institution offers reinforced training in French as a Foreign Language (FLE) and English as a Foreign Language (EFL) to best support non-French speaking students or those wishing to improve their level. Classes are organized in small groups to encourage oral participation, comprehension, and individual progress. Teachers adapt their materials to each student's needs, working on grammar, vocabulary, and practical communication situations. This intensive approach facilitates school integration, exam success, and international openness."
     },
     sections: {
       campuses: "Our 3 Campuses",
@@ -468,7 +468,7 @@ export const translations = {
       championships: "官方联赛",
       elite_prog: "精英足球计划",
       languages_title: "外语教学",
-      languages_desc: "我们为国际学生提供强化的 FLE 和 EFL 培训。"
+      languages_desc: "我们的机构提供法语作为外语（FLE）和英语作为外语（EFL）的强化培训，以最好地支持非法语学生或希望提高水平的学生。课程以小组形式组织，以鼓励口语参与、理解和个人进步。教师根据每个学生的需求调整教学材料，专注于语法、词汇和实际沟通情境。这种强化方法促进了学校融合、考试成功和国际化开放。"
     },
     sections: {
       campuses: "我们的3个校区",
