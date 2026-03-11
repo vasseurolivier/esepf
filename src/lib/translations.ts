@@ -57,7 +57,23 @@ export const translations = {
       orientation_desc: "Réponds à ces deux questions pour découvrir la filière qui te correspond.",
       student_life_title: "S'épanouir au quotidien",
       student_life_desc: "Bien plus qu'un lieu d'étude, l'Institution est un espace de vie.",
-      student_life_btn: "DÉCOUVRIR LA VIE SCOLAIRE"
+      student_life_btn: "DÉCOUVRIR LA VIE SCOLAIRE",
+      journey_title: "LE PARCOURS DE L'ÉLÈVE"
+    },
+    journey: {
+      college: "COLLÈGE",
+      lycee: "LYCÉE",
+      university: "UNIVERSITÉ FR & US",
+      metiers: "MÉTIERS",
+      football_academy: "FOOTBALL ACADEMY",
+      pro_footballer: "FOOTBALLEUR PROFESSIONNEL",
+      years_11_15: "11 ans - 15 ans",
+      years_15_18: "15 ans - 18 ans",
+      years_18_plus: "18 ans & plus",
+      years_20_plus: "20 ans & plus",
+      formation_4y: "Formation de 4 années",
+      formation_3y: "Formation de 3 années",
+      university_desc: "BTS, Licence, Master, Doctorat etc..."
     },
     campus_pages: {
       evron_hero: "Campus Evron",
@@ -223,7 +239,23 @@ export const translations = {
       orientation_desc: "Answer these questions to discover your path.",
       student_life_title: "Flourish Daily",
       student_life_desc: "More than a school, the Institution is a living space.",
-      student_life_btn: "DISCOVER STUDENT LIFE"
+      student_life_btn: "DISCOVER STUDENT LIFE",
+      journey_title: "STUDENT JOURNEY"
+    },
+    journey: {
+      college: "MIDDLE SCHOOL",
+      lycee: "HIGH SCHOOL",
+      university: "FR & US UNIVERSITY",
+      metiers: "CAREERS",
+      football_academy: "FOOTBALL ACADEMY",
+      pro_footballer: "PROFESSIONAL FOOTBALLER",
+      years_11_15: "11 - 15 years",
+      years_15_18: "15 - 18 years",
+      years_18_plus: "18+ years",
+      years_20_plus: "20+ years",
+      formation_4y: "4-year formation",
+      formation_3y: "3-year formation",
+      university_desc: "BTS, Bachelor, Master, PhD etc..."
     },
     campus_pages: {
       evron_hero: "Campus Evron",
@@ -389,13 +421,29 @@ export const translations = {
       orientation_desc: "回答这些问题，发现适合你的路径。",
       student_life_title: "精彩每一天",
       student_life_desc: "学院不仅是学校，更是生活空间。",
-      student_life_btn: "探索学生生活"
+      student_life_btn: "探索学生生活",
+      journey_title: "学生发展路径"
+    },
+    journey: {
+      college: "初中",
+      lycee: "高中",
+      university: "法美大学",
+      metiers: "职业生涯",
+      football_academy: "足球学院",
+      pro_footballer: "职业足球运动员",
+      years_11_15: "11岁 - 15岁",
+      years_15_18: "15岁 - 18岁",
+      years_18_plus: "18岁及以上",
+      years_20_plus: "20岁及以上",
+      formation_4y: "4年制教育",
+      formation_3y: "3年制教育",
+      university_desc: "短期大学、学士、硕士、博士等..."
     },
     campus_pages: {
       evron_hero: "埃夫龙校区",
       evron_sub: "ESEPF 在马耶讷省的历史与行政中心。",
       bazeilles_hero: "圣巴泽耶校区",
-      bazeilles_sub: "位于西南地区的教育创新中心。",
+      bazeilles_sub: "位于西南地区的教育 innovation 中心。",
       tulle_hero: "圣蒂勒校区",
       tulle_sub: "位于普罗旺斯中心的卓越教育。",
       infra_title: "卓越的基础设施",
@@ -499,5 +547,3 @@ export const translations = {
     }
   }
 };
-
-export type TranslationType = typeof translations.fr;
