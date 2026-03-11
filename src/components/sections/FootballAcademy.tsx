@@ -7,6 +7,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Trophy, Users, GraduationCap, Route, HeartPulse, Globe, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useDoc, useFirestore } from '@/firebase';
 
 const academyFeatures = [
   { icon: <Trophy className="text-secondary" />, title: "Compétition Officielle", desc: "Immersion dans les championnats nationaux français." },
@@ -18,7 +19,10 @@ const academyFeatures = [
 ];
 
 export function FootballAcademy() {
-  const footballImg = PlaceHolderImages.find(img => img.id === 'football-academy');
+  const db = useFirestore();
+  const { data: settings } = useDoc(db, 'settings/global');
+  
+  const footballImgUrl = settings?.images?.football_academy || PlaceHolderImages.find(img => img.id === 'football-academy')?.imageUrl;
 
   return (
     <section id="football" className="py-24 bg-white">
@@ -53,13 +57,12 @@ export function FootballAcademy() {
           </div>
 
           <div className="lg:w-1/2 relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">
-            {footballImg && (
+            {footballImgUrl && (
               <Image
-                src={footballImg.imageUrl}
-                alt={footballImg.description}
+                src={footballImgUrl}
+                alt="Football Academy"
                 fill
                 className="object-cover"
-                data-ai-hint={footballImg.imageHint}
               />
             )}
             <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-sm p-6 rounded-2xl border-l-8 border-secondary">

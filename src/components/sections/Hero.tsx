@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -7,23 +8,23 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useDoc, useFirestore } from '@/firebase';
 
 export function Hero() {
-  const heroImg = PlaceHolderImages.find(img => img.id === 'hero-school');
   const db = useFirestore();
   const { data: settings } = useDoc(db, 'settings/global');
+  
   const schoolName = settings?.schoolName || "ESEPF";
+  const heroImgUrl = settings?.images?.hero_home || PlaceHolderImages.find(img => img.id === 'hero-school')?.imageUrl;
 
   return (
     <section className="relative h-[85vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        {heroImg && (
+        {heroImgUrl && (
           <Image
-            src={heroImg.imageUrl}
-            alt={heroImg.description}
+            src={heroImgUrl}
+            alt="Hero Background"
             fill
             className="object-cover"
             priority
-            data-ai-hint={heroImg.imageHint}
           />
         )}
         <div className="absolute inset-0 bg-primary/75" />

@@ -7,48 +7,48 @@ import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-
-const campuses = [
-  {
-    id: "evron",
-    name: "Campus Evron",
-    location: "Evron, Mayenne",
-    image: "https://picsum.photos/seed/evron-campus/600/400",
-    hint: "school building",
-    href: "/campus/evron"
-  },
-  {
-    id: "sainte-bazeilles",
-    name: "Campus Sainte-Bazeilles",
-    location: "Sainte-Bazeilles, Lot-et-Garonne",
-    image: "https://picsum.photos/seed/bazeilles-campus/600/400",
-    hint: "modern campus",
-    href: "/campus/sainte-bazeilles"
-  },
-  {
-    id: "sainte-tulle",
-    name: "Campus Sainte-Tulle",
-    location: "Sainte-Tulle, Alpes-de-Haute-Provence",
-    image: "https://picsum.photos/seed/tulle-campus/600/400",
-    hint: "school campus",
-    href: "/campus/sainte-tulle"
-  }
-];
+import { useDoc, useFirestore } from '@/firebase';
 
 export function Campuses() {
-  const panImg = PlaceHolderImages.find(img => img.id === 'campus-panoramic');
+  const db = useFirestore();
+  const { data: settings } = useDoc(db, 'settings/global');
+  
+  const panImgUrl = settings?.images?.campus_panoramic || PlaceHolderImages.find(img => img.id === 'campus-panoramic')?.imageUrl;
+
+  const campuses = [
+    {
+      id: "evron",
+      name: "Campus Evron",
+      location: "Evron, Mayenne",
+      image: settings?.images?.campus_evron || "https://picsum.photos/seed/evron-campus/600/400",
+      href: "/campus/evron"
+    },
+    {
+      id: "sainte-bazeilles",
+      name: "Campus Sainte-Bazeilles",
+      location: "Sainte-Bazeilles, Lot-et-Garonne",
+      image: settings?.images?.campus_bazeilles || "https://picsum.photos/seed/bazeilles-campus/600/400",
+      href: "/campus/sainte-bazeilles"
+    },
+    {
+      id: "sainte-tulle",
+      name: "Campus Sainte-Tulle",
+      location: "Sainte-Tulle, Alpes-de-Haute-Provence",
+      image: settings?.images?.campus_tulle || "https://picsum.photos/seed/tulle-campus/600/400",
+      href: "/campus/sainte-tulle"
+    }
+  ];
 
   return (
     <>
       {/* Panoramic Image Above Section */}
       <div className="w-full h-[400px] md:h-[550px] relative overflow-hidden">
-        {panImg && (
+        {panImgUrl && (
           <Image
-            src={panImg.imageUrl}
-            alt={panImg.description}
+            src={panImgUrl}
+            alt="Panoramic View"
             fill
             className="object-cover"
-            data-ai-hint={panImg.imageHint}
             priority
           />
         )}
@@ -75,7 +75,6 @@ export function Campuses() {
                       alt={campus.name}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      data-ai-hint={campus.hint}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent" />
                   </div>

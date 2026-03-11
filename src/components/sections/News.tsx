@@ -1,27 +1,33 @@
 
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-
-const articles = [
-  {
-    id: 1,
-    title: 'Résultats Bac 2024 : Une année record',
-    date: '10 Juillet 2024',
-    image: 'news-graduation',
-    excerpt: 'Félicitations à nos bacheliers qui obtiennent pour la 5ème année consécutive 100% de réussite.'
-  },
-  {
-    id: 2,
-    title: 'Nouveau Laboratoire de Sciences',
-    date: '12 Septembre 2024',
-    image: 'news-science',
-    excerpt: 'L\'établissement investit dans des équipements de pointe pour les spécialités SVT et Physique-Chimie.'
-  }
-];
+import { useDoc, useFirestore } from '@/firebase';
 
 export function News() {
+  const db = useFirestore();
+  const { data: settings } = useDoc(db, 'settings/global');
+
+  const articles = [
+    {
+      id: 1,
+      title: 'Résultats Bac 2024 : Une année record',
+      date: '10 Juillet 2024',
+      imageUrl: settings?.images?.news_graduation || PlaceHolderImages.find(img => img.id === 'news-graduation')?.imageUrl,
+      excerpt: 'Félicitations à nos bacheliers qui obtiennent pour la 5ème année consécutive 100% de réussite.'
+    },
+    {
+      id: 2,
+      title: 'Nouveau Laboratoire de Sciences',
+      date: '12 Septembre 2024',
+      imageUrl: settings?.images?.news_science || PlaceHolderImages.find(img => img.id === 'news-science')?.imageUrl,
+      excerpt: 'L\'établissement investit dans des équipements de pointe pour les spécialités SVT et Physique-Chimie.'
+    }
+  ];
+
   return (
     <section id="news" className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -35,18 +41,16 @@ export function News() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {articles.map((article, idx) => {
-            const imgData = PlaceHolderImages.find(img => img.id === article.image);
             return (
               <ScrollReveal key={article.id} delay={idx * 200}>
                 <article className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                   <div className="relative h-72 w-full overflow-hidden">
-                    {imgData && (
+                    {article.imageUrl && (
                       <Image
-                        src={imgData.imageUrl}
+                        src={article.imageUrl}
                         alt={article.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        data-ai-hint={imgData.imageHint}
                       />
                     )}
                   </div>

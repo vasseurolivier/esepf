@@ -3,16 +3,30 @@
   "entities": {
     "AppSettings": {
       "title": "Paramètres de l'Application",
-      "description": "Stocke les configurations globales du site comme le logo.",
+      "description": "Stocke les configurations globales et les images du site.",
       "type": "object",
       "properties": {
-        "logoUrl": {
-          "type": "string",
-          "description": "URL de l'image du logo de l'école."
-        },
         "schoolName": {
           "type": "string",
           "description": "Nom officiel de l'établissement."
+        },
+        "logoUrl": {
+          "type": "string",
+          "description": "URL du logo principal."
+        },
+        "images": {
+          "type": "object",
+          "description": "Dictionnaire des URLs d'images par emplacement.",
+          "properties": {
+            "hero_home": { "type": "string", "description": "Image de fond de l'accueil" },
+            "campus_panoramic": { "type": "string", "description": "Bandeau panoramique des campus" },
+            "campus_evron": { "type": "string", "description": "Photo Campus Evron" },
+            "campus_bazeilles": { "type": "string", "description": "Photo Campus Sainte-Bazeilles" },
+            "campus_tulle": { "type": "string", "description": "Photo Campus Sainte-Tulle" },
+            "football_academy": { "type": "string", "description": "Photo section Football Academy" },
+            "news_graduation": { "type": "string", "description": "Photo Actualité - Résultats Bac" },
+            "news_science": { "type": "string", "description": "Photo Actualité - Labo Sciences" }
+          }
         },
         "updatedAt": {
           "type": "string",
@@ -28,19 +42,7 @@
   "firestore": {
     "/settings/global": {
       "schema": "AppSettings",
-      "description": "Document unique contenant les réglages globaux du site."
-    },
-    "/informations/{infoId}": {
-      "schema": { "type": "object", "properties": { "title": { "type": "string" } } },
-      "description": "Collection d'informations publiques."
-    },
-    "/articles/{articleId}": {
-      "schema": { "type": "object", "properties": { "title": { "type": "string" } } },
-      "description": "Collection d'articles de blog."
-    },
-    "/config/{configId}": {
-      "schema": { "type": "object", "properties": {} },
-      "description": "Données de configuration diverses."
+      "description": "Document unique pour toute l'identité visuelle du site."
     }
   }
 }
