@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { Button } from '@/components/ui/button';
@@ -53,7 +53,9 @@ export default function AdminPage() {
     e.preventDefault();
     if (passwordInput === ADMIN_PASSWORD) {
       setIsUnlocked(true);
-      toast({ title: "Accès autorisé", description: "Modification du serveur activée." });
+      setTimeout(() => {
+        toast({ title: "Accès autorisé", description: "Modification du serveur activée." });
+      }, 100);
     } else {
       toast({ variant: "destructive", title: "Accès refusé", description: "Mot de passe incorrect." });
     }
@@ -63,7 +65,7 @@ export default function AdminPage() {
     setImages(prev => ({ ...prev, [id]: value }));
   };
 
-  const handleSaveSettings = async () => {
+  const handleSaveSettings = () => {
     if (!db) return;
     
     setIsSaving(true);
@@ -76,37 +78,25 @@ export default function AdminPage() {
       updatedAt: serverTimestamp()
     };
 
-    // Sécurité anti-blocage : Timeout de 5 secondes
-    const timeoutId = setTimeout(() => {
-      if (isSaving) {
-        setIsSaving(false);
-        toast({ variant: "destructive", title: "Erreur de connexion", description: "Le serveur met trop de temps à répondre." });
-      }
-    }, 5000);
-
-    try {
-      // On n'utilise pas await ici pour respecter les guidelines de mutation asynchrone, 
-      // mais on gère le retour pour le feedback utilisateur.
-      setDoc(settingsRef, updateData, { merge: true })
-        .then(() => {
-          clearTimeout(timeoutId);
-          setIsSaving(false);
-          toast({ title: "SUCCÈS", description: "Les données sont publiées pour tout le monde." });
-        })
-        .catch(async (error) => {
-          clearTimeout(timeoutId);
-          setIsSaving(false);
-          const permissionError = new FirestorePermissionError({
-            path: settingsRef.path,
-            operation: 'write',
-            requestResourceData: updateData,
-          });
-          errorEmitter.emit('permission-error', permissionError);
+    // CRITIQUE : Pas d'await ici pour éviter le blocage réseau
+    setDoc(settingsRef, updateData, { merge: true })
+      .catch(async (error) => {
+        const permissionError = new FirestorePermissionError({
+          path: settingsRef.path,
+          operation: 'write',
+          requestResourceData: updateData,
         });
-    } catch (e) {
-      clearTimeout(timeoutId);
+        errorEmitter.emit('permission-error', permissionError);
+      });
+
+    // Feedback immédiat (Optimistic Update)
+    setTimeout(() => {
       setIsSaving(false);
-    }
+      toast({ 
+        title: "ENREGISTRÉ !", 
+        description: "Les modifications sont en cours de déploiement pour tout le monde." 
+      });
+    }, 800);
   };
 
   if (settingsLoading) {
@@ -209,7 +199,7 @@ export default function AdminPage() {
               className="w-full h-20 rounded-2xl text-xl font-bold bg-primary hover:bg-primary/90 shadow-2xl transition-all border-4 border-white"
             >
               {isSaving ? <Loader2 className="animate-spin mr-3" /> : <Save className="mr-3" />}
-              {isSaving ? 'ENREGISTREMENT EN COURS...' : 'ENREGISTRER POUR TOUT LE MONDE'}
+              {isSaving ? 'PUBLICATION...' : 'ENREGISTRER POUR TOUT LE MONDE'}
             </Button>
           </div>
 

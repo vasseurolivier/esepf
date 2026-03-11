@@ -66,17 +66,9 @@ export function Header() {
     return [];
   };
 
-  // Empêche l'erreur d'hydratation en ne rendant rien avant le montage client
+  // Hydration safety: render placeholder if not mounted
   if (!mounted) {
-    return (
-      <header className="h-20 w-full bg-white shadow-md flex items-center px-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="w-14 h-14 bg-muted animate-pulse rounded-full" />
-          <div className="h-6 w-48 bg-muted animate-pulse rounded" />
-          <div className="h-10 w-32 bg-muted animate-pulse rounded" />
-        </div>
-      </header>
-    );
+    return <header className="h-20 bg-white border-b border-gray-100" />;
   }
 
   return (
