@@ -6,40 +6,42 @@ import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-const programs = [
-  {
-    id: 'college',
-    title: 'Le Collège',
-    subtitle: 'De la 6ème à la 3ème',
-    image: 'college-life',
-    desc: 'Un accompagnement personnalisé pour consolider les fondamentaux et développer l\'autonomie des jeunes élèves.',
-    features: ['Classes à effectifs réduits', 'Aide aux devoirs intégrée', 'Éveil aux langues et à la culture']
-  },
-  {
-    id: 'lycee',
-    title: 'Le Lycée',
-    subtitle: 'Bac Général & STMG',
-    image: 'bac-general',
-    desc: 'Une préparation d\'excellence pour le baccalauréat et l\'enseignement supérieur, avec un large choix de spécialités.',
-    features: ['12 spécialités au choix', 'Bac Technologique STMG', 'Parcours d\'orientation individualisé']
-  },
-  {
-    id: 'football',
-    title: 'Academy Football',
-    subtitle: 'Élite Sport Études',
-    image: 'football-academy',
-    desc: 'Un programme unique en France alliant scolarité de haut niveau et entraînements intensifs avec des coachs diplômés UEFA.',
-    features: ['Horaires aménagés', 'Staff technique pro', 'Détection et immersion en club']
-  }
-];
+import { useTranslation } from '@/hooks/use-translation';
 
 export function Programs() {
   const [isMounted, setIsMounted] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  const programs = [
+    {
+      id: 'college',
+      title: t.programs.college.title,
+      subtitle: t.programs.college.subtitle,
+      image: 'college-life',
+      desc: t.programs.college.desc,
+      features: [t.programs.college.f1, t.programs.college.f2, t.programs.college.f3]
+    },
+    {
+      id: 'lycee',
+      title: t.programs.lycee.title,
+      subtitle: t.programs.lycee.subtitle,
+      image: 'bac-general',
+      desc: t.programs.lycee.desc,
+      features: [t.programs.lycee.f1, t.programs.lycee.f2, t.programs.lycee.f3]
+    },
+    {
+      id: 'football',
+      title: t.programs.academy.title,
+      subtitle: t.programs.academy.subtitle,
+      image: 'football-academy',
+      desc: t.programs.academy.desc,
+      features: [t.programs.academy.f1, t.programs.academy.f2, t.programs.academy.f3]
+    }
+  ];
 
   if (!isMounted) {
     return <section id="formations" className="py-24 bg-background min-h-[600px]"></section>;
@@ -49,10 +51,10 @@ export function Programs() {
     <section id="formations" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">Nos Formations</h2>
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">{t.sections.formations}</h2>
           <div className="w-20 h-1.5 bg-secondary mx-auto rounded-full" />
           <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-            Trois piliers d'excellence pour construire l'avenir de nos élèves, du premier cycle secondaire à l'élite sportive.
+            {t.sections.formations_desc}
           </p>
         </div>
 
@@ -100,8 +102,8 @@ export function Programs() {
                           </li>
                         ))}
                       </ul>
-                      <button className="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg">
-                        Détails de la formation
+                      <button className="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg uppercase tracking-wider text-xs">
+                        {t.programs.details_btn}
                       </button>
                     </div>
                   </div>

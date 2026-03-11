@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -5,10 +6,13 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { GraduationCap, BookOpen, Languages, Trophy } from 'lucide-react';
 import Link from 'next/link';
 import { useFirestore, useDoc } from '@/firebase';
+import { useTranslation } from '@/hooks/use-translation';
 
 export function ThreeAxes() {
   const db = useFirestore();
   const { data: settings } = useDoc(db, 'settings/global');
+  const { t } = useTranslation();
+  
   const logoUrl = settings?.logoUrl;
   const schoolName = settings?.schoolName || "ESEPF";
 
@@ -30,7 +34,7 @@ export function ThreeAxes() {
                     ) : (
                       <div className="text-primary flex flex-col items-center">
                         <GraduationCap size={120} className="text-secondary mb-4" />
-                        <span className="font-headline font-bold text-4xl tracking-tighter">{schoolName}</span>
+                        <span className="font-headline font-bold text-4xl tracking-tighter text-center">{schoolName}</span>
                       </div>
                     )}
                   </div>
@@ -49,18 +53,17 @@ export function ThreeAxes() {
                     <div className="bg-secondary/10 p-3 rounded-full">
                       <GraduationCap className="text-secondary" size={32} />
                     </div>
-                    <h3 className="text-3xl font-headline font-bold text-primary tracking-widest uppercase border-b-2 border-muted pb-2 pr-12">SCOLARITÉ</h3>
+                    <h3 className="text-3xl font-headline font-bold text-primary tracking-widest uppercase border-b-2 border-muted pb-2 pr-12">{t.axes.scolarite}</h3>
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    Notre sport-études offre un cadre scolaire exigeant qui permet aux élèves de concilier projet sportif ambitieux et réussite académique.<br /><br />
-                    L'objectif est de former des élèves autonomes, curieux et capables de s'épanouir autant sur le terrain qu'en classe.
+                    {t.axes.scolarite_desc}
                   </p>
                   <div className="space-y-2">
                     <Link href="/formations/college" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
-                      Collège (11 ans - 15 ans)
+                      {t.axes.college_link}
                     </Link>
                     <Link href="/formations/lycee" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
-                      Lycée (15 ans - 18 ans)
+                      {t.axes.lycee_link}
                     </Link>
                   </div>
                 </div>
@@ -70,21 +73,20 @@ export function ThreeAxes() {
               <div className="absolute top-0 right-0 w-[350px] text-right">
                 <div className="flex flex-col items-end">
                   <div className="flex items-center gap-4 mb-6">
-                    <h3 className="text-3xl font-headline font-bold text-primary tracking-widest uppercase border-b-2 border-muted pb-2 pl-12">FOOTBALL ACADEMY</h3>
+                    <h3 className="text-3xl font-headline font-bold text-primary tracking-widest uppercase border-b-2 border-muted pb-2 pl-12">{t.axes.academy_title}</h3>
                     <div className="bg-secondary/10 p-3 rounded-full">
                       <Trophy className="text-secondary" size={32} />
                     </div>
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    L'Academy de football propose un programme de formation élite français visant à développer des joueurs complets, capables d'évoluer au plus haut niveau.<br /><br />
-                    L'objectif est de donner à chaque joueur les meilleurs outils pour progresser et s'inscrire dans un projet professionnel.
+                    {t.axes.academy_desc}
                   </p>
                   <div className="space-y-2">
                     <Link href="/football-academy/competition" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
-                      Championnats officiels
+                      {t.axes.championships}
                     </Link>
                     <Link href="/football-academy/programme" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
-                      Elite Football Programme
+                      {t.axes.elite_prog}
                     </Link>
                   </div>
                 </div>
@@ -99,7 +101,7 @@ export function ThreeAxes() {
                     </div>
                     <div className="flex flex-col items-center">
                       <h3 className="text-3xl font-headline font-bold text-primary tracking-widest uppercase border-b-2 border-muted pb-2 px-12 leading-tight">
-                        LANGUES <br /> ÉTRANGÈRES
+                        {t.axes.languages_title.split(' ').join(' \n')}
                       </h3>
                     </div>
                     <div className="bg-secondary/5 border border-secondary/10 p-6 rounded-full shadow-sm translate-y-4">
@@ -109,7 +111,7 @@ export function ThreeAxes() {
                   
                   <div className="max-w-3xl space-y-6">
                     <p className="text-muted-foreground text-base leading-relaxed">
-                      Notre établissement propose une formation renforcée en FLE et en EFL afin d'accompagner au mieux les élèves non francophones vers l'excellence.
+                      {t.axes.languages_desc}
                     </p>
                   </div>
                 </div>
@@ -137,7 +139,7 @@ export function ThreeAxes() {
                 <div className="text-center px-4">
                   <h3 className="text-2xl font-headline font-bold text-primary mb-4 border-b-2 border-secondary/20 inline-block pb-1 uppercase">{schoolName}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    Scolarité d'excellence, Football Academy de haut niveau et parcours linguistique renforcé.
+                    {t.hero.desc}
                   </p>
                 </div>
               </div>

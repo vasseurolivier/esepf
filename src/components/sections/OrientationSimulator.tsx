@@ -3,37 +3,39 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
-import { Sparkles, ArrowRight, RefreshCcw } from 'lucide-react';
+import { Sparkles, ArrowRight, RefreshCcw, GraduationCap } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-
-const questions = [
-  {
-    id: 1,
-    question: "Qu'est-ce qui t'attire le plus au quotidien ?",
-    options: [
-      { label: "Comprendre comment fonctionne le monde et les sciences", value: "GEN" },
-      { label: "Gérer des projets, comprendre l'économie et le numérique", value: "STMG" },
-      { label: "Découvrir de nouvelles matières et approfondir ma culture", value: "GEN" }
-    ]
-  },
-  {
-    id: 2,
-    question: "Comment préfères-tu travailler ?",
-    options: [
-      { label: "De manière théorique et approfondie", value: "GEN" },
-      { label: "De manière concrète avec des études de cas d'entreprises", value: "STMG" },
-      { label: "Via des projets de groupe et du management", value: "STMG" }
-    ]
-  }
-];
+import { useTranslation } from '@/hooks/use-translation';
 
 export function OrientationSimulator() {
+  const { t } = useTranslation();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
   const [result, setResult] = useState<string | null>(null);
+
+  const questions = [
+    {
+      id: 1,
+      question: t.orientation.q1,
+      options: [
+        { label: t.orientation.q1_o1, value: "GEN" },
+        { label: t.orientation.q1_o2, value: "STMG" },
+        { label: t.orientation.q1_o3, value: "GEN" }
+      ]
+    },
+    {
+      id: 2,
+      question: t.orientation.q2,
+      options: [
+        { label: t.orientation.q2_o1, value: "GEN" },
+        { label: t.orientation.q2_o2, value: "STMG" },
+        { label: t.orientation.q2_o3, value: "STMG" }
+      ]
+    }
+  ];
 
   const handleAnswer = (value: string) => {
     const newAnswers = [...answers, value];
@@ -66,8 +68,8 @@ export function OrientationSimulator() {
       <div className="container mx-auto px-4">
         <ScrollReveal className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-headline font-bold mb-4">Besoin d'aide pour ton orientation ?</h2>
-            <p className="text-white/70 text-lg">Réponds à ces deux questions pour découvrir la filière qui te correspond.</p>
+            <h2 className="text-3xl md:text-5xl font-headline font-bold mb-4">{t.sections.orientation_title}</h2>
+            <p className="text-white/70 text-lg">{t.sections.orientation_desc}</p>
           </div>
 
           <Card className="bg-white text-primary border-none shadow-2xl overflow-hidden rounded-3xl">
@@ -100,20 +102,20 @@ export function OrientationSimulator() {
                 <div className="bg-secondary/10 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
                   <GraduationCap className="text-secondary w-12 h-12" />
                 </div>
-                <h3 className="text-sm font-bold text-secondary uppercase tracking-widest mb-2">Ton profil correspond au :</h3>
+                <h3 className="text-sm font-bold text-secondary uppercase tracking-widest mb-2">{t.orientation.result_prefix}</h3>
                 <CardTitle className="text-4xl md:text-5xl font-headline font-bold text-primary mb-8">{result}</CardTitle>
                 <p className="text-muted-foreground text-lg mb-10 max-w-md mx-auto">
                   {result === "Bac Technologique STMG" 
-                    ? "Tu as un profil orienté vers le concret, l'entreprise et la gestion. Cette filière t'ouvrira les portes du management."
-                    : "Tu as un profil curieux et théorique, idéal pour approfondir des spécialités académiques et viser de longues études."
+                    ? t.orientation.stmg_desc
+                    : t.orientation.gen_desc
                   }
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-6 px-8 rounded-full text-lg">
-                    Découvrir ce programme <ArrowRight className="ml-2" />
+                  <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-6 px-8 rounded-full text-lg uppercase tracking-wider">
+                    {t.orientation.discover_btn} <ArrowRight className="ml-2" />
                   </Button>
-                  <Button variant="outline" onClick={reset} className="border-2 border-primary text-primary font-bold py-6 px-8 rounded-full text-lg hover:bg-primary/5">
-                    Recommencer <RefreshCcw className="ml-2" />
+                  <Button variant="outline" onClick={reset} className="border-2 border-primary text-primary font-bold py-6 px-8 rounded-full text-lg hover:bg-primary/5 uppercase tracking-wider">
+                    {t.orientation.restart_btn} <RefreshCcw className="ml-2" />
                   </Button>
                 </div>
               </CardContent>

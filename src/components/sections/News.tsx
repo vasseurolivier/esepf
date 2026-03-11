@@ -6,10 +6,12 @@ import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useDoc, useFirestore } from '@/firebase';
+import { useTranslation } from '@/hooks/use-translation';
 
 export function News() {
   const db = useFirestore();
   const { data: settings } = useDoc(db, 'settings/global');
+  const { t } = useTranslation();
 
   const articles = [
     {
@@ -33,10 +35,12 @@ export function News() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-4">
           <div>
-            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">Actualités</h2>
+            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">{t.sections.news_title}</h2>
             <div className="w-20 h-1.5 bg-secondary rounded-full" />
           </div>
-          <button className="text-secondary font-bold hover:underline flex items-center">Voir tout le blog <span className="ml-2">→</span></button>
+          <button className="text-secondary font-bold hover:underline flex items-center text-sm uppercase tracking-widest">
+            {t.common.viewAll} <span className="ml-2">→</span>
+          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -62,8 +66,8 @@ export function News() {
                     <p className="text-muted-foreground mb-6 line-relaxed">
                       {article.excerpt}
                     </p>
-                    <button className="text-primary font-bold text-sm flex items-center group-hover:translate-x-2 transition-transform">
-                      LIRE LA SUITE <span className="ml-2 text-secondary">→</span>
+                    <button className="text-primary font-bold text-xs flex items-center group-hover:translate-x-2 transition-transform uppercase tracking-widest">
+                      {t.common.readMore} <span className="ml-2 text-secondary">→</span>
                     </button>
                   </div>
                 </article>

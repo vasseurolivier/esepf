@@ -1,13 +1,17 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, GraduationCap } from 'lucide-react';
 import { useDoc, useFirestore } from '@/firebase';
+import { useTranslation } from '@/hooks/use-translation';
 
 export function Footer() {
   const db = useFirestore();
   const { data: settings } = useDoc(db, 'settings/global');
+  const { t } = useTranslation();
+  
   const schoolName = settings?.schoolName || "ESEPF";
   const [currentYear, setCurrentYear] = useState<number | null>(null);
 
@@ -25,8 +29,8 @@ export function Footer() {
               <GraduationCap className="text-secondary" />
               {schoolName}
             </h3>
-            <p className="text-white/70 leading-relaxed mb-6">
-              L'excellence pédagogique et sportive au service de la réussite de vos enfants. Sport Études & Réussite Académique.
+            <p className="text-white/70 leading-relaxed mb-6 text-sm">
+              {t.footer.desc}
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="p-2 bg-white/10 rounded-full hover:bg-secondary transition-colors"><Facebook size={18} /></Link>
@@ -38,27 +42,27 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-headline font-bold mb-6">Nos Campus</h4>
+            <h4 className="text-xs font-headline font-bold mb-6 uppercase tracking-widest text-secondary">{t.footer.campus}</h4>
             <ul className="space-y-4">
-              <li className="text-white/70 hover:text-secondary transition-colors">Campus Evron</li>
-              <li className="text-white/70 hover:text-secondary transition-colors">Campus Sainte-Bazeilles</li>
-              <li className="text-white/70 hover:text-secondary transition-colors">Campus Sainte-Tulle</li>
+              <li className="text-white/70 hover:text-secondary transition-colors text-sm cursor-pointer">Campus Evron</li>
+              <li className="text-white/70 hover:text-secondary transition-colors text-sm cursor-pointer">Campus Sainte-Bazeilles</li>
+              <li className="text-white/70 hover:text-secondary transition-colors text-sm cursor-pointer">Campus Sainte-Tulle</li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-headline font-bold mb-6">Contact Central</h4>
+            <h4 className="text-xs font-headline font-bold mb-6 uppercase tracking-widest text-secondary">{t.footer.contact}</h4>
             <ul className="space-y-4">
-              <li className="flex items-center space-x-3 text-white/70">
+              <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <MapPin size={18} className="text-secondary" />
                 <span>Siège : Evron, France</span>
               </li>
-              <li className="flex items-center space-x-3 text-white/70">
+              <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Phone size={18} className="text-secondary" />
                 <span>01 88 44 22 00</span>
               </li>
-              <li className="flex items-center space-x-3 text-white/70">
+              <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Mail size={18} className="text-secondary" />
                 <span>contact@esepf-academy.fr</span>
               </li>
@@ -67,21 +71,21 @@ export function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-headline font-bold mb-6">Newsletter</h4>
-            <p className="text-white/70 mb-4">Suivez l'actualité de nos élèves et athlètes.</p>
+            <h4 className="text-xs font-headline font-bold mb-6 uppercase tracking-widest text-secondary">{t.footer.newsletter}</h4>
+            <p className="text-white/70 mb-4 text-sm">{t.footer.newsletter_desc}</p>
             <div className="flex">
               <input 
                 type="email" 
-                placeholder="Votre email" 
-                className="bg-white/10 border-none rounded-l-md px-4 py-3 w-full focus:ring-1 focus:ring-secondary text-white"
+                placeholder={t.footer.placeholder}
+                className="bg-white/10 border-none rounded-l-md px-4 py-3 w-full focus:ring-1 focus:ring-secondary text-white text-sm"
               />
-              <button className="bg-secondary px-4 py-3 rounded-r-md font-bold hover:bg-secondary/90 transition-colors">OK</button>
+              <button className="bg-secondary px-4 py-3 rounded-r-md font-bold hover:bg-secondary/90 transition-colors uppercase text-xs">OK</button>
             </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 text-center text-sm text-white/50">
-          <p>© {currentYear || '2025'} {schoolName} - Excellence Française.</p>
+        <div className="pt-8 border-t border-white/10 text-center text-[10px] text-white/30 uppercase tracking-[0.3em]">
+          <p>© {currentYear || '2025'} {schoolName} - {t.common.excellence}. {t.footer.rights}</p>
         </div>
       </div>
     </footer>
