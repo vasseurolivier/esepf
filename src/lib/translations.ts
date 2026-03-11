@@ -78,9 +78,9 @@ export const translations = {
     team_page: {
       title: "Le Projet",
       subtitle: "Le Programme Élite Football & Scolarité ESEPF",
-      p1: "À l'ESEPF, nous proposons aux jeunes de 11 à 19 ans un double projet d'exception. Notre Programme Élite Football offre un entraînement quotidien professionnel, encadré par des coaches diplômés UEFA, axé sur le développement technique, tactique et athlétique. L'objectif est clair : performer et progresser vers le haut niveau.",
-      p2: "En parallèle, les élèves suivent un cursus scolaire français d'excellence (de la 6e à la Terminale), aménagé autour de leur pratique sportive. Grâce à un suivi pédagogique personnalisé et un emploi du temps optimisé, l'équilibre entre les séances sur le terrain et les impératifs académiques est garanti.",
-      p3: "Ce programme unique forge autant l'athlète que l'étudiant, en inculquant discipline, rigueur et ambition. Intégrer l'ESEPF, c'est choisir une voie d'excellence pour se construire un avenir de champion, sur le terrain et dans la vie.",
+      p1: "À l'ESEPF, we propose to young people from 11 to 19 years old an exceptional double project. Our Elite Football Program offers daily professional training, led by UEFA-qualified coaches, focused on technical, tactical and athletic development. The objective is clear: perform and progress towards the high level.",
+      p2: "In parallel, students follow an excellent French school curriculum (from 6th to 12th grade), arranged around their sporting practice. Thanks to personalized pedagogical follow-up and an optimized timetable, the balance between sessions on the field and academic requirements is guaranteed.",
+      p3: "This unique program forges both the athlete and the student, by instilling discipline, rigor and ambition. Joining ESEPF means choosing a path of excellence to build a future as a champion, on the field and in life.",
       team_title: "L'ÉQUIPE",
       staff_title: "Notre Staff",
       staff_desc: "Une équipe de professeurs agrégés et de coachs certifiés UEFA pour un encadrement d'exception."
@@ -130,7 +130,40 @@ export const translations = {
       card_mode: "METIERS DE LA MODE ET DU DESIGN",
       btn_formation: "LA FORMATION",
       btn_outlets: "LES DÉBOUCHÉS SCOLAIRES",
-      btn_jobs: "LES MÉTIERS"
+      btn_jobs: "LES MÉTIERS",
+      bac_gen: {
+        title: "BAC GÉNÉRAL",
+        subtitle: "Métiers des langues et de la culture",
+        desc: "Une formation d'excellence axée sur l'analyse, la culture générale et la maîtrise linguistique.",
+        prog_title: "Programme Pédagogique",
+        prog_desc: "Notre Bac Général propose des enseignements de spécialité tournés vers l'international : Langues, Littératures et Cultures Étrangères (Anglais), Humanités, Littérature et Philosophie, ainsi que des parcours en Histoire-Géographie et Géopolitique.",
+        outlets_title: "Débouchés Scolaires",
+        outlets_desc: "Accès aux CPGE (Classes Préparatoires), IEP (Sciences Po), universités prestigieuses en France et à l'étranger (USA, UK, Europe).",
+        jobs_title: "Les Métiers",
+        jobs_desc: "Diplomatie, Traduction de haut niveau, Journalisme international, Expertise culturelle, Enseignement supérieur."
+      },
+      bac_vente: {
+        title: "BAC PRO VENTE",
+        subtitle: "Métiers de la vente et du commerce",
+        desc: "Une formation pratique pour devenir un expert de la relation client et de la négociation.",
+        prog_title: "Approche Professionnelle",
+        prog_desc: "Formation axée sur la prospection, la négociation commerciale et la fidélisation. Stages intensifs en entreprises partenaires et projets concrets de business development.",
+        outlets_title: "Débouchés Scolaires",
+        outlets_desc: "BTS Management Commercial Opérationnel (MCO), BTS Négociation et Digitalisation de la Relation Client (NDRC), Bachelors en écoles de commerce.",
+        jobs_title: "Les Métiers",
+        jobs_desc: "Commercial terrain, Chargé de clientèle, Manager de point de vente, Business Developer, Entrepreneur."
+      },
+      bac_stmg: {
+        title: "BAC TECHNO STMG",
+        subtitle: "Métiers du management et de la gestion",
+        desc: "Comprendre le fonctionnement des organisations, du marketing aux ressources humaines.",
+        prog_title: "Le Cursus Management",
+        prog_desc: "Analyse du comportement des organisations, gestion financière, marketing digital et droit des affaires. Une filière qui allie théorie et cas pratiques d'entreprises réelles.",
+        outlets_title: "Débouchés Scolaires",
+        outlets_desc: "BUT (Bachelor Universitaire de Technologie) Gestion des Entreprises et des Administrations, Classes Prépa ECT, Écoles de Management.",
+        jobs_title: "Les Métiers",
+        jobs_desc: "Gestionnaire, Chef de projet marketing, Assistant RH, Responsable administratif, Manager d'équipe."
+      }
     },
     journey: {
       college: "COLLÈGE",
@@ -384,7 +417,40 @@ export const translations = {
       card_mode: "FASHION AND DESIGN CAREERS",
       btn_formation: "THE PROGRAM",
       btn_outlets: "ACADEMIC OUTLETS",
-      btn_jobs: "THE CAREERS"
+      btn_jobs: "THE CAREERS",
+      bac_gen: {
+        title: "GENERAL BAC",
+        subtitle: "Languages and Culture careers",
+        desc: "An excellence-focused training oriented towards analysis, general culture, and linguistic mastery.",
+        prog_title: "Pedagogical Program",
+        prog_desc: "Our General Bac offers internationally-oriented specialty teachings: Languages, Literatures and Foreign Cultures (English), Humanities, Literature and Philosophy, as well as paths in History-Geography and Geopolitics.",
+        outlets_title: "Academic Outlets",
+        outlets_desc: "Access to CPGE (Preparatory Classes), IEP (Sciences Po), prestigious universities in France and abroad (USA, UK, Europe).",
+        jobs_title: "The Careers",
+        jobs_desc: "Diplomacy, High-level translation, International journalism, Cultural expertise, Higher education."
+      },
+      bac_vente: {
+        title: "SALES PRO BAC",
+        subtitle: "Sales and commerce careers",
+        desc: "Practical training to become an expert in customer relations and negotiation.",
+        prog_title: "Professional Approach",
+        prog_desc: "Training focused on prospecting, commercial negotiation, and loyalty. Intensive internships in partner companies and concrete business development projects.",
+        outlets_title: "Academic Outlets",
+        outlets_desc: "BTS Operational Commercial Management (MCO), BTS Negotiation and Digitalization of Customer Relations (NDRC), Bachelors in business schools.",
+        jobs_title: "The Careers",
+        jobs_desc: "Field sales, Account manager, Point of sale manager, Business Developer, Entrepreneur."
+      },
+      bac_stmg: {
+        title: "TECHNO STMG BAC",
+        subtitle: "Management and administration careers",
+        desc: "Understand how organizations work, from marketing to human resources.",
+        prog_title: "Management Curriculum",
+        prog_desc: "Analysis of organization behavior, financial management, digital marketing, and business law. A track that combines theory and practical cases from real companies.",
+        outlets_title: "Academic Outlets",
+        outlets_desc: "BUT (University Bachelor of Technology) Management of Companies and Administrations, ECT Preparatory Classes, Management Schools.",
+        jobs_title: "The Careers",
+        jobs_desc: "Manager, Marketing project manager, HR assistant, Administrative manager, Team manager."
+      }
     },
     journey: {
       college: "MIDDLE SCHOOL",
@@ -575,7 +641,7 @@ export const translations = {
     history_page: {
       title: "我们的历史",
       subtitle: "从亚洲到法国，全球雄心",
-      intro_p1: "ESEPF 的根源在于我们在中国和越南卓越体育学院的成功。凭借这些经验和我们进一步支持年轻天才的愿望，我们构思了一个独特的项目：在法国建立国际学生运动员的标杆学校。",
+      intro_p1: "ESEPF 的根源在于我们在中国和越南卓越体育学院s的成功。凭借这些经验和我们进一步支持年轻天才的愿望，我们构思了一个独特的项目：在法国建立国际学生运动员的标杆学校。",
       intro_p2: "ESEPF（École des Sports et du Prestige Français）坐落于法国中心地带，诞生于这一愿景。我们现在为来自世界各地的年轻运动员提供双重卓越培训，将获得认可的法国学校课程（从初中到高中）与专用基础设施中的高水平体育项目相结合。",
       intro_p3: "为每个学生提供在各自学科中表现卓越的钥匙，同时在国际化和苛刻的环境中建立稳固的学术和职业未来。ESEPF 是全球体育雄心与法国教育诀窍的交汇点。",
       milestone_1: "机构成立及首个校区建立。",
@@ -599,7 +665,7 @@ export const translations = {
       hero_subtitle: "法国国民教育部认可的学校",
       hero_text: "我们的机构获得了法国国民教育部的官方认可。这一认可保证了我们的学校遵守法国政府制定的教育标准 and academic requirements set by the French government.",
       diploma_title: "法国国家文凭",
-      diploma_text_1: "我们为学生准备法国国家文凭。这些文凭，如国家初中毕业文凭 (DNB) 以及普通和技术高中毕业文凭，因其学术要求而获得认可。",
+      diploma_text_1: "我们为学生准备法国国家文凭. 这些文凭，如国家初中毕业文凭 (DNB) 以及普通和技术高中毕业文凭，因其学术要求而获得认可。",
       diploma_text_2: "此外，它们还获得了中国教育部的认可，从而为我们的学生提供了在法国和中国都获得认可的质量认证。",
       bottom_title: "毕业证书",
       accred_title: "官方认证",
@@ -616,7 +682,7 @@ export const translations = {
       p3: "初中部将丰富我们的培训体系，并通过精英足球计划支持年轻人在学业、个人和体育方面的发展。",
       p4: "我们将采取严谨且人性化的教学方法，提供个性化跟踪和适应每位学生需求的学习方法。",
       p5: "我们还将特别强调外语学习、国际化视野以及通过体育运动促进每个孩子的全面发展。",
-      p6: "加入我们的初中，他们将受益于一个有利于成功和为学业关键阶段做准备的环境。",
+      p6: "By joining our Middle School, they will benefit from an environment conducive to success and the preparation of key stages of their school career.",
       prog_title: "我们的课程分为三个学年：",
       year1_title: "第一年：预科班",
       year1_desc: "该计划将使他们能够扎实掌握法语（FLE），同时从基础科目的复习中受益。年底，他们将能够在最佳条件下加入我们专门为非法语母语者开设的初二（4e）班。",
@@ -638,7 +704,40 @@ export const translations = {
       card_mode: "时尚与设计职业",
       btn_formation: "培训课程",
       btn_outlets: "升学前景",
-      btn_jobs: "相关职业"
+      btn_jobs: "相关职业",
+      bac_gen: {
+        title: "普通高中",
+        subtitle: "语言与文化职业",
+        desc: "专注于分析、通识文化和语言掌握的卓越培训。",
+        prog_title: "教学计划",
+        prog_desc: "我们的普通高中提供面向国际的专业教学：语言、文学和外国文化（英语）、人文、文学和哲学，以及历史地理和地缘政治路径。",
+        outlets_title: "升学前景",
+        outlets_desc: "进入 CPGE（预科班）、IEP（政治学院）、法国及国外（美、英、欧）名校。",
+        jobs_title: "相关职业",
+        jobs_desc: "外交、高级翻译、国际新闻、文化专家、高等教育。"
+      },
+      bac_vente: {
+        title: "专业高中 (VENTE)",
+        subtitle: "销售与商业职业",
+        desc: "旨在成为客户关系和谈判专家的实践培训。",
+        prog_title: "职业化方法",
+        prog_desc: "专注于开发、商业谈判和客户忠诚度的培训。在合作伙伴公司进行强化实习和具体的业务开发项目。",
+        outlets_title: "升学前景",
+        outlets_desc: "BTS 运营商业管理 (MCO)、BTS 客户关系谈判与数字化 (NDRC)、商学院学士学位。",
+        jobs_title: "相关职业",
+        jobs_desc: "实地销售、客户主管、销售点经理、业务开发人员、企业家。"
+      },
+      bac_stmg: {
+        title: "技术高中 (STMG)",
+        subtitle: "管理与行政职业",
+        desc: "从市场营销到人力资源，了解组织的运作方式。",
+        prog_title: "管理课程",
+        prog_desc: "组织行为分析、财务管理、数字营销和商业法。一条将理论与真实公司案例相结合的路径。",
+        outlets_title: "升学前景",
+        outlets_desc: "BUT（大学技术学士）企业与行政管理、ECT 预科班、管理学院。",
+        jobs_title: "相关职业",
+        jobs_desc: "经理、营销项目经理、人力资源助理、行政主管、团队经理。"
+      }
     },
     journey: {
       college: "初中",

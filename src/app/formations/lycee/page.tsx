@@ -8,8 +8,9 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { ChevronRight, MessageSquare, Globe, ShoppingBag, Briefcase, Utensils, Palette } from 'lucide-react';
+import { ChevronRight, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function LyceePage() {
   const { t } = useTranslation();
@@ -18,29 +19,34 @@ export default function LyceePage() {
     {
       title: t.lycee_page.card_langues,
       image: "https://picsum.photos/seed/lang-culture/400/300",
-      hint: "university campus building"
+      hint: "university campus building",
+      href: "/formations/bac-general"
     },
     {
       title: t.lycee_page.card_vente,
       image: "https://picsum.photos/seed/sale-career/400/300",
-      hint: "modern city skyscraper"
+      hint: "modern city skyscraper",
+      href: "/formations/bac-pro-vente"
     },
     {
       title: t.lycee_page.card_management,
       image: "https://picsum.photos/seed/manage-career/400/300",
-      hint: "business professional typing"
+      hint: "business professional typing",
+      href: "/formations/bac-techno-stmg"
     },
     {
       title: t.lycee_page.card_hotel,
       image: "https://picsum.photos/seed/hotel-career/400/300",
       hint: "luxury wine glasses table",
-      banner: "2027 - 2028"
+      banner: "2027 - 2028",
+      href: "#"
     },
     {
       title: t.lycee_page.card_mode,
       image: "https://picsum.photos/seed/fashion-career/400/300",
       hint: "fashion design dresses",
-      banner: "2027 - 2028"
+      banner: "2027 - 2028",
+      href: "#"
     }
   ];
 
@@ -109,18 +115,18 @@ export default function LyceePage() {
 
                   {/* Actions Links */}
                   <div className="flex flex-col bg-white">
-                    <button className="flex items-center justify-between p-4 border-b border-muted hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
+                    <Link href={card.href} className="flex items-center justify-between p-4 border-b border-muted hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
                       {t.lycee_page.btn_formation}
                       <ChevronRight size={14} className="text-secondary" />
-                    </button>
-                    <button className="flex items-center justify-between p-4 border-b border-muted hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
+                    </Link>
+                    <Link href={card.href} className="flex items-center justify-between p-4 border-b border-muted hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
                       {t.lycee_page.btn_outlets}
                       <ChevronRight size={14} className="text-secondary" />
-                    </button>
-                    <button className="flex items-center justify-between p-4 hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
+                    </Link>
+                    <Link href={card.href} className="flex items-center justify-between p-4 hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
                       {t.lycee_page.btn_jobs}
                       <ChevronRight size={14} className="text-secondary" />
-                    </button>
+                    </Link>
                   </div>
                 </ScrollReveal>
               ))}
