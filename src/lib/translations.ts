@@ -42,7 +42,7 @@ export const translations = {
       college_link: "Collège (11 ans - 15 ans)",
       lycee_link: "Lycée (15 ans - 18 ans)",
       academy_title: "FOOTBALL ACADEMY",
-      academy_desc: "L’Academy de football propose un programme de formation élite français visant à développer des joueurs complets, capables d’évoluer au plus haut niveau tout en respectant l’exigence du football hexagonal. Les séances sont structurées et assuré par des entraîneurs diplômés et expérimentés. Grâce à son statut et à ses partenariats, l’Academy permet à ses joueurs d’accéder aux compétitions officielles françaises, offrant ainsi un cadre compétitif reconnu et formateur. L’objectif est de former des élèves autonomes, curieux et capables de s’épanouir autant sur le terrain qu’en classe.",
+      academy_desc: "L’Academy de football propose un programme de formation élite français visant à développer des joueurs complets, capables d’évoluer au plus haut niveau tout en respectant l’exigence du football hexagonal. Les séances sont structurées et assuré par des entraîneurs diplômés et expérimentés. Grâce à son statut et à ses partenariats, l’Academy permet à ses joueurs d’accéder aux compétitions officielles françaises, offrant ainsi un cadre compétitif reconnu et formateur. L’objectif est de donner à chaque joueur les meilleurs outils pour progresser, se faire repérer et s’inscrire durablement dans un projet de haut niveau.",
       championships: "Championnats officiels",
       elite_prog: "Elite Football Programme",
       languages_title: "LANGUES ÉTRANGÈRES",
@@ -65,8 +65,10 @@ export const translations = {
     },
     history_page: {
       title: "Notre Histoire",
-      subtitle: "Un héritage d'excellence depuis plus de 40 ans.",
-      intro: "Depuis sa fondation, notre établissement s'est engagé à offrir une éducation de classe mondiale alliant rigueur académique et passion sportive.",
+      subtitle: "De l'Asie à la France, une ambition mondiale",
+      intro_p1: "L'ESEPF puise ses racines dans le succès de nos académies sportives d'excellence en Chine et au Vietnam. Forts de cette expérience et de notre volonté de pousser plus loin l'accompagnement des jeunes talents, nous avons imaginé un projet unique : créer en France l'école de référence pour les sportifs-étudiants internationaux.",
+      intro_p2: "Installée au cœur de l'Hexagone, l'École des Sports et du Prestige Français (ESEPF) est née de cette vision. Nous y proposons désormais aux jeunes sportifs du monde entier une formation duale d'excellence, alliant un parcours scolaire français reconnu (du collège au lycée) à un programme sportif de haut niveau, dans des infrastructures dédiées.",
+      intro_p3: "Offrir à chaque élève les clés pour exceller dans sa discipline tout en bâtissant un avenir académique et professionnel solide, dans un environnement international et exigeant. L'ESEPF est le point de rencontre entre l'ambition sportive mondiale et le savoir-faire éducatif français.",
       milestone_1: "Fondation de l'établissement et premier campus.",
       milestone_2: "Ouverture de la section Sport-Études Football.",
       milestone_3: "Expansion avec les nouveaux campus et certification Elite.",
@@ -276,8 +278,10 @@ export const translations = {
     },
     history_page: {
       title: "Our History",
-      subtitle: "A legacy of excellence for over 40 years.",
-      intro: "Since its foundation, our institution has been committed to providing world-class education combining academic rigor and sporting passion.",
+      subtitle: "From Asia to France, a Global Ambition",
+      intro_p1: "ESEPF draws its roots from the success of our sports academies of excellence in China and Vietnam. Building on this experience and our desire to push further the support for young talents, we have imagined a unique project: to create in France the reference school for international student-athletes.",
+      intro_p2: "Located in the heart of France, the École des Sports et du Prestige Français (ESEPF) was born from this vision. We now offer young athletes from all over the world an dual excellence training, combining a recognized French school curriculum (from middle school to high school) with a high-level sports program, in dedicated infrastructures.",
+      intro_p3: "To give each student the keys to excel in their discipline while building a solid academic and professional future, in an international and demanding environment. ESEPF is the meeting point between global sporting ambition and French educational expertise.",
       milestone_1: "Foundation of the institution and the first campus.",
       milestone_2: "Opening of the Sport-Study Football section.",
       milestone_3: "Expansion with new campuses and Elite certification.",
@@ -353,7 +357,7 @@ export const translations = {
       jobs_title: "Sports Careers",
       jobs_sub: "Prepare your future in the sports industry.",
       network_title: "Our Network",
-      network_sub: "A direct bridge to professional training centers."
+      network_sub: "Un pont direct bridge to professional training centers."
     },
     programs: {
       college: {
@@ -464,7 +468,7 @@ export const translations = {
       college_link: "初中 (11 - 15 岁)",
       lycee_link: "高中 (15 - 18 岁)",
       academy_title: "足球学院",
-      academy_desc: "足球学院提供精英级法国培训计划，旨在培养全能球员，使其能够在最高水平上发展，同时满足法国足球的要求。训练课程结构严谨，由资深且持有证书的教练执教。凭借其地位和合作伙伴关系，学院允许球员参加法国官方比赛，从而提供一个获得认可且具有教育意义的竞争环境目标是为每位球员提供最佳工具，使其能够不断进步，获得球探关注，并长期参与高水平项目。",
+      academy_desc: "足球学院提供精英级法国培训计划，旨在培养全能球员，使其能够在最高水平上发展，同时满足法国足球的要求。训练课程结构严谨，由资深且持有证书的教练执教。凭借其地位和合作伙伴关系，学院允许球员参加法国官方比赛，从而提供一个获得认可且具有教育意义的竞争环境。目标是为每位球员提供最佳工具，使其能够不断进步，获得球探关注，并长期参与高水平项目。",
       championships: "官方联赛",
       elite_prog: "精英足球计划",
       languages_title: "外语教学",
@@ -487,8 +491,10 @@ export const translations = {
     },
     history_page: {
       title: "我们的历史",
-      subtitle: "超过40年的卓越传承。",
-      intro: "自成立以来，我们的机构一直致力于提供世界一流 की教育，将学术严谨与体育激情相结合。",
+      subtitle: "从亚洲到法国，全球雄心",
+      intro_p1: "ESEPF 的根源在于我们在中国和越南卓越体育学院的成功。凭借这些经验和我们进一步支持年轻天才的愿望，我们构思了一个独特的项目：在法国建立国际学生运动员的标杆学校。",
+      intro_p2: "ESEPF（École des Sports et du Prestige Français）坐落于法国中心地带，诞生于这一愿景。我们现在为来自世界各地的年轻运动员提供双重卓越培训，将获得认可的法国学校课程（从初中到高中）与专用基础设施中的高水平体育项目相结合。",
+      intro_p3: "为每个学生提供在各自学科中表现卓越的钥匙，同时在国际化和苛刻的环境中建立稳固的学术和职业未来。ESEPF 是全球体育雄心与法国教育诀窍的交汇点。",
       milestone_1: "机构成立及首个校区建立。",
       milestone_2: "开设体教融合足球部。",
       milestone_3: "校区扩建及获得精英认证。",
