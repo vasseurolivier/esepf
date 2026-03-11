@@ -291,6 +291,24 @@ export const translations = {
       p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, nous offrons aux meilleurs de nos joueurs des opportunités uniques de montrer toutes leurs capacités. Ce réseau, composé de clubs prestigieux français mais aussi européens, leur permet de participer à des essais, à des matchs amicaux ou à d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptées à leur progression vers le plus haut niveau.",
       subtitle: "Un Réseau de Clubs pour offrir des opportunités..."
     },
+    journey_page: {
+      title: "LE PARCOURS DU JOUEUR",
+      formation_title: "Formation de 3 ou 4 ans",
+      sport_label: "FORMATION SPORTIVE",
+      school_label: "FORMATION SCOLAIRE",
+      outlets_label: "LES DÉBOUCHÉS",
+      athlete_title: "Carrière d'Athlète pro.",
+      sport_jobs_title: "Les métiers du sport",
+      higher_ed_title: "Etudes superieurs",
+      world: "DANS LE MONDE",
+      china: "EN CHINE",
+      video_analyst: "ANALYSTE VIDÉO",
+      fifa_agent: "AGENT FIFA",
+      referee: "ARBITRE",
+      coach: "COACH",
+      bts: "BTS",
+      licence_master: "LICENCES / MASTERS"
+    },
     journey: {
       college: "COLLÈGE",
       lycee: "LYCÉE",
@@ -655,6 +673,24 @@ export const translations = {
       p1: "Thanks to the network we have built over the years, stemming from our past in professional football in France, we offer our best players unique opportunities to show their full abilities. This network, composed of prestigious French and European clubs, allows them to participate in trials, friendly matches, or other sporting events. They will thus have the possibility to be noticed and, if chosen, to integrate structures adapted to their progression towards the highest level.",
       subtitle: "A Club Network to offer opportunities..."
     },
+    journey_page: {
+      title: "THE PLAYER JOURNEY",
+      formation_title: "3 or 4 Year Training",
+      sport_label: "SPORT TRAINING",
+      school_label: "ACADEMIC TRAINING",
+      outlets_label: "CAREER PATHS",
+      athlete_title: "Pro Athlete Career",
+      sport_jobs_title: "Sports Careers",
+      higher_ed_title: "Higher Education",
+      world: "WORLDWIDE",
+      china: "IN CHINA",
+      video_analyst: "VIDEO ANALYST",
+      fifa_agent: "FIFA AGENT",
+      referee: "REFEREE",
+      coach: "COACH",
+      bts: "BTS (2 YEARS)",
+      licence_master: "BACHELOR / MASTERS"
+    },
     journey: {
       college: "MIDDLE SCHOOL",
       lycee: "HIGH SCHOOL",
@@ -1018,6 +1054,24 @@ export const translations = {
       title: "建立俱乐部网络，挖掘人才潜能",
       p1: "得益于我们多年来建立的网络，源于我们在法国职业足球领域的过去，我们为最优秀的学生提供展示能力的独特机会。该网络由法国和欧洲知名俱乐部组成，允许学生参加试训、友谊赛或其他体育赛事。他们将有机会脱颖而出，并被选中进入专业体系，助力其职业发展。",
       subtitle: "建立俱乐部网络，提供更多机遇..."
+    },
+    journey_page: {
+      title: "学生发展蓝图",
+      formation_title: "3或4年制教育",
+      sport_label: "体育培训",
+      school_label: "学术培训",
+      outlets_label: "职业发展",
+      athlete_title: "职业球员生涯",
+      sport_jobs_title: "体育相关职业",
+      higher_ed_title: "高等教育",
+      world: "全球范围",
+      china: "在中国",
+      video_analyst: "视频分析师",
+      fifa_agent: "国际足联经纪人",
+      referee: "裁判",
+      coach: "教练",
+      bts: "BTS (2年制)",
+      licence_master: "本科 / 硕士"
     },
     journey: {
       college: "初中",
