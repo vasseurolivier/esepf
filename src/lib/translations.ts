@@ -61,10 +61,14 @@ export const translations = {
       btn_back_home: "RETOUR À L'ACCUEIL"
     },
     figures: {
-      bac: "Réussite au Bac",
-      students: "Élèves épanouis",
-      campuses: "Campus Modernes",
-      activities: "Clubs & Activités"
+      lang_val: "3",
+      lang_lab: "Langues d'enseignement",
+      camp_val: "3",
+      camp_lab: "Campus modernes",
+      foot_val: "ELITE",
+      foot_lab: "Formation Football",
+      prog_val: "4",
+      prog_lab: "Programmes Officiels"
     },
     axes: {
       scolarite: "SCOLARITÉ",
@@ -270,7 +274,7 @@ export const translations = {
       prog_intro_3: "Nous mettons également un accent particulier sur le développement mental et humain des athlètes, en les formant à gérer les défis psychologiques du sport de haut niveau. L'esprit d'équipe, la discipline, la résilience et la gestion des émotions sont au cœur de notre approche. Chaque athlète bénéficie d'un encadrement qui lui permet de s'épanouir et de donner le meilleur de lui-même.",
       prog_intro_4: "Notre école donne à ses athlètes la chance d'atteindre leurs objectifs, de s'épanouir et, pour les meilleurs d'entre eux, d'aspirer à devenir sportifs professionnels ou d'obtenir des bourses d'études grâce à leurs performances sportives.",
       france_title: "FRANCE : TERRE DE FOOTBALL",
-      france_desc_full: "Au total, la France est le pays qui a fourni le plus grand nombre de joueurs pour la Coupe du Monde au 21e siècle, avec 216 participants nés sur son sol, loin devant le Brésil et ses 148 joueurs, pourtant souvent perçu comme le plus grand exportateur de talents. La France devance également largement l'Allemagne et l'Italie, tous deux champions du monde à quatre reprises.",
+      france_desc_full: "Au total, la France est le pays qui a fourni le plus grand nombre de joueurs pour la Coupe du Monde au 21e siècle, avec 216 participants nés sur son sol, loin devant le Brésil et ses 148 joueurs, pourtant souvent perçu comme le plus grand exportateur de talents. France devance également largement l'Allemagne et l'Italie, tous deux champions du monde à quatre reprises.",
       france_examples: "Exemples : Mbappé, Zidane, Griezmann, Henry, Drogba, Platini, Varane, Kanté, Coman...",
       reconnaissance_title: "UNE FORMATION RECONNUE DANS LE MONDE",
       reconnaissance_p1: "La France et ses environs ne manquent certainement pas de talents, et cela n'est en rien dû au hasard, mais bien à la manière dont les jeunes joueurs sont détectés et formés dans le pays. Cette méthode, dont l'efficacité est reconnue dans le monde entier, est au cœur du succès du football français.",
@@ -461,10 +465,14 @@ export const translations = {
       btn_back_home: "BACK HOME"
     },
     figures: {
-      bac: "Bac Success Rate",
-      students: "Fulfilled Students",
-      campuses: "Modern Campuses",
-      activities: "Clubs & Activities"
+      lang_val: "3",
+      lang_lab: "Teaching Languages",
+      camp_val: "3",
+      camp_lab: "Modern Campuses",
+      foot_val: "ELITE",
+      foot_lab: "Football Training",
+      prog_val: "4",
+      prog_lab: "Official Programs"
     },
     axes: {
       scolarite: "ACADEMICS",
@@ -857,10 +865,14 @@ export const translations = {
       btn_back_home: "返回首页"
     },
     figures: {
-      bac: "毕业通过率",
-      students: "在校学生",
-      campuses: "现代校区",
-      activities: "社团活动"
+      lang_val: "3",
+      lang_lab: "教学语言",
+      camp_val: "3",
+      camp_lab: "现代校区",
+      foot_val: "ELITE",
+      foot_lab: "足球培训",
+      prog_val: "4",
+      prog_lab: "官方计划"
     },
     axes: {
       scolarite: "学术课程",
@@ -1049,7 +1061,7 @@ export const translations = {
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级",
-        bts_list: ["中小企业管理 BTS", "会计 BTS"],
+        bts_list: ["中小企业 management BTS", "会计 BTS"],
         bts_jobs: ["管理助理"],
         univ_list: ["GEA BUT", "经济管理本科"],
         univ_jobs: ["管理会计"]

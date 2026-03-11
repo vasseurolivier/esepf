@@ -2,7 +2,7 @@
 "use client";
 
 import React from 'react';
-import { Users, GraduationCap, School, MapPin } from 'lucide-react';
+import { GraduationCap, MapPin, Trophy, Languages } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 
@@ -10,10 +10,26 @@ export function Figures() {
   const { t } = useTranslation();
 
   const stats = [
-    { icon: <GraduationCap size={40} />, value: '100%', label: t.figures.bac },
-    { icon: <Users size={40} />, value: '850', label: t.figures.students },
-    { icon: <MapPin size={40} />, value: '3', label: t.figures.campuses },
-    { icon: <School size={40} />, value: '30+', label: t.figures.activities },
+    { 
+      icon: <Languages size={40} />, 
+      value: t.figures.lang_val, 
+      label: t.figures.lang_lab 
+    },
+    { 
+      icon: <MapPin size={40} />, 
+      value: t.figures.camp_val, 
+      label: t.figures.camp_lab 
+    },
+    { 
+      icon: <Trophy size={40} />, 
+      value: t.figures.foot_val, 
+      label: t.figures.foot_lab 
+    },
+    { 
+      icon: <GraduationCap size={40} />, 
+      value: t.figures.prog_val, 
+      label: t.figures.prog_lab 
+    },
   ];
 
   return (
@@ -29,7 +45,7 @@ export function Figures() {
                 <div className="text-4xl md:text-5xl font-headline font-bold text-primary mb-2">
                   {stat.value}
                 </div>
-                <div className="text-muted-foreground font-semibold tracking-wide uppercase text-xs">
+                <div className="text-muted-foreground font-bold tracking-tight uppercase text-[10px] md:text-xs max-w-[150px] leading-tight">
                   {stat.label}
                 </div>
               </div>
