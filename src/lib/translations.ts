@@ -393,6 +393,16 @@ export const translations = {
       faq_q3: "Élèves internationaux ?",
       faq_a3: "Oui, classes FLE dédiées."
     },
+    legal: {
+      mentions: "Mentions Légales",
+      privacy: "Politique de Confidentialité",
+      editor: "Éditeur du Site",
+      hosting: "Hébergement",
+      property: "Propriété Intellectuelle",
+      data: "Protection des Données",
+      cookies: "Cookies",
+      contact_info: "Contact Légal"
+    },
     footer: {
       desc: "L'excellence éducative au service de la réussite de nos élèves.",
       campus: "NOS CAMPUS",
@@ -793,6 +803,16 @@ export const translations = {
       faq_q3: "International students?",
       faq_a3: "Yes, dedicated FLE classes."
     },
+    legal: {
+      mentions: "Legal Mentions",
+      privacy: "Privacy Policy",
+      editor: "Editor",
+      hosting: "Hosting",
+      property: "Intellectual Property",
+      data: "Data Protection",
+      cookies: "Cookies",
+      contact_info: "Legal Contact"
+    },
     footer: {
       desc: "Educational excellence at the service of student success.",
       campus: "CAMPUSES",
@@ -1106,7 +1126,7 @@ export const translations = {
     },
     reseau_page: {
       title: "建立俱乐部网络，挖掘人才潜能",
-      p1: "得益于我们多年来建立的网络，源于我们在法国职业足球领域的过去，我们为最优秀的学生提供展示能力的独特机会。该网络由法国和欧洲知名俱乐部组成，允许学生参加试训、友谊赛或其他体育赛事。他们将有机会脱颖而出，并被选中进入专业体系，助力其职业发展。",
+      p1: "得益于我们多年来建立的网络，源于我们在法国职业足球领域的过去， we offer our best players unique opportunities to show their full abilities. 该网络由法国和欧洲知名俱乐部组成，允许学生参加试训、友谊赛或其他体育赛事。他们将有机会脱颖而出，并被选中进入专业体系，助力其职业发展。",
       subtitle: "建立俱乐部网络，提供更多机遇..."
     },
     journey_page: {
@@ -1192,6 +1212,16 @@ export const translations = {
       faq_a2: "技术水平和学业表现。",
       faq_q3: "接收国际生？",
       faq_a3: "是的，设有 FLE 班。"
+    },
+    legal: {
+      mentions: "法律声明",
+      privacy: "隐私政策",
+      editor: "出版人",
+      hosting: "托管信息",
+      property: "知识产权",
+      data: "数据保护",
+      cookies: "Cookies政策",
+      contact_info: "法律联系"
     },
     footer: {
       desc: "追求卓越，成就未来。",

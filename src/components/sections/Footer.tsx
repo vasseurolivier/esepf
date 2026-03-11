@@ -83,8 +83,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 text-center text-[10px] text-white/30 uppercase tracking-[0.3em]">
-          <p>© {currentYear || '2025'} {schoolName} - {t.common.excellence}. {t.footer.rights}</p>
+        <div className="pt-8 border-t border-white/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-[10px] text-white/30 uppercase tracking-[0.3em]">
+              <p>© {currentYear || '2025'} {schoolName} - {t.common.excellence}. {t.footer.rights}</p>
+            </div>
+            <div className="flex gap-6 text-[10px] font-bold uppercase tracking-widest text-white/50">
+              <Link href="/mentions-legales" className="hover:text-secondary transition-colors">{t.legal.mentions}</Link>
+              <Link href="/politique-de-confidentialite" className="hover:text-secondary transition-colors">{t.legal.privacy}</Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
