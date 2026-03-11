@@ -75,10 +75,12 @@ export const translations = {
       milestone_4: "Inauguration du programme Dual Diploma international."
     },
     team_page: {
-      title: "Le Projet & L'Équipe",
-      mission_title: "Notre Mission",
-      mission_desc: "Former des citoyens du monde, responsables et performants, tant sur le terrain que dans la vie académique.",
-      team_title: "L'Équipe Dirigeante",
+      title: "Le Projet",
+      subtitle: "Le Programme Élite Football & Scolarité ESEPF",
+      p1: "À l'ESEPF, nous proposons aux jeunes de 11 à 19 ans un double projet d'exception. Notre Programme Élite Football offre un entraînement quotidien professionnel, encadré par des coaches diplômés UEFA, axé sur le développement technique, tactique et athlétique. L'objectif est clair : performer et progresser vers le haut niveau.",
+      p2: "En parallèle, les élèves suivent un cursus scolaire français d'excellence (de la 6e à la Terminale), aménagé autour de leur pratique sportive. Grâce à un suivi pédagogique personnalisé et un emploi du temps optimisé, l'équilibre entre les séances sur le terrain et les impératifs académiques est garanti.",
+      p3: "Ce programme unique forge autant l'athlète que l'étudiant, en inculquant discipline, rigueur et ambition. Intégrer l'ESEPF, c'est choisir une voie d'excellence pour se construire un avenir de champion, sur le terrain et dans la vie.",
+      team_title: "L'ÉQUIPE",
       staff_title: "Notre Staff",
       staff_desc: "Une équipe de professeurs agrégés et de coachs certifiés UEFA pour un encadrement d'exception."
     },
@@ -288,10 +290,12 @@ export const translations = {
       milestone_4: "Inauguration of the international Dual Diploma program."
     },
     team_page: {
-      title: "Project & Team",
-      mission_title: "Our Mission",
-      mission_desc: "To train global citizens, responsible and performing, both on the field and in academic life.",
-      team_title: "Leadership Team",
+      title: "The Project",
+      subtitle: "ESEPF Elite Football & Academic Program",
+      p1: "At ESEPF, we offer young people aged 11 to 19 an exceptional dual project. Our Elite Football Program provides professional daily training, supervised by UEFA-certified coaches, focused on technical, tactical, and athletic development. The goal is clear: perform and progress toward the high level.",
+      p2: "In parallel, students follow an excellent French school curriculum (from 6th to 12th grade), arranged around their sporting practice. Thanks to personalized educational monitoring and an optimized timetable, the balance between sessions on the field and academic imperatives is guaranteed.",
+      p3: "This unique program forges both the athlete and the student, instilling discipline, rigor, and ambition. Joining ESEPF means choosing a path of excellence to build a champion's future, on the field and in life.",
+      team_title: "THE TEAM",
       staff_title: "Our Staff",
       staff_desc: "A team of associate professors and UEFA certified coaches for exceptional guidance."
     },
@@ -501,10 +505,12 @@ export const translations = {
       milestone_4: "启动国际双文凭项目。"
     },
     team_page: {
-      title: "项目与团队",
-      mission_title: "我们的使命",
-      mission_desc: "培养在球场上和学术生活中都具有责任感和表现力的全球公民。",
-      team_title: "领导团队",
+      title: "该项目",
+      subtitle: "ESEPF 精英足球与学术计划",
+      p1: "在 ESEPF，我们为 11 至 19 岁的青少年提供卓越的双重项目。我们的精英足球计划提供专业的日常训练，由欧足联认证的教练指导，专注于技术、战术和运动能力的提升。目标明确：在最高水平上表现并取得进步。",
+      p2: "与此同时，学生们遵循卓越的法国学校课程（从 6 年级到高中毕业班），围绕他们的体育实践进行安排。得益于个性化的教育跟踪和优化的时间表，球场上的训练与学术要求之间的平衡得到了保障。",
+      p3: "这一独特的计划不仅磨练运动员，也塑造学生，灌输纪律、严谨和抱负。加入 ESEPF 意味着选择一条卓越之路，为在球场上和生活中的冠军未来奠定基础。",
+      team_title: "团队",
       staff_title: "教职员工",
       staff_desc: "由教授和欧足联认证教练组成的团队，提供卓越的指导。"
     },

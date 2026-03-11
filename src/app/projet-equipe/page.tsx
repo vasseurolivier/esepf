@@ -8,79 +8,99 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { Target, Users, ShieldCheck, Briefcase } from 'lucide-react';
+import { useDoc, useFirestore } from '@/firebase';
+import { ShieldCheck, GraduationCap } from 'lucide-react';
 
 export default function TeamPage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const { data: settings } = useDoc(db, 'settings/global');
 
   return (
     <FirebaseClientProvider>
       <Header />
-      <main className="min-h-screen">
-        <section className="relative h-[50vh] flex items-center justify-center bg-primary overflow-hidden">
-          <Image 
-            src="https://picsum.photos/seed/team-hero/1920/1080"
-            alt="Team"
-            fill
-            className="object-cover opacity-40"
-            data-ai-hint="team business professional"
-            priority
-          />
-          <div className="relative z-10 text-center text-white container px-4">
-            <ScrollReveal>
-              <h1 className="text-5xl md:text-7xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.team_page.title}</h1>
+      <main className="min-h-screen bg-white">
+        {/* Section Le Projet (Split Layout based on reference image) */}
+        <section className="flex flex-col lg:flex-row min-h-[600px]">
+          {/* Left Side: Green with Title and Crest */}
+          <div className="lg:w-[45%] bg-[#1a3d2f] p-12 lg:p-24 flex flex-col justify-center items-start relative overflow-hidden">
+            <ScrollReveal className="relative z-10 w-full">
+              <h1 className="text-6xl md:text-8xl font-headline font-bold text-white mb-12 tracking-tighter uppercase">
+                {t.team_page.title}
+              </h1>
+              
+              <div className="w-full flex justify-center lg:justify-start">
+                <div className="relative w-64 h-64 opacity-60">
+                  <svg viewBox="0 0 200 200" className="w-full h-full fill-white">
+                    <path d="M100 20C70 20 40 40 40 80C40 130 100 180 100 180C100 180 160 130 160 80C160 40 130 20 100 20ZM100 140C80 140 60 120 60 100C60 80 80 60 100 60C120 60 140 80 140 100C140 120 120 140 100 140Z" />
+                    <circle cx="100" cy="100" r="25" />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <GraduationCap size={60} className="text-[#1a3d2f] mb-4" />
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+            
+            {/* Subtle gradient overlay to mimic image fade */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 pointer-events-none" />
+          </div>
+
+          {/* Right Side: Text Content */}
+          <div className="lg:w-[55%] p-12 lg:p-24 flex flex-col justify-center">
+            <ScrollReveal className="max-w-2xl space-y-8">
+              <h2 className="text-3xl font-headline font-bold text-black leading-tight">
+                {t.team_page.subtitle}
+              </h2>
+              
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                <p>{t.team_page.p1}</p>
+                <p>{t.team_page.p2}</p>
+                <p>{t.team_page.p3}</p>
+              </div>
             </ScrollReveal>
           </div>
         </section>
 
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-              <ScrollReveal>
-                <div className="inline-flex p-3 rounded-2xl bg-secondary/10 text-secondary mb-6"><Target size={32} /></div>
-                <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.team_page.mission_title}</h2>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  {t.team_page.mission_desc}
-                </p>
-              </ScrollReveal>
-              <ScrollReveal delay={200} className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl">
-                <Image src="https://picsum.photos/seed/mission/800/600" alt="Mission" fill className="object-cover" />
-              </ScrollReveal>
-            </div>
-
-            <ScrollReveal className="text-center mb-16">
-              <h2 className="text-4xl font-headline font-bold text-primary mb-4">{t.team_page.team_title}</h2>
-              <div className="w-20 h-1.5 bg-secondary mx-auto rounded-full" />
+        {/* Section L'EQUIPE (Centered Title with underline) */}
+        <section className="py-24 bg-white border-t border-muted">
+          <div className="container mx-auto px-4">
+            <ScrollReveal className="text-center mb-20">
+              <h2 className="text-5xl md:text-7xl font-headline font-bold text-black tracking-tighter uppercase inline-block relative">
+                {t.team_page.team_title}
+                <div className="w-12 h-1 bg-black mx-auto mt-4 rounded-full" />
+              </h2>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
+            {/* Team Members Grid (Keeping existing structure but cleaner) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-6xl mx-auto">
               {[1, 2, 3].map((i) => (
                 <ScrollReveal key={i} delay={i * 100} className="text-center group">
-                  <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-muted group-hover:border-secondary transition-colors">
-                    <Image src={`https://picsum.photos/seed/member-${i}/400/400`} alt="Member" fill className="object-cover" />
+                  <div className="relative w-56 h-56 mx-auto mb-8 rounded-full overflow-hidden border-4 border-muted group-hover:border-secondary transition-all duration-500 shadow-xl">
+                    <Image src={`https://picsum.photos/seed/member-${i}/500/500`} alt="Member" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
-                  <h3 className="text-xl font-bold text-primary uppercase">Directeur {i}</h3>
-                  <p className="text-secondary font-medium text-sm">Responsable Académique</p>
+                  <h3 className="text-2xl font-headline font-bold text-black uppercase tracking-tight">Directeur {i}</h3>
+                  <p className="text-secondary font-bold text-sm mt-2 uppercase tracking-widest">Responsable Académique</p>
                 </ScrollReveal>
               ))}
             </div>
-
-            <div className="bg-muted p-12 rounded-[3rem] shadow-inner">
-               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Staff Labels */}
+            <div className="mt-32 max-w-4xl mx-auto bg-muted/20 p-12 rounded-[3rem]">
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                   <ScrollReveal>
-                    <h3 className="text-3xl font-headline font-bold text-primary mb-6 flex items-center gap-3">
-                       <Briefcase className="text-secondary" />
+                    <h3 className="text-3xl font-headline font-bold text-black mb-6">
                        {t.team_page.staff_title}
                     </h3>
-                    <p className="text-lg text-muted-foreground">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
                       {t.team_page.staff_desc}
                     </p>
                   </ScrollReveal>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-6">
                      {[1,2,3,4].map(i => (
-                        <div key={i} className="bg-white p-6 rounded-2xl shadow-sm text-center">
-                           <ShieldCheck size={24} className="mx-auto text-secondary mb-2" />
-                           <span className="text-xs font-bold uppercase text-primary">Label {i}</span>
+                        <div key={i} className="bg-white p-6 rounded-3xl shadow-sm border border-border flex flex-col items-center justify-center">
+                           <ShieldCheck size={32} className="text-secondary mb-3" />
+                           <span className="text-[10px] font-bold uppercase text-black tracking-widest text-center">Label Officiel {i}</span>
                         </div>
                      ))}
                   </div>
