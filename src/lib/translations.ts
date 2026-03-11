@@ -106,7 +106,18 @@ export const translations = {
       student_life_title: "S'épanouir au quotidien",
       student_life_desc: "Bien plus qu'un lieu d'étude, l'Institution est un espace de vie.",
       student_life_btn: "DÉCOUVRIR LA VIE SCOLAIRE",
-      journey_title: "LE PARCOURS DE L'ÉLÈVE"
+      student_life_activities: "Activités",
+      student_life_activities_list: "Théâtre, Chorale, Club Échecs, Programmation.",
+      student_life_sports: "Sports",
+      student_life_sports_list: "Rugby, Gymnastique, Escalade, Natation.",
+      journey_title: "LE PARCOURS DE L'ÉLÈVE",
+      three_axes_mobile_title: "Nos Piliers d'Excellence",
+      three_axes_mobile_languages_btn: "DÉCOUVRIR LE PROGRAMME FLE/EFL"
+    },
+    campus_locations: {
+      evron: "Evron, Mayenne",
+      bazeilles: "Sainte-Bazeilles, Lot-et-Garonne",
+      tulle: "Sainte-Tulle, Provence"
     },
     formations: {
       integration_title: "CLASSE D'INTEGRATION",
@@ -273,7 +284,7 @@ export const translations = {
       label2_1: "Football",
       label2_2: "Basketball",
       label2_2_sub: "(Bientôt disponible)",
-      text2: "Notre établissement propose un programme sport-études axé sur le football, offrant des entraînements intensifs, des séances techniques, des matchs, et un accompagnement individualisé pour développer les compétences sportives et humaines des élèves. Prochainement, nous élargirons notre offre avec un programme dédié au basketball, permettant aux passionnés de ce sport de bénéficier de la même qualité de formation et d'encadrement. Ces programmes sont conçus pour allier performance sportive et réussite scolaire, tout en cultivant des valeurs comme l'esprit d'équipe et la discipline."
+      text2: "Notre établissement propose un programme sport-études axé sur le football, offrant des entraînements intensifs, des séances techniques, des matchs, et un accompagnement individualisé pour développer les compétences sportives et humaines des élèves. Prochainement, nous élargirons notre offer avec un programme dédié au basketball, permettant aux passionnés de ce sport de bénéficier de la même qualité de formation et d'encadrement. Ces programmes sont conçus pour allier performance sportive et réussite scolaire, tout en cultivant des valeurs comme l'esprit d'équipe et la discipline."
     },
     journey: {
       college: "COLLÈGE",
@@ -311,10 +322,12 @@ export const translations = {
       q2_o2: "École de commerce",
       q2_o3: "BTS rapide",
       result_prefix: "Ton profil correspond au",
+      result_stmg: "Bac Technologique STMG",
+      result_gen: "Bac Général",
       stmg_desc: "Idéal pour comprendre les organisations.",
       gen_desc: "Parfait pour les profils académiques.",
       discover_btn: "Découvrir la filière",
-      restart_btn: "Recommencer"
+      restart_btn: "Récommencer"
     },
     contact_page: {
       title: "Contactez-nous",
@@ -451,18 +464,29 @@ export const translations = {
       student_life_title: "Daily fulfillment",
       student_life_desc: "The Institution is a living space.",
       student_life_btn: "DISCOVER STUDENT LIFE",
-      journey_title: "STUDENT JOURNEY"
+      student_life_activities: "Activities",
+      student_life_activities_list: "Theater, Choir, Chess Club, Coding.",
+      student_life_sports: "Sports",
+      student_life_sports_list: "Rugby, Gymnastics, Climbing, Swimming.",
+      journey_title: "STUDENT JOURNEY",
+      three_axes_mobile_title: "Our Excellence Pillars",
+      three_axes_mobile_languages_btn: "DISCOVER FLE/EFL PROGRAM"
+    },
+    campus_locations: {
+      evron: "Evron, Mayenne",
+      bazeilles: "Sainte-Bazeilles, Lot-et-Garonne",
+      tulle: "Sainte-Tulle, Provence"
     },
     formations: {
-      integration_title: "CLASSE D'INTEGRATION",
-      integration_sub: "Un tremplin vers la réussite dans le système éducatif français.",
+      integration_title: "INTEGRATION CLASS",
+      integration_sub: "A springboard towards success in the French education system.",
     },
     outlets_labels: {
-      higher_ed_title: "LES ÉTUDES SUPÉRIEURES FRANÇAISES",
-      bts_title: "LES BTS",
-      univ_title: "UNIVERSITÉS FRANÇAISES",
-      jobs_title: "LES MÉTIERS",
-      licence_master: "LICENCES / MASTERS"
+      higher_ed_title: "FRENCH HIGHER EDUCATION",
+      bts_title: "BTS (2 YEARS)",
+      univ_title: "FRENCH UNIVERSITIES",
+      jobs_title: "CAREERS",
+      licence_master: "BACHELOR / MASTER"
     },
     programs: {
       details_btn: "Learn more",
@@ -656,6 +680,8 @@ export const translations = {
       q2_o2: "Business School",
       q2_o3: "Quick BTS",
       result_prefix: "Your profile fits",
+      result_stmg: "Technological STMG Bac",
+      result_gen: "General Bac",
       stmg_desc: "Ideal to understand organizations.",
       gen_desc: "Perfect for academic profiles.",
       discover_btn: "Discover track",
@@ -796,7 +822,29 @@ export const translations = {
       student_life_title: "充实每一天",
       student_life_desc: "学院是一个生活空间。",
       student_life_btn: "探索校园生活",
-      journey_title: "学生发展蓝图"
+      student_life_activities: "校园活动",
+      student_life_activities_list: "戏剧、合唱、象棋俱乐部、编程。",
+      student_life_sports: "体育运动",
+      student_life_sports_list: "橄榄球、体操、攀岩、游泳。",
+      journey_title: "学生发展蓝图",
+      three_axes_mobile_title: "我们的卓越支柱",
+      three_axes_mobile_languages_btn: "了解 FLE/EFL 课程"
+    },
+    campus_locations: {
+      evron: "埃夫龙 (马耶讷省)",
+      bazeilles: "圣巴泽耶 (洛特-加龙省)",
+      tulle: "圣蒂勒 (普罗旺斯)"
+    },
+    formations: {
+      integration_title: "整合班",
+      integration_sub: "通往法国教育体系成功的跳板。",
+    },
+    outlets_labels: {
+      higher_ed_title: "法国高等教育",
+      bts_title: "BTS (2年制)",
+      univ_title: "法国公立大学",
+      jobs_title: "职业发展",
+      licence_master: "本科 / 硕士"
     },
     programs: {
       details_btn: "了解更多",
@@ -972,7 +1020,7 @@ export const translations = {
     campus_pages: {
       evron_hero: "埃夫龙校区",
       evron_sub: "ESEPF 的历史中心。",
-      bazeilles_hero: "圣巴泽耶校区",
+      bazeilles: "圣巴泽耶校区",
       bazeilles_sub: "西南地区的创新。",
       tulle_hero: "圣蒂勒校区",
       tulle_sub: "普罗旺斯的卓越。",
@@ -990,6 +1038,8 @@ export const translations = {
       q2_o2: "商学院",
       q2_o3: "快速 BTS",
       result_prefix: "资料匹配",
+      result_stmg: "管理技术高中 (STMG)",
+      result_gen: "普通高中毕业 (General)",
       stmg_desc: "适合了解组织运作。",
       gen_desc: "适合学术型学生。",
       discover_btn: "探索学科",

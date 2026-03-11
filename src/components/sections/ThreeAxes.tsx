@@ -100,8 +100,8 @@ export function ThreeAxes() {
                       <Languages className="text-secondary" size={40} />
                     </div>
                     <div className="flex flex-col items-center">
-                      <h3 className="text-3xl font-headline font-bold text-primary tracking-widest uppercase border-b-2 border-muted pb-2 px-12 leading-tight">
-                        {t.axes.languages_title.split(' ').join(' \n')}
+                      <h3 className="text-3xl font-headline font-bold text-primary tracking-widest uppercase border-b-2 border-muted pb-2 px-12 leading-tight whitespace-pre-line">
+                        {t.axes.languages_title}
                       </h3>
                     </div>
                     <div className="bg-secondary/5 border border-secondary/10 p-6 rounded-full shadow-sm translate-y-4">
@@ -135,7 +135,9 @@ export function ThreeAxes() {
                   )}
                   <div className="absolute -bottom-4 bg-primary text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">{schoolName}</div>
                 </div>
-                <h2 className="text-2xl font-headline font-bold text-primary text-center px-4">Nos Piliers d'Excellence</h2>
+                <h2 className="text-2xl font-headline font-bold text-primary text-center px-4">
+                  {t.sections.three_axes_mobile_title}
+                </h2>
               </div>
 
               <div className="grid grid-cols-1 gap-8">
@@ -176,11 +178,13 @@ export function ThreeAxes() {
                     <div className="bg-secondary/10 p-3 rounded-2xl">
                       <Languages className="text-secondary" size={24} />
                     </div>
-                    <h3 className="text-xl font-bold text-primary uppercase tracking-wider">LANGUES</h3>
+                    <h3 className="text-xl font-bold text-primary uppercase tracking-wider">
+                      {t.axes.languages_title.split(' ')[0]}
+                    </h3>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-6">{t.axes.languages_desc.substring(0, 150)}...</p>
                   <Link href="/formations/langues" className="flex items-center justify-between font-bold text-primary uppercase text-[10px] tracking-widest bg-white p-4 rounded-xl border border-border">
-                    DÉCOUVRIR LE PROGRAMME FLE/EFL
+                    {t.sections.three_axes_mobile_languages_btn}
                     <ChevronRight size={14} className="text-secondary" />
                   </Link>
                 </div>

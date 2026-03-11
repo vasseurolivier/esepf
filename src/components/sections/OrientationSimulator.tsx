@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Sparkles, ArrowRight, RefreshCcw, GraduationCap } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
+import Link from 'next/link';
 
 export function OrientationSimulator() {
   const { t } = useTranslation();
@@ -51,9 +52,9 @@ export function OrientationSimulator() {
   const calculateResult = (finalAnswers: string[]) => {
     const stmgCount = finalAnswers.filter(a => a === "STMG").length;
     if (stmgCount >= 1) {
-      setResult("Bac Technologique STMG");
+      setResult(t.orientation.result_stmg);
     } else {
-      setResult("Bac Général");
+      setResult(t.orientation.result_gen);
     }
   };
 
@@ -105,16 +106,18 @@ export function OrientationSimulator() {
                 <h3 className="text-sm font-bold text-secondary uppercase tracking-widest mb-2">{t.orientation.result_prefix}</h3>
                 <CardTitle className="text-4xl md:text-5xl font-headline font-bold text-primary mb-8">{result}</CardTitle>
                 <p className="text-muted-foreground text-lg mb-10 max-w-md mx-auto">
-                  {result === "Bac Technologique STMG" 
+                  {result === t.orientation.result_stmg
                     ? t.orientation.stmg_desc
                     : t.orientation.gen_desc
                   }
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-6 px-8 rounded-full text-lg uppercase tracking-wider">
-                    {t.orientation.discover_btn} <ArrowRight className="ml-2" />
-                  </Button>
-                  <Button variant="outline" onClick={reset} className="border-2 border-primary text-primary font-bold py-6 px-8 rounded-full text-lg hover:bg-primary/5 uppercase tracking-wider">
+                  <Link href="/formations/lycee" className="w-full sm:w-auto">
+                    <Button className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-white font-bold py-6 px-8 rounded-full text-lg uppercase tracking-wider">
+                      {t.orientation.discover_btn} <ArrowRight className="ml-2" />
+                    </Button>
+                  </Link>
+                  <Button variant="outline" onClick={reset} className="w-full sm:w-auto border-2 border-primary text-primary font-bold py-6 px-8 rounded-full text-lg hover:bg-primary/5 uppercase tracking-wider">
                     {t.orientation.restart_btn} <RefreshCcw className="ml-2" />
                   </Button>
                 </div>

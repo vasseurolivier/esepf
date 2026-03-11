@@ -18,21 +18,21 @@ export function Campuses() {
     {
       id: "evron",
       name: "Campus Evron",
-      location: "Evron, Mayenne",
+      location: t.campus_locations.evron,
       image: settings?.images?.campus_evron || "https://picsum.photos/seed/evron-campus/600/400",
       href: "/campus/evron"
     },
     {
       id: "sainte-bazeilles",
       name: "Campus Sainte-Bazeilles",
-      location: "Sainte-Bazeilles, Lot-et-Garonne",
+      location: t.campus_locations.bazeilles,
       image: settings?.images?.campus_bazeilles || "https://picsum.photos/seed/bazeilles-campus/600/400",
       href: "/campus/sainte-bazeilles"
     },
     {
       id: "sainte-tulle",
       name: "Campus Sainte-Tulle",
-      location: "Sainte-Tulle, Alpes-de-Haute-Provence",
+      location: t.campus_locations.tulle,
       image: settings?.images?.campus_tulle || "https://picsum.photos/seed/tulle-campus/600/400",
       href: "/campus/sainte-tulle"
     }
