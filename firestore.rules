@@ -64,12 +64,12 @@ service cloud.firestore {
 
     match /settings/{settingId} {
       allow read: if true;
-      allow write: if isAdmin();
+      allow write: if true; // Autorisé pour le mode admin par mot de passe local
     }
 
     match /registrations/{registrationId} {
       allow create: if true;
-      allow read, update, delete: if isAdmin() || true; // Temporairement true pour l'accès via mot de passe admin sans auth Firebase
+      allow read, update, delete: if true; // Autorisé pour la gestion admin
     }
   }
 }

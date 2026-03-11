@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -15,6 +14,8 @@ import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, User
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { format } from 'date-fns';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 const ADMIN_PASSWORD = 'Yesacademy888$';
 
@@ -81,16 +82,38 @@ export default function AdminPage() {
       images: images,
       updatedAt: serverTimestamp()
     };
-    setDoc(settingsRef, updateData, { merge: true }).finally(() => {
-      setIsSaving(false);
-      toast({ title: "ENREGISTRÉ !", description: "Les modifications sont en ligne." });
-    });
+
+    setDoc(settingsRef, updateData, { merge: true })
+      .then(() => {
+        toast({ title: "ENREGISTRÉ !", description: "Les modifications sont en ligne." });
+      })
+      .catch(async (error) => {
+        const permissionError = new FirestorePermissionError({
+          path: settingsRef.path,
+          operation: 'write',
+          requestResourceData: updateData,
+        });
+        errorEmitter.emit('permission-error', permissionError);
+      })
+      .finally(() => {
+        setIsSaving(false);
+      });
   };
 
   const updateRegStatus = (id: string, newStatus: string) => {
     const regRef = doc(db, 'registrations', id);
-    updateDoc(regRef, { status: newStatus });
-    toast({ title: "Statut mis à jour" });
+    updateDoc(regRef, { status: newStatus })
+      .then(() => {
+        toast({ title: "Statut mis à jour" });
+      })
+      .catch(async (error) => {
+        const permissionError = new FirestorePermissionError({
+          path: regRef.path,
+          operation: 'update',
+          requestResourceData: { status: newStatus },
+        });
+        errorEmitter.emit('permission-error', permissionError);
+      });
   };
 
   if (settingsLoading) {
