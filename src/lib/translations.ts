@@ -28,7 +28,8 @@ export const translations = {
       viewAll: "Voir tout le blog",
       register: "S'inscrire sur ce Campus",
       contact_coach: "Contacter un coach",
-      apply: "Demander le dossier d'admission"
+      apply: "Demander le dossier d'admission",
+      contact_us: "Contactez-nous"
     },
     figures: {
       bac: "Réussite au Bac",
@@ -114,6 +115,22 @@ export const translations = {
       year2_title: "Année 2 : Classe de 4e avec un programme pédagogique adapté à leur niveau.",
       year3_title: "Année 3 : Classe de 3e qui leur permettra de se préparer à l'entrée au lycée avec pour objectif final la préparation et la réussite au Baccalauréat français.",
       conclusion: "À l'issue de leur parcours au Collège, nos élèves intégreront, directement, notre Lycée dans l'une de nos classes de Seconde, afin de poursuivre leur formation dans un environnement adapté à leur progression académique et sportive de haut niveau."
+    },
+    lycee_page: {
+      title: "BACCALAURÉATS",
+      intro_p1: "Notre lycée propose un parcours exigeant et diversifié, adapté aux aspirations et projets de chaque élève. Il offre trois filières principales : le baccalauréat général, le baccalauréat technologique STMG (Sciences et Technologies du Management et de la Gestion) et le baccalauréat professionnel Vente.",
+      intro_p2: "Chaque programme est conçu pour permettre aux élèves d'acquérir des compétences solides et de préparer leur orientation vers l'enseignement supérieur ou le monde professionnel.",
+      intro_p3: "Le bac général développe l'esprit d'analyse et la culture générale, le bac STMG prépare à des études en gestion, commerce et économie, tandis que le bac pro Vente offre une formation pratique et opérationnelle pour intégrer rapidement le secteur du commerce.",
+      intro_p4: "Un accompagnement personnalisé et un suivi régulier sont assurés pour garantir la réussite de chaque élève dans sa voie choisie.",
+      formations_title: "LES FORMATIONS",
+      card_langues: "METIERS DES LANGUES ET DES CULTURES",
+      card_vente: "METIERS DE LA VENTE",
+      card_management: "METIERS DU MANAGEMENT",
+      card_hotel: "METIERS DE L'HOTELLERIE RESTAURATION",
+      card_mode: "METIERS DE LA MODE ET DU DESIGN",
+      btn_formation: "LA FORMATION",
+      btn_outlets: "LES DÉBOUCHÉS SCOLAIRES",
+      btn_jobs: "LES MÉTIERS"
     },
     journey: {
       college: "COLLÈGE",
@@ -265,7 +282,8 @@ export const translations = {
       viewAll: "View all news",
       register: "Register on this Campus",
       contact_coach: "Contact a coach",
-      apply: "Request admission file"
+      apply: "Request admission file",
+      contact_us: "Contact us"
     },
     figures: {
       bac: "Success Rate",
@@ -351,6 +369,22 @@ export const translations = {
       year2_title: "Year 2: 4th grade class with a pedagogical program adapted to their level.",
       year3_title: "Year 3: 3rd grade class that will allow them to prepare for high school entry with the final objective of preparing for and succeeding in the French Baccalaureate.",
       conclusion: "At the end of their Middle School journey, our students will directly join our High School in one of our 10th grade (Seconde) classes, in order to continue their training in an environment adapted to their high-level academic and sporting progression."
+    },
+    lycee_page: {
+      title: "BACCALAUREATES",
+      intro_p1: "Our high school offers a demanding and diverse pathway, adapted to the aspirations and projects of each student. It offers three main tracks: the general baccalaureate, the STMG technological baccalaureate (Sciences and Technologies of Management and Administration) and the professional Vente baccalaureate.",
+      intro_p2: "Each program is designed to allow students to acquire solid skills and prepare their orientation towards higher education or the professional world.",
+      intro_p3: "The general baccalaureate develops analytical skills and general culture, the STMG baccalaureate prepares for studies in management, commerce and economics, while the Vente professional baccalaureate offers practical and operational training to quickly integrate the commerce sector.",
+      intro_p4: "Personalized support and regular monitoring are provided to ensure the success of each student in their chosen path.",
+      formations_title: "THE PROGRAMS",
+      card_langues: "LANGUAGES AND CULTURES CAREERS",
+      card_vente: "SALES CAREERS",
+      card_management: "MANAGEMENT CAREERS",
+      card_hotel: "HOTEL AND RESTAURANT CAREERS",
+      card_mode: "FASHION AND DESIGN CAREERS",
+      btn_formation: "THE PROGRAM",
+      btn_outlets: "ACADEMIC OUTLETS",
+      btn_jobs: "THE CAREERS"
     },
     journey: {
       college: "MIDDLE SCHOOL",
@@ -502,7 +536,8 @@ export const translations = {
       viewAll: "查看博客",
       register: "在此校区注册",
       contact_coach: "联系教练",
-      apply: "索取招生简章"
+      apply: "索取招生简章",
+      contact_us: "联系我们"
     },
     figures: {
       bac: "高考成功率",
@@ -562,7 +597,7 @@ export const translations = {
       title: "认可与认证",
       hero_title: "ESEPF",
       hero_subtitle: "法国国民教育部认可的学校",
-      hero_text: "我们的机构获得了法国国民教育部的官方认可。这一认可保证了我们的学校遵守法国政府制定的教育标准和学术要求。",
+      hero_text: "我们的机构获得了法国国民教育部的官方认可。这一认可保证了我们的学校遵守法国政府制定的教育标准 and academic requirements set by the French government.",
       diploma_title: "法国国家文凭",
       diploma_text_1: "我们为学生准备法国国家文凭。这些文凭，如国家初中毕业文凭 (DNB) 以及普通和技术高中毕业文凭，因其学术要求而获得认可。",
       diploma_text_2: "此外，它们还获得了中国教育部的认可，从而为我们的学生提供了在法国和中国都获得认可的质量认证。",
@@ -588,6 +623,22 @@ export const translations = {
       year2_title: "第二年：根据其水平定制教学大纲的初二（4e）班。",
       year3_title: "第三年：初三（3e）班，让他们为升入高中做准备，最终目标是备战并成功获得法国高中毕业证书。",
       conclusion: "初中学习结束后，我们的学生将直接进入我们高中的高一（Seconde）班，在适应其高水平学业和体育进步的环境中继续深造。"
+    },
+    lycee_page: {
+      title: "高中毕业证书",
+      intro_p1: "我们的高中提供严谨且多元化的路径，适应每位学生的选择与规划。它提供三个主要方向：普通高中毕业证书、STMG 技术高中毕业证书（管理与行政科学技术）以及 Vente 专业高中毕业证书。",
+      intro_p2: "每个计划都旨在让学生获得扎实的技能，并为他们升入高等教育或进入职业世界做好准备。",
+      intro_p3: "普通高中培养分析能力和通识文化，STMG 准备管理、商业和经济方面的学习，而 Vente 专业提供实用的操作性培训，以便快速融入商业领域。",
+      intro_p4: "提供个性化的支持和定期监控，以确保每位学生在所选路径上的成功。",
+      formations_title: "培训课程",
+      card_langues: "语言与文化职业",
+      card_vente: "销售职业",
+      card_management: "管理职业",
+      card_hotel: "酒店餐饮职业",
+      card_mode: "时尚与设计职业",
+      btn_formation: "培训课程",
+      btn_outlets: "升学前景",
+      btn_jobs: "相关职业"
     },
     journey: {
       college: "初中",
