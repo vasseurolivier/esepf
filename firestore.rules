@@ -4,30 +4,32 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     
-    // Paramètres globaux - Lecture publique pour tous les visiteurs
-    // Écriture autorisée pour le prototype (la sécurité est assurée par le mot de passe dans l'admin)
+    // Paramètres globaux (AppSettings)
+    // Lecture publique pour permettre l'affichage du site à tous les visiteurs.
+    // Écriture autorisée pour le prototype (sécurisée par mot de passe côté client dans l'admin).
     match /settings/global {
       allow read: if true;
       allow write: if true;
     }
     
-    // Collections de contenu - Lecture publique
-    match /informations/{infoId} {
-      allow read: if true;
-      allow write: if true;
-    }
-    
+    // Collections de contenu (Articles de blog, actualités, etc.)
     match /articles/{articleId} {
       allow read: if true;
       allow write: if true;
     }
     
+    match /informations/{infoId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Configuration système
     match /config/{configId} {
       allow read: if true;
       allow write: if true;
     }
     
-    // Règle par défaut : accès refusé pour tout le reste
+    // Règle par défaut : accès refusé pour tout le reste afin de sécuriser la base
     match /{document=**} {
       allow read, write: if false;
     }
