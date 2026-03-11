@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { Button } from '@/components/ui/button';
@@ -53,7 +53,7 @@ export default function AdminPage() {
     e.preventDefault();
     if (passwordInput === ADMIN_PASSWORD) {
       setIsUnlocked(true);
-      toast({ title: "Accès autorisé", description: "Vous pouvez maintenant modifier le contenu du serveur." });
+      toast({ title: "Accès autorisé", description: "Modification du serveur activée." });
     } else {
       toast({ variant: "destructive", title: "Accès refusé", description: "Mot de passe incorrect." });
     }
@@ -63,12 +63,9 @@ export default function AdminPage() {
     setImages(prev => ({ ...prev, [id]: value }));
   };
 
-  const handleSaveSettings = () => {
-    if (!db) {
-      toast({ variant: "destructive", title: "Erreur", description: "Base de données non initialisée." });
-      return;
-    }
-
+  const handleSaveSettings = async () => {
+    if (!db) return;
+    
     setIsSaving(true);
     const settingsRef = doc(db, 'settings', 'global');
     
@@ -78,59 +75,52 @@ export default function AdminPage() {
       images: images,
       updatedAt: serverTimestamp()
     };
-    
-    // On n'utilise pas await ici pour respecter les guidelines, mais on gère le retour proprement
-    setDoc(settingsRef, updateData, { merge: true })
-      .then(() => {
-        setIsSaving(false);
-        toast({ 
-          title: "ENREGISTRÉ AVEC SUCCÈS", 
-          description: "Les modifications sont maintenant publiques pour tous les utilisateurs." 
-        });
-      })
-      .catch(async (error) => {
-        setIsSaving(false);
-        const permissionError = new FirestorePermissionError({
-          path: settingsRef.path,
-          operation: 'write',
-          requestResourceData: updateData,
-        });
-        errorEmitter.emit('permission-error', permissionError);
-        toast({ 
-          variant: "destructive", 
-          title: "Erreur de serveur", 
-          description: "L'envoi a échoué. Vérifiez vos règles Firestore ou votre connexion." 
-        });
-      });
 
-    // Sécurité supplémentaire : si après 10 secondes rien ne se passe, on débloque le bouton
-    setTimeout(() => {
-      setIsSaving(prev => {
-        if (prev) {
-          toast({ variant: "destructive", title: "Délai dépassé", description: "Le serveur met trop de temps à répondre." });
-          return false;
-        }
-        return false;
-      });
-    }, 10000);
+    // Sécurité anti-blocage : Timeout de 5 secondes
+    const timeoutId = setTimeout(() => {
+      if (isSaving) {
+        setIsSaving(false);
+        toast({ variant: "destructive", title: "Erreur de connexion", description: "Le serveur met trop de temps à répondre." });
+      }
+    }, 5000);
+
+    try {
+      // On n'utilise pas await ici pour respecter les guidelines de mutation asynchrone, 
+      // mais on gère le retour pour le feedback utilisateur.
+      setDoc(settingsRef, updateData, { merge: true })
+        .then(() => {
+          clearTimeout(timeoutId);
+          setIsSaving(false);
+          toast({ title: "SUCCÈS", description: "Les données sont publiées pour tout le monde." });
+        })
+        .catch(async (error) => {
+          clearTimeout(timeoutId);
+          setIsSaving(false);
+          const permissionError = new FirestorePermissionError({
+            path: settingsRef.path,
+            operation: 'write',
+            requestResourceData: updateData,
+          });
+          errorEmitter.emit('permission-error', permissionError);
+        });
+    } catch (e) {
+      clearTimeout(timeoutId);
+      setIsSaving(false);
+    }
   };
 
   if (settingsLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <Loader2 className="animate-spin text-primary w-12 h-12" />
-      </div>
-    );
+    return <div className="min-h-screen flex items-center justify-center bg-background"><Loader2 className="animate-spin text-primary" /></div>;
   }
 
   if (!isUnlocked) {
     return (
       <main className="min-h-screen bg-muted/30 flex flex-col items-center justify-center p-4">
-        <Card className="w-full max-w-md rounded-3xl shadow-2xl">
+        <Card className="w-full max-w-md rounded-3xl shadow-2xl border-none">
           <CardHeader className="text-center">
             <Lock size={48} className="mx-auto text-primary mb-4" />
-            <CardTitle>Espace Administration</CardTitle>
-            <CardDescription>Entrez votre mot de passe pour modifier le site</CardDescription>
+            <CardTitle>Administration ESEPF</CardTitle>
+            <CardDescription>Entrez le code pour modifier le site public</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleUnlock} className="space-y-4">
@@ -139,9 +129,9 @@ export default function AdminPage() {
                 placeholder="Mot de passe" 
                 value={passwordInput}
                 onChange={(e) => setPasswordInput(e.target.value)}
-                className="text-center"
+                className="text-center h-12 rounded-xl"
               />
-              <Button type="submit" className="w-full">Valider</Button>
+              <Button type="submit" className="w-full h-12 rounded-xl bg-primary">DÉVERROUILLER</Button>
             </form>
           </CardContent>
         </Card>
@@ -150,93 +140,78 @@ export default function AdminPage() {
   }
 
   return (
-    <main className="min-h-screen bg-muted/20">
+    <main className="min-h-screen bg-muted/20 pb-20">
       <Header />
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-5xl mx-auto space-y-8">
           
           <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-primary">Configuration du Site</h1>
-            <Link href="/">
-              <Button variant="outline" className="rounded-full">
-                <ArrowLeft size={16} className="mr-2" /> Retour au site
-              </Button>
-            </Link>
+            <h1 className="text-3xl font-bold text-primary">Configuration Globale</h1>
+            <Link href="/"><Button variant="outline" className="rounded-full"><ArrowLeft size={16} className="mr-2" /> Retour</Button></Link>
           </div>
 
-          <Card className="rounded-[2rem] overflow-hidden shadow-lg border-none">
+          <Card className="rounded-[2rem] overflow-hidden shadow-xl border-none">
             <CardHeader className="bg-primary text-white p-6">
-              <CardTitle className="flex items-center gap-2"><Globe size={20} /> Identité de l'École</CardTitle>
+              <CardTitle className="flex items-center gap-2"><Globe size={20} /> Identité Visuelle</CardTitle>
             </CardHeader>
             <CardContent className="p-8 space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div>
-                    <Label className="font-bold">Nom de l'Institution</Label>
-                    <Input 
-                      value={schoolName} 
-                      onChange={(e) => setSchoolName(e.target.value)}
-                      className="mt-1"
-                    />
+                    <Label className="font-bold">Nom de l'Etablissement</Label>
+                    <Input value={schoolName} onChange={(e) => setSchoolName(e.target.value)} className="mt-1 rounded-xl" />
                   </div>
                   <div>
-                    <Label className="font-bold">URL du Logo</Label>
-                    <Input 
-                      value={logoUrl} 
-                      onChange={(e) => setLogoUrl(e.target.value)}
-                      placeholder="https://..."
-                      className="mt-1"
-                    />
+                    <Label className="font-bold">URL du Logo Principal</Label>
+                    <Input value={logoUrl} onChange={(e) => setLogoUrl(e.target.value)} placeholder="https://..." className="mt-1 rounded-xl" />
                   </div>
                 </div>
-                <div className="bg-muted/50 rounded-2xl flex items-center justify-center p-4 border-2 border-dashed border-muted">
-                  {logoUrl ? (
-                    <img src={logoUrl} alt="Logo" className="max-h-32 object-contain" />
-                  ) : (
-                    <ImageIcon size={48} className="text-muted" />
-                  )}
+                <div className="bg-muted/50 rounded-2xl flex items-center justify-center p-4 border-2 border-dashed border-muted min-h-32">
+                  {logoUrl ? <img src={logoUrl} alt="Logo" className="max-h-24 object-contain" /> : <ImageIcon size={48} className="text-muted" />}
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="rounded-[2rem] overflow-hidden shadow-lg border-none">
+          <Card className="rounded-[2rem] overflow-hidden shadow-xl border-none">
             <CardHeader className="bg-secondary text-white p-6">
-              <CardTitle className="flex items-center gap-2"><Camera size={20} /> Galerie des Photos</CardTitle>
+              <CardTitle className="flex items-center gap-2"><Camera size={20} /> Galerie des Photos du Site</CardTitle>
             </CardHeader>
             <CardContent className="p-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {IMAGE_FIELDS.map((field) => (
-                  <div key={field.id} className="space-y-2 p-4 bg-muted/30 rounded-2xl">
-                    <Label className="font-bold text-xs uppercase">{field.label}</Label>
-                    <div className="aspect-video bg-white rounded-xl overflow-hidden mb-2">
+                  <div key={field.id} className="space-y-2 p-4 bg-white rounded-2xl border border-border shadow-sm">
+                    <Label className="font-bold text-xs uppercase text-primary">{field.label}</Label>
+                    <div className="aspect-video bg-muted/30 rounded-xl overflow-hidden mb-2 flex items-center justify-center">
                       {images[field.id] ? (
                         <img src={images[field.id]} alt={field.label} className="object-cover w-full h-full" />
                       ) : (
-                        <div className="flex items-center justify-center h-full text-muted"><ImageIcon /></div>
+                        <ImageIcon className="text-muted" />
                       )}
                     </div>
                     <Input 
                       value={images[field.id] || ''} 
                       onChange={(e) => updateImageField(field.id, e.target.value)}
                       placeholder="URL de l'image"
-                      className="text-xs"
+                      className="text-xs rounded-lg"
                     />
-                    <p className="text-[10px] text-muted-foreground italic">{field.location}</p>
+                    <p className="text-[10px] text-muted-foreground italic text-center">{field.location}</p>
                   </div>
                 ))}
               </div>
             </CardContent>
           </Card>
 
-          <Button 
-            onClick={handleSaveSettings}
-            disabled={isSaving}
-            className="w-full h-16 rounded-2xl text-xl font-bold bg-primary hover:bg-primary/90 shadow-xl"
-          >
-            {isSaving ? <Loader2 className="animate-spin mr-2" /> : <Save className="mr-2" />}
-            {isSaving ? 'ENVOI AU SERVEUR EN COURS...' : 'SAUVEGARDER POUR TOUT LE MONDE'}
-          </Button>
+          <div className="sticky bottom-8 z-50">
+            <Button 
+              onClick={handleSaveSettings}
+              disabled={isSaving}
+              className="w-full h-20 rounded-2xl text-xl font-bold bg-primary hover:bg-primary/90 shadow-2xl transition-all border-4 border-white"
+            >
+              {isSaving ? <Loader2 className="animate-spin mr-3" /> : <Save className="mr-3" />}
+              {isSaving ? 'ENREGISTREMENT EN COURS...' : 'ENREGISTRER POUR TOUT LE MONDE'}
+            </Button>
+          </div>
 
         </div>
       </div>

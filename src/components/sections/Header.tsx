@@ -66,8 +66,18 @@ export function Header() {
     return [];
   };
 
-  // On ne rend rien tant que le composant n'est pas monté pour éviter les erreurs d'hydratation
-  if (!mounted) return <div className="h-20 w-full bg-white shadow-md" />;
+  // Empêche l'erreur d'hydratation en ne rendant rien avant le montage client
+  if (!mounted) {
+    return (
+      <header className="h-20 w-full bg-white shadow-md flex items-center px-4">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="w-14 h-14 bg-muted animate-pulse rounded-full" />
+          <div className="h-6 w-48 bg-muted animate-pulse rounded" />
+          <div className="h-10 w-32 bg-muted animate-pulse rounded" />
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-md">
@@ -117,13 +127,13 @@ export function Header() {
           {navLinks.map((link) => (
             link.hasDropdown ? (
               <DropdownMenu key={link.name}>
-                <DropdownMenuTrigger className="flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10">
+                <DropdownMenuTrigger className="flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 outline-none">
                   {link.name} <ChevronDown size={12} />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
                   {getSubLinks(link.name).map((sub) => (
                     <DropdownMenuItem key={sub.name} asChild>
-                      <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider">
+                      <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider block">
                         {sub.name}
                       </Link>
                     </DropdownMenuItem>
