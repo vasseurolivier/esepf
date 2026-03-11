@@ -41,6 +41,7 @@ const footballSubLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const db = useFirestore();
   const { data: settings } = useDoc(db, 'settings/global');
   const { t, language, setLanguage } = useTranslation();
@@ -136,29 +137,43 @@ export function Header() {
         </div>
       </div>
 
+      {/* Desktop Navigation */}
       <div className="hidden lg:block bg-[#1a1a1a] w-full">
         <nav className="w-full flex">
           {navLinks.map((link) => (
             link.hasDropdown ? (
-              <DropdownMenu key={link.name}>
-                <div className="flex-1 flex items-center border-r border-white/10 hover:bg-white/10 transition-colors">
-                  <Link href={link.href} className="flex-1 flex items-center justify-center pl-4 py-5 text-[10px] font-bold text-white uppercase tracking-widest outline-none">
-                    {link.name}
-                  </Link>
-                  <DropdownMenuTrigger className="pr-4 py-5 text-white outline-none">
-                    <ChevronDown size={12} />
+              <div 
+                key={link.name} 
+                className="flex-1 relative group"
+                onMouseEnter={() => setActiveMenu(link.name)}
+                onMouseLeave={() => setActiveMenu(null)}
+              >
+                <DropdownMenu open={activeMenu === link.name} onOpenChange={(val) => !val && setActiveMenu(null)}>
+                  <DropdownMenuTrigger asChild>
+                    <div className="w-full flex items-center justify-center border-r border-white/10 hover:bg-white/10 transition-colors cursor-pointer outline-none">
+                      <span className="pl-4 py-5 text-[10px] font-bold text-white uppercase tracking-widest">
+                        {link.name}
+                      </span>
+                      <div className="px-3 py-5 text-white">
+                        <ChevronDown size={12} className={cn("transition-transform duration-200", activeMenu === link.name && "rotate-180")} />
+                      </div>
+                    </div>
                   </DropdownMenuTrigger>
-                </div>
-                <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
-                  {getSubLinks(link.name).map((sub) => (
-                    <DropdownMenuItem key={sub.name} asChild>
-                      <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider block">
-                        {sub.name}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                  <DropdownMenuContent 
+                    className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px] rounded-none shadow-2xl"
+                    onMouseEnter={() => setActiveMenu(link.name)}
+                    onMouseLeave={() => setActiveMenu(null)}
+                  >
+                    {getSubLinks(link.name).map((sub) => (
+                      <DropdownMenuItem key={sub.name} asChild>
+                        <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider block border-b border-white/5 last:border-0">
+                          {sub.name}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
             ) : (
               <Link key={link.name} href={link.href} className="flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 last:border-r-0">
                 {link.name}
@@ -168,17 +183,18 @@ export function Header() {
         </nav>
       </div>
 
-      <div className={cn("lg:hidden absolute w-full bg-[#1a1a1a] border-t border-white/10 transition-all z-50 overflow-hidden", isOpen ? "max-h-[800px] py-6" : "max-h-0")}>
+      {/* Mobile Navigation */}
+      <div className={cn("lg:hidden absolute w-full bg-[#1a1a1a] border-t border-white/10 transition-all z-50 overflow-hidden shadow-2xl", isOpen ? "max-h-[800px] py-6" : "max-h-0")}>
         <div className="flex flex-col space-y-4 px-6">
           {navLinks.map((link) => (
-            <div key={link.name}>
-              <Link href={link.href} onClick={() => setIsOpen(false)} className="text-base font-bold text-white uppercase tracking-wider">
+            <div key={link.name} className="border-b border-white/5 pb-4 last:border-0">
+              <Link href={link.href} onClick={() => setIsOpen(false)} className="text-base font-bold text-white uppercase tracking-wider block mb-2">
                 {link.name}
               </Link>
               {link.hasDropdown && (
-                <div className="pl-4 mt-2 flex flex-col space-y-2">
+                <div className="pl-4 mt-2 flex flex-col space-y-3">
                   {getSubLinks(link.name).map(sub => (
-                    <Link key={sub.name} href={sub.href} onClick={() => setIsOpen(false)} className="text-white/70 text-sm">{sub.name}</Link>
+                    <Link key={sub.name} href={sub.href} onClick={() => setIsOpen(false)} className="text-white/60 text-sm hover:text-secondary transition-colors">{sub.name}</Link>
                   ))}
                 </div>
               )}
