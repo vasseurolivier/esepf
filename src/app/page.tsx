@@ -9,7 +9,6 @@ import { Programs } from '@/components/sections/Programs';
 import { FootballAcademy } from '@/components/sections/FootballAcademy';
 import { OrientationSimulator } from '@/components/sections/OrientationSimulator';
 import { StudentLife } from '@/components/sections/StudentLife';
-import { News } from '@/components/sections/News';
 import { Footer } from '@/components/sections/Footer';
 
 export default function Home() {
@@ -25,7 +24,6 @@ export default function Home() {
       <FootballAcademy />
       <OrientationSimulator />
       <StudentLife />
-      <News />
       <Footer />
     </main>
   );

@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -27,8 +28,6 @@ const IMAGE_CATEGORIES = [
     fields: [
       { id: 'hero_home', label: 'Bannière Accueil', location: 'Haut de page accueil' },
       { id: 'campus_panoramic', label: 'Bandeau Panoramique', location: 'Transition section campus' },
-      { id: 'news_graduation', label: 'Actualité 1', location: 'Section Blog - Photo 1' },
-      { id: 'news_science', label: 'Actualité 2', location: 'Section Blog - Photo 2' },
     ]
   },
   {
