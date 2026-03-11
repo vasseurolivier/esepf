@@ -10,11 +10,10 @@ export const metadata: Metadata = {
   description: 'Un établissement d\'excellence pour la réussite de nos élèves, du collège au baccalauréat.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default function RootLayout(props: {
   children: React.ReactNode;
-}>) {
+}) {
+  const { children } = props;
   return (
     <html lang="fr">
       <head>
