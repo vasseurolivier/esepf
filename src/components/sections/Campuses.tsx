@@ -13,7 +13,7 @@ import { useTranslation } from '@/hooks/use-translation';
 export function Campuses() {
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading: settingsLoading } = useDoc(settingsRef);
   
   const { t } = useTranslation();
   
@@ -22,21 +22,21 @@ export function Campuses() {
       id: "evron",
       name: "Campus Evron",
       location: t.campus_locations.evron,
-      image: settings?.images?.campus_evron || "https://picsum.photos/seed/evron-campus/600/400",
+      image: settings?.images?.campus_evron || (!settingsLoading ? "https://picsum.photos/seed/evron-campus/600/400" : null),
       href: "/campus/evron"
     },
     {
       id: "sainte-bazeilles",
       name: "Campus Sainte-Bazeilles",
       location: t.campus_locations.bazeilles,
-      image: settings?.images?.campus_bazeilles || "https://picsum.photos/seed/bazeilles-campus/600/400",
+      image: settings?.images?.campus_bazeilles || (!settingsLoading ? "https://picsum.photos/seed/bazeilles-campus/600/400" : null),
       href: "/campus/sainte-bazeilles"
     },
     {
       id: "sainte-tulle",
       name: "Campus Sainte-Tulle",
       location: t.campus_locations.tulle,
-      image: settings?.images?.campus_tulle || "https://picsum.photos/seed/tulle-campus/600/400",
+      image: settings?.images?.campus_tulle || (!settingsLoading ? "https://picsum.photos/seed/tulle-campus/600/400" : null),
       href: "/campus/sainte-tulle"
     }
   ];
@@ -56,13 +56,15 @@ export function Campuses() {
           {campuses.map((campus, idx) => (
             <ScrollReveal key={idx} delay={idx * 150}>
               <Link href={campus.href} className="group relative block overflow-hidden rounded-[2.5rem] shadow-lg hover:shadow-2xl transition-all duration-500 bg-white border border-white h-[400px] md:h-auto">
-                <div className="relative h-full md:h-80 w-full overflow-hidden">
-                  <Image
-                    src={campus.image}
-                    alt={campus.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
+                <div className="relative h-full md:h-80 w-full overflow-hidden bg-muted">
+                  {campus.image && (
+                    <Image
+                      src={campus.image}
+                      alt={campus.name}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700 animate-in fade-in"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent" />
                 </div>
                 <div className="absolute bottom-0 left-0 p-8 text-white w-full">

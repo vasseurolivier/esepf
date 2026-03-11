@@ -12,12 +12,12 @@ import { useTranslation } from '@/hooks/use-translation';
 export function ThreeAxes() {
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading: settingsLoading } = useDoc(settingsRef);
   
   const { t } = useTranslation();
   
   const logoUrl = settings?.logoUrl;
-  const schoolName = settings?.schoolName || "ESEPF";
+  const schoolName = settings?.schoolName || (settingsLoading ? "" : "ESEPF");
 
   return (
     <section className="py-24 md:py-32 bg-white overflow-hidden">
@@ -30,7 +30,9 @@ export function ThreeAxes() {
               <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                 <div className="w-[450px] h-[450px] rounded-full border border-secondary/10 p-12 bg-white flex items-center justify-center shadow-[0_0_50px_rgba(0,0,0,0.05)] relative">
                   <div className="w-full h-full rounded-full border-[12px] border-secondary/5 flex items-center justify-center overflow-hidden p-12 bg-white shadow-inner">
-                    {logoUrl ? (
+                    {settingsLoading ? (
+                      <div className="w-24 h-24 bg-muted animate-pulse rounded-full" />
+                    ) : logoUrl ? (
                       <img src={logoUrl} alt={`${schoolName} Crest`} className="max-w-full max-h-full object-contain" />
                     ) : (
                       <div className="text-primary flex flex-col items-center">
@@ -124,7 +126,9 @@ export function ThreeAxes() {
             <div className="lg:hidden space-y-12">
               <div className="flex flex-col items-center mb-12">
                 <div className="w-40 h-40 rounded-full border-4 border-secondary/10 p-2 bg-white flex items-center justify-center shadow-2xl relative mb-8">
-                   {logoUrl ? (
+                   {settingsLoading ? (
+                    <div className="w-16 h-16 bg-muted animate-pulse rounded-full" />
+                  ) : logoUrl ? (
                     <img src={logoUrl} alt={`${schoolName} Crest`} className="max-w-full max-h-full object-contain" />
                   ) : (
                     <GraduationCap size={48} className="text-secondary" />

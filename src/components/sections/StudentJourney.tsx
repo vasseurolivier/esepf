@@ -14,10 +14,10 @@ export function StudentJourney() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading: settingsLoading } = useDoc(settingsRef);
 
   const schoolLogo = settings?.logoUrl;
-  const panImgUrl = settings?.images?.campus_panoramic || PlaceHolderImages.find(img => img.id === 'campus-panoramic')?.imageUrl;
+  const panImgUrl = settings?.images?.campus_panoramic || (!settingsLoading ? PlaceHolderImages.find(img => img.id === 'campus-panoramic')?.imageUrl : null);
 
   const stages = [
     {
@@ -77,13 +77,13 @@ export function StudentJourney() {
 
   return (
     <>
-      <div className="w-full h-[250px] md:h-[450px] relative overflow-hidden">
+      <div className="w-full h-[250px] md:h-[450px] relative overflow-hidden bg-primary">
         {panImgUrl && (
           <Image
             src={panImgUrl}
             alt="Campus Panoramic View"
             fill
-            className="object-cover"
+            className="object-cover animate-in fade-in duration-700"
             priority
           />
         )}
@@ -111,7 +111,9 @@ export function StudentJourney() {
 
                   {stage.hasLogo && (
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 opacity-5 md:opacity-10 pointer-events-none -z-10 group-hover:opacity-20 transition-opacity">
-                      {schoolLogo ? (
+                      {settingsLoading ? (
+                        null
+                      ) : schoolLogo ? (
                         <img src={schoolLogo} alt="Logo" className="w-full h-full object-contain" />
                       ) : (
                         <GraduationCap className="w-full h-full" />

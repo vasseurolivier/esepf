@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useMemo } from 'react';
@@ -14,11 +15,11 @@ import { useTranslation } from '@/hooks/use-translation';
 export function FootballAcademy() {
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading: settingsLoading } = useDoc(settingsRef);
   
   const { t } = useTranslation();
   
-  const footballImgUrl = settings?.images?.football_academy || PlaceHolderImages.find(img => img.id === 'football-academy')?.imageUrl;
+  const footballImgUrl = settings?.images?.football_academy || (!settingsLoading ? PlaceHolderImages.find(img => img.id === 'football-academy')?.imageUrl : null);
 
   const academyFeatures = useMemo(() => {
     if (!t?.academy_features) return [];
@@ -71,21 +72,23 @@ export function FootballAcademy() {
             </Link>
           </div>
 
-          <div className="lg:w-1/2 relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">
+          <div className="lg:w-1/2 relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl bg-muted">
             {footballImgUrl && (
               <Image
                 src={footballImgUrl}
                 alt="Football Academy"
                 fill
-                className="object-cover"
+                className="object-cover animate-in fade-in duration-700"
               />
             )}
-            <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-sm p-6 rounded-2xl border-l-8 border-secondary">
-              <p className="text-white font-bold italic">
-                "Plus qu'une école, une rampe de lancement vers le professionnalisme."
-              </p>
-              <p className="text-sm text-white/70 mt-2">— Direction Technique, {settings?.schoolName || "ESEPF"}</p>
-            </div>
+            {!settingsLoading && (
+              <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-sm p-6 rounded-2xl border-l-8 border-secondary">
+                <p className="text-white font-bold italic">
+                  "Plus qu'une école, une rampe de lancement vers le professionnalisme."
+                </p>
+                <p className="text-sm text-white/70 mt-2">— Direction Technique, {settings?.schoolName || "ESEPF"}</p>
+              </div>
+            )}
           </div>
         </ScrollReveal>
       </div>
