@@ -12,6 +12,34 @@ interface FrenchSystemSchemaProps {
 export function FrenchSystemSchema({ bacType }: FrenchSystemSchemaProps) {
   const { t } = useTranslation();
 
+  // Mini composant pour les drapeaux
+  const Flags = () => (
+    <div className="flex justify-center gap-3 mb-4">
+      {/* Drapeau Français */}
+      <div className="w-6 h-4 flex shadow-sm border border-gray-200">
+        <div className="flex-1 bg-[#002395]"></div>
+        <div className="flex-1 bg-white"></div>
+        <div className="flex-1 bg-[#ED2939]"></div>
+      </div>
+      {/* Drapeau Chinois */}
+      <div className="w-6 h-4 bg-[#DE2110] relative shadow-sm border border-gray-200">
+        <div className="absolute top-0.5 left-0.5 text-yellow-400 text-[6px] leading-none">★</div>
+      </div>
+      {/* Drapeau Américain */}
+      <div className="w-6 h-4 bg-white relative shadow-sm overflow-hidden flex flex-col border border-gray-200">
+        <div className="h-[2px] bg-[#B22234]"></div>
+        <div className="h-[2px] bg-white"></div>
+        <div className="h-[2px] bg-[#B22234]"></div>
+        <div className="h-[2px] bg-white"></div>
+        <div className="h-[2px] bg-[#B22234]"></div>
+        <div className="h-[2px] bg-white"></div>
+        <div className="h-[2px] bg-[#B22234]"></div>
+        <div className="h-[2px] bg-white"></div>
+        <div className="absolute top-0 left-0 w-3 h-2.5 bg-[#3C3B6E]"></div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="py-16 bg-white rounded-[3rem] shadow-inner border border-muted/50 overflow-hidden">
       <div className="max-w-4xl mx-auto px-4">
@@ -57,11 +85,7 @@ export function FrenchSystemSchema({ bacType }: FrenchSystemSchemaProps) {
                 </div>
                 <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-1 mt-2">UNIVERSITÉS</h4>
                 <p className="text-sm italic text-muted-foreground mb-4">Licences</p>
-                <div className="flex justify-center gap-3 mb-4">
-                  <div className="w-6 h-4 bg-blue-600 relative overflow-hidden shadow-sm"></div>
-                  <div className="w-6 h-4 bg-red-600 flex items-center justify-center shadow-sm"><span className="text-[4px] text-white">★</span></div>
-                  <div className="w-6 h-4 bg-red-600 flex items-center justify-center shadow-sm"><span className="text-yellow-400 text-[6px]">★</span></div>
-                </div>
+                <Flags />
                 <div className="bg-white/50 p-2 rounded-lg border border-border inline-block">
                    <span className="text-[9px] font-bold uppercase text-primary">{t.common.jobs_prefix}</span>
                 </div>
@@ -76,6 +100,7 @@ export function FrenchSystemSchema({ bacType }: FrenchSystemSchemaProps) {
                 </div>
                 <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-1 mt-2">UNIVERSITÉS</h4>
                 <p className="text-sm italic text-muted-foreground mb-4">Masters</p>
+                <Flags />
                 <div className="bg-white/50 p-2 rounded-lg border border-border inline-block">
                    <span className="text-[9px] font-bold uppercase text-primary">{t.common.jobs_prefix}</span>
                 </div>
