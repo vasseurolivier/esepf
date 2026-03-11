@@ -8,9 +8,10 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { Briefcase, BarChart3, Database, Network, MessageSquare, Clock, MapPin, Award, Info } from 'lucide-react';
+import { Briefcase, MessageSquare, Clock, MapPin, Award, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FrenchSystemSchema } from '@/components/sections/FrenchSystemSchema';
+import { OutletsSection } from '@/components/sections/OutletsSection';
 
 export default function BacStmgPage() {
   const { t } = useTranslation();
@@ -112,56 +113,24 @@ export default function BacStmgPage() {
 
             {/* French System Schema */}
             <ScrollReveal className="text-center mb-12">
-              <h2 className="text-3xl font-headline font-bold text-primary mb-2">VOTRE AVENIR DE MANAGER</h2>
+              <h2 className="text-3xl font-headline font-bold text-primary mb-2 uppercase tracking-widest">Votre avenir de manager</h2>
               <p className="text-muted-foreground">Une filière technologique pour des carrières ambitieuses</p>
             </ScrollReveal>
             <FrenchSystemSchema bacType="Baccalauréat Technologique STMG" />
           </div>
         </section>
 
-        {/* Details Section */}
-        <section className="py-24 bg-white border-y border-muted">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Program */}
-              <ScrollReveal className="bg-muted/20 p-10 rounded-[2.5rem] border border-muted transition-all hover:bg-white hover:shadow-xl h-full">
-                <div className="w-12 h-12 rounded-2xl bg-secondary text-white flex items-center justify-center mb-6">
-                  <BarChart3 size={24} />
-                </div>
-                <h3 className="text-2xl font-headline font-bold text-primary mb-4 uppercase tracking-tighter">
-                  {t.lycee_page.bac_stmg.prog_title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t.lycee_page.bac_stmg.prog_desc}
-                </p>
-              </ScrollReveal>
-
-              {/* Outlets */}
-              <ScrollReveal delay={100} className="bg-muted/20 p-10 rounded-[2.5rem] border border-muted transition-all hover:bg-white hover:shadow-xl h-full">
-                <div className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center mb-6">
-                  <Network size={24} />
-                </div>
-                <h3 className="text-2xl font-headline font-bold text-primary mb-4 uppercase tracking-tighter">
-                  {t.lycee_page.bac_stmg.outlets_title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t.lycee_page.bac_stmg.outlets_desc}
-                </p>
-              </ScrollReveal>
-
-              {/* Jobs */}
-              <ScrollReveal delay={200} className="bg-muted/20 p-10 rounded-[2.5rem] border border-muted transition-all hover:bg-white hover:shadow-xl h-full">
-                <div className="w-12 h-12 rounded-2xl bg-primary/20 text-primary flex items-center justify-center mb-6">
-                  <Database size={24} />
-                </div>
-                <h3 className="text-2xl font-headline font-bold text-primary mb-4 uppercase tracking-tighter">
-                  {t.lycee_page.bac_stmg.jobs_title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t.lycee_page.bac_stmg.jobs_desc}
-                </p>
-              </ScrollReveal>
-            </div>
+        {/* Detailed Outlets Section */}
+        <section className="py-24 bg-muted/10 border-y border-muted">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <OutletsSection 
+              btsDesc={t.lycee_page.bac_stmg.bts_desc}
+              univDesc={t.lycee_page.bac_stmg.univ_desc}
+              btsList={t.lycee_page.bac_stmg.bts_list}
+              btsJobs={t.lycee_page.bac_stmg.bts_jobs}
+              univList={t.lycee_page.bac_stmg.univ_list}
+              univJobs={t.lycee_page.bac_stmg.univ_jobs}
+            />
           </div>
         </section>
 

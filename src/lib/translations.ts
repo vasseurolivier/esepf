@@ -86,6 +86,13 @@ export const translations = {
       student_life_btn: "DÉCOUVRIR LA VIE SCOLAIRE",
       journey_title: "LE PARCOURS DE L'ÉLÈVE"
     },
+    outlets_labels: {
+      higher_ed_title: "LES ÉTUDES SUPÉRIEURES FRANÇAISES",
+      bts_title: "LES BTS",
+      univ_title: "UNIVERSITÉS FRANÇAISES",
+      jobs_title: "LES MÉTIERS",
+      licence_master: "LICENCES / MASTERS"
+    },
     programs: {
       details_btn: "En savoir plus",
       college: {
@@ -141,7 +148,7 @@ export const translations = {
       hero_text: "Notre établissement bénéficie d’une reconnaissance officielle du ministère français de l’Éducation nationale. Cette reconnaissance garantit que notre école respecte les normes éducatives et les exigences académiques fixées par le gouvernement français.",
       diploma_title: "Diplôme national français",
       diploma_text_1: "Nous préparons nos élèves aux diplômes nationaux français. Ces diplômes, tels que le diplôme national du brevet (DNB) et les baccalauréats général et technologique, sont reconnus pour leur examen académique.",
-      diploma_text_2: "De plus, ils bénéficient de la reconnaissance du ministère chinois de l'Éducation, offrant ainsi à nos élèves une certification de qualité reconnue en France et en Chine.",
+      diploma_text_2: "De plus, they bénéficient de la reconnaissance du ministère chinois de l'Éducation, offrant ainsi à nos élèves une certification de qualité reconnue en France et en Chine.",
       bottom_title: "Diplôme",
       accred_title: "Certifications Officielles",
       accred_desc: "Nos programmes sont reconnus par les instances les plus exigeantes.",
@@ -166,7 +173,7 @@ export const translations = {
       conclusion: "À l'issue de leur parcours au Collège, nos élèves intégreront, directement, notre Lycée dans l'une de nos classes de Seconde, afin de poursuivre leur formation dans un environnement adapté à leur progression académique et sportive de haut niveau."
     },
     lycee_page: {
-      title: "BACCALAURÉATS",
+      title: "BACCALAUREATS",
       intro_p1: "Notre lycée propose un parcours exigeant et diversifié, adapté aux aspirations et projets de chaque élève. Il offre trois filières principales : le baccalauréat général, le baccalauréat technologique STMG (Sciences et Technologies du Management et de la Gestion) et le baccalauréat professionnel Vente.",
       intro_p2: "Chaque programme est conçu pour permettre aux élèves d'acquérir des compétences solides et de préparer leur orientation vers l'enseignement supérieur ou le monde professionnel.",
       intro_p3: "Le bac général développe l'esprit d'analyse et la culture générale, le bac STMG prépare à des études en gestion, commerce et économie, tandis que le bac pro Vente offre une formation pratique et opérationnelle pour intégrer rapidement le secteur du commerce.",
@@ -184,46 +191,52 @@ export const translations = {
         title: "BAC GÉNÉRAL",
         subtitle: "Métiers des langues et de la culture",
         desc: "Une formation d'excellence axée sur l'analyse, la culture générale et la maîtrise linguistique. Ce cursus prépare les élèves à comprendre la complexité du monde moderne à travers l'étude approfondie des humanités, des langues et de la géopolitique.",
-        prog_title: "Programme Pédagogique",
-        prog_desc: "Le programme repose sur un tronc commun (Français, Philosophie, Histoire-Géographie, Enseignement Scientifique) et le choix de trois enseignements de spécialité en classe de Première, puis deux en Terminale. Nous privilégions les parcours tournés vers l'international comme LLCE (Langues, Littératures et Cultures Étrangères) et HGGSP (Histoire-Géographie, Géopolitique et Sciences Politiques).",
-        outlets_title: "Débouchés Scolaires",
-        outlets_desc: "Accès aux CPGE (Classes Préparatoires aux Grandes Écoles), aux Instituts d'Études Politiques (IEP / Sciences Po), et aux universités les plus prestigieuses en France et à l'international (système LMD ou Bachelor US/UK).",
-        jobs_title: "Les Métiers",
-        jobs_desc: "Le Bac Général ouvre la voie à des carrières dans la diplomatie, le journalisme international, la traduction de haut niveau, le droit, l'expertise culturelle et l'enseignement supérieur.",
         campuses: "Evron & Sainte-Bazeilles",
         duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Baccalauréat)",
-        program_details: "Le cursus se compose d'un tronc commun solide complété par des spécialités exigeantes. Nous mettons un accent particulier sur la rhétorique et l'argumentation en vue du Grand Oral du Baccalauréat. L'ouverture internationale est renforcée par notre programme de Dual Diploma optionnel."
+        prog_title: "Programme Pédagogique",
+        prog_desc: "Le programme repose sur un tronc commun (Français, Philosophie, Histoire-Géographie, Enseignement Scientifique) et le choix de trois enseignements de spécialité en classe de Première, puis deux en Terminale. Nous privilégions les parcours tournés vers l'international comme LLCE (Langues, Littératures et Cultures Étrangères) et HGGSP (Histoire-Géographie, Géopolitique et Sciences Politiques).",
+        program_details: "Le cursus se compose d'un tronc commun solide complété par des spécialités exigeantes. Nous mettons un accent particulier sur la rhétorique et l'argumentation en vue du Grand Oral du Baccalauréat. L'ouverture internationale est renforcée par notre programme de Dual Diploma optionnel.",
+        bts_desc: "Le BTS (Brevet de Technicien Supérieur) en Langues Étrangères Appliquées (LEA) est une formation de deux ans qui permet de se spécialiser après un Baccalauréat Général.",
+        univ_desc: "L'accès à une licence après un Baccalauréat Général permet de se spécialiser dans des domaines comme la traduction, l'interprétation ou les relations internationales.",
+        bts_list: ["BTS Tourisme", "BTS Commerce International", "BTS Gestion de la PME", "BTS Traduction et Interprétation", "BTS Communication"],
+        bts_jobs: ["Chargé(e) de communication", "Assistant(e) de direction", "Responsable marketing", "Traducteur(trice)", "Gestionnaire de projet"],
+        univ_list: ["Licence de Langues Étrangères Appliquées (LEA)", "Licence de Traduction et Interprétation", "Licence de Lettres Modernes", "Licence de Relations Internationales", "Licence de Journalisme"],
+        univ_jobs: ["Responsable communication", "Consultant(e) en management", "Traducteur(trice) spécialisé(e)", "Gestionnaire de la relation client", "Expert(e) en ressources humaines"]
       },
       bac_vente: {
         title: "BAC PRO VENTE",
         subtitle: "Métiers de la vente et du commerce",
         desc: "Une formation pratique et immersive pour devenir un expert de la relation client, de la négociation et de la stratégie commerciale omnicanale. Ce diplôme met l'accent sur le savoir-être professionnel et l'efficacité commerciale.",
-        prog_title: "Approche Professionnelle",
-        prog_desc: "Le programme alterne entre théorie en classe et pratique intensive en entreprise. Les modules clés incluent la prospection clientèle, la conduite d'entretien de vente, la fidélisation et la gestion de l'offre commerciale. L'utilisation des outils numériques de vente est au cœur de l'apprentissage.",
-        outlets_title: "Débouchés Scolaires",
-        outlets_desc: "Poursuite d'études vers des BTS (Management Commercial Opérationnel, Négociation et Digitalisation de la Relation Client) ou des Bachelors spécialisés en Écoles de Commerce.",
-        jobs_title: "Les Métiers",
-        jobs_desc: "Commercial terrain, chargé de clientèle, manager de rayon, gestionnaire de point de vente, business developer ou entrepreneur.",
         campuses: "Sainte-Bazeilles & Sainte-Tulle",
         duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Diplôme Professionnel)",
-        program_details: "La formation inclut 22 semaines de Périodes de Formation en Milieu Professionnel (PFMP) réparties sur les 3 ans. Les élèves développent une autonomie réelle et une maîtrise des techniques de persuasion et de gestion de la relation client."
+        prog_title: "Approche Professionnelle",
+        prog_desc: "Le programme alterne entre théorie en classe et pratique intensive en entreprise. Les modules clés incluent la prospection clientèle, la conduite d'entretien de vente, la fidélisation et la gestion de l'offre commerciale. L'utilisation des outils numériques de vente est au cœur de l'apprentissage.",
+        program_details: "La formation inclut 22 semaines de Périodes de Formation en Milieu Professionnel (PFMP) réparties sur les 3 ans. Les élèves développent une autonomie réelle et une maîtrise des techniques de persuasion et de gestion de la relation client.",
+        bts_desc: "Le BTS MCO (Management Commercial Opérationnel) ou NDRC est la suite logique pour devenir un cadre du commerce après un Bac Pro Vente.",
+        univ_desc: "Les bacheliers professionnels peuvent intégrer des Bachelors en Écoles de Commerce ou des Licences professionnelles après leur BTS.",
+        bts_list: ["BTS MCO (Management Commercial Opérationnel)", "BTS NDRC (Négociation et Digitalisation de la Relation Client)", "BTS Commerce International", "BTS Communication"],
+        bts_jobs: ["Vendeur(se) conseil", "Manager de rayon", "Chargé(e) de clientèle", "Commercial(e) terrain", "Chef(fe) de vente"],
+        univ_list: ["Bachelor Business & Management", "Licence Pro Commerce et Vente", "Bachelor Marketing Digital", "Licence Gestion des Organisations"],
+        univ_jobs: ["Business Developer", "Responsable de point de vente", "Key Account Manager", "Chef(fe) de produit marketing", "Directeur(trice) commercial(e) junior"]
       },
       bac_stmg: {
         title: "BAC TECHNO STMG",
         subtitle: "Métiers du management et de la gestion",
         desc: "Une filière équilibrée pour comprendre le fonctionnement interne des organisations, qu'il s'agisse d'entreprises, d'associations ou d'administrations. Elle allie approche théorique et cas pratiques réels.",
-        prog_title: "Le Cursus Management",
-        prog_desc: "Le programme explore quatre domaines fondamentaux : les sciences de gestion, le management, le droit et l'économie. En terminale, les élèves se spécialisent (Gestion-Finance, Marketing, Ressources Humaines ou Systèmes d'Information).",
-        outlets_title: "Débouchés Scolaires",
-        outlets_desc: "Accès aux BUT (Bachelor Universitaire de Technologie) GEA, aux classes préparatoires ECT (Économique et Commerciale voie Technologique) ou aux Écoles de Management.",
-        jobs_title: "Les Métiers",
-        jobs_desc: "Gestionnaire, chef de projet marketing, assistant RH, responsable administratif, manager d'équipe junior ou contrôleur de gestion.",
         campuses: "Evron & Sainte-Tulle",
         duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Baccalauréat Technologique)",
-        program_details: "La filière STMG s'appuie sur l'étude des organisations réelles grâce à des outils numériques modernes. Elle prépare aux décisions managériales, à l'analyse financière et à la compréhension des enjeux économiques et juridiques contemporains."
+        prog_title: "Le Cursus Management",
+        prog_desc: "Le programme explore quatre domaines fondamentaux : les sciences de gestion, le management, le droit et l'économie. En terminale, les élèves se spécialisent (Gestion-Finance, Marketing, Ressources Humaines ou Systèmes d'Information).",
+        program_details: "La filière STMG s'appuie sur l'étude des organisations réelles grâce à des outils numériques modernes. Elle prépare aux décisions managériales, à l'analyse financière et à la compréhension des enjeux économiques et juridiques contemporains.",
+        bts_desc: "Le BTS Gestion de la PME ou Comptabilité-Gestion offre une spécialisation technique forte immédiatement après le Bac STMG.",
+        univ_desc: "Les Licences de Gestion (MSG) ou les BUT (Bachelor Universitaire de Technologie) sont des parcours d'excellence pour les profils STMG.",
+        bts_list: ["BTS Gestion de la PME", "BTS Comptabilité et Gestion (CG)", "BTS Support à l'Action Managériale (SAM)", "BTS Services Informatiques (SIO)"],
+        bts_jobs: ["Assistant(e) de gestion", "Comptable junior", "Chargé(e) de recrutement", "Assistant(e) RH", "Technicien(ne) administratif"],
+        univ_list: ["BUT Gestion des Entreprises et Administrations (GEA)", "Licence Sciences de Gestion", "Licence Économie-Gestion", "Bachelor Management"],
+        univ_jobs: ["Contrôleur de gestion junior", "Chef(fe) de projet RH", "Analyste financier", "Manager d'équipe", "Consultant(e) en organisation"]
       }
     },
     journey: {
@@ -314,6 +327,13 @@ export const translations = {
       higher_ed: "HIGHER EDUCATION",
       jobs_prefix: "JOBS",
       allophone_mention: "4 years for allophone students (including integration class)"
+    },
+    outlets_labels: {
+      higher_ed_title: "FRENCH HIGHER EDUCATION",
+      bts_title: "BTS PROGRAMS",
+      univ_title: "FRENCH UNIVERSITIES",
+      jobs_title: "CAREERS",
+      licence_master: "BACHELOR / MASTER"
     },
     figures: {
       bac: "Bac Success Rate",
@@ -449,11 +469,13 @@ export const translations = {
         level: "Level 4 (Baccalaureate)",
         prog_title: "Educational Program",
         prog_desc: "The program is based on a core curriculum and the choice of three specialty subjects in 11th grade, then two in 12th grade. We prioritize international paths like LLCE and HGGSP.",
-        outlets_title: "Academic Prospects",
-        outlets_desc: "Access to prestigious universities, political science institutes (IEP), and international curricula worldwide.",
-        jobs_title: "Careers",
-        jobs_desc: "Diplomacy, International Journalism, Translation, Higher Education, Cultural Expertise.",
-        program_details: "Strong focus on eloquence and international openness. Optional Dual Diploma program available."
+        program_details: "Strong focus on eloquence and international openness. Optional Dual Diploma program available.",
+        bts_desc: "The BTS (Higher Technical Diploma) in Applied Foreign Languages (LEA) is a two-year program that allows for specialization after a General Baccalaureate.",
+        univ_desc: "Access to a Bachelor's degree after a General Baccalaureate allows for specialization in fields such as translation, interpretation, or international relations.",
+        bts_list: ["BTS Tourism", "BTS International Trade", "BTS SME Management", "BTS Translation & Interpretation", "BTS Communication"],
+        bts_jobs: ["Communication Officer", "Executive Assistant", "Marketing Manager", "Translator", "Project Manager"],
+        univ_list: ["Bachelor in Applied Foreign Languages (LEA)", "Bachelor in Translation & Interpretation", "Bachelor in Modern Languages", "Bachelor in International Relations", "Bachelor in Journalism"],
+        univ_jobs: ["Head of Communication", "Management Consultant", "Specialized Translator", "CRM Manager", "HR Expert"]
       },
       bac_vente: {
         title: "PRO SALES BAC",
@@ -464,11 +486,13 @@ export const translations = {
         level: "Level 4 (Professional Diploma)",
         prog_title: "Professional Approach",
         prog_desc: "Practical modules in customer psychology, digital sales, and business law. Strong emphasis on professional behavior and sales efficiency.",
-        outlets_title: "Academic Prospects",
-        outlets_desc: "Business schools, higher technical degrees (BTS) in commerce, marketing, and relationship management.",
-        jobs_title: "Careers",
-        jobs_desc: "Sales Executive, Store Manager, Business Developer, Entrepreneur.",
-        program_details: "Combines general education with 22 weeks of immersive professional practice."
+        program_details: "Combines general education with 22 weeks of immersive professional practice.",
+        bts_desc: "The BTS MCO or NDRC is the logical next step to become a commercial manager after a Pro Sales Baccalaureate.",
+        univ_desc: "Vocational high school graduates can enter Business School Bachelors or vocational degrees after their BTS.",
+        bts_list: ["BTS MCO (Commercial Management)", "BTS NDRC (Digital Customer Relation)", "BTS International Trade", "BTS Communication"],
+        bts_jobs: ["Sales Consultant", "Department Manager", "Account Executive", "Field Sales", "Sales Supervisor"],
+        univ_list: ["Bachelor in Business & Management", "Vocational Degree in Sales", "Bachelor in Digital Marketing", "Bachelor in Organization Management"],
+        univ_jobs: ["Business Developer", "Store Manager", "Key Account Manager", "Marketing Product Manager", "Junior Sales Director"]
       },
       bac_stmg: {
         title: "TECHNO STMG BAC",
@@ -479,11 +503,13 @@ export const translations = {
         level: "Level 4 (Technological Baccalaureate)",
         prog_title: "Management Track",
         prog_desc: "Exploration of business strategy, organizational behavior, and digital management tools. Specialties available in Marketing or Finance.",
-        outlets_title: "Academic Prospects",
-        outlets_desc: "Management schools, technology degrees (BUT), preparatory classes for high-level business schools.",
-        jobs_title: "Careers",
-        jobs_desc: "Manager, Marketing Lead, HR Assistant, Project Coordinator.",
-        program_details: "Focuses on real-world organization analysis and management decision-making using modern digital tools."
+        program_details: "Focuses on real-world organization analysis and management decision-making using modern digital tools.",
+        bts_desc: "The BTS SME Management or Accounting-Management offers a strong technical specialization immediately after the STMG Bac.",
+        univ_desc: "Management Degrees (MSG) or BUT (Bachelor of Technology) are excellence tracks for STMG profiles.",
+        bts_list: ["BTS SME Management", "BTS Accounting & Management", "BTS Management Support", "BTS IT Services"],
+        bts_jobs: ["Management Assistant", "Junior Accountant", "Recruitment Officer", "HR Assistant", "Administrative Technician"],
+        univ_list: ["BUT Business & Admin Management", "Bachelor in Management Sciences", "Bachelor in Eco-Management", "Bachelor in Management"],
+        univ_jobs: ["Junior Management Controller", "HR Project Manager", "Financial Analyst", "Team Manager", "Organization Consultant"]
       }
     },
     journey: {
@@ -573,6 +599,13 @@ export const translations = {
       higher_ed: "高等教育",
       jobs_prefix: "职业",
       allophone_mention: "非法语母语学生为 4 年（含语言预科班）"
+    },
+    outlets_labels: {
+      higher_ed_title: "法国高等教育",
+      bts_title: "BTS 课程",
+      univ_title: "法国公立大学",
+      jobs_title: "职业发展",
+      licence_master: "本科 / 硕士"
     },
     figures: {
       bac: "毕业通过率",
@@ -708,11 +741,13 @@ export const translations = {
         level: "4级（高中毕业证书）",
         prog_title: "教学计划",
         prog_desc: "核心课程加3个专业方向选择。重点培养表达能力 and 国际视野。选修课包括 LLCE (外语与文学) and HGGSP (地缘政治)。",
-        outlets_title: "升学前景",
-        outlets_desc: "进入世界名校、政治学院 (Sciences Po) 及国际精英课程 (LMD 系统或英美学士学位)。",
-        jobs_title: "职业发展",
-        jobs_desc: "外交、国际新闻、高级翻译、高等教育、文化专家。",
-        program_details: "课程包含坚实的核心科目 and 极具挑战性的专业课。特别注重毕业口试 (Grand Oral) 的演讲与论证能力。"
+        program_details: "课程包含坚实的核心科目 and 极具挑战性的专业课。特别注重毕业口试 (Grand Oral) 的演讲与论证能力。",
+        bts_desc: "LEA 应用外语高级技术文凭 (BTS) 是一项为期两年的计划，允许学生在获得普通高中毕业证书后进行专业化学习。",
+        univ_desc: "获得普通高中毕业证书后进入本科学习，允许在翻译、口译或国际关系等领域进行专业化。",
+        bts_list: ["旅游 BTS", "国际贸易 BTS", "中小企业管理 BTS", "翻译与口译 BTS", "传播 BTS"],
+        bts_jobs: ["传播主管", "行政助理", "营销经理", "翻译员", "项目经理"],
+        univ_list: ["应用外语 (LEA) 本科", "翻译与口译本科", "现代文学本科", "国际关系本科", "新闻学本科"],
+        univ_jobs: ["传播负责人", "管理顾问", "专业翻译员", "客户关系经理", "人力资源专家"]
       },
       bac_vente: {
         title: "专业销售高中毕业证书",
@@ -723,11 +758,13 @@ export const translations = {
         level: "4级（专业文凭）",
         prog_title: "职业化培养",
         prog_desc: "包含客户心理、数字销售及商业法等实务模块。课程紧密结合理论与企业实践。22周的企业实习是核心内容。",
-        outlets_title: "升学前景",
-        outlets_desc: "进入商学院或攻读商业、营销 and 客户管理方向的高等技术学位 (BTS)。",
-        jobs_title: "职业发展",
-        jobs_desc: "销售主管、店长、业务开发、创业者、客户经理。",
-        program_details: "学生在实习中培养真正的自主权，并掌握劝说技巧 and 客户关系管理工具。"
+        program_details: "学生在实习中培养真正的自主权，并掌握劝说技巧 and 客户关系管理工具。",
+        bts_desc: "MCO (商业运营管理) 或 NDRC BTS 是专业销售高中毕业证书后成为商业主管的逻辑延续。",
+        univ_desc: "职业高中毕业生可以在获得 BTS 后进入商学院本科或职业本科学习。",
+        bts_list: ["MCO 商业运营管理 BTS", "NDRC 数字化客户关系 BTS", "国际贸易 BTS", "传播 BTS"],
+        bts_jobs: ["销售顾问", "部门经理", "客户主管", "外勤销售", "销售主管"],
+        univ_list: ["商业与管理本科", "销售职业本科", "数字营销本科", "组织管理本科"],
+        univ_jobs: ["业务开发员", "零售店负责人", "大客户经理", "营销产品经理", "初级销售总监"]
       },
       bac_stmg: {
         title: "管理技术高中毕业证书",
@@ -737,12 +774,14 @@ export const translations = {
         duration: "3年（非法语母语学生为4年）",
         level: "4级（技术类高中毕业证书）",
         prog_title: "管理课程",
-        prog_desc: "探索企业战略、组织行为及数字管理工具。高年级可选修：财务管理、市场营销或人力资源方向。",
-        outlets_title: "升学前景",
-        outlets_desc: "进入管理学院、技术学院 (BUT) 或管理类预科班 (CPGE ECT)。",
-        jobs_title: "职业发展",
-        jobs_desc: "经理、市场负责人、人力资源助理、项目协调员、财务分析员。",
-        program_details: "利用现代数字化工具分析现实组织。为学生在管理决策、财务分析 and 理解当代经济法律环境方面打下坚实基础。"
+        prog_desc: "探索企业战略、组织行为及 digital 管理工具。高年级可选修：财务管理、市场营销或人力资源方向。",
+        program_details: "利用现代数字化工具分析现实组织。为学生在管理决策、财务分析 and 理解当代经济法律环境方面打下坚实基础。",
+        bts_desc: "中小企业管理或会计管理 BTS 在 STMG 高中毕业证书后立即提供强大的技术专业化。",
+        univ_desc: "管理学本科 (MSG) 或技术大学本科 (BUT) 是 STMG 学生的卓越路径。",
+        bts_list: ["中小企业管理 BTS", "会计与管理 (CG) BTS", "管理支持 (SAM) BTS", "IT 服务 (SIO) BTS"],
+        bts_jobs: ["管理助理", "初级会计师", "招聘主管", "人力资源助理", "行政技术员"],
+        univ_list: ["GEA 企业与行政管理 BUT", "管理科学本科", "经济管理本科", "管理学本科"],
+        univ_jobs: ["初级管理控制员", "人力资源项目负责人", "财务分析师", "团队经理", "组织顾问"]
       }
     },
     journey: {
