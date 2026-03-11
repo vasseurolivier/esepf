@@ -286,6 +286,11 @@ export const translations = {
       label2_2_sub: "(Bientôt disponible)",
       text2: "Notre établissement propose un programme sport-études axé sur le football, offrant des entraînements intensifs, des séances techniques, des matchs, et un accompagnement individualisé pour développer les compétences sportives et humaines des élèves. Prochainement, nous élargirons notre offer avec un programme dédié au basketball, permettant aux passionnés de ce sport de bénéficier de la même qualité de formation et d'encadrement. Ces programmes sont conçus pour allier performance sportive et réussite scolaire, tout en cultivant des valeurs comme l'esprit d'équipe et la discipline."
     },
+    reseau_page: {
+      title: "Un Réseau de Clubs pour Révéler Nos Talents",
+      p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, nous offrons aux meilleurs de nos joueurs des opportunités uniques de montrer toutes leurs capacités. Ce réseau, composé de clubs prestigieux français mais aussi européens, leur permet de participer à des essais, à des matchs amicaux ou à d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptées à leur progression vers le plus haut niveau.",
+      subtitle: "Un Réseau de Clubs pour offrir des opportunités..."
+    },
     journey: {
       college: "COLLÈGE",
       lycee: "LYCÉE",
@@ -645,6 +650,11 @@ export const translations = {
       label2_2_sub: "(Coming soon)",
       text2: "Our establishment offers a sport-study program focused on football, offering intensive training and individualized support. Soon, we will expand our offer with a program dedicated to basketball."
     },
+    reseau_page: {
+      title: "A Club Network to Reveal Our Talents",
+      p1: "Thanks to the network we have built over the years, stemming from our past in professional football in France, we offer our best players unique opportunities to show their full abilities. This network, composed of prestigious French and European clubs, allows them to participate in trials, friendly matches, or other sporting events. They will thus have the possibility to be noticed and, if chosen, to integrate structures adapted to their progression towards the highest level.",
+      subtitle: "A Club Network to offer opportunities..."
+    },
     journey: {
       college: "MIDDLE SCHOOL",
       lycee: "HIGH SCHOOL",
@@ -902,7 +912,7 @@ export const translations = {
     team_page: {
       title: "项目介绍",
       subtitle: "精英足球与学术",
-      p1: "在 ESEPF，我们提供卓越的双重项目。",
+      p1: "在 ESEPF，我们 offer 年轻人 aged 11 to 19 an exceptional dual project.",
       p2: "学生遵循卓越的法国学术课程。",
       p3: "这一计划塑造了运动员 and 学生。",
       team_title: "团队介绍",
@@ -1003,6 +1013,11 @@ export const translations = {
       label2_2: "篮球",
       label2_2_sub: "(即将推出)",
       text2: "我们机构提供专注于足球的体育学习计划。不久，我们将通过篮球计划扩大我们的服务。"
+    },
+    reseau_page: {
+      title: "建立俱乐部网络，挖掘人才潜能",
+      p1: "得益于我们多年来建立的网络，源于我们在法国职业足球领域的过去，我们为最优秀的学生提供展示能力的独特机会。该网络由法国和欧洲知名俱乐部组成，允许学生参加试训、友谊赛或其他体育赛事。他们将有机会脱颖而出，并被选中进入专业体系，助力其职业发展。",
+      subtitle: "建立俱乐部网络，提供更多机遇..."
     },
     journey: {
       college: "初中",
