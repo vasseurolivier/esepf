@@ -66,6 +66,9 @@ export function Header() {
     return [];
   };
 
+  // On ne rend rien tant que le composant n'est pas monté pour éviter les erreurs d'hydratation
+  if (!mounted) return <div className="h-20 w-full bg-white shadow-md" />;
+
   return (
     <header className="sticky top-0 z-50 w-full shadow-md">
       <div className="bg-white py-4 border-b border-gray-100">
@@ -110,32 +113,30 @@ export function Header() {
       </div>
 
       <div className="hidden lg:block bg-[#1a1a1a] w-full">
-        {mounted && (
-          <nav className="w-full flex">
-            {navLinks.map((link) => (
-              link.hasDropdown ? (
-                <DropdownMenu key={link.name}>
-                  <DropdownMenuTrigger className="flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10">
-                    {link.name} <ChevronDown size={12} />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
-                    {getSubLinks(link.name).map((sub) => (
-                      <DropdownMenuItem key={sub.name} asChild>
-                        <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider">
-                          {sub.name}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <Link key={link.name} href={link.href} className="flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 last:border-r-0">
-                  {link.name}
-                </Link>
-              )
-            ))}
-          </nav>
-        )}
+        <nav className="w-full flex">
+          {navLinks.map((link) => (
+            link.hasDropdown ? (
+              <DropdownMenu key={link.name}>
+                <DropdownMenuTrigger className="flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10">
+                  {link.name} <ChevronDown size={12} />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
+                  {getSubLinks(link.name).map((sub) => (
+                    <DropdownMenuItem key={sub.name} asChild>
+                      <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider">
+                        {sub.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link key={link.name} href={link.href} className="flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 last:border-r-0">
+                {link.name}
+              </Link>
+            )
+          ))}
+        </nav>
       </div>
 
       <div className={cn("lg:hidden absolute w-full bg-[#1a1a1a] border-t border-white/10 transition-all z-50 overflow-hidden", isOpen ? "max-h-[800px] py-6" : "max-h-0")}>

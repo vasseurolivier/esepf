@@ -53,7 +53,7 @@ export default function AdminPage() {
     e.preventDefault();
     if (passwordInput === ADMIN_PASSWORD) {
       setIsUnlocked(true);
-      toast({ title: "Accès autorisé", description: "Modifications prêtes à être envoyées au serveur." });
+      toast({ title: "Accès autorisé", description: "Vous pouvez maintenant modifier le contenu du serveur." });
     } else {
       toast({ variant: "destructive", title: "Accès refusé", description: "Mot de passe incorrect." });
     }
@@ -64,7 +64,10 @@ export default function AdminPage() {
   };
 
   const handleSaveSettings = () => {
-    if (!db) return;
+    if (!db) {
+      toast({ variant: "destructive", title: "Erreur", description: "Base de données non initialisée." });
+      return;
+    }
 
     setIsSaving(true);
     const settingsRef = doc(db, 'settings', 'global');
@@ -76,15 +79,17 @@ export default function AdminPage() {
       updatedAt: serverTimestamp()
     };
     
-    // Mutation sans await selon les guidelines
+    // On n'utilise pas await ici pour respecter les guidelines, mais on gère le retour proprement
     setDoc(settingsRef, updateData, { merge: true })
       .then(() => {
+        setIsSaving(false);
         toast({ 
-          title: "ENREGISTRÉ SUR LE SERVEUR", 
-          description: "Le logo et toutes les photos sont maintenant visibles par TOUT LE MONDE." 
+          title: "ENREGISTRÉ AVEC SUCCÈS", 
+          description: "Les modifications sont maintenant publiques pour tous les utilisateurs." 
         });
       })
       .catch(async (error) => {
+        setIsSaving(false);
         const permissionError = new FirestorePermissionError({
           path: settingsRef.path,
           operation: 'write',
@@ -93,13 +98,21 @@ export default function AdminPage() {
         errorEmitter.emit('permission-error', permissionError);
         toast({ 
           variant: "destructive", 
-          title: "Échec de l'enregistrement", 
-          description: "Vérifiez vos règles Firestore dans la console." 
+          title: "Erreur de serveur", 
+          description: "L'envoi a échoué. Vérifiez vos règles Firestore ou votre connexion." 
         });
-      })
-      .finally(() => {
-        setIsSaving(false);
       });
+
+    // Sécurité supplémentaire : si après 10 secondes rien ne se passe, on débloque le bouton
+    setTimeout(() => {
+      setIsSaving(prev => {
+        if (prev) {
+          toast({ variant: "destructive", title: "Délai dépassé", description: "Le serveur met trop de temps à répondre." });
+          return false;
+        }
+        return false;
+      });
+    }, 10000);
   };
 
   if (settingsLoading) {
@@ -222,7 +235,7 @@ export default function AdminPage() {
             className="w-full h-16 rounded-2xl text-xl font-bold bg-primary hover:bg-primary/90 shadow-xl"
           >
             {isSaving ? <Loader2 className="animate-spin mr-2" /> : <Save className="mr-2" />}
-            {isSaving ? 'Envoi au serveur...' : 'SAUVEGARDER POUR TOUT LE MONDE'}
+            {isSaving ? 'ENVOI AU SERVEUR EN COURS...' : 'SAUVEGARDER POUR TOUT LE MONDE'}
           </Button>
 
         </div>
