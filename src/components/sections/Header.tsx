@@ -43,13 +43,18 @@ const footballSubLinks = [
   { name: "Qu'est-ce que le Sport-Études ?", href: '/football-academy/sport-etudes' },
   { name: 'Le Parcours du Joueur', href: '/football-academy/parcours' },
   { name: 'Accompagnement', href: '/football-academy/accompagnement' },
-  { name: 'Notre Réseau de Clubs', href: '/football-academy/metiers' },
+  { name: 'Les Métiers du Sport', href: '/football-academy/metiers' },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const db = useFirestore();
   const { data: settings } = useDoc(db, 'settings/global');
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const schoolName = settings?.schoolName || "ESEPF";
   const logoUrl = settings?.logoUrl;
@@ -105,30 +110,32 @@ export function Header() {
       </div>
 
       <div className="hidden lg:block bg-[#1a1a1a] w-full">
-        <nav className="w-full flex">
-          {navLinks.map((link) => (
-            link.hasDropdown ? (
-              <DropdownMenu key={link.name}>
-                <DropdownMenuTrigger className="flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10">
-                  {link.name} <ChevronDown size={12} />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
-                  {getSubLinks(link.name).map((sub) => (
-                    <DropdownMenuItem key={sub.name} asChild>
-                      <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider">
-                        {sub.name}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <Link key={link.name} href={link.href} className="flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 last:border-r-0">
-                {link.name}
-              </Link>
-            )
-          ))}
-        </nav>
+        {mounted && (
+          <nav className="w-full flex">
+            {navLinks.map((link) => (
+              link.hasDropdown ? (
+                <DropdownMenu key={link.name}>
+                  <DropdownMenuTrigger className="flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10">
+                    {link.name} <ChevronDown size={12} />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
+                    {getSubLinks(link.name).map((sub) => (
+                      <DropdownMenuItem key={sub.name} asChild>
+                        <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider">
+                          {sub.name}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Link key={link.name} href={link.href} className="flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 last:border-r-0">
+                  {link.name}
+                </Link>
+              )
+            ))}
+          </nav>
+        )}
       </div>
 
       <div className={cn("lg:hidden absolute w-full bg-[#1a1a1a] border-t border-white/10 transition-all z-50 overflow-hidden", isOpen ? "max-h-[800px] py-6" : "max-h-0")}>

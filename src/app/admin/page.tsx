@@ -11,7 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useFirestore, useDoc } from '@/firebase';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, GraduationCap, Globe } from 'lucide-react';
+import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
@@ -22,8 +22,8 @@ const IMAGE_FIELDS = [
   { id: 'hero_home', label: 'Image Accueil', location: 'Fond du haut de page' },
   { id: 'campus_panoramic', label: 'Bandeau Campus', location: 'Au-dessus de la section Nos Campus' },
   { id: 'campus_evron', label: 'Photo Evron', location: 'Vignette Campus Evron' },
-  { id: 'campus_bazeilles', label: 'Photo Bazeilles', location: 'Vignette Campus Bazeilles' },
-  { id: 'campus_tulle', label: 'Photo Tulle', location: 'Vignette Campus Tulle' },
+  { id: 'campus_bazeilles', label: 'Photo Bazeilles', location: 'Vignette Campus Sainte-Bazeilles' },
+  { id: 'campus_tulle', label: 'Photo Tulle', location: 'Vignette Campus Sainte-Tulle' },
   { id: 'football_academy', label: 'Photo Football', location: 'Section Académie' },
   { id: 'news_graduation', label: 'Actu 1', location: 'Section Blog - Article 1' },
   { id: 'news_science', label: 'Actu 2', location: 'Section Blog - Article 2' },
@@ -63,7 +63,7 @@ export default function AdminPage() {
     setImages(prev => ({ ...prev, [id]: value }));
   };
 
-  const handleSaveSettings = async () => {
+  const handleSaveSettings = () => {
     if (!db) return;
 
     setIsSaving(true);
@@ -76,11 +76,12 @@ export default function AdminPage() {
       updatedAt: serverTimestamp()
     };
     
+    // Mutation sans await selon les guidelines
     setDoc(settingsRef, updateData, { merge: true })
       .then(() => {
         toast({ 
           title: "ENREGISTRÉ SUR LE SERVEUR", 
-          description: "Le logo et les photos sont maintenant visibles par TOUT LE MONDE." 
+          description: "Le logo et toutes les photos sont maintenant visibles par TOUT LE MONDE." 
         });
       })
       .catch(async (error) => {
@@ -208,6 +209,7 @@ export default function AdminPage() {
                       placeholder="URL de l'image"
                       className="text-xs"
                     />
+                    <p className="text-[10px] text-muted-foreground italic">{field.location}</p>
                   </div>
                 ))}
               </div>
