@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore } from '@/firebase';
-import { GraduationCap, MapPin, History, Award, Calendar } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 export default function HistoryPage() {
   const { t } = useTranslation();
@@ -18,13 +18,6 @@ export default function HistoryPage() {
   
   const schoolName = settings?.schoolName || "ESEPF";
   const logoUrl = settings?.logoUrl;
-
-  const milestones = [
-    { year: "1984", desc: t.history_page.milestone_1, icon: <MapPin /> },
-    { year: "1998", desc: t.history_page.milestone_2, icon: <History /> },
-    { year: "2015", desc: t.history_page.milestone_3, icon: <Award /> },
-    { year: "2023", desc: t.history_page.milestone_4, icon: <Calendar /> },
-  ];
 
   return (
     <FirebaseClientProvider>
@@ -72,41 +65,6 @@ export default function HistoryPage() {
                   priority
                 />
               </ScrollReveal>
-            </div>
-          </div>
-        </section>
-
-        {/* Timeline Section */}
-        <section className="py-24 bg-muted/10">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="relative space-y-16 mt-12">
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-muted -translate-x-1/2" />
-              
-              {milestones.map((milestone, i) => (
-                <ScrollReveal key={i} delay={i * 200} className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-                  <div className="flex-1 text-center md:text-right">
-                    {i % 2 === 0 ? (
-                      <div>
-                        <span className="text-4xl font-headline font-bold text-secondary">{milestone.year}</span>
-                        <p className="text-lg text-muted-foreground mt-2">{milestone.desc}</p>
-                      </div>
-                    ) : null}
-                  </div>
-                  
-                  <div className="relative z-10 w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-xl border-4 border-white">
-                    {milestone.icon}
-                  </div>
-                  
-                  <div className="flex-1 text-center md:text-left">
-                    {i % 2 !== 0 ? (
-                      <div>
-                        <span className="text-4xl font-headline font-bold text-secondary">{milestone.year}</span>
-                        <p className="text-lg text-muted-foreground mt-2">{milestone.desc}</p>
-                      </div>
-                    ) : null}
-                  </div>
-                </ScrollReveal>
-              ))}
             </div>
           </div>
         </section>
