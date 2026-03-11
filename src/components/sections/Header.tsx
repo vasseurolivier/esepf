@@ -56,7 +56,7 @@ export function Header() {
   ];
 
   const navLinks = [
-    { name: t.nav.home, href: '#', hasDropdown: true },
+    { name: t.nav.home, href: '/', hasDropdown: true },
     { name: t.nav.campus, href: '#', hasDropdown: true },
     { name: t.nav.formations, href: '#', hasDropdown: true },
     { name: t.nav.football, href: '#', hasDropdown: true },
@@ -141,9 +141,20 @@ export function Header() {
           {navLinks.map((link) => (
             link.hasDropdown ? (
               <DropdownMenu key={link.name}>
-                <DropdownMenuTrigger className="flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 outline-none">
-                  {link.name} <ChevronDown size={12} />
-                </DropdownMenuTrigger>
+                {link.name === t.nav.home ? (
+                  <div className="flex-1 flex items-center border-r border-white/10 hover:bg-white/10 transition-colors">
+                    <Link href="/" className="flex-1 flex items-center justify-center pl-4 py-5 text-[10px] font-bold text-white uppercase tracking-widest outline-none">
+                      {link.name}
+                    </Link>
+                    <DropdownMenuTrigger className="pr-4 py-5 text-white outline-none">
+                      <ChevronDown size={12} />
+                    </DropdownMenuTrigger>
+                  </div>
+                ) : (
+                  <DropdownMenuTrigger className="flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 outline-none">
+                    {link.name} <ChevronDown size={12} />
+                  </DropdownMenuTrigger>
+                )}
                 <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
                   {getSubLinks(link.name).map((sub) => (
                     <DropdownMenuItem key={sub.name} asChild>
@@ -167,7 +178,9 @@ export function Header() {
         <div className="flex flex-col space-y-4 px-6">
           {navLinks.map((link) => (
             <div key={link.name}>
-              <Link href={link.href} onClick={() => setIsOpen(false)} className="text-base font-bold text-white uppercase tracking-wider">{link.name}</Link>
+              <Link href={link.href} onClick={() => setIsOpen(false)} className="text-base font-bold text-white uppercase tracking-wider">
+                {link.name}
+              </Link>
               {link.hasDropdown && (
                 <div className="pl-4 mt-2 flex flex-col space-y-2">
                   {getSubLinks(link.name).map(sub => (
