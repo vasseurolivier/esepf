@@ -3,6 +3,9 @@ export const translations = {
   fr: {
     nav: {
       home: "ACCUEIL",
+      history: "NOTRE HISTOIRE",
+      project_team: "LE PROJET & L'EQUIPE",
+      recognition: "RECONNAISSANCE",
       campus: "CAMPUS",
       formations: "FORMATIONS",
       football: "FOOTBALL ACADEMY",
@@ -68,12 +71,12 @@ export const translations = {
       football_academy: "FOOTBALL ACADEMY",
       pro_footballer: "FOOTBALLEUR PROFESSIONNEL",
       years_11_15: "11 ans - 15 ans",
+      years_11_15_desc: "Formation de 4 années",
       years_15_18: "15 ans - 18 ans",
+      years_15_18_desc: "Formation de 3 années",
       years_18_plus: "18 ans & plus",
-      years_20_plus: "20 ans & plus",
-      formation_4y: "Formation de 4 années",
-      formation_3y: "Formation de 3 années",
-      university_desc: "BTS, Licence, Master, Doctorat etc..."
+      years_18_plus_desc: "BTS, Licence, Master, Doctorat etc...",
+      years_20_plus: "20 ans & plus"
     },
     campus_pages: {
       evron_hero: "Campus Evron",
@@ -185,6 +188,9 @@ export const translations = {
   en: {
     nav: {
       home: "HOME",
+      history: "OUR HISTORY",
+      project_team: "PROJECT & TEAM",
+      recognition: "RECOGNITION",
       campus: "CAMPUSES",
       formations: "PROGRAMS",
       football: "FOOTBALL ACADEMY",
@@ -250,12 +256,12 @@ export const translations = {
       football_academy: "FOOTBALL ACADEMY",
       pro_footballer: "PROFESSIONAL FOOTBALLER",
       years_11_15: "11 - 15 years",
+      years_11_15_desc: "4-year formation",
       years_15_18: "15 - 18 years",
+      years_15_18_desc: "3-year formation",
       years_18_plus: "18+ years",
-      years_20_plus: "20+ years",
-      formation_4y: "4-year formation",
-      formation_3y: "3-year formation",
-      university_desc: "BTS, Bachelor, Master, PhD etc..."
+      years_18_plus_desc: "BTS, Bachelor, Master, PhD etc...",
+      years_20_plus: "20+ years"
     },
     campus_pages: {
       evron_hero: "Campus Evron",
@@ -367,6 +373,9 @@ export const translations = {
   zh: {
     nav: {
       home: "首页",
+      history: "我们的历史",
+      project_team: "项目与团队",
+      recognition: "荣誉认可",
       campus: "校区",
       formations: "课程",
       football: "足球学院",
@@ -432,12 +441,12 @@ export const translations = {
       football_academy: "足球学院",
       pro_footballer: "职业足球运动员",
       years_11_15: "11岁 - 15岁",
+      years_11_15_desc: "4年制教育",
       years_15_18: "15岁 - 18岁",
+      years_15_18_desc: "3年制教育",
       years_18_plus: "18岁及以上",
-      years_20_plus: "20岁及以上",
-      formation_4y: "4年制教育",
-      formation_3y: "3年制教育",
-      university_desc: "短期大学、学士、硕士、博士等..."
+      years_18_plus_desc: "短期大学、学士、硕士、博士等...",
+      years_20_plus: "20岁及以上"
     },
     campus_pages: {
       evron_hero: "埃夫龙校区",

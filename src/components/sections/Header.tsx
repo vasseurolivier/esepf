@@ -49,8 +49,14 @@ export function Header() {
     setMounted(true);
   }, []);
 
+  const homeSubLinks = [
+    { name: t.nav.history, href: '/#history' },
+    { name: t.nav.project_team, href: '/#project' },
+    { name: t.nav.recognition, href: '/#recognition' },
+  ];
+
   const navLinks = [
-    { name: t.nav.home, href: '/', active: true },
+    { name: t.nav.home, href: '#', hasDropdown: true },
     { name: t.nav.campus, href: '#', hasDropdown: true },
     { name: t.nav.formations, href: '#', hasDropdown: true },
     { name: t.nav.football, href: '#', hasDropdown: true },
@@ -62,6 +68,7 @@ export function Header() {
   const logoUrl = settings?.logoUrl;
 
   const getSubLinks = (name: string) => {
+    if (name === t.nav.home) return homeSubLinks;
     if (name === t.nav.campus) return campusSubLinks;
     if (name === t.nav.formations) return formationsSubLinks;
     if (name === t.nav.football) return footballSubLinks;
