@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -21,23 +22,6 @@ const campusSubLinks = [
   { name: 'Campus Sainte-Tulle', href: '/campus/sainte-tulle' },
 ];
 
-const formationsSubLinks = [
-  { name: "CLASSE D'INTEGRATION", href: '/formations/integration' },
-  { name: 'COLLÈGE', href: '/formations/college' },
-  { name: 'LYCÉE', href: '/formations/lycee' },
-  { name: 'LANGUES ÉTRANGÈRES', href: '/formations/langues' },
-  { name: 'BACCALAUREAT AMERICAIN', href: '/formations/bac-americain' },
-];
-
-const footballSubLinks = [
-  { name: 'Programme Football', href: '/football-academy/programme' },
-  { name: 'Compétition Officielle', href: '/football-academy/competition' },
-  { name: "Qu'est-ce que le Sport-Études ?", href: '/football-academy/sport-etudes' },
-  { name: 'Le Parcours du Joueur', href: '/football-academy/parcours' },
-  { name: 'Accompagnement', href: '/football-academy/accompagnement' },
-  { name: 'Les Métiers du Sport', href: '/football-academy/metiers' },
-];
-
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -58,6 +42,56 @@ export function Header() {
     { name: t.nav.history, href: '/notre-histoire' },
     { name: t.nav.project_team, href: '/projet-equipe' },
     { name: t.nav.recognition, href: '/reconnaissance' },
+  ];
+
+  const formationsSubLinks = [
+    { 
+      name: language === 'zh' ? "整合班" : language === 'en' ? "INTEGRATION CLASS" : "CLASSE D'INTEGRATION", 
+      href: '/formations/integration' 
+    },
+    { 
+      name: language === 'zh' ? "初中 (11 - 15 岁)" : language === 'en' ? "MIDDLE SCHOOL (11 - 15 YEARS)" : "COLLÈGE (11 - 15 ANS)", 
+      href: '/formations/college' 
+    },
+    { 
+      name: language === 'zh' ? "高中 (15 - 18 岁)" : language === 'en' ? "HIGH SCHOOL (15 - 18 YEARS)" : "LYCÉE (15 - 18 ANS)", 
+      href: '/formations/lycee' 
+    },
+    { 
+      name: language === 'zh' ? "外语培训" : language === 'en' ? "FOREIGN LANGUAGES" : "LANGUES ÉTRANGÈRES", 
+      href: '/formations/langues' 
+    },
+    { 
+      name: language === 'zh' ? "美国高中双文凭" : language === 'en' ? "AMERICAN DUAL DIPLOMA" : "BACCALAUREAT AMERICAIN", 
+      href: '/formations/bac-americain' 
+    },
+  ];
+
+  const footballSubLinks = [
+    { 
+      name: language === 'zh' ? "足球计划" : language === 'en' ? "Football Program" : 'Programme Football', 
+      href: '/football-academy/programme' 
+    },
+    { 
+      name: language === 'zh' ? "法国足球锦标赛" : language === 'en' ? "Official Competition" : 'Compétition Officielle', 
+      href: '/football-academy/competition' 
+    },
+    { 
+      name: language === 'zh' ? "什么是体育学习？" : language === 'en' ? "What is Sport-Study?" : "Qu'est-ce que le Sport-Études ?", 
+      href: '/football-academy/sport-etudes' 
+    },
+    { 
+      name: language === 'zh' ? "学生发展蓝图" : language === 'en' ? "Player Journey" : 'Le Parcours du Joueur', 
+      href: '/football-academy/parcours' 
+    },
+    { 
+      name: language === 'zh' ? "医疗与心理" : language === 'en' ? "Support" : 'Accompagnement', 
+      href: '/football-academy/accompagnement' 
+    },
+    { 
+      name: language === 'zh' ? "体育相关职业" : language === 'en' ? "Sports Careers" : 'Les Métiers du Sport', 
+      href: '/football-academy/metiers' 
+    },
   ];
 
   const navLinks = [
