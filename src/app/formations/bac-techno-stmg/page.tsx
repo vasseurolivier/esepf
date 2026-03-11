@@ -8,7 +8,7 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { Briefcase, BarChart3, Database, Network, MessageSquare } from 'lucide-react';
+import { Briefcase, BarChart3, Database, Network, MessageSquare, Clock, MapPin, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function BacStmgPage() {
@@ -19,13 +19,13 @@ export default function BacStmgPage() {
       <Header />
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
+        <section className="relative h-[65vh] flex items-center justify-center bg-primary overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/bac-stmg/1920/1080"
+            src="https://picsum.photos/seed/stmg-hero-pro/1920/1080"
             alt="Bac Techno STMG"
             fill
             className="object-cover opacity-40"
-            data-ai-hint="business office digital"
+            data-ai-hint="business digital management team"
             priority
           />
           <div className="relative z-10 text-center text-white container px-4">
@@ -38,6 +38,42 @@ export default function BacStmgPage() {
                 {t.lycee_page.bac_stmg.subtitle}
               </p>
             </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Quick Info Bar */}
+        <section className="bg-primary py-6 text-white border-y border-white/10">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="flex items-center gap-3">
+                <Clock className="text-secondary" />
+                <div>
+                  <p className="text-[10px] uppercase opacity-60">{t.common.duration}</p>
+                  <p className="font-bold text-sm">{t.lycee_page.bac_stmg.duration}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <Award className="text-secondary" />
+                <div>
+                  <p className="text-[10px] uppercase opacity-60">{t.common.level}</p>
+                  <p className="font-bold text-sm">{t.lycee_page.bac_stmg.level}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="text-secondary" />
+                <div>
+                  <p className="text-[10px] uppercase opacity-60">{t.common.campus_label}</p>
+                  <p className="font-bold text-sm">{t.lycee_page.bac_stmg.campuses}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <Briefcase className="text-secondary" />
+                <div>
+                  <p className="text-[10px] uppercase opacity-60">{t.common.diploma}</p>
+                  <p className="font-bold text-sm">Baccalauréat Technologique</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -55,11 +91,14 @@ export default function BacStmgPage() {
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   {t.lycee_page.bac_stmg.desc}
                 </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t.lycee_page.bac_stmg.program_details}
+                </p>
               </ScrollReveal>
               <ScrollReveal delay={200} className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl bg-muted">
                 <Image 
-                  src="https://picsum.photos/seed/management-1/800/600"
-                  alt="Management team"
+                  src="https://picsum.photos/seed/stmg-team/800/600"
+                  alt="Management team working"
                   fill
                   className="object-cover"
                 />
@@ -73,7 +112,7 @@ export default function BacStmgPage() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Program */}
-              <ScrollReveal className="bg-muted/20 p-10 rounded-[2.5rem] border border-muted transition-all hover:bg-white hover:shadow-xl">
+              <ScrollReveal className="bg-muted/20 p-10 rounded-[2.5rem] border border-muted transition-all hover:bg-white hover:shadow-xl h-full">
                 <div className="w-12 h-12 rounded-2xl bg-secondary text-white flex items-center justify-center mb-6">
                   <BarChart3 size={24} />
                 </div>
@@ -86,7 +125,7 @@ export default function BacStmgPage() {
               </ScrollReveal>
 
               {/* Outlets */}
-              <ScrollReveal delay={100} className="bg-muted/20 p-10 rounded-[2.5rem] border border-muted transition-all hover:bg-white hover:shadow-xl">
+              <ScrollReveal delay={100} className="bg-muted/20 p-10 rounded-[2.5rem] border border-muted transition-all hover:bg-white hover:shadow-xl h-full">
                 <div className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center mb-6">
                   <Network size={24} />
                 </div>
@@ -99,7 +138,7 @@ export default function BacStmgPage() {
               </ScrollReveal>
 
               {/* Jobs */}
-              <ScrollReveal delay={200} className="bg-muted/20 p-10 rounded-[2.5rem] border border-muted transition-all hover:bg-white hover:shadow-xl">
+              <ScrollReveal delay={200} className="bg-muted/20 p-10 rounded-[2.5rem] border border-muted transition-all hover:bg-white hover:shadow-xl h-full">
                 <div className="w-12 h-12 rounded-2xl bg-primary/20 text-primary flex items-center justify-center mb-6">
                   <Database size={24} />
                 </div>

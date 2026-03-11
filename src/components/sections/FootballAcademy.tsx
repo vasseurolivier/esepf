@@ -1,7 +1,7 @@
 
 "use client";
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -17,14 +17,19 @@ export function FootballAcademy() {
   
   const footballImgUrl = settings?.images?.football_academy || PlaceHolderImages.find(img => img.id === 'football-academy')?.imageUrl;
 
-  const academyFeatures = [
-    { icon: <Trophy className="text-secondary" />, title: t.academy_features.f1_title, desc: t.academy_features.f1_desc },
-    { icon: <GraduationCap className="text-secondary" />, title: t.academy_features.f2_title, desc: t.academy_features.f2_desc },
-    { icon: <Route className="text-secondary" />, title: t.academy_features.f3_title, desc: t.academy_features.f3_desc },
-    { icon: <HeartPulse className="text-secondary" />, title: t.academy_features.f4_title, desc: t.academy_features.f4_desc },
-    { icon: <Globe className="text-secondary" />, title: t.academy_features.f5_title, desc: t.academy_features.f5_desc },
-    { icon: <Briefcase className="text-secondary" />, title: t.academy_features.f6_title, desc: t.academy_features.f6_desc },
-  ];
+  const academyFeatures = useMemo(() => {
+    // Sécurité : Vérifier que t.academy_features existe avant de mapper
+    if (!t?.academy_features) return [];
+
+    return [
+      { icon: <Trophy className="text-secondary" />, title: t.academy_features.f1_title, desc: t.academy_features.f1_desc },
+      { icon: <GraduationCap className="text-secondary" />, title: t.academy_features.f2_title, desc: t.academy_features.f2_desc },
+      { icon: <Route className="text-secondary" />, title: t.academy_features.f3_title, desc: t.academy_features.f3_desc },
+      { icon: <HeartPulse className="text-secondary" />, title: t.academy_features.f4_title, desc: t.academy_features.f4_desc },
+      { icon: <Globe className="text-secondary" />, title: t.academy_features.f5_title, desc: t.academy_features.f5_desc },
+      { icon: <Briefcase className="text-secondary" />, title: t.academy_features.f6_title, desc: t.academy_features.f6_desc },
+    ].filter(item => item.title && item.desc);
+  }, [t.academy_features]);
 
   return (
     <section id="football" className="py-24 bg-white">
@@ -33,11 +38,11 @@ export function FootballAcademy() {
           <div className="lg:w-1/2">
             <h2 className="text-sm font-bold text-secondary uppercase tracking-[0.2em] mb-4">Elite Education</h2>
             <h3 className="text-4xl md:text-5xl font-headline font-bold text-primary mb-8 leading-tight">
-              {t.sections.football_title.split(':').map((part, i) => (
+              {t.sections.football_title ? t.sections.football_title.split(':').map((part, i) => (
                 <React.Fragment key={i}>
                   {i === 0 ? part : <><br /><span className="text-secondary">{part}</span></>}
                 </React.Fragment>
-              ))}
+              )) : "Football Academy"}
             </h3>
             <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
               {t.sections.football_desc}
@@ -58,7 +63,7 @@ export function FootballAcademy() {
             </div>
 
             <Button className="bg-primary text-white hover:bg-primary/90 rounded-full px-8 py-6 text-lg font-bold uppercase tracking-wider">
-              {t.academy_features.cta}
+              {t.academy_features?.cta || "APPLY NOW"}
             </Button>
           </div>
 

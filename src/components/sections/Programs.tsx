@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -16,34 +16,38 @@ export function Programs() {
     setIsMounted(true);
   }, []);
 
-  const programs = [
-    {
-      id: 'college',
-      title: t.programs.college.title,
-      subtitle: t.programs.college.subtitle,
-      image: 'college-life',
-      desc: t.programs.college.desc,
-      features: [t.programs.college.f1, t.programs.college.f2, t.programs.college.f3]
-    },
-    {
-      id: 'lycee',
-      title: t.programs.lycee.title,
-      subtitle: t.programs.lycee.subtitle,
-      image: 'bac-general',
-      desc: t.programs.lycee.desc,
-      features: [t.programs.lycee.f1, t.programs.lycee.f2, t.programs.lycee.f3]
-    },
-    {
-      id: 'football',
-      title: t.programs.academy.title,
-      subtitle: t.programs.academy.subtitle,
-      image: 'football-academy',
-      desc: t.programs.academy.desc,
-      features: [t.programs.academy.f1, t.programs.academy.f2, t.programs.academy.f3]
-    }
-  ];
+  const programs = useMemo(() => {
+    if (!t.programs) return [];
+    
+    return [
+      {
+        id: 'college',
+        title: t.programs.college?.title || "Collège",
+        subtitle: t.programs.college?.subtitle || "",
+        image: 'college-life',
+        desc: t.programs.college?.desc || "",
+        features: [t.programs.college?.f1, t.programs.college?.f2, t.programs.college?.f3].filter(Boolean)
+      },
+      {
+        id: 'lycee',
+        title: t.programs.lycee?.title || "Lycée",
+        subtitle: t.programs.lycee?.subtitle || "",
+        image: 'bac-general',
+        desc: t.programs.lycee?.desc || "",
+        features: [t.programs.lycee?.f1, t.programs.lycee?.f2, t.programs.lycee?.f3].filter(Boolean)
+      },
+      {
+        id: 'football',
+        title: t.programs.academy?.title || "Academy",
+        subtitle: t.programs.academy?.subtitle || "",
+        image: 'football-academy',
+        desc: t.programs.academy?.desc || "",
+        features: [t.programs.academy?.f1, t.programs.academy?.f2, t.programs.academy?.f3].filter(Boolean)
+      }
+    ];
+  }, [t.programs]);
 
-  if (!isMounted) {
+  if (!isMounted || programs.length === 0) {
     return <section id="formations" className="py-24 bg-background min-h-[600px]"></section>;
   }
 
@@ -103,7 +107,7 @@ export function Programs() {
                         ))}
                       </ul>
                       <button className="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg uppercase tracking-wider text-xs">
-                        {t.programs.details_btn}
+                        {t.programs?.details_btn}
                       </button>
                     </div>
                   </div>

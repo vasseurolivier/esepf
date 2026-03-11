@@ -8,7 +8,7 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { ShoppingBag, TrendingUp, Users, Target, MessageSquare } from 'lucide-react';
+import { ShoppingBag, TrendingUp, Users, Target, MessageSquare, Clock, MapPin, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function BacProVentePage() {
@@ -19,13 +19,13 @@ export default function BacProVentePage() {
       <Header />
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative h-[60vh] flex items-center justify-center bg-[#0c3a2f] overflow-hidden">
+        <section className="relative h-[65vh] flex items-center justify-center bg-[#0c3a2f] overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/bac-vente/1920/1080"
+            src="https://picsum.photos/seed/bac-vente-pro/1920/1080"
             alt="Bac Pro Vente"
             fill
             className="object-cover opacity-50"
-            data-ai-hint="modern retail store"
+            data-ai-hint="modern retail luxury store"
             priority
           />
           <div className="relative z-10 text-center text-white container px-4">
@@ -38,6 +38,42 @@ export default function BacProVentePage() {
                 {t.lycee_page.bac_vente.subtitle}
               </p>
             </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Quick Info Bar */}
+        <section className="bg-[#0c3a2f] py-6 text-white border-y border-white/10">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="flex items-center gap-3">
+                <Clock className="text-secondary" />
+                <div>
+                  <p className="text-[10px] uppercase opacity-60">{t.common.duration}</p>
+                  <p className="font-bold text-sm">{t.lycee_page.bac_vente.duration}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <Award className="text-secondary" />
+                <div>
+                  <p className="text-[10px] uppercase opacity-60">{t.common.level}</p>
+                  <p className="font-bold text-sm">{t.lycee_page.bac_vente.level}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="text-secondary" />
+                <div>
+                  <p className="text-[10px] uppercase opacity-60">{t.common.campus_label}</p>
+                  <p className="font-bold text-sm">{t.lycee_page.bac_vente.campuses}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <ShoppingBag className="text-secondary" />
+                <div>
+                  <p className="text-[10px] uppercase opacity-60">{t.common.diploma}</p>
+                  <p className="font-bold text-sm">Baccalauréat Professionnel</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -55,10 +91,13 @@ export default function BacProVentePage() {
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   {t.lycee_page.bac_vente.desc}
                 </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t.lycee_page.bac_vente.program_details}
+                </p>
               </ScrollReveal>
               <ScrollReveal delay={200} className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <Image 
-                  src="https://picsum.photos/seed/sales-1/800/800"
+                  src="https://picsum.photos/seed/sales-pro/800/800"
                   alt="Sales professional"
                   fill
                   className="object-cover"
@@ -73,7 +112,7 @@ export default function BacProVentePage() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Program */}
-              <ScrollReveal className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-border">
+              <ScrollReveal className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-border h-full">
                 <div className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center mb-6">
                   <Target size={24} />
                 </div>
@@ -86,7 +125,7 @@ export default function BacProVentePage() {
               </ScrollReveal>
 
               {/* Outlets */}
-              <ScrollReveal delay={100} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-border">
+              <ScrollReveal delay={100} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-border h-full">
                 <div className="w-12 h-12 rounded-2xl bg-secondary text-white flex items-center justify-center mb-6">
                   <TrendingUp size={24} />
                 </div>
@@ -99,7 +138,7 @@ export default function BacProVentePage() {
               </ScrollReveal>
 
               {/* Jobs */}
-              <ScrollReveal delay={200} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-border">
+              <ScrollReveal delay={200} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-border h-full">
                 <div className="w-12 h-12 rounded-2xl bg-muted text-primary flex items-center justify-center mb-6">
                   <Users size={24} />
                 </div>
