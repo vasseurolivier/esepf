@@ -38,7 +38,7 @@ export const translations = {
     },
     axes: {
       scolarite: "SCOLARITÉ",
-      scolarite_desc: "Notre sport-études offre un cadre scolaire exigeant qui permet aux élèves de concilier projet sportif ambitieux et réussite académique.",
+      scolarite_desc: "Notre sport-études offre un cadre scolaire exigeant qui permet aux élèves de concilier projet sportif ambitieux et réussite académique. Au collège, l’accent est mis sur l’acquisition des fondamentaux, le suivi personnalisé et l’organisation de travail pour apprendre à gérer à la fois les cours et les entraînements. Au lycée, la scolarité s’oriente vers la préparation du baccalauréat, avec des exigences renforcées, un accompagnement méthodologique et une aide à l’orientation supérieure. L’objectif est de former des élèves autonomes, curieux et capables de s’épanouir autant sur le terrain qu’en classe.",
       college_link: "Collège (11 ans - 15 ans)",
       lycee_link: "Lycée (15 ans - 18 ans)",
       academy_title: "FOOTBALL ACADEMY",
@@ -249,7 +249,7 @@ export const translations = {
     },
     axes: {
       scolarite: "ACADEMICS",
-      scolarite_desc: "Our sport-study program offers a demanding academic framework to reconcile sports and success.",
+      scolarite_desc: "Our sport-study program offers a demanding academic framework that allows students to reconcile an ambitious sporting project with academic success. In middle school, the focus is on acquiring fundamentals, personalized follow-up, and work organization to learn how to manage both classes and training. In high school, schooling is oriented towards baccalaureate preparation, with reinforced requirements, methodological support, and guidance for higher education. The goal is to train autonomous, curious students capable of flourishing as much on the field as in the classroom.",
       college_link: "Middle School (11 - 15 yrs)",
       lycee_link: "High School (15 - 18 yrs)",
       academy_title: "FOOTBALL ACADEMY",
@@ -460,7 +460,7 @@ export const translations = {
     },
     axes: {
       scolarite: "学术教育",
-      scolarite_desc: "我们的体教融合项目提供严格的学术框架，平衡体育与成功。",
+      scolarite_desc: "我们的体教融合项目提供严格的学术框架，让学生能够兼顾雄心勃勃的体育计划和学业成功。在初中阶段，重点是掌握基础知识、个性化跟踪和工作组织，学习如何同时管理课程和训练。在高中阶段，学业以备考高中毕业会考为导向，加强了要求，提供方法论支持和高等教育指导。目标是培养独立、好奇且无论在球场还是在课堂都能茁壮成长的学生。",
       college_link: "初中 (11 - 15 岁)",
       lycee_link: "高中 (15 - 18 岁)",
       academy_title: "足球学院",
