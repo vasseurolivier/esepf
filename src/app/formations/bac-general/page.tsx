@@ -173,7 +173,7 @@ export default function BacGeneralPage() {
           <div className="container mx-auto px-4 text-center">
             <ScrollReveal className="max-w-3xl mx-auto bg-muted rounded-[3rem] p-12 shadow-inner">
                <h2 className="text-3xl font-headline font-bold mb-6">Prêt à nous rejoindre ?</h2>
-               <p className="text-muted-foreground mb-8">Les inscriptions pour la rentrée 2025-2026 sont ouvertes sur les campus d'Evron et Sainte-Bazeilles.</p>
+               <p className="text-muted-foreground mb-8">Les inscriptions pour la rentrée 2026-2027 sont ouvertes sur les campus d'Evron et Sainte-Bazeilles.</p>
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button className="rounded-full bg-primary py-8 px-10 font-bold uppercase tracking-widest">{t.common.apply}</Button>
                   <Link href="/projet-equipe"><Button variant="outline" className="rounded-full py-8 px-10 font-bold uppercase tracking-widest">Rencontrer l'équipe</Button></Link>

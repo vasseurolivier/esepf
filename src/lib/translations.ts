@@ -154,7 +154,7 @@ export const translations = {
       title: "ESEPF - Collège",
       p1: "Nous ouvrons les portes de notre Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
       p2: "Après leurs années de Collège, ils pourront accéder aux programmes de notre Lycée et poursuivre leurs études en France. Ceci permettra à tous d'avoir accès à un parcours éducatif et sportif complet et structurant.",
-      p3: "Ce Collège viendra enrichir notre offre de formation et accompagner les jeunes dans leur développement académique, personnel et sportif avec un programme de football élite.",
+      p3: "Ce Collège viendra enrichir notre offer de formation et accompagner les jeunes dans leur développement académique, personnel et sportif avec un programme de football élite.",
       p4: "Nous adopterons une approche pédagogique exigeante et bienveillante, avec un suivi individualisé et des méthodes d'apprentissage adaptées aux besoins de chaque élève.",
       p5: "Nous mettrons également un accent particulier sur l'apprentissage des langues étrangères, sur l'ouverture internationale et sur l'épanouissement de chaque enfant à travers la pratique de leur sport.",
       p6: "En intégrant notre Collège, ils bénéficieront d'un environnement propice à la réussite et à la préparation des étapes clés de leur parcours scolaire.",
@@ -250,7 +250,7 @@ export const translations = {
       tulle_sub: "L'excellence au cœur de la Provence.",
       infra_title: "Infrastructures d'Excellence",
       city_title: "Cadre de Vie",
-      apply_now: "Inscriptions ouvertes pour la rentrée 2025-2026"
+      apply_now: "Inscriptions ouvertes pour la rentrée 2026-2027"
     },
     orientation: {
       q1: "Quel est ton domaine d'intérêt principal ?",
@@ -282,7 +282,7 @@ export const translations = {
       home: "HOME",
       history: "OUR HISTORY",
       project_team: "PROJECT & TEAM",
-      recognition: "RECOGNITION",
+      recognition: "RECONNAISSANCE",
       campus: "CAMPUSES",
       formations: "PROGRAMS",
       football: "FOOTBALL ACADEMY",
@@ -509,7 +509,7 @@ export const translations = {
       tulle_sub: "Excellence in Provence.",
       infra_title: "Excellence Infrastructures",
       city_title: "Living Environment",
-      apply_now: "Registration open for 2025-2026"
+      apply_now: "Registration open for 2026-2027"
     },
     orientation: {
       q1: "What is your main interest?",
@@ -732,7 +732,7 @@ export const translations = {
       bac_stmg: {
         title: "管理技术高中毕业证书",
         subtitle: "管理与商务职业方向",
-        desc: "从市场营销到财务 and 人力资源，全面了解组织的运作。将理论框架与真实企业案例分析相结合。",
+        desc: "从市场营销到财务 and 人力资源，全面了解组织的运作. 将理论框架与真实企业案例分析相结合。",
         campuses: "埃夫龙 & 圣蒂勒校区",
         duration: "3年（非法语母语学生为4年）",
         level: "4级（技术类高中毕业证书）",
@@ -768,7 +768,7 @@ export const translations = {
       tulle_sub: "普罗旺斯的卓越。",
       infra_title: "卓越的基础设施",
       city_title: "生活环境",
-      apply_now: "2025-2026 学年报名现已开启"
+      apply_now: "2026-2027 学年报名现已开启"
     },
     orientation: {
       q1: "你最感兴趣的领域是什么？",
