@@ -1,34 +1,117 @@
-
 rules_version = '2';
-
 service cloud.firestore {
   match /databases/{database}/documents {
-    
-    // Paramètres globaux (AppSettings)
-    match /settings/global {
-      allow read: if true;
-      allow write: if true;
+
+    /**
+     * CORE PHILOSOPHY
+     * This ruleset implements a Public-Read, Admin-Write model for a content-driven application. 
+     * It leverages Database-Backed Access Control (DBAC) to identify administrators via 
+     * a dedicated collection, ensuring that authorization logic is decoupled from application code.
+     *
+     * DATA STRUCTURE
+     * - Public Content: /figures, /programs, /newsArticles, /partners (Top-level, publicly accessible).
+     * - System Data: /admins/{userId} (Restricted collection defining user roles).
+     *
+     * KEY SECURITY DECISIONS
+     * - Read-Only for Public: All content entities are publicly readable by any visitor (signed-in or not).
+     * - Role-Based Writes: Write operations (create, update, delete) are strictly restricted to 
+     *   authenticated users whose UID exists in the /admins collection.
+     * - Relational Integrity: On creation, documents must include an 'id' field that matches the 
+     *   Firestore Document ID to ensure consistency between the path and the data.
+     * - Admin Protection: The /admins collection is read-only within the rules to prevent 
+     *   unauthorized elevation of privileges.
+     */
+
+    // --- Helper Functions ---
+
+    /** @description Checks if the request is from an authenticated user. */
+    function isSignedIn() {
+      return request.auth != null;
     }
-    
-    // Dossiers d'inscription
-    match /registrations/{registrationId} {
-      allow create: if true; // Tout le monde peut envoyer un dossier
-      allow read, update, delete: if true; // Accès admin pour le prototype
+
+    /** @description Checks if the authenticated user has an entry in the admins collection. */
+    function isAdmin() {
+      return isSignedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
     }
-    
-    // Collections de contenu
-    match /articles/{articleId} {
-      allow read: if true;
-      allow write: if true;
+
+    /** @description Verifies the user is an admin and the document being modified exists. */
+    function isExistingAdmin() {
+      return isAdmin() && resource != null;
     }
-    
-    match /informations/{infoId} {
-      allow read: if true;
-      allow write: if true;
+
+    /** 
+     * @description Ensures the 'id' field in the document matches the Firestore document ID. 
+     * Used only during creation for prototyping consistency.
+     */
+    function matchesPathId(docId) {
+      return request.resource.data.id == docId;
     }
-    
-    match /{document=**} {
-      allow read, write: if false;
+
+    // --- Collection Rules ---
+
+    /**
+     * @description Identifies users with administrative privileges.
+     * @path /admins/{userId}
+     * @allow (get) Any signed-in user can verify their own admin status.
+     * @deny (write) Writes are denied to prevent users from making themselves admins.
+     * @principle Database-Backed Access Control (DBAC).
+     */
+    match /admins/{userId} {
+      allow get: if isSignedIn();
+      allow list: if false;
+      allow create, update, delete: if false;
+    }
+
+    /**
+     * @description Stores key statistics and achievements. Publicly readable, admin-only writes.
+     * @path /figures/{figureId}
+     * @allow (create) An admin creating a figure with data.id matching figureId.
+     * @deny (update) A non-admin attempting to change a statistic.
+     * @principle Role-Based Access Control and Relational Integrity.
+     */
+    match /figures/{figureId} {
+      allow get, list: if true;
+      allow create: if isAdmin() && matchesPathId(figureId);
+      allow update, delete: if isExistingAdmin();
+    }
+
+    /**
+     * @description Contains academic programs and courses. Publicly readable, admin-only writes.
+     * @path /programs/{programId}
+     * @allow (list) Any visitor viewing the 'Nos Programmes' section.
+     * @deny (delete) A signed-in user who is not in the admin collection.
+     * @principle Structural Segregation for public consumption.
+     */
+    match /programs/{programId} {
+      allow get, list: if true;
+      allow create: if isAdmin() && matchesPathId(programId);
+      allow update, delete: if isExistingAdmin();
+    }
+
+    /**
+     * @description Holds news articles and blog posts. Publicly readable, admin-only writes.
+     * @path /newsArticles/{articleId}
+     * @allow (get) A visitor clicking a news link.
+     * @deny (create) An anonymous user attempting to post a news article.
+     * @principle Verified Identity for state-changing operations.
+     */
+    match /newsArticles/{articleId} {
+      allow get, list: if true;
+      allow create: if isAdmin() && matchesPathId(articleId);
+      allow update, delete: if isExistingAdmin();
+    }
+
+    /**
+     * @description Manages partner organizations and logos. Publicly readable, admin-only writes.
+     * @path /partners/{partnerId}
+     * @allow (update) An admin updating a partner's logo URL.
+     * @deny (delete) Attempting to delete a partner document that does not exist.
+     * @principle Robustness for State-Changing Operations.
+     */
+    match /partners/{partnerId} {
+      allow get, list: if true;
+      allow create: if isAdmin() && matchesPathId(partnerId);
+      allow update, delete: if isExistingAdmin();
     }
   }
 }
