@@ -8,7 +8,7 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { ChevronRight, MessageSquare } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -133,14 +133,6 @@ export default function LyceePage() {
             </div>
           </div>
         </section>
-
-        {/* Floating Contact Button */}
-        <div className="fixed bottom-8 right-8 z-50">
-          <Button className="rounded-full bg-[#0c3a2f] hover:bg-[#082a22] text-white font-bold px-8 py-8 shadow-2xl transition-all hover:scale-105 flex items-center gap-3">
-            <MessageSquare size={24} />
-            <span className="uppercase tracking-widest text-sm">{t.common.contact_us}</span>
-          </Button>
-        </div>
 
       </main>
       <Footer />
