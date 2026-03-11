@@ -1,48 +1,83 @@
 
+"use client";
+
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { GraduationCap, BookOpen, Users, Compass } from 'lucide-react';
+import { useTranslation } from '@/hooks/use-translation';
+import { useDoc, useFirestore } from '@/firebase';
 
 export default function CollegePage() {
+  const { t } = useTranslation();
+  const db = useFirestore();
+  const { data: settings } = useDoc(db, 'settings/global');
+
   return (
     <FirebaseClientProvider>
       <Header />
-      <main className="min-h-screen">
-        <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
-          <Image 
-            src="https://picsum.photos/seed/college-curriculum/1920/1080"
-            alt="Collège ESEPF"
-            fill
-            className="object-cover opacity-40"
-            data-ai-hint="middle school students"
-          />
-          <div className="relative z-10 text-center text-white container px-4">
-            <h1 className="text-5xl md:text-7xl font-headline font-bold mb-4 uppercase tracking-tighter">Le Collège</h1>
-            <p className="text-xl md:text-2xl text-white/80">De la 6ème à la 3ème : Consolider et Épanouir.</p>
-          </div>
-        </section>
+      <main className="min-h-screen bg-[#fdfaf5]">
+        <section className="py-24">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <ScrollReveal className="space-y-12">
+              {/* Titre principal */}
+              <div className="border-b-4 border-primary w-fit pb-2 mb-16">
+                <h1 className="text-5xl md:text-7xl font-headline font-bold text-black tracking-tight">
+                  {t.college_page.title}
+                </h1>
+              </div>
 
-        <section className="py-24 bg-muted/20">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                { icon: <GraduationCap size={40} />, title: "Socle Commun", desc: "Une maîtrise rigoureuse des fondamentaux : mathématiques, français et culture générale." },
-                { icon: <Users size={40} />, title: "Accompagnement", desc: "Des classes à effectifs maîtrisés pour un suivi individualisé de chaque élève." },
-                { icon: <Compass size={40} />, title: "Orientation", desc: "Une aide à la découverte des métiers et des filières dès la classe de 4ème." }
-              ].map((card, i) => (
-                <ScrollReveal key={i} delay={i * 100}>
-                  <div className="bg-white p-10 rounded-3xl shadow-lg border border-border text-center h-full">
-                    <div className="inline-flex p-4 rounded-2xl bg-primary/5 text-primary mb-6">{card.icon}</div>
-                    <h3 className="text-2xl font-bold text-primary mb-4">{card.title}</h3>
-                    <p className="text-muted-foreground">{card.desc}</p>
+              {/* Paragraphes d'introduction */}
+              <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
+                <p className="font-bold text-black">{t.college_page.p1}</p>
+                <p>{t.college_page.p2}</p>
+                <p>{t.college_page.p3}</p>
+              </div>
+
+              {/* Blocs pédagogiques */}
+              <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">
+                <p>{t.college_page.p4}</p>
+                <p>{t.college_page.p5}</p>
+                <p>{t.college_page.p6}</p>
+              </div>
+
+              {/* Programme détaillé */}
+              <div className="bg-white p-12 rounded-[3rem] shadow-xl border border-muted mt-20">
+                <h2 className="text-3xl font-headline font-bold text-primary mb-10">
+                  {t.college_page.prog_title}
+                </h2>
+                
+                <div className="space-y-12">
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-black border-l-4 border-secondary pl-4">
+                      {t.college_page.year1_title}
+                    </h3>
+                    <p className="text-lg leading-relaxed">
+                      {t.college_page.year1_desc}
+                    </p>
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-black border-l-4 border-secondary pl-4">
+                      {t.college_page.year2_title}
+                    </h3>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-black border-l-4 border-secondary pl-4">
+                      {t.college_page.year3_title}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              {/* Conclusion / Suite du parcours */}
+              <div className="pt-12 text-xl text-muted-foreground leading-relaxed italic">
+                <p>{t.college_page.conclusion}</p>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
       </main>

@@ -100,6 +100,21 @@ export const translations = {
       list_3: "Cambridge Assessment International",
       partners_title: "Nos Partenaires Académiques"
     },
+    college_page: {
+      title: "ESEPF - Collège",
+      p1: "Nous ouvrons les portes de notre Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
+      p2: "Après leurs années de Collège, ils pourront accéder aux programmes de notre Lycée et poursuivre leurs études en France. Ceci permettra à tous d'avoir accès à un parcours éducatif et sportif complet et structurant.",
+      p3: "Ce Collège viendra enrichir notre offre de formation et accompagner les jeunes dans leur développement académique, personnel et sportif avec un programme de football élite.",
+      p4: "Nous adopterons une approche pédagogique exigeante et bienveillante, avec un suivi individualisé et des méthodes d'apprentissage adaptées aux besoins de chaque élève.",
+      p5: "Nous mettrons également un accent particulier sur l'apprentissage des langues étrangères, sur l'ouverture internationale et sur l'épanouissement de chaque enfant à travers la pratique de leur sport.",
+      p6: "En intégrant notre Collège, ils bénéficieront d'un environnement propice à la réussite et à la préparation des étapes clés de leur parcours scolaire.",
+      prog_title: "Notre programme se décline en trois années :",
+      year1_title: "Année 1 : Classe d'intégration",
+      year1_desc: "Le programme proposé leur permettra d'acquérir une maîtrise solide de la langue française (FLE) tout en bénéficiant d'une remise à niveau dans les matières essentielles. À l'issue de cette année, ils pourront rejoindre nos classes de 4e dédiées aux allophones et ce dans les meilleures conditions.",
+      year2_title: "Année 2 : Classe de 4e avec un programme pédagogique adapté à leur niveau.",
+      year3_title: "Année 3 : Classe de 3e qui leur permettra de se préparer à l'entrée au lycée avec pour objectif final la préparation et la réussite au Baccalauréat français.",
+      conclusion: "À l'issue de leur parcours au Collège, nos élèves intégreront, directement, notre Lycée dans l'une de nos classes de Seconde, afin de poursuivre leur formation dans un environnement adapté à leur progression académique et sportive de haut niveau."
+    },
     journey: {
       college: "COLLÈGE",
       lycee: "LYCÉE",
@@ -322,6 +337,21 @@ export const translations = {
       list_3: "Cambridge Assessment International",
       partners_title: "Our Academic Partners"
     },
+    college_page: {
+      title: "ESEPF - Middle School",
+      p1: "We open the doors of our Sport-Study Middle School to students aged 11 to 14.",
+      p2: "After their Middle School years, they will be able to access our High School programs and continue their studies in France. This will allow everyone access to a complete and structured educational and sporting path.",
+      p3: "This Middle School will enrich our training offer and support young people in their academic, personal and sporting development with an elite football program.",
+      p4: "We will adopt a demanding and benevolent pedagogical approach, with individualized follow-up and learning methods adapted to the needs of each student.",
+      p5: "We will also place a particular emphasis on foreign language learning, international openness and the personal development of each child through the practice of their sport.",
+      p6: "By joining our Middle School, they will benefit from an environment conducive to success and the preparation of key stages of their school career.",
+      prog_title: "Our program is divided into three years:",
+      year1_title: "Year 1: Integration Class",
+      year1_desc: "The proposed program will allow them to acquire a solid mastery of the French language (FLE) while benefiting from a refresher in essential subjects. At the end of this year, they will be able to join our 4th grade classes dedicated to non-French speakers in the best conditions.",
+      year2_title: "Year 2: 4th grade class with a pedagogical program adapted to their level.",
+      year3_title: "Year 3: 3rd grade class that will allow them to prepare for high school entry with the final objective of preparing for and succeeding in the French Baccalaureate.",
+      conclusion: "At the end of their Middle School journey, our students will directly join our High School in one of our 10th grade (Seconde) classes, in order to continue their training in an environment adapted to their high-level academic and sporting progression."
+    },
     journey: {
       college: "MIDDLE SCHOOL",
       lycee: "HIGH SCHOOL",
@@ -490,7 +520,7 @@ export const translations = {
       championships: "官方联赛",
       elite_prog: "精英足球计划",
       languages_title: "外语教学",
-      languages_desc: "我们的机构提供法语作为外语（FLE）和英语作为外语（EFL）的强化培训，以最好地支持非法语学生或希望提高水平的学生。课程以小组形式组织，以鼓励口语参与、理解和个人进步。教师根据每个学生的需求调整教学材料，专注于语法、词汇和实际沟通情境。这种强化方法促进了学校融合、考试成功和国际化开放。"
+      languages_desc: "我们的机构提供法语作为外语（FLE）和英语作为外语（EFL）的强化培训， in order to best support non-French speaking students or those wishing to improve their level. Classes are organized in small groups to encourage oral participation, comprehension, and individual progress. Teachers adapt their materials to each student's needs, working on grammar, vocabulary, and practical communication situations. This intensive approach facilitates school integration, exam success, and international openness."
     },
     sections: {
       campuses: "我们的3个校区",
@@ -521,7 +551,7 @@ export const translations = {
     team_page: {
       title: "该项目",
       subtitle: "ESEPF 精英足球与学术计划",
-      p1: "在 ESEPF，我们为 11 至 19 岁的青少年提供卓越的双重项目。我们的精英足球计划提供专业的日常训练，由欧足联认证的教练指导，专注于技术、战术和运动能力的提升。目标明确：在最高水平上表现并取得进步。",
+      p1: "在 ESEPF，我们为 11 至 19 岁的青少年提供卓越的双重项目. 我们的精英足球计划提供专业的日常训练，由欧足联认证的教练指导，专注于技术、战术和运动能力的提升。目标明确：在最高水平上表现并取得进步。",
       p2: "与此同时，学生们遵循卓越的法国学校课程（从 6 年级到高中毕业班），围绕他们的体育实践进行安排。得益于个性化的教育跟踪和优化的时间表，球场上的训练与学术要求之间的平衡得到了保障。",
       p3: "这一独特的计划不仅磨练运动员，也塑造学生，灌输纪律、严谨和抱负。加入 ESEPF 意味着选择一条卓越之路，为在球场上和生活中的冠军未来奠定基础。",
       team_title: "团队",
@@ -543,6 +573,21 @@ export const translations = {
       list_2: "法国足球协会 (FFF)",
       list_3: "剑桥国际评估中心",
       partners_title: "学术合作伙伴"
+    },
+    college_page: {
+      title: "ESEPF - 初中",
+      p1: "我们向 11 至 14 岁的学生开启体教融合初中的大门。",
+      p2: "初中毕业后，他们将能够进入我们的高中课程并继续在法国学习。这将使每个人都能获得完整且结构化的教育和体育发展路径。",
+      p3: "初中部将丰富我们的培训体系，并通过精英足球计划支持年轻人在学业、个人和体育方面的发展。",
+      p4: "我们将采取严谨且人性化的教学方法，提供个性化跟踪和适应每位学生需求的学习方法。",
+      p5: "我们还将特别强调外语学习、国际化视野以及通过体育运动促进每个孩子的全面发展。",
+      p6: "加入我们的初中，他们将受益于一个有利于成功和为学业关键阶段做准备的环境。",
+      prog_title: "我们的课程分为三个学年：",
+      year1_title: "第一年：预科班",
+      year1_desc: "该计划将使他们能够扎实掌握法语（FLE），同时从基础科目的复习中受益。年底，他们将能够在最佳条件下加入我们专门为非法语母语者开设的初二（4e）班。",
+      year2_title: "第二年：根据其水平定制教学大纲的初二（4e）班。",
+      year3_title: "第三年：初三（3e）班，让他们为升入高中做准备，最终目标是备战并成功获得法国高中毕业证书。",
+      conclusion: "初中学习结束后，我们的学生将直接进入我们高中的高一（Seconde）班，在适应其高水平学业和体育进步的环境中继续深造。"
     },
     journey: {
       college: "初中",
