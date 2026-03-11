@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -29,31 +30,26 @@ const campusSubLinks = [
 ];
 
 const formationsSubLinks = [
-  { name: "CLASSE D'INTEGRATION (élève allophone)", href: '/formations/integration' },
-  { name: 'COLLÈGE ( 11 – 15 ans)', href: '/formations/college' },
-  { name: 'LYCÉE ( 15-18 ans)', href: '/formations/lycee' },
+  { name: "CLASSE D'INTEGRATION", href: '/formations/integration' },
+  { name: 'COLLÈGE', href: '/formations/college' },
+  { name: 'LYCÉE', href: '/formations/lycee' },
   { name: 'LANGUES ÉTRANGÈRES', href: '/formations/langues' },
   { name: 'BACCALAUREAT AMERICAIN', href: '/formations/bac-americain' },
 ];
 
 const footballSubLinks = [
-  { name: 'Programme de Football', href: '/football-academy/programme' },
-  { name: 'Compétition Officielle Française', href: '/football-academy/competition' },
+  { name: 'Programme Football', href: '/football-academy/programme' },
+  { name: 'Compétition Officielle', href: '/football-academy/competition' },
   { name: "Qu'est-ce que le Sport-Études ?", href: '/football-academy/sport-etudes' },
   { name: 'Le Parcours du Joueur', href: '/football-academy/parcours' },
-  { name: 'Accompagnement Physique et Mental', href: '/football-academy/accompagnement' },
+  { name: 'Accompagnement', href: '/football-academy/accompagnement' },
   { name: 'Notre Réseau de Clubs', href: '/football-academy/metiers' },
 ];
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const db = useFirestore();
   const { data: settings } = useDoc(db, 'settings/global');
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const schoolName = settings?.schoolName || "ESEPF";
   const logoUrl = settings?.logoUrl;
@@ -67,20 +63,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-md">
-      {/* Top Bar (White) */}
       <div className="bg-white py-4 border-b border-gray-100">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
             <div className="relative h-14 w-14 flex items-center justify-center">
               {logoUrl ? (
-                <img 
-                  src={logoUrl} 
-                  alt={`${schoolName} Logo`} 
-                  className="h-full w-auto object-contain"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
+                <img src={logoUrl} alt={schoolName} className="h-full w-auto object-contain" />
               ) : (
                 <div className="p-2 border-2 border-primary rounded-full">
                   <GraduationCap className="text-primary h-8 w-8" />
@@ -93,77 +81,49 @@ export function Header() {
           </Link>
 
           <div className="hidden lg:block">
-            <h2 className="text-3xl font-serif italic text-black font-medium tracking-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h2 className="text-3xl font-serif italic text-black font-medium tracking-tight">
               L'excellence de la formation française
             </h2>
           </div>
 
           <div className="flex items-center space-x-4">
-            <Button className="hidden sm:flex rounded-md bg-[#e31e24] hover:bg-[#c41a1f] text-white font-bold px-6 py-6 text-base border-none shadow-sm uppercase tracking-wider">
+            <Button className="hidden sm:flex rounded-md bg-[#e31e24] text-white font-bold px-6 py-6 uppercase tracking-wider">
               Nous rejoindre
             </Button>
             
-            <div className="hidden md:flex items-center space-x-2 bg-gray-100 px-3 py-2 rounded-lg border border-gray-200">
-              <div className="w-6 h-6 rounded-full overflow-hidden border border-gray-300">
-                <img src="https://flagcdn.com/w40/fr.png" alt="FR" className="w-full h-full object-cover" />
-              </div>
-              <span className="text-sm font-medium text-gray-600">FR</span>
-              <ChevronDown size={14} className="text-gray-400" />
-            </div>
-
             <Link href="/admin">
-              <Button variant="ghost" className="text-gray-400 hover:text-primary p-2">
+              <Button variant="ghost" className="text-gray-400 hover:text-primary">
                 <Settings size={20} />
               </Button>
             </Link>
 
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden text-black p-2 focus:outline-none"
-            >
+            <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-black p-2">
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
       </div>
 
-      <div className="hidden lg:block bg-[#1a1a1a] w-full border-t border-white/5">
+      <div className="hidden lg:block bg-[#1a1a1a] w-full">
         <nav className="w-full flex">
           {navLinks.map((link) => (
             link.hasDropdown ? (
-              mounted ? (
-                <DropdownMenu key={link.name}>
-                  <DropdownMenuTrigger className={cn(
-                    "flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 hover:bg-white/10 transition-colors focus:outline-none uppercase tracking-widest border-r border-white/10"
-                  )}>
-                    {link.name} <ChevronDown size={12} />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
-                    {getSubLinks(link.name).map((sub) => (
-                      <DropdownMenuItem key={sub.name} asChild>
-                        <Link 
-                          href={sub.href}
-                          className="text-white hover:bg-[#b8955d] hover:text-white cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider"
-                        >
-                          {sub.name}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <div key={link.name} className="flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 border-r border-white/10 uppercase tracking-widest">
-                  {link.name}
-                </div>
-              )
+              <DropdownMenu key={link.name}>
+                <DropdownMenuTrigger className="flex-1 flex items-center justify-center gap-1 text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10">
+                  {link.name} <ChevronDown size={12} />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-[#1a1a1a] border-white/10 p-2 min-w-[280px]">
+                  {getSubLinks(link.name).map((sub) => (
+                    <DropdownMenuItem key={sub.name} asChild>
+                      <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider">
+                        {sub.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             ) : (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={cn(
-                  "flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 transition-colors uppercase tracking-widest border-r border-white/10 last:border-r-0"
-                )}
-              >
+              <Link key={link.name} href={link.href} className="flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 last:border-r-0">
                 {link.name}
               </Link>
             )
@@ -171,39 +131,20 @@ export function Header() {
         </nav>
       </div>
 
-      <div
-        className={cn(
-          "lg:hidden absolute w-full bg-[#1a1a1a] border-t border-white/10 transition-all duration-300 ease-in-out z-50",
-          isOpen ? "max-h-[800px] opacity-100 py-6" : "max-h-0 opacity-0 overflow-hidden"
-        )}
-      >
+      <div className={cn("lg:hidden absolute w-full bg-[#1a1a1a] border-t border-white/10 transition-all z-50 overflow-hidden", isOpen ? "max-h-[800px] py-6" : "max-h-0")}>
         <div className="flex flex-col space-y-4 px-6">
           {navLinks.map((link) => (
-            link.hasDropdown ? (
-              <div key={link.name} className="space-y-2">
-                <span className="text-base font-bold text-white/50 uppercase tracking-wider">{link.name}</span>
-                <div className="pl-4 flex flex-col space-y-2">
-                  {getSubLinks(link.name).map((sub) => (
-                    <Link key={sub.name} href={sub.href} onClick={() => setIsOpen(false)} className="text-white text-sm font-medium hover:text-[#b8955d]">
-                      {sub.name}
-                    </Link>
+            <div key={link.name}>
+              <Link href={link.href} onClick={() => setIsOpen(false)} className="text-base font-bold text-white uppercase tracking-wider">{link.name}</Link>
+              {link.hasDropdown && (
+                <div className="pl-4 mt-2 flex flex-col space-y-2">
+                  {getSubLinks(link.name).map(sub => (
+                    <Link key={sub.name} href={sub.href} onClick={() => setIsOpen(false)} className="text-white/70 text-sm">{sub.name}</Link>
                   ))}
                 </div>
-              </div>
-            ) : (
-              <Link
-                key={link.name}
-                onClick={() => setIsOpen(false)}
-                href={link.href}
-                className="text-base font-bold text-white hover:text-[#b8955d] uppercase tracking-wider"
-              >
-                {link.name}
-              </Link>
-            )
+              )}
+            </div>
           ))}
-          <Button className="w-full rounded-md bg-[#e31e24] text-white font-bold py-6 uppercase tracking-widest">
-            Nous rejoindre
-          </Button>
         </div>
       </div>
     </header>

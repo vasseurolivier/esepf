@@ -4,14 +4,30 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     
-    // Accès total au document de configuration globale
-    // La protection est faite via le mot de passe admin dans l'interface
+    // Paramètres globaux - Lecture et Écriture publiques
+    // La protection est assurée par le mot de passe dans l'interface admin
     match /settings/global {
       allow read: if true;
       allow write: if true;
     }
     
-    // Autoriser les autres documents si nécessaire
+    // Collections de contenu - Lecture publique
+    match /informations/{infoId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    match /articles/{articleId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    match /config/{configId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Règle par défaut
     match /{document=**} {
       allow read: if true;
       allow write: if true;
