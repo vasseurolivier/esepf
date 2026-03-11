@@ -359,7 +359,8 @@ export const translations = {
       newsletter: "NEWSLETTER",
       newsletter_desc: "Inscrivez-vous aux actualités.",
       placeholder: "Votre email",
-      rights: "Tous droits réservés."
+      rights: "Tous droits réservés.",
+      hq_label: "Siège : Evron, France"
     }
   },
   en: {
@@ -717,7 +718,8 @@ export const translations = {
       newsletter: "NEWSLETTER",
       newsletter_desc: "Subscribe to news.",
       placeholder: "Your email",
-      rights: "All rights reserved."
+      rights: "All rights reserved.",
+      hq_label: "Headquarters: Evron, France"
     }
   },
   zh: {
@@ -983,7 +985,7 @@ export const translations = {
       prog_title: "精英足球计划",
       prog_sub: "每日专业训练以在最高水平上表现。",
       france_title: "法国：卓越之地",
-      france_desc: "两次世界杯冠军，法国是青训的绝对参考。",
+      france_desc: "两次世界杯冠军，法国是青训s的绝对参考。",
       method_title: "法国教学法",
       method_desc: "我们的方法基于比赛智慧。",
       coaches_title: "欧足联教练团队",
@@ -1020,7 +1022,7 @@ export const translations = {
     campus_pages: {
       evron_hero: "埃夫龙校区",
       evron_sub: "ESEPF 的历史中心。",
-      bazeilles: "圣巴泽耶校区",
+      bazeilles_hero: "圣巴泽耶校区",
       bazeilles_sub: "西南地区的创新。",
       tulle_hero: "圣蒂勒校区",
       tulle_sub: "普罗旺斯的卓越。",
@@ -1075,7 +1077,8 @@ export const translations = {
       newsletter: "新闻通讯",
       newsletter_desc: "订阅动态。",
       placeholder: "你的邮箱",
-      rights: "版权所有。"
+      rights: "版权所有。",
+      hq_label: "总部：埃夫龙 (马耶讷省)"
     }
   }
 };

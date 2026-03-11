@@ -33,7 +33,7 @@ export function ThreeAxes() {
                       <img src={logoUrl} alt={`${schoolName} Crest`} className="max-w-full max-h-full object-contain" />
                     ) : (
                       <div className="text-primary flex flex-col items-center">
-                        <GraduationCap size={120} className="text-secondary mb-4" />
+                        < GraduationCap size={120} className="text-secondary mb-4" />
                         <span className="font-headline font-bold text-4xl tracking-tighter text-center">{schoolName}</span>
                       </div>
                     )}

@@ -56,7 +56,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <MapPin size={18} className="text-secondary" />
-                <span>Siège : Evron, France</span>
+                <span>{t.footer.hq_label}</span>
               </li>
               <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Phone size={18} className="text-secondary" />
