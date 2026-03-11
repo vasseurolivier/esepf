@@ -239,6 +239,10 @@ export const translations = {
         univ_jobs: ["Contrôleur de gestion junior", "Chef(fe) de projet RH", "Analyste financier", "Manager d'équipe", "Consultant(e) en organisation"]
       }
     },
+    football_pages: {
+      prog_title: "Programme Football Elite",
+      prog_sub: "Un entraînement professionnel quotidien, encadré par des coachs certifiés UEFA, pour performer au plus haut niveau."
+    },
     journey: {
       college: "COLLÈGE",
       lycee: "LYCÉE",
@@ -535,6 +539,10 @@ export const translations = {
         univ_jobs: ["Junior Management Controller", "HR Project Manager", "Financial Analyst", "Team Manager", "Organization Consultant"]
       }
     },
+    football_pages: {
+      prog_title: "Elite Football Program",
+      prog_sub: "Daily professional training, supervised by UEFA certified coaches, to perform at the highest level."
+    },
     journey: {
       college: "MIDDLE SCHOOL",
       lycee: "HIGH SCHOOL",
@@ -661,7 +669,7 @@ export const translations = {
     },
     axes: {
       scolarite: "学术课程",
-      scolarite_desc: "我们的体育学习计划提供了一个严谨的学术框架，允许学生平衡雄心勃勃的体育项目和学术成功。",
+      scolarite_desc: "我们的体育学习计划提供了一个严谨的学术框架，允许学生平衡雄心勃力的体育项目和学术成功。",
       academy_title: "足球学院",
       academy_desc: "足球学院提供精英法国培训计划，旨在培养能够达到最高水平的全面球员。",
       languages_title: "外语培训",
@@ -786,7 +794,7 @@ export const translations = {
         duration: "3年（非法语母语学生为4年）",
         level: "4级（高中毕业证书）",
         prog_title: "教学计划",
-        prog_desc: "核心课程加3个专业方向选择。重点培养表达能力 and 国际视野。选修课包括 LLCE (外语与文学) and HGGSP (地缘政治)。",
+        prog_desc: "核心课程加3个专业方向选择. 重点培养表达能力 and 国际视野。选修课包括 LLCE (外语与文学) and HGGSP (地缘政治)。",
         program_details: "课程包含坚实的核心科目 and 极具挑战性的专业课。特别注重毕业口试 (Grand Oral) 的演讲与论证能力。",
         bts_desc: "LEA 应用外语高级技术文凭 (BTS) 是一项为期两年的计划，允许学生 in 获得普通高中毕业证书后进行专业化学习。",
         univ_desc: "获得普通高中毕业证书后进入本科学习，允许在翻译、口译或国际关系等领域进行专业化。",
@@ -815,7 +823,7 @@ export const translations = {
       bac_stmg: {
         title: "管理技术高中毕业证书",
         subtitle: "管理与商务职业方向",
-        desc: "从市场营销到财务 and 人力资源，全面了解组织的运作. 将理论框架与真实企业案例分析相结合。",
+        desc: "从市场营销到财务 and 人力资源，全面了解组织的运作。将理论框架与真实企业案例分析相结合。",
         campuses: "埃夫龙 & 圣蒂勒校区",
         duration: "3年（非法语母语学生为4年）",
         level: "4级（技术类高中毕业证书）",
@@ -829,6 +837,10 @@ export const translations = {
         univ_list: ["GEA 企业与行政管理 BUT", "管理科学本科", "经济管理本科", "管理学本科"],
         univ_jobs: ["初级管理控制员", "人力资源项目负责人", "财务分析师", "团队经理", "组织顾问"]
       }
+    },
+    football_pages: {
+      prog_title: "精英足球计划",
+      prog_sub: "每日专业训练，由欧足联认证教练监督，以在最高水平上表现。"
     },
     journey: {
       college: "初中",

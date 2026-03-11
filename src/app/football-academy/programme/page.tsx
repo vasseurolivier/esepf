@@ -14,6 +14,11 @@ import { useTranslation } from '@/hooks/use-translation';
 export default function ProgrammeFootballPage() {
   const { t } = useTranslation();
 
+  // Safety check for missing translation keys
+  if (!t || !t.football_pages) {
+    return null;
+  }
+
   return (
     <FirebaseClientProvider>
       <Header />
