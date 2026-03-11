@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -66,7 +65,6 @@ export function Header() {
     { name: t.nav.campus, href: '#', hasDropdown: true },
     { name: t.nav.formations, href: '#', hasDropdown: true },
     { name: t.nav.football, href: '#', hasDropdown: true },
-    { name: t.nav.camps, href: '/#news' },
     { name: t.nav.contact, href: '/contact' },
   ];
 
