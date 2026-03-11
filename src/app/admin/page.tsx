@@ -11,10 +11,11 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useFirestore, useDoc } from '@/firebase';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Layout, Camera, GraduationCap } from 'lucide-react';
+import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, GraduationCap, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const ADMIN_PASSWORD = 'Yesacademy888$';
 
@@ -31,7 +32,7 @@ const IMAGE_FIELDS = [
 
 export default function AdminPage() {
   const db = useFirestore();
-  const { data: settings, loading: settingsLoading } = useDoc(db, 'settings/global');
+  const { data: settings, loading: settingsLoading, error: settingsError } = useDoc(db, 'settings/global');
   const { toast } = useToast();
   
   const [passwordInput, setPasswordInput] = useState('');
@@ -64,37 +65,44 @@ export default function AdminPage() {
   };
 
   const handleSaveSettings = async () => {
-    if (!db) return;
+    if (!db) {
+      toast({ variant: "destructive", title: "Erreur", description: "Base de données non initialisée." });
+      return;
+    }
 
     setIsSaving(true);
     const settingsRef = doc(db, 'settings', 'global');
     
     const updateData = {
-      schoolName: schoolName.trim() || 'ESEPF',
+      schoolName: schoolName.trim() || 'Institution ESEPF',
       logoUrl: logoUrl.trim(),
       images: images,
       updatedAt: serverTimestamp()
     };
     
-    setDoc(settingsRef, updateData, { merge: true })
-      .then(() => {
-        toast({ 
-          title: "Succès !", 
-          description: "Toutes les photos et l'identité ont été mises à jour." 
-        });
-      })
-      .catch(async (error) => {
-        const permissionError = new FirestorePermissionError({
-          path: settingsRef.path,
-          operation: 'write',
-          requestResourceData: updateData,
-        });
-        errorEmitter.emit('permission-error', permissionError);
-        toast({ variant: "destructive", title: "Erreur", description: "Impossible d'enregistrer." });
-      })
-      .finally(() => {
-        setIsSaving(false);
+    try {
+      // Utilisation d'un bloc try/catch plus explicite pour le débogage
+      await setDoc(settingsRef, updateData, { merge: true });
+      toast({ 
+        title: "Sauvegarde réussie !", 
+        description: "Toutes les photos et le logo ont été mis à jour." 
       });
+    } catch (error: any) {
+      console.error("Firestore Save Error:", error);
+      const permissionError = new FirestorePermissionError({
+        path: settingsRef.path,
+        operation: 'write',
+        requestResourceData: updateData,
+      });
+      errorEmitter.emit('permission-error', permissionError);
+      toast({ 
+        variant: "destructive", 
+        title: "Erreur d'enregistrement", 
+        description: error.message || "Vérifiez vos règles Firestore." 
+      });
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   if (settingsLoading) {
@@ -116,7 +124,7 @@ export default function AdminPage() {
                 <Lock size={32} />
               </div>
               <CardTitle className="text-2xl font-headline font-bold">Espace Privé</CardTitle>
-              <CardDescription>Administration de l'Institution ESEPF</CardDescription>
+              <CardDescription>Administration de l'Institution</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleUnlock} className="space-y-4">
@@ -163,6 +171,16 @@ export default function AdminPage() {
             </div>
           </div>
 
+          {settingsError && (
+            <Alert variant="destructive" className="rounded-2xl">
+              <AlertCircle className="h-4 w-4" />
+              <AlertTitle>Erreur de connexion</AlertTitle>
+              <AlertDescription>
+                Impossible de lire les données Firestore. Vérifiez que Cloud Firestore est activé et que vos règles sont publiées.
+              </AlertDescription>
+            </Alert>
+          )}
+
           {/* Section 1: Identité Principale */}
           <Card className="border-none shadow-xl rounded-[2.5rem] overflow-hidden bg-white">
             <CardHeader className="bg-primary text-white p-8">
@@ -188,7 +206,7 @@ export default function AdminPage() {
                     <Input 
                       value={logoUrl} 
                       onChange={(e) => setLogoUrl(e.target.value)}
-                      placeholder="URL de l'image ou format base64"
+                      placeholder="URL de l'image (ex: https://i.postimg.cc/...)"
                       className="rounded-xl h-12 border-2 border-muted focus:border-secondary"
                     />
                   </div>
@@ -250,7 +268,7 @@ export default function AdminPage() {
               className="w-full bg-primary hover:bg-primary/90 text-white font-bold h-20 rounded-[2rem] shadow-2xl transform active:scale-95 transition-all text-xl"
             >
               {isSaving ? <Loader2 className="animate-spin mr-2" /> : <Save className="mr-2" size={28} />}
-              {isSaving ? 'Enregistrement de tout le site...' : 'SAUVEGARDER TOUTES LES MODIFICATIONS'}
+              {isSaving ? 'Enregistrement en cours...' : 'SAUVEGARDER TOUTES LES MODIFICATIONS'}
             </Button>
           </div>
 
