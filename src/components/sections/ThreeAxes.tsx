@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { GraduationCap, BookOpen, Languages, Trophy } from 'lucide-react';
+import { GraduationCap, BookOpen, Languages, Trophy, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { useFirestore, useDoc } from '@/firebase';
 import { useTranslation } from '@/hooks/use-translation';
@@ -17,7 +17,7 @@ export function ThreeAxes() {
   const schoolName = settings?.schoolName || "ESEPF";
 
   return (
-    <section className="py-32 bg-white overflow-hidden">
+    <section className="py-24 md:py-32 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="relative max-w-6xl mx-auto">
@@ -120,27 +120,69 @@ export function ThreeAxes() {
               <svg className="absolute inset-0 w-full h-full -z-10 opacity-10" viewBox="0 0 1000 1100">
                 <line x1="300" y1="200" x2="450" y2="400" stroke="currentColor" strokeWidth="1" />
                 <line x1="700" y1="200" x2="550" y2="400" stroke="currentColor" strokeWidth="1" />
-                <line x1="500" y1="750" x2="500" y2="550" stroke="currentColor" strokeWidth="1" />
+                <line x1="500" y1="750" x2="550" y2="400" stroke="currentColor" strokeWidth="1" />
               </svg>
             </div>
 
             {/* Mobile Layout */}
-            <div className="lg:hidden space-y-16">
-              <div className="flex justify-center mb-8">
-                <div className="w-48 h-48 rounded-full border-2 border-secondary/20 p-2 bg-white flex items-center justify-center shadow-xl">
+            <div className="lg:hidden space-y-12">
+              <div className="flex flex-col items-center mb-12">
+                <div className="w-40 h-40 rounded-full border-4 border-secondary/10 p-2 bg-white flex items-center justify-center shadow-2xl relative mb-8">
                    {logoUrl ? (
                     <img src={logoUrl} alt={`${schoolName} Crest`} className="max-w-full max-h-full object-contain" />
                   ) : (
                     <GraduationCap size={48} className="text-secondary" />
                   )}
+                  <div className="absolute -bottom-4 bg-primary text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">{schoolName}</div>
                 </div>
+                <h2 className="text-2xl font-headline font-bold text-primary text-center px-4">Nos Piliers d'Excellence</h2>
               </div>
-              <div className="space-y-12">
-                <div className="text-center px-4">
-                  <h3 className="text-2xl font-headline font-bold text-primary mb-4 border-b-2 border-secondary/20 inline-block pb-1 uppercase">{schoolName}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {t.hero.desc}
-                  </p>
+
+              <div className="grid grid-cols-1 gap-8">
+                {/* Mobile Axis 1 */}
+                <div className="bg-muted/30 p-8 rounded-[2rem] border border-border shadow-sm">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="bg-secondary/10 p-3 rounded-2xl">
+                      <GraduationCap className="text-secondary" size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-primary uppercase tracking-wider">{t.axes.scolarite}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{t.axes.scolarite_desc.substring(0, 150)}...</p>
+                  <Link href="/formations/lycee" className="flex items-center justify-between font-bold text-primary uppercase text-[10px] tracking-widest bg-white p-4 rounded-xl border border-border">
+                    {t.axes.lycee_link}
+                    <ChevronRight size={14} className="text-secondary" />
+                  </Link>
+                </div>
+
+                {/* Mobile Axis 2 */}
+                <div className="bg-primary p-8 rounded-[2rem] text-white shadow-xl relative overflow-hidden">
+                  <div className="flex items-center gap-4 mb-4 relative z-10">
+                    <div className="bg-white/10 p-3 rounded-2xl">
+                      <Trophy className="text-secondary" size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold uppercase tracking-wider">{t.axes.academy_title}</h3>
+                  </div>
+                  <p className="text-sm text-white/70 leading-relaxed mb-6 relative z-10">{t.axes.academy_desc.substring(0, 150)}...</p>
+                  <Link href="/football-academy/programme" className="flex items-center justify-between font-bold uppercase text-[10px] tracking-widest bg-white/10 p-4 rounded-xl border border-white/10 relative z-10">
+                    {t.axes.elite_prog}
+                    <ChevronRight size={14} className="text-secondary" />
+                  </Link>
+                  <div className="absolute -right-10 -bottom-10 opacity-10"><Trophy size={150} /></div>
+                </div>
+
+                {/* Mobile Axis 3 */}
+                <div className="bg-muted/30 p-8 rounded-[2rem] border border-border shadow-sm">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="bg-secondary/10 p-3 rounded-2xl">
+                      <Languages className="text-secondary" size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-primary uppercase tracking-wider">LANGUES</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{t.axes.languages_desc.substring(0, 150)}...</p>
+                  <Link href="/formations/langues" className="flex items-center justify-between font-bold text-primary uppercase text-[10px] tracking-widest bg-white p-4 rounded-xl border border-border">
+                    DÉCOUVRIR LE PROGRAMME FLE/EFL
+                    <ChevronRight size={14} className="text-secondary" />
+                  </Link>
                 </div>
               </div>
             </div>

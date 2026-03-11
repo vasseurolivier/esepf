@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, GraduationCap, Settings, ChevronDown, Globe } from 'lucide-react';
+import { Menu, X, GraduationCap, Settings, ChevronDown, Globe, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useDoc, useFirestore } from '@/firebase';
@@ -42,6 +42,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
   const db = useFirestore();
   const { data: settings } = useDoc(db, 'settings/global');
   const { t, language, setLanguage } = useTranslation();
@@ -82,34 +83,35 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-md">
-      <div className="bg-white py-4 border-b border-gray-100">
+      {/* Upper Header: Logo & Controls */}
+      <div className="bg-white py-3 md:py-4 border-b border-gray-100">
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="relative h-14 w-14 flex items-center justify-center">
+          <Link href="/" className="flex items-center space-x-2 md:space-x-3">
+            <div className="relative h-10 w-10 md:h-14 md:w-14 flex items-center justify-center">
               {logoUrl ? (
                 <img src={logoUrl} alt={schoolName} className="h-full w-auto object-contain" />
               ) : (
-                <div className="p-2 border-2 border-primary rounded-full">
-                  <GraduationCap className="text-primary h-8 w-8" />
+                <div className="p-1.5 border-2 border-primary rounded-full">
+                  <GraduationCap className="text-primary h-6 w-6 md:h-8 md:w-8" />
                 </div>
               )}
             </div>
-            <span className="text-2xl md:text-3xl font-headline font-bold text-black tracking-tighter">
+            <span className="text-xl md:text-3xl font-headline font-bold text-black tracking-tighter">
               {schoolName}
             </span>
           </Link>
 
           <div className="hidden lg:block">
-            <h2 className="text-3xl font-serif italic text-black font-medium tracking-tight">
+            <h2 className="text-2xl xl:text-3xl font-serif italic text-black font-medium tracking-tight">
               {t.common.excellence}
             </h2>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 md:space-x-4">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest outline-none">
-                  <Globe size={16} />
+                <Button variant="ghost" size="sm" className="flex items-center gap-1.5 font-bold text-[10px] md:text-xs uppercase tracking-widest outline-none h-9">
+                  <Globe size={14} className="md:w-4 md:h-4" />
                   {language}
                 </Button>
               </DropdownMenuTrigger>
@@ -120,18 +122,21 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button className="hidden sm:flex rounded-md bg-[#e31e24] text-white font-bold px-6 py-6 uppercase tracking-wider">
+            <Button className="hidden sm:flex rounded-md bg-[#e31e24] text-white font-bold px-4 md:px-6 py-5 md:py-6 uppercase tracking-wider text-xs">
               {t.nav.join}
             </Button>
             
             <Link href="/admin">
-              <Button variant="ghost" className="text-gray-400 hover:text-primary">
-                <Settings size={20} />
+              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-primary h-9 w-9">
+                <Settings size={18} />
               </Button>
             </Link>
 
-            <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-black p-2">
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="lg:hidden text-black p-2 h-10 w-10 flex items-center justify-center bg-muted/30 rounded-lg"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -150,12 +155,12 @@ export function Header() {
               >
                 <DropdownMenu open={activeMenu === link.name} onOpenChange={(val) => !val && setActiveMenu(null)}>
                   <DropdownMenuTrigger asChild>
-                    <div className="w-full flex items-center justify-center border-r border-white/10 hover:bg-white/10 transition-colors cursor-pointer outline-none">
-                      <span className="pl-4 py-5 text-[10px] font-bold text-white uppercase tracking-widest">
+                    <div className="w-full flex items-center justify-center border-r border-white/10 hover:bg-white/10 transition-colors cursor-pointer outline-none group">
+                      <span className="pl-4 py-5 text-[10px] font-bold text-white uppercase tracking-widest group-hover:text-secondary transition-colors">
                         {link.name}
                       </span>
                       <div className="px-3 py-5 text-white">
-                        <ChevronDown size={12} className={cn("transition-transform duration-200", activeMenu === link.name && "rotate-180")} />
+                        <ChevronDown size={12} className={cn("transition-transform duration-200 group-hover:text-secondary", activeMenu === link.name && "rotate-180")} />
                       </div>
                     </div>
                   </DropdownMenuTrigger>
@@ -166,7 +171,7 @@ export function Header() {
                   >
                     {getSubLinks(link.name).map((sub) => (
                       <DropdownMenuItem key={sub.name} asChild>
-                        <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider block border-b border-white/5 last:border-0">
+                        <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider block border-b border-white/5 last:border-0 transition-colors">
                           {sub.name}
                         </Link>
                       </DropdownMenuItem>
@@ -175,7 +180,7 @@ export function Header() {
                 </DropdownMenu>
               </div>
             ) : (
-              <Link key={link.name} href={link.href} className="flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 last:border-r-0">
+              <Link key={link.name} href={link.href} className="flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 last:border-r-0 hover:text-secondary transition-colors">
                 {link.name}
               </Link>
             )
@@ -183,23 +188,58 @@ export function Header() {
         </nav>
       </div>
 
-      {/* Mobile Navigation */}
-      <div className={cn("lg:hidden absolute w-full bg-[#1a1a1a] border-t border-white/10 transition-all z-50 overflow-hidden shadow-2xl", isOpen ? "max-h-[800px] py-6" : "max-h-0")}>
-        <div className="flex flex-col space-y-4 px-6">
+      {/* Mobile Navigation Panel */}
+      <div className={cn(
+        "lg:hidden absolute w-full bg-[#1a1a1a] border-t border-white/10 transition-all duration-500 ease-in-out z-50 overflow-hidden shadow-2xl",
+        isOpen ? "max-h-[90vh] py-8" : "max-h-0"
+      )}>
+        <div className="flex flex-col space-y-2 px-6">
           {navLinks.map((link) => (
-            <div key={link.name} className="border-b border-white/5 pb-4 last:border-0">
-              <Link href={link.href} onClick={() => setIsOpen(false)} className="text-base font-bold text-white uppercase tracking-wider block mb-2">
-                {link.name}
-              </Link>
+            <div key={link.name} className="flex flex-col">
+              <div 
+                className="flex items-center justify-between py-4 border-b border-white/5"
+                onClick={() => link.hasDropdown ? setExpandedMobileMenu(expandedMobileMenu === link.name ? null : link.name) : setIsOpen(false)}
+              >
+                {link.hasDropdown ? (
+                  <span className="text-sm font-bold text-white uppercase tracking-widest">{link.name}</span>
+                ) : (
+                  <Link href={link.href} className="text-sm font-bold text-white uppercase tracking-widest block w-full">{link.name}</Link>
+                )}
+                {link.hasDropdown && (
+                  <ChevronDown 
+                    size={18} 
+                    className={cn("text-white/40 transition-transform duration-300", expandedMobileMenu === link.name && "rotate-180 text-secondary")} 
+                  />
+                )}
+              </div>
+              
+              {/* Mobile Sublinks */}
               {link.hasDropdown && (
-                <div className="pl-4 mt-2 flex flex-col space-y-3">
+                <div className={cn(
+                  "overflow-hidden transition-all duration-300 bg-white/5 rounded-lg mt-1",
+                  expandedMobileMenu === link.name ? "max-h-[400px] py-2 mb-4" : "max-h-0"
+                )}>
                   {getSubLinks(link.name).map(sub => (
-                    <Link key={sub.name} href={sub.href} onClick={() => setIsOpen(false)} className="text-white/60 text-sm hover:text-secondary transition-colors">{sub.name}</Link>
+                    <Link 
+                      key={sub.name} 
+                      href={sub.href} 
+                      onClick={() => setIsOpen(false)} 
+                      className="flex items-center gap-3 px-6 py-3.5 text-xs font-bold text-white/70 hover:text-secondary border-b border-white/5 last:border-0"
+                    >
+                      <ChevronRight size={14} className="text-secondary" />
+                      {sub.name}
+                    </Link>
                   ))}
                 </div>
               )}
             </div>
           ))}
+          
+          <div className="pt-8">
+            <Button className="w-full rounded-xl bg-secondary text-white font-bold py-7 uppercase tracking-widest shadow-xl">
+              {t.nav.join}
+            </Button>
+          </div>
         </div>
       </div>
     </header>
