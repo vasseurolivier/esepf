@@ -19,16 +19,29 @@ export default function CollegePage() {
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-[#fdfaf5]">
+        {/* Hero Section avec Grande Photo */}
+        <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
+          <Image 
+            src="https://picsum.photos/seed/college-hero-v3/1920/1080"
+            alt="Collège ESEPF"
+            fill
+            className="object-cover opacity-50"
+            data-ai-hint="modern school hallway"
+            priority
+          />
+          <div className="relative z-10 text-center text-white container px-4">
+            <ScrollReveal>
+              <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">
+                {t.college_page.title}
+              </h1>
+              <div className="w-24 h-1.5 bg-secondary mx-auto rounded-full" />
+            </ScrollReveal>
+          </div>
+        </section>
+
         <section className="py-24">
           <div className="container mx-auto px-4 max-w-5xl">
             <ScrollReveal className="space-y-12">
-              {/* Titre principal */}
-              <div className="border-b-4 border-primary w-fit pb-2 mb-16">
-                <h1 className="text-5xl md:text-7xl font-headline font-bold text-black tracking-tight">
-                  {t.college_page.title}
-                </h1>
-              </div>
-
               {/* Paragraphes d'introduction */}
               <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
                 <p className="font-bold text-black">{t.college_page.p1}</p>
