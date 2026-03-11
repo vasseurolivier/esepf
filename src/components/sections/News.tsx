@@ -5,12 +5,15 @@ import React from 'react';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { useDoc, useFirestore } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
 
 export function News() {
   const db = useFirestore();
-  const { data: settings } = useDoc(db, 'settings/global');
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+  
   const { t } = useTranslation();
 
   const articles = [

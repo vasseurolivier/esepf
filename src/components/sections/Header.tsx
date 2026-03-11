@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { Menu, X, GraduationCap, Settings, ChevronDown, Globe, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { useDoc, useFirestore } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
 import {
   DropdownMenu,
@@ -43,8 +44,11 @@ export function Header() {
   const [mounted, setMounted] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
+  
   const db = useFirestore();
-  const { data: settings } = useDoc(db, 'settings/global');
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+  
   const { t, language, setLanguage } = useTranslation();
 
   useEffect(() => {
@@ -83,7 +87,6 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full shadow-md">
-      {/* Upper Header: Logo & Controls */}
       <div className="bg-white py-3 md:py-4 border-b border-gray-100">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2 md:space-x-3">
@@ -144,7 +147,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Desktop Navigation */}
       <div className="hidden lg:block bg-[#1a1a1a] w-full">
         <nav className="w-full flex">
           {navLinks.map((link) => (
@@ -190,7 +192,6 @@ export function Header() {
         </nav>
       </div>
 
-      {/* Mobile Navigation Panel */}
       <div className={cn(
         "lg:hidden absolute w-full bg-[#1a1a1a] border-t border-white/10 transition-all duration-500 ease-in-out z-50 overflow-hidden shadow-2xl",
         isOpen ? "max-h-[90vh] py-8" : "max-h-0"
@@ -215,7 +216,6 @@ export function Header() {
                 )}
               </div>
               
-              {/* Mobile Sublinks */}
               {link.hasDropdown && (
                 <div className={cn(
                   "overflow-hidden transition-all duration-300 bg-white/5 rounded-lg mt-1",

@@ -8,14 +8,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { useFirestore, useDoc, useCollection } from '@/firebase';
+import { useFirestore, useDoc, useCollection, useMemoFirebase } from '@/firebase';
 import { doc, setDoc, serverTimestamp, collection, query, orderBy, updateDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, Trash2, Mail, Phone, Calendar } from 'lucide-react';
+import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { format } from 'date-fns';
-import { fr } from 'date-fns/locale';
 
 const ADMIN_PASSWORD = 'Yesacademy888$';
 
@@ -32,11 +31,12 @@ const IMAGE_FIELDS = [
 
 export default function AdminPage() {
   const db = useFirestore();
-  const { data: settings, loading: settingsLoading } = useDoc(db, 'settings/global');
   
-  // Registrations Collection
-  const registrationsQuery = db ? query(collection(db, 'registrations'), orderBy('createdAt', 'desc')) : null;
-  const { data: registrations, loading: regLoading } = useCollection(registrationsQuery);
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings, isLoading: settingsLoading } = useDoc(settingsRef);
+  
+  const registrationsQuery = useMemoFirebase(() => query(collection(db, 'registrations'), orderBy('createdAt', 'desc')), [db]);
+  const { data: registrations, isLoading: regLoading } = useCollection(registrationsQuery);
 
   const { toast } = useToast();
   
@@ -73,7 +73,6 @@ export default function AdminPage() {
   };
 
   const handleSaveSettings = () => {
-    if (!db) return;
     setIsSaving(true);
     const settingsRef = doc(db, 'settings', 'global');
     const updateData = {
@@ -82,12 +81,13 @@ export default function AdminPage() {
       images: images,
       updatedAt: serverTimestamp()
     };
-    setDoc(settingsRef, updateData, { merge: true }).finally(() => setIsSaving(false));
-    toast({ title: "ENREGISTRÉ !", description: "Les modifications sont en ligne." });
+    setDoc(settingsRef, updateData, { merge: true }).finally(() => {
+      setIsSaving(false);
+      toast({ title: "ENREGISTRÉ !", description: "Les modifications sont en ligne." });
+    });
   };
 
   const updateRegStatus = (id: string, newStatus: string) => {
-    if (!db) return;
     const regRef = doc(db, 'registrations', id);
     updateDoc(regRef, { status: newStatus });
     toast({ title: "Statut mis à jour" });
@@ -144,7 +144,6 @@ export default function AdminPage() {
               </TabsTrigger>
             </TabsList>
 
-            {/* TAB: Configuration */}
             <TabsContent value="config" className="space-y-8">
               <Card className="rounded-[2rem] overflow-hidden shadow-xl border-none">
                 <CardHeader className="bg-primary text-white p-6">
@@ -204,10 +203,8 @@ export default function AdminPage() {
               </div>
             </TabsContent>
 
-            {/* TAB: Candidatures */}
             <TabsContent value="registrations">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                {/* List Side */}
                 <div className="lg:col-span-5 space-y-4">
                   {regLoading ? (
                     <div className="p-12 text-center bg-white rounded-3xl"><Loader2 className="animate-spin mx-auto text-primary" /></div>
@@ -223,7 +220,7 @@ export default function AdminPage() {
                         <CardContent className="p-4 flex items-center justify-between">
                           <div className="flex items-center gap-4">
                             <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-primary font-bold">
-                              {reg.studentFirstName[0]}{reg.studentLastName[0]}
+                              {reg.studentFirstName?.[0]}{reg.studentLastName?.[0]}
                             </div>
                             <div>
                               <h4 className="font-bold">{reg.studentFirstName} {reg.studentLastName}</h4>
@@ -246,7 +243,6 @@ export default function AdminPage() {
                   )}
                 </div>
 
-                {/* Detail Side */}
                 <div className="lg:col-span-7">
                   {selectedReg ? (
                     <Card className="rounded-[2.5rem] overflow-hidden shadow-xl border-none bg-white sticky top-24">
@@ -264,7 +260,6 @@ export default function AdminPage() {
                         </div>
                       </div>
                       <CardContent className="p-8 space-y-8">
-                        {/* Section: Choix */}
                         <div className="grid grid-cols-2 gap-4">
                           <div className="p-4 bg-muted/30 rounded-2xl border border-muted">
                             <Label className="text-[10px] uppercase font-bold text-muted-foreground">Campus</Label>
@@ -280,7 +275,6 @@ export default function AdminPage() {
                           </div>
                         </div>
 
-                        {/* Football Badge */}
                         {selectedReg.footballAcademy && (
                           <div className="p-4 bg-primary text-white rounded-2xl flex items-center justify-between">
                             <div className="flex items-center gap-3">
@@ -291,7 +285,6 @@ export default function AdminPage() {
                           </div>
                         )}
 
-                        {/* Details Grid */}
                         <div className="space-y-6">
                           <div>
                             <h4 className="text-xs font-bold uppercase text-secondary mb-4 flex items-center gap-2">

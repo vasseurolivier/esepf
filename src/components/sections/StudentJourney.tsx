@@ -5,14 +5,16 @@ import React from 'react';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 import { GraduationCap, Book, ChevronDown } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function StudentJourney() {
   const { t } = useTranslation();
   const db = useFirestore();
-  const { data: settings } = useDoc(db, 'settings/global');
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
 
   const schoolLogo = settings?.logoUrl;
   const panImgUrl = settings?.images?.campus_panoramic || PlaceHolderImages.find(img => img.id === 'campus-panoramic')?.imageUrl;
@@ -100,17 +102,13 @@ export function StudentJourney() {
           </ScrollReveal>
 
           <div className="relative max-w-7xl mx-auto md:py-12">
-            {/* Desktop Horizontal Line */}
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-2 bg-[#c5a059] -translate-y-1/2 z-0 rounded-full" />
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
               {stages.map((stage, idx) => (
                 <div key={idx} className="relative group flex flex-col md:block">
-                  
-                  {/* Point d'étape noir */}
                   <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-black rounded-full border-4 border-white shadow-lg transition-transform group-hover:scale-125 z-20" />
 
-                  {/* Blason en arrière-plan (si présent) */}
                   {stage.hasLogo && (
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 opacity-5 md:opacity-10 pointer-events-none -z-10 group-hover:opacity-20 transition-opacity">
                       {schoolLogo ? (
@@ -121,14 +119,11 @@ export function StudentJourney() {
                     </div>
                   )}
 
-                  {/* Vertical Line for Mobile */}
                   {idx < stages.length - 1 && (
                     <div className="md:hidden absolute left-6 top-10 bottom-0 w-0.5 bg-muted z-0 border-dashed border-primary/20 border-l-2" />
                   )}
 
-                  {/* Académique (Haut / Mobile Content) */}
                   <div className="flex items-start gap-6 md:block">
-                    {/* Circle for Mobile */}
                     <div className="md:hidden w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold shrink-0 z-10 shadow-lg border-4 border-white">
                       {stage.id}
                     </div>
@@ -142,7 +137,6 @@ export function StudentJourney() {
                         <p className="text-[10px] text-gray-400 leading-tight uppercase font-medium">{stage.academic.desc}</p>
                       </div>
 
-                      {/* Football / Métiers (Bas / Mobile Content) */}
                       <div className="md:mt-8 text-left md:text-center md:h-40 transition-all group-hover:translate-y-2">
                         {stage.middle && (
                            <div className="mb-4">
@@ -167,12 +161,10 @@ export function StudentJourney() {
             </div>
           </div>
 
-          {/* Décoration mobile helper */}
           <div className="md:hidden flex justify-center mt-8 text-primary animate-bounce">
             <ChevronDown size={24} />
           </div>
 
-          {/* Décoration livre en bas à droite */}
           <div className="absolute bottom-10 right-10 opacity-5 -rotate-12 pointer-events-none hidden md:block">
             <Book size={150} />
           </div>

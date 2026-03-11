@@ -5,12 +5,15 @@ import React from 'react';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { GraduationCap, BookOpen, Languages, Trophy, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-import { useFirestore, useDoc } from '@/firebase';
+import { useFirestore, useDoc, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
 
 export function ThreeAxes() {
   const db = useFirestore();
-  const { data: settings } = useDoc(db, 'settings/global');
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+  
   const { t } = useTranslation();
   
   const logoUrl = settings?.logoUrl;
@@ -22,10 +25,8 @@ export function ThreeAxes() {
         <ScrollReveal>
           <div className="relative max-w-6xl mx-auto">
             
-            {/* Desktop Layout (Circular) */}
             <div className="hidden lg:block relative h-[1100px]">
               
-              {/* Central Circle - Crest */}
               <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                 <div className="w-[450px] h-[450px] rounded-full border border-secondary/10 p-12 bg-white flex items-center justify-center shadow-[0_0_50px_rgba(0,0,0,0.05)] relative">
                   <div className="w-full h-full rounded-full border-[12px] border-secondary/5 flex items-center justify-center overflow-hidden p-12 bg-white shadow-inner">
@@ -39,14 +40,12 @@ export function ThreeAxes() {
                     )}
                   </div>
                   
-                  {/* Orbits Decorations */}
                   <div className="absolute -inset-4 rounded-full border border-secondary/20" />
                   <div className="absolute -inset-12 rounded-full border border-secondary/10" />
                   <div className="absolute -inset-24 rounded-full border border-secondary/5" />
                 </div>
               </div>
 
-              {/* Axis 1: Scolarité (Top Left) */}
               <div className="absolute top-0 left-0 w-[350px]">
                 <div className="flex flex-col items-start text-left">
                   <div className="flex items-center gap-4 mb-6">
@@ -69,7 +68,6 @@ export function ThreeAxes() {
                 </div>
               </div>
 
-              {/* Axis 2: Football Academy (Top Right) */}
               <div className="absolute top-0 right-0 w-[350px] text-right">
                 <div className="flex flex-col items-end">
                   <div className="flex items-center gap-4 mb-6">
@@ -92,7 +90,6 @@ export function ThreeAxes() {
                 </div>
               </div>
 
-              {/* Axis 3: Langues Étrangères (Bottom) */}
               <div className="absolute top-[75%] left-1/2 -translate-x-1/2 w-full max-w-4xl text-center z-30">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-center gap-12 mb-8 w-full">
@@ -124,7 +121,6 @@ export function ThreeAxes() {
               </svg>
             </div>
 
-            {/* Mobile Layout */}
             <div className="lg:hidden space-y-12">
               <div className="flex flex-col items-center mb-12">
                 <div className="w-40 h-40 rounded-full border-4 border-secondary/10 p-2 bg-white flex items-center justify-center shadow-2xl relative mb-8">
@@ -141,7 +137,6 @@ export function ThreeAxes() {
               </div>
 
               <div className="grid grid-cols-1 gap-8">
-                {/* Mobile Axis 1 */}
                 <div className="bg-muted/30 p-8 rounded-[2rem] border border-border shadow-sm">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="bg-secondary/10 p-3 rounded-2xl">
@@ -156,7 +151,6 @@ export function ThreeAxes() {
                   </Link>
                 </div>
 
-                {/* Mobile Axis 2 */}
                 <div className="bg-primary p-8 rounded-[2rem] text-white shadow-xl relative overflow-hidden">
                   <div className="flex items-center gap-4 mb-4 relative z-10">
                     <div className="bg-white/10 p-3 rounded-2xl">
@@ -172,7 +166,6 @@ export function ThreeAxes() {
                   <div className="absolute -right-10 -bottom-10 opacity-10"><Trophy size={150} /></div>
                 </div>
 
-                {/* Mobile Axis 3 */}
                 <div className="bg-muted/30 p-8 rounded-[2rem] border border-border shadow-sm">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="bg-secondary/10 p-3 rounded-2xl">

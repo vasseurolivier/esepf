@@ -1,24 +1,26 @@
-
 "use client";
 
 import React, { useMemo } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Trophy, GraduationCap, Route, HeartPulse, Globe, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useDoc, useFirestore } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
 
 export function FootballAcademy() {
   const db = useFirestore();
-  const { data: settings } = useDoc(db, 'settings/global');
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+  
   const { t } = useTranslation();
   
   const footballImgUrl = settings?.images?.football_academy || PlaceHolderImages.find(img => img.id === 'football-academy')?.imageUrl;
 
   const academyFeatures = useMemo(() => {
-    // Sécurité : Vérifier que t.academy_features existe avant de mapper
     if (!t?.academy_features) return [];
 
     return [
@@ -62,9 +64,11 @@ export function FootballAcademy() {
               ))}
             </div>
 
-            <Button className="bg-primary text-white hover:bg-primary/90 rounded-full px-8 py-6 text-lg font-bold uppercase tracking-wider">
-              {t.academy_features?.cta || "APPLY NOW"}
-            </Button>
+            <Link href="/inscription">
+              <Button className="bg-primary text-white hover:bg-primary/90 rounded-full px-8 py-6 text-lg font-bold uppercase tracking-wider">
+                {t.academy_features?.cta || "APPLY NOW"}
+              </Button>
+            </Link>
           </div>
 
           <div className="lg:w-1/2 relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">

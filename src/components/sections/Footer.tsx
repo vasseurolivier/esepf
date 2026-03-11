@@ -4,12 +4,15 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, GraduationCap } from 'lucide-react';
-import { useDoc, useFirestore } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
 
 export function Footer() {
   const db = useFirestore();
-  const { data: settings } = useDoc(db, 'settings/global');
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+  
   const { t } = useTranslation();
   
   const schoolName = settings?.schoolName || "ESEPF";
@@ -23,7 +26,6 @@ export function Footer() {
     <footer className="bg-primary text-white pt-20 pb-10">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* About */}
           <div>
             <h3 className="text-2xl font-headline font-bold mb-6 tracking-tighter flex items-center gap-2">
               <GraduationCap className="text-secondary" />
@@ -40,7 +42,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-xs font-headline font-bold mb-6 uppercase tracking-widest text-secondary">{t.footer.campus}</h4>
             <ul className="space-y-4">
@@ -50,7 +51,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="text-xs font-headline font-bold mb-6 uppercase tracking-widest text-secondary">{t.footer.contact}</h4>
             <ul className="space-y-4">
@@ -69,7 +69,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
           <div>
             <h4 className="text-xs font-headline font-bold mb-6 uppercase tracking-widest text-secondary">{t.footer.newsletter}</h4>
             <p className="text-white/70 mb-4 text-sm">{t.footer.newsletter_desc}</p>
