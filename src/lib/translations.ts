@@ -33,7 +33,10 @@ export const translations = {
       campus_label: "Campus",
       duration: "Durée",
       level: "Niveau",
-      diploma: "Diplôme"
+      diploma: "Diplôme",
+      higher_ed: "ÉTUDES SUPÉRIEURES",
+      jobs_prefix: "MÉTIERS",
+      allophone_mention: "4 ans pour les élèves allophones (classe d'intégration incluse)"
     },
     figures: {
       bac: "Réussite au Bac",
@@ -180,47 +183,47 @@ export const translations = {
       bac_gen: {
         title: "BAC GÉNÉRAL",
         subtitle: "Métiers des langues et de la culture",
-        desc: "Une formation d'excellence axée sur l'analyse, la culture générale et la maîtrise linguistique.",
+        desc: "Une formation d'excellence axée sur l'analyse, la culture générale et la maîtrise linguistique. Ce cursus prépare les élèves à comprendre la complexité du monde moderne à travers l'étude approfondie des humanités, des langues et de la géopolitique.",
         prog_title: "Programme Pédagogique",
-        prog_desc: "Notre Bac Général propose des enseignements de spécialité tournés vers l'international : Langues, Littératures et Cultures Étrangères (Anglais), Humanités, Littérature et Philosophie, ainsi que des parcours en Histoire-Géographie et Géopolitique.",
+        prog_desc: "Le programme repose sur un tronc commun (Français, Philosophie, Histoire-Géographie, Enseignement Scientifique) et le choix de trois enseignements de spécialité en classe de Première, puis deux en Terminale. Nous privilégions les parcours tournés vers l'international comme LLCE (Langues, Littératures et Cultures Étrangères) et HGGSP (Histoire-Géographie, Géopolitique et Sciences Politiques).",
         outlets_title: "Débouchés Scolaires",
-        outlets_desc: "Accès aux CPGE (Classes Préparatoires), IEP (Sciences Po), universités prestigieuses en France et à l'étranger (USA, UK, Europe).",
+        outlets_desc: "Accès aux CPGE (Classes Préparatoires aux Grandes Écoles), aux Instituts d'Études Politiques (IEP / Sciences Po), et aux universités les plus prestigieuses en France et à l'international (système LMD ou Bachelor US/UK).",
         jobs_title: "Les Métiers",
-        jobs_desc: "Diplomatie, Traduction de haut niveau, Journalisme international, Expertise culturelle, Enseignement supérieur.",
+        jobs_desc: "Le Bac Général ouvre la voie à des carrières dans la diplomatie, le journalisme international, la traduction de haut niveau, le droit, l'expertise culturelle et l'enseignement supérieur.",
         campuses: "Evron & Sainte-Bazeilles",
-        duration: "3 ans (2nde, 1ère, Terminale)",
+        duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Baccalauréat)",
-        program_details: "Le cursus se compose d'un tronc commun solide (Français, Philo, Histoire-Géo, LVA/LVB, Sciences, EPS) complété par 3 spécialités en 1ère et 2 spécialités en Terminale. Nous mettons l'accent sur l'éloquence et la préparation au Grand Oral."
+        program_details: "Le cursus se compose d'un tronc commun solide complété par des spécialités exigeantes. Nous mettons un accent particulier sur la rhétorique et l'argumentation en vue du Grand Oral du Baccalauréat. L'ouverture internationale est renforcée par notre programme de Dual Diploma optionnel."
       },
       bac_vente: {
         title: "BAC PRO VENTE",
         subtitle: "Métiers de la vente et du commerce",
-        desc: "Une formation pratique pour devenir un expert de la relation client et de la négociation.",
+        desc: "Une formation pratique et immersive pour devenir un expert de la relation client, de la négociation et de la stratégie commerciale omnicanale. Ce diplôme met l'accent sur le savoir-être professionnel et l'efficacité commerciale.",
         prog_title: "Approche Professionnelle",
-        prog_desc: "Formation axée sur la prospection, la négociation commerciale et la fidélisation. Stages intensifs en entreprises partenaires et projets concrets de business development.",
+        prog_desc: "Le programme alterne entre théorie en classe et pratique intensive en entreprise. Les modules clés incluent la prospection clientèle, la conduite d'entretien de vente, la fidélisation et la gestion de l'offre commerciale. L'utilisation des outils numériques de vente est au cœur de l'apprentissage.",
         outlets_title: "Débouchés Scolaires",
-        outlets_desc: "BTS Management Commercial Opérationnel (MCO), BTS Négociation et Digitalisation de la Relation Client (NDRC), Bachelors en écoles de commerce.",
+        outlets_desc: "Poursuite d'études vers des BTS (Management Commercial Opérationnel, Négociation et Digitalisation de la Relation Client) ou des Bachelors spécialisés en Écoles de Commerce.",
         jobs_title: "Les Métiers",
-        jobs_desc: "Commercial terrain, Chargé de clientèle, Manager de point de vente, Business Developer, Entrepreneur.",
+        jobs_desc: "Commercial terrain, chargé de clientèle, manager de rayon, gestionnaire de point de vente, business developer ou entrepreneur.",
         campuses: "Sainte-Bazeilles & Sainte-Tulle",
-        duration: "3 ans",
+        duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Diplôme Professionnel)",
-        program_details: "Ce bac pro alterne enseignements généraux et enseignements professionnels (Économie-Droit, Relation Client, Mercatique). 22 semaines de stage en entreprise (PFMP) sont réparties sur les 3 ans pour une immersion totale."
+        program_details: "La formation inclut 22 semaines de Périodes de Formation en Milieu Professionnel (PFMP) réparties sur les 3 ans. Les élèves développent une autonomie réelle et une maîtrise des techniques de persuasion et de gestion de la relation client."
       },
       bac_stmg: {
         title: "BAC TECHNO STMG",
         subtitle: "Métiers du management et de la gestion",
-        desc: "Comprendre le fonctionnement des organisations, du marketing aux ressources humaines.",
+        desc: "Une filière équilibrée pour comprendre le fonctionnement interne des organisations, qu'il s'agisse d'entreprises, d'associations ou d'administrations. Elle allie approche théorique et cas pratiques réels.",
         prog_title: "Le Cursus Management",
-        prog_desc: "Analyse du comportement des organisations, gestion financière, marketing digital et droit des affaires. Une filière qui allie théorie et cas pratiques d'entreprises réelles.",
+        prog_desc: "Le programme explore quatre domaines fondamentaux : les sciences de gestion, le management, le droit et l'économie. En terminale, les élèves se spécialisent (Gestion-Finance, Marketing, Ressources Humaines ou Systèmes d'Information).",
         outlets_title: "Débouchés Scolaires",
-        outlets_desc: "BUT (Bachelor Universitaire de Technologie) Gestion des Entreprises et des Administrations, Classes Prépa ECT, Écoles de Management.",
+        outlets_desc: "Accès aux BUT (Bachelor Universitaire de Technologie) GEA, aux classes préparatoires ECT (Économique et Commerciale voie Technologique) ou aux Écoles de Management.",
         jobs_title: "Les Métiers",
-        jobs_desc: "Gestionnaire, Chef de projet marketing, Assistant RH, Responsable administratif, Manager d'équipe.",
+        jobs_desc: "Gestionnaire, chef de projet marketing, assistant RH, responsable administratif, manager d'équipe junior ou contrôleur de gestion.",
         campuses: "Evron & Sainte-Tulle",
-        duration: "3 ans",
+        duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Baccalauréat Technologique)",
-        program_details: "La filière STMG s'appuie sur l'étude des organisations réelles. Elle explore les systèmes d'information, les outils numériques de gestion et l'impact des décisions managériales sur la performance."
+        program_details: "La filière STMG s'appuie sur l'étude des organisations réelles grâce à des outils numériques modernes. Elle prépare aux décisions managériales, à l'analyse financière et à la compréhension des enjeux économiques et juridiques contemporains."
       }
     },
     journey: {
@@ -307,7 +310,10 @@ export const translations = {
       campus_label: "Campus",
       duration: "Duration",
       level: "Level",
-      diploma: "Diploma"
+      diploma: "Diploma",
+      higher_ed: "HIGHER EDUCATION",
+      jobs_prefix: "JOBS",
+      allophone_mention: "4 years for allophone students (including integration class)"
     },
     figures: {
       bac: "Bac Success Rate",
@@ -437,47 +443,47 @@ export const translations = {
       bac_gen: {
         title: "GENERAL BAC",
         subtitle: "Language and Culture Careers",
-        desc: "An excellence-focused training oriented towards analysis, general culture, and linguistic mastery.",
+        desc: "An excellence-focused training oriented towards analysis, general culture, and linguistic mastery. This curriculum prepares students to understand the complexity of the modern world through the in-depth study of humanities and geopolitics.",
         campuses: "Evron & Sainte-Bazeilles",
-        duration: "3 years",
+        duration: "3 years (4 for allophones)",
         level: "Level 4 (Baccalaureate)",
         prog_title: "Educational Program",
-        prog_desc: "Core curriculum plus 3 specialty choices in 11th grade. Strong focus on eloquence and international openness.",
+        prog_desc: "The program is based on a core curriculum and the choice of three specialty subjects in 11th grade, then two in 12th grade. We prioritize international paths like LLCE and HGGSP.",
         outlets_title: "Academic Prospects",
-        outlets_desc: "Access to prestigious universities, political science institutes (IEP), and international curricula.",
+        outlets_desc: "Access to prestigious universities, political science institutes (IEP), and international curricula worldwide.",
         jobs_title: "Careers",
-        jobs_desc: "Diplomacy, International Journalism, Translation, Higher Education.",
-        program_details: "Includes core subjects and specialties such as Foreign Languages, Literature, and Geopolitics."
+        jobs_desc: "Diplomacy, International Journalism, Translation, Higher Education, Cultural Expertise.",
+        program_details: "Strong focus on eloquence and international openness. Optional Dual Diploma program available."
       },
       bac_vente: {
         title: "PRO SALES BAC",
         subtitle: "Sales and Retail Careers",
-        desc: "Practical training to become a customer relationship and negotiation expert.",
+        desc: "Practical training to become a customer relationship and negotiation expert in an omnichannel environment.",
         campuses: "Sainte-Bazeilles & Sainte-Tulle",
-        duration: "3 years",
+        duration: "3 years (4 for allophones)",
         level: "Level 4 (Professional Diploma)",
         prog_title: "Professional Approach",
-        prog_desc: "Practical modules in customer psychology, digital sales, and business law. Includes 22 weeks of internships.",
+        prog_desc: "Practical modules in customer psychology, digital sales, and business law. Strong emphasis on professional behavior and sales efficiency.",
         outlets_title: "Academic Prospects",
-        outlets_desc: "Business schools, higher technical degrees (BTS) in commerce and marketing.",
+        outlets_desc: "Business schools, higher technical degrees (BTS) in commerce, marketing, and relationship management.",
         jobs_title: "Careers",
         jobs_desc: "Sales Executive, Store Manager, Business Developer, Entrepreneur.",
-        program_details: "Combines general education with immersive professional practice."
+        program_details: "Combines general education with 22 weeks of immersive professional practice."
       },
       bac_stmg: {
         title: "TECHNO STMG BAC",
         subtitle: "Management and Business Careers",
-        desc: "Understand how organizations work, from marketing to finance and HR.",
+        desc: "Understand how organizations work, from marketing to finance and HR. Combines theory with real-world business cases.",
         campuses: "Evron & Sainte-Tulle",
-        duration: "3 years",
+        duration: "3 years (4 for allophones)",
         level: "Level 4 (Technological Baccalaureate)",
         prog_title: "Management Track",
-        prog_desc: "Exploration of business strategy, organizational behavior, and digital management tools.",
+        prog_desc: "Exploration of business strategy, organizational behavior, and digital management tools. Specialties available in Marketing or Finance.",
         outlets_title: "Academic Prospects",
-        outlets_desc: "Management schools, technology degrees (BUT), preparatory classes for high-level management.",
+        outlets_desc: "Management schools, technology degrees (BUT), preparatory classes for high-level business schools.",
         jobs_title: "Careers",
         jobs_desc: "Manager, Marketing Lead, HR Assistant, Project Coordinator.",
-        program_details: "Focuses on real-world organization analysis and management decision-making."
+        program_details: "Focuses on real-world organization analysis and management decision-making using modern digital tools."
       }
     },
     journey: {
@@ -563,7 +569,10 @@ export const translations = {
       register: "在此校区注册",
       contact_coach: "联系教练",
       apply: "索取录取文件",
-      contact_us: "联系我们"
+      contact_us: "联系我们",
+      higher_ed: "高等教育",
+      jobs_prefix: "职业",
+      allophone_mention: "非法语母语学生为 4 年（含语言预科班）"
     },
     figures: {
       bac: "毕业通过率",
@@ -652,10 +661,10 @@ export const translations = {
       subtitle: "精英足球与学术计划",
       p1: "在 ESEPF，我们为 11 至 19 岁的青少年提供卓越的双重项目。我们的精英足球计划提供每日专业训练，由欧足联认证教练监督。",
       p2: "与此同时，学生遵循卓越的法国学术课程。得益于个性化的教学跟踪，确保了平衡。",
-      p3: "这一独特的计划塑造了运动员和学生，灌输了纪律和抱负。加入 ESEPF 是为冠军未来选择卓越。",
+      p3: "这一独特的计划塑造了运动员 and 学生，灌输了纪律 and 抱负。加入 ESEPF 是为冠军未来选择卓越。",
       team_title: "团队介绍",
       staff_title: "我们的教职员工",
-      staff_desc: "由高级教师和欧足联认证教练组成的团队提供卓越指导。"
+      staff_desc: "由高级教师 and 欧足联认证教练组成的团队提供卓越指导。"
     },
     recognition_page: {
       title: "荣誉与认证",
@@ -663,15 +672,15 @@ export const translations = {
       hero_subtitle: "获得法国教育部认可的学校",
       hero_text: "我们的机构获得了法国国民教育部的官方认可。这种认可保证了我们的学校遵守教育标准。",
       diploma_title: "法国国家文凭",
-      diploma_text_1: "我们为学生准备法国国家文凭。这些文凭，如 DNB 以及普通和技术类高中毕业证，在全球范围内获得认可。",
-      diploma_text_2: "此外，它们还获得了中国教育部的认可，为我们的学生提供在法国和中国都获得认可的高质量认证。",
+      diploma_text_1: "我们为学生准备法国国家文凭。这些文凭，如 DNB 以及普通 and 技术类高中毕业证，在全球范围内获得认可。",
+      diploma_text_2: "此外，它们还获得了中国教育部的认可，为我们的学生提供在法国 and 中国都获得认可的高质量认证。",
       bottom_title: "文凭"
     },
     college_page: {
       title: "ESEPF - 初中部",
       p1: "我们向 11 至 14 岁的学生敞开体育学习初中部的大门。",
       p2: "完成初中学业后，他们可以进入我们的高中课程并继续在法国学习。",
-      p3: "初中部丰富了我们的培训体系，陪伴青少年在学术和个人方面共同发展。",
+      p3: "初中部丰富了我们的培训体系，陪伴青少年在学术 and 个人方面共同发展。",
       prog_title: "我们的计划分为三年：",
       year1_title: "第一年：整合班",
       year1_desc: "该计划允许他们在掌握法语 (FLE) 的同时，加强基础学科的学习。",
@@ -693,47 +702,47 @@ export const translations = {
       bac_gen: {
         title: "普通高中毕业证书",
         subtitle: "语言与文化职业方向",
-        desc: "专注于分析、通识文化和语言掌握的卓越培训。",
+        desc: "专注于分析、通识文化 and 语言掌握的卓越培训。本课程旨在通过深入学习人文、语言 and 地缘政治，培养学生理解现代世界复杂性的能力。",
         campuses: "埃夫龙 & 圣巴泽耶校区",
-        duration: "3年",
-        level: "4级 (高中毕业证书)",
+        duration: "3年（非法语母语学生为4年）",
+        level: "4级（高中毕业证书）",
         prog_title: "教学计划",
-        prog_desc: "核心课程加3个专业方向选择。重点培养表达能力和国际视野。",
+        prog_desc: "核心课程加3个专业方向选择。重点培养表达能力 and 国际视野。选修课包括 LLCE (外语与文学) and HGGSP (地缘政治)。",
         outlets_title: "升学前景",
-        outlets_desc: "进入世界名校、政治学院及国际精英课程。",
+        outlets_desc: "进入世界名校、政治学院 (Sciences Po) 及国际精英课程 (LMD 系统或英美学士学位)。",
         jobs_title: "职业发展",
-        jobs_desc: "外交、国际新闻、高级翻译、高等教育。",
-        program_details: "包含外语、文学、地缘政治等核心及专业科目。"
+        jobs_desc: "外交、国际新闻、高级翻译、高等教育、文化专家。",
+        program_details: "课程包含坚实的核心科目 and 极具挑战性的专业课。特别注重毕业口试 (Grand Oral) 的演讲与论证能力。"
       },
       bac_vente: {
         title: "专业销售高中毕业证书",
         subtitle: "销售与商业职业方向",
-        desc: "旨在培养客户关系与商业谈判专家的实践性培训。",
+        desc: "旨在培养全渠道环境下的客户关系、谈判 and 商业战略专家的实践性培训。强调职业素养 and 销售效率。",
         campuses: "圣巴泽耶 & 圣蒂勒校区",
-        duration: "3年",
-        level: "4级 (专业文凭)",
+        duration: "3年（非法语母语学生为4年）",
+        level: "4级（专业文凭）",
         prog_title: "职业化培养",
-        prog_desc: "包含客户心理、数字销售及商业法等实务模块。包含22周企业实习。",
+        prog_desc: "包含客户心理、数字销售及商业法等实务模块。课程紧密结合理论与企业实践。22周的企业实习是核心内容。",
         outlets_title: "升学前景",
-        outlets_desc: "进入商学院或攻读商业与营销方向的高等技术学位。",
+        outlets_desc: "进入商学院或攻读商业、营销 and 客户管理方向的高等技术学位 (BTS)。",
         jobs_title: "职业发展",
-        jobs_desc: "销售主管、店长、业务开发、创业者。",
-        program_details: "将通识教育与沉浸式职业 practice 相结合。"
+        jobs_desc: "销售主管、店长、业务开发、创业者、客户经理。",
+        program_details: "学生在实习中培养真正的自主权，并掌握劝说技巧 and 客户关系管理工具。"
       },
       bac_stmg: {
         title: "管理技术高中毕业证书",
         subtitle: "管理与商务职业方向",
-        desc: "从市场营销到财务和人力资源，全面了解组织的运作。",
+        desc: "从市场营销到财务 and 人力资源，全面了解组织的运作。将理论框架与真实企业案例分析相结合。",
         campuses: "埃夫龙 & 圣蒂勒校区",
-        duration: "3年",
-        level: "4级 (技术类高中毕业证书)",
+        duration: "3年（非法语母语学生为4年）",
+        level: "4级（技术类高中毕业证书）",
         prog_title: "管理课程",
-        prog_desc: "探索企业战略、组织行为及数字管理工具。",
+        prog_desc: "探索企业战略、组织行为及数字管理工具。高年级可选修：财务管理、市场营销或人力资源方向。",
         outlets_title: "升学前景",
-        outlets_desc: "进入管理学院、技术学院 (BUT) 或管理类预科班。",
+        outlets_desc: "进入管理学院、技术学院 (BUT) 或管理类预科班 (CPGE ECT)。",
         jobs_title: "职业发展",
-        jobs_desc: "经理、市场负责人、人力资源助理、项目协调员。",
-        program_details: "专注于现实组织分析及管理决策制定。"
+        jobs_desc: "经理、市场负责人、人力资源助理、项目协调员、财务分析员。",
+        program_details: "利用现代数字化工具分析现实组织。为学生在管理决策、财务分析 and 理解当代经济法律环境方面打下坚实基础。"
       }
     },
     journey: {
@@ -763,9 +772,9 @@ export const translations = {
     },
     orientation: {
       q1: "你最感兴趣的领域是什么？",
-      q1_o1: "通识和学术科目",
+      q1_o1: "通识 and 学术科目",
       q1_o2: "企业管理",
-      q1_o3: "销售和客户关系",
+      q1_o3: "销售 and 客户关系",
       q2: "你的学业目标是什么？",
       q2_o1: "大学或政治学院",
       q2_o2: "管理或商学院",

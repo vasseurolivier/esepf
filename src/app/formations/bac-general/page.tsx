@@ -8,9 +8,10 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { GraduationCap, BookOpen, Globe, Award, MessageSquare, Clock, MapPin, CheckCircle2 } from 'lucide-react';
+import { GraduationCap, BookOpen, Globe, Award, MessageSquare, Clock, MapPin, CheckCircle2, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { FrenchSystemSchema } from '@/components/sections/FrenchSystemSchema';
 
 export default function BacGeneralPage() {
   const { t } = useTranslation();
@@ -81,7 +82,7 @@ export default function BacGeneralPage() {
         {/* Intro Section */}
         <section className="py-24">
           <div className="container mx-auto px-4 max-w-5xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
               <ScrollReveal className="space-y-6">
                 <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-4">
                   <GraduationCap size={32} />
@@ -92,6 +93,10 @@ export default function BacGeneralPage() {
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   {t.lycee_page.bac_gen.desc}
                 </p>
+                <div className="p-4 bg-muted/50 rounded-xl border-l-4 border-secondary flex gap-3">
+                  <Info className="text-secondary shrink-0" size={20} />
+                  <p className="text-sm font-bold text-primary">{t.common.allophone_mention}</p>
+                </div>
                 <div className="space-y-4 pt-4">
                   <p className="text-muted-foreground leading-relaxed">
                     {t.lycee_page.bac_gen.program_details}
@@ -107,6 +112,13 @@ export default function BacGeneralPage() {
                 />
               </ScrollReveal>
             </div>
+
+            {/* French System Schema */}
+            <ScrollReveal className="text-center mb-12">
+              <h2 className="text-3xl font-headline font-bold text-primary mb-2">VOTRE PARCOURS DE RÉUSSITE</h2>
+              <p className="text-muted-foreground">Découvrez les opportunités après votre Baccalauréat Général à l'ESEPF</p>
+            </ScrollReveal>
+            <FrenchSystemSchema bacType="Baccalauréat Général" />
           </div>
         </section>
 

@@ -8,8 +8,9 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { ShoppingBag, TrendingUp, Users, Target, MessageSquare, Clock, MapPin, Award } from 'lucide-react';
+import { ShoppingBag, TrendingUp, Users, Target, MessageSquare, Clock, MapPin, Award, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FrenchSystemSchema } from '@/components/sections/FrenchSystemSchema';
 
 export default function BacProVentePage() {
   const { t } = useTranslation();
@@ -80,7 +81,7 @@ export default function BacProVentePage() {
         {/* Intro Section */}
         <section className="py-24">
           <div className="container mx-auto px-4 max-w-5xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
               <ScrollReveal className="space-y-6">
                 <div className="inline-flex p-3 rounded-2xl bg-secondary/10 text-secondary mb-4">
                   <ShoppingBag size={32} />
@@ -91,6 +92,10 @@ export default function BacProVentePage() {
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   {t.lycee_page.bac_vente.desc}
                 </p>
+                <div className="p-4 bg-muted/50 rounded-xl border-l-4 border-secondary flex gap-3">
+                  <Info className="text-secondary shrink-0" size={20} />
+                  <p className="text-sm font-bold text-primary">{t.common.allophone_mention}</p>
+                </div>
                 <p className="text-muted-foreground leading-relaxed">
                   {t.lycee_page.bac_vente.program_details}
                 </p>
@@ -104,6 +109,13 @@ export default function BacProVentePage() {
                 />
               </ScrollReveal>
             </div>
+
+            {/* French System Schema */}
+            <ScrollReveal className="text-center mb-12">
+              <h2 className="text-3xl font-headline font-bold text-[#0c3a2f] mb-2">VOTRE PARCOURS PROFESSIONNEL</h2>
+              <p className="text-muted-foreground">Construisez votre carrière commerciale étape par étape avec l'ESEPF</p>
+            </ScrollReveal>
+            <FrenchSystemSchema bacType="Baccalauréat Professionnel Vente" />
           </div>
         </section>
 
