@@ -120,6 +120,19 @@ export const translations = {
         f3: "Suivi athlétique"
       }
     },
+    competition_page: {
+      title: "CHAMPIONNAT FRANÇAIS DE FOOTBALL",
+      hero_sub: "Vivez l'adrénaline des compétitions officielles et révélez votre potentiel.",
+      p1: "Grâce à nos partenariats avec les clubs locaux, les joueurs de notre section sport-études football bénéficient d’un accès privilégié aux compétitions officielles françaises. Cette ouverture leur permet de s’inscrire dans des championnats reconnus, d’affronter des équipes de niveau élevé et de vivre l’expérience d’un environnement compétitif structuré.",
+      p2: "Les matchs officiels se déroulent chaque week-end, offrant aux jeunes footballeurs une continuité dans leur progression et la possibilité de se confronter à la réalité du football hexagonal. Ce dispositif favorise la détection, la montée en compétence et l’intégration dans les filières de haut niveau.",
+      p3: "Les entraîneurs et les encadrants suivent de près la préparation des joueurs, en adaptant le programme d’entraînement aux exigences des matchs. L’objectif est de permettre à chaque joueur de s’exprimer pleinement sur le terrain, de développer son potentiel et de construire un parcours ambitieux, tout en bénéficiant d’un accompagnement scolaire adapté.",
+      card_clubs: "Accès Privilégié",
+      card_clubs_desc: "Championnats reconnus et équipes de haut niveau.",
+      card_weekend: "Matchs du Week-end",
+      card_weekend_desc: "Compétition régulière pour une progression continue.",
+      card_detection: "Détection & Élite",
+      card_detection_desc: "Passerelle vers les filières professionnelles."
+    },
     history_page: {
       title: "Notre Histoire",
       subtitle: "De l'Asie à la France, une ambition mondiale",
@@ -441,6 +454,19 @@ export const translations = {
         f3: "Athletic follow-up"
       }
     },
+    competition_page: {
+      title: "FRENCH FOOTBALL CHAMPIONSHIP",
+      hero_sub: "Experience the adrenaline of official competitions and reveal your potential.",
+      p1: "Thanks to our partnerships with local clubs, players in our football sport-study section benefit from privileged access to official French competitions. This opportunity allows them to join recognized championships, face high-level teams, and experience a structured competitive environment.",
+      p2: "Official matches take place every weekend, offering young footballers continuity in their progress and the chance to face the reality of French football. This setup promotes scouting, skill development, and integration into high-level tracks.",
+      p3: "Coaches and staff closely monitor player preparation, adapting the training program to match requirements. The goal is to allow every player to fully express themselves on the field, develop their potential, and build an ambitious path, while benefiting from adapted academic support.",
+      card_clubs: "Privileged Access",
+      card_clubs_desc: "Recognized championships and high-level teams.",
+      card_weekend: "Weekend Matches",
+      card_weekend_desc: "Regular competition for continuous progress.",
+      card_detection: "Scouting & Elite",
+      card_detection_desc: "Bridge to professional career tracks."
+    },
     history_page: {
       title: "Our History",
       subtitle: "From Asia to France, a global ambition",
@@ -748,6 +774,19 @@ export const translations = {
         f3: "运动监测"
       }
     },
+    competition_page: {
+      title: "法国足球锦标赛",
+      hero_sub: "体验官方比赛的激情，展示您的足球潜力。",
+      p1: "得益于我们与当地俱乐部的合作伙伴关系，我们体育学习足球部门的球员享有参加法国官方比赛的特权。这种开放性使他们能够参加公认的锦标赛，对阵高水平球队，并体验结构化的竞争环境。",
+      p2: "官方比赛每个周末举行，为年轻足球运动员提供持续的进步机会，并让他们面对法国足球的现实。这种机制有利于挖掘人才、提升技能以及融入高水平体系。",
+      p3: "教练和工作人员密切监控球员的准备情况，根据比赛要求调整训练计划。目标是让每位球员在球场上充分展示自我，开发潜力，构建雄心勃勃的职业道路，同时享受适配的学业支持。",
+      card_clubs: "特权访问",
+      card_clubs_desc: "公认的锦标赛和高水平球队。",
+      card_weekend: "周末比赛",
+      card_weekend_desc: "定期比赛，确保持续进步。",
+      card_detection: "选拔与精英",
+      card_detection_desc: "通往职业足球体系的桥梁。"
+    },
     history_page: {
       title: "我们的历史",
       subtitle: "从亚洲到法国，全球雄心",
@@ -864,7 +903,7 @@ export const translations = {
       coaches_title: "欧足联认证教练团队",
       coaches_desc: "我们的训练由来自法国职业足球圈的欧足联认证教练指导。他们带来了战术专长和钢铁般的纪律，同时确保对每位运动员进行个人跟踪。",
       weekly_title: "每周训练计划",
-      weekly_desc: "优化的时间表，每周结合10至12小时的足球训练与完整的学术课程。体能准备、视频战术课和FFF联赛比赛是我们课程的组成部分。"
+      weekly_desc: "优化的时间表，每周结合10至12小时的足球训练与完整的学术课程. 体能准备、视频战术课和FFF联赛比赛是我们课程的组成部分。"
     },
     journey: {
       college: "初中",
