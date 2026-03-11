@@ -3,10 +3,12 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTranslation } from '@/hooks/use-translation';
+import { ChevronRight, ArrowRight } from 'lucide-react';
 
 export function Programs() {
   const [isMounted, setIsMounted] = useState(false);
@@ -26,6 +28,7 @@ export function Programs() {
         subtitle: t.programs.college?.subtitle || "",
         image: 'college-life',
         desc: t.programs.college?.desc || "",
+        href: '/formations/college',
         features: [t.programs.college?.f1, t.programs.college?.f2, t.programs.college?.f3].filter(Boolean)
       },
       {
@@ -34,7 +37,13 @@ export function Programs() {
         subtitle: t.programs.lycee?.subtitle || "",
         image: 'bac-general',
         desc: t.programs.lycee?.desc || "",
-        features: [t.programs.lycee?.f1, t.programs.lycee?.f2, t.programs.lycee?.f3].filter(Boolean)
+        href: '/formations/lycee',
+        features: [t.programs.lycee?.f1, t.programs.lycee?.f2, t.programs.lycee?.f3].filter(Boolean),
+        subLinks: [
+          { label: t.programs.lycee?.f1, href: '/formations/bac-general' },
+          { label: t.programs.lycee?.f2, href: '/formations/bac-techno-stmg' },
+          { label: t.programs.lycee?.f3, href: '/formations/bac-pro-vente' },
+        ]
       },
       {
         id: 'football',
@@ -42,6 +51,7 @@ export function Programs() {
         subtitle: t.programs.academy?.subtitle || "",
         image: 'football-academy',
         desc: t.programs.academy?.desc || "",
+        href: '/football-academy/programme',
         features: [t.programs.academy?.f1, t.programs.academy?.f2, t.programs.academy?.f3].filter(Boolean)
       }
     ];
@@ -98,17 +108,38 @@ export function Programs() {
                       <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                         {prog.desc}
                       </p>
-                      <ul className="space-y-4 mb-10">
-                        {prog.features.map((feature, i) => (
-                          <li key={i} className="flex items-center text-primary font-medium">
-                            <span className="w-2 h-2 bg-secondary rounded-full mr-3" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                      <button className="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg uppercase tracking-wider text-xs">
-                        {t.programs?.details_btn}
-                      </button>
+                      
+                      {/* Sub-links for Lycée */}
+                      {prog.subLinks ? (
+                        <div className="grid grid-cols-1 gap-3 mb-10">
+                          {prog.subLinks.map((link, i) => (
+                            <Link 
+                              key={i} 
+                              href={link.href}
+                              className="group/link flex items-center justify-between p-4 bg-muted/30 rounded-xl border border-muted hover:border-secondary hover:bg-secondary/5 transition-all"
+                            >
+                              <span className="font-bold text-primary text-sm uppercase tracking-wider">{link.label}</span>
+                              <ChevronRight size={18} className="text-secondary group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <ul className="space-y-4 mb-10">
+                          {prog.features.map((feature, i) => (
+                            <li key={i} className="flex items-center text-primary font-medium">
+                              <span className="w-2 h-2 bg-secondary rounded-full mr-3" />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      <Link href={prog.href}>
+                        <button className="w-full sm:w-auto bg-primary text-white px-10 py-5 rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg uppercase tracking-wider text-xs flex items-center justify-center gap-3 group">
+                          {t.programs?.details_btn}
+                          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </ScrollReveal>
