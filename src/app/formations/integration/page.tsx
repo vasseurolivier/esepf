@@ -7,12 +7,21 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { Languages, Globe, CheckCircle2, Heart, Users, Compass } from 'lucide-react';
+import { Languages, Globe, CheckCircle2, Heart, Users, Compass, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
 
 export default function IntegrationPage() {
   const { t } = useTranslation();
+
+  // Safety check for translations
+  if (!t || !t.formations) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="animate-spin text-primary w-12 h-12" />
+      </div>
+    );
+  }
 
   return (
     <FirebaseClientProvider>
@@ -29,7 +38,9 @@ export default function IntegrationPage() {
           />
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
-              <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.formations.integration_title}</h1>
+              <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">
+                {t.formations.integration_title}
+              </h1>
               <div className="w-24 h-1.5 bg-secondary mx-auto mb-6 rounded-full" />
               <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto border-t border-white/20 pt-4 uppercase tracking-widest font-light">
                 {t.formations.integration_sub}

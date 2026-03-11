@@ -86,6 +86,10 @@ export const translations = {
       student_life_btn: "DÉCOUVRIR LA VIE SCOLAIRE",
       journey_title: "LE PARCOURS DE L'ÉLÈVE"
     },
+    formations: {
+      integration_title: "CLASSE D'INTEGRATION",
+      integration_sub: "Un tremplin vers la réussite dans le système éducatif français.",
+    },
     outlets_labels: {
       higher_ed_title: "LES ÉTUDES SUPÉRIEURES FRANÇAISES",
       bts_title: "LES BTS",
@@ -375,6 +379,10 @@ export const translations = {
       higher_ed: "HIGHER EDUCATION",
       jobs_prefix: "JOBS",
       allophone_mention: "4 years for allophone students (including integration class)"
+    },
+    formations: {
+      integration_title: "INTEGRATION CLASS",
+      integration_sub: "A stepping stone to success in the French education system.",
     },
     outlets_labels: {
       higher_ed_title: "FRENCH HIGHER EDUCATION",
@@ -696,6 +704,10 @@ export const translations = {
       jobs_prefix: "职业",
       allophone_mention: "非法语母语学生为 4 年（含语言预科班）"
     },
+    formations: {
+      integration_title: "整合班",
+      integration_sub: "通往法国教育体系成功的跳板。",
+    },
     outlets_labels: {
       higher_ed_title: "法国高等教育",
       bts_title: "BTS 课程",
@@ -711,11 +723,11 @@ export const translations = {
     },
     axes: {
       scolarite: "学术课程",
-      scolarite_desc: "我们的体育学习计划提供了一个严谨的学术框架，允许学生平衡雄心勃力的体育项目和学术成功。",
+      scolarite_desc: "我们的体育学习计划提供了一个严谨的学术框架，允许学生平衡雄心勃力的体育项目 and 学术成功。",
       academy_title: "足球学院",
       academy_desc: "足球学院提供精英法国培训计划，旨在培养能够达到最高水平的全面球员。",
       languages_title: "外语培训",
-      languages_desc: "为我们的国际学生提供法语作为外语 (FLE) 和英语作为外语 (EFL) 的强化培训。"
+      languages_desc: "为我们的国际学生提供法语作为外语 (FLE) and 英语作为外语 (EFL) 的强化培训。"
     },
     academy_features: {
       f1_title: "欧足联教练",
@@ -723,13 +735,13 @@ export const translations = {
       f2_title: "FFF 锦标赛",
       f2_desc: "参加法国官方联赛。",
       f3_title: "运动追踪",
-      f3_desc: "个人体能准备和监测。",
+      f3_desc: "个人体能准备 and 监测。",
       f4_title: "医疗护理",
-      f4_desc: "完善的医疗和康复支持。",
+      f4_desc: "完善的医疗 and 康复支持。",
       f5_title: "全球网络",
       f5_desc: "与全球职业俱乐部直接联系。",
       f6_title: "职业指导",
-      f6_desc: "为体育和学术职业做好准备。",
+      f6_desc: "为体育 and 学术职业做好准备。",
       cta: "立即申请"
     },
     sections: {
@@ -779,9 +791,9 @@ export const translations = {
       hero_sub: "体验官方比赛的激情，展示您的足球潜力。",
       p1: "得益于我们与当地俱乐部的合作伙伴关系，我们体育学习足球部门的球员享有参加法国官方比赛的特权。这种开放性使他们能够参加公认的锦标赛，对阵高水平球队，并体验结构化的竞争环境。",
       p2: "官方比赛每个周末举行，为年轻足球运动员提供持续的进步机会，并让他们面对法国足球的现实。这种机制有利于挖掘人才、提升技能以及融入高水平体系。",
-      p3: "教练和工作人员密切监控球员的准备情况，根据比赛要求调整训练计划。目标是让每位球员在球场上充分展示自我，开发潜力，构建雄心勃勃的职业道路，同时享受适配的学业支持。",
+      p3: "教练 and 工作人员密切监控球员的准备情况，根据比赛要求调整训练计划。目标是让每位球员在球场上充分展示自我，开发潜力，构建雄心勃勃的职业道路，同时享受适配的学业支持。",
       card_clubs: "特权访问",
-      card_clubs_desc: "公认的锦标赛和高水平球队。",
+      card_clubs_desc: "公认的锦标赛 and 高水平球队。",
       card_weekend: "周末比赛",
       card_weekend_desc: "定期比赛，确保持续进步。",
       card_detection: "选拔与精英",
@@ -790,12 +802,12 @@ export const translations = {
     history_page: {
       title: "我们的历史",
       subtitle: "从亚洲到法国，全球雄心",
-      intro_p1: "ESEPF 根植于我们在中国和越南卓越体育学院的成功。凭借这一经验，我们构想了一个独特的项目：在法国建立国际学生运动员的参考学校。",
+      intro_p1: "ESEPF 根植于我们在中国 and 越南卓越体育学院的成功。凭借这一经验，我们构想了一个独特的项目：在法国建立国际学生运动员的参考学校。",
       intro_p2: "ESEPF 位于法国中心，源于这一愿景。我们现在为来自世界各地的年轻运动员提供卓越的双重培训。",
-      intro_p3: "在国际化且高要求的环境中，为每位学生提供在各自领域表现出色并建立坚实学术和职业未来的钥匙。",
-      milestone_1: "学校成立和第一个校区。",
+      intro_p3: "在国际化且高要求的环境中，为每位学生提供在各自领域表现出色并建立坚实学术 and 职业未来的钥匙。",
+      milestone_1: "学校成立 and 第一个校区。",
       milestone_2: "开设体育学习足球部门。",
-      milestone_3: "扩张和精英认证。",
+      milestone_3: "扩张 and 精英认证。",
       milestone_4: "启动国际双文凭项目。"
     },
     team_page: {
@@ -850,9 +862,9 @@ export const translations = {
         level: "4级（高中毕业证书）",
         prog_title: "教学计划",
         prog_desc: "核心课程加专业方向选择。重点培养表达能力 and 国际视野。",
-        program_details: "完善的学术路径，专注于人文、语言和地缘政治。包括“大口试”的准备。",
+        program_details: "完善的学术路径，专注于人文、语言 and 地缘政治。包括“大口试”的准备。",
         bts_desc: "BTS（高级技术文凭）是一项为期两年的专业计划，允许在普通高中毕业后快速进行技术专业化。",
-        univ_desc: "法国大学通过本科和硕士学位提供深厚的学术深度。",
+        univ_desc: "法国大学通过本科 and 硕士学位提供深厚的学术深度。",
         bts_list: ["旅游 BTS", "国际贸易 BTS", "传播 BTS", "管理支持 BTS"],
         bts_jobs: ["传播主管", "出口助理", "旅游顾问", "项目经理"],
         univ_list: ["应用外语 (LEA) 本科", "法律 / 政治学本科", "新闻学本科", "国际关系硕士"],
@@ -866,8 +878,8 @@ export const translations = {
         duration: "3年（非法语母语学生为4年）",
         level: "4级（专业文凭）",
         prog_title: "职业化培养",
-        prog_desc: "谈判和数字销售的强化培训。",
-        program_details: "包含 22 周的专业实习。专注于 CRM 工具、电子商务和商店动画。",
+        prog_desc: "谈判 and 数字销售的强化培训。",
+        program_details: "包含 22 周的专业实习。专注于 CRM 工具、电子商务 and 商店动画。",
         bts_desc: "MCO 或 NDRC BTS 是商业经理的逻辑后续步骤。",
         univ_desc: "职业毕业生可以进入专门的专业本科或商学院。",
         bts_list: ["商业运营管理 (MCO) BTS", "数字化关系 (NDRC) BTS", "国际贸易 BTS"],
@@ -878,15 +890,15 @@ export const translations = {
       bac_stmg: {
         title: "管理技术高中毕业证书",
         subtitle: "管理与商务职业方向",
-        desc: "通过理论和实践了解组织的运作方式。",
+        desc: "通过理论 and 实践了解组织的运作方式。",
         campuses: "埃夫龙 & 圣蒂勒校区",
         duration: "3年（非法语母语学生为4年）",
         level: "4级（技术类高中毕业证书）",
         prog_title: "管理课程",
-        prog_desc: "探索业务战略和数字工具。",
-        program_details: "市场营销、财务或人力资源专业。为管理决策和财务分析做好准备。",
+        prog_desc: "探索业务战略 and 数字工具。",
+        program_details: "市场营销、财务或人力资源专业。为管理决策 and 财务分析做好准备。",
         bts_desc: "技术 BTS 计划提供会计或管理方面的即时专业化。",
-        univ_desc: "BUT（技术大学本科）和管理学位是 STMG 学生的卓越路径。",
+        univ_desc: "BUT（技术大学本科） and 管理学位是 STMG 学生的卓越路径。",
         bts_list: ["中小企业管理 BTS", "会计与管理 BTS", "IT 服务 BTS"],
         bts_jobs: ["管理助理", "初级会计师", "人力资源助理", "IT 技术员"],
         univ_list: ["GEA 业务管理 BUT", "管理科学本科", "人力资源管理本科"],
@@ -897,13 +909,13 @@ export const translations = {
       prog_title: "精英足球计划",
       prog_sub: "每日专业训练，由欧足联认证教练监督，以在最高水平上表现。",
       france_title: "法国：足球卓越之地",
-      france_desc: "凭借两次世界杯冠军（1998年，2018年）和世界上最著名的青训系统之一（克莱枫丹），法国是青少年天才发展的绝对参考。我们的学院依托这一独特优势，引导学生走向顶峰。",
+      france_desc: "凭借两次世界杯冠军（1998年，2018年） and 世界上最著名的青训系统之一（克莱枫丹），法国是青少年天才发展的绝对参考。我们的学院依托这一独特优势，引导学生走向顶峰。",
       method_title: "法国足球教学法",
-      method_desc: "我们的方法基于三大支柱：比赛智慧（情境阅读）、战术严谨和卓越技术。我们培养能够适应现代高水平足球要求的全面球员。",
+      method_desc: "我们的方法基于三大支柱：比赛智慧（情境阅读）、战术严谨 and 卓越技术。我们培养能够适应现代高水平足球要求的全面球员。",
       coaches_title: "欧足联认证教练团队",
-      coaches_desc: "我们的训练由来自法国职业足球圈的欧足联认证教练指导。他们带来了战术专长和钢铁般的纪律，同时确保对每位运动员进行个人跟踪。",
+      coaches_desc: "我们的训练由来自法国职业足球圈的欧足联认证教练指导. 他们带来了战术专长 and 钢铁般的纪律，同时确保对每位运动员进行个人跟踪。",
       weekly_title: "每周训练计划",
-      weekly_desc: "优化的时间表，每周结合10至12小时的足球训练与完整的学术课程. 体能准备、视频战术课和FFF联赛比赛是我们课程的组成部分。"
+      weekly_desc: "优化的时间表，每周结合10至12小时的足球训练与完整的学术课程. 体能准备、视频战术课 and FFF联赛比赛是我们课程的组成部分。"
     },
     journey: {
       college: "初中",
@@ -962,11 +974,11 @@ export const translations = {
       campus_tulle: "圣蒂勒校区",
       faq_title: "常见问题",
       faq_q1: "如何申请 2026-2027 学年入学？",
-      faq_a1: "您可以通过我们的在线系统提交申请。每位候选人都将参加面试和选拔测试。",
+      faq_a1: "您可以通过我们的在线系统提交申请. 每位候选人都将参加面试 and 选拔测试。",
       faq_q2: "足球学院的录取标准是什么？",
-      faq_a2: "您综合评估技术、体能以及学术表现。体育与学习的平衡至关重要。",
+      faq_a2: "您综合评估技术、体能以及学术表现. 体育与学习的平衡至关重要。",
       faq_q3: "学校接收国际学生吗？",
-      faq_a3: "是的，我们设有专门的 FLE 语言预科班，并为签证和住宿提供专项支持。"
+      faq_a3: "是的，我们设有专门的 FLE 语言预科班，并为签证 and 住宿提供专项支持。"
     },
     footer: {
       desc: "追求卓越，成就未来。",
