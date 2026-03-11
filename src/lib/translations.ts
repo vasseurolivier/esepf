@@ -149,9 +149,9 @@ export const translations = {
     competition_page: {
       title: "CHAMPIONNAT FRANÇAIS DE FOOTBALL",
       hero_sub: "Vivez l'adrénaline des compétitions officielles et révélez votre potentiel.",
-      p1: "Grâce à nos partenariats avec les clubs locaux, les joueurs de notre section sport-études football bénéficient d’un accès privilégié aux compétitions officielles françaises.",
-      p2: "Les matchs officiels se déroulent chaque week-end, offrant aux jeunes footballeurs une continuité dans leur progression.",
-      p3: "Les entraîneurs et les encadrants suivent de près la préparation des joueurs, en adaptant le programme d’entraînement aux exigences des matchs.",
+      p1: "Grâce à nos partenariats avec les clubs locaux, les joueurs de notre section sport-études football bénéficient d’un accès privilégié aux compétitions officielles françaises. Cette ouverture leur permet de s’inscrire dans des championnats reconnus, d’affronter des équipes de niveau élevé et de vivre l’expérience d’un environnement compétitif structuré.",
+      p2: "Les matchs officiels se déroulent chaque week-end, offrant aux jeunes footballeurs une continuité dans leur progression et la possibilité de se confronter à la réalité du football hexagonal. Ce dispositif favorise la détection, la montée en compétence et l’intégration dans les filières de haut niveau.",
+      p3: "Les entraîneurs et les encadrants suivent de près la préparation des joueurs, en adaptant le programme d’entraînement aux exigences des matchs. L’objectif est de permettre à chaque joueur de s’exprimer pleinement sur le terrain, de développer son potentiel et de construire un parcours ambitieux, tout en bénéficiant d’un accompagnement scolaire adapté.",
       card_clubs: "Accès Privilégié",
       card_clubs_desc: "Championnats reconnus et équipes de haut niveau.",
       card_weekend: "Matchs du Week-end",
@@ -263,6 +263,17 @@ export const translations = {
       coaches_desc: "Nos séances sont dirigées par des entraîneurs diplômés de l'UEFA.",
       weekly_title: "Le Programme Hebdomadaire",
       weekly_desc: "Un emploi du temps optimisé combinant 10 à 12 heures de football par semaine."
+    },
+    sport_etudes_page: {
+      title1: "QU'EST-CE QUE LE SPORT-ÉTUDES ?",
+      label1_1: "Pratique d'un sport quotidien",
+      label1_2: "Scolarité amenagée",
+      text1: "Un sport-études est un programme éducatif qui permet aux jeunes de concilier leur parcours scolaire avec une pratique sportive intensive. Conçu pour répondre aux besoins des athlètes en formation, il offre un emploi du temps aménagé qui allie cours académiques et entraînements réguliers. Ce dispositif vise à accompagner les élèves dans leur double projet, en favorisant leur réussite scolaire tout en leur permettant de progresser et d'exceller dans leur discipline sportive.",
+      title2: "QUELS SONT LES SPORTS DISPONIBLES ?",
+      label2_1: "Football",
+      label2_2: "Basketball",
+      label2_2_sub: "(Bientôt disponible)",
+      text2: "Notre établissement propose un programme sport-études axé sur le football, offrant des entraînements intensifs, des séances techniques, des matchs, et un accompagnement individualisé pour développer les compétences sportives et humaines des élèves. Prochainement, nous élargirons notre offre avec un programme dédié au basketball, permettant aux passionnés de ce sport de bénéficier de la même qualité de formation et d'encadrement. Ces programmes sont conçus pour allier performance sportive et réussite scolaire, tout en cultivant des valeurs comme l'esprit d'équipe et la discipline."
     },
     journey: {
       college: "COLLÈGE",
@@ -442,6 +453,17 @@ export const translations = {
       student_life_btn: "DISCOVER STUDENT LIFE",
       journey_title: "STUDENT JOURNEY"
     },
+    formations: {
+      integration_title: "CLASSE D'INTEGRATION",
+      integration_sub: "Un tremplin vers la réussite dans le système éducatif français.",
+    },
+    outlets_labels: {
+      higher_ed_title: "LES ÉTUDES SUPÉRIEURES FRANÇAISES",
+      bts_title: "LES BTS",
+      univ_title: "UNIVERSITÉS FRANÇAISES",
+      jobs_title: "LES MÉTIERS",
+      licence_master: "LICENCES / MASTERS"
+    },
     programs: {
       details_btn: "Learn more",
       college: {
@@ -472,9 +494,9 @@ export const translations = {
     competition_page: {
       title: "FRENCH FOOTBALL CHAMPIONSHIP",
       hero_sub: "Experience the adrenaline of official competitions.",
-      p1: "Thanks to our partnerships, players benefit from privileged access to official French competitions.",
-      p2: "Official matches take place every weekend.",
-      p3: "Coaches follow player preparation closely.",
+      p1: "Thanks to our partnerships, players benefit from privileged access to official French competitions. This allows them to join recognized championships and face high-level teams.",
+      p2: "Official matches take place every weekend, offering young footballers continuity in their progress.",
+      p3: "Coaches follow player preparation closely, adapting the program to match requirements.",
       card_clubs: "Privileged Access",
       card_clubs_desc: "Recognized championships and high-level teams.",
       card_weekend: "Weekend Matches",
@@ -586,6 +608,17 @@ export const translations = {
       coaches_desc: "Sessions are led by UEFA certified coaches.",
       weekly_title: "Weekly Program",
       weekly_desc: "Optimized schedule combining 10-12 hours of football."
+    },
+    sport_etudes_page: {
+      title1: "WHAT IS SPORT-STUDY?",
+      label1_1: "Daily sports practice",
+      label1_2: "Adapted schooling",
+      text1: "A sport-study is an educational program that allows young people to reconcile their schooling with intensive sports practice. Designed to meet the needs of training athletes, it offers an adapted schedule that combines academic courses and regular training.",
+      title2: "WHICH SPORTS ARE AVAILABLE?",
+      label2_1: "Football",
+      label2_2: "Basketball",
+      label2_2_sub: "(Coming soon)",
+      text2: "Our establishment offers a sport-study program focused on football, offering intensive training and individualized support. Soon, we will expand our offer with a program dedicated to basketball."
     },
     journey: {
       college: "MIDDLE SCHOOL",
@@ -795,9 +828,9 @@ export const translations = {
     competition_page: {
       title: "法国足球锦标赛",
       hero_sub: "体验官方比赛的激情。",
-      p1: "得益于我们的合作伙伴关系，球员享有参加官方比赛的特权。",
-      p2: "官方比赛每个周末举行。",
-      p3: "教练密切监控球员的准备情况。",
+      p1: "得益于我们的合作伙伴关系，球员享有参加官方比赛的特权。这使他们能够加入公认的锦标赛并面对高水平的球队。",
+      p2: "官方比赛每个周末举行，为年轻足球运动员提供持续的进步。",
+      p3: "教练密切监控球员的准备情况，根据比赛要求调整计划。",
       card_clubs: "特权访问",
       card_clubs_desc: "公认的锦标赛 and 高水平球队。",
       card_weekend: "周末比赛",
@@ -807,7 +840,7 @@ export const translations = {
     },
     history_page: {
       title: "我们的历史",
-      subtitle: "从亚洲到法国，全球雄心",
+      subtitle: "从亚洲 to 法国，全球雄心",
       intro_p1: "ESEPF 根植于我们在中国 and 越南的成功。",
       intro_p2: "ESEPF 位于法国中心，源于这一愿景。",
       intro_p3: "为每位学生提供在各自领域表现出色的钥匙。",
@@ -909,6 +942,17 @@ export const translations = {
       coaches_desc: "由欧足联认证教练指导。",
       weekly_title: "每周计划",
       weekly_desc: "优化的时间表，结合每周10-12小时训练。"
+    },
+    sport_etudes_page: {
+      title1: "什么是体育学习？",
+      label1_1: "日常体育练习",
+      label1_2: "调整后的学业",
+      text1: "体育学习是一项教育计划，允许年轻人将学业与密集的体育练习结合起来。",
+      title2: "有哪些运动项目？",
+      label2_1: "足球",
+      label2_2: "篮球",
+      label2_2_sub: "(即将推出)",
+      text2: "我们机构提供专注于足球的体育学习计划。不久，我们将通过篮球计划扩大我们的服务。"
     },
     journey: {
       college: "初中",

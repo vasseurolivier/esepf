@@ -1,51 +1,123 @@
 
+"use client";
+
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { BookOpen, Trophy, Scale, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from '@/hooks/use-translation';
 
 export default function SportEtudesPage() {
+  const { t } = useTranslation();
+
+  const ChevronArrow = () => (
+    <div className="w-12 h-12 flex items-center justify-center">
+      <svg viewBox="0 0 100 100" className="w-8 h-8 fill-black">
+        <path d="M20,10 L80,50 L20,90 Z" />
+      </svg>
+    </div>
+  );
+
   return (
     <FirebaseClientProvider>
       <Header />
-      <main className="min-h-screen">
-        <section className="relative h-[50vh] flex items-center justify-center bg-secondary overflow-hidden">
+      <main className="min-h-screen bg-white relative overflow-hidden">
+        {/* Background Faded Image */}
+        <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
           <Image 
-            src="https://picsum.photos/seed/sport-study/1920/1080"
-            alt="Sport Études"
+            src="https://picsum.photos/seed/athlete-faded/1920/1080"
+            alt="Background"
             fill
-            className="object-cover opacity-40"
-            data-ai-hint="students studying"
+            className="object-cover"
           />
-          <div className="relative z-10 text-center text-white container px-4">
-            <h1 className="text-5xl md:text-7xl font-headline font-bold mb-4">Le Sport-Études</h1>
-            <p className="text-xl md:text-2xl font-medium">L'équilibre parfait pour une réussite totale.</p>
-          </div>
-        </section>
+        </div>
 
-        <section className="py-24">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-              <div>
-                <h2 className="text-3xl font-headline font-bold text-primary mb-6">Pas de compromis sur l'école</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  À l'ESEPF, nous croyons qu'un bon joueur est avant tout un élève structuré. Notre système sport-études permet d'allier passion et diplôme.
-                </p>
+        <div className="container mx-auto px-4 py-24 relative z-10">
+          
+          {/* Section 1: Qu'est-ce que le sport-études ? */}
+          <section className="mb-32">
+            <ScrollReveal className="flex items-center gap-4 mb-16">
+              <ChevronArrow />
+              <h1 className="text-4xl md:text-6xl font-headline font-bold text-black tracking-tight uppercase">
+                {t.sport_etudes_page.title1}
+              </h1>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto">
+              {/* Labels Side */}
+              <div className="lg:col-span-4 space-y-8">
+                <ScrollReveal delay={100}>
+                  <div className="bg-[#7fb3e0] p-6 md:p-8 rounded-xl shadow-[5px_5px_15px_rgba(0,0,0,0.2)] text-center transform hover:scale-105 transition-transform border border-white/20">
+                    <span className="text-xl md:text-2xl font-headline font-bold text-black leading-tight block">
+                      {t.sport_etudes_page.label1_1}
+                    </span>
+                  </div>
+                </ScrollReveal>
+                <ScrollReveal delay={200}>
+                  <div className="bg-[#7fb3e0] p-6 md:p-8 rounded-xl shadow-[5px_5px_15px_rgba(0,0,0,0.2)] text-center transform hover:scale-105 transition-transform border border-white/20">
+                    <span className="text-xl md:text-2xl font-headline font-bold text-black leading-tight block">
+                      {t.sport_etudes_page.label1_2}
+                    </span>
+                  </div>
+                </ScrollReveal>
               </div>
-              <div className="bg-primary p-8 rounded-3xl text-white">
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Scale className="text-secondary" /> Notre Équilibre</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-2"><CheckCircle2 size={16} /> Tutorat personnalisé</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 size={16} /> Soutien scolaire intensif</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 size={16} /> 100% de réussite au bac</li>
-                </ul>
+
+              {/* Text Side */}
+              <div className="lg:col-span-8">
+                <ScrollReveal delay={300}>
+                  <p className="text-lg md:text-xl text-black/80 leading-relaxed font-serif italic text-justify md:text-left">
+                    {t.sport_etudes_page.text1}
+                  </p>
+                </ScrollReveal>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+
+          {/* Section 2: Quels sont les sports disponibles ? */}
+          <section>
+            <ScrollReveal className="flex items-center gap-4 mb-16">
+              <ChevronArrow />
+              <h2 className="text-4xl md:text-6xl font-headline font-bold text-black tracking-tight uppercase">
+                {t.sport_etudes_page.title2}
+              </h2>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto">
+              {/* Labels Side */}
+              <div className="lg:col-span-4 space-y-8">
+                <ScrollReveal delay={100}>
+                  <div className="bg-[#f0f0f0] p-6 md:p-8 rounded-xl shadow-[5px_5px_15px_rgba(0,0,0,0.1)] text-center border border-black/5">
+                    <span className="text-2xl md:text-3xl font-headline font-bold text-black underline underline-offset-8">
+                      {t.sport_etudes_page.label2_1}
+                    </span>
+                  </div>
+                </ScrollReveal>
+                <ScrollReveal delay={200}>
+                  <div className="bg-[#f0f0f0] p-6 md:p-8 rounded-xl shadow-[5px_5px_15px_rgba(0,0,0,0.1)] text-center border border-black/5 opacity-80">
+                    <span className="text-xl md:text-2xl font-headline font-bold text-black block mb-1">
+                      {t.sport_etudes_page.label2_2}
+                    </span>
+                    <span className="text-sm font-bold italic text-black/60 block">
+                      {t.sport_etudes_page.label2_2_sub}
+                    </span>
+                  </div>
+                </ScrollReveal>
+              </div>
+
+              {/* Text Side */}
+              <div className="lg:col-span-8">
+                <ScrollReveal delay={300}>
+                  <p className="text-lg md:text-xl text-black/80 leading-relaxed font-serif italic text-justify md:text-left">
+                    {t.sport_etudes_page.text2}
+                  </p>
+                </ScrollReveal>
+              </div>
+            </div>
+          </section>
+
+        </div>
       </main>
       <Footer />
     </FirebaseClientProvider>
