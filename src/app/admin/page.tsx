@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useFirestore, useDoc, useCollection, useMemoFirebase } from '@/firebase';
 import { doc, setDoc, serverTimestamp, collection, query, orderBy, updateDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, History, BookOpen, Briefcase, Languages, Star } from 'lucide-react';
+import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, History, BookOpen, Briefcase, Languages, Star, Map as MapIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { format } from 'date-fns';
@@ -37,14 +37,17 @@ const IMAGE_CATEGORIES = [
     icon: <MapPin size={16} />,
     fields: [
       { id: 'campus_evron', label: 'Hero Evron', location: 'Haut de page Evron' },
+      { id: 'evron_map', label: 'Carte Evron', location: 'Section localisation Evron' },
       { id: 'evron_infra_1', label: 'Evron Infra 1', location: 'Galerie infrastructures' },
       { id: 'evron_infra_2', label: 'Evron Infra 2', location: 'Galerie infrastructures' },
       { id: 'evron_infra_3', label: 'Evron Infra 3', location: 'Galerie infrastructures' },
       { id: 'campus_bazeilles', label: 'Hero Bazeilles', location: 'Haut de page Bazeilles' },
+      { id: 'bazeilles_map', label: 'Carte Bazeilles', location: 'Section localisation Bazeilles' },
       { id: 'bazeilles_infra_1', label: 'Bazeilles Infra 1', location: 'Galerie infrastructures' },
       { id: 'bazeilles_infra_2', label: 'Bazeilles Infra 2', location: 'Galerie infrastructures' },
       { id: 'bazeilles_infra_3', label: 'Bazeilles Infra 3', location: 'Galerie infrastructures' },
       { id: 'campus_tulle', label: 'Hero Tulle', location: 'Haut de page Tulle' },
+      { id: 'tulle_map', label: 'Carte Tulle', location: 'Section localisation Tulle' },
       { id: 'tulle_infra_1', label: 'Tulle Infra 1', location: 'Galerie infrastructures' },
       { id: 'tulle_infra_2', label: 'Tulle Infra 2', location: 'Galerie infrastructures' },
       { id: 'tulle_infra_3', label: 'Tulle Infra 3', location: 'Galerie infrastructures' },

@@ -6,7 +6,7 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { MapPin, School, GraduationCap, Building2, Target, BookOpen } from 'lucide-react';
+import { MapPin, School, GraduationCap, Building2, Target, BookOpen, ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
@@ -20,6 +20,8 @@ export default function CampusEvronPage() {
   const { data: settings } = useDoc(settingsRef);
   
   const heroImage = settings?.images?.campus_evron || "https://picsum.photos/seed/evron-hero-v2/1920/1080";
+  const mapImage = settings?.images?.evron_map;
+  
   const infraImages = [
     settings?.images?.evron_infra_1 || "https://picsum.photos/seed/evron-infra-1/800/600",
     settings?.images?.evron_infra_2 || "https://picsum.photos/seed/evron-infra-2/800/600",
@@ -75,18 +77,23 @@ export default function CampusEvronPage() {
               </ScrollReveal>
               
               <ScrollReveal delay={200} className="relative aspect-square bg-muted/30 rounded-[3rem] overflow-hidden flex items-center justify-center border-2 border-dashed border-primary/10">
-                <div className="text-center p-8 bg-white/50 backdrop-blur-sm rounded-3xl m-8 shadow-inner w-full">
-                  <div className="relative w-64 h-80 mx-auto mb-4 bg-white shadow-2xl rounded-lg p-4 flex flex-col items-center border border-muted">
-                    <div className="w-full h-full border-2 border-primary/10 rounded flex items-center justify-center relative bg-muted/5">
-                      <span className="text-[8px] font-bold text-primary/20 uppercase tracking-[0.4em] absolute top-4">Map</span>
-                      <svg viewBox="0 0 100 100" className="w-full h-full opacity-10 fill-primary">
-                        <path d="M20,10 L80,10 L90,50 L70,90 L30,90 L10,50 Z" />
-                      </svg>
-                      <div className="absolute top-[35%] left-[30%] w-6 h-6 bg-secondary/20 rounded-full animate-ping" />
-                      <div className="absolute top-[35%] left-[30%] w-4 h-4 bg-secondary rounded-full shadow-lg" />
+                {mapImage ? (
+                  <div className="relative w-full h-full p-8">
+                    <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-white border border-muted">
+                      <Image 
+                        src={mapImage}
+                        alt="Localisation Evron"
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="text-center p-8 bg-white/50 backdrop-blur-sm rounded-3xl m-8 shadow-inner w-full flex flex-col items-center justify-center">
+                    <ImageIcon size={48} className="text-muted mb-4" />
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Image de la carte non définie</p>
+                  </div>
+                )}
               </ScrollReveal>
             </div>
           </div>

@@ -6,7 +6,7 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { MapPin, School, GraduationCap, Building2, Target, BookOpen } from 'lucide-react';
+import { MapPin, School, GraduationCap, Building2, Target, BookOpen, ImageIcon } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
@@ -20,6 +20,8 @@ export default function CampusTullePage() {
   const { data: settings } = useDoc(settingsRef);
   
   const heroImage = settings?.images?.campus_tulle || "https://picsum.photos/seed/tulle-hero/1920/1080";
+  const mapImage = settings?.images?.tulle_map;
+
   const infraImages = [
     settings?.images?.tulle_infra_1 || "https://picsum.photos/seed/st-infra-1/800/600",
     settings?.images?.tulle_infra_2 || "https://picsum.photos/seed/st-infra-2/800/600",
@@ -62,15 +64,23 @@ export default function CampusTullePage() {
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={200} className="relative aspect-square bg-muted rounded-3xl overflow-hidden flex items-center justify-center border-2 border-dashed border-primary/10">
-                <div className="text-center p-8">
-                  <div className="relative w-64 h-80 mx-auto mb-4 bg-white shadow-xl rounded-lg p-4 flex flex-col items-center">
-                    <div className="w-full h-full border-2 border-primary/20 rounded flex items-center justify-center relative">
-                      <span className="text-xs font-bold text-primary/30 uppercase tracking-[0.3em]">MAP</span>
-                      <div className="absolute top-[85%] left-[75%] w-4 h-4 bg-secondary rounded-full animate-ping" />
-                      <div className="absolute top-[85%] left-[75%] w-3 h-3 bg-secondary rounded-full" />
+                {mapImage ? (
+                  <div className="relative w-full h-full p-8">
+                    <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-white border border-muted">
+                      <Image 
+                        src={mapImage}
+                        alt="Localisation Sainte-Tulle"
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="text-center p-8 flex flex-col items-center justify-center">
+                    <ImageIcon size={48} className="text-muted mb-4" />
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Image de la carte non définie</p>
+                  </div>
+                )}
               </ScrollReveal>
             </div>
           </div>
