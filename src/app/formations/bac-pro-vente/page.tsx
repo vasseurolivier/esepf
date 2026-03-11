@@ -97,7 +97,7 @@ export default function BacProVentePage() {
                   <Info className="text-secondary shrink-0" size={20} />
                   <p className="text-sm font-bold text-primary">{t.common.allophone_mention}</p>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed pt-4">
                   {t.lycee_page.bac_vente.program_details}
                 </p>
               </ScrollReveal>
