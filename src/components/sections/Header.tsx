@@ -50,9 +50,9 @@ export function Header() {
   }, []);
 
   const homeSubLinks = [
-    { name: t.nav.history, href: '/#history' },
-    { name: t.nav.project_team, href: '/#project' },
-    { name: t.nav.recognition, href: '/#recognition' },
+    { name: t.nav.history, href: '/notre-histoire' },
+    { name: t.nav.project_team, href: '/projet-equipe' },
+    { name: t.nav.recognition, href: '/reconnaissance' },
   ];
 
   const navLinks = [
@@ -105,10 +105,9 @@ export function Header() {
           </div>
 
           <div className="flex items-center space-x-4">
-            {/* Language Selector */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest">
+                <Button variant="ghost" size="sm" className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest outline-none">
                   <Globe size={16} />
                   {language}
                 </Button>

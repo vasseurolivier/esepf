@@ -63,6 +63,32 @@ export const translations = {
       student_life_btn: "DÉCOUVRIR LA VIE SCOLAIRE",
       journey_title: "LE PARCOURS DE L'ÉLÈVE"
     },
+    history_page: {
+      title: "Notre Histoire",
+      subtitle: "Un héritage d'excellence depuis plus de 40 ans.",
+      intro: "Depuis sa fondation, notre établissement s'est engagé à offrir une éducation de classe mondiale alliant rigueur académique et passion sportive.",
+      milestone_1: "Fondation de l'établissement et premier campus.",
+      milestone_2: "Ouverture de la section Sport-Études Football.",
+      milestone_3: "Expansion avec les nouveaux campus et certification Elite.",
+      milestone_4: "Inauguration du programme Dual Diploma international."
+    },
+    team_page: {
+      title: "Le Projet & L'Équipe",
+      mission_title: "Notre Mission",
+      mission_desc: "Former des citoyens du monde, responsables et performants, tant sur le terrain que dans la vie académique.",
+      team_title: "L'Équipe Dirigeante",
+      staff_title: "Notre Staff",
+      staff_desc: "Une équipe de professeurs agrégés et de coachs certifiés UEFA pour un encadrement d'exception."
+    },
+    recognition_page: {
+      title: "Reconnaissance & Accréditations",
+      accred_title: "Certifications Officielles",
+      accred_desc: "Nos programmes sont reconnus par les instances les plus exigeantes.",
+      list_1: "Ministère de l'Éducation Nationale",
+      list_2: "Fédération Française de Football (FFF)",
+      list_3: "Cambridge Assessment International",
+      partners_title: "Nos Partenaires Académiques"
+    },
     journey: {
       college: "COLLÈGE",
       lycee: "LYCÉE",
@@ -247,6 +273,32 @@ export const translations = {
       student_life_desc: "More than a school, the Institution is a living space.",
       student_life_btn: "DISCOVER STUDENT LIFE",
       journey_title: "STUDENT JOURNEY"
+    },
+    history_page: {
+      title: "Our History",
+      subtitle: "A legacy of excellence for over 40 years.",
+      intro: "Since its foundation, our institution has been committed to providing world-class education combining academic rigor and sporting passion.",
+      milestone_1: "Foundation of the institution and the first campus.",
+      milestone_2: "Opening of the Sport-Study Football section.",
+      milestone_3: "Expansion with new campuses and Elite certification.",
+      milestone_4: "Inauguration of the international Dual Diploma program."
+    },
+    team_page: {
+      title: "Project & Team",
+      mission_title: "Our Mission",
+      mission_desc: "To train global citizens, responsible and performing, both on the field and in academic life.",
+      team_title: "Leadership Team",
+      staff_title: "Our Staff",
+      staff_desc: "A team of associate professors and UEFA certified coaches for exceptional guidance."
+    },
+    recognition_page: {
+      title: "Recognition & Accreditations",
+      accred_title: "Official Certifications",
+      accred_desc: "Our programs are recognized by the most demanding bodies.",
+      list_1: "Ministry of National Education",
+      list_2: "French Football Federation (FFF)",
+      list_3: "Cambridge Assessment International",
+      partners_title: "Our Academic Partners"
     },
     journey: {
       college: "MIDDLE SCHOOL",
@@ -433,6 +485,32 @@ export const translations = {
       student_life_btn: "探索学生生活",
       journey_title: "学生发展路径"
     },
+    history_page: {
+      title: "我们的历史",
+      subtitle: "超过40年的卓越传承。",
+      intro: "自成立以来，我们的机构一直致力于提供世界一流的教育，将学术严谨与体育激情相结合。",
+      milestone_1: "机构成立及首个校区建立。",
+      milestone_2: "开设体教融合足球部。",
+      milestone_3: "校区扩建及获得精英认证。",
+      milestone_4: "启动国际双文凭项目。"
+    },
+    team_page: {
+      title: "项目与团队",
+      mission_title: "我们的使命",
+      mission_desc: "培养在球场上和学术生活中都具有责任感和表现力的全球公民。",
+      team_title: "领导团队",
+      staff_title: "教职员工",
+      staff_desc: "由教授和欧足联认证教练组成的团队，提供卓越的指导。"
+    },
+    recognition_page: {
+      title: "认可与认证",
+      accred_title: "官方认证",
+      accred_desc: "我们的课程得到了最严苛机构的认可。",
+      list_1: "法国国民教育部",
+      list_2: "法国足球协会 (FFF)",
+      list_3: "剑桥国际评估中心",
+      partners_title: "学术合作伙伴"
+    },
     journey: {
       college: "初中",
       lycee: "高中",
@@ -464,7 +542,7 @@ export const translations = {
       integration_sub: "面向国际学生",
       integration_desc: "通过强化 FLE 课程通往法国教育成功的桥梁。",
       college_title: "初中课程",
-      college_sub: "从6年级到9年级：巩固与成长。",
+      college_sub: "从6年级 to 9年级：巩固与成长。",
       lycee_title: "高中课程",
       lycee_sub: "普通高中与 STMG 课程：通往高等教育的卓越之路。",
       langues_title: "外语教学",
@@ -495,7 +573,7 @@ export const translations = {
         desc: "个性化支持，巩固基础知识。",
         f1: "小班教学",
         f2: "课后辅导",
-        f3: "语言启蒙"
+        f3: "语言启启蒙"
       },
       lycee: {
         title: "高中课程",
