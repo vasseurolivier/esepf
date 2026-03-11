@@ -71,9 +71,9 @@ export function StudentJourney() {
   ];
 
   return (
-    <section className="py-24 bg-white overflow-hidden relative">
+    <section className="py-20 bg-white overflow-hidden relative">
       <div className="container mx-auto px-4">
-        <ScrollReveal className="flex items-center gap-6 mb-20">
+        <ScrollReveal className="flex items-center gap-6 mb-8">
           <div className="p-3 border-2 border-primary rounded-xl">
             <GraduationCap className="text-primary w-10 h-10" />
           </div>
@@ -82,7 +82,7 @@ export function StudentJourney() {
           </h2>
         </ScrollReveal>
 
-        <div className="relative max-w-7xl mx-auto py-32">
+        <div className="relative max-w-7xl mx-auto py-16">
           {/* Ligne horizontale dorée */}
           <div className="absolute top-1/2 left-0 w-full h-2 bg-[#c5a059] -translate-y-1/2 z-0 rounded-full" />
 
@@ -105,29 +105,29 @@ export function StudentJourney() {
                 )}
 
                 {/* Académique (Haut) */}
-                <div className="mb-12 text-center h-48 flex flex-col justify-end transition-all group-hover:-translate-y-2">
-                  <h3 className="text-xl font-headline font-bold text-black border-b border-black w-fit mx-auto pb-1 mb-2 uppercase tracking-wide">
+                <div className="mb-8 text-center h-40 flex flex-col justify-end transition-all group-hover:-translate-y-2">
+                  <h3 className="text-lg font-headline font-bold text-black border-b border-black w-fit mx-auto pb-1 mb-1 uppercase tracking-wide">
                     {stage.academic.title}
                   </h3>
-                  <p className="text-sm text-gray-500 italic mb-1">{stage.academic.age}</p>
-                  <p className="text-xs text-gray-400">{stage.academic.desc}</p>
+                  <p className="text-xs text-gray-500 italic mb-0.5">{stage.academic.age}</p>
+                  <p className="text-[10px] text-gray-400 leading-tight">{stage.academic.desc}</p>
                 </div>
 
                 {/* Football / Métiers (Bas) */}
-                <div className="mt-12 text-center h-48 transition-all group-hover:translate-y-2">
+                <div className="mt-8 text-center h-40 transition-all group-hover:translate-y-2">
                   {stage.middle && (
-                     <div className="mb-6">
-                        <h4 className="text-xl font-headline font-bold text-black uppercase tracking-wide">{stage.middle.title}</h4>
+                     <div className="mb-4">
+                        <h4 className="text-lg font-headline font-bold text-black uppercase tracking-wide">{stage.middle.title}</h4>
                         <p className="text-xs text-gray-500">{stage.middle.age}</p>
                      </div>
                   )}
                   {stage.football && (
                     <>
-                      <h3 className="text-xl font-headline font-bold text-[#e31e24] border-b border-[#e31e24] w-fit mx-auto pb-1 mb-2 uppercase tracking-wide">
+                      <h3 className="text-lg font-headline font-bold text-[#e31e24] border-b border-[#e31e24] w-fit mx-auto pb-1 mb-1 uppercase tracking-wide">
                         {stage.football.title}
                       </h3>
-                      <p className="text-sm text-gray-500 italic mb-1">{stage.football.age}</p>
-                      <p className="text-xs text-gray-400">{stage.football.desc}</p>
+                      <p className="text-xs text-gray-500 italic mb-0.5">{stage.football.age}</p>
+                      <p className="text-[10px] text-gray-400 leading-tight">{stage.football.desc}</p>
                     </>
                   )}
                 </div>
@@ -138,7 +138,7 @@ export function StudentJourney() {
 
         {/* Décoration livre en bas à droite */}
         <div className="absolute bottom-10 right-10 opacity-5 -rotate-12 pointer-events-none">
-          <Book size={200} />
+          <Book size={150} />
         </div>
       </div>
     </section>
