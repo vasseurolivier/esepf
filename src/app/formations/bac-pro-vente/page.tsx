@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -12,9 +11,17 @@ import { ShoppingBag, Clock, MapPin, Award, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FrenchSystemSchema } from '@/components/sections/FrenchSystemSchema';
 import { OutletsSection } from '@/components/sections/OutletsSection';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 
 export default function BacProVentePage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+
+  const heroImage = settings?.images?.bac_vente_hero || "https://picsum.photos/seed/bac-vente-pro/1920/1080";
+  const introImage = settings?.images?.bac_vente_intro || "https://picsum.photos/seed/sales-pro/800/800";
 
   return (
     <FirebaseClientProvider>
@@ -23,7 +30,7 @@ export default function BacProVentePage() {
         {/* Hero Section */}
         <section className="relative h-[65vh] flex items-center justify-center bg-[#0c3a2f] overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/bac-vente-pro/1920/1080"
+            src={heroImage}
             alt="Bac Pro Vente"
             fill
             className="object-cover opacity-50"
@@ -103,7 +110,7 @@ export default function BacProVentePage() {
               </ScrollReveal>
               <ScrollReveal delay={200} className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <Image 
-                  src="https://picsum.photos/seed/sales-pro/800/800"
+                  src={introImage}
                   alt="Sales professional"
                   fill
                   className="object-cover"

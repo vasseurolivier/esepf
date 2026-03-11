@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useFirestore, useDoc, useCollection, useMemoFirebase } from '@/firebase';
 import { doc, setDoc, serverTimestamp, collection, query, orderBy, updateDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, History, BookOpen } from 'lucide-react';
+import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, History, BookOpen, Briefcase, Languages, Star } from 'lucide-react';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { format } from 'date-fns';
@@ -62,6 +62,16 @@ const IMAGE_CATEGORIES = [
       { id: 'lycee_card_3', label: 'Carte Management', location: 'Vignette Bac STMG' },
       { id: 'lycee_card_4', label: 'Carte Hôtellerie', location: 'Vignette (Futur)' },
       { id: 'lycee_card_5', label: 'Carte Mode', location: 'Vignette (Futur)' },
+      { id: 'bac_gen_hero', label: 'Hero Bac Général', location: 'Bannière page Bac Général' },
+      { id: 'bac_gen_intro', label: 'Illustration Bac Général', location: 'Photo intro Bac Général' },
+      { id: 'bac_vente_hero', label: 'Hero Bac Vente', location: 'Bannière page Bac Vente' },
+      { id: 'bac_vente_intro', label: 'Illustration Bac Vente', location: 'Photo intro Bac Vente' },
+      { id: 'bac_stmg_hero', label: 'Hero Bac STMG', location: 'Bannière page Bac STMG' },
+      { id: 'bac_stmg_intro', label: 'Illustration Bac STMG', location: 'Photo intro Bac STMG' },
+      { id: 'integration_hero', label: 'Hero Intégration', location: 'Bannière Classe Intégration' },
+      { id: 'integration_intro', label: 'Illustration Intégration', location: 'Photo intro Intégration' },
+      { id: 'langues_hero', label: 'Hero Langues', location: 'Bannière Langues Étrangères' },
+      { id: 'bac_americain_hero', label: 'Hero Bac Américain', location: 'Bannière Dual Diploma' },
     ]
   },
   {
@@ -259,9 +269,9 @@ export default function AdminPage() {
                 </CardHeader>
                 <CardContent className="p-0">
                   <Tabs defaultValue="general" className="w-full">
-                    <TabsList className="w-full h-12 bg-muted/20 border-b border-muted rounded-none justify-start px-4">
+                    <TabsList className="w-full h-12 bg-muted/20 border-b border-muted rounded-none justify-start px-4 overflow-x-auto">
                       {IMAGE_CATEGORIES.map(cat => (
-                        <TabsTrigger key={cat.id} value={cat.id} className="text-xs uppercase font-bold flex items-center gap-2 px-6">
+                        <TabsTrigger key={cat.id} value={cat.id} className="text-xs uppercase font-bold flex items-center gap-2 px-6 shrink-0">
                           {cat.icon} {cat.label}
                         </TabsTrigger>
                       ))}

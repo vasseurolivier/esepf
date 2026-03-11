@@ -20,6 +20,11 @@ export default function CampusTullePage() {
   const { data: settings } = useDoc(settingsRef);
   
   const heroImage = settings?.images?.campus_tulle || "https://picsum.photos/seed/tulle-hero/1920/1080";
+  const infraImages = [
+    settings?.images?.tulle_infra_1 || "https://picsum.photos/seed/st-infra-1/800/600",
+    settings?.images?.tulle_infra_2 || "https://picsum.photos/seed/st-infra-2/800/600",
+    settings?.images?.tulle_infra_3 || "https://picsum.photos/seed/st-infra-3/800/600",
+  ];
 
   return (
     <FirebaseClientProvider>
@@ -82,9 +87,9 @@ export default function CampusTullePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-              {[1, 2, 3].map((i) => (
+              {infraImages.map((img, i) => (
                 <ScrollReveal key={i} delay={i * 100} className="relative group h-64 rounded-3xl overflow-hidden shadow-lg">
-                  <Image src={`https://picsum.photos/seed/st-infra-${i}/800/600`} alt="Campus" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <Image src={img} alt="Campus" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                 </ScrollReveal>
               ))}
             </div>

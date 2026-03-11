@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -12,9 +11,17 @@ import { Briefcase, Clock, MapPin, Award, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FrenchSystemSchema } from '@/components/sections/FrenchSystemSchema';
 import { OutletsSection } from '@/components/sections/OutletsSection';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 
 export default function BacStmgPage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+
+  const heroImage = settings?.images?.bac_stmg_hero || "https://picsum.photos/seed/stmg-hero-pro/1920/1080";
+  const introImage = settings?.images?.bac_stmg_intro || "https://picsum.photos/seed/stmg-team/800/600";
 
   return (
     <FirebaseClientProvider>
@@ -23,7 +30,7 @@ export default function BacStmgPage() {
         {/* Hero Section */}
         <section className="relative h-[65vh] flex items-center justify-center bg-primary overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/stmg-hero-pro/1920/1080"
+            src={heroImage}
             alt="Bac Techno STMG"
             fill
             className="object-cover opacity-40"
@@ -103,7 +110,7 @@ export default function BacStmgPage() {
               </ScrollReveal>
               <ScrollReveal delay={200} className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl bg-muted">
                 <Image 
-                  src="https://picsum.photos/seed/stmg-team/800/600"
+                  src={introImage}
                   alt="Management team working"
                   fill
                   className="object-cover"

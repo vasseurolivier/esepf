@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -10,11 +9,18 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Languages, Globe, CheckCircle2, Heart, Users, Compass, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 
 export default function IntegrationPage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
 
-  // Safety check for translations
+  const heroImage = settings?.images?.integration_hero || "https://picsum.photos/seed/integration-v2/1920/1080";
+  const introImage = settings?.images?.integration_intro || "https://picsum.photos/seed/fle-classroom-v2/800/1000";
+
   if (!t || !t.formations) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -29,7 +35,7 @@ export default function IntegrationPage() {
       <main className="min-h-screen">
         <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/integration-v2/1920/1080"
+            src={heroImage}
             alt="Integration"
             fill
             className="object-cover opacity-40"
@@ -42,7 +48,7 @@ export default function IntegrationPage() {
                 {t.formations.integration_title}
               </h1>
               <div className="w-24 h-1.5 bg-secondary mx-auto mb-6 rounded-full" />
-              <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto border-t border-white/20 pt-4 uppercase tracking-widest font-light">
+              <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto border-t border-white/30 pt-4 uppercase tracking-widest font-light">
                 {t.formations.integration_sub}
               </p>
             </ScrollReveal>
@@ -74,9 +80,9 @@ export default function IntegrationPage() {
                 </Button>
               </ScrollReveal>
               
-              <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white">
+              <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-muted">
                 <Image 
-                  src="https://picsum.photos/seed/fle-classroom-v2/800/1000"
+                  src={introImage}
                   alt="Classroom"
                   fill
                   className="object-cover"

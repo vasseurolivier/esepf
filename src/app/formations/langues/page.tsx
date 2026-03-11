@@ -1,3 +1,4 @@
+"use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
@@ -5,16 +6,24 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { Languages, Globe, Zap, MessageSquare } from 'lucide-react';
+import { Languages, Globe, MessageSquare } from 'lucide-react';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 
 export default function LanguesPage() {
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+
+  const heroImage = settings?.images?.langues_hero || "https://picsum.photos/seed/languages-excellence/1920/1080";
+
   return (
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen">
         <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/languages-excellence/1920/1080"
+            src={heroImage}
             alt="Langues Étrangères"
             fill
             className="object-cover opacity-40"

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -13,9 +12,17 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FrenchSystemSchema } from '@/components/sections/FrenchSystemSchema';
 import { OutletsSection } from '@/components/sections/OutletsSection';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 
 export default function BacGeneralPage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+
+  const heroImage = settings?.images?.bac_gen_hero || "https://picsum.photos/seed/bac-gen-hero/1920/1080";
+  const introImage = settings?.images?.bac_gen_intro || "https://picsum.photos/seed/study-gen/800/600";
 
   return (
     <FirebaseClientProvider>
@@ -24,7 +31,7 @@ export default function BacGeneralPage() {
         {/* Hero Section */}
         <section className="relative h-[65vh] flex items-center justify-center bg-[#0a192f] overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/bac-gen-hero/1920/1080"
+            src={heroImage}
             alt="Bac Général"
             fill
             className="object-cover opacity-40"
@@ -106,7 +113,7 @@ export default function BacGeneralPage() {
               </ScrollReveal>
               <ScrollReveal delay={200} className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-muted/20">
                 <Image 
-                  src="https://picsum.photos/seed/study-gen/800/600"
+                  src={introImage}
                   alt="Students studying"
                   fill
                   className="object-cover"
@@ -144,7 +151,9 @@ export default function BacGeneralPage() {
                <h2 className="text-3xl font-headline font-bold mb-6">Prêt à nous rejoindre ?</h2>
                <p className="text-muted-foreground mb-8">Les inscriptions pour la rentrée 2026-2027 sont ouvertes sur les campus d'Evron et Sainte-Bazeilles.</p>
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="rounded-full bg-primary py-8 px-10 font-bold uppercase tracking-widest">{t.common.apply}</Button>
+                  <Link href="/inscription">
+                    <Button className="rounded-full bg-primary py-8 px-10 font-bold uppercase tracking-widest">{t.common.apply}</Button>
+                  </Link>
                   <Link href="/projet-equipe"><Button variant="outline" className="rounded-full py-8 px-10 font-bold uppercase tracking-widest">Rencontrer l'équipe</Button></Link>
                </div>
             </ScrollReveal>

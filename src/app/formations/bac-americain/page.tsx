@@ -1,3 +1,4 @@
+"use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
@@ -5,16 +6,24 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { Star, Award, GraduationCap, ShieldCheck } from 'lucide-react';
+import { Star, ShieldCheck } from 'lucide-react';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 
 export default function BacAmericainPage() {
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+
+  const heroImage = settings?.images?.bac_americain_hero || "https://picsum.photos/seed/american-bac/1920/1080";
+
   return (
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen">
         <section className="relative h-[60vh] flex items-center justify-center bg-[#0a192f] overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/american-bac/1920/1080"
+            src={heroImage}
             alt="Baccalauréat Américain"
             fill
             className="object-cover opacity-30"
