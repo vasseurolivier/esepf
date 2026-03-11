@@ -8,70 +8,97 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { Award, ShieldCheck, CheckCircle2, Globe } from 'lucide-react';
+import { useDoc, useFirestore } from '@/firebase';
 
 export default function RecognitionPage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const { data: settings } = useDoc(db, 'settings/global');
 
-  const accreditations = [
-    { title: t.recognition_page.list_1, desc: "Accréditation complète pour tous les niveaux scolaires." },
-    { title: t.recognition_page.list_2, desc: "Certification Centre de Formation pour la section football." },
-    { title: t.recognition_page.list_3, desc: "Centre d'examen certifié pour les diplômes linguistiques." },
-  ];
+  const schoolName = settings?.schoolName || "ESEPF";
 
   return (
     <FirebaseClientProvider>
       <Header />
-      <main className="min-h-screen">
-        <section className="relative h-[50vh] flex items-center justify-center bg-primary overflow-hidden">
-          <Image 
-            src="https://picsum.photos/seed/recognition-hero/1920/1080"
-            alt="Recognition"
-            fill
-            className="object-cover opacity-30"
-            data-ai-hint="awards trophy"
-            priority
-          />
-          <div className="relative z-10 text-center text-white container px-4">
-            <ScrollReveal>
-              <h1 className="text-5xl md:text-7xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.recognition_page.title}</h1>
+      <main className="min-h-screen bg-white">
+        {/* Section En-tête (Style Assemblée Nationale) */}
+        <section className="flex flex-col lg:flex-row min-h-[500px]">
+          {/* Gauche: Grande image institutionnelle */}
+          <div className="lg:w-1/2 relative min-h-[400px]">
+            <Image 
+              src="https://picsum.photos/seed/institution-building/1200/800"
+              alt="Institution Building"
+              fill
+              className="object-cover"
+              data-ai-hint="classical building"
+              priority
+            />
+          </div>
+
+          {/* Droite: Texte de reconnaissance */}
+          <div className="lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center bg-white">
+            <ScrollReveal className="max-w-xl space-y-6">
+              <h1 className="text-5xl font-headline font-bold text-black tracking-tight uppercase">
+                {t.recognition_page.hero_title}
+              </h1>
+              <h2 className="text-2xl font-headline font-bold text-black leading-tight">
+                {t.recognition_page.hero_subtitle}
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t.recognition_page.hero_text}
+              </p>
+
+              {/* Logos officiels factices */}
+              <div className="flex flex-wrap items-center gap-12 pt-8">
+                <div className="flex flex-col items-center max-w-[120px]">
+                  <div className="relative w-16 h-16 mb-2 border border-muted p-1">
+                     <Image src="https://picsum.photos/seed/mne-logo/100/100" alt="MNE" width={100} height={100} className="grayscale" />
+                  </div>
+                  <span className="text-[8px] font-bold text-center uppercase leading-tight">MINISTÈRE DE L'ÉDUCATION NATIONALE</span>
+                </div>
+                <div className="flex flex-col items-center max-w-[120px]">
+                   <div className="relative w-16 h-16 mb-2 border border-muted p-1">
+                      <Image src="https://picsum.photos/seed/nantes-logo/100/100" alt="Nantes" width={100} height={100} className="grayscale" />
+                   </div>
+                   <span className="text-[8px] font-bold text-center uppercase leading-tight">ACADÉMIE DE NANTES</span>
+                </div>
+              </div>
             </ScrollReveal>
           </div>
         </section>
 
+        {/* Section Diplôme national français */}
         <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="text-center mb-16">
-              <div className="inline-flex p-3 rounded-2xl bg-secondary/10 text-secondary mb-6"><Award size={32} /></div>
-              <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.recognition_page.accred_title}</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                {t.recognition_page.accred_desc}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-              {accreditations.map((accred, i) => (
-                <ScrollReveal key={i} delay={i * 100} className="p-8 bg-muted/30 rounded-[2.5rem] border border-border shadow-sm hover:shadow-xl transition-all">
-                  <ShieldCheck size={40} className="text-secondary mb-6" />
-                  <h3 className="text-xl font-bold text-primary mb-4 uppercase">{accred.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{accred.desc}</p>
-                </ScrollReveal>
-              ))}
-            </div>
-
-            <div className="bg-primary text-white p-12 rounded-[3rem] shadow-2xl relative overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="text-3xl font-headline font-bold mb-12 text-center">{t.recognition_page.partners_title}</h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                  {['Sorbonne', 'HEC Paris', 'FFF', 'Cambridge', 'Ligue 1', 'Harvard', 'Sciences Po', 'Elite Acad'].map((partner, i) => (
-                    <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center justify-center hover:bg-white/10 transition-colors">
-                       <span className="font-bold text-white/40 uppercase text-xs tracking-widest">{partner}</span>
-                    </div>
-                  ))}
-                </div>
+          <div className="container mx-auto px-4 max-w-4xl">
+            <ScrollReveal className="space-y-12">
+              <div className="space-y-4">
+                <h2 className="text-4xl font-headline font-bold text-black relative inline-block">
+                  {t.recognition_page.diploma_title}
+                  <div className="w-12 h-1 bg-black mt-2" />
+                </h2>
               </div>
-              <div className="absolute top-0 right-0 opacity-5 -translate-y-1/2 translate-x-1/2"><Globe size={500} /></div>
-            </div>
+
+              <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">
+                <p>
+                  {t.recognition_page.diploma_text_1}
+                </p>
+                <p>
+                  {t.recognition_page.diploma_text_2}
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Section Footer Diplôme (Beige) */}
+        <section className="py-20 bg-[#f5f1e8]">
+          <div className="container mx-auto px-4 text-center">
+            <ScrollReveal>
+              <h2 className="text-5xl md:text-6xl font-headline font-bold text-black tracking-tight relative inline-block">
+                {t.recognition_page.bottom_title}
+                <div className="w-12 h-1 bg-black mx-auto mt-4" />
+              </h2>
+            </ScrollReveal>
           </div>
         </section>
       </main>
