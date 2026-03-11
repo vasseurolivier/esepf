@@ -241,7 +241,15 @@ export const translations = {
     },
     football_pages: {
       prog_title: "Programme Football Elite",
-      prog_sub: "Un entraînement professionnel quotidien, encadré par des coachs certifiés UEFA, pour performer au plus haut niveau."
+      prog_sub: "Un entraînement professionnel quotidien, encadré par des coachs certifiés UEFA, pour performer au plus haut niveau.",
+      france_title: "La France : Terre d'Excellence du Football",
+      france_desc: "Avec deux Coupes du Monde (1998, 2018) et l'un des systèmes de formation les plus réputés au monde (Clairefontaine), la France est la référence absolue pour le développement des jeunes talents. Notre Academy s'appuie sur ce savoir-faire unique pour amener nos élèves vers les sommets.",
+      method_title: "La Méthodologie Française",
+      method_desc: "Notre approche repose sur trois piliers : l'intelligence de jeu (lecture des situations), la rigueur tactique et l'excellence technique. Nous formons des joueurs complets, capables de s'adapter aux exigences du football moderne de haut niveau.",
+      coaches_title: "Nos Coachs Certifiés UEFA",
+      coaches_desc: "Nos séances sont dirigées par des entraîneurs diplômés de l'UEFA, issus du milieu professionnel français. Ils apportent une expertise tactique et une discipline de fer, tout en assurant un suivi individuel pour chaque athlète.",
+      weekly_title: "Le Programme Hebdomadaire",
+      weekly_desc: "Un emploi du temps optimisé combinant 10 à 12 heures de football par semaine avec un cursus scolaire complet. Préparation physique, séances tactiques vidéo et matchs de championnat FFF font partie intégrante de notre cursus."
     },
     journey: {
       college: "COLLÈGE",
@@ -541,7 +549,15 @@ export const translations = {
     },
     football_pages: {
       prog_title: "Elite Football Program",
-      prog_sub: "Daily professional training, supervised by UEFA certified coaches, to perform at the highest level."
+      prog_sub: "Daily professional training, supervised by UEFA certified coaches, to perform at the highest level.",
+      france_title: "France: Land of Football Excellence",
+      france_desc: "With two World Cups (1998, 2018) and one of the most renowned training systems in the world (Clairefontaine), France is the ultimate reference for youth talent development. Our Academy relies on this unique expertise to lead our students to the top.",
+      method_title: "The French Methodology",
+      method_desc: "Our approach is based on three pillars: game intelligence (situational reading), tactical rigor, and technical excellence. We train complete players capable of adapting to the demands of modern high-level football.",
+      coaches_title: "Our UEFA Certified Coaches",
+      coaches_desc: "Our sessions are led by UEFA certified coaches from the French professional environment. They bring tactical expertise and iron discipline while ensuring individual follow-up for each athlete.",
+      weekly_title: "The Weekly Program",
+      weekly_desc: "An optimized schedule combining 10 to 12 hours of football per week with a full academic curriculum. Physical preparation, video tactical sessions, and FFF championship matches are an integral part of our curriculum."
     },
     journey: {
       college: "MIDDLE SCHOOL",
@@ -840,7 +856,15 @@ export const translations = {
     },
     football_pages: {
       prog_title: "精英足球计划",
-      prog_sub: "每日专业训练，由欧足联认证教练监督，以在最高水平上表现。"
+      prog_sub: "每日专业训练，由欧足联认证教练监督，以在最高水平上表现。",
+      france_title: "法国：足球卓越之地",
+      france_desc: "凭借两次世界杯冠军（1998年，2018年）和世界上最著名的青训系统之一（克莱枫丹），法国是青少年天才发展的绝对参考。我们的学院依托这一独特优势，引导学生走向顶峰。",
+      method_title: "法国足球教学法",
+      method_desc: "我们的方法基于三大支柱：比赛智慧（情境阅读）、战术严谨和卓越技术。我们培养能够适应现代高水平足球要求的全面球员。",
+      coaches_title: "欧足联认证教练团队",
+      coaches_desc: "我们的训练由来自法国职业足球圈的欧足联认证教练指导。他们带来了战术专长和钢铁般的纪律，同时确保对每位运动员进行个人跟踪。",
+      weekly_title: "每周训练计划",
+      weekly_desc: "优化的时间表，每周结合10至12小时的足球训练与完整的学术课程。体能准备、视频战术课和FFF联赛比赛是我们课程的组成部分。"
     },
     journey: {
       college: "初中",
@@ -901,7 +925,7 @@ export const translations = {
       faq_q1: "如何申请 2026-2027 学年入学？",
       faq_a1: "您可以通过我们的在线系统提交申请。每位候选人都将参加面试和选拔测试。",
       faq_q2: "足球学院的录取标准是什么？",
-      faq_a2: "我们综合评估技术、体能以及学术表现。体育与学习的平衡至关重要。",
+      faq_a2: "您综合评估技术、体能以及学术表现。体育与学习的平衡至关重要。",
       faq_q3: "学校接收国际学生吗？",
       faq_a3: "是的，我们设有专门的 FLE 语言预科班，并为签证和住宿提供专项支持。"
     },
