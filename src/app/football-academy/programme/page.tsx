@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -10,14 +9,16 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Trophy, Target, UserCheck, ShieldCheck, Zap, Globe, Users, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
+import Link from 'next/link';
 
 export default function ProgrammeFootballPage() {
   const { t } = useTranslation();
   const db = useFirestore();
-  const { data: settings } = useDoc(db, 'settings/global');
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
 
-  // Safety check for missing translation keys
   if (!t || !t.football_pages) {
     return null;
   }
@@ -195,10 +196,12 @@ export default function ProgrammeFootballPage() {
             </div>
 
             <ScrollReveal className="mt-24 text-center">
-              <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-8 px-12 rounded-full text-xl shadow-2xl transition-all hover:scale-105 group">
-                {t.common.apply}
-                <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" />
-              </Button>
+              <Link href="/inscription">
+                <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-8 px-12 rounded-full text-xl shadow-xl transition-all hover:scale-105 group">
+                  {t.common.apply}
+                  <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" />
+                </Button>
+              </Link>
             </ScrollReveal>
           </div>
         </section>

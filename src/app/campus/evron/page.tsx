@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -10,12 +9,15 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MapPin, School, GraduationCap, Building2, Target, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
+import Link from 'next/link';
 
 export default function CampusEvronPage() {
   const { t } = useTranslation();
   const db = useFirestore();
-  const { data: settings } = useDoc(db, 'settings/global');
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
   
   const heroImage = settings?.images?.campus_evron || "https://picsum.photos/seed/evron-hero-v2/1920/1080";
 
@@ -141,9 +143,11 @@ export default function CampusEvronPage() {
                 </div>
 
                 <div className="flex flex-col items-center">
-                  <Button className="bg-secondary text-white font-bold py-8 px-12 rounded-full shadow-2xl hover:bg-secondary/90 transition-all uppercase tracking-widest text-base">
-                    {t.common.register}
-                  </Button>
+                  <Link href="/inscription">
+                    <Button className="bg-secondary text-white font-bold py-8 px-12 rounded-full shadow-2xl hover:bg-secondary/90 transition-all uppercase tracking-widest text-base">
+                      {t.common.register}
+                    </Button>
+                  </Link>
                   <p className="text-xs text-white/40 mt-4 text-center">{t.campus_pages.apply_now}</p>
                 </div>
               </div>

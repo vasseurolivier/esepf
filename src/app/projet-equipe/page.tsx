@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -8,13 +7,15 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 import { ShieldCheck, GraduationCap } from 'lucide-react';
 
 export default function TeamPage() {
   const { t } = useTranslation();
   const db = useFirestore();
-  const { data: settings } = useDoc(db, 'settings/global');
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
 
   return (
     <FirebaseClientProvider>
