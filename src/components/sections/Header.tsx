@@ -87,15 +87,15 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full shadow-md">
       <div className="bg-white py-3 md:py-4 border-b border-gray-100">
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2 md:space-x-3">
-            <div className="relative h-10 w-10 md:h-14 md:w-14 flex items-center justify-center">
+          <Link href="/" className="flex items-center space-x-2 md:space-x-4">
+            <div className="relative h-20 w-20 md:h-28 md:w-28 flex items-center justify-center">
               {settingsLoading ? (
-                <div className="w-10 h-10 bg-muted animate-pulse rounded-full" />
+                <div className="w-16 h-16 bg-muted animate-pulse rounded-full" />
               ) : logoUrl ? (
                 <img src={logoUrl} alt={schoolName} className="h-full w-auto object-contain" />
               ) : (
-                <div className="p-1.5 border-2 border-primary rounded-full">
-                  <GraduationCap className="text-primary h-6 w-6 md:h-8 md:w-8" />
+                <div className="p-2 border-2 border-primary rounded-full">
+                  <GraduationCap className="text-primary h-12 w-12 md:h-16 md:w-16" />
                 </div>
               )}
             </div>
