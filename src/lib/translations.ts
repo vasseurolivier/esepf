@@ -264,16 +264,19 @@ export const translations = {
       }
     },
     football_pages: {
-      prog_title: "Programme Football Elite",
-      prog_sub: "Un entraînement professionnel quotidien pour performer au plus haut niveau.",
-      france_title: "La France : Terre d'Excellence",
-      france_desc: "Avec deux Coupes du Monde, la France est la référence absolue pour le développement des talents.",
-      method_title: "La Méthodologie Française",
-      method_desc: "Notre approche repose sur l'intelligence de jeu et la rigueur tactique.",
-      coaches_title: "Nos Coachs Certifiés UEFA",
-      coaches_desc: "Nos séances sont dirigées par des entraîneurs diplômés de l'UEFA.",
-      weekly_title: "Le Programme Hebdomadaire",
-      weekly_desc: "Un emploi du temps optimisé combinant 10 à 12 heures de football par semaine."
+      prog_title: "Programme de football",
+      prog_intro_1: "Notre école est un centre de formation de football qui offre à ses athlètes un programme complet et structuré, inspiré des meilleures méthodes de formation françaises.",
+      prog_intro_2: "Nous préparons nos joueurs et athlètes à atteindre leurs objectifs, qu'ils soient de haut niveau ou personnels. À travers des entrainements rigoureux, des compétitions et un suivi personnalisé, chaque élève progresse sur les plans techniques, tactiques et physiques.",
+      prog_intro_3: "Nous mettons également un accent particulier sur le développement mental et humain des athlètes, en les formant à gérer les défis psychologiques du sport de haut niveau. L'esprit d'équipe, la discipline, la résilience et la gestion des émotions sont au cœur de notre approche. Chaque athlète bénéficie d'un encadrement qui lui permet de s'épanouir et de donner le meilleur de lui-même.",
+      prog_intro_4: "Notre école donne à ses athlètes la chance d'atteindre leurs objectifs, de s'épanouir et, pour les meilleurs d'entre eux, d'aspirer à devenir sportifs professionnels ou d'obtenir des bourses d'études grâce à leurs performances sportives.",
+      france_title: "FRANCE : TERRE DE FOOTBALL",
+      france_desc_full: "Au total, la France est le pays qui a fourni le plus grand nombre de joueurs pour la Coupe du Monde au 21e siècle, avec 216 participants nés sur son sol, loin devant le Brésil et ses 148 joueurs, pourtant souvent perçu comme le plus grand exportateur de talents. La France devance également largement l'Allemagne et l'Italie, tous deux champions du monde à quatre reprises.",
+      france_examples: "Exemples : Mbappé, Zidane, Griezmann, Henry, Drogba, Platini, Varane, Kanté, Coman...",
+      reconnaissance_title: "UNE FORMATION RECONNUE DANS LE MONDE",
+      reconnaissance_p1: "La France et ses environs ne manquent certainement pas de talents, et cela n'est en rien dû au hasard, mais bien à la manière dont les jeunes joueurs sont détectés et formés dans le pays. Cette méthode, dont l'efficacité est reconnue dans le monde entier, est au cœur du succès du football français.",
+      reconnaissance_p2: "La mission des Centres de formation de football Français est de développer nos jeunes joueurs de football en les plaçant dans un environnement compétitif, avec un encadrement de haute qualité et un programme d'enseignement français conçu pour les aider à atteindre leur plein potentiel.",
+      reconnaissance_p3: "Grâce à un programme et une méthodologie structurés, et à travers des séances variées, des tests, des activités, des matchs, des défis et des interactions individuelles, nos joueurs évolueront sur le plan émotionnel, construiront leur caractère et développeront leurs compétences techniques, tactiques et physiques (données ajustées en fonction de l'âge spécifique de chaque joueur).",
+      reconnaissance_p4: "Ils progresseront également dans leurs compétences humaines grâce à nos défis psycho-sociaux, en apprenant l'esprit d'équipe, la dévotion, la résilience et, surtout, en nourrissant un amour durable pour le jeu."
     },
     sport_etudes_page: {
       title1: "QU'EST-CE QUE LE SPORT-ÉTUDES ?",
@@ -288,7 +291,7 @@ export const translations = {
     },
     reseau_page: {
       title: "Un Réseau de Clubs pour Révéler Nos Talents",
-      p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, nous offrons aux meilleurs de nos joueurs des opportunités uniques de montrer toutes leurs capacités. Ce réseau, composé de clubs prestigieux français mais aussi européens, leur permet de participer à des essais, à des matchs amicaux ou à d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptées à leur progression vers le plus haut niveau.",
+      p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, nous offrons aux meilleurs de nos joueurs des opportunités uniques de montrer toutes leurs capacités. Ce réseau, composé de clubs prestigieux français mais aussi européens, leur permet de participer à des essais, à des matchs amicaux ou à d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptés à leur progression vers le plus haut niveau.",
       subtitle: "Un Réseau de Clubs pour offrir des opportunités..."
     },
     journey_page: {
@@ -391,7 +394,7 @@ export const translations = {
       home: "HOME",
       history: "OUR HISTORY",
       project_team: "PROJECT & TEAM",
-      recognition: "RECOGNITION",
+      recognition: "RECONNAISSANCE",
       campus: "CAMPUSES",
       formations: "PROGRAMS",
       football: "FOOTBALL ACADEMY",
@@ -646,16 +649,19 @@ export const translations = {
       }
     },
     football_pages: {
-      prog_title: "Elite Football Program",
-      prog_sub: "Daily professional training to perform at the highest level.",
-      france_title: "France: Land of Excellence",
-      france_desc: "With two World Cups, France is the ultimate reference.",
-      method_title: "French Methodology",
-      method_desc: "Our approach is based on game intelligence.",
-      coaches_title: "UEFA Certified Coaches",
-      coaches_desc: "Sessions are led by UEFA certified coaches.",
-      weekly_title: "Weekly Program",
-      weekly_desc: "Optimized schedule combining 10-12 hours of football."
+      prog_title: "Football Program",
+      prog_intro_1: "Our school is a football training center that offers its athletes a complete and structured program, inspired by the best French training methods.",
+      prog_intro_2: "We prepare our players and athletes to reach their goals, whether high level or personal. Through rigorous training, competitions and personalized tracking, each student progresses on technical, tactical and physical levels.",
+      prog_intro_3: "We also place a particular emphasis on the mental and human development of athletes, training them to manage the psychological challenges of high-level sport. Team spirit, discipline, resilience and emotion management are at the core of our approach. Each athlete benefits from coaching that allows them to thrive and give their best.",
+      prog_intro_4: "Our school gives its athletes the chance to reach their goals, to thrive and, for the best of them, to aspire to become professional athletes or obtain scholarships through their sporting performance.",
+      france_title: "FRANCE: LAND OF FOOTBALL",
+      france_desc_full: "In total, France is the country that has provided the largest number of players for the World Cup in the 21st century, with 216 participants born on its soil, far ahead of Brazil and its 148 players, yet often perceived as the largest exporter of talents. France also leads Germany and Italy by a large margin, both four-time world champions.",
+      france_examples: "Examples: Mbappé, Zidane, Griezmann, Henry, Drogba, Platini, Varane, Kanté, Coman...",
+      reconnaissance_title: "A GLOBALLY RECOGNIZED TRAINING",
+      reconnaissance_p1: "France and its surroundings certainly do not lack talent, and this is not due to chance, but to the way young players are detected and trained in the country. This method, whose effectiveness is recognized worldwide, is at the heart of French football success.",
+      reconnaissance_p2: "The mission of French Football Training Centers is to develop our young football players by placing them in a competitive environment, with high-quality coaching and a French education program designed to help them reach their full potential.",
+      reconnaissance_p3: "Thanks to a structured program and methodology, and through varied sessions, tests, activities, matches, challenges and individual interactions, our players will evolve emotionally, build their character and develop their technical, tactical and physical skills (data adjusted based on each player's specific age).",
+      reconnaissance_p4: "They will also progress in their human skills thanks to our psycho-social challenges, learning team spirit, devotion, resilience and, above all, nurturing a lasting love for the game."
     },
     sport_etudes_page: {
       title1: "WHAT IS SPORT-STUDY?",
@@ -688,7 +694,7 @@ export const translations = {
       fifa_agent: "FIFA AGENT",
       referee: "REFEREE",
       coach: "COACH",
-      bts: "BTS (2 YEARS)",
+      bts: "BTS",
       licence_master: "BACHELOR / MASTERS"
     },
     journey: {
@@ -939,7 +945,7 @@ export const translations = {
       subtitle: "从亚洲 to 法国，全球雄心",
       intro_p1: "ESEPF 根植于我们在中国 and 越南的成功。",
       intro_p2: "ESEPF 位于法国中心，源于这一愿景。",
-      intro_p3: "为每位学生提供在各自领域表现出色的钥匙。",
+      intro_p3: "为每位 student 提供的钥匙。",
       milestone_1: "学校成立 and 第一个校区。",
       milestone_2: "开设体育学习部门。",
       milestone_3: "扩张 and 精英认证。",
@@ -1028,16 +1034,19 @@ export const translations = {
       }
     },
     football_pages: {
-      prog_title: "精英足球计划",
-      prog_sub: "每日专业训练以在最高水平上表现。",
-      france_title: "法国：卓越之地",
-      france_desc: "两次世界杯冠军，法国是青训s的绝对参考。",
-      method_title: "法国教学法",
-      method_desc: "我们的方法基于比赛智慧。",
-      coaches_title: "欧足联教练团队",
-      coaches_desc: "由欧足联认证教练指导。",
-      weekly_title: "每周计划",
-      weekly_desc: "优化的时间表，结合每周10-12小时训练。"
+      prog_title: "足球计划",
+      prog_intro_1: "我们的学校是一个足球训练中心，为运动员提供基于最佳法国培训方法的完整且结构化的计划。",
+      prog_intro_2: "我们通过严格的训练、比赛和个性化跟踪，帮助学生实现从个人到高水平的目标，在技术、战术和身体层面不断进步。",
+      prog_intro_3: "我们特别注重运动员的心理和人文发展，培训他们应对高水平运动的心理挑战。团队精神、纪律、韧性和情绪管理是我们方法的核心。每位运动员都享有助力其发挥潜能的专业指导。",
+      prog_intro_4: "学校为运动员提供实现目标、充分发展的机会，最优秀者可获得职业合同或体育奖学金。",
+      france_title: "法国：足球之乡",
+      france_desc_full: "21世纪，法国是为世界杯贡献球员最多的国家，共有216名球员出生于此，远超巴西（148人）。法国还大幅领先于德国和意大利这两支四冠王球队。",
+      france_examples: "例如：姆巴佩、齐达内、格列兹曼、亨利、德罗巴、普拉蒂尼、瓦拉内、坎特、科曼...",
+      reconnaissance_title: "享誉全球的培训体系",
+      reconnaissance_p1: "法国的人才辈出并非偶然，而是源于该国完善的青训检测和培养体系。这种方法的高效性已在全世界得到认可，是法国足球成功的核心。",
+      reconnaissance_p2: "法国青训中心的使命是在竞争环境中培养年轻球员，通过高质量的指导和专为帮助其发挥潜能设计的教学大纲来完成。",
+      reconnaissance_p3: "凭借结构化的计划和方法论，通过多样化的训练、测试、活动、比赛、挑战和个人互动，我们的球员将在情感、性格、技术、战术和身体技能（根据年龄调整）方面全面发展。",
+      reconnaissance_p4: "他们还将通过心理社会挑战提升人文技能，学习团队精神、奉献精神和韧性，并培养对足球的持久热爱。"
     },
     sport_etudes_page: {
       title1: "什么是体育学习？",
@@ -1070,7 +1079,7 @@ export const translations = {
       fifa_agent: "国际足联经纪人",
       referee: "裁判",
       coach: "教练",
-      bts: "BTS (2年制)",
+      bts: "BTS",
       licence_master: "本科 / 硕士"
     },
     journey: {
