@@ -2,7 +2,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowDown, ArrowRight, ArrowLeft } from 'lucide-react';
+import { ArrowDown, ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
 
 interface FrenchSystemSchemaProps {
@@ -18,14 +18,15 @@ export function FrenchSystemSchema({ bacType }: FrenchSystemSchemaProps) {
         <div className="flex flex-col items-center space-y-8">
           
           {/* Top Level: Bac */}
-          <div className="flex items-center gap-4 w-full justify-center">
+          <div className="flex flex-col md:flex-row items-center gap-4 w-full justify-center">
             <div className="bg-white border-2 border-primary p-6 rounded-xl shadow-lg min-w-[280px] text-center">
               <span className="text-xl font-headline font-bold text-black italic">{bacType}</span>
             </div>
-            <ArrowRight className="text-muted-foreground" />
+            <ArrowRight className="text-muted-foreground hidden md:block" />
+            <ArrowDown className="text-muted-foreground md:hidden" />
             <div className="bg-muted p-4 rounded-xl border border-border min-w-[200px] text-center">
               <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
-                {t.common.jobs_prefix} (niveau Bac)
+                {t.common.jobs_prefix} (Niveau Bac)
               </span>
             </div>
           </div>
@@ -49,45 +50,48 @@ export function FrenchSystemSchema({ bacType }: FrenchSystemSchemaProps) {
             
             {/* University Path */}
             <div className="space-y-8 flex flex-col items-center">
-              <div className="relative bg-[#f5f1e8] p-8 rounded-2xl border border-[#d1c7b7] shadow-md w-full text-center group hover:scale-105 transition-transform">
-                <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-1">UNIVERSITÉS</h4>
-                <p className="text-sm italic text-muted-foreground mb-4">Licences</p>
-                <div className="flex justify-center gap-3">
-                  <div className="w-6 h-4 bg-blue-600 relative overflow-hidden flex shadow-sm"><div className="w-1/3 bg-blue-600 h-full"></div><div className="w-1/3 bg-white h-full"></div><div className="w-1/3 bg-red-600 h-full"></div></div>
-                  <div className="w-6 h-4 bg-red-600 relative overflow-hidden flex shadow-sm items-center justify-center"><span className="text-[4px] text-white">★</span></div>
-                  <div className="w-6 h-4 bg-red-600 relative overflow-hidden flex shadow-sm"><div className="w-full bg-red-600 h-full flex items-center justify-center"><span className="text-yellow-400 text-[6px]">★</span></div></div>
+              {/* Licence Box */}
+              <div className="relative bg-[#f5f1e8] p-8 rounded-2xl border border-[#d1c7b7] shadow-md w-full text-center group hover:scale-[1.02] transition-transform">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-4 py-1 rounded-full shadow-sm">
+                  BAC +3
                 </div>
-                
-                {/* Job Link */}
-                <div className="absolute -left-12 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-2">
-                   <div className="bg-muted p-3 rounded-lg border border-border text-[8px] font-bold uppercase whitespace-nowrap">{t.common.jobs_prefix} (Bac +3)</div>
-                   <ArrowRight className="text-muted-foreground rotate-180" size={16} />
+                <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-1 mt-2">UNIVERSITÉS</h4>
+                <p className="text-sm italic text-muted-foreground mb-4">Licences</p>
+                <div className="flex justify-center gap-3 mb-4">
+                  <div className="w-6 h-4 bg-blue-600 relative overflow-hidden shadow-sm"></div>
+                  <div className="w-6 h-4 bg-red-600 flex items-center justify-center shadow-sm"><span className="text-[4px] text-white">★</span></div>
+                  <div className="w-6 h-4 bg-red-600 flex items-center justify-center shadow-sm"><span className="text-yellow-400 text-[6px]">★</span></div>
+                </div>
+                <div className="bg-white/50 p-2 rounded-lg border border-border inline-block">
+                   <span className="text-[9px] font-bold uppercase text-primary">{t.common.jobs_prefix}</span>
                 </div>
               </div>
 
-              <ArrowDown className="text-red-500 w-6 h-6 animate-bounce" />
+              <ArrowDown className="text-secondary w-6 h-6 animate-bounce" />
 
-              <div className="bg-[#f5f1e8] p-6 rounded-2xl border border-[#d1c7b7] shadow-md w-full text-center">
-                <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-1">UNIVERSITÉS</h4>
-                <p className="text-sm italic text-muted-foreground">Masters</p>
-                
-                {/* Job Link */}
-                <div className="absolute -left-12 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-2">
-                   <div className="bg-muted p-3 rounded-lg border border-border text-[8px] font-bold uppercase whitespace-nowrap">{t.common.jobs_prefix} (Bac +5)</div>
-                   <ArrowRight className="text-muted-foreground rotate-180" size={16} />
+              {/* Master Box */}
+              <div className="relative bg-[#f5f1e8] p-8 rounded-2xl border border-[#d1c7b7] shadow-md w-full text-center group hover:scale-[1.02] transition-transform">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] font-bold px-4 py-1 rounded-full shadow-sm">
+                  BAC +5
+                </div>
+                <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-1 mt-2">UNIVERSITÉS</h4>
+                <p className="text-sm italic text-muted-foreground mb-4">Masters</p>
+                <div className="bg-white/50 p-2 rounded-lg border border-border inline-block">
+                   <span className="text-[9px] font-bold uppercase text-primary">{t.common.jobs_prefix}</span>
                 </div>
               </div>
             </div>
 
             {/* BTS Path */}
-            <div className="flex flex-col items-center justify-start pt-4">
-              <div className="flex items-center gap-4 w-full">
-                <div className="bg-[#f5f1e8] p-8 rounded-2xl border border-[#d1c7b7] shadow-md flex-1 text-center">
-                  <h4 className="text-2xl font-headline font-bold text-black uppercase tracking-widest">BTS</h4>
+            <div className="flex flex-col items-center justify-start">
+              <div className="relative bg-[#f5f1e8] p-8 rounded-2xl border border-[#d1c7b7] shadow-md w-full text-center group hover:scale-[1.02] transition-transform">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] font-bold px-4 py-1 rounded-full shadow-sm">
+                  BAC +2
                 </div>
-                <ArrowRight className="text-muted-foreground" />
-                <div className="bg-muted p-3 rounded-lg border border-border text-[8px] font-bold uppercase min-w-[120px] text-center">
-                  {t.common.jobs_prefix} (Bac +2)
+                <h4 className="text-2xl font-headline font-bold text-black uppercase tracking-widest mb-2 mt-2">BTS</h4>
+                <p className="text-sm italic text-muted-foreground mb-4">Brevet de Technicien Supérieur</p>
+                <div className="bg-white/50 p-2 rounded-lg border border-border inline-block">
+                   <span className="text-[9px] font-bold uppercase text-primary">{t.common.jobs_prefix}</span>
                 </div>
               </div>
             </div>
