@@ -276,7 +276,18 @@ export const translations = {
       reconnaissance_p1: "La France et ses environs ne manquent certainement pas de talents, et cela n'est en rien dû au hasard, mais bien à la manière dont les jeunes joueurs sont détectés et formés dans le pays. Cette méthode, dont l'efficacité est reconnue dans le monde entier, est au cœur du succès du football français.",
       reconnaissance_p2: "La mission des Centres de formation de football Français est de développer nos jeunes joueurs de football en les plaçant dans un environnement compétitif, avec un encadrement de haute qualité et un programme d'enseignement français conçu pour les aider à atteindre leur plein potentiel.",
       reconnaissance_p3: "Grâce à un programme et une méthodologie structurés, et à travers des séances variées, des tests, des activités, des matchs, des défis et des interactions individuelles, nos joueurs évolueront sur le plan émotionnel, construiront leur caractère et développeront leurs compétences techniques, tactiques et physiques (données ajustées en fonction de l'âge spécifique de chaque joueur).",
-      reconnaissance_p4: "Ils progresseront également dans leurs compétences humaines grâce à nos défis psycho-sociaux, en apprenant l'esprit d'équipe, la dévotion, la résilience et, surtout, en nourrissant un amour durable pour le jeu."
+      reconnaissance_p4: "Ils progresseront également dans leurs compétences humaines grâce à nos défis psycho-sociaux, en apprenant l'esprit d'équipe, la dévotion, la résilience et, surtout, en nourrissant un amour durable pour le jeu.",
+      method_title: "NOTRE MÉTHODOLOGIE",
+      method_subtitle: "LES 4 PILIERS DU SUCCÈS",
+      axes_tech: "Technique : Travail spécifique sur la maîtrise individuelle du ballon et la coordination.",
+      axes_tact: "Tactique : Appréhension des systèmes de jeu, placement et intelligence collective.",
+      axes_phys: "Physique : Développement athlétique sécurisé, endurance et explosivité adaptée.",
+      axes_ment: "Mental : Accompagnement psychologique, gestion de la pression et esprit de gagne.",
+      coaches_title: "NOS COACHS CERTIFIÉS",
+      coaches_text: "Nos coachs sont tous diplômés de la FFF ou de l'UEFA (Pro, A, B), garantissant une expertise pédagogique et sportive de haut niveau pour un encadrement professionnel quotidien.",
+      weekly_title: "PROGRAMME HEBDOMADAIRE",
+      weekly_intro: "Une semaine type à l'ESEPF s'articule autour de séances quotidiennes de 1h30 à 2h, complétées par des matchs officiels le week-end.",
+      weekly_details: "Le programme inclut l'analyse vidéo le lundi, le travail spécifique le mercredi et la préparation de match le vendredi, tout en maintenant un cursus scolaire complet."
     },
     sport_etudes_page: {
       title1: "QU'EST-CE QUE LE SPORT-ÉTUDES ?",
@@ -661,7 +672,18 @@ export const translations = {
       reconnaissance_p1: "France and its surroundings certainly do not lack talent, and this is not due to chance, but to the way young players are detected and trained in the country. This method, whose effectiveness is recognized worldwide, is at the heart of French football success.",
       reconnaissance_p2: "The mission of French Football Training Centers is to develop our young football players by placing them in a competitive environment, with high-quality coaching and a French education program designed to help them reach their full potential.",
       reconnaissance_p3: "Thanks to a structured program and methodology, and through varied sessions, tests, activities, matches, challenges and individual interactions, our players will evolve emotionally, build their character and develop their technical, tactical and physical skills (data adjusted based on each player's specific age).",
-      reconnaissance_p4: "They will also progress in their human skills thanks to our psycho-social challenges, learning team spirit, devotion, resilience and, above all, nurturing a lasting love for the game."
+      reconnaissance_p4: "They will also progress in their human skills thanks to our psycho-social challenges, learning team spirit, devotion, resilience and, above all, nurturing a lasting love for the game.",
+      method_title: "OUR METHODOLOGY",
+      method_subtitle: "THE 4 PILLARS OF SUCCESS",
+      axes_tech: "Technical: Specific work on ball control and coordination.",
+      axes_tact: "Tactical: Game systems understanding and team intelligence.",
+      axes_phys: "Physical: Safe athletic development and explosion.",
+      axes_ment: "Mental: Psychological support and pressure management.",
+      coaches_title: "OUR CERTIFIED COACHES",
+      coaches_text: "Our coaches are all graduated from FFF or UEFA, ensuring high-level expertise for daily professional guidance.",
+      weekly_title: "WEEKLY PROGRAM",
+      weekly_intro: "A typical week at ESEPF centers around daily sessions of 1.5 to 2 hours, plus official matches.",
+      weekly_details: "Includes video analysis, specific work and match prep alongside full academics."
     },
     sport_etudes_page: {
       title1: "WHAT IS SPORT-STUDY?",
@@ -1046,7 +1068,18 @@ export const translations = {
       reconnaissance_p1: "法国的人才辈出并非偶然，而是源于该国完善的青训检测和培养体系。这种方法的高效性已在全世界得到认可，是法国足球成功的核心。",
       reconnaissance_p2: "法国青训中心的使命是在竞争环境中培养年轻球员，通过高质量的指导和专为帮助其发挥潜能设计的教学大纲来完成。",
       reconnaissance_p3: "凭借结构化的计划和方法论，通过多样化的训练、测试、活动、比赛、挑战和个人互动，我们的球员将在情感、性格、技术、战术和身体技能（根据年龄调整）方面全面发展。",
-      reconnaissance_p4: "他们还将通过心理社会挑战提升人文技能，学习团队精神、奉献精神和韧性，并培养对足球的持久热爱。"
+      reconnaissance_p4: "他们还将通过心理社会挑战提升人文技能，学习团队精神、奉献精神和韧性，并培养对足球的持久热爱。",
+      method_title: "我们的教学法",
+      method_subtitle: "成功的四大支柱",
+      axes_tech: "技术：专注于个人控球和协调能力的专项训练。",
+      axes_tact: "战术：理解比赛系统、位置感和集体智慧。",
+      axes_phys: "体能：安全的运动发展、耐力和爆发力（根据年龄调整）。",
+      axes_ment: "心理：心理支持、压力管理和求胜意志。",
+      coaches_title: "资深认证教练",
+      coaches_text: "我们的教练均毕业于 FFF 或 UEFA，确保提供高水平的每日专业指导。",
+      weekly_title: "每周计划",
+      weekly_intro: "ESEPF 的典型周包含每日 1.5 至 2 小时的训练课程，以及周末的官方比赛。",
+      weekly_details: "包括视频分析、专项训练和比赛准备，同时保持完整的学术课程。"
     },
     sport_etudes_page: {
       title1: "什么是体育学习？",
@@ -1142,7 +1175,7 @@ export const translations = {
       campus_tulle: "圣蒂勒校区",
       faq_title: "常见问题",
       faq_q1: "如何申请？",
-      faq_a1: "填写在线报名表。",
+      faq_a1: "Complete the online enrollment file.",
       faq_q2: "足球学院标准？",
       faq_a2: "技术水平和学业表现。",
       faq_q3: "接收国际生？",
