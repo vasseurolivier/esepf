@@ -9,13 +9,12 @@ import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore } from '@/firebase';
+import { GraduationCap, Award } from 'lucide-react';
 
 export default function RecognitionPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const { data: settings } = useDoc(db, 'settings/global');
-
-  const schoolName = settings?.schoolName || "ESEPF";
 
   return (
     <FirebaseClientProvider>
@@ -94,11 +93,31 @@ export default function RecognitionPage() {
         <section className="py-20 bg-[#f5f1e8]">
           <div className="container mx-auto px-4 text-center">
             <ScrollReveal>
-              <h2 className="text-5xl md:text-6xl font-headline font-bold text-black tracking-tight relative inline-block">
+              <h2 className="text-5xl md:text-6xl font-headline font-bold text-black tracking-tight relative inline-block mb-12">
                 {t.recognition_page.bottom_title}
-                <div className="w-12 h-1 bg-black mx-auto mt-4" />
+                <div className="w-12 h-1 bg-black mx-auto mt-4 rounded-full" />
               </h2>
             </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-4xl mx-auto">
+               <ScrollReveal delay={100} className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-muted flex flex-col items-center group hover:scale-[1.05] transition-all duration-500">
+                  <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
+                    <GraduationCap className="text-primary w-10 h-10" />
+                  </div>
+                  <h3 className="text-2xl font-headline font-bold text-black uppercase tracking-widest">{t.recognition_page.brevet_title}</h3>
+                  <div className="w-8 h-0.5 bg-secondary mt-4 mb-4" />
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Diplôme National du Brevet (DNB)</p>
+               </ScrollReveal>
+
+               <ScrollReveal delay={200} className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-muted flex flex-col items-center group hover:scale-[1.05] transition-all duration-500">
+                  <div className="w-20 h-20 bg-secondary/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-secondary/10 transition-colors">
+                    <Award className="text-secondary w-10 h-10" />
+                  </div>
+                  <h3 className="text-2xl font-headline font-bold text-black uppercase tracking-widest">{t.recognition_page.bac_title}</h3>
+                  <div className="w-8 h-0.5 bg-primary mt-4 mb-4" />
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Baccalauréat Général & Technologique</p>
+               </ScrollReveal>
+            </div>
           </div>
         </section>
       </main>

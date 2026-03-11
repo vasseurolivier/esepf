@@ -172,11 +172,13 @@ export const translations = {
       list_1: "Ministère de l'Éducation Nationale",
       list_2: "Fédération Française de Football (FFF)",
       list_3: "Cambridge Assessment International",
-      partners_title: "Nos Partenaires Académiques"
+      partners_title: "Nos Partenaires Académiques",
+      brevet_title: "Brevet des Collèges",
+      bac_title: "Baccalauréat"
     },
     college_page: {
       title: "ESEPF - Collège",
-      p1: "Nous ouvrons les portes de notre Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
+      p1: "Nous ouvrons les portes de our Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
       p2: "Après leurs années de Collège, ils pourront accéder aux programmes de notre Lycée et poursuivre leurs études en France. Ceci permettra à tous d'avoir accès à un parcours éducatif et sportif complet et structurant.",
       p3: "Ce Collège viendra enrichir notre offer de formation et accompagner les jeunes dans leur développement académique, personnel et sportif avec un programme de football élite.",
       p4: "Nous adopterons une approche pédagogique exigeante et bienveillante, avec un suivi individualisé et des méthodes d'apprentissage adaptées aux besoins de chaque élève.",
@@ -504,7 +506,9 @@ export const translations = {
       diploma_title: "French National Diploma",
       diploma_text_1: "We prepare our students for French national diplomas. These diplomas, such as the DNB and the general and technological Baccalaureates, are recognized worldwide.",
       diploma_text_2: "In addition, they benefit from recognition by the Chinese Ministry of Education, offering our students a quality certification recognized in both France and China.",
-      bottom_title: "Diploma"
+      bottom_title: "Diploma",
+      brevet_title: "Middle School Diploma",
+      bac_title: "High School Diploma (Bac)"
     },
     college_page: {
       title: "ESEPF - Middle School",
@@ -828,7 +832,9 @@ export const translations = {
       diploma_title: "法国国家文凭",
       diploma_text_1: "我们为学生准备法国国家文凭。这些文凭，如 DNB 以及普通 and 技术类高中毕业证，在全球范围内获得认可。",
       diploma_text_2: "此外，它们还获得了中国教育部的认可，为我们的学生提供在法国 and 中国都获得认可的高质量认证。",
-      bottom_title: "文凭"
+      bottom_title: "文凭",
+      brevet_title: "初中毕业证书 (Brevet)",
+      bac_title: "高中毕业证书 (Bac)"
     },
     college_page: {
       title: "ESEPF - 初中部",
@@ -861,7 +867,7 @@ export const translations = {
         duration: "3年（非法语母语学生为4年）",
         level: "4级（高中毕业证书）",
         prog_title: "教学计划",
-        prog_desc: "核心课程加专业方向选择。重点培养表达能力 and 国际视野。",
+        prog_desc: "核心课程加专业方向选择. 重点培养表达能力 and 国际视野。",
         program_details: "完善的学术路径，专注于人文、语言 and 地缘政治。包括“大口试”的准备。",
         bts_desc: "BTS（高级技术文凭）是一项为期两年的专业计划，允许在普通高中毕业后快速进行技术专业化。",
         univ_desc: "法国大学通过本科 and 硕士学位提供深厚的学术深度。",
@@ -911,7 +917,7 @@ export const translations = {
       france_title: "法国：足球卓越之地",
       france_desc: "凭借两次世界杯冠军（1998年，2018年） and 世界上最著名的青训系统之一（克莱枫丹），法国是青少年天才发展的绝对参考。我们的学院依托这一独特优势，引导学生走向顶峰。",
       method_title: "法国足球教学法",
-      method_desc: "我们的方法基于三大支柱：比赛智慧（情境阅读）、战术严谨 and 卓越技术。我们培养能够适应现代高水平足球要求的全面球员。",
+      method_desc: "我们的方法基于三大支柱：比赛智慧（情境阅读）、战术严谨 and 卓越技术. 我们培养能够适应现代高水平足球要求的全面球员。",
       coaches_title: "欧足联认证教练团队",
       coaches_desc: "我们的训练由来自法国职业足球圈的欧足联认证教练指导. 他们带来了战术专长 and 钢铁般的纪律，同时确保对每位运动员进行个人跟踪。",
       weekly_title: "每周训练计划",
