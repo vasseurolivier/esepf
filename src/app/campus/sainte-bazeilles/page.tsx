@@ -7,9 +7,10 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { MapPin, School, GraduationCap, Building2 } from 'lucide-react';
+import { MapPin, School, GraduationCap, Building2, Target, BookOpen } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore } from '@/firebase';
+import { Button } from '@/components/ui/button';
 
 export default function CampusBazeillesPage() {
   const { t } = useTranslation();
@@ -46,7 +47,7 @@ export default function CampusBazeillesPage() {
                 </div>
                 <h2 className="text-4xl font-headline font-bold text-primary mb-6">Un carrefour stratégique en Lot-et-Garonne</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Située aux portes de Marmande, Sainte-Bazeilles bénéficie d'une situation géographique privilégiée. Ville de tradition et de modernité, elle offre un cadre de vie dynamique entre Bordeaux et Toulouse, favorisant les échanges et l'ouverture d'esprit de nos étudiants.
+                  Située aux portes de Marmande, Sainte-Bazeilles bénéficie d'une situation géographique privilégiée. Ville de tradition et de modernité, elle offre un cadre de vie dynamique entre Bordeaux et Toulouse.
                 </p>
                 <div className="p-6 bg-muted rounded-2xl border border-border">
                   <h4 className="font-bold text-primary mb-2 italic">Culture & Terroir</h4>
@@ -74,36 +75,54 @@ export default function CampusBazeillesPage() {
               <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-6"><Building2 size={32} /></div>
               <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.infra_title}</h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Le Campus de Sainte-Bazeilles se distingue par son architecture moderne et ses espaces de co-working dédiés aux projets d'élèves.
+                Le Campus de Sainte-Bazeilles se distingue par son architecture moderne et ses espaces de co-working.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
+              {[1, 2, 3].map((i) => (
                 <ScrollReveal key={i} delay={i * 100} className="relative group h-64 rounded-3xl overflow-hidden shadow-lg">
-                  <Image src={`https://picsum.photos/seed/sb-${i}/800/600`} alt="Campus" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <Image src={`https://picsum.photos/seed/sb-infra-${i}/800/600`} alt="Campus" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                 </ScrollReveal>
               ))}
             </div>
 
-            <div className="bg-primary rounded-[3rem] p-12 text-white">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                <div className="md:w-1/2">
-                  <h3 className="text-3xl font-headline font-bold mb-6 flex items-center gap-3">
-                    <School className="text-secondary" />
-                    {t.nav.formations}
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="bg-white/10 p-4 rounded-xl border border-white/20">
-                      <h4 className="font-bold text-secondary">{t.programs.lycee.title}</h4>
-                      <p className="text-sm text-white/70">{t.programs.lycee.desc}</p>
+            <div className="bg-primary rounded-[3rem] p-12 text-white shadow-2xl relative">
+              <div className="relative z-10">
+                <h3 className="text-3xl font-headline font-bold mb-12 flex items-center gap-3">
+                  <School className="text-secondary" />
+                  {t.nav.formations} disponibles sur ce campus
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                  <div className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
+                    <div className="mt-1 text-secondary"><BookOpen size={24} /></div>
+                    <div>
+                      <h4 className="font-bold text-lg">{t.programs.college.title}</h4>
+                      <p className="text-sm text-white/60">{t.programs.college.desc}</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
+                    <div className="mt-1 text-secondary"><GraduationCap size={24} /></div>
+                    <div>
+                      <h4 className="font-bold text-lg">{t.programs.lycee.title}</h4>
+                      <p className="text-sm text-white/60">Général, STMG, Pro Vente</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
+                    <div className="mt-1 text-secondary"><Target size={24} /></div>
+                    <div>
+                      <h4 className="font-bold text-lg">{t.programs.academy.title}</h4>
+                      <p className="text-sm text-white/60">{t.programs.academy.desc}</p>
                     </div>
                   </div>
                 </div>
-                <div className="md:w-1/3 flex flex-col items-center">
-                  <button className="bg-secondary text-white font-bold py-4 px-8 rounded-full shadow-xl hover:bg-secondary/90 transition-all uppercase tracking-widest text-sm">
+
+                <div className="flex flex-col items-center">
+                  <Button className="bg-secondary text-white font-bold py-8 px-12 rounded-full shadow-2xl hover:bg-secondary/90 transition-all uppercase tracking-widest text-base">
                     {t.common.register}
-                  </button>
+                  </Button>
+                  <p className="text-xs text-white/40 mt-4 text-center">{t.campus_pages.apply_now}</p>
                 </div>
               </div>
             </div>

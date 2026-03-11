@@ -7,7 +7,7 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { MapPin, School, GraduationCap, Building2, Target } from 'lucide-react';
+import { MapPin, School, GraduationCap, Building2, Target, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore } from '@/firebase';
@@ -64,7 +64,7 @@ export default function CampusEvronPage() {
                   </div>
                   <div className="p-6 bg-muted rounded-2xl border border-border">
                     <h4 className="font-bold text-primary mb-2 italic">Football Academy</h4>
-                    <p className="text-sm text-muted-foreground">{t.axes.academy_desc}</p>
+                    <p className="text-sm text-muted-foreground">{t.axes.academy_desc.substring(0, 100)}...</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -94,15 +94,15 @@ export default function CampusEvronPage() {
               <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-6"><Building2 size={32} /></div>
               <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.infra_title}</h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                {t.axes.scolarite_desc}
+                Des installations modernes conçues pour l'épanouissement académique et sportif.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
+              {[1, 2, 3].map((i) => (
                 <ScrollReveal key={i} delay={i * 100} className="relative group rounded-[2rem] overflow-hidden shadow-xl bg-white">
                   <div className="relative h-64 w-full">
-                    <Image src={`https://picsum.photos/seed/evron-${i}/800/600`} alt="Campus" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <Image src={`https://picsum.photos/seed/evron-infra-${i}/800/600`} alt="Campus" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
                 </ScrollReveal>
               ))}
@@ -110,31 +110,38 @@ export default function CampusEvronPage() {
 
             {/* Formations Available Section */}
             <div className="bg-primary rounded-[3rem] p-12 text-white shadow-2xl overflow-hidden relative">
-              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
-                <div className="md:w-1/2">
-                  <h3 className="text-3xl font-headline font-bold mb-8 flex items-center gap-3">
-                    <School className="text-secondary" />
-                    {t.nav.formations}
-                  </h3>
-                  <div className="space-y-6">
-                    <div className="flex gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
-                      <div className="mt-1 text-secondary"><GraduationCap size={24} /></div>
-                      <div>
-                        <h4 className="font-bold text-lg">{t.programs.college.title}</h4>
-                        <p className="text-sm text-white/60">{t.programs.college.desc}</p>
-                      </div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-headline font-bold mb-12 flex items-center gap-3">
+                  <School className="text-secondary" />
+                  {t.nav.formations} disponibles sur ce campus
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                  <div className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
+                    <div className="mt-1 text-secondary"><BookOpen size={24} /></div>
+                    <div>
+                      <h4 className="font-bold text-lg">{t.programs.college.title}</h4>
+                      <p className="text-sm text-white/60">{t.programs.college.desc}</p>
                     </div>
-                    <div className="flex gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
-                      <div className="mt-1 text-secondary"><Target size={24} /></div>
-                      <div>
-                        <h4 className="font-bold text-lg">{t.programs.academy.title}</h4>
-                        <p className="text-sm text-white/60">{t.programs.academy.desc}</p>
-                      </div>
+                  </div>
+                  <div className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
+                    <div className="mt-1 text-secondary"><GraduationCap size={24} /></div>
+                    <div>
+                      <h4 className="font-bold text-lg">{t.programs.lycee.title}</h4>
+                      <p className="text-sm text-white/60">Général, STMG, Pro Vente</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
+                    <div className="mt-1 text-secondary"><Target size={24} /></div>
+                    <div>
+                      <h4 className="font-bold text-lg">{t.programs.academy.title}</h4>
+                      <p className="text-sm text-white/60">{t.programs.academy.desc}</p>
                     </div>
                   </div>
                 </div>
-                <div className="md:w-1/3 flex flex-col items-center">
-                  <Button className="bg-secondary text-white font-bold py-8 px-10 rounded-full shadow-2xl hover:bg-secondary/90 transition-all uppercase tracking-widest text-base w-full">
+
+                <div className="flex flex-col items-center">
+                  <Button className="bg-secondary text-white font-bold py-8 px-12 rounded-full shadow-2xl hover:bg-secondary/90 transition-all uppercase tracking-widest text-base">
                     {t.common.register}
                   </Button>
                   <p className="text-xs text-white/40 mt-4 text-center">{t.campus_pages.apply_now}</p>
