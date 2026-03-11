@@ -19,17 +19,16 @@ export default function HistoryPage() {
   
   const schoolName = settings?.schoolName || "ESEPF";
   const logoUrl = settings?.logoUrl;
+  const mainImage = settings?.images?.history_main || "https://picsum.photos/seed/students-map/800/1000";
 
   return (
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white">
-        {/* Main Content Section */}
         <section className="py-24">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <ScrollReveal className="space-y-8">
-                {/* Logo and School Name */}
                 <div className="flex items-center gap-6 mb-12">
                    <div className="w-24 h-24 relative">
                      {logoUrl ? (
@@ -56,10 +55,10 @@ export default function HistoryPage() {
                 </div>
               </ScrollReveal>
 
-              <ScrollReveal delay={200} className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl lg:translate-y-12">
+              <ScrollReveal delay={200} className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl lg:translate-y-12 bg-muted">
                 <Image 
-                  src="https://picsum.photos/seed/students-map/800/1000"
-                  alt="Students looking at map"
+                  src={mainImage}
+                  alt="Students"
                   fill
                   className="object-cover"
                   data-ai-hint="students group"

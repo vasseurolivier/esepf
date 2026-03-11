@@ -17,16 +17,16 @@ export default function RecognitionPage() {
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
   const { data: settings } = useDoc(settingsRef);
 
+  const heroImage = settings?.images?.recognition_hero || "https://picsum.photos/seed/institution-building/1200/800";
+
   return (
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white">
-        {/* Section En-tête (Style Assemblée Nationale) */}
         <section className="flex flex-col lg:flex-row min-h-[500px]">
-          {/* Gauche: Grande image institutionnelle */}
-          <div className="lg:w-1/2 relative min-h-[400px]">
+          <div className="lg:w-1/2 relative min-h-[400px] bg-muted">
             <Image 
-              src="https://picsum.photos/seed/institution-building/1200/800"
+              src={heroImage}
               alt="Institution Building"
               fill
               className="object-cover"
@@ -35,7 +35,6 @@ export default function RecognitionPage() {
             />
           </div>
 
-          {/* Droite: Texte de reconnaissance */}
           <div className="lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center bg-white">
             <ScrollReveal className="max-w-xl space-y-6">
               <h1 className="text-5xl font-headline font-bold text-black tracking-tight uppercase">
@@ -48,7 +47,6 @@ export default function RecognitionPage() {
                 {t.recognition_page.hero_text}
               </p>
 
-              {/* Logos officiels factices */}
               <div className="flex flex-wrap items-center gap-12 pt-8">
                 <div className="flex flex-col items-center max-w-[120px]">
                   <div className="relative w-16 h-16 mb-2 border border-muted p-1">
@@ -67,7 +65,6 @@ export default function RecognitionPage() {
           </div>
         </section>
 
-        {/* Section Diplôme national français */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 max-w-4xl">
             <ScrollReveal className="space-y-12">
@@ -90,7 +87,6 @@ export default function RecognitionPage() {
           </div>
         </section>
 
-        {/* Section Footer Diplôme (Beige) */}
         <section className="py-20 bg-[#f5f1e8]">
           <div className="container mx-auto px-4 text-center">
             <ScrollReveal>

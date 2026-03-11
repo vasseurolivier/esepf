@@ -16,14 +16,15 @@ export default function CollegePage() {
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
   const { data: settings } = useDoc(settingsRef);
 
+  const heroImage = settings?.images?.college_hero || "https://picsum.photos/seed/college-hero-v3/1920/1080";
+
   return (
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-[#fdfaf5]">
-        {/* Hero Section avec Grande Photo */}
         <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/college-hero-v3/1920/1080"
+            src={heroImage}
             alt="Collège ESEPF"
             fill
             className="object-cover opacity-50"
@@ -43,21 +44,18 @@ export default function CollegePage() {
         <section className="py-24">
           <div className="container mx-auto px-4 max-w-5xl">
             <ScrollReveal className="space-y-12">
-              {/* Paragraphes d'introduction */}
               <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
                 <p className="font-bold text-black">{t.college_page.p1}</p>
                 <p>{t.college_page.p2}</p>
                 <p>{t.college_page.p3}</p>
               </div>
 
-              {/* Blocs pédagogiques */}
               <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">
                 <p>{t.college_page.p4}</p>
                 <p>{t.college_page.p5}</p>
                 <p>{t.college_page.p6}</p>
               </div>
 
-              {/* Programme détaillé */}
               <div className="bg-white p-12 rounded-[3rem] shadow-xl border border-muted mt-20">
                 <h2 className="text-3xl font-headline font-bold text-primary mb-10">
                   {t.college_page.prog_title}
@@ -87,7 +85,6 @@ export default function CollegePage() {
                 </div>
               </div>
 
-              {/* Conclusion / Suite du parcours */}
               <div className="pt-12 text-xl text-muted-foreground leading-relaxed italic">
                 <p>{t.college_page.conclusion}</p>
               </div>

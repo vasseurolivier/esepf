@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useFirestore, useDoc, useCollection, useMemoFirebase } from '@/firebase';
 import { doc, setDoc, serverTimestamp, collection, query, orderBy, updateDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone } from 'lucide-react';
+import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, History, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { format } from 'date-fns';
@@ -19,15 +19,77 @@ import { FirestorePermissionError } from '@/firebase/errors';
 
 const ADMIN_PASSWORD = 'Yesacademy888$';
 
-const IMAGE_FIELDS = [
-  { id: 'hero_home', label: 'Image Accueil', location: 'Fond du haut de page' },
-  { id: 'campus_panoramic', label: 'Bandeau Campus', location: 'Au-dessus de la section Nos Campus' },
-  { id: 'campus_evron', label: 'Photo Evron', location: 'Vignette Campus Evron' },
-  { id: 'campus_bazeilles', label: 'Photo Bazeilles', location: 'Vignette Campus Sainte-Bazeilles' },
-  { id: 'campus_tulle', label: 'Photo Tulle', location: 'Vignette Campus Sainte-Tulle' },
-  { id: 'football_academy', label: 'Photo Football', location: 'Section Académie' },
-  { id: 'news_graduation', label: 'Actu 1', location: 'Section Blog - Article 1' },
-  { id: 'news_science', label: 'Actu 2', location: 'Section Blog - Article 2' },
+const IMAGE_CATEGORIES = [
+  {
+    id: 'general',
+    label: 'Général',
+    icon: <Globe size={16} />,
+    fields: [
+      { id: 'hero_home', label: 'Bannière Accueil', location: 'Haut de page accueil' },
+      { id: 'campus_panoramic', label: 'Bandeau Panoramique', location: 'Transition section campus' },
+      { id: 'news_graduation', label: 'Actualité 1', location: 'Section Blog - Photo 1' },
+      { id: 'news_science', label: 'Actualité 2', location: 'Section Blog - Photo 2' },
+    ]
+  },
+  {
+    id: 'campus',
+    label: 'Campus',
+    icon: <MapPin size={16} />,
+    fields: [
+      { id: 'campus_evron', label: 'Hero Evron', location: 'Haut de page Evron' },
+      { id: 'evron_infra_1', label: 'Evron Infra 1', location: 'Galerie infrastructures' },
+      { id: 'evron_infra_2', label: 'Evron Infra 2', location: 'Galerie infrastructures' },
+      { id: 'evron_infra_3', label: 'Evron Infra 3', location: 'Galerie infrastructures' },
+      { id: 'campus_bazeilles', label: 'Hero Bazeilles', location: 'Haut de page Bazeilles' },
+      { id: 'bazeilles_infra_1', label: 'Bazeilles Infra 1', location: 'Galerie infrastructures' },
+      { id: 'bazeilles_infra_2', label: 'Bazeilles Infra 2', location: 'Galerie infrastructures' },
+      { id: 'bazeilles_infra_3', label: 'Bazeilles Infra 3', location: 'Galerie infrastructures' },
+      { id: 'campus_tulle', label: 'Hero Tulle', location: 'Haut de page Tulle' },
+      { id: 'tulle_infra_1', label: 'Tulle Infra 1', location: 'Galerie infrastructures' },
+      { id: 'tulle_infra_2', label: 'Tulle Infra 2', location: 'Galerie infrastructures' },
+      { id: 'tulle_infra_3', label: 'Tulle Infra 3', location: 'Galerie infrastructures' },
+    ]
+  },
+  {
+    id: 'formations',
+    label: 'Formations',
+    icon: <GraduationCap size={16} />,
+    fields: [
+      { id: 'college_hero', label: 'Hero Collège', location: 'Haut de page Collège' },
+      { id: 'lycee_intro', label: 'Photo Intro Lycée', location: 'Section présentation Lycée' },
+      { id: 'lycee_card_1', label: 'Carte Langues', location: 'Vignette Bac Général' },
+      { id: 'lycee_card_2', label: 'Carte Vente', location: 'Vignette Bac Pro' },
+      { id: 'lycee_card_3', label: 'Carte Management', location: 'Vignette Bac STMG' },
+      { id: 'lycee_card_4', label: 'Carte Hôtellerie', location: 'Vignette (Futur)' },
+      { id: 'lycee_card_5', label: 'Carte Mode', location: 'Vignette (Futur)' },
+    ]
+  },
+  {
+    id: 'football',
+    label: 'Football',
+    icon: <Trophy size={16} />,
+    fields: [
+      { id: 'football_academy', label: 'Photo Academy (Home)', location: 'Section Academy page accueil' },
+      { id: 'competition_hero', label: 'Hero Compétition', location: 'Haut de page Compétition' },
+      { id: 'competition_action', label: 'Photo Action', location: 'Section Championnat' },
+      { id: 'prog_france_bg', label: 'Fond France', location: 'Section Terre de Football' },
+      { id: 'prog_coach_training', label: 'Photo Coachs', location: 'Section Nos Coachs' },
+      { id: 'sport_etudes_bg', label: 'Fond Sport-Études', location: 'Arrière-plan page Sport-Études' },
+    ]
+  },
+  {
+    id: 'institution',
+    label: 'Institution',
+    icon: <Layers size={16} />,
+    fields: [
+      { id: 'history_main', label: 'Photo Histoire', location: 'Page Notre Histoire' },
+      { id: 'team_project_hero', label: 'Photo Projet', location: 'Haut de page Projet' },
+      { id: 'recognition_hero', label: 'Photo Reconnaissance', location: 'Haut de page Reconnaissance' },
+      { id: 'team_member_1', label: 'Direction 1', location: 'Trombinoscope Équipe' },
+      { id: 'team_member_2', label: 'Direction 2', location: 'Trombinoscope Équipe' },
+      { id: 'team_member_3', label: 'Direction 3', location: 'Trombinoscope Équipe' },
+    ]
+  }
 ];
 
 export default function AdminPage() {
@@ -195,27 +257,43 @@ export default function AdminPage() {
                 <CardHeader className="bg-secondary text-white p-6">
                   <CardTitle className="flex items-center gap-2"><Camera size={20} /> Galerie des Photos</CardTitle>
                 </CardHeader>
-                <CardContent className="p-8">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {IMAGE_FIELDS.map((field) => (
-                      <div key={field.id} className="space-y-2 p-4 bg-white rounded-2xl border border-border shadow-sm">
-                        <Label className="font-bold text-xs uppercase text-primary">{field.label}</Label>
-                        <div className="aspect-video bg-muted/30 rounded-xl overflow-hidden mb-2 flex items-center justify-center">
-                          {images[field.id] ? (
-                            <img src={images[field.id]} alt={field.label} className="object-cover w-full h-full" />
-                          ) : (
-                            <ImageIcon className="text-muted" />
-                          )}
+                <CardContent className="p-0">
+                  <Tabs defaultValue="general" className="w-full">
+                    <TabsList className="w-full h-12 bg-muted/20 border-b border-muted rounded-none justify-start px-4">
+                      {IMAGE_CATEGORIES.map(cat => (
+                        <TabsTrigger key={cat.id} value={cat.id} className="text-xs uppercase font-bold flex items-center gap-2 px-6">
+                          {cat.icon} {cat.label}
+                        </TabsTrigger>
+                      ))}
+                    </TabsList>
+                    {IMAGE_CATEGORIES.map(cat => (
+                      <TabsContent key={cat.id} value={cat.id} className="p-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                          {cat.fields.map((field) => (
+                            <div key={field.id} className="space-y-2 p-4 bg-white rounded-2xl border border-border shadow-sm">
+                              <div className="flex flex-col mb-2">
+                                <Label className="font-bold text-[10px] uppercase text-primary">{field.label}</Label>
+                                <span className="text-[9px] text-muted-foreground italic">{field.location}</span>
+                              </div>
+                              <div className="aspect-video bg-muted/30 rounded-xl overflow-hidden mb-2 flex items-center justify-center border border-muted/50">
+                                {images[field.id] ? (
+                                  <img src={images[field.id]} alt={field.label} className="object-cover w-full h-full" />
+                                ) : (
+                                  <ImageIcon className="text-muted/50" size={32} />
+                                )}
+                              </div>
+                              <Input 
+                                value={images[field.id] || ''} 
+                                onChange={(e) => updateImageField(field.id, e.target.value)}
+                                placeholder="Coller l'URL de l'image ici..."
+                                className="text-[10px] h-8 rounded-lg bg-muted/10 border-muted focus:border-secondary"
+                              />
+                            </div>
+                          ))}
                         </div>
-                        <Input 
-                          value={images[field.id] || ''} 
-                          onChange={(e) => updateImageField(field.id, e.target.value)}
-                          placeholder="URL de l'image"
-                          className="text-xs rounded-lg"
-                        />
-                      </div>
+                      </TabsContent>
                     ))}
-                  </div>
+                  </Tabs>
                 </CardContent>
               </Card>
 

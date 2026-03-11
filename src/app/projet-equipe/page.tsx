@@ -17,14 +17,31 @@ export default function TeamPage() {
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
   const { data: settings } = useDoc(settingsRef);
 
+  const projectHero = settings?.images?.team_project_hero;
+  const teamMember1 = settings?.images?.team_member_1 || "https://picsum.photos/seed/member-1/500/500";
+  const teamMember2 = settings?.images?.team_member_2 || "https://picsum.photos/seed/member-2/500/500";
+  const teamMember3 = settings?.images?.team_member_3 || "https://picsum.photos/seed/member-3/500/500";
+
+  const members = [
+    { name: "Directeur 1", role: "Responsable Académique", img: teamMember1 },
+    { name: "Directeur 2", role: "Responsable Académique", img: teamMember2 },
+    { name: "Directeur 3", role: "Responsable Académique", img: teamMember3 }
+  ];
+
   return (
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white">
-        {/* Section Le Projet (Split Layout based on reference image) */}
         <section className="flex flex-col lg:flex-row min-h-[600px]">
-          {/* Left Side: Green with Title and Crest */}
           <div className="lg:w-[45%] bg-[#1a3d2f] p-12 lg:p-24 flex flex-col justify-center items-start relative overflow-hidden">
+            {projectHero && (
+              <Image 
+                src={projectHero}
+                alt="Project Hero"
+                fill
+                className="object-cover opacity-20"
+              />
+            )}
             <ScrollReveal className="relative z-10 w-full">
               <h1 className="text-6xl md:text-8xl font-headline font-bold text-white mb-12 tracking-tighter uppercase">
                 {t.team_page.title}
@@ -42,12 +59,9 @@ export default function TeamPage() {
                 </div>
               </div>
             </ScrollReveal>
-            
-            {/* Subtle gradient overlay to mimic image fade */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 pointer-events-none" />
           </div>
 
-          {/* Right Side: Text Content */}
           <div className="lg:w-[55%] p-12 lg:p-24 flex flex-col justify-center">
             <ScrollReveal className="max-w-2xl space-y-8">
               <h2 className="text-3xl font-headline font-bold text-black leading-tight">
@@ -63,7 +77,6 @@ export default function TeamPage() {
           </div>
         </section>
 
-        {/* Section L'EQUIPE (Centered Title with underline) */}
         <section className="py-24 bg-white border-t border-muted">
           <div className="container mx-auto px-4">
             <ScrollReveal className="text-center mb-20">
@@ -73,20 +86,18 @@ export default function TeamPage() {
               </h2>
             </ScrollReveal>
 
-            {/* Team Members Grid (Keeping existing structure but cleaner) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-6xl mx-auto">
-              {[1, 2, 3].map((i) => (
+              {members.map((member, i) => (
                 <ScrollReveal key={i} delay={i * 100} className="text-center group">
-                  <div className="relative w-56 h-56 mx-auto mb-8 rounded-full overflow-hidden border-4 border-muted group-hover:border-secondary transition-all duration-500 shadow-xl">
-                    <Image src={`https://picsum.photos/seed/member-${i}/500/500`} alt="Member" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="relative w-56 h-56 mx-auto mb-8 rounded-full overflow-hidden border-4 border-muted group-hover:border-secondary transition-all duration-500 shadow-xl bg-muted">
+                    <Image src={member.img} alt={member.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
-                  <h3 className="text-2xl font-headline font-bold text-black uppercase tracking-tight">Directeur {i}</h3>
-                  <p className="text-secondary font-bold text-sm mt-2 uppercase tracking-widest">Responsable Académique</p>
+                  <h3 className="text-2xl font-headline font-bold text-black uppercase tracking-tight">{member.name}</h3>
+                  <p className="text-secondary font-bold text-sm mt-2 uppercase tracking-widest">{member.role}</p>
                 </ScrollReveal>
               ))}
             </div>
             
-            {/* Staff Labels */}
             <div className="mt-32 max-w-4xl mx-auto bg-muted/20 p-12 rounded-[3rem]">
                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                   <ScrollReveal>

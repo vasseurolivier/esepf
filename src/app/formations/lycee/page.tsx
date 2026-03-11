@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -11,39 +10,46 @@ import { useTranslation } from '@/hooks/use-translation';
 import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 
 export default function LyceePage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+
+  const introImage = settings?.images?.lycee_intro || "https://picsum.photos/seed/students-canteen/1200/900";
 
   const formationCards = [
     {
       title: t.lycee_page.card_langues,
-      image: "https://picsum.photos/seed/lang-culture/400/300",
+      image: settings?.images?.lycee_card_1 || "https://picsum.photos/seed/lang-culture/400/300",
       hint: "university campus building",
       href: "/formations/bac-general"
     },
     {
       title: t.lycee_page.card_vente,
-      image: "https://picsum.photos/seed/sale-career/400/300",
+      image: settings?.images?.lycee_card_2 || "https://picsum.photos/seed/sale-career/400/300",
       hint: "modern city skyscraper",
       href: "/formations/bac-pro-vente"
     },
     {
       title: t.lycee_page.card_management,
-      image: "https://picsum.photos/seed/manage-career/400/300",
+      image: settings?.images?.lycee_card_3 || "https://picsum.photos/seed/manage-career/400/300",
       hint: "business professional typing",
       href: "/formations/bac-techno-stmg"
     },
     {
       title: t.lycee_page.card_hotel,
-      image: "https://picsum.photos/seed/hotel-career/400/300",
+      image: settings?.images?.lycee_card_4 || "https://picsum.photos/seed/hotel-career/400/300",
       hint: "luxury wine glasses table",
       banner: "2027 - 2028",
       href: "#"
     },
     {
       title: t.lycee_page.card_mode,
-      image: "https://picsum.photos/seed/fashion-career/400/300",
+      image: settings?.images?.lycee_card_5 || "https://picsum.photos/seed/fashion-career/400/300",
       hint: "fashion design dresses",
       banner: "2027 - 2028",
       href: "#"
@@ -54,8 +60,6 @@ export default function LyceePage() {
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white">
-        
-        {/* Intro Section */}
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -70,9 +74,9 @@ export default function LyceePage() {
                   <p>{t.lycee_page.intro_p4}</p>
                 </div>
               </ScrollReveal>
-              <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+              <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-muted">
                 <Image 
-                  src="https://picsum.photos/seed/students-canteen/1200/900" 
+                  src={introImage} 
                   alt="Lycée Life" 
                   fill 
                   className="object-cover"
@@ -83,7 +87,6 @@ export default function LyceePage() {
           </div>
         </section>
 
-        {/* Formations Grid Section */}
         <section className="bg-[#0c3a2f] py-20 text-white overflow-hidden">
           <div className="container mx-auto px-4">
             <ScrollReveal className="flex items-center gap-4 mb-16">
@@ -96,16 +99,13 @@ export default function LyceePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0 border-t border-l border-white/20">
               {formationCards.map((card, idx) => (
                 <ScrollReveal key={idx} delay={idx * 100} className="relative group border-r border-b border-white/20 bg-[#0c3a2f] flex flex-col h-full">
-                  {/* Image Header */}
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-muted/20">
                     <Image src={card.image} alt={card.title} fill className="object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" data-ai-hint={card.hint} />
-                    {/* Future Banner */}
                     {card.banner && (
                       <div className="absolute top-4 -right-8 bg-red-600 text-white font-bold py-1 px-12 rotate-45 text-[10px] shadow-lg">
                         {card.banner}
                       </div>
                     )}
-                    {/* Overlay Title */}
                     <div className="absolute inset-0 bg-black/20 flex items-center justify-center p-6 text-center">
                       <h3 className="text-white font-headline font-bold text-sm tracking-widest uppercase leading-tight drop-shadow-lg">
                         {card.title}
@@ -113,7 +113,6 @@ export default function LyceePage() {
                     </div>
                   </div>
 
-                  {/* Actions Links */}
                   <div className="flex flex-col bg-white">
                     <Link href={card.href} className="flex items-center justify-between p-4 border-b border-muted hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
                       {t.lycee_page.btn_formation}
@@ -133,7 +132,6 @@ export default function LyceePage() {
             </div>
           </div>
         </section>
-
       </main>
       <Footer />
     </FirebaseClientProvider>

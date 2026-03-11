@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -10,19 +9,25 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Flag, Trophy, Shield, Users, Calendar, Rocket, Target } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
 import { Button } from '@/components/ui/button';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 
 export default function CompetitionPage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+
+  const heroImage = settings?.images?.competition_hero || "https://picsum.photos/seed/competition-fff-elite/1920/1080";
+  const actionImage = settings?.images?.competition_action || "https://picsum.photos/seed/soccer-action/800/800";
 
   return (
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white">
-        
-        {/* Hero Section */}
         <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/competition-fff-elite/1920/1080"
+            src={heroImage}
             alt="Compétition FFF"
             fill
             className="object-cover opacity-30"
@@ -42,7 +47,6 @@ export default function CompetitionPage() {
           </div>
         </section>
 
-        {/* Section 1: Championnat & Partenariats */}
         <section className="py-24">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -63,33 +67,20 @@ export default function CompetitionPage() {
                   </p>
                 </div>
               </ScrollReveal>
-              <ScrollReveal delay={200} className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-muted/20">
-                <Image src="https://picsum.photos/seed/soccer-action/800/800" alt="Action Football" fill className="object-cover" />
+              <ScrollReveal delay={200} className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-muted/20 bg-muted">
+                <Image src={actionImage} alt="Action Football" fill className="object-cover" />
               </ScrollReveal>
             </div>
           </div>
         </section>
 
-        {/* Section 2: Rythme & Progression (Cards) */}
         <section className="py-24 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { 
-                  icon: <Flag />, 
-                  title: t.competition_page.card_clubs, 
-                  desc: t.competition_page.card_clubs_desc 
-                },
-                { 
-                  icon: <Calendar />, 
-                  title: t.competition_page.card_weekend, 
-                  desc: t.competition_page.card_weekend_desc 
-                },
-                { 
-                  icon: <Rocket />, 
-                  title: t.competition_page.card_detection, 
-                  desc: t.competition_page.card_detection_desc 
-                }
+                { icon: <Flag />, title: t.competition_page.card_clubs, desc: t.competition_page.card_clubs_desc },
+                { icon: <Calendar />, title: t.competition_page.card_weekend, desc: t.competition_page.card_weekend_desc },
+                { icon: <Rocket />, title: t.competition_page.card_detection, desc: t.competition_page.card_detection_desc }
               ].map((card, i) => (
                 <ScrollReveal key={i} delay={i * 150} className="bg-white p-10 rounded-[2.5rem] shadow-xl text-center group hover:bg-primary transition-all duration-500">
                   <div className="inline-flex p-5 rounded-3xl bg-secondary/10 text-secondary mb-6 group-hover:bg-white transition-colors">
@@ -103,7 +94,6 @@ export default function CompetitionPage() {
           </div>
         </section>
 
-        {/* Section 3: Accompagnement & Performance */}
         <section className="py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
@@ -125,16 +115,17 @@ export default function CompetitionPage() {
                   </div>
                 </div>
                 <div className="lg:col-span-5 flex justify-center lg:justify-end relative z-10">
-                  <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-10 px-12 rounded-full text-xl shadow-xl transition-all hover:scale-105 uppercase tracking-widest">
-                    {t.common.apply}
-                  </Button>
+                  <Link href="/inscription">
+                    <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-10 px-12 rounded-full text-xl shadow-xl transition-all hover:scale-105 uppercase tracking-widest">
+                      {t.common.apply}
+                    </Button>
+                  </Link>
                 </div>
               </ScrollReveal>
             </div>
           </div>
         </section>
 
-        {/* Bottom Text Section */}
         <section className="py-24 bg-white border-t border-muted">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <ScrollReveal className="space-y-8">
@@ -145,7 +136,6 @@ export default function CompetitionPage() {
             </ScrollReveal>
           </div>
         </section>
-
       </main>
       <Footer />
     </FirebaseClientProvider>

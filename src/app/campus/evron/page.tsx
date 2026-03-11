@@ -20,12 +20,16 @@ export default function CampusEvronPage() {
   const { data: settings } = useDoc(settingsRef);
   
   const heroImage = settings?.images?.campus_evron || "https://picsum.photos/seed/evron-hero-v2/1920/1080";
+  const infraImages = [
+    settings?.images?.evron_infra_1 || "https://picsum.photos/seed/evron-infra-1/800/600",
+    settings?.images?.evron_infra_2 || "https://picsum.photos/seed/evron-infra-2/800/600",
+    settings?.images?.evron_infra_3 || "https://picsum.photos/seed/evron-infra-3/800/600",
+  ];
 
   return (
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen">
-        {/* Hero Section */}
         <section className="relative h-[70vh] flex items-center justify-center bg-primary overflow-hidden">
           <Image 
             src={heroImage}
@@ -46,7 +50,6 @@ export default function CampusEvronPage() {
           </div>
         </section>
 
-        {/* City & Map Section */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -89,7 +92,6 @@ export default function CampusEvronPage() {
           </div>
         </section>
 
-        {/* Infrastructures Section */}
         <section className="py-24 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-16">
@@ -101,16 +103,13 @@ export default function CampusEvronPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-              {[1, 2, 3].map((i) => (
-                <ScrollReveal key={i} delay={i * 100} className="relative group rounded-[2rem] overflow-hidden shadow-xl bg-white">
-                  <div className="relative h-64 w-full">
-                    <Image src={`https://picsum.photos/seed/evron-infra-${i}/800/600`} alt="Campus" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                  </div>
+              {infraImages.map((img, i) => (
+                <ScrollReveal key={i} delay={i * 100} className="relative group rounded-[2rem] overflow-hidden shadow-xl bg-white aspect-video">
+                  <Image src={img} alt="Campus Infrastructure" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                 </ScrollReveal>
               ))}
             </div>
 
-            {/* Formations Available Section */}
             <div className="bg-primary rounded-[3rem] p-12 text-white shadow-2xl overflow-hidden relative">
               <div className="relative z-10">
                 <h3 className="text-3xl font-headline font-bold mb-12 flex items-center gap-3">
