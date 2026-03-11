@@ -7,10 +7,13 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { MapPin, School, GraduationCap, Building2, Calendar, Users, Target } from 'lucide-react';
+import { MapPin, School, GraduationCap, Building2, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/hooks/use-translation';
 
 export default function CampusEvronPage() {
+  const { t } = useTranslation();
+
   return (
     <FirebaseClientProvider>
       <Header />
@@ -27,10 +30,10 @@ export default function CampusEvronPage() {
           />
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
-              <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">Campus Evron</h1>
+              <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.campus_pages.evron_hero}</h1>
               <div className="w-24 h-1.5 bg-secondary mx-auto mb-6 rounded-full" />
               <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto border-t border-white/30 pt-4">
-                Le cœur historique et administratif de l'ESEPF en Mayenne.
+                {t.campus_pages.evron_sub}
               </p>
             </ScrollReveal>
           </div>
@@ -43,23 +46,20 @@ export default function CampusEvronPage() {
               <ScrollReveal>
                 <div className="flex items-center gap-2 text-secondary font-bold uppercase tracking-widest mb-4">
                   <MapPin size={20} />
-                  La Ville d'Evron
+                  {t.campus_pages.city_title}
                 </div>
-                <h2 className="text-4xl font-headline font-bold text-primary mb-6">Un cadre de vie privilégié</h2>
+                <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.axes.scolarite}</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Située au cœur de la Mayenne, Evron est une ville dynamique et accueillante, célèbre pour sa majestueuse Basilique-Abbaye. Elle offre un cadre de vie paisible et sécurisé, idéal pour la concentration et l'épanouissement de nos élèves. 
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  La ville bénéficie d'infrastructures sportives et culturelles de premier plan, permettant une intégration parfaite de la vie scolaire dans le tissu local.
+                  {t.axes.scolarite_desc}
                 </p>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="p-6 bg-muted rounded-2xl border border-border">
-                    <h4 className="font-bold text-primary mb-2 italic">Patrimoine</h4>
-                    <p className="text-sm text-muted-foreground">Basilique Notre-Dame de l'Épine, joyau de l'art médiéval.</p>
+                    <h4 className="font-bold text-primary mb-2 italic">Mayenne (53)</h4>
+                    <p className="text-sm text-muted-foreground">Pays de la Loire, France.</p>
                   </div>
                   <div className="p-6 bg-muted rounded-2xl border border-border">
-                    <h4 className="font-bold text-primary mb-2 italic">Nature</h4>
-                    <p className="text-sm text-muted-foreground">À proximité des Coëvrons, paradis pour les activités de plein air.</p>
+                    <h4 className="font-bold text-primary mb-2 italic">Football Academy</h4>
+                    <p className="text-sm text-muted-foreground">{t.axes.academy_desc}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -68,17 +68,14 @@ export default function CampusEvronPage() {
                 <div className="text-center p-8 bg-white/50 backdrop-blur-sm rounded-3xl m-8 shadow-inner w-full">
                   <div className="relative w-64 h-80 mx-auto mb-4 bg-white shadow-2xl rounded-lg p-4 flex flex-col items-center border border-muted">
                     <div className="w-full h-full border-2 border-primary/10 rounded flex items-center justify-center relative bg-muted/5">
-                      <span className="text-[8px] font-bold text-primary/20 uppercase tracking-[0.4em] absolute top-4">Carte de France</span>
-                      {/* Simplified Map Drawing Placeholder */}
+                      <span className="text-[8px] font-bold text-primary/20 uppercase tracking-[0.4em] absolute top-4">Map</span>
                       <svg viewBox="0 0 100 100" className="w-full h-full opacity-10 fill-primary">
                         <path d="M20,10 L80,10 L90,50 L70,90 L30,90 L10,50 Z" />
                       </svg>
                       <div className="absolute top-[35%] left-[30%] w-6 h-6 bg-secondary/20 rounded-full animate-ping" />
                       <div className="absolute top-[35%] left-[30%] w-4 h-4 bg-secondary rounded-full shadow-lg" />
-                      <div className="absolute top-[38%] left-[36%] text-[10px] font-bold text-secondary uppercase tracking-tighter">EVRON</div>
                     </div>
                   </div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-widest font-bold">Localisation : Mayenne (53), Pays de la Loire</p>
                 </div>
               </ScrollReveal>
             </div>
@@ -90,28 +87,17 @@ export default function CampusEvronPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-6"><Building2 size={32} /></div>
-              <h2 className="text-4xl font-headline font-bold text-primary mb-6">Infrastructures d'Excellence</h2>
+              <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.infra_title}</h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Le Campus d'Evron s'étend sur un domaine verdoyant, alliant bâtiments historiques restaurés et installations modernes. C'est ici que bat le cœur de notre Football Academy.
+                {t.axes.scolarite_desc}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-              {[
-                { img: "https://picsum.photos/seed/evron-1/800/600", title: "Le bâtiment principal", desc: "Hébergeant l'administration et les salles de classe générales." },
-                { img: "https://picsum.photos/seed/evron-2/800/600", title: "Terrain d'honneur", desc: "Pelouse naturelle homologuée FFF pour les compétitions élites." },
-                { img: "https://picsum.photos/seed/evron-3/800/600", title: "Résidence des athlètes", desc: "Internat de haut standing avec chambres doubles et espaces de vie." },
-                { img: "https://picsum.photos/seed/evron-4/800/600", title: "Amphithéâtre", desc: "Pour les conférences, les remises de diplômes et les projections tactiques." },
-                { img: "https://picsum.photos/seed/evron-5/800/600", title: "Laboratoires de Sciences", desc: "Équipements de pointe pour les spécialités SVT et Physique." },
-                { img: "https://picsum.photos/seed/evron-6/800/600", title: "Espace Restauration", desc: "Menus équilibrés élaborés par une nutritionniste du sport." },
-              ].map((item, i) => (
+              {[1, 2, 3, 4, 5, 6].map((i) => (
                 <ScrollReveal key={i} delay={i * 100} className="relative group rounded-[2rem] overflow-hidden shadow-xl bg-white">
                   <div className="relative h-64 w-full">
-                    <Image src={item.img} alt={item.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" data-ai-hint="campus life" />
-                  </div>
-                  <div className="p-6">
-                    <h4 className="font-bold text-primary text-xl mb-2">{item.title}</h4>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                    <Image src={`https://picsum.photos/seed/evron-${i}/800/600`} alt="Campus" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
                 </ScrollReveal>
               ))}
@@ -119,48 +105,34 @@ export default function CampusEvronPage() {
 
             {/* Formations Available Section */}
             <div className="bg-primary rounded-[3rem] p-12 text-white shadow-2xl overflow-hidden relative">
-              <div className="absolute top-0 right-0 opacity-5 -translate-y-1/2 translate-x-1/2">
-                <School size={600} />
-              </div>
               <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
                 <div className="md:w-1/2">
                   <h3 className="text-3xl font-headline font-bold mb-8 flex items-center gap-3">
                     <School className="text-secondary" />
-                    Formations disponibles sur ce site
+                    {t.nav.formations}
                   </h3>
                   <div className="space-y-6">
                     <div className="flex gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
                       <div className="mt-1 text-secondary"><GraduationCap size={24} /></div>
                       <div>
-                        <h4 className="font-bold text-lg">Collège (6ème à 3ème)</h4>
-                        <p className="text-sm text-white/60">Parcours d'excellence académique et accompagnement personnalisé.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
-                      <div className="mt-1 text-secondary"><GraduationCap size={24} /></div>
-                      <div>
-                        <h4 className="font-bold text-lg">Lycée Général</h4>
-                        <p className="text-sm text-white/60">Spécialités académiques complètes et préparation au Baccalauréat.</p>
+                        <h4 className="font-bold text-lg">{t.programs.college.title}</h4>
+                        <p className="text-sm text-white/60">{t.programs.college.desc}</p>
                       </div>
                     </div>
                     <div className="flex gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
                       <div className="mt-1 text-secondary"><Target size={24} /></div>
                       <div>
-                        <h4 className="font-bold text-lg">Football Academy Elite</h4>
-                        <p className="text-sm text-white/60">Pôle national de formation pour les jeunes joueurs à haut potentiel.</p>
+                        <h4 className="font-bold text-lg">{t.programs.academy.title}</h4>
+                        <p className="text-sm text-white/60">{t.programs.academy.desc}</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="md:w-1/3 flex flex-col items-center">
-                  <div className="w-56 h-56 rounded-full border-8 border-secondary/20 p-4 flex items-center justify-center bg-white/5 backdrop-blur-md mb-8 shadow-2xl relative">
-                    <div className="absolute inset-0 rounded-full border border-white/10 animate-pulse" />
-                    <GraduationCap size={80} className="text-secondary" />
-                  </div>
                   <Button className="bg-secondary text-white font-bold py-8 px-10 rounded-full shadow-2xl hover:bg-secondary/90 transition-all uppercase tracking-widest text-base w-full">
-                    S'inscrire sur ce Campus
+                    {t.common.register}
                   </Button>
-                  <p className="text-xs text-white/40 mt-4 text-center">Inscriptions ouvertes pour la rentrée 2025-2026</p>
+                  <p className="text-xs text-white/40 mt-4 text-center">{t.campus_pages.apply_now}</p>
                 </div>
               </div>
             </div>
