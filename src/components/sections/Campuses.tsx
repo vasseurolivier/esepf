@@ -8,10 +8,12 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useDoc, useFirestore } from '@/firebase';
+import { useTranslation } from '@/hooks/use-translation';
 
 export function Campuses() {
   const db = useFirestore();
   const { data: settings } = useDoc(db, 'settings/global');
+  const { t } = useTranslation();
   
   const panImgUrl = settings?.images?.campus_panoramic || PlaceHolderImages.find(img => img.id === 'campus-panoramic')?.imageUrl;
 
@@ -41,7 +43,6 @@ export function Campuses() {
 
   return (
     <>
-      {/* Panoramic Image Above Section */}
       <div className="w-full h-[400px] md:h-[550px] relative overflow-hidden">
         {panImgUrl && (
           <Image
@@ -58,10 +59,10 @@ export function Campuses() {
       <section id="campus" className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">Nos 3 Campus</h2>
+            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary mb-4">{t.sections.campuses}</h2>
             <div className="w-20 h-1.5 bg-secondary mx-auto rounded-full" />
             <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
-              L'ESEPF déploie son excellence sur trois sites stratégiques, offrant des infrastructures de pointe adaptées à la réussite de chaque élève.
+              {t.sections.campuses_desc}
             </p>
           </div>
 

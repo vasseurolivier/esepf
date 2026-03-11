@@ -3,25 +3,17 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, GraduationCap, Settings, ChevronDown } from 'lucide-react';
+import { Menu, X, GraduationCap, Settings, ChevronDown, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useDoc, useFirestore } from '@/firebase';
+import { useTranslation } from '@/hooks/use-translation';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-const navLinks = [
-  { name: 'ACCUEIL', href: '/', active: true },
-  { name: 'CAMPUS', href: '#', hasDropdown: true },
-  { name: 'FORMATIONS', href: '#', hasDropdown: true },
-  { name: 'FOOTBALL ACADEMY', href: '#', hasDropdown: true },
-  { name: 'CAMPS', href: '/#news' },
-  { name: 'CONTACT', href: '/#contact' },
-];
 
 const campusSubLinks = [
   { name: 'Campus Evron', href: '/campus/evron' },
@@ -51,22 +43,31 @@ export function Header() {
   const [mounted, setMounted] = useState(false);
   const db = useFirestore();
   const { data: settings } = useDoc(db, 'settings/global');
+  const { t, language, setLanguage } = useTranslation();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  const navLinks = [
+    { name: t.nav.home, href: '/', active: true },
+    { name: t.nav.campus, href: '#', hasDropdown: true },
+    { name: t.nav.formations, href: '#', hasDropdown: true },
+    { name: t.nav.football, href: '#', hasDropdown: true },
+    { name: t.nav.camps, href: '/#news' },
+    { name: t.nav.contact, href: '/#contact' },
+  ];
+
   const schoolName = settings?.schoolName || "ESEPF";
   const logoUrl = settings?.logoUrl;
 
   const getSubLinks = (name: string) => {
-    if (name === 'CAMPUS') return campusSubLinks;
-    if (name === 'FORMATIONS') return formationsSubLinks;
-    if (name === 'FOOTBALL ACADEMY') return footballSubLinks;
+    if (name === t.nav.campus) return campusSubLinks;
+    if (name === t.nav.formations) return formationsSubLinks;
+    if (name === t.nav.football) return footballSubLinks;
     return [];
   };
 
-  // Hydration safety: render placeholder if not mounted
   if (!mounted) {
     return <header className="h-20 bg-white border-b border-gray-100" />;
   }
@@ -92,13 +93,28 @@ export function Header() {
 
           <div className="hidden lg:block">
             <h2 className="text-3xl font-serif italic text-black font-medium tracking-tight">
-              L'excellence de la formation française
+              {t.common.excellence}
             </h2>
           </div>
 
           <div className="flex items-center space-x-4">
+            {/* Language Selector */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="flex items-center gap-2 font-bold text-xs uppercase tracking-widest">
+                  <Globe size={16} />
+                  {language}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-white border-muted">
+                <DropdownMenuItem onClick={() => setLanguage('fr')} className="font-bold cursor-pointer">FRANÇAIS</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('en')} className="font-bold cursor-pointer">ENGLISH</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('zh')} className="font-bold cursor-pointer">中文</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Button className="hidden sm:flex rounded-md bg-[#e31e24] text-white font-bold px-6 py-6 uppercase tracking-wider">
-              Nous rejoindre
+              {t.nav.join}
             </Button>
             
             <Link href="/admin">
