@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useDoc, useFirestore } from '@/firebase';
 import { useTranslation } from '@/hooks/use-translation';
+import Link from 'next/link';
 
 export function Hero() {
   const db = useFirestore();
@@ -39,12 +40,16 @@ export function Hero() {
           {t.hero.desc}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 w-full max-w-md mx-auto sm:max-w-none">
-          <Button variant="outline" className="w-full sm:w-auto min-w-[220px] rounded-[30px] border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary py-7 text-lg font-semibold transition-all">
-            {t.hero.btnDiscover}
-          </Button>
-          <Button className="w-full sm:w-auto min-w-[220px] rounded-[30px] bg-secondary hover:bg-secondary/90 text-white border-none py-7 text-lg font-bold shadow-lg">
-            {t.hero.btnRegister}
-          </Button>
+          <Link href="/football-academy/programme" className="w-full sm:w-auto">
+            <Button variant="outline" className="w-full sm:w-auto min-w-[220px] rounded-[30px] border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary py-7 text-lg font-semibold transition-all">
+              {t.hero.btnDiscover}
+            </Button>
+          </Link>
+          <Link href="/inscription" className="w-full sm:w-auto">
+            <Button className="w-full sm:w-auto min-w-[220px] rounded-[30px] bg-secondary hover:bg-secondary/90 text-white border-none py-7 text-lg font-bold shadow-lg">
+              {t.hero.btnRegister}
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

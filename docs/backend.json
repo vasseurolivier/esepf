@@ -34,6 +34,27 @@
         }
       },
       "required": ["schoolName"]
+    },
+    "Registration": {
+      "title": "Dossier d'Inscription",
+      "description": "Données de pré-inscription d'un élève.",
+      "type": "object",
+      "properties": {
+        "studentFirstName": { "type": "string" },
+        "studentLastName": { "type": "string" },
+        "studentBirthDate": { "type": "string", "format": "date" },
+        "studentNationality": { "type": "string" },
+        "currentGrade": { "type": "string" },
+        "parentFirstName": { "type": "string" },
+        "parentLastName": { "type": "string" },
+        "parentEmail": { "type": "string", "format": "email" },
+        "parentPhone": { "type": "string" },
+        "campusChoice": { "type": "string", "enum": ["evron", "bazeilles", "tulle"] },
+        "programChoice": { "type": "string" },
+        "footballAcademy": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["pending", "contacted", "accepted", "rejected"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
     }
   },
   "auth": {
@@ -43,6 +64,10 @@
     "/settings/global": {
       "schema": "AppSettings",
       "description": "Document unique pour toute l'identité visuelle du site."
+    },
+    "/registrations/{registrationId}": {
+      "schema": "Registration",
+      "description": "Liste des dossiers d'inscription reçus."
     }
   }
 }

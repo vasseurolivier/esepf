@@ -122,9 +122,11 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button className="hidden sm:flex rounded-md bg-[#e31e24] text-white font-bold px-4 md:px-6 py-5 md:py-6 uppercase tracking-wider text-xs">
-              {t.nav.join}
-            </Button>
+            <Link href="/inscription">
+              <Button className="hidden sm:flex rounded-md bg-[#e31e24] text-white font-bold px-4 md:px-6 py-5 md:py-6 uppercase tracking-wider text-xs">
+                {t.nav.join}
+              </Button>
+            </Link>
             
             <Link href="/admin">
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-primary h-9 w-9">
@@ -236,9 +238,11 @@ export function Header() {
           ))}
           
           <div className="pt-8">
-            <Button className="w-full rounded-xl bg-secondary text-white font-bold py-7 uppercase tracking-widest shadow-xl">
-              {t.nav.join}
-            </Button>
+            <Link href="/inscription" onClick={() => setIsOpen(false)}>
+              <Button className="w-full rounded-xl bg-secondary text-white font-bold py-7 uppercase tracking-widest shadow-xl">
+                {t.nav.join}
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
