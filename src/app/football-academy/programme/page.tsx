@@ -10,14 +10,19 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Trophy, Target, UserCheck, ShieldCheck, Zap, Globe, Users, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
+import { useDoc, useFirestore } from '@/firebase';
 
 export default function ProgrammeFootballPage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const { data: settings } = useDoc(db, 'settings/global');
 
   // Safety check for missing translation keys
   if (!t || !t.football_pages) {
     return null;
   }
+
+  const heroImage = settings?.images?.football_academy || "https://picsum.photos/seed/football-hero-pro/1920/1080";
 
   return (
     <FirebaseClientProvider>
@@ -27,7 +32,7 @@ export default function ProgrammeFootballPage() {
         {/* Hero Section */}
         <section className="relative h-[75vh] flex items-center justify-center bg-primary overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/football-hero-pro/1920/1080"
+            src={heroImage}
             alt="Football Program"
             fill
             className="object-cover opacity-40"

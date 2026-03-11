@@ -10,9 +10,14 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MapPin, School, GraduationCap, Building2, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
+import { useDoc, useFirestore } from '@/firebase';
 
 export default function CampusEvronPage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const { data: settings } = useDoc(db, 'settings/global');
+  
+  const heroImage = settings?.images?.campus_evron || "https://picsum.photos/seed/evron-hero-v2/1920/1080";
 
   return (
     <FirebaseClientProvider>
@@ -21,7 +26,7 @@ export default function CampusEvronPage() {
         {/* Hero Section */}
         <section className="relative h-[70vh] flex items-center justify-center bg-primary overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/evron-hero-v2/1920/1080"
+            src={heroImage}
             alt="Campus Evron"
             fill
             className="object-cover opacity-60"

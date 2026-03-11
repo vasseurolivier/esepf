@@ -9,9 +9,14 @@ import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MapPin, School, GraduationCap, Building2 } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
+import { useDoc, useFirestore } from '@/firebase';
 
 export default function CampusBazeillesPage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const { data: settings } = useDoc(db, 'settings/global');
+  
+  const heroImage = settings?.images?.campus_bazeilles || "https://picsum.photos/seed/bazeilles-hero/1920/1080";
 
   return (
     <FirebaseClientProvider>
@@ -19,7 +24,7 @@ export default function CampusBazeillesPage() {
       <main className="min-h-screen">
         <section className="relative h-[70vh] flex items-center justify-center bg-primary overflow-hidden">
           <Image 
-            src="https://picsum.photos/seed/bazeilles-hero/1920/1080"
+            src={heroImage}
             alt="Campus Sainte-Bazeilles"
             fill
             className="object-cover opacity-60"
