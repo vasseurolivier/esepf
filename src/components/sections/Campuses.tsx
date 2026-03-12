@@ -22,21 +22,21 @@ export function Campuses() {
       id: "evron",
       name: "Campus Evron",
       location: t.campus_locations.evron,
-      image: isLoading ? null : (settings?.images?.campus_evron || "https://picsum.photos/seed/evron-campus/600/400"),
+      image: isLoading ? null : settings?.images?.campus_evron,
       href: "/campus/evron"
     },
     {
       id: "sainte-bazeilles",
       name: "Campus Sainte-Bazeilles",
       location: t.campus_locations.bazeilles,
-      image: isLoading ? null : (settings?.images?.campus_bazeilles || "https://picsum.photos/seed/bazeilles-campus/600/400"),
+      image: isLoading ? null : settings?.images?.campus_bazeilles,
       href: "/campus/sainte-bazeilles"
     },
     {
       id: "sainte-tulle",
       name: "Campus Sainte-Tulle",
       location: t.campus_locations.tulle,
-      image: isLoading ? null : (settings?.images?.campus_tulle || "https://picsum.photos/seed/tulle-campus/600/400"),
+      image: isLoading ? null : settings?.images?.campus_tulle,
       href: "/campus/sainte-tulle"
     }
   ];

@@ -4,7 +4,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
@@ -17,8 +16,7 @@ export function Hero() {
   
   const { t } = useTranslation();
   
-  // On n'affiche aucune image tant que les réglages ne sont pas chargés pour éviter le flash
-  const heroImgUrl = isLoading ? null : (settings?.images?.hero_home || PlaceHolderImages.find(img => img.id === 'hero-school')?.imageUrl || "https://picsum.photos/seed/espf-hero/1920/1080");
+  const heroImgUrl = isLoading ? null : settings?.images?.hero_home;
 
   return (
     <section className="relative h-[80vh] md:h-[85vh] min-h-[500px] md:min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-black">

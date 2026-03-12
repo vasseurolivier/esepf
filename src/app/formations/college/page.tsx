@@ -16,9 +16,9 @@ export default function CollegePage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const heroImage = settings?.images?.college_hero || "https://picsum.photos/seed/college-hero-v3/1920/1080";
+  const heroImage = isLoading ? null : settings?.images?.college_hero;
 
   const successKeys = [
     { icon: <UserCheck className="text-secondary" />, title: t.college_page.autonomy_title, desc: t.college_page.autonomy_desc },
@@ -31,14 +31,15 @@ export default function CollegePage() {
       <Header />
       <main className="min-h-screen bg-[#fdfaf5]">
         <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
-          <Image 
-            src={heroImage}
-            alt="Collège ESEPF"
-            fill
-            className="object-cover opacity-50"
-            priority
-            data-ai-hint="modern school hallway students"
-          />
+          {heroImage && (
+            <Image 
+              src={heroImage}
+              alt="Collège ESEPF"
+              fill
+              className="object-cover opacity-50"
+              priority
+            />
+          )}
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
               <span className="text-secondary font-bold uppercase tracking-[0.4em] text-sm mb-4 block">{t.college_page.age_label}</span>

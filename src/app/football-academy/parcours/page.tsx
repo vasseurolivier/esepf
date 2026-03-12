@@ -16,9 +16,9 @@ export default function ParcoursJoueurPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const conceptImage = settings?.images?.journey_player_concept || "https://picsum.photos/seed/player-path/600/600";
+  const conceptImage = isLoading ? null : settings?.images?.journey_player_concept;
 
   const ChevronArrow = () => (
     <div className="flex flex-col items-center">
@@ -74,13 +74,14 @@ export default function ParcoursJoueurPage() {
             <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 max-w-6xl mx-auto">
               <ScrollReveal className="flex flex-col items-center text-center w-full lg:w-1/4">
                 <div className="relative w-48 h-48 mb-6 rounded-3xl overflow-hidden border-4 border-muted shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 bg-black">
-                  <Image 
-                    src={conceptImage} 
-                    alt="Student Athlete" 
-                    fill 
-                    className="object-cover"
-                    data-ai-hint="football player student"
-                  />
+                  {conceptImage && (
+                    <Image 
+                      src={conceptImage} 
+                      alt="Student Athlete" 
+                      fill 
+                      className="object-cover"
+                    />
+                  )}
                 </div>
                 <div className="bg-primary text-white px-6 py-3 rounded-full shadow-lg">
                   <p className="font-headline font-bold text-sm uppercase tracking-widest">

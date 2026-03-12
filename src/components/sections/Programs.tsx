@@ -5,7 +5,6 @@ import React, { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTranslation } from '@/hooks/use-translation';
 import { ChevronRight, ArrowRight } from 'lucide-react';

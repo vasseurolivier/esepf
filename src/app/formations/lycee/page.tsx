@@ -18,40 +18,35 @@ export default function LyceePage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const introImage = settings?.images?.lycee_intro || "https://picsum.photos/seed/students-canteen/1200/900";
+  const introImage = isLoading ? null : settings?.images?.lycee_intro;
 
   const formationCards = [
     {
       title: t.lycee_page.card_langues,
-      image: settings?.images?.lycee_card_1 || "https://picsum.photos/seed/lang-culture/400/300",
-      hint: "university campus building",
+      image: isLoading ? null : settings?.images?.lycee_card_1,
       href: "/formations/bac-general"
     },
     {
       title: t.lycee_page.card_vente,
-      image: settings?.images?.lycee_card_2 || "https://picsum.photos/seed/sale-career/400/300",
-      hint: "modern city skyscraper",
+      image: isLoading ? null : settings?.images?.lycee_card_2,
       href: "/formations/bac-pro-vente"
     },
     {
       title: t.lycee_page.card_management,
-      image: settings?.images?.lycee_card_3 || "https://picsum.photos/seed/manage-career/400/300",
-      hint: "business professional typing",
+      image: isLoading ? null : settings?.images?.lycee_card_3,
       href: "/formations/bac-techno-stmg"
     },
     {
       title: t.lycee_page.card_hotel,
-      image: settings?.images?.lycee_card_4 || "https://picsum.photos/seed/hotel-career/400/300",
-      hint: "luxury wine glasses table",
+      image: isLoading ? null : settings?.images?.lycee_card_4,
       banner: "2027 - 2028",
       href: "#"
     },
     {
       title: t.lycee_page.card_mode,
-      image: settings?.images?.lycee_card_5 || "https://picsum.photos/seed/fashion-career/400/300",
-      hint: "fashion design dresses",
+      image: isLoading ? null : settings?.images?.lycee_card_5,
       banner: "2027 - 2028",
       href: "#"
     }
@@ -75,14 +70,15 @@ export default function LyceePage() {
                   <p>{t.lycee_page.intro_p4}</p>
                 </div>
               </ScrollReveal>
-              <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-muted">
-                <Image 
-                  src={introImage} 
-                  alt="Lycée Life" 
-                  fill 
-                  className="object-cover"
-                  data-ai-hint="students dining cafeteria"
-                />
+              <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-black">
+                {introImage && (
+                  <Image 
+                    src={introImage} 
+                    alt="Lycée Life" 
+                    fill 
+                    className="object-cover"
+                  />
+                )}
               </ScrollReveal>
             </div>
           </div>
@@ -157,8 +153,10 @@ export default function LyceePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0 border-t border-l border-white/20">
               {formationCards.map((card, idx) => (
                 <ScrollReveal key={idx} delay={idx * 100} className="relative group border-r border-b border-white/20 bg-[#0c3a2f] flex flex-col h-full">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-muted/20">
-                    <Image src={card.image} alt={card.title} fill className="object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" data-ai-hint={card.hint} />
+                  <div className="relative aspect-[4/3] overflow-hidden bg-black">
+                    {card.image && (
+                      <Image src={card.image} alt={card.title} fill className="object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+                    )}
                     {card.banner && (
                       <div className="absolute top-4 -right-8 bg-red-600 text-white font-bold py-1 px-12 rotate-45 text-[10px] shadow-lg">
                         {card.banner}

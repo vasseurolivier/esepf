@@ -20,10 +20,10 @@ export default function BacStmgPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const heroImage = settings?.images?.bac_stmg_hero || "https://picsum.photos/seed/stmg-hero-pro/1920/1080";
-  const introImage = settings?.images?.bac_stmg_intro || "https://picsum.photos/seed/stmg-team/800/600";
+  const heroImage = isLoading ? null : settings?.images?.bac_stmg_hero;
+  const introImage = isLoading ? null : settings?.images?.bac_stmg_intro;
 
   const content = t.lycee_page.bac_stmg;
 
@@ -32,14 +32,15 @@ export default function BacStmgPage() {
       <Header />
       <main className="min-h-screen bg-white">
         <section className="relative h-[65vh] flex items-center justify-center bg-black overflow-hidden">
-          <Image 
-            src={heroImage}
-            alt="Bac Techno STMG"
-            fill
-            className="object-cover opacity-40"
-            priority
-            data-ai-hint="business digital management team"
-          />
+          {heroImage && (
+            <Image 
+              src={heroImage}
+              alt="Bac Techno STMG"
+              fill
+              className="object-cover opacity-40"
+              priority
+            />
+          )}
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
               <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">
@@ -116,12 +117,14 @@ export default function BacStmgPage() {
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-black">
-                <Image 
-                  src={introImage}
-                  alt="Management team working"
-                  fill
-                  className="object-cover"
-                />
+                {introImage && (
+                  <Image 
+                    src={introImage}
+                    alt="Management team working"
+                    fill
+                    className="object-cover"
+                  />
+                )}
               </ScrollReveal>
             </div>
 

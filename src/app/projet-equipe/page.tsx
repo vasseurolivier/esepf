@@ -18,10 +18,10 @@ export default function TeamPage() {
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
   const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const projectHero = isLoading ? null : (settings?.images?.team_project_hero || "https://picsum.photos/seed/esepf-team-hero/1920/1080");
-  const teamMember1 = isLoading ? null : (settings?.images?.team_member_1 || "https://picsum.photos/seed/member-1/500/500");
-  const teamMember2 = isLoading ? null : (settings?.images?.team_member_2 || "https://picsum.photos/seed/member-2/500/500");
-  const teamMember3 = isLoading ? null : (settings?.images?.team_member_3 || "https://picsum.photos/seed/member-3/500/500");
+  const projectHero = isLoading ? null : settings?.images?.team_project_hero;
+  const teamMember1 = isLoading ? null : settings?.images?.team_member_1;
+  const teamMember2 = isLoading ? null : settings?.images?.team_member_2;
+  const teamMember3 = isLoading ? null : settings?.images?.team_member_3;
 
   const members = [
     { name: t.team_page.member1_name, role: t.team_page.member1_role, img: teamMember1 },

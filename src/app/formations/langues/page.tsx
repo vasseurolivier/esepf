@@ -16,23 +16,24 @@ export default function LanguesPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const heroImage = settings?.images?.langues_hero || "https://picsum.photos/seed/languages-excellence/1920/1080";
+  const heroImage = isLoading ? null : settings?.images?.langues_hero;
 
   return (
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen">
         <section className="relative h-[60vh] flex items-center justify-center bg-black overflow-hidden">
-          <Image 
-            src={heroImage}
-            alt="Langues Étrangères"
-            fill
-            className="object-cover opacity-40"
-            priority
-            data-ai-hint="world map concept"
-          />
+          {heroImage && (
+            <Image 
+              src={heroImage}
+              alt="Langues Étrangères"
+              fill
+              className="object-cover opacity-40"
+              priority
+            />
+          )}
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
               <h1 className="text-5xl md:text-7xl font-headline font-bold mb-4 uppercase tracking-tighter">

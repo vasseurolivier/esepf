@@ -16,18 +16,18 @@ export default function SportEtudesPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const bgImage = settings?.images?.sport_etudes_bg || "https://picsum.photos/seed/athlete-faded/1920/1080";
-  const footballImg = settings?.images?.sport_etudes_football || "https://picsum.photos/seed/se-football/800/600";
-  const basketballImg = settings?.images?.sport_etudes_basketball || "https://picsum.photos/seed/se-basket/800/600";
+  const bgImage = isLoading ? null : settings?.images?.sport_etudes_bg;
+  const footballImg = isLoading ? null : settings?.images?.sport_etudes_football;
+  const basketballImg = isLoading ? null : settings?.images?.sport_etudes_basketball;
 
   return (
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
-          <Image src={bgImage} alt="Background" fill className="object-cover" />
+          {bgImage && <Image src={bgImage} alt="Background" fill className="object-cover" />}
         </div>
 
         <div className="container mx-auto px-4 py-24 relative z-10">
@@ -126,8 +126,12 @@ export default function SportEtudesPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
               <ScrollReveal className="group">
                 <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl mb-8 bg-black">
-                  <Image src={footballImg} alt="Football" fill className="object-cover group-hover:scale-110 transition-transform duration-700" priority />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  {footballImg && (
+                    <>
+                      <Image src={footballImg} alt="Football" fill className="object-cover group-hover:scale-110 transition-transform duration-700" priority />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                    </>
+                  )}
                   <div className="absolute bottom-8 left-8 flex items-center gap-3">
                     <div className="p-3 bg-secondary text-white rounded-full"><Star fill="currentColor" size={20} /></div>
                     <h3 className="text-3xl font-headline font-bold text-white uppercase tracking-widest">{t.sport_etudes_page.label2_1}</h3>
@@ -140,8 +144,12 @@ export default function SportEtudesPage() {
 
               <ScrollReveal delay={200} className="group opacity-80 hover:opacity-100 transition-opacity">
                 <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl mb-8 bg-black">
-                  <Image src={basketballImg} alt="Basketball" fill className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  {basketballImg && (
+                    <>
+                      <Image src={basketballImg} alt="Basketball" fill className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                    </>
+                  )}
                   <div className="absolute bottom-8 left-8">
                     <h3 className="text-3xl font-headline font-bold text-white uppercase tracking-widest mb-1">{t.sport_etudes_page.label2_2}</h3>
                     <span className="text-white/60 text-xs font-bold uppercase tracking-[0.2em]">{t.sport_etudes_page.label2_2_sub}</span>

@@ -17,14 +17,14 @@ export default function MetiersSportPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
   const metiers = [
-    { id: 'metiers_bpjeps', label: 'BPJEPS', default: "https://picsum.photos/seed/bpjeps/400/600" },
-    { id: 'metiers_coach', label: 'COACH', default: "https://picsum.photos/seed/coach-job/400/600" },
-    { id: 'metiers_agent', label: 'AGENT FIFA', default: "https://picsum.photos/seed/agent-fifa/400/600" },
-    { id: 'metiers_arbitre', label: 'ARBITRE', default: "https://picsum.photos/seed/referee/400/600" },
-    { id: 'metiers_analyste', label: 'ANALYSTE VIDÉO', default: "https://picsum.photos/seed/video-analyst/400/600" },
+    { id: 'metiers_bpjeps', label: 'BPJEPS' },
+    { id: 'metiers_coach', label: 'COACH' },
+    { id: 'metiers_agent', label: 'AGENT FIFA' },
+    { id: 'metiers_arbitre', label: 'ARBITRE' },
+    { id: 'metiers_analyste', label: 'ANALYSTE VIDÉO' },
   ];
 
   return (
@@ -57,22 +57,27 @@ export default function MetiersSportPage() {
           {/* Jobs Grid */}
           <div className="max-w-7xl mx-auto mb-24">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
-              {metiers.map((job, idx) => (
-                <ScrollReveal key={job.id} delay={idx * 100} className="flex flex-col items-center">
-                  <div className="relative w-full aspect-[2/3] rounded-full overflow-hidden border-2 border-black shadow-2xl mb-6 group transition-transform duration-500 hover:scale-105">
-                    <Image 
-                      src={settings?.images?.[job.id] || job.default} 
-                      alt={job.label}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-headline font-bold text-black uppercase tracking-tight text-center">
-                    {job.label}
-                  </h3>
-                </ScrollReveal>
-              ))}
+              {metiers.map((job, idx) => {
+                const jobImg = isLoading ? null : settings?.images?.[job.id];
+                return (
+                  <ScrollReveal key={job.id} delay={idx * 100} className="flex flex-col items-center">
+                    <div className="relative w-full aspect-[2/3] rounded-full overflow-hidden border-2 border-black shadow-2xl mb-6 group transition-transform duration-500 hover:scale-105 bg-black">
+                      {jobImg && (
+                        <Image 
+                          src={jobImg} 
+                          alt={job.label}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-headline font-bold text-black uppercase tracking-tight text-center">
+                      {job.label}
+                    </h3>
+                  </ScrollReveal>
+                );
+              })}
             </div>
           </div>
 

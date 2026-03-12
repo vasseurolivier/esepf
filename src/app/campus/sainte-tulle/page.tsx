@@ -17,29 +17,31 @@ export default function CampusTullePage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
   
-  const heroImage = settings?.images?.campus_tulle || "https://picsum.photos/seed/tulle-hero/1920/1080";
-  const mapImage = settings?.images?.tulle_map;
+  const heroImage = isLoading ? null : settings?.images?.campus_tulle;
+  const mapImage = isLoading ? null : settings?.images?.tulle_map;
 
-  const infraImages = [
-    settings?.images?.tulle_infra_1 || "https://picsum.photos/seed/st-infra-1/800/600",
-    settings?.images?.tulle_infra_2 || "https://picsum.photos/seed/st-infra-2/800/600",
-    settings?.images?.tulle_infra_3 || "https://picsum.photos/seed/st-infra-3/800/600",
-  ];
+  const infraImages = isLoading ? [] : [
+    settings?.images?.tulle_infra_1,
+    settings?.images?.tulle_infra_2,
+    settings?.images?.tulle_infra_3,
+  ].filter(Boolean) as string[];
 
   return (
     <main className="min-h-screen bg-white">
       <Header />
       <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
-        <Image 
-          src={heroImage}
-          alt="Campus Sainte-Tulle"
-          fill
-          className="object-cover opacity-60"
-          priority
-          sizes="100vw"
-        />
+        {heroImage && (
+          <Image 
+            src={heroImage}
+            alt="Campus Sainte-Tulle"
+            fill
+            className="object-cover opacity-60"
+            priority
+            sizes="100vw"
+          />
+        )}
         <div className="relative z-10 text-center text-white container px-4">
           <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.campus_pages.tulle_hero}</h1>
           <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto border-t border-white/30 pt-4">{t.campus_pages.tulle_sub}</p>
@@ -76,7 +78,7 @@ export default function CampusTullePage() {
                     />
                   </div>
                 </div>
-              ) : (
+              ) : !isLoading && (
                 <div className="text-center p-8 flex flex-col items-center justify-center">
                   <ImageIcon size={48} className="text-muted mb-4" />
                   <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{t.campus_pages.map_not_defined}</p>

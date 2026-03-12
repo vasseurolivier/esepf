@@ -16,12 +16,12 @@ export default function ProgrammeFootballPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
   if (!t || !t.football_pages) return null;
 
-  const franceImage = settings?.images?.prog_france_bg || "https://picsum.photos/seed/france-winner/1200/800";
-  const coachImage = settings?.images?.prog_coach_training || "https://picsum.photos/seed/coach-training/1000/800";
+  const franceImage = isLoading ? null : settings?.images?.prog_france_bg;
+  const coachImage = isLoading ? null : settings?.images?.prog_coach_training;
 
   const methodologyAxes = [
     { icon: <Target className="text-secondary" />, title: t.football_pages.axes_tech.split(':')[0], desc: t.football_pages.axes_tech.split(':')[1] },
@@ -93,7 +93,9 @@ export default function ProgrammeFootballPage() {
               </ScrollReveal>
             </div>
             <div className="lg:w-1/2 relative min-h-[450px] bg-black">
-              <Image src={franceImage} alt="France Winners" fill className="object-cover" />
+              {franceImage && (
+                <Image src={franceImage} alt="France Winners" fill className="object-cover" />
+              )}
             </div>
           </div>
         </section>
@@ -134,7 +136,9 @@ export default function ProgrammeFootballPage() {
                 </div>
               </ScrollReveal>
               <div className="relative aspect-[4/3] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-black">
-                <Image src={coachImage} alt="Coach Training" fill className="object-cover" />
+                {coachImage && (
+                  <Image src={coachImage} alt="Coach Training" fill className="object-cover" />
+                )}
               </div>
             </div>
           </div>

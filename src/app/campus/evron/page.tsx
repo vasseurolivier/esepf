@@ -19,14 +19,14 @@ export default function CampusEvronPage() {
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
   const { data: settings, isLoading } = useDoc(settingsRef);
   
-  const heroImage = isLoading ? null : (settings?.images?.campus_evron || "https://picsum.photos/seed/evron-hero-v2/1920/1080");
+  const heroImage = isLoading ? null : settings?.images?.campus_evron;
   const mapImage = isLoading ? null : settings?.images?.evron_map;
   
   const infraImages = isLoading ? [] : [
-    settings?.images?.evron_infra_1 || "https://picsum.photos/seed/evron-infra-1/800/600",
-    settings?.images?.evron_infra_2 || "https://picsum.photos/seed/evron-infra-2/800/600",
-    settings?.images?.evron_infra_3 || "https://picsum.photos/seed/evron-infra-3/800/600",
-  ];
+    settings?.images?.evron_infra_1,
+    settings?.images?.evron_infra_2,
+    settings?.images?.evron_infra_3,
+  ].filter(Boolean) as string[];
 
   return (
     <main className="min-h-screen bg-white">

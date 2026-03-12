@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -17,24 +18,25 @@ export default function CompetitionPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const heroImage = settings?.images?.competition_hero || "https://picsum.photos/seed/competition-fff-elite/1920/1080";
-  const actionImage = settings?.images?.competition_action || "https://picsum.photos/seed/soccer-action/800/800";
+  const heroImage = isLoading ? null : settings?.images?.competition_hero;
+  const actionImage = isLoading ? null : settings?.images?.competition_action;
 
   return (
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white">
         <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
-          <Image 
-            src={heroImage}
-            alt="Compétition FFF"
-            fill
-            className="object-cover opacity-30"
-            data-ai-hint="soccer match competitive"
-            priority
-          />
+          {heroImage && (
+            <Image 
+              src={heroImage}
+              alt="Compétition FFF"
+              fill
+              className="object-cover opacity-30"
+              priority
+            />
+          )}
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
               <h1 className="text-5xl md:text-7xl font-headline font-bold mb-4 uppercase tracking-tighter">
@@ -69,7 +71,9 @@ export default function CompetitionPage() {
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={200} className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-muted/20 bg-muted">
-                <Image src={actionImage} alt="Action Football" fill className="object-cover" />
+                {actionImage && (
+                  <Image src={actionImage} alt="Action Football" fill className="object-cover" />
+                )}
               </ScrollReveal>
             </div>
           </div>

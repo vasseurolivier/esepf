@@ -5,7 +5,6 @@ import React, { useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Trophy, GraduationCap, Route, HeartPulse, Globe, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
@@ -19,7 +18,7 @@ export function FootballAcademy() {
   
   const { t } = useTranslation();
   
-  const footballImgUrl = isLoading ? null : (settings?.images?.football_academy || PlaceHolderImages.find(img => img.id === 'football-academy')?.imageUrl || "https://picsum.photos/seed/football-elite/1200/800");
+  const footballImgUrl = isLoading ? null : settings?.images?.football_academy;
 
   const academyFeatures = useMemo(() => {
     if (!t?.academy_features) return [];

@@ -11,26 +11,7 @@ import Image from 'next/image';
 import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 
-const CLUBS = [
-  { name: 'Olympique Lyonnais', hint: 'lyon football logo' },
-  { name: 'AS Monaco', hint: 'monaco football logo' },
-  { name: 'Olympique de Marseille', hint: 'marseille football logo' },
-  { name: 'RC Lens', hint: 'lens football logo' },
-  { name: 'Paris Saint-Germain', hint: 'psg football logo' },
-  { name: 'OGC Nice', hint: 'nice football logo' },
-  { name: 'FC Barcelona', hint: 'barcelona football logo' },
-  { name: 'VfL Wolfsburg', hint: 'wolfsburg football logo' },
-  { name: 'AS Saint-Etienne', hint: 'saint etienne football logo' },
-  { name: 'Amiens SC', hint: 'amiens football logo' },
-  { name: 'Le Mans FC', hint: 'le mans football logo' },
-  { name: 'Paris FC', hint: 'paris fc football logo' },
-  { name: 'Borussia Dortmund', hint: 'dortmund football logo' },
-  { name: 'Arsenal', hint: 'arsenal football logo' },
-  { name: 'Bayern Munich', hint: 'bayern football logo' },
-  { name: 'Inter Milan', hint: 'inter milan football logo' },
-  { name: 'FC Zurich', hint: 'zurich football logo' },
-  { name: 'Real Madrid', hint: 'real madrid football logo' },
-];
+const CLUBS_COUNT = 18;
 
 export default function ReseauClubsPage() {
   const { t } = useTranslation();
@@ -69,18 +50,17 @@ export default function ReseauClubsPage() {
           <div className="container mx-auto px-4">
             <ScrollReveal delay={200} className="max-w-5xl mx-auto">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center">
-                {CLUBS.map((club, idx) => {
-                  const customLogo = isLoading ? null : (settings?.images?.[`club_logo_${idx}`] || `https://picsum.photos/seed/club-logo-${idx}/200/200`);
+                {Array.from({ length: CLUBS_COUNT }).map((_, idx) => {
+                  const customLogo = isLoading ? null : settings?.images?.[`club_logo_${idx}`];
                   
                   return (
-                    <div key={idx} className="relative w-24 h-24 md:w-32 md:h-32 transition-transform duration-300 hover:scale-110 bg-black rounded-xl p-2">
+                    <div key={idx} className="relative w-24 h-24 md:w-32 md:h-32 transition-transform duration-300 hover:scale-110 bg-black rounded-xl p-2 overflow-hidden">
                       {customLogo && (
                         <Image 
                           src={customLogo} 
-                          alt={club.name}
+                          alt={`Club Partner ${idx + 1}`}
                           fill
                           className="object-contain grayscale hover:grayscale-0 transition-all duration-500"
-                          data-ai-hint={club.hint}
                         />
                       )}
                     </div>

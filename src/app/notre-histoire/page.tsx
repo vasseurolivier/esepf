@@ -19,7 +19,7 @@ export default function HistoryPage() {
   const { data: settings, isLoading } = useDoc(settingsRef);
   
   const schoolName = settings?.schoolName || "ESEPF";
-  const mainImage = isLoading ? null : (settings?.images?.history_main || "https://picsum.photos/seed/students-map/800/1000");
+  const mainImage = isLoading ? null : settings?.images?.history_main;
 
   return (
     <FirebaseClientProvider>
@@ -56,7 +56,6 @@ export default function HistoryPage() {
                     fill
                     className="object-cover"
                     priority
-                    data-ai-hint="students group history"
                   />
                 )}
               </ScrollReveal>

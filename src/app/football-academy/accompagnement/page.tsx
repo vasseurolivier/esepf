@@ -15,15 +15,15 @@ export default function AccompagnementPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const heroImage = settings?.images?.support_hero || "https://picsum.photos/seed/kine-sports/1200/800";
+  const heroImage = isLoading ? null : settings?.images?.support_hero;
   
   const team = [
-    { id: 'support_kine', label: t.support_page.kine, default: "https://picsum.photos/seed/kine-1/500/500" },
-    { id: 'support_mental', label: t.support_page.mental, default: "https://picsum.photos/seed/mental-1/500/500" },
-    { id: 'support_medecin', label: t.support_page.medecin, default: "https://picsum.photos/seed/doc-1/500/500" },
-    { id: 'support_physique', label: t.support_page.physique, default: "https://picsum.photos/seed/trainer-1/500/500" },
+    { id: 'support_kine', label: t.support_page.kine },
+    { id: 'support_mental', label: t.support_page.mental },
+    { id: 'support_medecin', label: t.support_page.medecin },
+    { id: 'support_physique', label: t.support_page.physique },
   ];
 
   return (
@@ -33,14 +33,15 @@ export default function AccompagnementPage() {
         
         <section className="relative min-h-[600px] flex items-center overflow-hidden mb-24">
           <div className="absolute right-0 top-0 w-full lg:w-3/4 h-full z-0 bg-black">
-            <Image 
-              src={heroImage} 
-              alt="Accompagnement" 
-              fill 
-              className="object-cover"
-              priority
-              data-ai-hint="sports medicine care"
-            />
+            {heroImage && (
+              <Image 
+                src={heroImage} 
+                alt="Accompagnement" 
+                fill 
+                className="object-cover"
+                priority
+              />
+            )}
           </div>
           
           <div className="container mx-auto px-4 relative z-10">
@@ -66,21 +67,26 @@ export default function AccompagnementPage() {
             </ScrollReveal>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-              {team.map((member, idx) => (
-                <ScrollReveal key={member.id} delay={idx * 150} className="flex flex-col items-center group">
-                  <div className="relative w-full aspect-square border border-black mb-4 overflow-hidden bg-black">
-                    <Image 
-                      src={settings?.images?.[member.id] || member.default}
-                      alt={member.label}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                  <h3 className="text-sm md:text-base font-bold text-black uppercase tracking-wide text-center">
-                    {member.label}
-                  </h3>
-                </ScrollReveal>
-              ))}
+              {team.map((member, idx) => {
+                const memberImg = isLoading ? null : settings?.images?.[member.id];
+                return (
+                  <ScrollReveal key={member.id} delay={idx * 150} className="flex flex-col items-center group">
+                    <div className="relative w-full aspect-square border border-black mb-4 overflow-hidden bg-black">
+                      {memberImg && (
+                        <Image 
+                          src={memberImg}
+                          alt={member.label}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                      )}
+                    </div>
+                    <h3 className="text-sm md:text-base font-bold text-black uppercase tracking-wide text-center">
+                      {member.label}
+                    </h3>
+                  </ScrollReveal>
+                );
+              })}
             </div>
           </div>
         </section>

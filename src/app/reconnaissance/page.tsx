@@ -16,9 +16,9 @@ export default function RecognitionPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const heroImage = settings?.images?.recognition_hero || "https://picsum.photos/seed/institution-building/1200/800";
+  const heroImage = isLoading ? null : settings?.images?.recognition_hero;
 
   return (
     <FirebaseClientProvider>
@@ -27,14 +27,15 @@ export default function RecognitionPage() {
         
         <section className="flex flex-col lg:flex-row min-h-[600px] border-b border-muted">
           <div className="lg:w-1/2 relative min-h-[450px] bg-black">
-            <Image 
-              src={heroImage}
-              alt="Institution Building"
-              fill
-              className="object-cover"
-              priority
-              data-ai-hint="classical school building facade"
-            />
+            {heroImage && (
+              <Image 
+                src={heroImage}
+                alt="Institution Building"
+                fill
+                className="object-cover"
+                priority
+              />
+            )}
             <div className="absolute inset-0 bg-primary/10" />
           </div>
 
@@ -49,7 +50,7 @@ export default function RecognitionPage() {
               <h2 className="text-2xl md:text-3xl font-headline font-bold text-primary leading-tight">
                 {t.recognition_page.hero_subtitle}
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-xl m-muted-foreground leading-relaxed">
                 {t.recognition_page.hero_text}
               </p>
 

@@ -17,10 +17,10 @@ export default function IntegrationPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const heroImage = settings?.images?.integration_hero || "https://picsum.photos/seed/integration-v2/1920/1080";
-  const introImage = settings?.images?.integration_intro || "https://picsum.photos/seed/fle-classroom-v2/800/1000";
+  const heroImage = isLoading ? null : settings?.images?.integration_hero;
+  const introImage = isLoading ? null : settings?.images?.integration_intro;
 
   if (!t || !t.formations) {
     return (
@@ -35,14 +35,15 @@ export default function IntegrationPage() {
       <Header />
       <main className="min-h-screen">
         <section className="relative h-[60vh] flex items-center justify-center bg-black overflow-hidden">
-          <Image 
-            src={heroImage}
-            alt="Integration"
-            fill
-            className="object-cover opacity-40"
-            priority
-            data-ai-hint="international students group"
-          />
+          {heroImage && (
+            <Image 
+              src={heroImage}
+              alt="Integration"
+              fill
+              className="object-cover opacity-40"
+              priority
+            />
+          )}
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
               <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">
@@ -82,12 +83,14 @@ export default function IntegrationPage() {
               </ScrollReveal>
               
               <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-black">
-                <Image 
-                  src={introImage}
-                  alt="Classroom"
-                  fill
-                  className="object-cover"
-                />
+                {introImage && (
+                  <Image 
+                    src={introImage}
+                    alt="Classroom"
+                    fill
+                    className="object-cover"
+                  />
+                )}
               </div>
             </div>
           </div>

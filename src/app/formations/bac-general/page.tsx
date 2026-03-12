@@ -20,10 +20,10 @@ export default function BacGeneralPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const heroImage = settings?.images?.bac_gen_hero || "https://picsum.photos/seed/bac-gen-hero/1920/1080";
-  const introImage = settings?.images?.bac_gen_intro || "https://picsum.photos/seed/study-gen/800/600";
+  const heroImage = isLoading ? null : settings?.images?.bac_gen_hero;
+  const introImage = isLoading ? null : settings?.images?.bac_gen_intro;
 
   const content = t.lycee_page.bac_gen;
 
@@ -32,14 +32,15 @@ export default function BacGeneralPage() {
       <Header />
       <main className="min-h-screen bg-white">
         <section className="relative h-[65vh] flex items-center justify-center bg-black overflow-hidden">
-          <Image 
-            src={heroImage}
-            alt="Bac Général"
-            fill
-            className="object-cover opacity-40"
-            priority
-            data-ai-hint="prestigious library university"
-          />
+          {heroImage && (
+            <Image 
+              src={heroImage}
+              alt="Bac Général"
+              fill
+              className="object-cover opacity-40"
+              priority
+            />
+          )}
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
               <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">
@@ -120,12 +121,14 @@ export default function BacGeneralPage() {
               </ScrollReveal>
               
               <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl bg-black group">
-                <Image 
-                  src={introImage}
-                  alt="Languages and Cultures"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+                {introImage && (
+                  <Image 
+                    src={introImage}
+                    alt="Languages and Cultures"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8">
                   <p className="text-white font-bold italic text-lg leading-tight">
