@@ -13,25 +13,27 @@ import Link from 'next/link';
 export function Hero() {
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
   
   const { t } = useTranslation();
   
-  // Utilisation immédiate du placeholder, mise à jour si settings chargé
-  const heroImgUrl = settings?.images?.hero_home || PlaceHolderImages.find(img => img.id === 'hero-school')?.imageUrl || "https://picsum.photos/seed/espf-hero/1920/1080";
+  // On n'affiche aucune image tant que les réglages ne sont pas chargés pour éviter le flash
+  const heroImgUrl = isLoading ? null : (settings?.images?.hero_home || PlaceHolderImages.find(img => img.id === 'hero-school')?.imageUrl || "https://picsum.photos/seed/espf-hero/1920/1080");
 
   return (
     <section className="relative h-[80vh] md:h-[85vh] min-h-[500px] md:min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
-        <Image
-          src={heroImgUrl}
-          alt="Hero Background"
-          fill
-          className="object-cover animate-in fade-in duration-700"
-          priority
-          sizes="100vw"
-          quality={90}
-        />
+        {heroImgUrl && (
+          <Image
+            src={heroImgUrl}
+            alt="Hero Background"
+            fill
+            className="object-cover animate-in fade-in duration-700"
+            priority
+            sizes="100vw"
+            quality={90}
+          />
+        )}
       </div>
 
       <div className="relative z-10 container mx-auto px-6 text-center text-white">

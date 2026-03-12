@@ -16,10 +16,10 @@ export default function HistoryPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
   
   const schoolName = settings?.schoolName || "ESEPF";
-  const mainImage = settings?.images?.history_main || "https://picsum.photos/seed/students-map/800/1000";
+  const mainImage = isLoading ? null : (settings?.images?.history_main || "https://picsum.photos/seed/students-map/800/1000");
 
   return (
     <FirebaseClientProvider>
@@ -49,14 +49,16 @@ export default function HistoryPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={200} className="relative aspect-[4/5] rounded-[3rem] overflow-hidden bg-black shadow-2xl">
-                <Image 
-                  src={mainImage}
-                  alt="Students"
-                  fill
-                  className="object-cover"
-                  priority
-                  data-ai-hint="students group history"
-                />
+                {mainImage && (
+                  <Image 
+                    src={mainImage}
+                    alt="Students"
+                    fill
+                    className="object-cover"
+                    priority
+                    data-ai-hint="students group history"
+                  />
+                )}
               </ScrollReveal>
             </div>
           </div>

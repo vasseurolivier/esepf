@@ -17,12 +17,12 @@ export default function CampusEvronPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
   
-  const heroImage = settings?.images?.campus_evron || "https://picsum.photos/seed/evron-hero-v2/1920/1080";
-  const mapImage = settings?.images?.evron_map;
+  const heroImage = isLoading ? null : (settings?.images?.campus_evron || "https://picsum.photos/seed/evron-hero-v2/1920/1080");
+  const mapImage = isLoading ? null : settings?.images?.evron_map;
   
-  const infraImages = [
+  const infraImages = isLoading ? [] : [
     settings?.images?.evron_infra_1 || "https://picsum.photos/seed/evron-infra-1/800/600",
     settings?.images?.evron_infra_2 || "https://picsum.photos/seed/evron-infra-2/800/600",
     settings?.images?.evron_infra_3 || "https://picsum.photos/seed/evron-infra-3/800/600",
@@ -32,14 +32,16 @@ export default function CampusEvronPage() {
     <main className="min-h-screen bg-white">
       <Header />
       <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
-        <Image 
-          src={heroImage}
-          alt="Campus Evron"
-          fill
-          className="object-cover opacity-60"
-          priority
-          sizes="100vw"
-        />
+        {heroImage && (
+          <Image 
+            src={heroImage}
+            alt="Campus Evron"
+            fill
+            className="object-cover opacity-60"
+            priority
+            sizes="100vw"
+          />
+        )}
         <div className="relative z-10 text-center text-white container px-4">
           <ScrollReveal>
             <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.campus_pages.evron_hero}</h1>
@@ -88,7 +90,7 @@ export default function CampusEvronPage() {
                     />
                   </div>
                 </div>
-              ) : (
+              ) : !isLoading && (
                 <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-3xl m-8 shadow-inner w-full flex flex-col items-center justify-center">
                   <ImageIcon size={48} className="text-muted mb-4" />
                   <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{t.campus_pages.map_not_defined}</p>

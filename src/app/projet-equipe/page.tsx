@@ -16,12 +16,12 @@ export default function TeamPage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
-  const projectHero = settings?.images?.team_project_hero || "https://picsum.photos/seed/esepf-team-hero/1920/1080";
-  const teamMember1 = settings?.images?.team_member_1 || "https://picsum.photos/seed/member-1/500/500";
-  const teamMember2 = settings?.images?.team_member_2 || "https://picsum.photos/seed/member-2/500/500";
-  const teamMember3 = settings?.images?.team_member_3 || "https://picsum.photos/seed/member-3/500/500";
+  const projectHero = isLoading ? null : (settings?.images?.team_project_hero || "https://picsum.photos/seed/esepf-team-hero/1920/1080");
+  const teamMember1 = isLoading ? null : (settings?.images?.team_member_1 || "https://picsum.photos/seed/member-1/500/500");
+  const teamMember2 = isLoading ? null : (settings?.images?.team_member_2 || "https://picsum.photos/seed/member-2/500/500");
+  const teamMember3 = isLoading ? null : (settings?.images?.team_member_3 || "https://picsum.photos/seed/member-3/500/500");
 
   const members = [
     { name: t.team_page.member1_name, role: t.team_page.member1_role, img: teamMember1 },
@@ -43,13 +43,15 @@ export default function TeamPage() {
         
         <section className="flex flex-col lg:flex-row min-h-[700px]">
           <div className="lg:w-[45%] bg-[#1a3d2f] p-12 lg:p-24 flex flex-col justify-center items-start relative overflow-hidden">
-            <Image 
-              src={projectHero}
-              alt="Project Hero"
-              fill
-              className="object-cover opacity-20"
-              priority
-            />
+            {projectHero && (
+              <Image 
+                src={projectHero}
+                alt="Project Hero"
+                fill
+                className="object-cover opacity-20"
+                priority
+              />
+            )}
             <ScrollReveal className="relative z-10 w-full">
               <span className="text-secondary font-bold uppercase tracking-[0.4em] text-xs mb-4 block">- {t.common.vision_2026} -</span>
               <h1 className="text-6xl md:text-8xl font-headline font-bold text-white mb-12 tracking-tighter uppercase leading-none">
@@ -114,7 +116,9 @@ export default function TeamPage() {
               {members.map((member, i) => (
                 <ScrollReveal key={i} delay={i * 150} className="text-center group">
                   <div className="relative w-64 h-64 mx-auto mb-8 rounded-[3rem] overflow-hidden border-4 border-white shadow-2xl group-hover:translate-y-[-10px] transition-all duration-500 bg-black">
-                    <Image src={member.img} alt={member.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                    {member.img && (
+                      <Image src={member.img} alt={member.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                    )}
                   </div>
                   <h3 className="text-2xl font-headline font-bold text-black uppercase tracking-tight">{member.name}</h3>
                   <p className="text-secondary font-bold text-sm mt-2 uppercase tracking-widest">{member.role}</p>
