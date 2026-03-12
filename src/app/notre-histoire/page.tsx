@@ -49,7 +49,7 @@ export default function HistoryPage() {
                 </div>
               </ScrollReveal>
 
-              <ScrollReveal delay={200} className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl bg-muted">
+              <ScrollReveal delay={200} className="relative aspect-[4/5] rounded-[3rem] overflow-hidden bg-black shadow-2xl">
                 <Image 
                   src={mainImage}
                   alt="Students"

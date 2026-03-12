@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -32,13 +33,14 @@ export default function CampusTullePage() {
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen">
-        <section className="relative h-[70vh] flex items-center justify-center bg-primary overflow-hidden">
+        <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
           <Image 
             src={heroImage}
             alt="Campus Sainte-Tulle"
             fill
             className="object-cover opacity-60"
             data-ai-hint="sunny campus building"
+            priority
           />
           <div className="relative z-10 text-center text-white container px-4">
             <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.campus_pages.tulle_hero}</h1>
@@ -63,7 +65,7 @@ export default function CampusTullePage() {
                   <p className="text-sm text-muted-foreground">Sainte-Tulle bénéficie d'un climat exceptionnel toute l'année, idéal pour la pratique sportive intensive en plein air.</p>
                 </div>
               </ScrollReveal>
-              <ScrollReveal delay={200} className="relative aspect-square bg-muted rounded-3xl overflow-hidden flex items-center justify-center border-2 border-dashed border-primary/10">
+              <ScrollReveal delay={200} className="relative aspect-square bg-black rounded-3xl overflow-hidden flex items-center justify-center border-2 border-dashed border-primary/10">
                 {mapImage ? (
                   <div className="relative w-full h-full p-8">
                     <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-white border border-muted">
@@ -98,7 +100,7 @@ export default function CampusTullePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
               {infraImages.map((img, i) => (
-                <ScrollReveal key={i} delay={i * 100} className="relative group h-64 rounded-3xl overflow-hidden shadow-lg">
+                <ScrollReveal key={i} delay={i * 100} className="relative group h-64 rounded-3xl overflow-hidden bg-black shadow-lg">
                   <Image src={img} alt="Campus" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                 </ScrollReveal>
               ))}

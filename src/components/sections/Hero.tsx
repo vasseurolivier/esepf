@@ -20,7 +20,7 @@ export function Hero() {
   const heroImgUrl = settings?.images?.hero_home || (!settingsLoading ? PlaceHolderImages.find(img => img.id === 'hero-school')?.imageUrl : null);
 
   return (
-    <section className="relative h-[80vh] md:h-[85vh] min-h-[500px] md:min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-primary">
+    <section className="relative h-[80vh] md:h-[85vh] min-h-[500px] md:min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
         {heroImgUrl && (
           <Image
@@ -29,9 +29,9 @@ export function Hero() {
             fill
             className="object-cover animate-in fade-in duration-700"
             priority
+            quality={90}
           />
         )}
-        {/* Film de couleur retiré pour laisser la photo claire */}
       </div>
 
       <div className="relative z-10 container mx-auto px-6 text-center text-white">

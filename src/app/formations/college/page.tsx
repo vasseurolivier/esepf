@@ -31,7 +31,7 @@ export default function CollegePage() {
       <Header />
       <main className="min-h-screen bg-[#fdfaf5]">
         {/* Hero Section */}
-        <section className="relative h-[70vh] flex items-center justify-center bg-primary overflow-hidden">
+        <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
           <Image 
             src={heroImage}
             alt="Collège ESEPF"

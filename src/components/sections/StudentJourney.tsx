@@ -77,7 +77,7 @@ export function StudentJourney() {
 
   return (
     <>
-      <div className="w-full h-[250px] md:h-[450px] relative overflow-hidden bg-primary">
+      <div className="w-full h-[250px] md:h-[450px] relative overflow-hidden bg-black">
         {panImgUrl && (
           <Image
             src={panImgUrl}

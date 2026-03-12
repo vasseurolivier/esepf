@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -32,7 +33,7 @@ export default function CampusEvronPage() {
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen">
-        <section className="relative h-[70vh] flex items-center justify-center bg-primary overflow-hidden">
+        <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
           <Image 
             src={heroImage}
             alt="Campus Evron"
@@ -76,7 +77,7 @@ export default function CampusEvronPage() {
                 </div>
               </ScrollReveal>
               
-              <ScrollReveal delay={200} className="relative aspect-square bg-muted/30 rounded-[3rem] overflow-hidden flex items-center justify-center border-2 border-dashed border-primary/10">
+              <ScrollReveal delay={200} className="relative aspect-square bg-black rounded-[3rem] overflow-hidden flex items-center justify-center border-2 border-dashed border-primary/10">
                 {mapImage ? (
                   <div className="relative w-full h-full p-8">
                     <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-white border border-muted">
@@ -111,7 +112,7 @@ export default function CampusEvronPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
               {infraImages.map((img, i) => (
-                <ScrollReveal key={i} delay={i * 100} className="relative group rounded-[2rem] overflow-hidden shadow-xl bg-white aspect-video">
+                <ScrollReveal key={i} delay={i * 100} className="relative group rounded-[2rem] overflow-hidden bg-black shadow-xl aspect-video">
                   <Image src={img} alt="Campus Infrastructure" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                 </ScrollReveal>
               ))}

@@ -56,7 +56,7 @@ export function Campuses() {
           {campuses.map((campus, idx) => (
             <ScrollReveal key={idx} delay={idx * 150}>
               <Link href={campus.href} className="group relative block overflow-hidden rounded-[2.5rem] shadow-lg hover:shadow-2xl transition-all duration-500 bg-white border border-white h-[400px] md:h-auto">
-                <div className="relative h-full md:h-80 w-full overflow-hidden bg-muted">
+                <div className="relative h-full md:h-80 w-full overflow-hidden bg-black">
                   {campus.image && (
                     <Image
                       src={campus.image}

@@ -72,7 +72,7 @@ export function FootballAcademy() {
             </Link>
           </div>
 
-          <div className="lg:w-1/2 relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl bg-muted">
+          <div className="lg:w-1/2 relative h-[600px] w-full rounded-3xl overflow-hidden bg-black shadow-2xl">
             {footballImgUrl && (
               <Image
                 src={footballImgUrl}

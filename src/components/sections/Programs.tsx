@@ -91,7 +91,7 @@ export function Programs() {
               <TabsContent key={prog.id} value={prog.id} className="focus-visible:outline-none">
                 <ScrollReveal>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white p-8 rounded-3xl shadow-xl">
-                    <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-inner">
+                    <div className="relative h-[400px] w-full rounded-2xl overflow-hidden bg-black shadow-inner">
                       {imgData && (
                         <Image
                           src={imgData.imageUrl}
