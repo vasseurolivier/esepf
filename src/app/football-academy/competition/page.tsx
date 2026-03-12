@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -118,7 +117,7 @@ export default function CompetitionPage() {
                 </div>
                 <div className="lg:col-span-5 flex justify-center lg:justify-end relative z-10">
                   <Link href="/inscription">
-                    <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-10 px-12 rounded-full text-xl shadow-xl transition-all hover:scale-105 uppercase tracking-widest">
+                    <Button className="bg-secondary hover:bg-secondary/90 text-white font-bold py-5 px-8 rounded-full text-sm shadow-xl transition-all hover:scale-105 uppercase tracking-widest">
                       {t.common.apply}
                     </Button>
                   </Link>
