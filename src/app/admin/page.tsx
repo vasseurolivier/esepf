@@ -276,7 +276,7 @@ export default function AdminPage() {
                         <Input value={logoUrl} onChange={(e) => setLogoUrl(e.target.value)} placeholder="https://..." className="mt-1 rounded-xl" />
                       </div>
                     </div>
-                    <div className="bg-muted/50 rounded-2xl flex items-center justify-center p-4 border-2 border-dashed border-muted min-h-32">
+                    <div className="bg-white rounded-2xl flex items-center justify-center p-4 border-2 border-dashed border-muted min-h-32 shadow-inner">
                       {logoUrl ? <img src={logoUrl} alt="Logo" className="max-h-24 object-contain" /> : <ImageIcon size={48} className="text-muted" />}
                     </div>
                   </div>
@@ -309,11 +309,11 @@ export default function AdminPage() {
                                 <Label className="font-bold text-[10px] uppercase text-primary">{field.label}</Label>
                                 <span className="text-[9px] text-muted-foreground italic">{field.location}</span>
                               </div>
-                              <div className="aspect-video bg-black rounded-xl overflow-hidden mb-2 flex items-center justify-center border border-muted/50">
+                              <div className="aspect-video bg-white rounded-xl overflow-hidden mb-2 flex items-center justify-center border border-muted/50 shadow-inner">
                                 {images[field.id] ? (
                                   <img src={images[field.id]} alt={field.label} className="object-cover w-full h-full" />
                                 ) : (
-                                  <div className="w-full h-full bg-black" />
+                                  <div className="w-full h-full bg-muted/5" />
                                 )}
                               </div>
                               <Input 
@@ -339,11 +339,11 @@ export default function AdminPage() {
                           return (
                             <div key={fieldId} className="space-y-2 p-4 bg-white rounded-xl border border-border">
                               <Label className="text-[9px] font-bold uppercase text-primary">Logo Club {i + 1}</Label>
-                              <div className="aspect-square bg-black rounded-lg overflow-hidden flex items-center justify-center p-4 border border-muted">
+                              <div className="aspect-square bg-white rounded-lg overflow-hidden flex items-center justify-center p-4 border border-muted shadow-inner">
                                 {images[fieldId] ? (
                                   <img src={images[fieldId]} alt={`Club ${i+1}`} className="object-contain w-full h-full" />
                                 ) : (
-                                  <div className="w-full h-full bg-black" />
+                                  <div className="w-full h-full bg-muted/5" />
                                 )}
                               </div>
                               <Input 

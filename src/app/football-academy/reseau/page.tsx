@@ -53,16 +53,16 @@ export default function ReseauClubsPage() {
                   const customLogo = isLoading ? null : settings?.images?.[`club_logo_${idx}`];
                   
                   return (
-                    <div key={idx} className="relative w-32 h-32 md:w-48 md:h-48 transition-transform duration-300 hover:scale-110 bg-black rounded-xl p-4 overflow-hidden border border-muted shadow-sm">
+                    <div key={idx} className="relative w-32 h-32 md:w-48 md:h-48 transition-transform duration-300 hover:scale-110 bg-white rounded-xl p-4 overflow-hidden border border-muted shadow-sm">
                       {customLogo ? (
                         <Image 
                           src={customLogo} 
                           alt={`Club Partner ${idx + 1}`}
                           fill
-                          className="object-contain grayscale hover:grayscale-0 transition-all duration-500 p-4"
+                          className="object-contain transition-all duration-500 p-4"
                         />
                       ) : (
-                        <div className="w-full h-full bg-black" />
+                        <div className="w-full h-full bg-muted/10" />
                       )}
                     </div>
                   );
