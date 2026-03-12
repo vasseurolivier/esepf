@@ -25,6 +25,7 @@ export function ThreeAxes() {
         <ScrollReveal>
           <div className="relative max-w-6xl mx-auto">
             
+            {/* Desktop View */}
             <div className="hidden lg:block relative h-[1100px]">
               
               <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
@@ -48,6 +49,7 @@ export function ThreeAxes() {
                 </div>
               </div>
 
+              {/* Scolarité Box */}
               <div className="absolute top-0 left-0 w-[350px]">
                 <div className="flex flex-col items-start text-left">
                   <div className="flex items-center gap-4 mb-6">
@@ -70,6 +72,7 @@ export function ThreeAxes() {
                 </div>
               </div>
 
+              {/* Football Academy Box */}
               <div className="absolute top-0 right-0 w-[350px] text-right">
                 <div className="flex flex-col items-end">
                   <div className="flex items-center gap-4 mb-6">
@@ -92,6 +95,7 @@ export function ThreeAxes() {
                 </div>
               </div>
 
+              {/* Langues Box */}
               <div className="absolute top-[75%] left-1/2 -translate-x-1/2 w-full max-w-4xl text-center z-30">
                 <div className="flex flex-col items-center">
                   <div className="flex items-center justify-center gap-12 mb-8 w-full">
@@ -123,6 +127,7 @@ export function ThreeAxes() {
               </svg>
             </div>
 
+            {/* Mobile View */}
             <div className="lg:hidden space-y-12">
               <div className="flex flex-col items-center mb-12">
                 <div className="w-40 h-40 rounded-full border-4 border-secondary/10 p-2 bg-white flex items-center justify-center shadow-2xl relative mb-8">
@@ -141,6 +146,7 @@ export function ThreeAxes() {
               </div>
 
               <div className="grid grid-cols-1 gap-8">
+                {/* Mobile Scolarité */}
                 <div className="bg-muted/30 p-8 rounded-[2rem] border border-border shadow-sm">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="bg-secondary/10 p-3 rounded-2xl">
@@ -148,13 +154,14 @@ export function ThreeAxes() {
                     </div>
                     <h3 className="text-xl font-bold text-primary uppercase tracking-wider">{t.axes.scolarite}</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{t.axes.scolarite_desc.substring(0, 150)}...</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{t.axes.scolarite_desc}</p>
                   <Link href="/formations/lycee" className="flex items-center justify-between font-bold text-primary uppercase text-[10px] tracking-widest bg-white p-4 rounded-xl border border-border">
                     {t.axes.lycee_link}
                     <ChevronRight size={14} className="text-secondary" />
                   </Link>
                 </div>
 
+                {/* Mobile Football Academy */}
                 <div className="bg-primary p-8 rounded-[2rem] text-white shadow-xl relative overflow-hidden">
                   <div className="flex items-center gap-4 mb-4 relative z-10">
                     <div className="bg-white/10 p-3 rounded-2xl">
@@ -162,7 +169,7 @@ export function ThreeAxes() {
                     </div>
                     <h3 className="text-xl font-bold uppercase tracking-wider">{t.axes.academy_title}</h3>
                   </div>
-                  <p className="text-sm text-white/70 leading-relaxed mb-6 relative z-10">{t.axes.academy_desc.substring(0, 150)}...</p>
+                  <p className="text-sm text-white/70 leading-relaxed mb-6 relative z-10">{t.axes.academy_desc}</p>
                   <Link href="/football-academy/programme" className="flex items-center justify-between font-bold uppercase text-[10px] tracking-widest bg-white/10 p-4 rounded-xl border border-white/10 relative z-10">
                     {t.axes.elite_prog}
                     <ChevronRight size={14} className="text-secondary" />
@@ -170,16 +177,17 @@ export function ThreeAxes() {
                   <div className="absolute -right-10 -bottom-10 opacity-10"><Trophy size={150} /></div>
                 </div>
 
+                {/* Mobile Langues */}
                 <div className="bg-muted/30 p-8 rounded-[2rem] border border-border shadow-sm">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="bg-secondary/10 p-3 rounded-2xl">
                       <Languages className="text-secondary" size={24} />
                     </div>
                     <h3 className="text-xl font-bold text-primary uppercase tracking-wider">
-                      {t.axes.languages_title.split(' ')[0]}
+                      {t.axes.languages_title}
                     </h3>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{t.axes.languages_desc.substring(0, 150)}...</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{t.axes.languages_desc}</p>
                   <Link href="/formations/langues" className="flex items-center justify-between font-bold text-primary uppercase text-[10px] tracking-widest bg-white p-4 rounded-xl border border-border">
                     {t.sections.three_axes_mobile_languages_btn}
                     <ChevronRight size={14} className="text-secondary" />
