@@ -61,7 +61,7 @@ export default function CampusBazeillesPage() {
                 {t.campus_pages.bazeilles_desc}
               </p>
               <div className="p-6 bg-muted rounded-2xl border border-border">
-                <h4 className="font-bold text-primary mb-2 italic">{t.campus_pages.bazeilles_culture}</h4>
+                <h4 className="font-bold text-primary mb-2 italic">{t.axes.academy_title}</h4>
                 <p className="text-sm text-muted-foreground">{t.campus_pages.bazeilles_culture_desc}</p>
               </div>
             </ScrollReveal>

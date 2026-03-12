@@ -65,7 +65,7 @@ export default function IntegrationPage() {
               <ScrollReveal>
                 <div className="flex items-center gap-2 text-secondary font-bold uppercase tracking-widest mb-4">
                   <Languages size={20} />
-                  FLE / EFL
+                  {t.axes.fle_link} / {t.axes.efl_link}
                 </div>
                 <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.axes.languages_title}</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -87,9 +87,9 @@ export default function IntegrationPage() {
               <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-black">
                 {introImage && (
                   <Image 
-                    src={introImage}
-                    alt="Classroom"
-                    fill
+                    src={introImage} 
+                    alt="Classroom" 
+                    fill 
                     className="object-cover"
                   />
                 )}

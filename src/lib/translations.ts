@@ -93,7 +93,7 @@ export const translations = {
       lang_val: "3",
       lang_lab: "Langues d'enseignement",
       camp_val: "3",
-      camp_lab: "Campus modernes",
+      camp_lab: "Modern Campuses",
       foot_val: "ELITE",
       foot_lab: "Formation Football",
       prog_val: "4",
@@ -126,7 +126,9 @@ export const translations = {
       f5_desc: "Liens directs avec des clubs pro internationaux.",
       f6_title: "ORIENTATION MÉTIERS",
       f6_desc: "Préparation aux carrières sportives et académiques.",
-      cta: "S'INSCRIRE À L'ACADÉMIE"
+      cta: "S'INSCRIRE À L'ACADÉMIE",
+      quote: "Plus qu'une école, une rampe de lancement vers le professionnalisme.",
+      director_label: "Direction Technique"
     },
     sections: {
       campuses: "Nos 3 Campus",
@@ -456,7 +458,7 @@ export const translations = {
         outro: "Il ouvre la voie à des études supérieures telles que les BTS, BUT, licences ou écoles de commerce, et mène à des carrières dans les domaines de la gestion, du marketing, des ressources humaines ou de la finance.",
         luxe_module_title: "Un Module Luxe en Hôtellerie et Restauration pour nos STMG",
         luxe_module_p1: "Dans un monde où l’hôtellerie et la restauration de luxe sont des secteurs en pleine expansion, il est essentiel de préparer nos élèves aux exigences de cette industrie prestigieuse. C’est pourquoi notre Baccalauréat Technologique STMG inclura un module exclusif dédié à l’hôtellerie et à la restauration haut de gamme.",
-        luxe_module_p2: "Ce programme vise à offrir aux élèves une première immersion dans cet univers raffiné, en leur permettant de découvrir les standards de qualité, le service d’excellence et les codes du luxe appliqués à l'accueil, à la gestion et à la relation client. À travers des études de cas concrets, des rencontres avec des professionnels du secteur et des mises en situation, nos élèves développeront des compétences essentielles en management, marketing et gestion hôtelière, tout en cultivant un savoir-être adapté aux attentes de cette industrie exigeante.",
+        luxe_module_p2: "Ce programme vise à offrir aux élèves un première immersion dans cet univers raffiné, en leur permettant de découvrir les standards de qualité, le service d’excellence et les codes du luxe appliqués à l'accueil, à la gestion et à la relation client. À travers des études de cas concrets, des rencontres avec des professionnels du secteur et des mises en situation, nos élèves développeront des compétences essentielles en management, marketing et gestion hôtelière, tout en cultivant un savoir-être adapté aux attentes de cette industrie exigeante.",
         luxe_module_p3: "Ce module représente une véritable opportunité pour nos élèves, leur ouvrant les portes de formations spécialisées et de carrières internationales dans le domaine du luxe. Il s’inscrit pleinement dans notre commitment à proposer une éducation innovante et professionnalisante, en phase avec les réalités du marché du travail et les aspirations de nos étudiants.",
         campuses: "Tous les campus",
         duration: "3 ans (4 ans pour les allophones)",
@@ -496,7 +498,7 @@ export const translations = {
       axes_phys: "Physique : Développement athlétique sécurisé, endurance et explosivité adaptée.",
       axes_ment: "Mental : Accompagnement psychologique, gestion de la pression et esprit de gagne.",
       coaches_title: "NOS COACHS CERTIFIÉS",
-      coaches_text: "Nos coachs sont tous diplômés de la FFF ou de l'UEFA (Pro, A, B), garantissant une expertise pédagogique et sportive de haut niveau pour un encadrement professionnel quotidien.",
+      coaches_text: "Nos coachs sont tous diplômés de la FFF ou de l'UEFA (Pro, A, B, C), garantissant une expertise pédagogique et sportive de haut niveau pour un encadrement professionnel quotidien.",
       weekly_title: "PROGRAMME HEBDOMADAIRE",
       weekly_intro: "Une semaine type à l'ESEPF s'articule autour de séances quotidiennes de 1h30 à 2h, complétées par des matchs officiels le week-end.",
       weekly_details: "Le programme inclut l'analyse vidéo le lundi, le travail spécifique le mercredi et la préparation de match le vendredi, tout en maintenant un cursus scolaire complet.",
@@ -514,7 +516,14 @@ export const translations = {
       optional: "(OPTIONNEL)",
       desc: "ESPF propose plusieurs formations spécialisées dans les métiers du sport, offrant ainsi à nos élèves la possibilité de se préparer à divers parcours professionnels dans ce secteur. Ces formations leur permettent d'acquérir des compétences pratiques et théoriques, adaptées aux exigences de différents domaines du sport. Elles ouvrent ainsi la voie à des carrières diversifiées, en offrant aux étudiants une large gamme d'opportunités dans des secteurs en pleine expansion.",
       subtitle: "NOS FORMATIONS COMPLÉMENTAIRES",
-      cta: "Pour plus de détails, contactez-nous"
+      cta: "Pour plus de détails, contactez-nous",
+      jobs: {
+        bpjeps: "BPJEPS",
+        coach: "COACH",
+        agent: "AGENT FIFA",
+        referee: "ARBITRE",
+        analyst: "ANALYSTE VIDÉO"
+      }
     },
     sport_etudes_page: {
       title1: "QU'EST-CE QUE LE SPORT-ÉTUDES ?",
@@ -815,7 +824,9 @@ export const translations = {
       f5_desc: "Direct links with international pro clubs.",
       f6_title: "CAREER GUIDANCE",
       f6_desc: "Preparation for sports and academic careers.",
-      cta: "ENROLL IN ACADEMY"
+      cta: "ENROLL IN ACADEMY",
+      quote: "More than a school, a launching pad towards professionalism.",
+      director_label: "Technical Direction"
     },
     sections: {
       campuses: "Our 3 Campuses",
@@ -1185,7 +1196,7 @@ export const translations = {
       axes_phys: "Physical: Safe athletic development and explosion.",
       axes_ment: "Mental: Psychological support and pressure management.",
       coaches_title: "OUR CERTIFIED COACHES",
-      coaches_text: "Our coaches are all graduated from FFF or UEFA, ensuring high-level expertise for daily professional guidance.",
+      coaches_text: "Our coaches are all graduated from FFF or UEFA (Pro, A, B, C), ensuring high-level expertise for daily professional guidance.",
       weekly_title: "WEEKLY PROGRAM",
       weekly_intro: "A typical week at ESEPF centers around daily sessions of 1.5 to 2 hours, plus official matches.",
       weekly_details: "Includes video analysis, specific work and match prep alongside full academics.",
@@ -1203,7 +1214,14 @@ export const translations = {
       optional: "(OPTIONAL)",
       desc: "ESPF offers several specialized formations in sports careers, offering our students the possibility to prepare for various professional paths. These formations allow them to acquire practical and theoretical skills, adapted to the requirements of different sports fields. They thus open the way to diversified careers, offering students a wide range of opportunities in growing sectors.",
       subtitle: "OUR ADDITIONAL TRAINING",
-      cta: "For more details, contact us"
+      cta: "For more details, contact us",
+      jobs: {
+        bpjeps: "BPJEPS",
+        coach: "COACH",
+        agent: "FIFA AGENT",
+        referee: "REFEREE",
+        analyst: "VIDEO ANALYST"
+      }
     },
     sport_etudes_page: {
       title1: "WHAT IS SPORT-STUDY?",
@@ -1504,7 +1522,9 @@ export const translations = {
       f5_desc: "与全球职业俱乐部直接联系。",
       f6_title: "职业指导",
       f6_desc: "为体育与学术职业做好准备。",
-      cta: "立即申请"
+      cta: "立即申请",
+      quote: "不仅仅是一所学校，更是通往职业生涯的发射台。",
+      director_label: "技术指导"
     },
     sections: {
       campuses: "我们的3个校区",
@@ -1835,7 +1855,7 @@ export const translations = {
         bts_desc: "管理 BTS 是两年的培训. 在团队 management、财务 和 营销等领域提供教学。",
         univ_desc: "本科 is a 3-year university course combining theory and practice. 它加强了管理 和 分析技能。",
         bts_list: ["会计管理", "管理支持", "商业运营", "谈判数字化", "中小企业管理", "IT 服务", "保险", "旅游"],
-        bts_jobs: ["营销经理", "产品经理", "销售员", "薪资管理员", "人力资源经理", "财务主管", "资产管理", "顾问"],
+        bts_jobs: ["营销经理", "产品经理", "销售员", "薪资管理员", "人力资源经理", "财务主管", "资产 management", "顾问"],
         univ_list: ["经济管理", "社会经济管理", "管理科学", "法律", "创新管理", "国际贸易", "数字营销"],
         univ_jobs: ["营销经理", "产品经理", "传播主管", "顾问", "人力资源经理", "财务分析师", "销售总监", "项目经理"],
         management_tomorrow: "明天的管理",
@@ -1867,7 +1887,7 @@ export const translations = {
       axes_phys: "体能：安全的运动发展。",
       axes_ment: "心理：压力管理。",
       coaches_title: "资深认证教练",
-      coaches_text: "教练均毕业于 FFF 或 UEFA，提供高水平指导。",
+      coaches_text: "教练均毕业于 FFF 或 UEFA (Pro, A, B, C)，提供高水平指导。",
       weekly_title: "每周计划",
       weekly_intro: "典型周包含每日训练 和 周末官方比赛。",
       weekly_details: "包括视频分析 和 比赛准备。",
@@ -1885,7 +1905,14 @@ export const translations = {
       optional: "(可选)",
       desc: "ESPF 提供体育职业专业培训，为多元化的职业生涯开辟道路。",
       subtitle: "我们的补充培训",
-      cta: "了解详情，请联系我们"
+      cta: "了解详情，请联系我们",
+      jobs: {
+        bpjeps: "BPJEPS 证书",
+        coach: "教练员",
+        agent: "FIFA 经纪人",
+        referee: "裁判员",
+        analyst: "视频分析师"
+      }
     },
     sport_etudes_page: {
       title1: "什么是体育学习？",

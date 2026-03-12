@@ -18,6 +18,7 @@ export function FootballAcademy() {
   
   const { t } = useTranslation();
   
+  const schoolName = settings?.schoolName || "ESEPF";
   const footballImgUrl = isLoading ? null : settings?.images?.football_academy;
 
   const academyFeatures = useMemo(() => {
@@ -85,9 +86,9 @@ export function FootballAcademy() {
             )}
             <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-sm p-6 rounded-2xl border-l-8 border-secondary">
               <p className="text-white font-bold italic">
-                "Plus qu'une école, une rampe de lancement vers le professionnalisme."
+                "{t.academy_features.quote}"
               </p>
-              <p className="text-sm text-white/70 mt-2">— Direction Technique, {settings?.schoolName || "ESEPF"}</p>
+              <p className="text-sm text-white/70 mt-2">— {t.academy_features.director_label}, {schoolName}</p>
             </div>
           </div>
         </ScrollReveal>

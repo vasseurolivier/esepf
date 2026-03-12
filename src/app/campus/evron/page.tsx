@@ -71,7 +71,7 @@ export default function CampusEvronPage() {
                   <p className="text-sm text-muted-foreground">{t.campus_pages.evron_region_desc}</p>
                 </div>
                 <div className="p-6 bg-muted rounded-2xl border border-border">
-                  <h4 className="font-bold text-primary mb-2 italic">Football Academy</h4>
+                  <h4 className="font-bold text-primary mb-2 italic">{t.axes.academy_title}</h4>
                   <p className="text-sm text-muted-foreground">{t.axes.academy_desc.substring(0, 100)}...</p>
                 </div>
               </div>

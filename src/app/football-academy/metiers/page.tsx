@@ -20,11 +20,11 @@ export default function MetiersSportPage() {
   const { data: settings, isLoading } = useDoc(settingsRef);
 
   const metiers = [
-    { id: 'metiers_bpjeps', label: 'BPJEPS' },
-    { id: 'metiers_coach', label: 'COACH' },
-    { id: 'metiers_agent', label: 'AGENT FIFA' },
-    { id: 'metiers_arbitre', label: 'ARBITRE' },
-    { id: 'metiers_analyste', label: 'ANALYSTE VIDÉO' },
+    { id: 'metiers_bpjeps', label: t.metiers_page.jobs.bpjeps },
+    { id: 'metiers_coach', label: t.metiers_page.jobs.coach },
+    { id: 'metiers_agent', label: t.metiers_page.jobs.agent },
+    { id: 'metiers_arbitre', label: t.metiers_page.jobs.referee },
+    { id: 'metiers_analyste', label: t.metiers_page.jobs.analyst },
   ];
 
   return (

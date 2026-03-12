@@ -130,7 +130,7 @@ export default function ProgrammeFootballPage() {
                 <h2 className="text-5xl md:text-6xl font-headline font-bold text-black uppercase tracking-tighter leading-tight">{t.football_pages.coaches_title}</h2>
                 <p className="text-2xl text-muted-foreground leading-relaxed italic border-l-8 border-secondary pl-8">"{t.football_pages.coaches_text}"</p>
                 <div className="space-y-4">
-                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> Diplômes UEFA Pro / A / B</div>
+                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> Diplômes UEFA Pro / A / B / C</div>
                   <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_video} {t.football_pages.axes_ment.split(':')[0]}</div>
                   <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_phys} {t.football_pages.axes_phys.split(':')[0]}</div>
                 </div>
