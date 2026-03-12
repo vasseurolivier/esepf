@@ -87,7 +87,7 @@ export default function ProgrammeFootballPage() {
                 <div className="w-20 h-1.5 bg-secondary rounded-full" />
                 <p className="text-lg leading-relaxed opacity-90">{t.football_pages.france_desc_full}</p>
                 <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-                  <p className="text-sm font-bold uppercase tracking-widest italic mb-2 text-secondary">Inspirations :</p>
+                  <p className="text-sm font-bold uppercase tracking-widest italic mb-2 text-secondary">{t.common.inspirations}</p>
                   <p className="text-base text-white/80">{t.football_pages.france_examples}</p>
                 </div>
               </ScrollReveal>
@@ -131,8 +131,8 @@ export default function ProgrammeFootballPage() {
                 <p className="text-2xl text-muted-foreground leading-relaxed italic border-l-8 border-secondary pl-8">"{t.football_pages.coaches_text}"</p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> Diplômes UEFA Pro / A / B</div>
-                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_video} Quotidienne</div>
-                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_phys} Spécifique</div>
+                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_video} {t.football_pages.axes_ment.split(':')[0]}</div>
+                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_phys} {t.football_pages.axes_phys.split(':')[0]}</div>
                 </div>
               </ScrollReveal>
               <div className="relative aspect-[4/3] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-black">

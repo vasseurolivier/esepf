@@ -54,7 +54,7 @@ export function FrenchSystemSchema({ bacType }: FrenchSystemSchemaProps) {
             <ArrowDown className="text-muted-foreground md:hidden" />
             <div className="bg-muted p-4 rounded-xl border border-border min-w-[200px] text-center">
               <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
-                {t.common.jobs_prefix} (Niveau Bac)
+                {t.outlets_labels.jobs_title} ({t.recognition_page.bac_label})
               </span>
             </div>
           </div>
@@ -81,13 +81,13 @@ export function FrenchSystemSchema({ bacType }: FrenchSystemSchemaProps) {
               {/* Licence Box */}
               <div className="relative bg-[#f5f1e8] p-8 rounded-2xl border border-[#d1c7b7] shadow-md w-full text-center group hover:scale-[1.02] transition-transform">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-4 py-1 rounded-full shadow-sm">
-                  BAC +3
+                  {t.outlets_labels.bac_plus_3}
                 </div>
-                <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-1 mt-2">UNIVERSITÉS</h4>
-                <p className="text-sm italic text-muted-foreground mb-4">Licences</p>
+                <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-1 mt-2">{t.outlets_labels.univ_title}</h4>
+                <p className="text-sm italic text-muted-foreground mb-4">{t.outlets_labels.licences}</p>
                 <Flags />
                 <div className="bg-white/50 p-2 rounded-lg border border-border inline-block">
-                   <span className="text-[9px] font-bold uppercase text-primary">{t.common.jobs_prefix}</span>
+                   <span className="text-[9px] font-bold uppercase text-primary">{t.outlets_labels.jobs_title}</span>
                 </div>
               </div>
 
@@ -96,13 +96,13 @@ export function FrenchSystemSchema({ bacType }: FrenchSystemSchemaProps) {
               {/* Master Box */}
               <div className="relative bg-[#f5f1e8] p-8 rounded-2xl border border-[#d1c7b7] shadow-md w-full text-center group hover:scale-[1.02] transition-transform">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] font-bold px-4 py-1 rounded-full shadow-sm">
-                  BAC +5
+                  {t.outlets_labels.bac_plus_5}
                 </div>
-                <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-1 mt-2">UNIVERSITÉS</h4>
-                <p className="text-sm italic text-muted-foreground mb-4">Masters</p>
+                <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-1 mt-2">{t.outlets_labels.univ_title}</h4>
+                <p className="text-sm italic text-muted-foreground mb-4">{t.outlets_labels.masters}</p>
                 <Flags />
                 <div className="bg-white/50 p-2 rounded-lg border border-border inline-block">
-                   <span className="text-[9px] font-bold uppercase text-primary">{t.common.jobs_prefix}</span>
+                   <span className="text-[9px] font-bold uppercase text-primary">{t.outlets_labels.jobs_title}</span>
                 </div>
               </div>
             </div>
@@ -111,12 +111,12 @@ export function FrenchSystemSchema({ bacType }: FrenchSystemSchemaProps) {
             <div className="flex flex-col items-center justify-start">
               <div className="relative bg-[#f5f1e8] p-8 rounded-2xl border border-[#d1c7b7] shadow-md w-full text-center group hover:scale-[1.02] transition-transform">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] font-bold px-4 py-1 rounded-full shadow-sm">
-                  BAC +2
+                  {t.outlets_labels.bac_plus_2}
                 </div>
-                <h4 className="text-2xl font-headline font-bold text-black uppercase tracking-widest mb-2 mt-2">BTS</h4>
-                <p className="text-sm italic text-muted-foreground mb-4">Brevet de Technicien Supérieur</p>
+                <h4 className="text-2xl font-headline font-bold text-black uppercase tracking-widest mb-2 mt-2">{t.outlets_labels.bts_title}</h4>
+                <p className="text-sm italic text-muted-foreground mb-4">{t.outlets_labels.bts_full}</p>
                 <div className="bg-white/50 p-2 rounded-lg border border-border inline-block">
-                   <span className="text-[9px] font-bold uppercase text-primary">{t.common.jobs_prefix}</span>
+                   <span className="text-[9px] font-bold uppercase text-primary">{t.outlets_labels.jobs_title}</span>
                 </div>
               </div>
             </div>

@@ -35,7 +35,7 @@ export default function IntegrationPage() {
       <Header />
       <main className="min-h-screen">
         <section className="relative h-[60vh] flex items-center justify-center bg-black overflow-hidden">
-          {heroImage && (
+          {heroImage ? (
             <Image 
               src={heroImage}
               alt="Integration"
@@ -43,6 +43,8 @@ export default function IntegrationPage() {
               className="object-cover opacity-40"
               priority
             />
+          ) : (
+            <div className="absolute inset-0 bg-black" />
           )}
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
@@ -73,7 +75,7 @@ export default function IntegrationPage() {
                   {[1, 2, 3, 4].map((i) => (
                     <div key={i} className="flex items-center gap-3 text-primary font-medium p-3 bg-muted rounded-xl border-l-4 border-secondary">
                       <CheckCircle2 size={18} className="text-secondary" />
-                      <span>{t.common.excellence} - Step {i}</span>
+                      <span>{t.common.excellence} - {t.formations.integration_step} {i}</span>
                     </div>
                   ))}
                 </div>
@@ -100,9 +102,9 @@ export default function IntegrationPage() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {[
-                { icon: <Heart size={40} />, title: "Care", desc: t.axes.scolarite_desc },
-                { icon: <Users size={40} />, title: "Immersion", desc: t.axes.languages_desc },
-                { icon: <Compass size={40} />, title: "Guidance", desc: t.sections.orientation_desc }
+                { icon: <Heart size={40} />, title: t.formations.integration_care, desc: t.axes.scolarite_desc },
+                { icon: <Users size={40} />, title: t.formations.integration_immersion, desc: t.axes.languages_desc },
+                { icon: <Compass size={40} />, title: t.formations.integration_guidance, desc: t.sections.orientation_desc }
               ].map((card, i) => (
                 <ScrollReveal key={i} delay={i * 150} className="bg-white p-10 rounded-[3rem] shadow-xl border border-border/50 text-center">
                   <div className="inline-flex p-5 rounded-3xl bg-primary/5 text-primary mb-6 shadow-inner">{card.icon}</div>
