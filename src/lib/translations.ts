@@ -124,7 +124,7 @@ export const translations = {
       tulle: "Sainte-Tulle, Provence"
     },
     formations: {
-      integration_title: "CLASSE D'INTEGRATION",
+      integration_title: "CLASSE d'INTEGRATION",
       integration_sub: "Un tremplin vers la réussite dans le système éducatif français.",
     },
     outlets_labels: {
@@ -188,7 +188,7 @@ export const translations = {
     team_page: {
       title: "Le Projet",
       subtitle: "Le Programme Élite Football & Scolarité ESEPF",
-      p1: "À l'ESEPF, nous proposons aux jeunes de 11 à 19 ans un projet double exceptionnel.",
+      p1: "À l'ESEPF, we propose aux jeunes de 11 à 19 ans un projet double exceptionnel.",
       p2: "En parallèle, les élèves suivent un excellent cursus scolaire français (de la 6ème à la Terminale).",
       p3: "Ce programme unique forge aussi bien l'athlète que l'élève, en inculquant discipline, rigueur et ambition.",
       team_title: "L'ÉQUIPE",
@@ -309,7 +309,17 @@ export const translations = {
       label2_1: "Football",
       label2_2: "Basketball",
       label2_2_sub: "(Bientôt disponible)",
-      text2: "Notre établissement propose un programme sport-études axé sur le football, offrant des entraînements intensifs, des séances techniques, des matchs, et un accompagnement individualisé pour développer les compétences sportives et humaines des élèves. Prochainement, nous élargirons notre offer avec un programme dédié au basketball, permettant aux passionnés de ce sport de bénéficier de la même qualité de formation et d'encadrement. Ces programmes sont conçus pour allier performance sportive et réussite scolaire, tout en cultivant des valeurs comme l'esprit d'équipe et la discipline."
+      text2: "Notre établissement propose un programme sport-études axé sur le football, offrant des entraînements intensifs, des séances techniques, des matchs, et un accompagnement individualisé pour développer les compétences sportives et humaines des élèves. Prochainement, nous élargirons notre offer avec un programme dédié au basketball, permettant aux passionnés de ce sport de bénéficier de la même qualité de formation et d'encadrement.",
+      day_title: "UNE JOURNÉE TYPE À L'ESEPF",
+      day_desc: "Le rythme d'un athlète est exigeant et demande une organisation rigoureuse entre les cours et les terrains.",
+      schedule: [
+        { time: "08:30 - 12:30", activity: "Cours académiques" },
+        { time: "12:30 - 14:00", activity: "Déjeuner & Repos" },
+        { time: "14:00 - 16:00", activity: "Cours ou Étude dirigée" },
+        { time: "16:30 - 18:30", activity: "Entraînement Technique / Tactique" },
+        { time: "19:00 - 20:00", activity: "Dîner" },
+        { time: "20:00 - 21:30", activity: "Étude et temps calme" }
+      ]
     },
     reseau_page: {
       title: "Un Réseau de Clubs pour Révéler Nos Talents",
@@ -735,7 +745,17 @@ export const translations = {
       label2_1: "Football",
       label2_2: "Basketball",
       label2_2_sub: "(Coming soon)",
-      text2: "Our establishment offers a sport-study program focused on football, offering intensive training and individualized support. Soon, we will expand our offer with a program dedicated to basketball."
+      text2: "Our establishment offers a sport-study program focused on football, offering intensive training and individualized support. Soon, we will expand our offer with a program dedicated to basketball.",
+      day_title: "A TYPICAL DAY AT ESEPF",
+      day_desc: "The rhythm of an athlete is demanding and requires rigorous organization between classes and fields.",
+      schedule: [
+        { time: "08:30 - 12:30", activity: "Academic Classes" },
+        { time: "12:30 - 14:00", activity: "Lunch & Rest" },
+        { time: "14:00 - 16:00", activity: "Classes or Study Hall" },
+        { time: "16:30 - 18:30", activity: "Technical / Tactical Training" },
+        { time: "19:00 - 20:00", activity: "Dinner" },
+        { time: "20:00 - 21:30", activity: "Study & Relax Time" }
+      ]
     },
     reseau_page: {
       title: "A Club Network to Reveal Our Talents",
@@ -1156,12 +1176,22 @@ export const translations = {
       title1: "什么是体育学习？",
       label1_1: "日常体育练习",
       label1_2: "调整后的学业",
-      text1: "体育学习是一项教育计划，允许年轻人将学业与密集的体育练习结合起来。",
+      text1: "体育学习是一项教育计划，允许年轻人将学业与密集的体育练习结合起来。专为满足培训中运动员的需求而设计，它提供了一个结合了学术课程和常规训练的调整时间表。该系统旨在支持学生的双重项目，在促进其学业成功的同时，让他们在体育学科中取得进步并表现卓越。",
       title2: "有哪些运动项目？",
       label2_1: "足球",
-      label2_2: "Basketball",
+      label2_2: "篮球",
       label2_2_sub: "(即将推出)",
-      text2: "我们机构提供专注于足球的体育学习计划。不久，我们将通过篮球计划扩大我们的服务。"
+      text2: "我们机构提供专注于足球的体育学习计划，提供密集的训练、技术会议、比赛和个性化的后续行动，以培养学生的体育和人文技能。不久，我们将通过篮球计划扩大我们的服务，让这项运动的爱好者能够从同样高质量的培训和指导中受益。这些计划旨在将体育表现与学业成功相结合，同时培养团队精神和纪律等价值观。",
+      day_title: "ESEPF 的典型一天",
+      day_desc: "运动员的节奏要求很高，需要课程和场地之间的严格组织。",
+      schedule: [
+        { time: "08:30 - 12:30", activity: "学术课程" },
+        { time: "12:30 - 14:00", activity: "午餐与休息" },
+        { time: "14:00 - 16:00", activity: "课程或指导研究" },
+        { time: "16:30 - 18:30", activity: "技术/战术训练" },
+        { time: "19:00 - 20:00", activity: "晚餐" },
+        { time: "20:00 - 21:30", activity: "研究与安静时间" }
+      ]
     },
     reseau_page: {
       title: "建立俱乐部网络，挖掘人才潜能",
@@ -1246,7 +1276,7 @@ export const translations = {
       campus_tulle: "圣蒂勒校区",
       faq_title: "常见问题",
       faq_q1: "如何申请？",
-      faq_a1: "Complete the online enrollment file.",
+      faq_a1: "填写在线注册文件。",
       faq_q2: "足球学院标准？",
       faq_a2: "技术水平和学业表现。",
       faq_q3: "接收国际生？",

@@ -87,6 +87,8 @@ const IMAGE_CATEGORIES = [
       { id: 'prog_france_bg', label: 'Fond France', location: 'Section Terre de Football' },
       { id: 'prog_coach_training', label: 'Photo Coachs', location: 'Section Nos Coachs' },
       { id: 'sport_etudes_bg', label: 'Fond Sport-Études', location: 'Arrière-plan page Sport-Études' },
+      { id: 'sport_etudes_football', label: 'Photo Football SE', location: 'Page Sport-Études' },
+      { id: 'sport_etudes_basketball', label: 'Photo Basket SE', location: 'Page Sport-Études' },
       { id: 'metiers_bpjeps', label: 'Photo BPJEPS', location: 'Page Métiers du Sport' },
       { id: 'metiers_coach', label: 'Photo Coach', location: 'Page Métiers du Sport' },
       { id: 'metiers_agent', label: 'Photo Agent FIFA', location: 'Page Métiers du Sport' },
