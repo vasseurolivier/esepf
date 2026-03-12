@@ -1479,7 +1479,7 @@ export const translations = {
       championships: "法国官方锦标赛",
       elite_prog: "精英足球计划",
       languages_title: "外语培训",
-      languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法语母语学生或希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解和个人进步。教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功和国际化开放。",
+      languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法语母语学生或希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解 and 个人进步。教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功 and 国际化开放。",
       fle_link: "法语对外汉语 (FLE)",
       efl_link: "英语对外汉语 (EFL)"
     },
@@ -1611,7 +1611,7 @@ export const translations = {
       performance_school: "学术跟踪",
       performance_phys: "体能准备",
       official_title: "联邦和官方",
-      official_subtitle: "特权访问地区和国家精英",
+      official_subtitle: "优先进入地区和国家精英阶层",
       quote: "面对最好的法国球队，塑造性格并追求技术卓越。",
       hexagonal_title: "法国本土足球的现实"
     },

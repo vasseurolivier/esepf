@@ -28,15 +28,17 @@ export default function CompetitionPage() {
       <Header />
       <main className="min-h-screen bg-white">
         <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
-          {heroImage && (
-            <Image 
-              src={heroImage}
-              alt="Compétition FFF"
-              fill
-              className="object-cover opacity-30"
-              priority
-            />
-          )}
+          <div className="absolute inset-0 z-0 bg-black">
+            {heroImage && (
+              <Image 
+                src={heroImage}
+                alt="Compétition FFF"
+                fill
+                className="object-cover opacity-30"
+                priority
+              />
+            )}
+          </div>
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
               <h1 className="text-5xl md:text-7xl font-headline font-bold mb-4 uppercase tracking-tighter">
@@ -56,21 +58,21 @@ export default function CompetitionPage() {
               <ScrollReveal className="space-y-8">
                 <div className="inline-flex items-center gap-2 text-secondary font-bold uppercase tracking-widest">
                   <Shield size={20} />
-                  Fédéral & Officiel
+                  {t.competition_page.official_title}
                 </div>
                 <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary leading-tight">
-                  Un accès privilégié à l'élite régionale et nationale
+                  {t.competition_page.official_subtitle}
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   {t.competition_page.p1}
                 </p>
                 <div className="p-6 bg-muted rounded-[2rem] border-l-8 border-secondary">
                   <p className="italic font-medium text-primary">
-                    "Affronter les meilleures équipes françaises pour forger le caractère et l'excellence technique."
+                    "{t.competition_page.quote}"
                   </p>
                 </div>
               </ScrollReveal>
-              <ScrollReveal delay={200} className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-muted/20 bg-muted">
+              <ScrollReveal delay={200} className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-muted/20 bg-black">
                 {actionImage && (
                   <Image src={actionImage} alt="Action Football" fill className="object-cover" />
                 )}
@@ -108,15 +110,15 @@ export default function CompetitionPage() {
                 </div>
                 <div className="lg:col-span-7 space-y-6 relative z-10">
                   <h2 className="text-3xl md:text-4xl font-headline font-bold uppercase tracking-tighter">
-                    Un suivi de performance sur-mesure
+                    {t.competition_page.performance_title}
                   </h2>
                   <p className="text-lg text-white/80 leading-relaxed">
                     {t.competition_page.p3}
                   </p>
                   <div className="flex flex-wrap gap-4 pt-4">
-                    <div className="px-4 py-2 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">Analyse Vidéo</div>
-                    <div className="px-4 py-2 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">Suivi Scolaire</div>
-                    <div className="px-4 py-2 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">Préparation Physique</div>
+                    <div className="px-4 py-2 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">{t.competition_page.performance_video}</div>
+                    <div className="px-4 py-2 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">{t.competition_page.performance_school}</div>
+                    <div className="px-4 py-2 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">{t.competition_page.performance_phys}</div>
                   </div>
                 </div>
                 <div className="lg:col-span-5 flex justify-center lg:justify-end relative z-10">
@@ -134,7 +136,7 @@ export default function CompetitionPage() {
         <section className="py-24 bg-white border-t border-muted">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <ScrollReveal className="space-y-8">
-              <h2 className="text-3xl font-headline font-bold text-primary uppercase">La réalité du football hexagonal</h2>
+              <h2 className="text-3xl font-headline font-bold text-primary uppercase">{t.competition_page.hexagonal_title}</h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 {t.competition_page.p2}
               </p>
