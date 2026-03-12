@@ -58,14 +58,14 @@ export function ThreeAxes() {
                     </div>
                     <h3 className="text-3xl font-headline font-bold text-primary tracking-widest uppercase border-b-2 border-muted pb-2 pr-12">{t.axes.scolarite}</h3>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 whitespace-pre-line">
                     {t.axes.scolarite_desc}
                   </p>
                   <div className="space-y-2">
-                    <Link href="/formations/college" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
+                    <Link href="/formations/college" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors italic">
                       {t.axes.college_link}
                     </Link>
-                    <Link href="/formations/lycee" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
+                    <Link href="/formations/lycee" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors italic">
                       {t.axes.lycee_link}
                     </Link>
                   </div>
@@ -81,14 +81,14 @@ export function ThreeAxes() {
                       <Trophy className="text-secondary" size={32} />
                     </div>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 whitespace-pre-line">
                     {t.axes.academy_desc}
                   </p>
                   <div className="space-y-2">
-                    <Link href="/football-academy/competition" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
+                    <Link href="/football-academy/competition" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors italic">
                       {t.axes.championships}
                     </Link>
-                    <Link href="/football-academy/programme" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors">
+                    <Link href="/football-academy/programme" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors italic">
                       {t.axes.elite_prog}
                     </Link>
                   </div>
@@ -113,9 +113,17 @@ export function ThreeAxes() {
                   </div>
                   
                   <div className="max-w-3xl space-y-6">
-                    <p className="text-muted-foreground text-base leading-relaxed">
+                    <p className="text-muted-foreground text-base leading-relaxed whitespace-pre-line">
                       {t.axes.languages_desc}
                     </p>
+                    <div className="flex justify-center gap-8 pt-4">
+                      <Link href="/formations/langues" className="text-primary font-bold border-b-2 border-primary/20 hover:border-secondary transition-colors italic">
+                        {t.axes.fle_link}
+                      </Link>
+                      <Link href="/formations/langues" className="text-primary font-bold border-b-2 border-primary/20 hover:border-secondary transition-colors italic">
+                        {t.axes.efl_link}
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -154,7 +162,7 @@ export function ThreeAxes() {
                     </div>
                     <h3 className="text-xl font-bold text-primary uppercase tracking-wider">{t.axes.scolarite}</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{t.axes.scolarite_desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 whitespace-pre-line">{t.axes.scolarite_desc}</p>
                   <Link href="/formations/lycee" className="flex items-center justify-between font-bold text-primary uppercase text-[10px] tracking-widest bg-white p-4 rounded-xl border border-border">
                     {t.axes.lycee_link}
                     <ChevronRight size={14} className="text-secondary" />
@@ -169,7 +177,7 @@ export function ThreeAxes() {
                     </div>
                     <h3 className="text-xl font-bold uppercase tracking-wider">{t.axes.academy_title}</h3>
                   </div>
-                  <p className="text-sm text-white/70 leading-relaxed mb-6 relative z-10">{t.axes.academy_desc}</p>
+                  <p className="text-sm text-white/70 leading-relaxed mb-6 relative z-10 whitespace-pre-line">{t.axes.academy_desc}</p>
                   <Link href="/football-academy/programme" className="flex items-center justify-between font-bold uppercase text-[10px] tracking-widest bg-white/10 p-4 rounded-xl border border-white/10 relative z-10">
                     {t.axes.elite_prog}
                     <ChevronRight size={14} className="text-secondary" />
@@ -187,7 +195,7 @@ export function ThreeAxes() {
                       {t.axes.languages_title}
                     </h3>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{t.axes.languages_desc}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 whitespace-pre-line">{t.axes.languages_desc}</p>
                   <Link href="/formations/langues" className="flex items-center justify-between font-bold text-primary uppercase text-[10px] tracking-widest bg-white p-4 rounded-xl border border-border">
                     {t.sections.three_axes_mobile_languages_btn}
                     <ChevronRight size={14} className="text-secondary" />

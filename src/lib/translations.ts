@@ -72,15 +72,17 @@ export const translations = {
     },
     axes: {
       scolarite: "SCOLARITÉ",
-      scolarite_desc: "Notre sport-études offre un cadre scolaire exigeant qui permet aux élèves de concilier projet sportif ambitieux et réussite académique.",
+      scolarite_desc: "Notre sport-études offre un cadre scolaire exigeant qui permet aux élèves de concilier projet sportif ambitieux et réussite académique.\nAu collège, l'accent est mis sur l'acquisition des fondamentaux, le suivi personnalisé et l'organisation de travail pour apprendre à gérer à la fois les cours et les entraînements.\nAu lycée, la scolarité s'oriente vers la préparation du baccalauréat, avec des exigences renforcées, un accompagnement méthodologique et une aide à l'orientation supérieure.\nL'objectif est de former des élèves autonomes, curieux et capables de s'épanouir autant sur le terrain qu'en classe.",
       college_link: "Collège (11 ans - 15 ans)",
       lycee_link: "Lycée (15 ans - 18 ans)",
       academy_title: "FOOTBALL ACADEMY",
-      academy_desc: "L’Academy de football propose un programme de formation élite français visant à développer des joueurs complets.",
-      championships: "Championnats officiels",
-      elite_prog: "Elite Football Programme",
+      academy_desc: "L'Academy de football propose un programme de formation élite français visant à développer des joueurs complets, capables d'évoluer au plus haut niveau tout en respectant l'exigence du football hexagonal. Les séances sont structurées et assuré par des entraîneurs diplômés et expérimentés.\nGrâce à son statut et à ses partenaires, l'Academy permet à ses joueurs d'accéder aux compétitions officielles françaises, offrant ainsi un cadre compétitif reconnu et formateur.\nL'objectif est de donner à chaque joueur les meilleurs outils pour progresser, se faire repérer et s'inscrire durablement dans un projet de haut niveau.",
+      championships: "Championnats officiels français",
+      elite_prog: "Elite Football programme",
       languages_title: "LANGUES ÉTRANGÈRES",
-      languages_desc: "Notre établissement propose une formation renforcée en français langue étrangère (FLE) et en anglais langue étrangère (EFL)."
+      languages_desc: "Notre établissement propose une formation renforcée en français langue étrangère (FLE) et en anglais langue étrangère (EFL) afin d'accompagner au mieux les élèves non francophones ou souhaitant perfectionner leur niveau.\nLes cours sont organisés en petits groupes pour favoriser la participation orale, la compréhension et la progression individuelle. Les enseignants adaptent leurs supports aux besoins de chaque élève, en travaillant aussi bien la grammaire que le vocabulaire et les situations concrètes de communication.\nCette approche intensive facilite l'intégration scolaire, la réussite aux examens et l'ouverture à l'international.",
+      fle_link: "Français Langue Étrangère (FLE)",
+      efl_link: "English Foreigner Language (EFL)"
     },
     academy_features: {
       f1_title: "COACHS UEFA",
@@ -335,7 +337,7 @@ export const translations = {
         campuses: "Tous les campus",
         duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Baccalauréat Technologique)",
-        bts_desc: "Le BTS (Brevet de Technicien Supérieur) en management ou gestion est une formation de deux ans qui permet de se spécialiser après un Baccalauréat Technologique STMG. Elle offre un enseignement pratique et théorique dans des domaines tels que le management d'équipe, la gestion d'entreprise, la communication, la finance, la comptabilité et le marketing. Accessible sur dossier, le BTS prépare rapidement à des postes à responsabilités dans des secteurs variés comme le commerce, le marketing, la gestion des ressources humaines, ou la gestion d'entreprise, tout en permettant d'évoluer dans un environnement dynamique.",
+        bts_desc: "Le BTS (Brevet de Technicien Supérieur) en management ou gestion est une formation de deux ans qui permet de se spécialiser après un Baccalauréat Technologique STMG. Elle offre un enseignement pratique et théorique dans des domaines telles que le management d'équipe, la gestion d'entreprise, la communication, la finance, la comptabilité et le marketing. Accessible sur dossier, le BTS prépare rapidement à des postes à responsabilités dans des secteurs variés comme le commerce, le marketing, la gestion des ressources humaines, ou la gestion d'entreprise, tout en permettant d'évoluer dans un environnement dynamique.",
         univ_desc: "L'accès à une licence après un Baccalauréat Technologique STMG permet de se spécialiser dans des domaines comme le management, la gestion des entreprises, les ressources humaines, le marketing ou la finance. La licence est une formation universitaire de niveau Bac+3, d'une durée de 3 ans, qui combine des enseignements théoriques et pratiques. Elle renforce les compétences en gestion et en analyse acquises au lycée et prépare à une entrée réussie dans le monde professionnel. Après un BTS ou un DUT dans le domaine du management ou de la gestion, il est également possible de rejoindre directement la dernière année de licence pour se perfectionner et accéder à des postes à responsabilités.",
         bts_list: ["BTS Comptabilité et Gestion (CG)", "BTS Support à l'Action Managériale (SAM)", "BTS Management Commercial Operérationnel (MCO)", "BTS Négociation et Digitalisation de la Relation Client (NDRC)", "BTS Gestion de la PME (GPME)", "BTS Services Informatiques aux Organisations (SIO)", "BTS Assurance", "BTS Tourisme"],
         bts_jobs: ["Responsable marketing", "Chef de produit", "Commercial", "Gestionnaire de paie", "Responsable des ressources humaines", "Contrôleur de gestion", "Gestionnaire de patrimoine", "Conseiller en gestion de patrimoine"],
@@ -588,11 +590,13 @@ export const translations = {
     },
     axes: {
       scolarite: "ACADEMICS",
-      scolarite_desc: "Our sport-study program offers a demanding academic framework.",
+      scolarite_desc: "Our sport-study program offers a demanding academic framework that allows students to combine ambitious sporting projects with academic success.\nIn middle school, the focus is on acquiring fundamentals, personalized follow-up, and work organization to learn how to manage both classes and training.\nIn high school, schooling is oriented towards baccalaureate preparation, with reinforced requirements, methodological support, and guidance for higher education.\nThe goal is to train autonomous, curious students capable of flourishing as much on the field as in the classroom.",
       academy_title: "FOOTBALL ACADEMY",
-      academy_desc: "The Football Academy offers an elite French training program.",
+      academy_desc: "The Football Academy offers an elite French training program aimed at developing complete players, capable of evolving at the highest level while respecting the requirements of French football. Sessions are structured and provided by qualified and experienced coaches.\nThanks to its status and partnerships, the Academy allows its players to access official French competitions, thus offering a recognized and educational competitive framework.\nThe goal is to give each player the best tools to progress, be scouted, and commit long-term to a high-level project.",
       languages_title: "FOREIGN LANGUAGES",
-      languages_desc: "Our establishment offers reinforced training in French (FLE) and English (EFL)."
+      languages_desc: "Our establishment offers reinforced training in French as a Foreign Language (FLE) and English as a Foreign Language (EFL) to best support non-French speaking students or those wishing to perfect their level.\nClasses are organized in small groups to encourage oral participation, understanding, and individual progress. Teachers adapt their materials to each student's needs, working on grammar as well as vocabulary and concrete communication situations.\nThis intensive approach facilitates school integration, exam success, and international openness.",
+      fle_link: "Français Langue Étrangère (FLE)",
+      efl_link: "English Foreigner Language (EFL)"
     },
     academy_features: {
       f1_title: "UEFA COACHES",
@@ -1100,11 +1104,13 @@ export const translations = {
     },
     axes: {
       scolarite: "学术课程",
-      scolarite_desc: "我们的体育学习计划提供了一个严谨的学术框架。",
+      scolarite_desc: "我们的体育学习计划提供了一个严谨的学术框架，让学生能够将雄心勃勃的体育项目与学业成功相结合。\n在初中阶段，重点是获得基础知识、个性化跟踪和工作组织，学习如何平衡课程和训练。\n在高中阶段，学业以备考高中毕业会考为导向，要求更高，提供方法论支持和高等教育指导。\n目标是培养自主、好奇的学生，让他们在球场和教室里都能茁壮成长。",
       academy_title: "足球学院",
-      academy_desc: "足球学院提供精英法国培训计划。",
+      academy_desc: "足球学院提供精英法国培训计划，旨在培养全面的球员，使其能够在最高水平上发展，同时符合法国足球的要求。课程结构合理，由具备资质且经验丰富的教练授课。\n凭借其地位和合作伙伴关系，学院允许球员参加法国官方比赛，从而提供一个公认且具有教育意义的竞争环境。\n目标是为每位球员提供进步、被发掘并长期致力于高水平项目的最佳工具。",
       languages_title: "外语培训",
-      languages_desc: "为国际学生提供法语 (FLE) and 英语 (EFL) 强化培训。"
+      languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法语母语学生或希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解和个人进步。教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功和国际化开放。",
+      fle_link: "Français Langue Étrangère (FLE)",
+      efl_link: "English Foreigner Language (EFL)"
     },
     academy_features: {
       f1_title: "欧足联教练",
@@ -1123,7 +1129,7 @@ export const translations = {
     },
     sections: {
       campuses: "我们的3个校区",
-      campuses_desc: "ESEPF 在三个战略地点部署其卓越教育。",
+      campuses_desc: "ESEPF 在三个战略地点部署其卓越 education。",
       formations: "我们的课程",
       formations_desc: "三大卓越支柱，共筑学生未来。",
       football_title: "足球学院：体育与学习",
@@ -1339,8 +1345,8 @@ export const translations = {
         direct_employment_jobs: ["销售顾问", "商业助理", "客户顾问", "理货员", "商业活动员", "勘探主管", "库存管理员"],
         higher_ed_title: "2. 升学前景",
         higher_ed_intro: "在获得商业和销售专业高中毕业证书 (MCV) 后，您可以继续攻读 BTS（谈判、商业管理、国际贸易等）或大学本科，以深化您的技能并获得负责任的职位。这些高等教育课程为在不断增长的行业中获得众多机会铺平了道路。",
-        bts_desc: "BTS（高级技师证书）是一项为期两年的培训，允许在专业高中毕业证书后进行专业化。它在谈判、商业管理或国际贸易等领域提供实践和理论教学。通过档案申请，BTS 可以快速为担任负责任的职位做好准备。",
-        univ_desc: "专业高中毕业证书后攻读本科文凭，允许在营销、商业或管理等领域进行专业化。本科是 Bac+3 级别的大学培训，学制为 3 年，结合了理论和实践教学。它有助于加强获得的技能，并承诺快速进入职业世界。在 BTS 之后，可以直接进入本科最后一年继续进修。",
+        bts_desc: "BTS（高级技师证书）是一项为期两年的培训，允许在专业高中毕业证书后进行专业化. 它在谈判、商业管理或国际贸易等领域提供实践和理论教学. 通过档案申请，BTS 可以快速为担任负责任的职位做好准备。",
+        univ_desc: "专业高中毕业证书后攻读本科文凭，允许在营销、商业或管理等领域进行专业化. 本科是 Bac+3 级别的大学培训，学制为 3 年，结合了理论和实践教学. 它有助于加强获得的技能，并承诺快速进入职业世界. 在 BTS 之后，可以直接进入本科最后一年继续进修。",
         bts_list: ["国际贸易 BTS (CI)", "商业单位管理 BTS (MUC)", "银行 BTS", "营销经理 BTS"],
         bts_jobs: ["销售经理", "营销经理", "传播顾问", "营销项目经理", "出口经理", "门店经理"],
         univ_list: ["专业本科：谈判与客户关系", "专业本科：企业管理", "数字营销本科", "经济与管理本科", "传播与媒体本科", "组织管理本科"],
@@ -1355,7 +1361,7 @@ export const translations = {
         luxe_module_title: "为我们的 STMG 学生提供的奢侈品酒店与餐饮模块",
         luxe_module_p1: "在奢侈品酒店与餐饮业不断扩张的世界中，让我们的学生做好应对这一声誉显赫行业要求的准备至关重要。这就是为什么我们的 STMG 高中毕业证书将包含一个专门针对高端酒店与餐饮的独家模块。",
         luxe_module_p2: "该计划旨在让学生首次沉浸在这一精致的领域，让他们发现质量标准、卓越服务以及应用于接待、管理和客户关系的奢侈品准则。通过具体的案例研究、与行业专业人士的会面以及情景模拟，我们的学生将培养管理、营销和酒店管理方面的基本技能，同时培养适应这一苛刻行业期望的职业素养。",
-        luxe_module_p3: "该模块代表了我们学生的真正机遇，为他们开启了奢侈品领域专业培训和国际职业生涯的大门。它完全符合我们提供创新和职业化教育的承诺，与劳动力市场的现实 and 学生的需求相契合。",
+        luxe_module_p3: "该模块代表了我们学生的真正机遇，为他们开启了奢侈品领域专业培训和国际职业生涯的大门。它完全符合 we 提供创新和职业化教育的承诺，与劳动力市场的现实 and 学生的需求相契合。",
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级",
@@ -1377,7 +1383,7 @@ export const translations = {
       france_desc_full: "21世纪，法国是为世界杯贡献球员最多的国家，共有216球员出生于此，远超巴西（148人）。法国还大幅领先于德国和意大利这两支四冠王球队。",
       france_examples: "例如：姆巴佩、齐达内、格列兹曼、亨利、德罗巴、普拉蒂尼、瓦拉内、坎特、科曼...",
       reconnaissance_title: "享誉全球的培训体系",
-      reconnaissance_p1: "法国的人才辈出并非偶然，而是源于该国完善青训检测和培养体系。这种方法的高效性已在全世界得到认可，是法国足球成功的核心。",
+      reconnaissance_p1: "法国的人才辈出并非偶然，而是源于该国完善青训检测和培养体系. 这种方法的高效性已在全世界得到认可，是法国足球成功的核心。",
       reconnaissance_p2: "法国青训中心的使命是在竞争环境中培养年轻球员，通过高质量的指导和专为帮助其发挥潜能设计的教学大纲来完成。",
       reconnaissance_p3: "凭借结构化的计划 and 方法论，通过多样化的训练、测试、活动、比赛、挑战 and 个人互动，我们的球员将在情感、性格、技术、战术 and 身体技能（根据年龄调整）方面全面发展。",
       reconnaissance_p4: "他们还将通过心理社会挑战提升人文技能，学习团队精神、奉献精神 and 韧性，并培养对足球的持久热爱。",
