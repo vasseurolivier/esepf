@@ -24,7 +24,8 @@ export const translations = {
       sport_etudes: "Qu'est-ce que le Sport-Études ?",
       parcours: "Le Parcours du Joueur",
       accomp: "Accompagnement",
-      metiers: "Les Métiers du Sport"
+      metiers: "Les Métiers du Sport",
+      reseau: "Notre Réseau de Clubs"
     },
     hero: {
       subtitle: "Cultiver l'Excellence",
@@ -162,7 +163,7 @@ export const translations = {
       international_recognition: "Reconnaissance internationale",
       why_choose_title: "Pourquoi choisir ce cursus ?",
       why_choose_desc: "C'est un atout majeur pour intégrer des universités aux États-Unis ou des cursus internationaux en Europe. Les élèves développent une autonomie et une maîtrise de l'anglais de niveau académique supérieur.",
-      modalities_title: "Modalités",
+      modalities_title: "Modalities",
       modalities_list: [
         "Cours en visioconférence avec des professeurs US",
         "Suivi par un tuteur dédié à l'ESEPF",
@@ -440,7 +441,7 @@ export const translations = {
         luxe_module_title: "Un Module Luxe en Hôtellerie et Restauration pour nos STMG",
         luxe_module_p1: "Dans un monde où l’hôtellerie et la restauration de luxe sont des secteurs en pleine expansion, il est essentiel de préparer nos élèves aux exigences de cette industrie prestigieuse. C’est pourquoi notre Baccalauréat Technologique STMG inclura un module exclusif dédié à l’hôtellerie et à la restauration haut de gamme.",
         luxe_module_p2: "Ce programme vise à offrir aux élèves une première immersion dans cet univers raffiné, en leur permettant de découvrir les standards de qualité, le service d’excellence et les codes du luxe appliqués à l'accueil, à la gestion et à la relation client. À travers des études de cas concrets, des rencontres avec des professionnels du secteur et des mises en situation, nos élèves développeront des compétences essentielles en management, marketing et gestion hôtelière, tout en cultivant un savoir-être adapté aux attentes de cette industrie exigeante.",
-        luxe_module_p3: "Ce module représente une véritable opportunité pour nos élèves, leur ouvrant les portes de formations spécialisées et de carrières internationales dans le domaine du luxe. Il s’inscrit pleinement dans notre engagement à proposer une éducation innovante et professionnalisante, en phase avec les réalités du marché du travail et les aspirations de nos étudiants.",
+        luxe_module_p3: "Ce module représente une véritable opportunité pour nos élèves, leur ouvrant les portes de formations spécialisées et de carrières internationales dans le domaine du luxe. Il s’inscrit pleinement dans notre commitment à proposer une éducation innovante et professionnalisante, en phase avec les réalités du marché du travail et les aspirations de nos étudiants.",
         campuses: "Tous les campus",
         duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Baccalauréat Technologique)",
@@ -696,7 +697,8 @@ export const translations = {
       sport_etudes: "What is Sport-Study?",
       parcours: "Player Journey",
       accomp: "Support",
-      metiers: "Sports Careers"
+      metiers: "Sports Careers",
+      reseau: "Our Club Network"
     },
     hero: {
       subtitle: "Cultivating Excellence",
@@ -1368,7 +1370,8 @@ export const translations = {
       sport_etudes: "什么是体育学习？",
       parcours: "学生发展蓝图",
       accomp: "身心支持",
-      metiers: "体育相关职业"
+      metiers: "体育相关职业",
+      reseau: "我们的俱乐部网络"
     },
     hero: {
       subtitle: "追求卓越",
@@ -1559,8 +1562,8 @@ export const translations = {
       title: "法国足球锦标赛",
       hero_sub: "体验官方比赛的激情，释放潜能。",
       p1: "得益于我们与当地俱乐部的合作，我们的体育学习足球部门球员享有参加法国官方比赛的特权。这种开放使他们能够参加公认的锦标赛，面对高水平球队，并体验结构化的竞争环境。",
-      p2: "官方比赛每个周末举行，为年轻足球运动员提供持续的进步，并有机会面对法国足球的现实。该机制有利于选拔、技能提升 and 进入高水平体系。",
-      p3: "教练 and 管理人员密切监控球员的准备情况，根据比赛要求调整训练计划。目标是让每位球员在球场上充分表达自己，发挥潜能并建立雄心勃勃的道路，同时享受合适的学术支持。",
+      p2: "官方比赛每个周末举行，为年轻足球运动员提供持续的进步，并有机会面对法国足球的现实. 该机制有利于选拔、技能提升 and 进入高水平体系。",
+      p3: "教练 and 管理人员密切监控球员的准备情况，根据比赛要求调整训练计划. 目标是让每位球员在球场上充分表达自己，发挥潜能并建立雄心勃勃的道路，同时享受合适的学术支持。",
       card_clubs: "特权访问",
       card_clubs_desc: "公认的锦标赛与高水平球队。",
       card_weekend: "周末比赛",
@@ -1670,7 +1673,7 @@ export const translations = {
     },
     lycee_page: {
       title: "高中毕业证书",
-      intro_p1: "我们高中提供严谨且多样化的课程，适应每个学生的目标。它提供三个主要方向：普通高中、STMG 技术高中 and 专业销售高中。",
+      intro_p1: "我们高中提供严谨且多样化的课程，适应每个学生的目标. 它提供三个主要方向：普通高中、STMG 技术高中 and 专业销售高中。",
       intro_p2: "每个项目都旨在让学生获得扎实的技能，并为进入高等教育 or 职业世界做好准备。",
       intro_p3: "普通高中培养分析能力 and 通识文化，STMG 高中为管理、商业 and 经济研究做准备，而专业销售高中提供实用培训。",
       intro_p4: "我们提供个性化支持 and 定期监测，以确保每个学生在所选道路上取得成功。",
@@ -1697,7 +1700,7 @@ export const translations = {
         title: "普通高中",
         subtitle: "语言与文化方向",
         title_detail: "用所有语言表达自己",
-        desc: "普通高中是一个为期三年的计划，旨在让高中生为高等教育做好准备。它基于共同核心课程 and 专业选择。",
+        desc: "普通高中是一个为期三年的计划，旨在让高中生为高等教育做好准备. 它基于共同核心课程 and 专业选择。",
         system_desc: "在法国，所有学生首先遵循普通与技术高一. 从高二开始，他们选择三个专业. 在高三，他们保留其中两个专业。",
         specialties_title: "普通高中专业与目标",
         specialties: [
@@ -1716,7 +1719,7 @@ export const translations = {
           "良好的表达能力。",
           "好奇心 and 开放心态。",
           "完善语言技能的意愿。",
-          "独立工作能力。"
+          "能力独立工作能力。"
         ],
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
@@ -1781,7 +1784,7 @@ export const translations = {
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级",
-        bts_desc: "管理 BTS 是两年的培训. 在团队管理、财务 and 营销等领域提供教学。",
+        bts_desc: "管理 BTS 是两年的培训. 在团队 management、财务 and 营销等领域提供教学。",
         univ_desc: "本科是 3 年制大学培训. 它加强了管理 and 分析技能。",
         bts_list: ["会计管理", "管理支持", "商业运营", "谈判数字化", "中小企业管理", "IT 服务", "保险", "旅游"],
         bts_jobs: ["营销经理", "产品经理", "销售员", "薪资管理员", "人力资源经理", "财务主管", "资产管理", "顾问"],
