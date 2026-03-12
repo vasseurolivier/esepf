@@ -35,7 +35,7 @@ export default function BacGeneralPage() {
           {heroImage && (
             <Image 
               src={heroImage}
-              alt="Bac Général"
+              alt={content.title}
               fill
               className="object-cover opacity-40"
               priority
@@ -82,7 +82,7 @@ export default function BacGeneralPage() {
                 <GraduationCap className="text-secondary" />
                 <div>
                   <p className="text-[10px] uppercase opacity-60">{t.common.diploma}</p>
-                  <p className="font-bold text-sm">{t.recognition_page.bac_label} Général</p>
+                  <p className="font-bold text-sm">{t.recognition_page.bac_gen_label}</p>
                 </div>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function BacGeneralPage() {
                 {introImage && (
                   <Image 
                     src={introImage}
-                    alt="Languages and Cultures"
+                    alt={content.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />

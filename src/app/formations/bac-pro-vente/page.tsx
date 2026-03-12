@@ -36,7 +36,7 @@ export default function BacProVentePage() {
           {heroImage && (
             <Image 
               src={heroImage}
-              alt="Bac Pro Vente"
+              alt={content.title}
               fill
               className="object-cover opacity-50"
               priority
@@ -83,7 +83,7 @@ export default function BacProVentePage() {
                 <ShoppingBag className="text-secondary" />
                 <div>
                   <p className="text-[10px] uppercase opacity-60">{t.common.diploma}</p>
-                  <p className="font-bold text-sm">{t.recognition_page.bac_label} Professionnel</p>
+                  <p className="font-bold text-sm">{t.recognition_page.bac_pro_label}</p>
                 </div>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function BacProVentePage() {
               <ScrollReveal className="space-y-8">
                 <div className="p-8 bg-muted/30 rounded-[2.5rem] border border-muted">
                   <h3 className="text-2xl font-headline font-bold text-primary mb-6 flex items-center gap-3">
-                    <ShoppingBag className="text-secondary" /> L'Univers du Luxe
+                    <ShoppingBag className="text-secondary" /> {content.luxury_universe}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed italic">
                     {content.desc_extended}
@@ -125,7 +125,7 @@ export default function BacProVentePage() {
                 {introImage && (
                   <Image 
                     src={introImage}
-                    alt="Sales and Commerce luxury"
+                    alt={content.luxury_universe}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
@@ -233,7 +233,7 @@ export default function BacProVentePage() {
                 {employImage && (
                   <Image 
                     src={employImage}
-                    alt="Sales Luxury Store"
+                    alt={content.direct_employment_title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />

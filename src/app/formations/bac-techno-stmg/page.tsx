@@ -35,7 +35,7 @@ export default function BacStmgPage() {
           {heroImage && (
             <Image 
               src={heroImage}
-              alt="Bac Techno STMG"
+              alt={content.title}
               fill
               className="object-cover opacity-40"
               priority
@@ -82,7 +82,7 @@ export default function BacStmgPage() {
                 <Briefcase className="text-secondary" />
                 <div>
                   <p className="text-[10px] uppercase opacity-60">{t.common.diploma}</p>
-                  <p className="font-bold text-sm">{t.recognition_page.bac_label} Technologique</p>
+                  <p className="font-bold text-sm">{t.recognition_page.bac_techno_label}</p>
                 </div>
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function BacStmgPage() {
                 {introImage && (
                   <Image 
                     src={introImage}
-                    alt="Management team working"
+                    alt={content.management_tomorrow}
                     fill
                     className="object-cover"
                   />

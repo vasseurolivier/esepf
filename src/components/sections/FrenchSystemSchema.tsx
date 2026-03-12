@@ -109,6 +109,7 @@ export function FrenchSystemSchema({ bacType }: FrenchSystemSchemaProps) {
 
             {/* BTS Path */}
             <div className="flex flex-col items-center justify-start">
+              {/* BTS Box */}
               <div className="relative bg-[#f5f1e8] p-8 rounded-2xl border border-[#d1c7b7] shadow-md w-full text-center group hover:scale-[1.02] transition-transform">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] font-bold px-4 py-1 rounded-full shadow-sm">
                   {t.outlets_labels.bac_plus_2}
