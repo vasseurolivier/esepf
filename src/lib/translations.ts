@@ -293,6 +293,13 @@ export const translations = {
       weekly_intro: "Une semaine type à l'ESEPF s'articule autour de séances quotidiennes de 1h30 à 2h, complétées par des matchs officiels le week-end.",
       weekly_details: "Le programme inclut l'analyse vidéo le lundi, le travail spécifique le mercredi et la préparation de match le vendredi, tout en maintenant un cursus scolaire complet."
     },
+    metiers_page: {
+      title: "UNE FORMATION AUX MÉTIERS DU SPORT",
+      optional: "(OPTIONNEL)",
+      desc: "ESPF propose plusieurs formations spécialisées dans les métiers du sport, offrant ainsi à nos élèves la possibilité de se préparer à divers parcours professionnels dans ce secteur. Ces formations leur permettent d'acquérir des compétences pratiques et théoriques, adaptées aux exigences de différents domaines du sport. Elles ouvrent ainsi la voie à des carrières diversifiées, en offrant aux étudiants une large gamme d'opportunités dans des secteurs en pleine expansion.",
+      subtitle: "NOS FORMATIONS COMPLÉMENTAIRES",
+      cta: "Pour plus de détails, contactez-nous"
+    },
     sport_etudes_page: {
       title1: "QU'EST-CE QUE LE SPORT-ÉTUDES ?",
       label1_1: "Pratique d'un sport quotidien",
@@ -306,7 +313,7 @@ export const translations = {
     },
     reseau_page: {
       title: "Un Réseau de Clubs pour Révéler Nos Talents",
-      p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, nous offrons aux meilleurs de nos joueurs des opportunités uniques de montrer toutes leurs capacités. Ce réseau, composé de clubs prestigieux français mais aussi européens, leur permet de participer à des essais, à des matchs amicaux ou à d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptés à leur progression vers le plus haut niveau.",
+      p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, we offer our best players unique opportunities to show their full abilities. 该网络由法国和欧洲知名俱乐部组成，允许学生参加试训、友谊赛或其他体育赛事。他们将有机会脱颖而出，并被选中进入专业体系，助力其职业发展。",
       subtitle: "Un Réseau de Clubs pour offrir des opportunités..."
     },
     journey_page: {
@@ -703,6 +710,13 @@ export const translations = {
       weekly_intro: "A typical week at ESEPF centers around daily sessions of 1.5 to 2 hours, plus official matches.",
       weekly_details: "Includes video analysis, specific work and match prep alongside full academics."
     },
+    metiers_page: {
+      title: "SPORT CAREERS TRAINING",
+      optional: "(OPTIONAL)",
+      desc: "ESPF offers several specialized formations in sports careers, offering our students the possibility to prepare for various professional paths. These formations allow them to acquire practical and theoretical skills, adapted to the requirements of different sports fields. They thus open the way to diversified careers, offering students a wide range of opportunities in growing sectors.",
+      subtitle: "OUR ADDITIONAL TRAINING",
+      cta: "For more details, contact us"
+    },
     sport_etudes_page: {
       title1: "WHAT IS SPORT-STUDY?",
       label1_1: "Daily sports practice",
@@ -743,7 +757,7 @@ export const translations = {
       university: "UNIVERSITY FR & US",
       metiers: "CAREERS",
       football_academy: "FOOTBALL ACADEMY",
-      pro_footballer: "PRO FOOTBALLER",
+      pro_footballer: "PRO FOOTBALLEUR",
       years_11_15: "11 - 15 years",
       years_11_15_desc: "4 years training",
       years_15_18: "15 - 18 years",
@@ -1099,19 +1113,26 @@ export const translations = {
       reconnaissance_title: "享誉全球的培训体系",
       reconnaissance_p1: "法国的人才辈出并非偶然，而是源于该国完善的青训检测和培养体系。这种方法的高效性已在全世界得到认可，是法国足球成功的核心。",
       reconnaissance_p2: "法国青训中心的使命是在竞争环境中培养年轻球员，通过高质量的指导和专为帮助其发挥潜能设计的教学大纲来完成。",
-      reconnaissance_p3: "凭借结构化的计划和方法论，通过多样化的训练、测试、活动、比赛、挑战和个人互动，我们的球员将在情感、性格、技术、战术和身体技能（根据年龄调整）方面全面发展。",
-      reconnaissance_p4: "他们还将通过心理社会挑战提升人文技能，学习团队精神、奉献精神和韧性，并培养对足球的持久热爱。",
+      reconnaissance_p3: "凭借结构化的计划 and 方法论，通过多样化的训练、测试、活动、比赛、挑战 and 个人互动，我们的球员将在情感、性格、技术、战术 and 身体技能（根据年龄调整）方面全面发展。",
+      reconnaissance_p4: "他们还将通过心理社会挑战提升人文技能，学习团队精神、奉献精神 and 韧性，并培养对足球的持久热爱。",
       method_title: "我们的教学法",
       method_subtitle: "成功的四大支柱",
-      axes_tech: "技术：专注于个人控球和协调能力的专项训练。",
-      axes_tact: "战术：理解比赛系统、位置感和集体智慧。",
-      axes_phys: "体能：安全的运动发展、耐力和爆发力（根据年龄调整）。",
-      axes_ment: "心理：心理支持、压力管理和求胜意志。",
+      axes_tech: "技术：专注于个人控球 and 协调能力的专项训练。",
+      axes_tact: "战术：理解比赛系统、位置感 and 集体智慧。",
+      axes_phys: "体能：安全的运动发展、耐力 and 爆发力（根据年龄调整）。",
+      axes_ment: "心理：心理支持、压力管理 and 求胜意志。",
       coaches_title: "资深认证教练",
       coaches_text: "我们的教练均毕业于 FFF 或 UEFA，确保提供高水平的每日专业指导。",
       weekly_title: "每周计划",
       weekly_intro: "ESEPF 的典型周包含每日 1.5 至 2 小时的训练课程，以及周末的官方比赛。",
-      weekly_details: "包括视频分析、专项训练和比赛准备，同时保持完整的学术课程。"
+      weekly_details: "包括视频分析、专项训练 and 比赛准备，同时保持完整的学术课程。"
+    },
+    metiers_page: {
+      title: "体育职业培训",
+      optional: "(可选)",
+      desc: "ESPF 提供多个体育职业专业培训，为学生提供在这一领域准备各种职业道路的机会。这些培训使他们能够获得适应不同体育领域要求的实践和理论技能。它们由此开辟了多元化的职业道路，在不断扩张的行业中为学生提供广泛的机会。",
+      subtitle: "我们的补充培训",
+      cta: "了解更多详情，请联系我们"
     },
     sport_etudes_page: {
       title1: "什么是体育学习？",

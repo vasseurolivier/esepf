@@ -1,43 +1,91 @@
 
+"use client";
+
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import { Briefcase, TrendingUp, Users, Award } from 'lucide-react';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { useTranslation } from '@/hooks/use-translation';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function MetiersSportPage() {
+  const { t } = useTranslation();
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+
+  const metiers = [
+    { id: 'metiers_bpjeps', label: 'BPJEPS', default: "https://picsum.photos/seed/bpjeps/400/600" },
+    { id: 'metiers_coach', label: 'COACH', default: "https://picsum.photos/seed/coach-job/400/600" },
+    { id: 'metiers_agent', label: 'AGENT FIFA', default: "https://picsum.photos/seed/agent-fifa/400/600" },
+    { id: 'metiers_arbitre', label: 'ARBITRE', default: "https://picsum.photos/seed/referee/400/600" },
+    { id: 'metiers_analyste', label: 'ANALYSTE VIDÉO', default: "https://picsum.photos/seed/video-analyst/400/600" },
+  ];
+
   return (
     <FirebaseClientProvider>
       <Header />
-      <main className="min-h-screen">
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary mb-8">Les Métiers du Sport</h1>
-              <p className="text-xl text-muted-foreground mb-16 leading-relaxed">
-                Le football est un tremplin vers de nombreuses carrières. À l'ESEPF, nous préparons nos élèves à devenir les futurs cadres du monde sportif.
-              </p>
+      <main className="min-h-screen bg-gradient-to-br from-[#a5a6d1] via-[#ffffff] to-[#e08b8b] py-20">
+        <div className="container mx-auto px-4">
+          
+          {/* Header Section */}
+          <ScrollReveal className="text-center max-w-5xl mx-auto mb-20">
+            <h1 className="text-5xl md:text-7xl font-headline font-bold text-black mb-2 tracking-tighter uppercase leading-none">
+              {t.metiers_page.title}
+            </h1>
+            <p className="text-2xl md:text-4xl font-headline font-bold text-black mb-12 italic opacity-80">
+              {t.metiers_page.optional}
+            </p>
+            
+            <div className="text-lg md:text-xl text-black/70 leading-relaxed font-body space-y-6 max-w-4xl mx-auto">
+              <p>{t.metiers_page.desc}</p>
+            </div>
+          </ScrollReveal>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                {[
-                  { icon: <TrendingUp />, title: "Management du Sport", desc: "Devenez agent, directeur sportif ou manager de club." },
-                  { icon: <Users />, title: "Éducation & Coaching", desc: "Transmettez votre passion comme entraîneur ou éducateur." },
-                  { icon: <Briefcase />, title: "Business & Marketing", desc: "Travaillez dans le sponsoring, l'événementiel ou la com' sportive." },
-                  { icon: <Award />, title: "Droit & Data", desc: "Expertise juridique ou analyse de données de performance." }
-                ].map((job, i) => (
-                  <ScrollReveal key={i} delay={i * 100}>
-                    <div className="p-8 rounded-3xl bg-muted/50 border border-border group hover:bg-secondary hover:text-white transition-all">
-                      <div className="text-secondary group-hover:text-white mb-4">{job.icon}</div>
-                      <h3 className="text-2xl font-bold mb-2">{job.title}</h3>
-                      <p className="text-muted-foreground group-hover:text-white/80">{job.desc}</p>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
+          {/* Subtitle Section */}
+          <ScrollReveal delay={200} className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-headline font-bold text-black uppercase tracking-widest inline-block border-b-2 border-black pb-2">
+              {t.metiers_page.subtitle}
+            </h2>
+          </ScrollReveal>
+
+          {/* Jobs Grid */}
+          <div className="max-w-7xl mx-auto mb-24">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
+              {metiers.map((job, idx) => (
+                <ScrollReveal key={job.id} delay={idx * 100} className="flex flex-col items-center">
+                  <div className="relative w-full aspect-[2/3] rounded-full overflow-hidden border-2 border-black shadow-2xl mb-6 group transition-transform duration-500 hover:scale-105">
+                    <Image 
+                      src={settings?.images?.[job.id] || job.default} 
+                      alt={job.label}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-headline font-bold text-black uppercase tracking-tight text-center">
+                    {job.label}
+                  </h3>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
-        </section>
+
+          {/* CTA Section */}
+          <ScrollReveal delay={600} className="flex justify-center">
+            <Link href="/contact">
+              <Button className="bg-[#262626] text-white hover:bg-black font-bold py-8 px-16 rounded-none text-lg transition-all shadow-xl uppercase tracking-widest border border-white/10">
+                {t.metiers_page.cta}
+              </Button>
+            </Link>
+          </ScrollReveal>
+
+        </div>
       </main>
       <Footer />
     </FirebaseClientProvider>
