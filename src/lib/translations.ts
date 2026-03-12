@@ -244,7 +244,7 @@ export const translations = {
     team_page: {
       title: "Le Projet",
       subtitle: "Le Programme Élite Football & Scolarité ESEPF",
-      p1: "À l'ESEPF, nous proposons aux jeunes de 11 à 19 ans un projet double exceptionnel.",
+      p1: "À l'ESEPF, we propose aux jeunes de 11 à 19 ans un projet double exceptionnel.",
       p2: "En parallèle, les élèves suivent un excellent cursus scolaire français (de la 6ème à la Terminale).",
       p3: "Ce programme unique forge aussi bien l'athlète que l'élève, en inculquant discipline, rigueur et ambition.",
       team_title: "L'ÉQUIPE",
@@ -447,7 +447,7 @@ export const translations = {
         future_manager: "Votre avenir de manager",
         techno_filiere: "Une filière technologique pour des carrières ambitieuses",
         service_excellence: "Service d'excellence",
-        luxury_codes: "Codes du Luxe",
+        luxury_codes: "Luxury Codes",
         prestige_management: "Gestion Prestige"
       }
     },
@@ -1030,7 +1030,7 @@ export const translations = {
         campuses: "All campuses",
         duration: "3 ans (4 for allophones)",
         level: "Level 4 (Baccalaureate)",
-        bts_desc: "The BTS (Higher Technician's Certificate) in Applied Foreign Languages (LEA) is a two-year program that allows specialization after a General Baccalaureate.\nIt offers practical and theoretical teaching in areas such as translation, interpretation, international project management, and intercultural communication.\nAccessible by application, the BTS quickly prepares for positions of responsibility in growing sectors such as international trade, tourism, customer relationship management, or translation and interpretation professions.",
+        bts_desc: "The BTS (Higher Technician's Certificate) in applied Foreign Languages (LEA) is a two-year program that allows specialization after a General Baccalaureate.\nIt offers practical and theoretical teaching in areas such as translation, interpretation, international project management, and intercultural communication.\nAccessible by application, the BTS quickly prepares for positions of responsibility in growing sectors such as international trade, tourism, customer relationship management, or translation and interpretation professions.",
         univ_desc: "Access to a Bachelor's degree after a General Baccalaureate allows for specialization in fields such as translation, interpretation, international relations, or intercultural communication.\nThe Bachelor's degree is a 3-year university course (Bac+3 level) that combines theoretical and practical teaching. It strengthens the linguistic and cultural skills acquired in high school and prepares for a successful entry into the professional world.\nAfter a BTS in applied foreign languages or related fields, it is also possible to directly join the final year of a Bachelor's degree to deepen skills and broaden career prospects.",
         bts_list: ["BTS Tourism", "BTS International Trade", "BTS SME Management", "BTS Translation & Interpretation", "BTS Communication", "BTS Public Relations", "BTS Operational Commercial Management", "BTS Rural Area Dev. & Animation"],
         bts_jobs: ["Communication Officer", "Executive Assistant", "Marketing Manager", "Translator", "Project Manager", "International Relations Manager", "Product Manager", "Sales Representative"],
@@ -1410,7 +1410,7 @@ export const translations = {
       lang_lab: "教学语言",
       camp_val: "3",
       camp_lab: "现代校区",
-      foot_val: "ELITE",
+      foot_val: "精英",
       foot_lab: "足球培训",
       prog_val: "4",
       prog_lab: "官方计划"
@@ -1476,7 +1476,7 @@ export const translations = {
       bac_americain_title: "美国高中双文凭",
       bac_americain_sub: "双文凭：同时获得两个高中毕业证书。",
       high_school_diploma: "美国高中毕业证书",
-      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
+      high_school_desc: "得益’于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
       dual_diploma_official: "官方双学位",
       international_recognition: "国际认可",
       why_choose_title: "为什么选择这个路径？",
@@ -1526,7 +1526,7 @@ export const translations = {
         subtitle: "职业足球",
         desc: "高水平体育训练与学术成功。",
         f1: "欧足联教练",
-        f2: "FFF 锦标赛",
+        f2: "FFF 锦识赛",
         f3: "运动监测"
       }
     },
@@ -1675,7 +1675,7 @@ export const translations = {
           { name: "数学", desc: "分析和逻辑技能的基础。" },
           { name: "数字与计算机科学 (NSI)", desc: "针对对编程和数字挑战感兴趣的学生。" }
         ],
-        conclusion: "这项完整的培训使学生能夠获得适应当今世界的各种技能。",
+        conclusion: "这项完整的培训使学生能够获得适应当今世界的各种技能。",
         profile_title: "招生对象",
         profile_desc: "普通高中面向以下学生：",
         profile_list: ["初中毕业生进入高一", "高一或高二学生进入高二"],
