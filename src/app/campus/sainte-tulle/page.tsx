@@ -29,7 +29,7 @@ export default function CampusTullePage() {
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       <Header />
       <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
         <Image 
@@ -54,13 +54,13 @@ export default function CampusTullePage() {
                 <MapPin size={20} />
                 {t.campus_pages.city_title}
               </div>
-              <h2 className="text-4xl font-headline font-bold text-primary mb-6">Le charme et le soleil des Alpes-de-Haute-Provence</h2>
+              <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.tulle_title}</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Aux portes du Luberon, Sainte-Tulle est une cité au patrimoine riche, baignée par le soleil de la Provence. Ville à taille humaine, elle offre un cadre naturel exceptionnel propice au ressourcement.
+                {t.campus_pages.tulle_desc}
               </p>
               <div className="p-6 bg-muted rounded-2xl border border-border">
-                <h4 className="font-bold text-primary mb-2 italic">Une Ville Sportive</h4>
-                <p className="text-sm text-muted-foreground">Sainte-Tulle bénéficie d'un climat exceptionnel toute l'année, idéal pour la pratique sportive intensive en plein air.</p>
+                <h4 className="font-bold text-primary mb-2 italic">{t.campus_pages.tulle_sport}</h4>
+                <p className="text-sm text-muted-foreground">{t.campus_pages.tulle_sport_desc}</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={200} className="relative aspect-square bg-black rounded-3xl overflow-hidden flex items-center justify-center border-2 border-dashed border-primary/10">
@@ -79,7 +79,7 @@ export default function CampusTullePage() {
               ) : (
                 <div className="text-center p-8 flex flex-col items-center justify-center">
                   <ImageIcon size={48} className="text-muted mb-4" />
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Image de la carte non définie</p>
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{t.campus_pages.map_not_defined}</p>
                 </div>
               )}
             </ScrollReveal>
@@ -93,7 +93,7 @@ export default function CampusTullePage() {
             <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-6"><Building2 size={32} /></div>
             <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.infra_title}</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Le Campus de Sainte-Tulle privilégie une approche humaine et individualisée de l'enseignement.
+              {t.campus_pages.tulle_infra_desc}
             </p>
           </div>
 
@@ -109,7 +109,7 @@ export default function CampusTullePage() {
             <div className="relative z-10">
               <h3 className="text-3xl font-headline font-bold mb-12 flex items-center gap-3">
                 <School className="text-secondary" />
-                {t.nav.formations} disponibles sur ce campus
+                {t.nav.formations} {t.campus_pages.available_on_campus}
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -124,7 +124,7 @@ export default function CampusTullePage() {
                   <div className="mt-1 text-secondary"><GraduationCap size={24} /></div>
                   <div>
                     <h4 className="font-bold text-lg">{t.programs.lycee.title}</h4>
-                    <p className="text-sm text-white/60">Général, STMG, Pro Vente</p>
+                    <p className="text-sm text-white/60">{t.campus_pages.lycee_options}</p>
                   </div>
                 </div>
                 <div className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">

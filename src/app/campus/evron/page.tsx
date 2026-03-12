@@ -29,7 +29,7 @@ export default function CampusEvronPage() {
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       <Header />
       <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
         <Image 
@@ -65,8 +65,8 @@ export default function CampusEvronPage() {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="p-6 bg-muted rounded-2xl border border-border">
-                  <h4 className="font-bold text-primary mb-2 italic">Mayenne (53)</h4>
-                  <p className="text-sm text-muted-foreground">Pays de la Loire, France.</p>
+                  <h4 className="font-bold text-primary mb-2 italic">{t.campus_pages.evron_region}</h4>
+                  <p className="text-sm text-muted-foreground">{t.campus_pages.evron_region_desc}</p>
                 </div>
                 <div className="p-6 bg-muted rounded-2xl border border-border">
                   <h4 className="font-bold text-primary mb-2 italic">Football Academy</h4>
@@ -89,9 +89,9 @@ export default function CampusEvronPage() {
                   </div>
                 </div>
               ) : (
-                <div className="text-center p-8 bg-white/5backdrop-blur-sm rounded-3xl m-8 shadow-inner w-full flex flex-col items-center justify-center">
+                <div className="text-center p-8 bg-white/5 backdrop-blur-sm rounded-3xl m-8 shadow-inner w-full flex flex-col items-center justify-center">
                   <ImageIcon size={48} className="text-muted mb-4" />
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Image de la carte non définie</p>
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{t.campus_pages.map_not_defined}</p>
                 </div>
               )}
             </ScrollReveal>
@@ -105,7 +105,7 @@ export default function CampusEvronPage() {
             <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-6"><Building2 size={32} /></div>
             <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.infra_title}</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Des installations modernes conçues pour l'épanouissement académique et sportif.
+              {t.campus_pages.modern_infra_desc}
             </p>
           </div>
 
@@ -121,7 +121,7 @@ export default function CampusEvronPage() {
             <div className="relative z-10">
               <h3 className="text-3xl font-headline font-bold mb-12 flex items-center gap-3">
                 <School className="text-secondary" />
-                {t.nav.formations} disponibles sur ce campus
+                {t.nav.formations} {t.campus_pages.available_on_campus}
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -136,7 +136,7 @@ export default function CampusEvronPage() {
                   <div className="mt-1 text-secondary"><GraduationCap size={24} /></div>
                   <div>
                     <h4 className="font-bold text-lg">{t.programs.lycee.title}</h4>
-                    <p className="text-sm text-white/60">Général, STMG, Pro Vente</p>
+                    <p className="text-sm text-white/60">{t.campus_pages.lycee_options}</p>
                   </div>
                 </div>
                 <div className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
