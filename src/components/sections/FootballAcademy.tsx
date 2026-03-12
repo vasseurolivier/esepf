@@ -39,7 +39,9 @@ export function FootballAcademy() {
       <div className="container mx-auto px-4">
         <ScrollReveal className="flex flex-col lg:flex-row items-center gap-16">
           <div className="lg:w-1/2">
-            <h2 className="text-sm font-bold text-secondary uppercase tracking-[0.2em] mb-4">Elite Education</h2>
+            <h2 className="text-sm font-bold text-secondary uppercase tracking-[0.2em] mb-4">
+              {t.common.elite_education}
+            </h2>
             <h3 className="text-4xl md:text-5xl font-headline font-bold text-primary mb-8 leading-tight">
               {t.sections.football_title ? t.sections.football_title.split(':').map((part, i) => (
                 <React.Fragment key={i}>

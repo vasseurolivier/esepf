@@ -61,7 +61,8 @@ export const translations = {
       enrollment_vente: "Les inscriptions pour la filière Vente Luxe (Rentrée 2026) sont ouvertes. Places limitées pour garantir un encadrement d'exception.",
       roadmap: "ESEPF ROADMAP",
       vision_2026: "VISION 2026",
-      humain_excellence: "Excellence Humaine"
+      humain_excellence: "Excellence Humaine",
+      elite_education: "Formation d'Élite"
     },
     registration: {
       title: "Dossier d'Inscription",
@@ -301,7 +302,7 @@ export const translations = {
       age_label: "11 - 15 ANS",
       p1: "Nous ouvrons les portes de notre Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
       p2: "Après leurs années de Collège, ils pourront accéder aux programmes de notre Lycée.",
-      p3: "Ce Collège viendra enrichir notre offre de formation et accompagner les jeunes.",
+      p3: "Ce Collège viendra enrichir notre offer de formation et accompagner les jeunes.",
       prog_title: "Notre programme se décline en trois années :",
       year1_title: "Année 1 : Classe d'intégration",
       year1_desc: "Le programme proposé leur permettra d'acquérir une maîtrise solide de la langue française (FLE).",
@@ -721,7 +722,8 @@ export const translations = {
       enrollment_vente: "Registration for Luxury Sales (Fall 2026) is open. Limited places to ensure exceptional coaching.",
       roadmap: "ESEPF ROADMAP",
       vision_2026: "VISION 2026",
-      humain_excellence: "Human Excellence"
+      humain_excellence: "Human Excellence",
+      elite_education: "Elite Education"
     },
     registration: {
       title: "Enrollment File",
@@ -1381,7 +1383,8 @@ export const translations = {
       enrollment_vente: "奢侈品销售方向（2026年入学）申请已开启。名额有限，以确保卓越的教学辅导。",
       roadmap: "ESEPF 路线图",
       vision_2026: "2026愿景",
-      humain_excellence: "人文卓越"
+      humain_excellence: "人文卓越",
+      elite_education: "精英教育"
     },
     registration: {
       title: "报名登记表",
@@ -1425,7 +1428,7 @@ export const translations = {
       championships: "法国官方锦标赛",
       elite_prog: "精英足球计划",
       languages_title: "外语培训",
-      languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法语母语学生或希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解和个人进步。教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功和国际化开放。",
+      languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法语母语学生或希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解 and 个人进步。教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功和国际化开放。",
       fle_link: "法语对外汉语 (FLE)",
       efl_link: "英语对外汉语 (EFL)"
     },
@@ -1476,7 +1479,7 @@ export const translations = {
       bac_americain_title: "美国高中双文凭",
       bac_americain_sub: "双文凭：同时获得两个高中毕业证书。",
       high_school_diploma: "美国高中毕业证书",
-      high_school_desc: "得益’于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
+      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
       dual_diploma_official: "官方双学位",
       international_recognition: "国际认可",
       why_choose_title: "为什么选择这个路径？",
@@ -1666,7 +1669,7 @@ export const translations = {
         title: "普通高中",
         subtitle: "语言与文化方向",
         title_detail: "用所有语言表达自己",
-        desc: "普通高中是一个为期三年的计划，旨在让高中生为高等教育做好准备。它基于共同核心课程和专业选择。",
+        desc: "普通高中是一个为期三年的计划，旨在让高中生为高等教育做好准备。它基于共同核心课程 and 专业选择。",
         system_desc: "在法国，所有学生首先遵循普通与技术高一。从高二开始，他们选择三个专业。在高三，他们保留其中两个专业。",
         specialties_title: "普通高中专业与目标",
         specialties: [
@@ -1729,7 +1732,7 @@ export const translations = {
         bts_desc: "BTS 是为期两年的培训. 它可以快速为担任负责任的职位做好准备。",
         univ_desc: "本科是 3 年制大学培训. 它有助于加强获得的技能并承诺快速进入职业世界。",
         bts_list: ["国际贸易 BTS", "商业单位管理 BTS", "银行 BTS", "营销经理 BTS"],
-        bts_jobs: ["销售经理", "营销经理", "传播顾问", "营销项目经理", "出口经理", "门店经理"],
+        bts_jobs: ["销售经理", "营销经理", "传播顾问", "营销 project 经理", "出口经理", "门店经理"],
         univ_list: ["谈判与客户关系本科", "企业管理本科", "数字营销本科", "经济管理本科", "传播媒体本科", "组织管理本科"],
         univ_jobs: ["产品经理", "客户关系经理", "商业项目经理", "传播经理", "商业经理", "顾问", "数字战略经理"],
         quote: "掌握卓越密码，为最伟大的品牌服务。"
