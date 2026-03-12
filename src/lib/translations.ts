@@ -210,7 +210,7 @@ export const translations = {
     college_page: {
       title: "ESEPF - Collège",
       p1: "Nous ouvrons les portes de our Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
-      p2: "Après leurs années de Collège, ils pourront accéder aux programmes de notre Lycée.",
+      p2: "After leurs années de Collège, ils pourront accéder aux programmes de notre Lycée.",
       p3: "Ce Collège viendra enrichir notre offer de formation et accompagner les jeunes.",
       prog_title: "Notre programme se décline en trois années :",
       year1_title: "Année 1 : Classe d'intégration",
@@ -220,7 +220,7 @@ export const translations = {
       conclusion: "À l'issue de leur parcours au Collège, nos élèves intégreront directement notre Lycée."
     },
     lycee_page: {
-      title: "BACCALAUREATS",
+      title: "BACCALAURÉATS",
       intro_p1: "Notre lycée propose un parcours exigeant et diversifié, adapté aux aspirations et projets de chaque élève. Il offre trois filières principales : le baccalauréat général, le baccalauréat technologique STMG (Sciences et Technologies du Management et de la Gestion) et le baccalauréat professionnel Vente.",
       intro_p2: "Chaque programme est conçu pour permettre aux élèves d’acquérir des compétences solides et de préparer leur orientation vers l’enseignement supérieur ou le monde professionnel.",
       intro_p3: "Le bac général développe l’esprit d’analyse et la culture générale, le bac STMG prépare à des études en gestion, commerce et économie, tandis que le bac pro Vente offre une formation pratique et opérationnelle pour intégrer rapidement le secteur du commerce.",
@@ -234,6 +234,16 @@ export const translations = {
       btn_formation: "LA FORMATION",
       btn_outlets: "LES DÉBOUCHÉS SCOLAIRES",
       btn_jobs: "LES MÉTIERS",
+      schema: {
+        integration: "Seconde \"d'intégration\"",
+        allophones: "pour les élèves allophones",
+        year1: "Seconde Générale et Technologique",
+        year1_label: "Année 1",
+        year2: "Première Générale / Première Technologique",
+        year2_label: "Année 2",
+        year3: "Terminale Générale / Terminale Technologique",
+        year3_label: "Année 3"
+      },
       bac_gen: {
         title: "BAC GÉNÉRAL",
         subtitle: "Métiers des langues et de la culture",
@@ -674,6 +684,16 @@ export const translations = {
       btn_formation: "THE PROGRAM",
       btn_outlets: "ACADEMIC PROSPECTS",
       btn_jobs: "CAREERS",
+      schema: {
+        integration: "Integration Year (Grade 10)",
+        allophones: "for allophone students",
+        year1: "10th Grade (General & Technological)",
+        year1_label: "Year 1",
+        year2: "11th Grade (General & Technological)",
+        year2_label: "Year 2",
+        year3: "12th Grade (General & Technological)",
+        year3_label: "Year 3"
+      },
       bac_gen: {
         title: "GENERAL BAC",
         subtitle: "Languages and Culture",
@@ -1101,7 +1121,7 @@ export const translations = {
     },
     lycee_page: {
       title: "高中毕业证书",
-      intro_p1: "我们高中提供严谨且多样化的课程，适应每个学生的目标和计划。它提供三个主要方向：普通高中毕业证书、STMG 技术高中毕业证书（管理与管理科学与技术）以及专业销售高中毕业证书。",
+      intro_p1: "我们高中提供严谨且多样化的课程，适应每个学生的目标 and 计划。它提供三个主要方向：普通高中毕业证书、STMG 技术高中毕业证书（管理与管理科学与技术）以及专业销售高中毕业证书。",
       intro_p2: "每个项目都旨在让学生获得扎实的技能，并为进入高等教育或职业世界做好准备。",
       intro_p3: "普通高中培养分析能力和通识文化，STMG 高中为管理、商业和经济研究做准备，而专业销售高中提供实用且可操作的培训，以快速融入商业领域。",
       intro_p4: "我们提供个性化的支持和定期的监测，以确保每个学生在所选道路上取得成功。",
@@ -1114,6 +1134,16 @@ export const translations = {
       btn_formation: "教学大纲",
       btn_outlets: "升学前景",
       btn_jobs: "职业发展",
+      schema: {
+        integration: "整合班 (高一)",
+        allophones: "针对非法语母语学生",
+        year1: "普通与技术高一",
+        year1_label: "第一年",
+        year2: "普通与技术高二",
+        year2_label: "第二年",
+        year3: "普通与技术高三",
+        year3_label: "第三年"
+      },
       bac_gen: {
         title: "普通高中",
         subtitle: "语言与文化方向",
@@ -1155,7 +1185,7 @@ export const translations = {
       prog_title: "足球计划",
       prog_intro_1: "我们的学校是一个足球训练中心，为运动员提供基于最佳法国培训方法的完整且结构化的计划。",
       prog_intro_2: "我们通过严格的训练、比赛和个性化跟踪，帮助学生实现从个人到高水平的目标，在技术、战术和身体层面不断进步。",
-      prog_intro_3: "我们特别注重运动员的心理 and 人文发展，培训他们应对高水平运动的心理挑战。团队精神、纪律、韧性和情绪管理是我们方法的核心。每位运动员都享有助力其发挥潜能的专业指导。",
+      prog_intro_3: "我们特别注重运动员的心理 and 人文发展，培训他们应对高水平运动的心理挑战。团队精神、纪律、韧性和情绪管理是我们方法的核心. 每位运动员都享有助力其发挥潜能的专业指导.",
       prog_intro_4: "学校为运动员提供实现目标、充分发展的机会，最优秀者可获得职业合同或体育奖学金。",
       france_title: "法国：足球之乡",
       france_desc_full: "21世纪，法国是为世界杯贡献球员最多的国家，共有216名球员出生于此，远超巴西（148人）。法国还大幅领先于德国和意大利这两支四冠王球队。",
