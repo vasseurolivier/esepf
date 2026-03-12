@@ -162,7 +162,7 @@ export default function BacProVentePage() {
             </ScrollReveal>
 
             {/* Profile & Qualities */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
               <ScrollReveal className="bg-[#0c3a2f] p-10 rounded-[3rem] text-white relative overflow-hidden shadow-2xl">
                 <div className="relative z-10">
                   <h3 className="text-2xl font-headline font-bold mb-8 flex items-center gap-3 uppercase tracking-tighter">
@@ -203,11 +203,55 @@ export default function BacProVentePage() {
               </ScrollReveal>
             </div>
 
-            {/* French System Schema */}
-            <ScrollReveal className="text-center mb-12">
-              <h2 className="text-3xl font-headline font-bold text-[#0c3a2f] mb-2 uppercase tracking-widest">Votre parcours professionnel</h2>
-              <p className="text-muted-foreground">Construisez votre carrière commerciale étape par étape avec l'ESEPF</p>
+            {/* SECTION 1: Un accès direct à l'emploi */}
+            <ScrollReveal className="mb-24">
+              <h2 className="text-4xl md:text-6xl font-headline font-bold text-black tracking-tighter uppercase mb-12">
+                {content.direct_employment_title}
+              </h2>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
+                <div className="lg:col-span-8">
+                  <p className="text-xl text-muted-foreground leading-relaxed whitespace-pre-line">
+                    {content.direct_employment_text}
+                  </p>
+                </div>
+                <div className="lg:col-span-4">
+                  <div className="p-8 rounded-[2.5rem] shadow-xl border border-black/5 bg-[#d1c7b7] h-full relative overflow-hidden group hover:scale-[1.02] transition-transform">
+                    <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-6 border-b border-black/10 pb-4">
+                      {t.outlets_labels.jobs_title}
+                    </h4>
+                    <ul className="space-y-3">
+                      {content.direct_employment_jobs.map((item: string, i: number) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-black/80 font-bold uppercase">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-black shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative aspect-[21/9] rounded-[3rem] overflow-hidden shadow-2xl bg-muted group mb-24">
+                <Image 
+                  src="https://picsum.photos/seed/sales-luxury-2/1200/500"
+                  alt="Sales Luxury Store"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  data-ai-hint="luxury clothing store interior"
+                />
+              </div>
             </ScrollReveal>
+
+            {/* SECTION 2: Un accès aux études supérieures */}
+            <ScrollReveal className="mb-12">
+              <h2 className="text-4xl md:text-6xl font-headline font-bold text-black tracking-tighter uppercase">
+                {content.higher_ed_title}
+              </h2>
+              <p className="mt-6 text-xl text-muted-foreground leading-relaxed max-w-4xl">
+                {content.higher_ed_intro}
+              </p>
+            </ScrollReveal>
+
             <FrenchSystemSchema bacType="Baccalauréat Professionnel Vente" />
           </div>
         </section>
