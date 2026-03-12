@@ -172,18 +172,37 @@ export default function LyceePage() {
                   </div>
 
                   <div className="flex flex-col bg-white">
-                    <Link href={card.href} className="flex items-center justify-between p-4 border-b border-muted hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
-                      {t.lycee_page.btn_formation}
-                      <ChevronRight size={14} className="text-secondary" />
-                    </Link>
-                    <Link href={card.href} className="flex items-center justify-between p-4 border-b border-muted hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
-                      {t.lycee_page.btn_outlets}
-                      <ChevronRight size={14} className="text-secondary" />
-                    </Link>
-                    <Link href={card.href} className="flex items-center justify-between p-4 hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
-                      {t.lycee_page.btn_jobs}
-                      <ChevronRight size={14} className="text-secondary" />
-                    </Link>
+                    {card.href !== "#" ? (
+                      <>
+                        <Link href={card.href} className="flex items-center justify-between p-4 border-b border-muted hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
+                          {t.lycee_page.btn_formation}
+                          <ChevronRight size={14} className="text-secondary" />
+                        </Link>
+                        <Link href={card.href} className="flex items-center justify-between p-4 border-b border-muted hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
+                          {t.lycee_page.btn_outlets}
+                          <ChevronRight size={14} className="text-secondary" />
+                        </Link>
+                        <Link href={card.href} className="flex items-center justify-between p-4 hover:bg-muted transition-colors text-black text-[10px] font-bold uppercase tracking-widest text-left">
+                          {t.lycee_page.btn_jobs}
+                          <ChevronRight size={14} className="text-secondary" />
+                        </Link>
+                      </>
+                    ) : (
+                      <>
+                        <div className="flex items-center justify-between p-4 border-b border-muted text-black/30 text-[10px] font-bold uppercase tracking-widest text-left cursor-not-allowed">
+                          {t.lycee_page.btn_formation}
+                          <ChevronRight size={14} className="text-black/10" />
+                        </div>
+                        <div className="flex items-center justify-between p-4 border-b border-muted text-black/30 text-[10px] font-bold uppercase tracking-widest text-left cursor-not-allowed">
+                          {t.lycee_page.btn_outlets}
+                          <ChevronRight size={14} className="text-black/10" />
+                        </div>
+                        <div className="flex items-center justify-between p-4 text-black/30 text-[10px] font-bold uppercase tracking-widest text-left cursor-not-allowed">
+                          {t.lycee_page.btn_jobs}
+                          <ChevronRight size={14} className="text-black/10" />
+                        </div>
+                      </>
+                    )}
                   </div>
                 </ScrollReveal>
               ))}
