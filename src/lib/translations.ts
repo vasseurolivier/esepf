@@ -280,7 +280,31 @@ export const translations = {
       bac_vente: {
         title: "BAC PRO VENTE",
         subtitle: "Métiers de la vente et du commerce",
-        desc: "Une formation pratique et immersive pour devenir un expert de la relation client.",
+        title_detail: "Au service de l'excellence !",
+        desc: "Le Bac Pro Métiers du Commerce et de la Vente, spécialisé dans l'univers du luxe, prépare les étudiants à intégrer un secteur en forte demande, alliant expertise commerciale et connaissance des exigences particulières du marché du luxe. Ce cursus propose une formation complète en techniques de vente, gestion de la relation client et stratégie commerciale, tout en mettant un accent particulier sur les codes du luxe, la gestion des produits haut de gamme et le service client d'excellence.",
+        desc_extended: "Les étudiants acquièrent des compétences essentielles pour évoluer dans des boutiques prestigieuses, des maisons de haute couture ou des entreprises de produits de luxe. Grâce à des cours théoriques et pratiques, ce Bac Pro permet aux jeunes d'être immédiatement opérationnels, avec un savoir-faire adapté à un environnement professionnel exigeant et prestigieux.",
+        objectives_title: "Objectifs du Bac pro MCV option A et B",
+        objectives_desc: "Le titulaire du Bac Pro Métiers du Commerce et de la Vente (MCV), option A ou B, joue un rôle clé au sein de l'équipe commerciale :",
+        objectives_list: [
+          "Option A : Participer à l'approvisionnement, conseiller, vendre, fidéliser, et animer la surface de vente.",
+          "Option B : Gérer la prospection clientèle, valoriser l'offre commerciale et assurer la gestion commerciale liée à sa fonction."
+        ],
+        objectives_footer: "Cette formation offerte par l'ESEPF permet à ses élèves d'acquérir toutes les compétences nécessaires de l'option qu'ils auront choisie afin de les préparer aux missions variées et adaptées aux besoins du secteur du Commerce et de la Vente.",
+        profile_title: "Profil",
+        profile_desc: "Le Bac Pro Métiers du Commerce et de la Vente est accessible aux élèves issus de :",
+        profile_list: [
+          "3ème pour une entrée en 2nde professionnelle",
+          "2nde ou 1ère pour une entrée en 1ère professionnelle"
+        ],
+        qualities_title: "Qualités et compétences requises",
+        qualities_list: [
+          "Aisance relationnelle requise",
+          "Sens du contact et de l'organisation",
+          "Qualité d'écoute importante",
+          "Autonomie",
+          "Rigueur",
+          "Challenger"
+        ],
         campuses: "Tous les campus",
         duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Diplôme Professionnel)",
@@ -358,7 +382,7 @@ export const translations = {
     },
     reseau_page: {
       title: "Un Réseau de Clubs pour Révéler Nos Talents",
-      p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, we offer our best players unique opportunities to show their full abilities. 该网络由法国和欧洲知名俱乐部组成，允许学生参加试训、友谊赛或其他体育赛事。他们将有机会脱颖而出，并被选中进入专业体系，助力其职业发展。",
+      p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, we offer our best players unique opportunities to show their full abilities. 该网络由法国和欧洲知名俱乐部组成，允许学生参加试训、友谊赛或其他体育赛事。他们将有机会脱颖onset而出，并被选中进入专业体系，助力其职业发展。",
       subtitle: "Un Réseau de Clubs pour offrir des opportunités..."
     },
     journey_page: {
@@ -751,7 +775,31 @@ export const translations = {
       bac_vente: {
         title: "PRO SALES BAC",
         subtitle: "Sales and Retail",
-        desc: "Practical and immersive training for customer relationship.",
+        title_detail: "In the service of excellence!",
+        desc: "The Bac Pro in Commerce and Sales, specialized in the luxury universe, prepares students to integrate a high-demand sector, combining commercial expertise and knowledge of the specific requirements of the luxury market. This curriculum offers complete training in sales techniques, customer relationship management and commercial strategy, with a focus on luxury codes.",
+        desc_extended: "Students acquire essential skills to evolve in prestigious boutiques or high fashion houses. This Bac Pro allows young people to be immediately operational with a know-how adapted to an elite professional environment.",
+        objectives_title: "Objectives of Bac Pro MCV option A and B",
+        objectives_desc: "Holders of the Bac Pro in Commerce and Sales (MCV), option A or B, play a key role within the commercial team:",
+        objectives_list: [
+          "Option A: Participate in supply, advise, sell, build loyalty, and animate the sales area.",
+          "Option B: Manage customer prospecting, enhance the commercial offer and ensure commercial management."
+        ],
+        objectives_footer: "This training offered by ESEPF allows its students to acquire all the necessary skills of the chosen option to prepare them for varied missions in the Commerce sector.",
+        profile_title: "Profile",
+        profile_desc: "The Bac Pro in Commerce and Sales is accessible to students from:",
+        profile_list: [
+          "9th grade for entry into 10th grade pro",
+          "10th or 11th grade for entry into 11th grade pro"
+        ],
+        qualities_title: "Required Qualities",
+        qualities_list: [
+          "Required interpersonal ease",
+          "Sense of contact and organization",
+          "Important listening skills",
+          "Autonomy",
+          "Rigor",
+          "Challenger"
+        ],
         campuses: "All campuses",
         duration: "3 years (4 for allophones)",
         level: "Level 4 (Professional Diploma)",
@@ -1191,7 +1239,7 @@ export const translations = {
         subtitle: "语言与文化方向",
         title_detail: "用所有语言表达自己",
         desc: "普通高中毕业证书是一个为期三年的计划，旨在让高中生为高等教育做好准备。它基于共同核心课程和专业选择。",
-        system_desc: "在法国，所有学生首先遵循高一课程。从高二开始，他们选择三个专业。在高三，他们保留其中两个专业。",
+        system_desc: "在法国，所有学生首先遵循高一课程。从高二开始，他们选择三个专业. 在高三，他们保留其中两个专业.",
         specialties_title: "普通高中毕业证书专业与目标",
         specialties: [
           { name: "外国语言、文学与文化 (LLCE)", desc: "培养先进的语言掌握能力和深厚的文化知识。" },
@@ -1222,7 +1270,31 @@ export const translations = {
       bac_vente: {
         title: "专业销售高中",
         subtitle: "销售与商业方向",
-        desc: "旨在培养客户关系专家。",
+        title_detail: "为卓越服务！",
+        desc: "销售与商业专业高中毕业证书，专注于奢侈品领域，旨在培养学生进入高需求行业，将商业专业知识与奢侈品市场的特殊要求相结合。该课程提供销售技术、客户关系管理和商业战略方面的全面培训，并特别强调奢侈品准则。",
+        desc_extended: "学生将获得在知名精品店或高级时装屋发展所需的基本技能。该专业高中毕业证书使年轻人能够立即进入职场，并具备适应精英职业环境的专业知识。",
+        objectives_title: "MCV 专业高中毕业证书目标 A 和 B 选项",
+        objectives_desc: "销售与商业专业高中毕业证书（MCV）A 或 B 选项的持有者在商业团队中发挥关键作用：",
+        objectives_list: [
+          "选项 A：参与供货、咨询、销售、建立忠诚度并活跃销售区域。",
+          "选项 B：管理客户开发、提升商业报价并确保与其职能相关的商业管理。"
+        ],
+        objectives_footer: "ESEPF 提供的这项培训使学生能够获得所选选项的所有必要技能，为他们在商业领域的各种任务做好准备。",
+        profile_title: "招生对象",
+        profile_desc: "销售与商业专业高中毕业证书面向以下学生：",
+        profile_list: [
+          "初中毕业生进入专业高一",
+          "高一或高二学生进入专业高二"
+        ],
+        qualities_title: "所需素质",
+        qualities_list: [
+          "良好的人际交往能力",
+          "沟通与组织意识",
+          "重要的倾听能力",
+          "自主性",
+          "严谨",
+          "挑战者精神"
+        ],
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级",
@@ -1300,7 +1372,7 @@ export const translations = {
     },
     reseau_page: {
       title: "建立俱乐部 network，挖掘人才潜能",
-      p1: "得益于我们多年来建立的网络，源于我们在法国职业足球领域的过去， we offer our best players unique opportunities to show their full abilities. 该网络由法国和欧洲知名俱乐部组成，允许学生参加试训、友谊赛或其他体育赛事。他们将有机会脱颖而出，并被选中进入专业体系，助力其职业发展。",
+      p1: "得益于我们多年来建立的网络，源于我们在法国职业足球领域的过去， we offer our best players unique opportunities to show their full abilities. 该网络由法国和欧洲知名俱乐部组成，允许学生参加试训、友谊赛或其他体育赛事。他们将有机会脱颖onset而出，并被选中进入专业体系，助力其职业发展。",
       subtitle: "建立俱乐部 network，提供更多机遇..."
     },
     journey_page: {
@@ -1331,7 +1403,7 @@ export const translations = {
       years_11_15: "11 - 15 岁",
       years_11_15_desc: "4年制教育",
       years_15_18: "15 - 18 岁",
-      years_15_18_desc: "3年制教育",
+      years_15_18_desc: "3年制 education",
       years_18_plus: "18 岁及以上",
       years_18_plus_desc: "BTS, 本科, 硕士",
       years_20_plus: "20 岁及以上"
