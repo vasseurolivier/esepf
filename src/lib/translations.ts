@@ -221,6 +221,10 @@ export const translations = {
     },
     lycee_page: {
       title: "BACCALAUREATS",
+      intro_p1: "Notre lycée propose un parcours exigeant et diversifié, adapté aux aspirations et projets de chaque élève. Il offre trois filières principales : le baccalauréat général, le baccalauréat technologique STMG (Sciences et Technologies du Management et de la Gestion) et le baccalauréat professionnel Vente.",
+      intro_p2: "Chaque programme est conçu pour permettre aux élèves d’acquérir des compétences solides et de préparer leur orientation vers l’enseignement supérieur ou le monde professionnel.",
+      intro_p3: "Le bac général développe l’esprit d’analyse et la culture générale, le bac STMG prépare à des études en gestion, commerce et économie, tandis que le bac pro Vente offre une formation pratique et opérationnelle pour intégrer rapidement le secteur du commerce.",
+      intro_p4: "Un accompagnement personnalisé et un suivi régulier sont assurés pour garantir la réussite de chaque élève dans sa voie choisie.",
       formations_title: "LES FORMATIONS",
       card_langues: "METIERS DES LANGUES ET DES CULTURES",
       card_vente: "METIERS DE LA VENTE",
@@ -657,6 +661,10 @@ export const translations = {
     },
     lycee_page: {
       title: "BACCALAUREATES",
+      intro_p1: "Our high school offers a demanding and diverse curriculum, adapted to the aspirations and projects of each student. It offers three main tracks: the general baccalaureate, the STMG technological baccalaureate (Management and Management Sciences and Technologies) and the Professional Sales baccalaureate.",
+      intro_p2: "Each program is designed to enable students to acquire solid skills and prepare their orientation towards higher education or the professional world.",
+      intro_p3: "The general baccalaureate develops analysis and general culture, the STMG baccalaureate prepares for studies in management, commerce and economics, while the Pro Sales baccalaureate offers practical and operational training to quickly integrate the commerce sector.",
+      intro_p4: "Personalized support and regular monitoring are provided to ensure the success of each student in their chosen path.",
       formations_title: "PROGRAMS",
       card_langues: "LANGUAGES & CULTURE",
       card_vente: "SALES CAREERS",
@@ -1093,6 +1101,10 @@ export const translations = {
     },
     lycee_page: {
       title: "高中毕业证书",
+      intro_p1: "我们高中提供严谨且多样化的课程，适应每个学生的目标和计划。它提供三个主要方向：普通高中毕业证书、STMG 技术高中毕业证书（管理与管理科学与技术）以及专业销售高中毕业证书。",
+      intro_p2: "每个项目都旨在让学生获得扎实的技能，并为进入高等教育或职业世界做好准备。",
+      intro_p3: "普通高中培养分析能力和通识文化，STMG 高中为管理、商业和经济研究做准备，而专业销售高中提供实用且可操作的培训，以快速融入商业领域。",
+      intro_p4: "我们提供个性化的支持和定期的监测，以确保每个学生在所选道路上取得成功。",
       formations_title: "课程设置",
       card_langues: "语言与文化",
       card_vente: "销售职业",
@@ -1143,7 +1155,7 @@ export const translations = {
       prog_title: "足球计划",
       prog_intro_1: "我们的学校是一个足球训练中心，为运动员提供基于最佳法国培训方法的完整且结构化的计划。",
       prog_intro_2: "我们通过严格的训练、比赛和个性化跟踪，帮助学生实现从个人到高水平的目标，在技术、战术和身体层面不断进步。",
-      prog_intro_3: "我们特别注重运动员的心理和人文发展，培训他们应对高水平运动的心理挑战。团队精神、纪律、韧性和情绪管理是我们方法的核心。每位运动员都享有助力其发挥潜能的专业指导。",
+      prog_intro_3: "我们特别注重运动员的心理 and 人文发展，培训他们应对高水平运动的心理挑战。团队精神、纪律、韧性和情绪管理是我们方法的核心。每位运动员都享有助力其发挥潜能的专业指导。",
       prog_intro_4: "学校为运动员提供实现目标、充分发展的机会，最优秀者可获得职业合同或体育奖学金。",
       france_title: "法国：足球之乡",
       france_desc_full: "21世纪，法国是为世界杯贡献球员最多的国家，共有216名球员出生于此，远超巴西（148人）。法国还大幅领先于德国和意大利这两支四冠王球队。",
@@ -1176,12 +1188,12 @@ export const translations = {
       title1: "什么是体育学习？",
       label1_1: "日常体育练习",
       label1_2: "调整后的学业",
-      text1: "体育学习是一项教育计划，允许年轻人将学业与密集的体育练习结合起来。专为满足培训中运动员的需求而设计，它提供了一个结合了学术课程和常规训练的调整时间表。该系统旨在支持学生的双重项目，在促进其学业成功的同时，让他们在体育学科中取得进步并表现卓越。",
+      text1: "体育学习是一项教育计划，允许年轻人将学业与密集的体育练习结合起来。专为满足培训中运动员的需求而设计， it provide a adapted schedule that combines academic courses and regular training.",
       title2: "有哪些运动项目？",
       label2_1: "足球",
       label2_2: "篮球",
       label2_2_sub: "(即将推出)",
-      text2: "我们机构提供专注于足球的体育学习计划，提供密集的训练、技术会议、比赛和个性化的后续行动，以培养学生的体育和人文技能。不久，我们将通过篮球计划扩大我们的服务，让这项运动的爱好者能够从同样高质量的培训和指导中受益。这些计划旨在将体育表现与学业成功相结合，同时培养团队精神和纪律等价值观。",
+      text2: "我们机构提供专注于足球的体育学习计划，提供密集的训练、技术会议、比赛 and 个性化的后续行动，以培养学生的体育和人文技能。不久，我们将通过篮球计划扩大我们的服务，让这项运动的爱好者能够从同样高质量的培训和指导中受益。",
       day_title: "ESEPF 的典型一天",
       day_desc: "运动员的节奏要求很高，需要课程和场地之间的严格组织。",
       schedule: [
@@ -1194,9 +1206,9 @@ export const translations = {
       ]
     },
     reseau_page: {
-      title: "建立俱乐部网络，挖掘人才潜能",
+      title: "建立俱乐部 network，挖掘人才潜能",
       p1: "得益于我们多年来建立的网络，源于我们在法国职业足球领域的过去， we offer our best players unique opportunities to show their full abilities. 该网络由法国和欧洲知名俱乐部组成，允许学生参加试训、友谊赛或其他体育赛事。他们将有机会脱颖而出，并被选中进入专业体系，助力其职业发展。",
-      subtitle: "建立俱乐部网络，提供更多机遇..."
+      subtitle: "建立俱乐部 network，提供更多机遇..."
     },
     journey_page: {
       title: "学生发展蓝图",
@@ -1284,7 +1296,7 @@ export const translations = {
     },
     support_page: {
       title: "身心支持",
-      desc: "我们聚集了一支专业团队，为年轻运动员提供最佳条件。凭借教练、体能训练师和运动健康专家的专业知识，我们提供高质量的监督，促进每位学生的表现和身心健康。",
+      desc: "我们聚集了一支专业团队，为年轻运动员提供最佳条件。凭借教练、体能训练师 and 运动健康专家的专业知识，我们提供高质量的监督，促进每位学生的表现和身心健康。",
       team_title: "我们的团队",
       kine: "物理治疗师",
       mental: "心理教练",
@@ -1298,7 +1310,7 @@ export const translations = {
       hosting: "托管信息",
       property: "知识产权",
       data: "数据保护",
-      cookies: "Cookies政策",
+      cookies: "Cookies 政策",
       contact_info: "法律联系"
     },
     footer: {
