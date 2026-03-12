@@ -59,6 +59,9 @@ const IMAGE_CATEGORIES = [
     label: 'Formations',
     icon: <GraduationCap size={16} />,
     fields: [
+      { id: 'programs_college', label: 'Photo Collège (Accueil)', location: 'Onglet Collège - Section Formations' },
+      { id: 'programs_lycee', label: 'Photo Lycée (Accueil)', location: 'Onglet Lycée - Section Formations' },
+      { id: 'programs_academy', label: 'Photo Academy (Accueil)', location: 'Onglet Academy - Section Formations' },
       { id: 'college_hero', label: 'Hero Collège', location: 'Haut de page Collège' },
       { id: 'lycee_intro', label: 'Photo Intro Lycée', location: 'Section présentation Lycée' },
       { id: 'lycee_card_1', label: 'Carte Langues', location: 'Vignette Bac Général' },

@@ -9,10 +9,15 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTranslation } from '@/hooks/use-translation';
 import { ChevronRight, ArrowRight } from 'lucide-react';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 
 export function Programs() {
   const [isMounted, setIsMounted] = useState(false);
   const { t } = useTranslation();
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings, isLoading } = useDoc(settingsRef);
 
   useEffect(() => {
     setIsMounted(true);
@@ -26,7 +31,7 @@ export function Programs() {
         id: 'college',
         title: t.programs.college?.title || "Collège",
         subtitle: t.programs.college?.subtitle || "",
-        image: 'college-life',
+        imageKey: 'programs_college',
         desc: t.programs.college?.desc || "",
         href: '/formations/college',
         features: [t.programs.college?.f1, t.programs.college?.f2, t.programs.college?.f3].filter(Boolean)
@@ -35,7 +40,7 @@ export function Programs() {
         id: 'lycee',
         title: t.programs.lycee?.title || "Lycée",
         subtitle: t.programs.lycee?.subtitle || "",
-        image: 'bac-general',
+        imageKey: 'programs_lycee',
         desc: t.programs.lycee?.desc || "",
         href: '/formations/lycee',
         features: [t.programs.lycee?.f1, t.programs.lycee?.f2, t.programs.lycee?.f3].filter(Boolean),
@@ -49,7 +54,7 @@ export function Programs() {
         id: 'football',
         title: t.programs.academy?.title || "Academy",
         subtitle: t.programs.academy?.subtitle || "",
-        image: 'football-academy',
+        imageKey: 'programs_academy',
         desc: t.programs.academy?.desc || "",
         href: '/football-academy/programme',
         features: [t.programs.academy?.f1, t.programs.academy?.f2, t.programs.academy?.f3].filter(Boolean)
@@ -86,19 +91,18 @@ export function Programs() {
           </TabsList>
           
           {programs.map((prog) => {
-            const imgData = PlaceHolderImages.find(img => img.id === prog.image);
+            const customImage = isLoading ? null : settings?.images?.[prog.imageKey];
             return (
               <TabsContent key={prog.id} value={prog.id} className="focus-visible:outline-none">
                 <ScrollReveal>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white p-8 rounded-3xl shadow-xl">
                     <div className="relative h-[400px] w-full rounded-2xl overflow-hidden bg-black shadow-inner">
-                      {imgData && (
+                      {customImage && (
                         <Image
-                          src={imgData.imageUrl}
+                          src={customImage}
                           alt={prog.title}
                           fill
                           className="object-cover"
-                          data-ai-hint={imgData.imageHint}
                         />
                       )}
                     </div>
