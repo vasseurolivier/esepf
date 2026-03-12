@@ -79,7 +79,7 @@ export function OrientationSimulator() {
                 <CardHeader className="bg-muted/50 p-8">
                   <div className="flex items-center gap-3 mb-2">
                     <Sparkles className="text-secondary" />
-                    <span className="text-sm font-bold text-secondary uppercase tracking-widest">Question {step + 1}/{questions.length}</span>
+                    <span className="text-sm font-bold text-secondary uppercase tracking-widest">{t.orientation.question_label} {step + 1}/{questions.length}</span>
                   </div>
                   <CardTitle className="text-2xl font-headline font-bold">{questions[step].question}</CardTitle>
                 </CardHeader>

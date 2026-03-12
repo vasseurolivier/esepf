@@ -171,7 +171,7 @@ export const translations = {
       languages_excellence_title: "Langues Étrangères",
       languages_excellence_sub: "L'ouverture internationale au cœur de notre pédagogie.",
       passport_world_title: "Un Passeport pour le Monde",
-      passport_world_desc: "Maîtriser plusieurs langues est une nécessité dans un monde globalisé. À l'ESEPF, nous proposons des parcours linguistiques renforcés dès le collège.",
+      passport_world_desc: "Maîtriser plusieurs langues est une nécessité dans un monde globalisé. À l'ESEPF, we proposons des parcours linguistiques renforcés dès le collège.",
       efl_title: "English First Language (EFL)",
       efl_desc: "Un programme intensif pour les élèves souhaitant atteindre un niveau bilingue, avec des cours de littérature et d'histoire en anglais.",
       cert_int_title: "Certifications Internationales",
@@ -319,7 +319,7 @@ export const translations = {
       fulfillment_desc: "Concilier passion sportive et amitiés durables dans un cadre sécurisant."
     },
     lycee_page: {
-      title: "BACCALAURÉATS",
+      title: "BACCALAUREATS",
       intro_p1: "Notre lycée propose un parcours exigeant et diversifié, adapté aux aspirations et projets de chaque élève. Il offre trois filières principales : le baccalauréat général, le baccalauréat technologique STMG (Sciences et Technologies du Management et de la Gestion) et le baccalauréat professionnel Vente.",
       intro_p2: "Chaque programme est conçu pour permettre aux élèves d’acquérir des compétences solides et de préparer leur orientation vers l’enseignement supérieur ou le monde professionnel.",
       intro_p3: "Le bac général développe l’esprit d’analyse et la culture générale, le bac STMG prépare à des études en gestion, commerce et économie, tandis que le bac pro Vente offre une formation pratique et opérationnelle pour intégrer rapidement le secteur du commerce.",
@@ -590,6 +590,7 @@ export const translations = {
       map_not_defined: "Image de la carte non définie"
     },
     orientation: {
+      question_label: "Question",
       q1: "Quel est ton domaine d'intérêt principal ?",
       q1_o1: "Les matières générales",
       q1_o2: "Le management",
@@ -1210,7 +1211,7 @@ export const translations = {
       horizon_sub: "Three excellence paths open to our graduates.",
       ready_build_future: "Ready to build your future?",
       interview_desc: "Every journey is unique. Our academic tutors and sporting directors support you individually to define the trajectory best suited to your ambitions.",
-      ask_interview: "Request an interview"
+      mask_interview: "Request an interview"
     },
     journey: {
       college: "MIDDLE SCHOOL",
@@ -1251,6 +1252,7 @@ export const translations = {
       map_not_defined: "Map image not defined"
     },
     orientation: {
+      question_label: "Question",
       q1: "What is your main interest?",
       q1_o1: "General subjects",
       q1_o2: "Management",
@@ -1463,7 +1465,7 @@ export const translations = {
       student_life_activities: "校园活动",
       student_life_activities_list: "戏剧、合唱、象棋俱乐部、编程。",
       student_life_sports: "体育运动",
-      student_life_sports_list: "橄榄球、体操、攀岩、游泳。",
+      student_life_sports_list: "Rugby, Gymnastics, Climbing, Swimming.",
       journey_title: "学生发展蓝图",
       three_axes_mobile_title: "我们的卓越支柱",
       three_axes_mobile_languages_btn: "了解 FLE/EFL 课程"
@@ -1741,7 +1743,7 @@ export const translations = {
         title: "管理技术高中",
         subtitle: "管理与商务方向",
         hero_title: "通往管理与财务职业的道路！",
-        desc: "STMG 技术高中是一个培养学生进入管理、行政和经济领域的方向。它结合了通用和技术教学。",
+        desc: "STMG 技术高中是一个培养学生进入管理、行政 and 经济领域的方向. 它结合了通用和技术教学。",
         outro: "它开启了通往高等教育的大门，如 BTS、商学院，并引导学生进入营销或财务领域的职业生涯。",
         luxe_module_title: "奢侈品酒店与餐饮模块",
         luxe_module_p1: "在奢侈品行业不断扩张的世界中，让我们的学生做好准备至关重要。",
@@ -1750,7 +1752,7 @@ export const translations = {
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级",
-        bts_desc: "管理 BTS 是两年的培训. 在团队管理、财务和营销等领域提供教学。",
+        bts_desc: "管理 BTS 是两年的培训. 在团队管理、财务 and 营销等领域提供教学。",
         univ_desc: "本科是 3 年制大学培训. 它加强了管理和分析技能。",
         bts_list: ["会计管理", "管理支持", "商业运营", "谈判数字化", "中小企业管理", "IT 服务", "保险", "旅游"],
         bts_jobs: ["营销经理", "产品经理", "销售员", "薪资管理员", "人力资源经理", "财务主管", "资产管理", "顾问"],
@@ -1767,14 +1769,14 @@ export const translations = {
     football_pages: {
       prog_title: "足球计划",
       prog_intro_1: "我们的学校是一个足球训练中心，提供结构化计划。",
-      prog_intro_2: "我们通过严格的训练、比赛和个性化跟踪帮助学生实现目标。",
-      prog_intro_3: "我们特别注重运动员的心理发展。团队精神、纪律和韧性是核心。",
-      prog_intro_4: "学校为运动员提供实现目标和充分成长的机会。",
+      prog_intro_2: "我们通过严格的训练、比赛 and 个性化跟踪帮助学生实现目标。",
+      prog_intro_3: "我们特别注重运动员的心理发展. 团队精神、纪律 and 韧性是核心。",
+      prog_intro_4: "学校为运动员提供实现目标 and 充分成长的机会。",
       france_title: "法国：足球之乡",
       france_desc_full: "法国是为世界杯贡献球员最多的国家。",
       france_examples: "例如：姆巴佩、齐达内、格列兹曼...",
       reconnaissance_title: "享誉全球的培训",
-      reconnaissance_p1: "法国的人才辈出源于其完善的选拔和培养体系。",
+      reconnaissance_p1: "法国的人才辈出源于其完善的选拔 and 培养体系。",
       reconnaissance_p2: "任务是在竞争环境中培养年轻球员。",
       reconnaissance_p3: "凭借结构化方法，球员将在各方面全面发展。",
       reconnaissance_p4: "他们还将提升人文技能，学习团队精神。",
@@ -1787,8 +1789,8 @@ export const translations = {
       coaches_title: "资深认证教练",
       coaches_text: "教练均毕业于 FFF 或 UEFA，提供高水平指导。",
       weekly_title: "每周计划",
-      weekly_intro: "典型周包含每日训练和周末官方比赛。",
-      weekly_details: "包括视频分析和比赛准备。",
+      weekly_intro: "典型周包含每日训练 and 周末官方比赛。",
+      weekly_details: "包括视频分析 and 比赛准备。",
       elite_label: "精英绩效",
       terre_talents: "天才之地",
       expertise_cert: "认证专家",
@@ -1880,7 +1882,7 @@ export const translations = {
     },
     campus_pages: {
       evron_hero: "埃夫龙校区",
-      evron_sub: "ESEPF 的历史和行政中心。",
+      evron_sub: "ESEPF 的历史 and 行政中心。",
       bazeilles_hero: "圣巴泽耶校区",
       bazeilles_sub: "教学创新中心。",
       tulle_hero: "圣蒂勒校区",
@@ -1888,13 +1890,13 @@ export const translations = {
       infra_title: "卓越的基础设施",
       city_title: "生活环境",
       apply_now: "2026学年报名开启",
-      modern_infra_desc: "专为学业和体育设计的现代设施。",
+      modern_infra_desc: "专为学业 and 体育设计的现代设施。",
       bazeilles_strategic: "战略十字路口",
       bazeilles_strategic_desc: "地理位置优越。",
       culture_terroir: "文化与传统",
       bazeilles_culture_desc: "以热情友好著称。",
-      bazeilles_modern_infra: "现代建筑和空间。",
-      tulle_charm: "魅力和阳光",
+      bazeilles_modern_infra: "现代建筑 and 空间。",
+      tulle_charm: "魅力 and 阳光",
       tulle_charm_desc: "丰富的遗产。",
       tulle_sporty_city: "体育之城",
       tulle_sporty_desc: "全年气候宜人。",
@@ -1902,6 +1904,7 @@ export const translations = {
       map_not_defined: "地图未定义"
     },
     orientation: {
+      question_label: "问题",
       q1: "主要兴趣？",
       q1_o1: "通识科目",
       q1_o2: "管理",
@@ -1937,7 +1940,7 @@ export const translations = {
       faq_q1: "如何申请？",
       faq_a1: "在线填写注册文件。",
       faq_q2: "学院标准？",
-      faq_a2: "技术水平和学业。",
+      faq_a2: "技术水平 and 学业。",
       faq_q3: "国际生？",
       faq_a3: "设有 FLE 班。",
       opening_hours: "开放时间",
