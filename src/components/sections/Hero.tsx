@@ -37,10 +37,10 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-6 text-center text-white">
         {!settingsLoading && (
           <>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-headline font-bold mb-6 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-1000 uppercase leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-headline font-bold mb-6 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-1000 uppercase leading-tight drop-shadow-[0_8px_20px_rgba(0,0,0,1)]">
               <span className="text-secondary sm:text-white">{t.hero.subtitle}</span>
             </h1>
-            <p className="text-base md:text-xl lg:text-2xl mb-10 text-white/95 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-200 leading-relaxed font-bold drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <p className="text-base md:text-xl lg:text-2xl mb-10 text-white/95 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-200 leading-relaxed font-bold drop-shadow-[0_4px_12px_rgba(0,0,0,1)]">
               {t.hero.desc}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 w-full max-w-md mx-auto sm:max-w-none">
