@@ -10,7 +10,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
-import { GraduationCap, History, Globe, Star, MapPin } from 'lucide-react';
+import { GraduationCap, Globe } from 'lucide-react';
 
 export default function HistoryPage() {
   const { t } = useTranslation();
@@ -21,13 +21,6 @@ export default function HistoryPage() {
   const schoolName = settings?.schoolName || "ESEPF";
   const logoUrl = settings?.logoUrl;
   const mainImage = settings?.images?.history_main || "https://picsum.photos/seed/students-map/800/1000";
-
-  const milestones = [
-    { year: "2010", title: "Origines en Asie", desc: "Succès des premières académies Sport-Études en Chine et au Vietnam.", icon: <Globe size={24} /> },
-    { year: "2018", title: "Fondation ESEPF", desc: "Inauguration du siège historique en France et du premier campus.", icon: <History size={24} /> },
-    { year: "2022", title: "Label Élite", desc: "Reconnaissance officielle de l'Académie de Football par les instances internationales.", icon: <Star size={24} /> },
-    { year: "2025", title: "Expansion Nationale", desc: "Ouverture des campus de Sainte-Bazeilles et Sainte-Tulle.", icon: <MapPin size={24} /> },
-  ];
 
   return (
     <FirebaseClientProvider>
@@ -82,38 +75,8 @@ export default function HistoryPage() {
           </div>
         </section>
 
-        {/* Timeline Section */}
-        <section className="py-32 bg-white">
-          <div className="container mx-auto px-4">
-            <ScrollReveal className="text-center mb-24">
-              <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary uppercase tracking-tighter">Nos Grandes Étapes</h2>
-              <div className="w-24 h-1.5 bg-secondary mx-auto mt-4 rounded-full" />
-            </ScrollReveal>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {milestones.map((m, i) => (
-                <ScrollReveal key={i} delay={i * 150} className="relative group">
-                  <div className="p-10 bg-muted/30 rounded-[2.5rem] border border-muted hover:bg-primary hover:text-white transition-all duration-500 h-full">
-                    <div className="bg-white text-primary p-4 rounded-2xl inline-block shadow-lg mb-6 group-hover:scale-110 transition-transform">
-                      {m.icon}
-                    </div>
-                    <div className="text-3xl font-headline font-bold mb-2 text-secondary">{m.year}</div>
-                    <h3 className="text-xl font-bold mb-4 uppercase tracking-tight">{m.title}</h3>
-                    <p className="text-sm opacity-70 leading-relaxed">{m.desc}</p>
-                  </div>
-                  {i < milestones.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-4 translate-x-1/2 text-muted opacity-20">
-                      <History size={40} />
-                    </div>
-                  )}
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Quote / Vision */}
-        <section className="py-24 bg-primary text-white text-center relative overflow-hidden">
+        <section className="py-32 bg-primary text-white text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-5 -translate-y-1/4 translate-x-1/4">
             <Globe size={600} />
           </div>
