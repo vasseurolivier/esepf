@@ -263,7 +263,13 @@ export const translations = {
       innovation_desc: "Des méthodes pédagogiques modernes et adaptées.",
       agreges: "Agrégés",
       uefa_pro: "UEFA Pro",
-      official_label: "Label Officiel État"
+      official_label: "Label Officiel État",
+      member1_name: "Direction",
+      member1_role: "Responsable Académique",
+      member2_name: "Staff Technique",
+      member2_role: "Expert Football UEFA",
+      member3_name: "Administration",
+      member3_role: "Coordinatrice Campus"
     },
     recognition_page: {
       title: "Reconnaissance & Accréditations",
@@ -301,7 +307,7 @@ export const translations = {
       title: "ESEPF - Collège",
       age_label: "11 - 15 ANS",
       p1: "Nous ouvrons les portes de notre Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
-      p2: "Après leurs années de Collège, ils pourront accéder aux programmes de notre Lycée.",
+      p2: "After leurs années de Collège, ils pourront accéder aux programmes de notre Lycée.",
       p3: "Ce Collège viendra enrichir notre offer de formation et accompagner les jeunes.",
       prog_title: "Notre programme se décline en trois années :",
       year1_title: "Année 1 : Classe d'intégration",
@@ -925,7 +931,13 @@ export const translations = {
       innovation_desc: "Modern and adapted pedagogical methods.",
       agreges: "Agrégés",
       uefa_pro: "UEFA Pro",
-      official_label: "Official State Label"
+      official_label: "Official State Label",
+      member1_name: "Management",
+      member1_role: "Academic Manager",
+      member2_name: "Technical Staff",
+      member2_role: "UEFA Football Expert",
+      member3_name: "Administration",
+      member3_role: "Campus Coordinator"
     },
     recognition_page: {
       title: "Recognition & Accreditations",
@@ -981,7 +993,7 @@ export const translations = {
       fulfillment_desc: "Conciliate sporting passion and lasting friendships in a safe environment."
     },
     lycee_page: {
-      title: "BACCALAUREATES",
+      title: "BACCALAUREATS",
       intro_p1: "Our high school offers a demanding and diverse curriculum, adapted to the aspirations and projects of each student. It offers three main tracks: the general baccalaureate, the STMG technological baccalaureate (Management and Management Sciences and Technologies) and the Professional Sales baccalaureate.",
       intro_p2: "Each program is designed to enable students to acquire solid skills and prepare their orientation towards higher education or the professional world.",
       intro_p3: "The general baccalaureate develops analysis and general culture, the STMG baccalaureate prepares for studies in management, commerce and economics, while the Pro Sales baccalaureate offers practical and operational training to quickly integrate the commerce sector.",
@@ -1211,7 +1223,7 @@ export const translations = {
       horizon_sub: "Three excellence paths open to our graduates.",
       ready_build_future: "Ready to build your future?",
       interview_desc: "Every journey is unique. Our academic tutors and sporting directors support you individually to define the trajectory best suited to your ambitions.",
-      mask_interview: "Request an interview"
+      ask_interview: "Request an interview"
     },
     journey: {
       college: "MIDDLE SCHOOL",
@@ -1426,7 +1438,7 @@ export const translations = {
       college_link: "初中 (11 - 15 岁)",
       lycee_link: "高中 (15 - 18 岁)",
       academy_title: "足球学院",
-      academy_desc: "足球学院提供精英法国培训计划，旨在培养全面的球员，使其能够在最高水平上发展，同时符合法国足球的要求。课程结构合理，由具备资质且经验丰富的教练授课。\n凭借其地位和合作伙伴关系，学院允许球员参加法国官方比赛，从而提供一个公认且具有教育意义的竞争环境。\n目标是为每位球员提供进步、被发掘并长期致力于高水平项目的最佳工具。",
+      academy_desc: "足球学院提供精英法国培训计划，旨在培养全面的球员，使其能够在最高水平上发展，同时符合法国足球的要求。课程结构合理，由具备资质且经验丰富的教练授课。\n凭借其地位 and 合作伙伴关系，学院允许球员参加法国官方比赛，从而提供一个公认且具有教育意义的竞争环境。\n目标是为每位球员提供进步、被发掘并长期致力于高水平项目的最佳工具。",
       championships: "法国官方锦标赛",
       elite_prog: "精英足球计划",
       languages_title: "外语培训",
@@ -1561,7 +1573,7 @@ export const translations = {
       subtitle: "从亚洲到法国，全球雄心",
       intro_p1: "ESEPF 根植于我们在中国和越南的成功体育学院。",
       intro_p2: "ESEPF 位于法国中心，源于这一愿景。",
-      intro_p3: "为每位学生提供卓越的钥匙，同时建立稳固的学术和职业未来。",
+      intro_p3: "为每位学生提供卓越的钥匙，同时建立稳固的学术 and 职业未来。",
       mission_label: "我们的使命：",
       quote: "我们通过卓越教育在不同文化和大陆之间架起桥梁。",
       direction_label: "ESEPF 总管理部"
@@ -1569,7 +1581,7 @@ export const translations = {
     team_page: {
       title: "项目介绍",
       subtitle: "精英足球与学术计划",
-      p1: "在 ESEPF，我们为 11 至 19 岁的年轻人提供卓越的双重项目。",
+      p1: "在 ESEPF，我们为 11 至 19 岁的年轻人 offer 卓越的双重项目。",
       p2: "同时，学生遵循卓越的法国学术课程（从6年级到12年级）。",
       p3: "这一独特的计划不仅塑造运动员也塑造学生，灌输纪律、严谨和雄心。",
       team_title: "团队介绍",
@@ -1587,7 +1599,13 @@ export const translations = {
       innovation_desc: "现代且适配的教学方法。",
       agreges: "高级教师",
       uefa_pro: "欧足联职业",
-      official_label: "官方国家标签"
+      official_label: "官方国家标签",
+      member1_name: "管理层",
+      member1_role: "学术负责人",
+      member2_name: "技术团队",
+      member2_role: "欧足联足球专家",
+      member3_name: "行政部门",
+      member3_role: "校区协调员"
     },
     recognition_page: {
       title: "荣誉与认证",
@@ -1640,14 +1658,14 @@ export const translations = {
       excellence_title: "卓越",
       excellence_desc: "由教育部验证的严谨学术计划。",
       fulfillment_title: "成长",
-      fulfillment_desc: "在安全的环境中平衡体育热情和持久友谊。"
+      fulfillment_desc: "在安全的环境中平衡体育热情 and 持久友谊。"
     },
     lycee_page: {
       title: "高中毕业证书",
       intro_p1: "我们高中提供严谨且多样化的课程，适应每个学生的目标。它提供三个主要方向：普通高中、STMG 技术高中和专业销售高中。",
       intro_p2: "每个项目都旨在让学生获得扎实的技能，并为进入高等教育或职业世界做好准备。",
       intro_p3: "普通高中培养分析能力和通识文化，STMG 高中为管理、商业和经济研究做准备，而专业销售高中提供实用培训。",
-      intro_p4: "我们提供个性化支持和定期监测，以确保每个学生在所选道路上取得成功。",
+      intro_p4: "我们提供个性化支持 and 定期监测，以确保每个学生在所选道路上取得成功。",
       formations_title: "课程设置",
       card_langues: "语言与文化职业",
       card_vente: "销售职业",
@@ -1675,10 +1693,10 @@ export const translations = {
         system_desc: "在法国，所有学生首先遵循普通与技术高一。从高二开始，他们选择三个专业。在高三，他们保留其中两个专业。",
         specialties_title: "普通高中专业与目标",
         specialties: [
-          { name: "外国语言、文学与文化 (LLCE)", desc: "培养先进的语言掌握能力和深厚的文化知识。" },
+          { name: "外国语言、文学与文化 (LLCE)", desc: "培养先进的语言掌握能力 and 深厚的文化知识。" },
           { name: "体育、实践与运动文化 (EPPCS)", desc: "适合希望结合理论与实践的运动爱好者。" },
-          { name: "数学", desc: "分析和逻辑技能的基础。" },
-          { name: "数字与计算机科学 (NSI)", desc: "针对对编程和数字挑战感兴趣的学生。" }
+          { name: "数学", desc: "分析 and 逻辑技能的基础。" },
+          { name: "数字与计算机科学 (NSI)", desc: "针对对编程 and 数字挑战感兴趣的学生。" }
         ],
         conclusion: "这项完整的培训使学生能够获得适应当今世界的各种技能。",
         profile_title: "招生对象",
@@ -1686,9 +1704,9 @@ export const translations = {
         profile_list: ["初中毕业生进入高一", "高一或高二学生进入高二"],
         qualities_title: "所需素质",
         qualities_list: [
-          "对外语和外国文化的热情。",
+          "对外语 and 外国文化的热情。",
           "良好的表达能力。",
-          "好奇心和开放心态。",
+          "好奇心 and 开放心态。",
           "完善语言技能的意愿。",
           "独立工作能力。"
         ],
@@ -1709,7 +1727,7 @@ export const translations = {
         title: "专业销售高中",
         subtitle: "销售与商业方向",
         title_detail: "为卓越服务！",
-        desc: "销售与商业专业高中，专注于奢侈品领域，将商业专业知识与奢侈品市场的要求相结合. 该课程提供销售技术、客户关系管理和商业战略方面的全面培训。",
+        desc: "销售 and 商业专业高中，专注于奢侈品领域，将商业专业知识与奢侈品市场的要求相结合. 该课程提供销售技术、客户关系管理 and 商业战略方面的全面培训。",
         desc_extended: "学生获得在知名精品店发展的技能. 这是一个使年轻人能够立即进入职场的专业高中毕业证书。",
         objectives_title: "专业高中毕业证书目标",
         objectives_desc: "毕业生在商业团队中发挥关键作用：",
@@ -1732,7 +1750,7 @@ export const translations = {
         higher_ed_title: "2. 升学前景",
         higher_ed_intro: "获得证书后，您可以继续攻读 BTS 或大学本科。",
         bts_desc: "BTS 是为期两年的培训. 它可以快速为担任负责任的职位做好准备。",
-        univ_desc: "本科是 3 年制大学培训. 它有助于加强获得的技能并承诺快速进入职业世界。",
+        univ_desc: "本科是 3 年制大学培训. 它有助于加强获得的技能 and 承诺快速进入职业世界。",
         bts_list: ["国际贸易 BTS", "商业单位管理 BTS", "银行 BTS", "营销经理 BTS"],
         bts_jobs: ["销售经理", "营销经理", "传播顾问", "营销 project 经理", "出口经理", "门店经理"],
         univ_list: ["谈判与客户关系本科", "企业管理本科", "数字营销本科", "经济管理本科", "传播媒体本科", "组织管理本科"],
@@ -1743,8 +1761,8 @@ export const translations = {
         title: "管理技术高中",
         subtitle: "管理与商务方向",
         hero_title: "通往管理与财务职业的道路！",
-        desc: "STMG 技术高中是一个培养学生进入管理、行政 and 经济领域的方向. 它结合了通用和技术教学。",
-        outro: "它开启了通往高等教育的大门，如 BTS、商学院，并引导学生进入营销或财务领域的职业生涯。",
+        desc: "STMG 技术高中是一个培养学生进入管理、行政 and 经济领域的方向. 它结合了通用 and 技术教学。",
+        outro: "它开启了通往高等教育的大门，如 BTS、商学院，并引导学生进入营销 or 财务领域的职业生涯。",
         luxe_module_title: "奢侈品酒店与餐饮模块",
         luxe_module_p1: "在奢侈品行业不断扩张的世界中，让我们的学生做好准备至关重要。",
         luxe_module_p2: "该计划旨在让学生首次沉浸在这一精致领域，让他们发现质量标准。",
@@ -1753,7 +1771,7 @@ export const translations = {
         duration: "3年（非法语母语4年）",
         level: "4级",
         bts_desc: "管理 BTS 是两年的培训. 在团队管理、财务 and 营销等领域提供教学。",
-        univ_desc: "本科是 3 年制大学培训. 它加强了管理和分析技能。",
+        univ_desc: "本科是 3 年制大学培训. 它加强了管理 and 分析技能。",
         bts_list: ["会计管理", "管理支持", "商业运营", "谈判数字化", "中小企业管理", "IT 服务", "保险", "旅游"],
         bts_jobs: ["营销经理", "产品经理", "销售员", "薪资管理员", "人力资源经理", "财务主管", "资产管理", "顾问"],
         univ_list: ["经济管理", "社会经济管理", "管理科学", "法律", "创新管理", "国际贸易", "数字营销"],
@@ -1828,10 +1846,10 @@ export const translations = {
       schedule: [
         { time: "08:30 - 12:30", activity: "学术课程" },
         { time: "12:30 - 14:00", activity: "午餐与休息" },
-        { time: "14:00 - 16:00", activity: "课程或指导研究" },
+        { time: "14:00 - 16:00", activity: "课程 or 指导研究" },
         { time: "16:30 - 18:30", activity: "技术/战术训练" },
         { time: "19:00 - 20:00", activity: "晚餐" },
-        { time: "20:00 - 21:30", activity: "研究与安静时间" }
+        { time: "20:00 - 21:30", activity: "研究 and 安静时间" }
       ]
     },
     reseau_page: {
@@ -1859,7 +1877,7 @@ export const translations = {
       roadmap_label: "ESEPF 路线图",
       roadmap_sub: "360°愿景。",
       fundamental_concept: "基本概念",
-      horizon_title: "愿景与机遇",
+      horizon_title: "愿景 and 机遇",
       horizon_sub: "三大卓越路径。",
       ready_build_future: "准备建立未来？",
       interview_desc: "每个路径都是独特的。",

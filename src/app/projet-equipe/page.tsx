@@ -24,9 +24,9 @@ export default function TeamPage() {
   const teamMember3 = settings?.images?.team_member_3 || "https://picsum.photos/seed/member-3/500/500";
 
   const members = [
-    { name: "Direction", role: "Responsable Académique", img: teamMember1 },
-    { name: "Staff Technique", role: "Expert Football UEFA", img: teamMember2 },
-    { name: "Administration", role: "Coordinatrice Campus", img: teamMember3 }
+    { name: t.team_page.member1_name, role: t.team_page.member1_role, img: teamMember1 },
+    { name: t.team_page.member2_name, role: t.team_page.member2_role, img: teamMember2 },
+    { name: t.team_page.member3_name, role: t.team_page.member3_role, img: teamMember3 }
   ];
 
   const values = [
