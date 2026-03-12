@@ -24,9 +24,9 @@ export function OutletsSection({ btsDesc, univDesc, btsList, btsJobs, univList, 
     </svg>
   );
 
-  const Card = ({ title, items, bgColor }: { title: string, items: string[], bgColor: string }) => (
+  const Card = ({ title, items, bgColor, titleColor = "text-black" }: { title: string, items: string[], bgColor: string, titleColor?: string }) => (
     <div className={`p-8 rounded-[2rem] shadow-xl border border-black/5 ${bgColor} h-full min-h-[350px] relative overflow-hidden group hover:scale-[1.02] transition-transform`}>
-      <h4 className="text-xl font-headline font-bold text-black uppercase tracking-widest mb-6 border-b border-black/10 pb-4">
+      <h4 className={`text-xl font-headline font-bold ${titleColor} uppercase tracking-widest mb-6 border-b border-black/10 pb-4`}>
         {title}
       </h4>
       <ul className="space-y-3">
@@ -42,27 +42,33 @@ export function OutletsSection({ btsDesc, univDesc, btsList, btsJobs, univList, 
 
   return (
     <div className="space-y-24">
+      {/* Main Page Title */}
+      <ScrollReveal className="mb-16">
+        <h2 className="text-4xl md:text-6xl font-headline font-bold text-black tracking-tighter uppercase">
+          {t.outlets_labels.higher_ed_title}
+        </h2>
+      </ScrollReveal>
+
       {/* Section 1: LES BTS */}
       <section>
         <ScrollReveal className="flex items-center gap-4 mb-12">
           <CurvedArrow />
-          <h2 className="text-4xl md:text-5xl font-headline font-bold text-black tracking-tighter uppercase">
-            {t.outlets_labels.higher_ed_title}
-          </h2>
+          <h3 className="text-3xl font-headline font-bold text-black uppercase">
+            {t.outlets_labels.bts_title}
+          </h3>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Text Side */}
           <ScrollReveal className="lg:col-span-5 space-y-6">
-            <h3 className="text-3xl font-headline font-bold text-black uppercase">{t.outlets_labels.bts_title}</h3>
-            <div className="text-lg text-muted-foreground leading-relaxed">
+            <div className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
               <p>{btsDesc}</p>
             </div>
           </ScrollReveal>
 
           {/* Cards Side */}
           <ScrollReveal delay={200} className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card title={t.outlets_labels.bts_title} items={btsList} bgColor="bg-[#f5f1e8]" />
+            <Card title={t.outlets_labels.bts_title} items={btsList} bgColor="bg-[#f5f1e8]" titleColor="text-black/40" />
             <Card title={t.outlets_labels.jobs_title} items={btsJobs} bgColor="bg-[#d1d5db]" />
           </ScrollReveal>
         </div>
@@ -72,23 +78,22 @@ export function OutletsSection({ btsDesc, univDesc, btsList, btsJobs, univList, 
       <section>
         <ScrollReveal className="flex items-center gap-4 mb-12">
           <CurvedArrow />
-          <h2 className="text-4xl md:text-5xl font-headline font-bold text-black tracking-tighter uppercase">
+          <h3 className="text-3xl font-headline font-bold text-black uppercase">
             {t.outlets_labels.univ_title}
-          </h2>
+          </h3>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Text Side */}
           <ScrollReveal className="lg:col-span-5 space-y-6">
-            <h3 className="text-3xl font-headline font-bold text-black uppercase">{t.outlets_labels.univ_title}</h3>
-            <div className="text-lg text-muted-foreground leading-relaxed">
+            <div className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
               <p>{univDesc}</p>
             </div>
           </ScrollReveal>
 
           {/* Cards Side */}
           <ScrollReveal delay={200} className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card title={t.outlets_labels.licence_master} items={univList} bgColor="bg-[#f5f1e8]" />
+            <Card title={t.outlets_labels.licence_master} items={univList} bgColor="bg-[#f5f1e8]" titleColor="text-white shadow-sm" />
             <Card title={t.outlets_labels.jobs_title} items={univJobs} bgColor="bg-[#d1d5db]" />
           </ScrollReveal>
         </div>

@@ -211,7 +211,7 @@ export const translations = {
       title: "ESEPF - Collège",
       p1: "Nous ouvrons les portes de our Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
       p2: "After leurs années de Collège, ils pourront accéder aux programmes de notre Lycée.",
-      p3: "Ce Collège viendra enrichir notre offer de formation et accompagner les jeunes.",
+      p3: "Ce Collège viendra enrichir our offer de formation et accompagner les jeunes.",
       prog_title: "Notre programme se décline en trois années :",
       year1_title: "Année 1 : Classe d'intégration",
       year1_desc: "Le programme proposé leur permettra d'acquérir une maîtrise solide de la langue française (FLE).",
@@ -326,10 +326,12 @@ export const translations = {
         campuses: "Tous les campus",
         duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Baccalauréat Technologique)",
-        bts_list: ["BTS Gestion PME", "BTS Comptabilité Gestion", "BTS MCO"],
-        bts_jobs: ["Assistant de gestion", "Comptable junior", "Manager de rayon"],
-        univ_list: ["BUT GEA", "Licence Économie-Gestion", "Bachelor Business"],
-        univ_jobs: ["Contrôleur de gestion", "RH Project Manager", "Analyste financier"]
+        bts_desc: "Le BTS (Brevet de Technicien Supérieur) en management ou gestion est une formation de deux ans qui permet de se spécialiser après un Baccalauréat Technologique STMG. Elle offre un enseignement pratique et théorique dans des domaines tels que le management d'équipe, la gestion d'entreprise, la communication, la finance, la comptabilité et le marketing. Accessible sur dossier, le BTS prépare rapidement à des postes à responsabilités dans des secteurs variés comme le commerce, le marketing, la gestion des ressources humaines, ou la gestion d'entreprise, tout en permettant d'évoluer dans un environnement dynamique.",
+        univ_desc: "L'accès à une licence après un Baccalauréat Technologique STMG permet de se spécialiser dans des domaines comme le management, la gestion des entreprises, les ressources humaines, le marketing ou la finance. La licence est une formation universitaire de niveau Bac+3, d'une durée de 3 ans, qui combine des enseignements théoriques et pratiques. Elle renforce les compétences en gestion et en analyse acquises au lycée et prépare à une entrée réussie dans le monde professionnel. Après un BTS ou un DUT dans le domaine du management ou de la gestion, il est également possible de rejoindre directement la dernière année de licence pour se perfectionner et accéder à des postes à responsabilités.",
+        bts_list: ["BTS Comptabilité et Gestion (CG)", "BTS Support à l'Action Managériale (SAM)", "BTS Management Commercial Opérationnel (MCO)", "BTS Négociation et Digitalisation de la Relation Client (NDRC)", "BTS Gestion de la PME (GPME)", "BTS Services Informatiques aux Organisations (SIO)", "BTS Assurance", "BTS Tourisme"],
+        bts_jobs: ["Responsable marketing", "Chef de produit", "Commercial", "Gestionnaire de paie", "Responsable des ressources humaines", "Contrôleur de gestion", "Gestionnaire de patrimoine", "Conseiller en gestion de patrimoine"],
+        univ_list: ["Licence en Économie et Gestion", "Licence en Administration Économique et Sociale (AES)", "Licence en Sciences de Gestion", "Licence en Droit", "Licence en Management et Innovation", "Licence en Commerce International", "Licence en Marketing Digital"],
+        univ_jobs: ["Responsable marketing", "Chef de produit", "Chargé de communication", "Consultant en management", "Responsable des ressources humaines", "Analyste financier", "Directeur commercial", "Chef de projet en entreprises"]
       }
     },
     football_pages: {
@@ -827,10 +829,12 @@ export const translations = {
         campuses: "All campuses",
         duration: "3 years (4 for allophones)",
         level: "Level 4 (Technological Bac)",
-        bts_list: ["BTS SME Management", "BTS Accounting", "BTS MCO"],
-        bts_jobs: ["Management Assistant", "Junior Accountant"],
-        univ_list: ["BUT GEA", "Economics Degree", "Business Bachelor"],
-        univ_jobs: ["Management Controller", "HR Project Manager", "Financial Analyst"]
+        bts_desc: "The BTS (Higher Technician's Certificate) in management or business is a two-year program allowing specialization after a STMG Technological Baccalaureate. It offers practical and theoretical teaching in team management, business management, finance, and marketing.",
+        univ_desc: "Access to a Bachelor's degree after an STMG Baccalaureate allows specialization in management, human resources, or finance. It's a 3-year university course combining theory and practice.",
+        bts_list: ["Accounting & Management", "Managerial Action Support", "Operational Commercial Management", "Negotiation & Customer Digitalization", "SME Management", "IT Services for Orgs", "Insurance", "Tourism"],
+        bts_jobs: ["Marketing Manager", "Product Manager", "Commercial", "Payroll Manager", "HR Manager", "Management Controller", "Wealth Manager"],
+        univ_list: ["Economics & Management", "Social & Economic Admin", "Management Sciences", "Law", "Innovation Management", "International Trade", "Digital Marketing"],
+        univ_jobs: ["Marketing Manager", "Communication Officer", "Management Consultant", "Financial Analyst", "Commercial Director", "Project Manager"]
       }
     },
     football_pages: {
@@ -1255,7 +1259,7 @@ export const translations = {
         specialties_title: "普通高中毕业证书专业与目标",
         specialties: [
           { name: "外国语言、文学与文化 (LLCE)", desc: "培养先进的语言掌握能力和深厚的文化知识。" },
-          { name: "体育、实践与运动文化 (EPPCS)", desc: "适合希望结合理论与实践的运动爱好者。" },
+          { name: "体育、实践与运动 culture (EPPCS)", desc: "适合希望结合理论与实践的运动爱好者。" },
           { name: "数学", desc: "分析和逻辑技能的基础。" },
           { name: "数字与计算机科学 (NSI)", desc: "针对对编程和数字挑战感兴趣的学生。" }
         ],
@@ -1283,7 +1287,7 @@ export const translations = {
         title: "专业销售高中",
         subtitle: "销售与商业方向",
         title_detail: "为卓越服务！",
-        desc: "销售与商业专业高中毕业证书，专注于奢侈品领域，旨在培养学生进入高需求行业，将商业专业知识与奢侈品市场的特殊要求相结合。该课程提供销售技术、客户关系管理和商业战略方面的全面培训，并特别强调奢侈品准则。",
+        desc: "销售与商业专业高中毕业证书，专注于奢侈品领域，旨在培养学生进入高需求行业，将商业专业知识与奢侈品市场的特殊要求相结合. 该课程提供销售技术、客户关系管理和商业战略方面的全面培训，并特别强调奢侈品准则。",
         desc_extended: "学生将获得在知名精品店或高级时装屋发展所需的基本技能。该专业高中毕业证书使年轻人能够立即进入职场，并具备适应精英职业环境的专业知识。",
         objectives_title: "MCV 专业高中毕业证书目标 A 和 B 选项",
         objectives_desc: "销售与商业专业高中毕业证书（MCV）A 或 B 选项的持有者在商业团队中发挥关键作用：",
@@ -1328,10 +1332,12 @@ export const translations = {
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级",
-        bts_list: ["中小企业 management BTS", "会计 BTS", "MCO BTS"],
-        bts_jobs: ["管理助理", "初级会计师", "部门经理"],
-        univ_list: ["GEA BUT", "经济管理本科", "商业学士"],
-        univ_jobs: ["管理会计", "人力资源项目经理", "财务分析师"]
+        bts_desc: "管理或行政 BTS (高级技师证书) 是一个为期两年的培训，允许在 STMG 技术高中毕业证书后进行专业化。它在团队管理、企业管理、财务和营销等领域提供实践和理论教学。",
+        univ_desc: "在 STMG 高中毕业证书后获得本科文凭，允许在管理、人力资源或财务等领域进行专业化。这是一个将理论与实践教学相结合的 3 年制大学培训。",
+        bts_list: ["会计与管理 (CG)", "管理行动支持 (SAM)", "运营商业管理 (MCO)", "客户关系谈判与数字化 (NDRC)", "中小企业管理 (GPME)", "组织信息服务 (SIO)", "保险", "旅游"],
+        bts_jobs: ["营销经理", "产品经理", "销售员", "薪资管理员", "人力资源经理", "管理会计", "财富管理"],
+        univ_list: ["经济管理本科", "社会经济管理 (AES)", "管理科学本科", "法学本科", "创新管理本科", "国际贸易本科", "数字营销本科"],
+        univ_jobs: ["营销经理", "传播主管", "管理顾问", "财务分析师", "销售总监", "企业项目经理"]
       }
     },
     football_pages: {
@@ -1387,11 +1393,6 @@ export const translations = {
         { time: "19:00 - 20:00", activity: "晚餐" },
         { time: "20:00 - 21:30", activity: "研究与安静时间" }
       ]
-    },
-    reseau_page: {
-      title: "建立俱乐部 network，挖掘人才潜能",
-      p1: "得益于我们多年来建立的网络，源于我们在法国职业足球领域的过去， we offer our best players unique opportunities to show their full abilities. 该网络由法国和欧洲知名俱乐部组成，允许学生参加试训、友谊赛或其他体育赛事。他们将有机会脱颖onset而出，并被选中进入专业体系，助力其职业发展。",
-      subtitle: "建立俱乐部 network，提供更多机遇..."
     },
     journey_page: {
       title: "学生发展蓝图",
