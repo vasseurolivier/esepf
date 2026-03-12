@@ -469,7 +469,7 @@ export const translations = {
       france_examples: "Exemples : Mbappé, Zidane, Griezmann, Henry, Drogba, Platini, Varane, Kanté, Coman...",
       reconnaissance_title: "UNE FORMATION RECONNUE DANS LE MONDE",
       reconnaissance_p1: "La France et ses environs ne manquent certainement pas de talents, et cela n'est en rien dû au hasard, mais bien à la manière dont les jeunes joueurs sont détectés et formés dans le pays. Cette méthode, dont l'efficacité est reconnue dans le monde entier, est au cœur du succès du football français.",
-      reconnaissance_p2: "La mission des Centres de formation de football Français est de développer nos jeunes joueurs de football en les plaçant dans un environnement compétitif, avec un encadrement de haute qualité et un programme d'enseignement français conçu pour les aider à atteindre leur plein potentiel.",
+      reconnaissance_p2: "La mission des Centres de formation de football Français est de développer nos jeunes joueurs de football en les plaçant dans un environnement compétitif, with un encadrement de haute qualité et un programme d'enseignement français conçu pour les aider à atteindre leur plein potentiel.",
       reconnaissance_p3: "Grâce à un programme et une méthodologie structurés, et à travers des séances variées, des tests, des activités, des matchs, des défis et des interactions individuelles, nos joueurs évolueront sur le plan émotionnel, construiront leur caractère et développeront leurs compétences techniques, tactiques et physiques (données ajustées en fonction de l'âge spécifique de chaque joueur).",
       reconnaissance_p4: "Ils progresseront également dans leurs compétences humaines grâce à nos défis psycho-sociaux, en apprenant l'esprit d'équipe, la dévotion, la résilience et, surtout, en nourrissant un amour durable pour le jeu.",
       method_title: "NOTRE MÉTHODOLOGIE",
@@ -528,11 +528,11 @@ export const translations = {
     },
     reseau_page: {
       title: "Un Réseau de Clubs pour Révéler Nos Talents",
-      p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, nous offrons à nos meilleurs joueurs des opportunités uniques de montrer l'étendue de leurs capacités. Ce réseau, composé de clubs prestigieux français et européens, leur permet de participer à des essais, des matchs amicaux ou d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptées à leur progression vers le plus haut niveau.",
+      p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, we offrons à nos meilleurs joueurs des opportunités uniques de montrer l'étendue de leurs capacités. Ce réseau, composé de clubs prestigieux français et européens, leur permet de participer à des essais, des matchs amicaux ou d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptées à leur progression vers le plus haut niveau.",
       subtitle: "Un Réseau de Clubs pour offrir des opportunités..."
     },
     journey_page: {
-      title: "LE PARCOURS DU JOUEUR",
+      title: "Le Parcours du Joueur",
       formation_title: "Formation de 3 ou 4 ans",
       sport_label: "FORMATION SPORTIVE",
       school_label: "FORMATION SCOLAIRE",
@@ -580,7 +580,7 @@ export const translations = {
       bazeilles_hero: "Campus Sainte-Bazeilles",
       bazeilles_sub: "L'innovation pédagogique au cœur du Sud-Ouest.",
       bazeilles_title: "Un carrefour stratégique en Lot-et-Garonne",
-      bazeilles_desc: "Située aux portes de Marmande, Sainte-Bazeilles bénéficie d'une situation géographique privilégiée. Ville de tradition et de modernité, elle offre un cadre de vie dynamique entre Bordeaux et Toulouse.",
+      bazeilles_desc: "Notre site de Sainte-Bazeille (47) vous accueille dans un cadre calme et verdoyant au cœur du Lot-et-Garonne. Idéal pour vos formations, il dispose de salles modulables entièrement équipées, d'un terrain de sport pour les activités de groupe, et d'un espace de détente chaleureux.\nL'hébergement sur place et la restauration vous garantissent un séjour tout compris et serein.",
       bazeilles_culture: "Culture & Terroir",
       bazeilles_culture_desc: "Sainte-Bazeilles est réputée pour sa convivialité et ses infrastructures sportives de premier plan, parfaitement intégrées à la vie locale.",
       bazeilles_infra_desc: "Le Campus de Sainte-Bazeilles se distingue par son architecture moderne et ses espaces de co-working.",
@@ -644,7 +644,7 @@ export const translations = {
     },
     support_page: {
       title: "Un accompagnement Physique et Mental",
-      desc: "Nous nous sommes entouré d’une équipe de professionnels afin de garantir des conditions optimales pour nos jeunes athlètes. Grâce à l’expertise de nos entraîneurs, préparateurs physiques et spécialistes de la santé sportive, nous offrons un encadrement de qualité, favorisant à la fois la performance et le bien-être de chaque élève.",
+      desc: "Nous nous sommes entouré d’une équipe de professionnels afin de garantir des conditions optimales pour nos jeunes athlètes. Grâce à l’expertise de nos entraîneurs, préparateurs physiques et spécialistes de la santé sportive, we offrons un encadrement de qualité, favorisant à la fois la performance et le bien-être de chaque élève.",
       team_title: "NOTRE EQUIPE",
       kine: "kinésithérapeute",
       mental: "Préparateur mental",
@@ -1252,7 +1252,7 @@ export const translations = {
       bazeilles_hero: "Sainte-Bazeilles Campus",
       bazeilles_sub: "Educational innovation in the South-West.",
       bazeilles_title: "A strategic crossroads in Lot-et-Garonne",
-      bazeilles_desc: "Located at the gates of Marmande, Sainte-Bazeilles benefits from a privileged geographical situation. A city of tradition and modernity, it offers a dynamic living environment between Bordeaux and Toulouse.",
+      bazeilles_desc: "Our Sainte-Bazeille site (47) welcomes you to a calm and green setting in the heart of Lot-et-Garonne. Ideal for your training, it has fully equipped modular rooms, a sports field for group activities, and a warm relaxation area.\nOn-site accommodation and catering guarantee an all-inclusive and serene stay.",
       bazeilles_culture: "Culture & Terroir",
       bazeilles_culture_desc: "Sainte-Bazeilles is known for its conviviality and top-notch sports infrastructures, perfectly integrated into local life.",
       bazeilles_infra_desc: "The Sainte-Bazeilles Campus is distinguished by its modern architecture and co-working spaces.",
@@ -1372,7 +1372,7 @@ export const translations = {
     },
     hero: {
       subtitle: "追求卓越",
-      desc: "从初中到高中的激励性学习环境，包括我们的精英足球学院，为明天培养公民。",
+      desc: "从初中到高中的激励性学习 environment，包括我们的精英足球学院，为明天培养公民。",
       btnDiscover: "探索学院",
       btnRegister: "提交申请"
     },
@@ -1852,7 +1852,7 @@ export const translations = {
       perf_cog_label: "认知性能",
       life_balance_label: "生活平衡",
       concept_label: "ESEPF 概念",
-      daily_train_desc: "专家指导下的日常强化训练。",
+      daily_train_desc: "专家指导下的每日强化训练。",
       optimized_schedule_desc: "优化时间表以兼顾官方课程。",
       schedule: [
         { time: "08:30 - 12:30", activity: "学术课程" },
@@ -1917,7 +1917,7 @@ export const translations = {
       bazeilles_hero: "圣巴泽耶校区",
       bazeilles_sub: "教学创新中心。",
       bazeilles_title: "洛特-加龙省的战略十字路口",
-      bazeilles_desc: "圣巴泽耶位于马尔芒德门口，地理位置优越。这座城市兼具传统 and 现代，在波尔多 and 图卢兹之间提供充满活力的生活环境。",
+      bazeilles_desc: "我们的圣巴泽耶（47）校区欢迎您来到位于洛特-加龙省中心的宁静绿意环境。这里是您进行培训的理想场所，拥有设备齐全的可调节教室、供团体活动使用的运动场以及温馨的休闲空间。\n酒店式的校内住宿和餐饮为您提供全方位且安心的全包式体验。",
       bazeilles_culture: "文化与风土",
       bazeilles_culture_desc: "圣巴泽耶以其热情友好 and 一流的体育设施而闻名，这些设施与当地生活完美融合。",
       bazeilles_infra_desc: "圣巴泽耶校区以其现代建筑 and 联合办公空间而闻名。",
