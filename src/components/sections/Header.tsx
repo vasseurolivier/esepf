@@ -30,7 +30,7 @@ export function Header() {
   
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading: settingsLoading } = useDoc(settingsRef);
+  const { data: settings } = useDoc(settingsRef);
   
   const { t, language, setLanguage } = useTranslation();
 
@@ -102,7 +102,7 @@ export function Header() {
     { name: t.nav.contact, href: '/contact' },
   ];
 
-  const schoolName = settings?.schoolName || (settingsLoading ? "" : "ESEPF");
+  const schoolName = settings?.schoolName || "ESEPF";
   const logoUrl = settings?.logoUrl;
 
   const getSubLinks = (name: string) => {
@@ -123,9 +123,7 @@ export function Header() {
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2 md:space-x-4">
             <div className="relative h-20 w-20 md:h-28 md:w-28 flex items-center justify-center">
-              {settingsLoading ? (
-                <div className="w-16 h-16 bg-muted animate-pulse rounded-full" />
-              ) : logoUrl ? (
+              {logoUrl ? (
                 <img src={logoUrl} alt={schoolName} className="h-full w-auto object-contain" />
               ) : (
                 <div className="p-2 border-2 border-primary rounded-full">

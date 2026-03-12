@@ -15,11 +15,11 @@ import { useTranslation } from '@/hooks/use-translation';
 export function FootballAcademy() {
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading: settingsLoading } = useDoc(settingsRef);
+  const { data: settings } = useDoc(settingsRef);
   
   const { t } = useTranslation();
   
-  const footballImgUrl = settings?.images?.football_academy || (!settingsLoading ? PlaceHolderImages.find(img => img.id === 'football-academy')?.imageUrl : null);
+  const footballImgUrl = settings?.images?.football_academy || PlaceHolderImages.find(img => img.id === 'football-academy')?.imageUrl || "https://picsum.photos/seed/football-elite/1200/800";
 
   const academyFeatures = useMemo(() => {
     if (!t?.academy_features) return [];
@@ -73,22 +73,19 @@ export function FootballAcademy() {
           </div>
 
           <div className="lg:w-1/2 relative h-[600px] w-full rounded-3xl overflow-hidden bg-black shadow-2xl">
-            {footballImgUrl && (
-              <Image
-                src={footballImgUrl}
-                alt="Football Academy"
-                fill
-                className="object-cover animate-in fade-in duration-700"
-              />
-            )}
-            {!settingsLoading && (
-              <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-sm p-6 rounded-2xl border-l-8 border-secondary">
-                <p className="text-white font-bold italic">
-                  "Plus qu'une école, une rampe de lancement vers le professionnalisme."
-                </p>
-                <p className="text-sm text-white/70 mt-2">— Direction Technique, {settings?.schoolName || "ESEPF"}</p>
-              </div>
-            )}
+            <Image
+              src={footballImgUrl}
+              alt="Football Academy"
+              fill
+              className="object-cover animate-in fade-in duration-700"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-sm p-6 rounded-2xl border-l-8 border-secondary">
+              <p className="text-white font-bold italic">
+                "Plus qu'une école, une rampe de lancement vers le professionnalisme."
+              </p>
+              <p className="text-sm text-white/70 mt-2">— Direction Technique, {settings?.schoolName || "ESEPF"}</p>
+            </div>
           </div>
         </ScrollReveal>
       </div>

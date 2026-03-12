@@ -14,10 +14,10 @@ export function StudentJourney() {
   const { t } = useTranslation();
   const db = useFirestore();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading: settingsLoading } = useDoc(settingsRef);
+  const { data: settings } = useDoc(settingsRef);
 
   const schoolLogo = settings?.logoUrl;
-  const panImgUrl = settings?.images?.campus_panoramic || (!settingsLoading ? PlaceHolderImages.find(img => img.id === 'campus-panoramic')?.imageUrl : null);
+  const panImgUrl = settings?.images?.campus_panoramic || PlaceHolderImages.find(img => img.id === 'campus-panoramic')?.imageUrl || "https://picsum.photos/seed/campus-pan/1920/600";
 
   const stages = [
     {
@@ -78,15 +78,14 @@ export function StudentJourney() {
   return (
     <>
       <div className="w-full h-[250px] md:h-[450px] relative overflow-hidden bg-black">
-        {panImgUrl && (
-          <Image
-            src={panImgUrl}
-            alt="Campus Panoramic View"
-            fill
-            className="object-cover animate-in fade-in duration-700"
-            priority
-          />
-        )}
+        <Image
+          src={panImgUrl}
+          alt="Campus Panoramic View"
+          fill
+          className="object-cover animate-in fade-in duration-700"
+          priority
+          sizes="100vw"
+        />
         <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
       </div>
 
@@ -94,7 +93,7 @@ export function StudentJourney() {
         <div className="container mx-auto px-6">
           <ScrollReveal className="flex items-center gap-4 md:gap-6 mb-12">
             <div className="p-2 md:p-3 border-2 border-primary rounded-xl">
-              <GraduationCap className="text-primary w-8 h-8 md:w-10 md:h-10" />
+              < GraduationCap className="text-primary w-8 h-8 md:w-10 md:h-10" />
             </div>
             <h2 className="text-3xl md:text-6xl font-headline font-bold text-primary tracking-tighter uppercase leading-none">
               {t.sections.journey_title}
@@ -111,9 +110,7 @@ export function StudentJourney() {
 
                   {stage.hasLogo && (
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 opacity-5 md:opacity-10 pointer-events-none -z-10 group-hover:opacity-20 transition-opacity">
-                      {settingsLoading ? (
-                        null
-                      ) : schoolLogo ? (
+                      {schoolLogo ? (
                         <img src={schoolLogo} alt="Logo" className="w-full h-full object-contain" />
                       ) : (
                         <GraduationCap className="w-full h-full" />
