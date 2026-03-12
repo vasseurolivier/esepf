@@ -92,6 +92,11 @@ const IMAGE_CATEGORIES = [
       { id: 'metiers_agent', label: 'Photo Agent FIFA', location: 'Page Métiers du Sport' },
       { id: 'metiers_arbitre', label: 'Photo Arbitre', location: 'Page Métiers du Sport' },
       { id: 'metiers_analyste', label: 'Photo Analyste Vidéo', location: 'Page Métiers du Sport' },
+      { id: 'support_hero', label: 'Hero Accompagnement', location: 'Grande photo page Accompagnement' },
+      { id: 'support_kine', label: 'Photo Kine', location: 'Trombinoscope Santé' },
+      { id: 'support_mental', label: 'Photo Mental', location: 'Trombinoscope Santé' },
+      { id: 'support_medecin', label: 'Photo Médecin', location: 'Trombinoscope Santé' },
+      { id: 'support_physique', label: 'Photo Physio', location: 'Trombinoscope Santé' },
     ]
   },
   {

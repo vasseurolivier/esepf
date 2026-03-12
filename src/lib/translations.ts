@@ -274,7 +274,7 @@ export const translations = {
       prog_intro_3: "Nous mettons également un accent particulier sur le développement mental et humain des athlètes, en les formant à gérer les défis psychologiques du sport de haut niveau. L'esprit d'équipe, la discipline, la résilience et la gestion des émotions sont au cœur de notre approche. Chaque athlète bénéficie d'un encadrement qui lui permet de s'épanouir et de donner le meilleur de lui-même.",
       prog_intro_4: "Notre école donne à ses athlètes la chance d'atteindre leurs objectifs, de s'épanouir et, pour les meilleurs d'entre eux, d'aspirer à devenir sportifs professionnels ou d'obtenir des bourses d'études grâce à leurs performances sportives.",
       france_title: "FRANCE : TERRE DE FOOTBALL",
-      france_desc_full: "Au total, la France est le pays qui a fourni le plus grand nombre de joueurs pour la Coupe du Monde au 21e siècle, avec 216 participants nés sur son sol, loin devant le Brésil et ses 148 joueurs, pourtant souvent perçu comme le plus grand exportateur de talents. France devance également largement l'Allemagne et l'Italie, tous deux champions du monde à quatre reprises.",
+      france_desc_full: "Au total, la France est le country qui a fourni le plus grand nombre de joueurs pour la Coupe du Monde au 21e siècle, avec 216 participants nés sur son sol, loin devant le Brésil et ses 148 joueurs, pourtant souvent perçu comme le plus grand exportateur de talents. France devance également largement l'Allemagne et l'Italie, tous deux champions du monde à quatre reprises.",
       france_examples: "Exemples : Mbappé, Zidane, Griezmann, Henry, Drogba, Platini, Varane, Kanté, Coman...",
       reconnaissance_title: "UNE FORMATION RECONNUE DANS LE MONDE",
       reconnaissance_p1: "La France et ses environs ne manquent certainement pas de talents, et cela n'est en rien dû au hasard, mais bien à la manière dont les jeunes joueurs sont détectés et formés dans le pays. Cette méthode, dont l'efficacité est reconnue dans le monde entier, est au cœur du succès du football français.",
@@ -399,6 +399,15 @@ export const translations = {
       faq_a2: "Niveau technique et dossier scolaire.",
       faq_q3: "Élèves internationaux ?",
       faq_a3: "Oui, classes FLE dédiées."
+    },
+    support_page: {
+      title: "Un accompagnement Physique et Mental",
+      desc: "Nous nous sommes entouré d’une équipe de professionnels afin de garantir des conditions optimales pour nos jeunes athlètes. Grâce à l’expertise de nos entraîneurs, préparateurs physiques et spécialistes de la santé sportive, nous offrons un encadrement de qualité, favorisant à la fois la performance et le bien-être de chaque élève.",
+      team_title: "NOTRE EQUIPE",
+      kine: "kinésithérapeute",
+      mental: "Préparateur mental",
+      medecin: "Médecin",
+      physique: "Préparateur physique"
     },
     legal: {
       mentions: "Mentions Légales",
@@ -817,6 +826,15 @@ export const translations = {
       faq_q3: "International students?",
       faq_a3: "Yes, dedicated FLE classes."
     },
+    support_page: {
+      title: "Physical and Mental Support",
+      desc: "We have surrounded ourselves with a team of professionals to guarantee optimal conditions for our young athletes. Thanks to the expertise of our coaches, physical trainers and sports health specialists, we offer quality supervision, favoring both performance and the well-being of each student.",
+      team_title: "OUR TEAM",
+      kine: "physiotherapist",
+      mental: "Mental trainer",
+      medecin: "Doctor",
+      physique: "Physical trainer"
+    },
     legal: {
       mentions: "Legal Mentions",
       privacy: "Privacy Policy",
@@ -1120,7 +1138,7 @@ export const translations = {
       axes_tech: "技术：专注于个人控球 and 协调能力的专项训练。",
       axes_tact: "战术：理解比赛系统、位置感 and 集体智慧。",
       axes_phys: "体能：安全的运动发展、耐力 and 爆发力（根据年龄调整）。",
-      axes_ment: "心理：心理支持、压力管理 and 求胜意志。",
+      axes_ment: "心理：心理支持、压力 management and 求胜意志。",
       coaches_title: "资深认证教练",
       coaches_text: "我们的教练均毕业于 FFF 或 UEFA，确保提供高水平的每日专业指导。",
       weekly_title: "每周计划",
@@ -1141,7 +1159,7 @@ export const translations = {
       text1: "体育学习是一项教育计划，允许年轻人将学业与密集的体育练习结合起来。",
       title2: "有哪些运动项目？",
       label2_1: "足球",
-      label2_2: "篮球",
+      label2_2: "Basketball",
       label2_2_sub: "(即将推出)",
       text2: "我们机构提供专注于足球的体育学习计划。不久，我们将通过篮球计划扩大我们的服务。"
     },
@@ -1233,6 +1251,15 @@ export const translations = {
       faq_a2: "技术水平和学业表现。",
       faq_q3: "接收国际生？",
       faq_a3: "是的，设有 FLE 班。"
+    },
+    support_page: {
+      title: "身心支持",
+      desc: "我们聚集了一支专业团队，为年轻运动员提供最佳条件。凭借教练、体能训练师和运动健康专家的专业知识，我们提供高质量的监督，促进每位学生的表现和身心健康。",
+      team_title: "我们的团队",
+      kine: "物理治疗师",
+      mental: "心理教练",
+      medecin: "医生",
+      physique: "体能训练师"
     },
     legal: {
       mentions: "法律声明",
