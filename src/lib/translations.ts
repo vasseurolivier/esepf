@@ -272,10 +272,12 @@ export const translations = {
         campuses: "Tous les campus",
         duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Baccalauréat)",
-        bts_list: ["BTS Tourisme", "BTS Commerce International", "BTS Communication"],
-        bts_jobs: ["Chargé de communication", "Assistant export"],
-        univ_list: ["Licence LEA", "Licence Droit", "Licence Sciences Po"],
-        univ_jobs: ["Cadre international", "Traducteur"]
+        bts_desc: "Le BTS (Brevet de Technicien Supérieur) en Langues Étrangères Appliquées (LEA) est une formation de deux ans qui permet de se spécialiser après un Baccalauréat Général.\nElle offre un enseignement pratique et théorique dans des domaines tels que la traduction, l'interprétation, la gestion de projets internationaux, ainsi que la communication interculturelle.\nAccessible sur dossier, le BTS prépare rapidement à des postes à responsabilités dans des secteurs en pleine expansion, comme le commerce international, le tourisme, la gestion de la relation client, ou encore les métiers de la traduction et de l'interprétariat.",
+        univ_desc: "L'accès à une licence après un Baccalauréat Général permet de se spécialiser dans des domaines comme la traduction, l'interprétation, les relations internationales, ou encore la communication interculturelle.\nLa licence est une formation universitaire de niveau Bac+3, d'une durée de 3 ans, qui combine des enseignements théoriques et pratiques. Elle permet de consolider les compétences linguistiques et culturelles acquises au lycée et prépare à une entrée réussie dans le monde professionnel.\nAprès un BTS en langues étrangères appliquées ou dans des domaines connexes, il est également possible de rejoindre directement la dernière année de licence pour approfondir ses compétences et élargir ses perspectives professionnelles.",
+        bts_list: ["BTS Tourisme", "BTS Commerce International", "BTS Gestion de la PME", "BTS Traduction et Interprétation", "BTS Communication", "BTS Relations Publiques", "BTS Management Commercial Opérationnel", "BTS Développement et Animation des Territoires Ruraux"],
+        bts_jobs: ["Chargé(e) de communication", "Assistant(e) de direction", "Responsable marketing", "Traducteur(trice)", "Gestionnaire de projet", "Responsable des relations internationales", "Chef de produit", "Attaché(e) commercial(e)"],
+        univ_list: ["Licence de Langues Étrangères Appliquées (LEA)", "Licence de Traduction et Interprétation", "Licence de Lettres Modernes", "Licence de Langues, Littératures et Civilisations Étrangères (LLCE)", "Licence de Communication", "Licence de Relations Internationales", "Licence de Journalisme", "Licence de Marketing et Commerce International"],
+        univ_jobs: ["Responsable communication", "Chargé(e) de projet", "Consultant(e) en management", "Traducteur(trice) spécialisé(e)", "Gestionnaire de la relation client", "Responsable marketing digital", "Chef de produit international", "Expert(e) en gestion des ressources humaines"]
       },
       bac_vente: {
         title: "BAC PRO VENTE",
@@ -474,7 +476,7 @@ export const translations = {
       form_success: "Message envoyé avec succès !",
       info_title: "Nos Coordonnées",
       campus_evron: "Campus Evron",
-      campus_bazeilles: "Campus Sainte-Bazeilles",
+      campus_bazeilles: "Sainte-Bazeilles",
       campus_tulle: "Campus Sainte-Tulle",
       faq_title: "Questions Fréquentes",
       faq_q1: "Comment s'inscrire ?",
@@ -782,10 +784,12 @@ export const translations = {
         campuses: "All campuses",
         duration: "3 ans (4 for allophones)",
         level: "Level 4 (Baccalaureate)",
-        bts_list: ["BTS Tourism", "BTS International Trade"],
-        bts_jobs: ["Communication Officer"],
-        univ_list: ["Bachelor LEA", "Law Degree"],
-        univ_jobs: ["International Executive"]
+        bts_desc: "The BTS (Higher Technician's Certificate) in Applied Foreign Languages (LEA) is a two-year program that allows specialization after a General Baccalaureate.\nIt offers practical and theoretical teaching in areas such as translation, interpretation, international project management, and intercultural communication.\nAccessible by application, the BTS quickly prepares for positions of responsibility in growing sectors such as international trade, tourism, customer relationship management, or translation and interpretation professions.",
+        univ_desc: "Access to a Bachelor's degree after a General Baccalaureate allows for specialization in fields such as translation, interpretation, international relations, or intercultural communication.\nThe Bachelor's degree is a 3-year university course (Bac+3 level) that combines theoretical and practical teaching. It strengthens the linguistic and cultural skills acquired in high school and prepares for a successful entry into the professional world.\nAfter a BTS in applied foreign languages or related fields, it is also possible to directly join the final year of a Bachelor's degree to deepen skills and broaden career prospects.",
+        bts_list: ["BTS Tourism", "BTS International Trade", "BTS SME Management", "BTS Translation & Interpretation", "BTS Communication", "BTS Public Relations", "BTS Operational Commercial Management", "BTS Rural Area Dev. & Animation"],
+        bts_jobs: ["Communication Officer", "Executive Assistant", "Marketing Manager", "Translator", "Project Manager", "International Relations Manager", "Product Manager", "Sales Representative"],
+        univ_list: ["Bachelor in Applied Foreign Languages (LEA)", "Bachelor in Translation & Interpretation", "Bachelor in Modern Literature", "Bachelor in Foreign Lang., Lit. & Civilizations (LLCE)", "Bachelor in Communication", "Bachelor in International Relations", "Bachelor in Journalism", "Bachelor in Marketing & Int. Trade"],
+        univ_jobs: ["Communication Manager", "Project Manager", "Management Consultant", "Specialized Translator", "Customer Relations Manager", "Digital Marketing Manager", "Int. Product Manager", "HR Management Expert"]
       },
       bac_vente: {
         title: "PRO SALES BAC",
@@ -1292,10 +1296,12 @@ export const translations = {
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级",
-        bts_list: ["旅游 BTS", "国际贸易 BTS"],
-        bts_jobs: ["传播主管"],
-        univ_list: ["LEA 本科", "法学本科"],
-        univ_jobs: ["国际事务主管"]
+        bts_desc: "应用外语 (LEA) 的 BTS（高级技师证书）是一项为期两年的培训，允许在普通高中毕业证书后进行专业化。\n它在翻译、口译、国际项目管理以及跨文化交流等领域提供实践和理论教学。\n通过档案申请，BTS 可以快速为国际贸易、旅游、客户关系管理或翻译和口译等快速发展领域的负责任职位做好准备。",
+        univ_desc: "在普通高中毕业证书后攻读本科文凭，允许在翻译、口译、国际关系或跨文化交流等领域进行专业化。\n本科是 Bac+3 级别的大学培训，学制为 3 年，结合了理论和实践教学。它有助于巩固在高中获得的语言和文化技能，并为成功进入职场做好准备。\n在应用外语或相关领域的 BTS 之后，也可以直接进入本科最后一年继续深造并扩大职业前景。",
+        bts_list: ["旅游 BTS", "国际贸易 BTS", "中小企业管理 BTS", "翻译与口译 BTS", "传播 BTS", "公共关系 BTS", "运营商业管理 BTS", "农村地区开发与动画 BTS"],
+        bts_jobs: ["传播主管", "行政助理", "营销经理", "翻译", "项目经理", "国际关系负责人", "产品经理", "销售代表"],
+        univ_list: ["应用外语 (LEA) 本科", "翻译与口译本科", "现代文学本科", "外国语言、文学与文明 (LLCE) 本科", "传播本科", "国际关系本科", "新闻学本科", "营销与国际贸易本科"],
+        univ_jobs: ["传播负责人", "项目主管", "管理顾问", "专业翻译", "客户关系经理", "数字营销负责人", "国际产品经理", "人力资源管理专家"]
       },
       bac_vente: {
         title: "专业销售高中",
@@ -1349,7 +1355,7 @@ export const translations = {
         luxe_module_title: "为我们的 STMG 学生提供的奢侈品酒店与餐饮模块",
         luxe_module_p1: "在奢侈品酒店与餐饮业不断扩张的世界中，让我们的学生做好应对这一声誉显赫行业要求的准备至关重要。这就是为什么我们的 STMG 高中毕业证书将包含一个专门针对高端酒店与餐饮的独家模块。",
         luxe_module_p2: "该计划旨在让学生首次沉浸在这一精致的领域，让他们发现质量标准、卓越服务以及应用于接待、管理和客户关系的奢侈品准则。通过具体的案例研究、与行业专业人士的会面以及情景模拟，我们的学生将培养管理、营销和酒店管理方面的基本技能，同时培养适应这一苛刻行业期望的职业素养。",
-        luxe_module_p3: "该模块代表了我们学生的真正机遇，为他们开启了奢侈品领域专业培训和国际职业生涯的大门。它完全符合我们提供创新和职业化教育的承诺，与劳动力市场的现实和学生的需求相契合。",
+        luxe_module_p3: "该模块代表了我们学生的真正机遇，为他们开启了奢侈品领域专业培训和国际职业生涯的大门。它完全符合我们提供创新和职业化教育的承诺，与劳动力市场的现实 and 学生的需求相契合。",
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级",
