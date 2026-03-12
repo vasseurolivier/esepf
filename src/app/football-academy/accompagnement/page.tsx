@@ -46,7 +46,7 @@ export default function AccompagnementPage() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="lg:w-1/2 bg-[#6b8e61] p-12 lg:p-20 text-white shadow-2xl">
               <ScrollReveal>
-                <h1 className="text-4xl md:text-6xl font-headline font-bold mb-12 leading-tight">
+                <h1 className="text-3xl md:text-4xl font-headline font-bold mb-12 leading-tight">
                   {t.support_page.title}
                 </h1>
                 <p className="text-lg md:text-xl leading-relaxed opacity-90 font-medium">
