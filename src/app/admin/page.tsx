@@ -11,7 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useFirestore, useDoc, useCollection, useMemoFirebase } from '@/firebase';
 import { doc, setDoc, serverTimestamp, collection, query, orderBy, updateDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, History, BookOpen, Briefcase, Languages, Star, Map as MapIcon } from 'lucide-react';
+import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, History, BookOpen, Briefcase, Languages, Star, Map as MapIcon, Share2 } from 'lucide-react';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { format } from 'date-fns';
@@ -19,6 +19,8 @@ import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 
 const ADMIN_PASSWORD = 'Yesacademy888$';
+
+const CLUBS_COUNT = 18;
 
 const IMAGE_CATEGORIES = [
   {
@@ -68,6 +70,7 @@ const IMAGE_CATEGORIES = [
       { id: 'bac_gen_intro', label: 'Illustration Bac Général', location: 'Photo intro Bac Général' },
       { id: 'bac_vente_hero', label: 'Hero Bac Vente', location: 'Bannière page Bac Vente' },
       { id: 'bac_vente_intro', label: 'Illustration Bac Vente', location: 'Photo intro Bac Vente' },
+      { id: 'bac_vente_employ', label: 'Illustration Emploi Vente', location: 'Section métiers Bac Pro Vente' },
       { id: 'bac_stmg_hero', label: 'Hero Bac STMG', location: 'Bannière page Bac STMG' },
       { id: 'bac_stmg_intro', label: 'Illustration Bac STMG', location: 'Photo intro Bac STMG' },
       { id: 'integration_hero', label: 'Hero Intégration', location: 'Bannière Classe Intégration' },
@@ -89,6 +92,7 @@ const IMAGE_CATEGORIES = [
       { id: 'sport_etudes_bg', label: 'Fond Sport-Études', location: 'Arrière-plan page Sport-Études' },
       { id: 'sport_etudes_football', label: 'Photo Football SE', location: 'Page Sport-Études' },
       { id: 'sport_etudes_basketball', label: 'Photo Basket SE', location: 'Page Sport-Études' },
+      { id: 'journey_player_concept', label: 'Concept Joueur', location: 'Section Concept Fondamental (Parcours)' },
       { id: 'metiers_bpjeps', label: 'Photo BPJEPS', location: 'Page Métiers du Sport' },
       { id: 'metiers_coach', label: 'Photo Coach', location: 'Page Métiers du Sport' },
       { id: 'metiers_agent', label: 'Photo Agent FIFA', location: 'Page Métiers du Sport' },
@@ -289,7 +293,11 @@ export default function AdminPage() {
                           {cat.icon} {cat.label}
                         </TabsTrigger>
                       ))}
+                      <TabsTrigger value="network" className="text-xs uppercase font-bold flex items-center gap-2 px-6 shrink-0">
+                        <Share2 size={16} /> Réseau Clubs
+                      </TabsTrigger>
                     </TabsList>
+                    
                     {IMAGE_CATEGORIES.map(cat => (
                       <TabsContent key={cat.id} value={cat.id} className="p-8">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -299,7 +307,7 @@ export default function AdminPage() {
                                 <Label className="font-bold text-[10px] uppercase text-primary">{field.label}</Label>
                                 <span className="text-[9px] text-muted-foreground italic">{field.location}</span>
                               </div>
-                              <div className="aspect-video bg-muted/30 rounded-xl overflow-hidden mb-2 flex items-center justify-center border border-muted/50">
+                              <div className="aspect-video bg-black rounded-xl overflow-hidden mb-2 flex items-center justify-center border border-muted/50">
                                 {images[field.id] ? (
                                   <img src={images[field.id]} alt={field.label} className="object-cover w-full h-full" />
                                 ) : (
@@ -317,6 +325,36 @@ export default function AdminPage() {
                         </div>
                       </TabsContent>
                     ))}
+
+                    <TabsContent value="network" className="p-8">
+                      <div className="mb-6">
+                        <h3 className="font-bold text-primary uppercase text-sm mb-2">Logos des Clubs Partenaires</h3>
+                        <p className="text-xs text-muted-foreground">Ces logos apparaissent sur la page "Réseau de Clubs".</p>
+                      </div>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        {Array.from({ length: CLUBS_COUNT }).map((_, i) => {
+                          const fieldId = `club_logo_${i}`;
+                          return (
+                            <div key={fieldId} className="space-y-2 p-3 bg-white rounded-xl border border-border">
+                              <Label className="text-[9px] font-bold uppercase text-primary">Logo Club {i + 1}</Label>
+                              <div className="aspect-square bg-black rounded-lg overflow-hidden flex items-center justify-center p-2">
+                                {images[fieldId] ? (
+                                  <img src={images[fieldId]} alt={`Club ${i+1}`} className="object-contain w-full h-full" />
+                                ) : (
+                                  <ImageIcon className="text-muted/20" size={24} />
+                                )}
+                              </div>
+                              <Input 
+                                value={images[fieldId] || ''} 
+                                onChange={(e) => updateImageField(fieldId, e.target.value)}
+                                placeholder="URL Logo..."
+                                className="text-[9px] h-7 rounded-md"
+                              />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </TabsContent>
                   </Tabs>
                 </CardContent>
               </Card>

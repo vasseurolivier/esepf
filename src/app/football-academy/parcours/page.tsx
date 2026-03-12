@@ -9,9 +9,16 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import Image from 'next/image';
 import { GraduationCap, Trophy, Globe, Target, Briefcase, ArrowRight, Star, ChevronDown } from 'lucide-react';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 
 export default function ParcoursJoueurPage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
+
+  const conceptImage = settings?.images?.journey_player_concept || "https://picsum.photos/seed/player-path/600/600";
 
   const ChevronArrow = () => (
     <div className="flex flex-col items-center">
@@ -66,9 +73,9 @@ export default function ParcoursJoueurPage() {
 
             <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 max-w-6xl mx-auto">
               <ScrollReveal className="flex flex-col items-center text-center w-full lg:w-1/4">
-                <div className="relative w-48 h-48 mb-6 rounded-3xl overflow-hidden border-4 border-muted shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 bg-muted">
+                <div className="relative w-48 h-48 mb-6 rounded-3xl overflow-hidden border-4 border-muted shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 bg-black">
                   <Image 
-                    src="https://picsum.photos/seed/player-path/600/600" 
+                    src={conceptImage} 
                     alt="Student Athlete" 
                     fill 
                     className="object-cover"

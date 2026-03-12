@@ -24,6 +24,7 @@ export default function BacProVentePage() {
 
   const heroImage = settings?.images?.bac_vente_hero || "https://picsum.photos/seed/bac-vente-pro/1920/1080";
   const introImage = settings?.images?.bac_vente_intro || "https://picsum.photos/seed/sales-luxury/800/600";
+  const employImage = settings?.images?.bac_vente_employ || "https://picsum.photos/seed/sales-luxury-2/1200/500";
 
   const content = t.lycee_page.bac_vente;
 
@@ -227,7 +228,7 @@ export default function BacProVentePage() {
               
               <div className="relative aspect-[21/9] rounded-[3rem] overflow-hidden shadow-2xl bg-black group mb-24">
                 <Image 
-                  src="https://picsum.photos/seed/sales-luxury-2/1200/500"
+                  src={employImage}
                   alt="Sales Luxury Store"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"

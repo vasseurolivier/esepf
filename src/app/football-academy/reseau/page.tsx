@@ -8,6 +8,8 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import Image from 'next/image';
+import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { doc } from 'firebase/firestore';
 
 const CLUBS = [
   { name: 'Olympique Lyonnais', hint: 'lyon football logo' },
@@ -32,6 +34,9 @@ const CLUBS = [
 
 export default function ReseauClubsPage() {
   const { t } = useTranslation();
+  const db = useFirestore();
+  const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
+  const { data: settings } = useDoc(settingsRef);
 
   return (
     <FirebaseClientProvider>
@@ -64,17 +69,22 @@ export default function ReseauClubsPage() {
           <div className="container mx-auto px-4">
             <ScrollReveal delay={200} className="max-w-5xl mx-auto">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center">
-                {CLUBS.map((club, idx) => (
-                  <div key={idx} className="relative w-24 h-24 md:w-32 md:h-32 transition-transform duration-300 hover:scale-110">
-                    <Image 
-                      src={`https://picsum.photos/seed/club-logo-${idx}/200/200`} 
-                      alt={club.name}
-                      fill
-                      className="object-contain grayscale hover:grayscale-0 transition-all duration-500"
-                      data-ai-hint={club.hint}
-                    />
-                  </div>
-                ))}
+                {CLUBS.map((club, idx) => {
+                  const customLogo = settings?.images?.[`club_logo_${idx}`];
+                  const defaultLogo = `https://picsum.photos/seed/club-logo-${idx}/200/200`;
+                  
+                  return (
+                    <div key={idx} className="relative w-24 h-24 md:w-32 md:h-32 transition-transform duration-300 hover:scale-110 bg-black rounded-xl p-2">
+                      <Image 
+                        src={customLogo || defaultLogo} 
+                        alt={club.name}
+                        fill
+                        className="object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                        data-ai-hint={club.hint}
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </ScrollReveal>
           </div>
