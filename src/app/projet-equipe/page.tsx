@@ -55,17 +55,6 @@ export default function TeamPage() {
               <h1 className="text-6xl md:text-8xl font-headline font-bold text-white mb-12 tracking-tighter uppercase leading-none">
                 {t.team_page.title}
               </h1>
-              
-              <div className="w-full flex justify-center lg:justify-start">
-                <div className="relative w-64 h-64">
-                  <svg viewBox="0 0 200 200" className="w-full h-full fill-white opacity-40 animate-pulse">
-                    <path d="M100 20C70 20 40 40 40 80C40 130 100 180 100 180C100 180 160 130 160 80C160 40 130 20 100 20ZM100 140C80 140 60 120 60 100C60 80 80 60 100 60C120 60 140 80 140 100C140 120 120 140 100 140Z" />
-                  </svg>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <GraduationCap size={80} className="text-white mb-4" />
-                  </div>
-                </div>
-              </div>
             </ScrollReveal>
           </div>
 

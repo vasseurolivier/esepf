@@ -10,7 +10,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
-import { GraduationCap, Globe } from 'lucide-react';
+import { Globe } from 'lucide-react';
 
 export default function HistoryPage() {
   const { t } = useTranslation();
@@ -19,7 +19,6 @@ export default function HistoryPage() {
   const { data: settings } = useDoc(settingsRef);
   
   const schoolName = settings?.schoolName || "ESEPF";
-  const logoUrl = settings?.logoUrl;
   const mainImage = settings?.images?.history_main || "https://picsum.photos/seed/students-map/800/1000";
 
   return (
@@ -32,20 +31,9 @@ export default function HistoryPage() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <ScrollReveal className="space-y-8">
-                <div className="flex items-center gap-6 mb-12">
-                   <div className="w-24 h-24 relative">
-                     {logoUrl ? (
-                        <img src={logoUrl} alt="Logo" className="w-full h-full object-contain" />
-                     ) : (
-                        <div className="w-full h-full border-2 border-primary rounded-full flex items-center justify-center">
-                          <GraduationCap className="text-primary w-12 h-12" />
-                        </div>
-                     )}
-                   </div>
-                   <div>
-                     <h1 className="text-5xl font-headline font-bold text-black tracking-tighter uppercase">{t.history_page.title}</h1>
-                     <p className="text-secondary font-bold tracking-widest text-xs uppercase">{schoolName}</p>
-                   </div>
+                <div className="mb-12">
+                   <h1 className="text-5xl font-headline font-bold text-black tracking-tighter uppercase">{t.history_page.title}</h1>
+                   <p className="text-secondary font-bold tracking-widest text-xs uppercase">{schoolName}</p>
                 </div>
 
                 <h2 className="text-4xl font-headline font-bold text-black leading-tight">
