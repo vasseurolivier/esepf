@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -7,7 +8,7 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { GraduationCap, Clock, MapPin, Award, Info } from 'lucide-react';
+import { GraduationCap, Clock, MapPin, Award, Info, BookOpen, CheckCircle2, Languages, User, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FrenchSystemSchema } from '@/components/sections/FrenchSystemSchema';
@@ -23,6 +24,8 @@ export default function BacGeneralPage() {
 
   const heroImage = settings?.images?.bac_gen_hero || "https://picsum.photos/seed/bac-gen-hero/1920/1080";
   const introImage = settings?.images?.bac_gen_intro || "https://picsum.photos/seed/study-gen/800/600";
+
+  const content = t.lycee_page.bac_gen;
 
   return (
     <FirebaseClientProvider>
@@ -41,11 +44,11 @@ export default function BacGeneralPage() {
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
               <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">
-                {t.lycee_page.bac_gen.title}
+                {content.title}
               </h1>
               <div className="w-24 h-1.5 bg-secondary mx-auto mb-6 rounded-full" />
               <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto uppercase tracking-widest font-light">
-                {t.lycee_page.bac_gen.subtitle}
+                {content.subtitle}
               </p>
             </ScrollReveal>
           </div>
@@ -59,21 +62,21 @@ export default function BacGeneralPage() {
                 <Clock className="text-secondary" />
                 <div>
                   <p className="text-[10px] uppercase opacity-60">{t.common.duration}</p>
-                  <p className="font-bold text-sm">{t.lycee_page.bac_gen.duration}</p>
+                  <p className="font-bold text-sm">{content.duration}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Award className="text-secondary" />
                 <div>
                   <p className="text-[10px] uppercase opacity-60">{t.common.level}</p>
-                  <p className="font-bold text-sm">{t.lycee_page.bac_gen.level}</p>
+                  <p className="font-bold text-sm">{content.level}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="text-secondary" />
                 <div>
                   <p className="text-[10px] uppercase opacity-60">{t.common.campus_label}</p>
-                  <p className="font-bold text-sm">{t.lycee_page.bac_gen.campuses}</p>
+                  <p className="font-bold text-sm">{content.campuses}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -87,37 +90,115 @@ export default function BacGeneralPage() {
           </div>
         </section>
 
-        {/* Intro Section */}
+        {/* Main Content Section */}
         <section className="py-24">
           <div className="container mx-auto px-4 max-w-5xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-              <ScrollReveal className="space-y-6">
-                <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-4">
-                  <GraduationCap size={32} />
+            <ScrollReveal className="mb-20 text-center">
+              <h2 className="text-4xl md:text-6xl font-headline font-bold text-black italic mb-8">
+                {content.title_detail}
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+                {content.desc}
+              </p>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
+              <ScrollReveal className="space-y-8">
+                <div className="p-8 bg-muted/30 rounded-[2.5rem] border border-muted">
+                  <h3 className="text-2xl font-headline font-bold text-primary mb-6 flex items-center gap-3">
+                    <BookOpen className="text-secondary" /> Fonctionnement
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed italic">
+                    {content.system_desc}
+                  </p>
                 </div>
-                <h2 className="text-4xl font-headline font-bold text-black tracking-tight">
-                  L'Excellence Académique
-                </h2>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  {t.lycee_page.bac_gen.desc}
-                </p>
-                <div className="p-4 bg-muted/50 rounded-xl border-l-4 border-secondary flex gap-3">
-                  <Info className="text-secondary shrink-0" size={20} />
-                  <p className="text-sm font-bold text-primary">{t.common.allophone_mention}</p>
+                <div className="p-6 bg-primary text-white rounded-2xl shadow-xl">
+                  <div className="flex gap-4">
+                    <Info className="text-secondary shrink-0" size={24} />
+                    <p className="text-sm font-medium leading-relaxed">
+                      {t.common.allophone_mention}
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-4 pt-4">
-                  <p className="text-muted-foreground leading-relaxed">
-                    {t.lycee_page.bac_gen.program_details}
+              </ScrollReveal>
+              
+              <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl bg-muted group">
+                <Image 
+                  src={introImage}
+                  alt="Languages and Cultures"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
+                <div className="absolute bottom-8 left-8 right-8">
+                  <p className="text-white font-bold italic text-lg leading-tight">
+                    "Maîtriser les langues, c'est s'ouvrir les portes du monde."
                   </p>
                 </div>
               </ScrollReveal>
-              <ScrollReveal delay={200} className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-muted/20">
-                <Image 
-                  src={introImage}
-                  alt="Students studying"
-                  fill
-                  className="object-cover"
-                />
+            </div>
+
+            {/* Specialties Section */}
+            <ScrollReveal className="mb-24">
+              <h3 className="text-3xl font-headline font-bold text-primary mb-12 text-center uppercase tracking-widest underline underline-offset-8 decoration-secondary">
+                {content.specialties_title}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {content.specialties.map((spec: any, i: number) => (
+                  <div key={i} className="p-8 bg-white border border-muted rounded-3xl shadow-sm hover:shadow-md transition-shadow group">
+                    <h4 className="text-lg font-bold text-black mb-3 group-hover:text-secondary transition-colors">
+                      • {spec.name}
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {spec.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-12 text-center text-muted-foreground font-medium italic p-8 bg-muted/20 rounded-2xl border border-dashed border-muted">
+                {content.conclusion}
+              </p>
+            </ScrollReveal>
+
+            {/* Profile & Qualities */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+              <ScrollReveal className="bg-primary p-10 rounded-[3rem] text-white relative overflow-hidden shadow-2xl">
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-headline font-bold mb-8 flex items-center gap-3 uppercase tracking-tighter">
+                    <User className="text-secondary" /> {content.profile_title}
+                  </h3>
+                  <p className="mb-6 opacity-80">{content.profile_desc}</p>
+                  <ul className="space-y-4">
+                    {content.profile_list.map((item: string, i: number) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-secondary shrink-0 mt-1" />
+                        <span className="text-sm font-medium">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="absolute top-0 right-0 opacity-5 p-8">
+                  <GraduationCap size={150} />
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={200} className="bg-white p-10 rounded-[3rem] border-2 border-primary relative overflow-hidden shadow-xl">
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-headline font-bold text-primary mb-8 flex items-center gap-3 uppercase tracking-tighter">
+                    <Star className="text-secondary" /> {content.qualities_title}
+                  </h3>
+                  <ul className="space-y-4">
+                    {content.qualities_list.map((item: string, i: number) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full shrink-0 mt-2" />
+                        <span className="text-sm text-muted-foreground font-medium">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="absolute bottom-0 right-0 opacity-5 p-8 text-primary">
+                  <Languages size={150} />
+                </div>
               </ScrollReveal>
             </div>
 
@@ -134,12 +215,12 @@ export default function BacGeneralPage() {
         <section className="py-24 bg-muted/10 border-y border-muted">
           <div className="container mx-auto px-4 max-w-6xl">
             <OutletsSection 
-              btsDesc={t.lycee_page.bac_gen.bts_desc}
-              univDesc={t.lycee_page.bac_gen.univ_desc}
-              btsList={t.lycee_page.bac_gen.bts_list}
-              btsJobs={t.lycee_page.bac_gen.bts_jobs}
-              univList={t.lycee_page.bac_gen.univ_list}
-              univJobs={t.lycee_page.bac_gen.univ_jobs}
+              btsDesc={content.bts_desc}
+              univDesc={content.univ_desc}
+              btsList={content.bts_list}
+              btsJobs={content.bts_jobs}
+              univList={content.univ_list}
+              univJobs={content.univ_jobs}
             />
           </div>
         </section>
