@@ -17,7 +17,6 @@ export function Hero() {
   
   const { t } = useTranslation();
   
-  const schoolName = settings?.schoolName || (settingsLoading ? "" : "ESEPF");
   const heroImgUrl = settings?.images?.hero_home || (!settingsLoading ? PlaceHolderImages.find(img => img.id === 'hero-school')?.imageUrl : null);
 
   return (
@@ -39,7 +38,7 @@ export function Hero() {
         {!settingsLoading && (
           <>
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-headline font-bold mb-6 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-1000 uppercase leading-tight">
-              {schoolName} : <br className="hidden sm:block" /> <span className="text-secondary sm:text-white">{t.hero.subtitle}</span>
+              <span className="text-secondary sm:text-white">{t.hero.subtitle}</span>
             </h1>
             <p className="text-base md:text-xl lg:text-2xl mb-10 text-white/90 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-200 leading-relaxed">
               {t.hero.desc}
