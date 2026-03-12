@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -11,7 +10,7 @@ import Image from 'next/image';
 import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 
-const CLUBS_COUNT = 18;
+const CLUBS_COUNT = 6;
 
 export default function ReseauClubsPage() {
   const { t } = useTranslation();
@@ -49,19 +48,21 @@ export default function ReseauClubsPage() {
         <section className="pb-32">
           <div className="container mx-auto px-4">
             <ScrollReveal delay={200} className="max-w-5xl mx-auto">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center">
                 {Array.from({ length: CLUBS_COUNT }).map((_, idx) => {
                   const customLogo = isLoading ? null : settings?.images?.[`club_logo_${idx}`];
                   
                   return (
-                    <div key={idx} className="relative w-24 h-24 md:w-32 md:h-32 transition-transform duration-300 hover:scale-110 bg-black rounded-xl p-2 overflow-hidden">
-                      {customLogo && (
+                    <div key={idx} className="relative w-32 h-32 md:w-48 md:h-48 transition-transform duration-300 hover:scale-110 bg-black rounded-xl p-4 overflow-hidden border border-muted shadow-sm">
+                      {customLogo ? (
                         <Image 
                           src={customLogo} 
                           alt={`Club Partner ${idx + 1}`}
                           fill
-                          className="object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                          className="object-contain grayscale hover:grayscale-0 transition-all duration-500 p-4"
                         />
+                      ) : (
+                        <div className="w-full h-full bg-black" />
                       )}
                     </div>
                   );

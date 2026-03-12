@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -20,7 +19,7 @@ import { FirestorePermissionError } from '@/firebase/errors';
 
 const ADMIN_PASSWORD = 'Yesacademy888$';
 
-const CLUBS_COUNT = 18;
+const CLUBS_COUNT = 6;
 
 const IMAGE_CATEGORIES = [
   {
@@ -314,7 +313,7 @@ export default function AdminPage() {
                                 {images[field.id] ? (
                                   <img src={images[field.id]} alt={field.label} className="object-cover w-full h-full" />
                                 ) : (
-                                  <ImageIcon className="text-muted/50" size={32} />
+                                  <div className="w-full h-full bg-black" />
                                 )}
                               </div>
                               <Input 
@@ -331,27 +330,27 @@ export default function AdminPage() {
 
                     <TabsContent value="network" className="p-8">
                       <div className="mb-6">
-                        <h3 className="font-bold text-primary uppercase text-sm mb-2">Logos des Clubs Partenaires</h3>
+                        <h3 className="font-bold text-primary uppercase text-sm mb-2">Logos des Clubs Partenaires (6 Max)</h3>
                         <p className="text-xs text-muted-foreground">Ces logos apparaissent sur la page "Réseau de Clubs".</p>
                       </div>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-6">
                         {Array.from({ length: CLUBS_COUNT }).map((_, i) => {
                           const fieldId = `club_logo_${i}`;
                           return (
-                            <div key={fieldId} className="space-y-2 p-3 bg-white rounded-xl border border-border">
+                            <div key={fieldId} className="space-y-2 p-4 bg-white rounded-xl border border-border">
                               <Label className="text-[9px] font-bold uppercase text-primary">Logo Club {i + 1}</Label>
-                              <div className="aspect-square bg-black rounded-lg overflow-hidden flex items-center justify-center p-2">
+                              <div className="aspect-square bg-black rounded-lg overflow-hidden flex items-center justify-center p-4 border border-muted">
                                 {images[fieldId] ? (
                                   <img src={images[fieldId]} alt={`Club ${i+1}`} className="object-contain w-full h-full" />
                                 ) : (
-                                  <ImageIcon className="text-muted/20" size={24} />
+                                  <div className="w-full h-full bg-black" />
                                 )}
                               </div>
                               <Input 
                                 value={images[fieldId] || ''} 
                                 onChange={(e) => updateImageField(fieldId, e.target.value)}
                                 placeholder="URL Logo..."
-                                className="text-[9px] h-7 rounded-md"
+                                className="text-[9px] h-8 rounded-md"
                               />
                             </div>
                           );
