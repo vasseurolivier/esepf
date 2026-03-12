@@ -16,6 +16,7 @@ export function Footer() {
   const { t } = useTranslation();
   
   const schoolName = settings?.schoolName || "ESEPF";
+  const logoUrl = settings?.logoUrl;
   const [currentYear, setCurrentYear] = useState<number | null>(null);
 
   useEffect(() => {
@@ -27,10 +28,20 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div>
-            <h3 className="text-2xl font-headline font-bold mb-6 tracking-tighter flex items-center gap-2">
-              <GraduationCap className="text-secondary" />
-              {schoolName}
-            </h3>
+            <Link href="/" className="inline-block mb-6 group">
+              <div className="flex items-center gap-3">
+                {logoUrl ? (
+                  <img src={logoUrl} alt={schoolName} className="h-12 w-auto object-contain" />
+                ) : (
+                  <div className="p-1.5 border border-secondary rounded-lg">
+                    <GraduationCap className="text-secondary h-6 w-6" />
+                  </div>
+                )}
+                <h3 className="text-2xl font-headline font-bold tracking-tighter text-white group-hover:text-secondary transition-colors">
+                  {schoolName}
+                </h3>
+              </div>
+            </Link>
             <p className="text-white/70 leading-relaxed mb-6 text-sm">
               {t.footer.desc}
             </p>
