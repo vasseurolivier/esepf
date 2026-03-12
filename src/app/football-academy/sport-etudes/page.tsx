@@ -26,17 +26,15 @@ export default function SportEtudesPage() {
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white relative overflow-hidden">
-        {/* Decorative Background */}
         <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
           <Image src={bgImage} alt="Background" fill className="object-cover" />
         </div>
 
         <div className="container mx-auto px-4 py-24 relative z-10">
           
-          {/* Section 1: Definition & Concept */}
           <section className="mb-32">
             <ScrollReveal className="text-center max-w-4xl mx-auto mb-20">
-              <span className="text-secondary font-bold uppercase tracking-[0.3em] text-sm mb-4 block">- CONCEPT ESEPF -</span>
+              <span className="text-secondary font-bold uppercase tracking-[0.3em] text-sm mb-4 block">- {t.sport_etudes_page.concept_label} -</span>
               <h1 className="text-4xl md:text-7xl font-headline font-bold text-black tracking-tight uppercase leading-none mb-8">
                 {t.sport_etudes_page.title1}
               </h1>
@@ -52,7 +50,7 @@ export default function SportEtudesPage() {
                     <Trophy size={48} className="text-black" />
                   </div>
                   <h3 className="text-2xl font-headline font-bold text-black uppercase mb-4">{t.sport_etudes_page.label1_1}</h3>
-                  <p className="text-black/70 text-sm font-medium">Un entraînement quotidien intensif encadré par des experts pour atteindre le haut niveau.</p>
+                  <p className="text-black/70 text-sm font-medium">{t.sport_etudes_page.daily_train_desc}</p>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={200}>
@@ -61,13 +59,12 @@ export default function SportEtudesPage() {
                     <GraduationCap size={48} className="text-black" />
                   </div>
                   <h3 className="text-2xl font-headline font-bold text-black uppercase mb-4">{t.sport_etudes_page.label1_2}</h3>
-                  <p className="text-black/70 text-sm font-medium">Un emploi du temps optimisé permettant de suivre le cursus officiel sans compromis.</p>
+                  <p className="text-black/70 text-sm font-medium">{t.sport_etudes_page.optimized_schedule_desc}</p>
                 </div>
               </ScrollReveal>
             </div>
           </section>
 
-          {/* Section 2: Journey / Schedule */}
           <section className="mb-32 py-24 bg-muted/30 rounded-[4rem] px-8 lg:px-20 border border-muted shadow-inner">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
               <div className="lg:col-span-5 space-y-8">
@@ -83,15 +80,15 @@ export default function SportEtudesPage() {
                 <ScrollReveal delay={200} className="space-y-4">
                   <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-muted">
                     <CheckCircle2 className="text-secondary" />
-                    <span className="font-bold text-sm uppercase tracking-wide">Discipline & Rigueur</span>
+                    <span className="font-bold text-sm uppercase tracking-wide">{t.sport_etudes_page.discipline_label}</span>
                   </div>
                   <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-muted">
                     <Zap className="text-secondary" />
-                    <span className="font-bold text-sm uppercase tracking-wide">Performance Cognitive</span>
+                    <span className="font-bold text-sm uppercase tracking-wide">{t.sport_etudes_page.perf_cog_label}</span>
                   </div>
                   <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-muted">
                     <Activity className="text-secondary" />
-                    <span className="font-bold text-sm uppercase tracking-wide">Équilibre de vie</span>
+                    <span className="font-bold text-sm uppercase tracking-wide">{t.sport_etudes_page.life_balance_label}</span>
                   </div>
                 </ScrollReveal>
               </div>
@@ -118,7 +115,6 @@ export default function SportEtudesPage() {
             </div>
           </section>
 
-          {/* Section 3: Available Sports */}
           <section className="mb-32">
             <ScrollReveal className="text-center mb-20">
               <h2 className="text-4xl md:text-6xl font-headline font-bold text-black uppercase tracking-tighter">
@@ -128,10 +124,9 @@ export default function SportEtudesPage() {
             </ScrollReveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
-              {/* Football */}
               <ScrollReveal className="group">
-                <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl mb-8">
-                  <Image src={footballImg} alt="Football" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl mb-8 bg-black">
+                  <Image src={footballImg} alt="Football" fill className="object-cover group-hover:scale-110 transition-transform duration-700" priority />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   <div className="absolute bottom-8 left-8 flex items-center gap-3">
                     <div className="p-3 bg-secondary text-white rounded-full"><Star fill="currentColor" size={20} /></div>
@@ -143,9 +138,8 @@ export default function SportEtudesPage() {
                 </p>
               </ScrollReveal>
 
-              {/* Basketball */}
               <ScrollReveal delay={200} className="group opacity-80 hover:opacity-100 transition-opacity">
-                <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl mb-8">
+                <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl mb-8 bg-black">
                   <Image src={basketballImg} alt="Basketball" fill className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   <div className="absolute bottom-8 left-8">
@@ -154,7 +148,7 @@ export default function SportEtudesPage() {
                   </div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed text-center px-4">
-                  Notre programme dédié au basketball verra le jour très prochainement pour offrir la même excellence pédagogique et sportive.
+                  {t.sport_etudes_page.text2.includes('basketball') ? t.sport_etudes_page.text2.split('basketball,')[1] : ""}
                 </p>
               </ScrollReveal>
             </div>

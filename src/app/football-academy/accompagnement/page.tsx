@@ -31,14 +31,14 @@ export default function AccompagnementPage() {
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* Hero Section */}
         <section className="relative min-h-[600px] flex items-center overflow-hidden mb-24">
-          <div className="absolute right-0 top-0 w-full lg:w-3/4 h-full z-0">
+          <div className="absolute right-0 top-0 w-full lg:w-3/4 h-full z-0 bg-black">
             <Image 
               src={heroImage} 
               alt="Accompagnement" 
               fill 
               className="object-cover"
+              priority
               data-ai-hint="sports medicine care"
             />
           </div>
@@ -57,7 +57,6 @@ export default function AccompagnementPage() {
           </div>
         </section>
 
-        {/* Team Section */}
         <section className="pb-32">
           <div className="container mx-auto px-4">
             <ScrollReveal className="text-center mb-20">
@@ -69,7 +68,7 @@ export default function AccompagnementPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
               {team.map((member, idx) => (
                 <ScrollReveal key={member.id} delay={idx * 150} className="flex flex-col items-center group">
-                  <div className="relative w-full aspect-square border border-black mb-4 overflow-hidden bg-muted">
+                  <div className="relative w-full aspect-square border border-black mb-4 overflow-hidden bg-black">
                     <Image 
                       src={settings?.images?.[member.id] || member.default}
                       alt={member.label}

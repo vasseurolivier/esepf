@@ -31,15 +31,14 @@ export default function BacStmgPage() {
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white">
-        {/* Hero Section */}
-        <section className="relative h-[65vh] flex items-center justify-center bg-primary overflow-hidden">
+        <section className="relative h-[65vh] flex items-center justify-center bg-black overflow-hidden">
           <Image 
             src={heroImage}
             alt="Bac Techno STMG"
             fill
             className="object-cover opacity-40"
-            data-ai-hint="business digital management team"
             priority
+            data-ai-hint="business digital management team"
           />
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
@@ -54,7 +53,6 @@ export default function BacStmgPage() {
           </div>
         </section>
 
-        {/* Quick Info Bar */}
         <section className="bg-primary py-6 text-white border-y border-white/10">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -83,14 +81,13 @@ export default function BacStmgPage() {
                 <Briefcase className="text-secondary" />
                 <div>
                   <p className="text-[10px] uppercase opacity-60">{t.common.diploma}</p>
-                  <p className="font-bold text-sm">Baccalauréat Technologique</p>
+                  <p className="font-bold text-sm">{t.recognition_page.bac_label} Technologique</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Intro Section */}
         <section className="py-24">
           <div className="container mx-auto px-4 max-w-5xl">
             <ScrollReveal className="text-center mb-20">
@@ -108,7 +105,7 @@ export default function BacStmgPage() {
                   <Briefcase size={32} />
                 </div>
                 <h3 className="text-3xl font-headline font-bold text-black tracking-tight">
-                  Demain, le Management
+                  {content.management_tomorrow}
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   {content.outro}
@@ -118,7 +115,7 @@ export default function BacStmgPage() {
                   <p className="text-sm font-bold text-primary">{t.common.allophone_mention}</p>
                 </div>
               </ScrollReveal>
-              <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-muted">
+              <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-black">
                 <Image 
                   src={introImage}
                   alt="Management team working"
@@ -128,7 +125,6 @@ export default function BacStmgPage() {
               </ScrollReveal>
             </div>
 
-            {/* Luxe Module Section */}
             <ScrollReveal className="mb-24">
               <div className="bg-[#f5f5f5] p-10 lg:p-16 rounded-[3rem] border border-muted shadow-inner relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-8 opacity-5 text-primary">
@@ -149,36 +145,34 @@ export default function BacStmgPage() {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
                     <div className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm">
                       <Star className="text-secondary" size={20} />
-                      <span className="text-xs font-bold uppercase tracking-wider">Service d'excellence</span>
+                      <span className="text-xs font-bold uppercase tracking-wider">{content.service_excellence}</span>
                     </div>
                     <div className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm">
                       <CheckCircle2 className="text-secondary" size={20} />
-                      <span className="text-xs font-bold uppercase tracking-wider">Codes du Luxe</span>
+                      <span className="text-xs font-bold uppercase tracking-wider">{content.luxury_codes}</span>
                     </div>
                     <div className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm">
                       <BookOpen className="text-secondary" size={20} />
-                      <span className="text-xs font-bold uppercase tracking-wider">Gestion Prestige</span>
+                      <span className="text-xs font-bold uppercase tracking-wider">{content.prestige_management}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* French System Schema */}
             <ScrollReveal className="text-center mb-12">
-              <h2 className="text-3xl font-headline font-bold text-primary mb-2 uppercase tracking-widest">Votre avenir de manager</h2>
-              <p className="text-muted-foreground">Une filière technologique pour des carrières ambitieuses</p>
+              <h2 className="text-3xl font-headline font-bold text-primary mb-2 uppercase tracking-widest">{content.future_manager}</h2>
+              <p className="text-muted-foreground">{content.techno_filiere}</p>
             </ScrollReveal>
-            <FrenchSystemSchema bacType="Baccalauréat Technologique STMG" />
+            <FrenchSystemSchema bacType={content.title} />
           </div>
         </section>
 
-        {/* Detailed Outlets Section */}
         <section className="py-24 bg-muted/10 border-y border-muted">
           <div className="container mx-auto px-4 max-w-6xl">
             <OutletsSection 
-              btsDesc="Les BTS permettent une insertion professionnelle rapide ou une poursuite d'études."
-              univDesc="Les universités et écoles de commerce offrent des parcours spécialisés de haut niveau."
+              btsDesc={content.bts_desc}
+              univDesc={content.univ_desc}
               btsList={content.bts_list}
               btsJobs={content.bts_jobs}
               univList={content.univ_list}
@@ -187,17 +181,16 @@ export default function BacStmgPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 text-center">
             <ScrollReveal className="max-w-3xl mx-auto bg-muted rounded-[3rem] p-12 shadow-inner">
-               <h2 className="text-3xl font-headline font-bold mb-6">Prêt à devenir un leader ?</h2>
-               <p className="text-muted-foreground mb-8">Les inscriptions pour la filière STMG & Luxe (Rentrée 2026) sont ouvertes. Développez votre potentiel management dès aujourd'hui.</p>
+               <h2 className="text-3xl font-headline font-bold mb-6">{t.common.ready_leader}</h2>
+               <p className="text-muted-foreground mb-8">{t.common.enrollment_stmg}</p>
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/inscription">
                     <Button className="rounded-full bg-primary py-8 px-10 font-bold uppercase tracking-widest">{t.common.apply}</Button>
                   </Link>
-                  <Link href="/contact"><Button variant="outline" className="rounded-full py-8 px-10 font-bold uppercase tracking-widest">Contactez un conseiller</Button></Link>
+                  <Link href="/contact"><Button variant="outline" className="rounded-full py-8 px-10 font-bold uppercase tracking-widest">{t.common.contact_advisor}</Button></Link>
                </div>
             </ScrollReveal>
           </div>

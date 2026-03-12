@@ -26,7 +26,6 @@ export default function HistoryPage() {
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* Header Hero */}
         <section className="py-24 bg-muted/20">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -44,7 +43,7 @@ export default function HistoryPage() {
                   <p>{t.history_page.intro_p1}</p>
                   <p>{t.history_page.intro_p2}</p>
                   <p className="pt-4 p-6 bg-white rounded-2xl shadow-sm border border-muted italic">
-                    <span className="text-secondary font-bold block mb-2">Notre mission :</span> {t.history_page.intro_p3}
+                    <span className="text-secondary font-bold block mb-2">{t.history_page.mission_label}</span> {t.history_page.intro_p3}
                   </p>
                 </div>
               </ScrollReveal>
@@ -55,15 +54,14 @@ export default function HistoryPage() {
                   alt="Students"
                   fill
                   className="object-cover"
-                  data-ai-hint="students group history"
                   priority
+                  data-ai-hint="students group history"
                 />
               </ScrollReveal>
             </div>
           </div>
         </section>
 
-        {/* Quote / Vision */}
         <section className="py-32 bg-primary text-white text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-5 -translate-y-1/4 translate-x-1/4">
             <Globe size={600} />
@@ -71,11 +69,11 @@ export default function HistoryPage() {
           <div className="container mx-auto px-4 relative z-10">
             <ScrollReveal className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-5xl font-headline font-bold mb-12 italic">
-                "Nous bâtissons un pont entre les cultures et les continents à travers l'excellence éducative."
+                "{t.history_page.quote}"
               </h2>
               <div className="flex flex-col items-center">
                 <div className="w-16 h-1 bg-secondary rounded-full mb-6" />
-                <p className="text-lg uppercase tracking-[0.3em] font-medium opacity-60">Direction Générale ESEPF</p>
+                <p className="text-lg uppercase tracking-[0.3em] font-medium opacity-60">{t.history_page.direction_label}</p>
               </div>
             </ScrollReveal>
           </div>

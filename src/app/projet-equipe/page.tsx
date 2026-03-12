@@ -30,10 +30,10 @@ export default function TeamPage() {
   ];
 
   const values = [
-    { icon: <Heart className="text-secondary" />, title: "Discipline", desc: "La clé de l'excellence sur le terrain comme en classe." },
-    { icon: <Users className="text-secondary" />, title: "Solidarité", desc: "Un esprit d'équipe qui dépasse les frontières." },
-    { icon: <Target className="text-secondary" />, title: "Ambition", desc: "Viser les sommets académiques et sportifs mondiaux." },
-    { icon: <Zap className="text-secondary" />, title: "Innovation", desc: "Des méthodes pédagogiques modernes et adaptées." }
+    { icon: <Heart className="text-secondary" />, title: t.team_page.discipline_title, desc: t.team_page.discipline_desc },
+    { icon: <Users className="text-secondary" />, title: t.team_page.solidarity_title, desc: t.team_page.solidarity_desc },
+    { icon: <Target className="text-secondary" />, title: t.team_page.ambition_title, desc: t.team_page.ambition_desc },
+    { icon: <Zap className="text-secondary" />, title: t.team_page.innovation_title, desc: t.team_page.innovation_desc }
   ];
 
   return (
@@ -41,7 +41,6 @@ export default function TeamPage() {
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* Section Concept Hero */}
         <section className="flex flex-col lg:flex-row min-h-[700px]">
           <div className="lg:w-[45%] bg-[#1a3d2f] p-12 lg:p-24 flex flex-col justify-center items-start relative overflow-hidden">
             <Image 
@@ -49,9 +48,10 @@ export default function TeamPage() {
               alt="Project Hero"
               fill
               className="object-cover opacity-20"
+              priority
             />
             <ScrollReveal className="relative z-10 w-full">
-              <span className="text-secondary font-bold uppercase tracking-[0.4em] text-xs mb-4 block">- VISION 2026 -</span>
+              <span className="text-secondary font-bold uppercase tracking-[0.4em] text-xs mb-4 block">- {t.common.vision_2026} -</span>
               <h1 className="text-6xl md:text-8xl font-headline font-bold text-white mb-12 tracking-tighter uppercase leading-none">
                 {t.team_page.title}
               </h1>
@@ -73,18 +73,17 @@ export default function TeamPage() {
               <div className="pt-8 grid grid-cols-2 gap-6">
                 <div className="p-6 bg-white rounded-3xl shadow-sm border border-muted">
                   <span className="text-3xl font-bold text-primary block mb-1">100%</span>
-                  <span className="text-xs font-bold uppercase text-muted-foreground tracking-widest">Réussite Examens</span>
+                  <span className="text-xs font-bold uppercase text-muted-foreground tracking-widest">{t.team_page.success_rate}</span>
                 </div>
                 <div className="p-6 bg-white rounded-3xl shadow-sm border border-muted">
                   <span className="text-3xl font-bold text-secondary block mb-1">UEFA</span>
-                  <span className="text-xs font-bold uppercase text-muted-foreground tracking-widest">Certification Staff</span>
+                  <span className="text-xs font-bold uppercase text-muted-foreground tracking-widest">{t.team_page.uefa_cert}</span>
                 </div>
               </div>
             </ScrollReveal>
           </div>
         </section>
 
-        {/* Values Section */}
         <section className="py-32 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -101,11 +100,10 @@ export default function TeamPage() {
           </div>
         </section>
 
-        {/* Team Grid */}
         <section className="py-32 bg-muted/30 border-t border-muted">
           <div className="container mx-auto px-4">
             <ScrollReveal className="text-center mb-24">
-              <span className="text-secondary font-bold uppercase tracking-widest text-sm mb-2 block">Excellence Humaine</span>
+              <span className="text-secondary font-bold uppercase tracking-widest text-sm mb-2 block">{t.common.humain_excellence}</span>
               <h2 className="text-5xl md:text-7xl font-headline font-bold text-black tracking-tighter uppercase inline-block relative">
                 {t.team_page.team_title}
                 <div className="w-12 h-1.5 bg-secondary mx-auto mt-4 rounded-full" />
@@ -115,7 +113,7 @@ export default function TeamPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-6xl mx-auto">
               {members.map((member, i) => (
                 <ScrollReveal key={i} delay={i * 150} className="text-center group">
-                  <div className="relative w-64 h-64 mx-auto mb-8 rounded-[3rem] overflow-hidden border-4 border-white shadow-2xl group-hover:translate-y-[-10px] transition-all duration-500 bg-muted">
+                  <div className="relative w-64 h-64 mx-auto mb-8 rounded-[3rem] overflow-hidden border-4 border-white shadow-2xl group-hover:translate-y-[-10px] transition-all duration-500 bg-black">
                     <Image src={member.img} alt={member.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
                   <h3 className="text-2xl font-headline font-bold text-black uppercase tracking-tight">{member.name}</h3>
@@ -124,7 +122,6 @@ export default function TeamPage() {
               ))}
             </div>
             
-            {/* Accreditation Badges */}
             <div className="mt-40 max-w-5xl mx-auto bg-primary rounded-[4rem] p-12 lg:p-20 text-white shadow-2xl relative overflow-hidden">
                <div className="absolute top-0 right-0 opacity-10 -translate-y-1/4 translate-x-1/4">
                  <GraduationCap size={400} />
@@ -138,15 +135,15 @@ export default function TeamPage() {
                       {t.team_page.staff_desc}
                     </p>
                     <div className="flex gap-4">
-                      <div className="bg-secondary p-4 rounded-2xl font-bold uppercase tracking-widest text-xs">Agrégés</div>
-                      <div className="bg-white/10 p-4 rounded-2xl font-bold uppercase tracking-widest text-xs border border-white/20">UEFA Pro</div>
+                      <div className="bg-secondary p-4 rounded-2xl font-bold uppercase tracking-widest text-xs">{t.team_page.agreges}</div>
+                      <div className="bg-white/10 p-4 rounded-2xl font-bold uppercase tracking-widest text-xs border border-white/20">{t.team_page.uefa_pro}</div>
                     </div>
                   </ScrollReveal>
                   <div className="grid grid-cols-2 gap-6">
                      {[1,2,3,4].map(i => (
                         <div key={i} className="bg-white/5 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/10 flex flex-col items-center justify-center group hover:bg-white/10 transition-colors">
                            <ShieldCheck size={40} className="text-secondary mb-4 group-hover:scale-110 transition-transform" />
-                           <span className="text-[10px] font-bold uppercase text-white tracking-[0.2em] text-center">Label Officiel État</span>
+                           <span className="text-[10px] font-bold uppercase text-white tracking-[0.2em] text-center">{t.team_page.official_label}</span>
                         </div>
                      ))}
                   </div>

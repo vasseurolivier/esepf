@@ -39,35 +39,23 @@ export default function ProgrammeFootballPage() {
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white">
-        {/* Header Hero */}
         <section className="py-24 bg-white text-center">
           <div className="container mx-auto px-4">
             <ScrollReveal>
-              <span className="text-lg font-bold tracking-[0.4em] text-secondary uppercase mb-4 block">- ELITE PERFORMANCE -</span>
+              <span className="text-lg font-bold tracking-[0.4em] text-secondary uppercase mb-4 block">- {t.football_pages.elite_label} -</span>
               <h1 className="text-5xl md:text-8xl font-headline font-bold text-black uppercase mb-12 tracking-tighter leading-none">
                 {t.football_pages.prog_title}
               </h1>
               <div className="flex flex-wrap justify-center gap-4 mb-16">
-                {[
-                  { id: "fr", label: "Football FR" },
-                  { id: "method", label: "Méthodologie" },
-                  { id: "coachs", label: "Staff Élite" },
-                  { id: "prog", label: "Rythme Hebdo" }
-                ].map((item) => (
-                  <button 
-                    key={item.id} 
-                    onClick={() => scrollToSection(`${item.id}-section`)}
-                    className="bg-black text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl"
-                  >
-                    {item.label}
-                  </button>
-                ))}
+                <button onClick={() => scrollToSection('fr-section')} className="bg-black text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">Football FR</button>
+                <button onClick={() => scrollToSection('method-section')} className="bg-black text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.method_title}</button>
+                <button onClick={() => scrollToSection('coachs-section')} className="bg-black text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.coaches_title}</button>
+                <button onClick={() => scrollToSection('prog-section')} className="bg-black text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.weekly_title}</button>
               </div>
             </ScrollReveal>
           </div>
         </section>
 
-        {/* Intro Detailed */}
         <section className="pb-32">
           <div className="container mx-auto px-4 max-w-5xl">
             <ScrollReveal className="space-y-12 text-center">
@@ -85,7 +73,6 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* France Section */}
         <section id="fr-section" className="bg-[#1a237e] text-white overflow-hidden relative">
           <div className="absolute top-0 right-0 p-20 opacity-5">
             <Trophy size={500} />
@@ -94,7 +81,7 @@ export default function ProgrammeFootballPage() {
             <div className="lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center relative z-10">
               <ScrollReveal className="space-y-8">
                 <div className="inline-flex items-center gap-3 text-secondary font-bold uppercase tracking-widest text-sm">
-                  <Star fill="currentColor" size={20} /> Terre de Talents
+                  <Star fill="currentColor" size={20} /> {t.football_pages.terre_talents}
                 </div>
                 <h2 className="text-5xl md:text-6xl font-headline font-bold mb-8 leading-tight tracking-tighter">{t.football_pages.france_title}</h2>
                 <div className="w-20 h-1.5 bg-secondary rounded-full" />
@@ -105,13 +92,12 @@ export default function ProgrammeFootballPage() {
                 </div>
               </ScrollReveal>
             </div>
-            <div className="lg:w-1/2 relative min-h-[450px] bg-muted">
+            <div className="lg:w-1/2 relative min-h-[450px] bg-black">
               <Image src={franceImage} alt="France Winners" fill className="object-cover" />
             </div>
           </div>
         </section>
 
-        {/* Methodology Section */}
         <section id="method-section" className="py-32 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <ScrollReveal className="text-center mb-24">
@@ -132,48 +118,46 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Staff Section */}
         <section id="coachs-section" className="py-32 bg-muted/20 border-y border-muted">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center max-w-6xl mx-auto">
               <ScrollReveal className="space-y-10">
                 <div className="inline-flex items-center gap-2 text-secondary font-bold uppercase tracking-widest text-xs">
-                  <Shield size={16} /> Expertise Certifiée
+                  <Shield size={16} /> {t.football_pages.expertise_cert}
                 </div>
                 <h2 className="text-5xl md:text-6xl font-headline font-bold text-black uppercase tracking-tighter leading-tight">{t.football_pages.coaches_title}</h2>
                 <p className="text-2xl text-muted-foreground leading-relaxed italic border-l-8 border-secondary pl-8">"{t.football_pages.coaches_text}"</p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> Diplômes UEFA Pro / A / B</div>
-                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> Analyse Vidéo Quotidienne</div>
-                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> Préparation Athlétique Spécifique</div>
+                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_video} Quotidienne</div>
+                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_phys} Spécifique</div>
                 </div>
               </ScrollReveal>
-              <div className="relative aspect-[4/3] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-muted">
+              <div className="relative aspect-[4/3] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-black">
                 <Image src={coachImage} alt="Coach Training" fill className="object-cover" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Weekly Program Section */}
         <section id="prog-section" className="py-32 bg-primary text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10 -translate-y-1/4 translate-x-1/4">
             <Calendar size={600} />
           </div>
           <div className="container mx-auto px-4 relative z-10">
             <ScrollReveal className="max-w-4xl mx-auto text-center space-y-12">
-              <span className="text-secondary font-bold uppercase tracking-[0.4em] text-xs">Le rythme des champions</span>
+              <span className="text-secondary font-bold uppercase tracking-[0.4em] text-xs">{t.football_pages.rythme_champions}</span>
               <h2 className="text-5xl md:text-8xl font-headline font-bold uppercase tracking-tighter leading-none">{t.football_pages.weekly_title}</h2>
               <p className="text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto font-light">{t.football_pages.weekly_intro}</p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left pt-12">
                 <div className="p-10 bg-white/5 backdrop-blur-md rounded-[3rem] border border-white/10">
-                  <h4 className="text-xl font-bold text-secondary uppercase mb-4">Lundi au Vendredi</h4>
-                  <p className="text-white/70">Séances techniques & tactiques (16h30 - 18h30) après les cours académiques. Analyse vidéo hebdomadaire.</p>
+                  <h4 className="text-xl font-bold text-secondary uppercase mb-4">{t.football_pages.mon_ven}</h4>
+                  <p className="text-white/70">{t.football_pages.mon_ven_desc}</p>
                 </div>
                 <div className="p-10 bg-white/5 backdrop-blur-md rounded-[3rem] border border-white/10">
-                  <h4 className="text-xl font-bold text-secondary uppercase mb-4">Week-end</h4>
-                  <p className="text-white/70">Matchs de championnat officiel FFF. Déplacements en équipe et compétition de haut niveau.</p>
+                  <h4 className="text-xl font-bold text-secondary uppercase mb-4">{t.football_pages.weekend}</h4>
+                  <p className="text-white/70">{t.football_pages.weekend_desc}</p>
                 </div>
               </div>
             </ScrollReveal>

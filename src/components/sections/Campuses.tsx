@@ -55,8 +55,8 @@ export function Campuses() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {campuses.map((campus, idx) => (
             <ScrollReveal key={idx} delay={idx * 150}>
-              <Link href={campus.href} className="group relative block overflow-hidden rounded-[2.5rem] shadow-lg hover:shadow-2xl transition-all duration-500 bg-white border border-white h-[400px] md:h-auto">
-                <div className="relative h-full md:h-80 w-full overflow-hidden bg-black">
+              <Link href={campus.href} className="group relative block overflow-hidden rounded-[2.5rem] shadow-lg hover:shadow-2xl transition-all duration-500 bg-black border border-white h-[400px] md:h-auto">
+                <div className="relative h-full md:h-80 w-full overflow-hidden">
                   <Image
                     src={campus.image}
                     alt={campus.name}

@@ -41,15 +41,14 @@ export default function ParcoursJoueurPage() {
       <Header />
       <main className="min-h-screen bg-white pb-32">
         
-        {/* Hero Section */}
         <section className="bg-primary text-white py-24 relative overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
             <ScrollReveal className="text-center max-w-4xl mx-auto">
-              <span className="text-secondary font-bold uppercase tracking-[0.4em] text-sm mb-4 block">- ESEPF ROADMAP -</span>
+              <span className="text-secondary font-bold uppercase tracking-[0.4em] text-sm mb-4 block">- {t.journey_page.roadmap_label} -</span>
               <h1 className="text-5xl md:text-8xl font-headline font-bold tracking-tighter uppercase mb-6 leading-none">
                 {t.journey_page.title}
               </h1>
-              <p className="text-xl text-white/60 font-medium italic">Une vision à 360° pour l'avenir de nos athlètes.</p>
+              <p className="text-xl text-white/60 font-medium italic">{t.journey_page.roadmap_sub}</p>
             </ScrollReveal>
           </div>
           <div className="absolute -bottom-20 -right-20 opacity-5 rotate-12">
@@ -59,15 +58,13 @@ export default function ParcoursJoueurPage() {
 
         <div className="container mx-auto px-4 pt-20">
           
-          {/* Section 1: The Equation */}
           <section className="mb-40">
             <ScrollReveal className="text-center mb-16">
-              <h2 className="text-3xl font-headline font-bold text-primary uppercase tracking-widest mb-4">Le Concept Fondamental</h2>
+              <h2 className="text-3xl font-headline font-bold text-primary uppercase tracking-widest mb-4">{t.journey_page.fundamental_concept}</h2>
               <div className="w-24 h-1.5 bg-secondary mx-auto rounded-full" />
             </ScrollReveal>
 
             <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 max-w-6xl mx-auto">
-              {/* Profile Card */}
               <ScrollReveal className="flex flex-col items-center text-center w-full lg:w-1/4">
                 <div className="relative w-48 h-48 mb-6 rounded-3xl overflow-hidden border-4 border-muted shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 bg-muted">
                   <Image 
@@ -87,7 +84,6 @@ export default function ParcoursJoueurPage() {
 
               <div className="text-6xl font-bold text-primary/20 hidden lg:block">=</div>
 
-              {/* Interaction Equation */}
               <div className="flex flex-col md:flex-row items-center gap-8 w-full lg:w-2/3">
                 <ScrollReveal delay={100} className="w-full">
                   <Box 
@@ -110,27 +106,23 @@ export default function ParcoursJoueurPage() {
             </div>
           </section>
 
-          {/* Section 2: Grid of Outlets */}
           <section className="relative">
             <ScrollReveal className="text-center mb-24">
               <h2 className="text-4xl md:text-6xl font-headline font-bold text-black uppercase tracking-tighter">
-                Horizon & Opportunités
+                {t.journey_page.horizon_title}
               </h2>
-              <p className="text-muted-foreground mt-4 text-lg">Trois voies d'excellence s'ouvrent à nos diplômés.</p>
+              <p className="text-muted-foreground mt-4 text-lg">{t.journey_page.horizon_sub}</p>
             </ScrollReveal>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-7xl mx-auto">
               
-              {/* Left Decoration - Vertical Flow */}
               <div className="hidden lg:flex lg:col-span-2 flex-col items-center justify-around h-full py-20 opacity-50">
                 <ChevronArrow />
                 <ChevronArrow />
               </div>
 
-              {/* Main Columns */}
               <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                 
-                {/* Column 1: Athlete Pro */}
                 <ScrollReveal className="space-y-8 flex flex-col items-center">
                   <div className="bg-primary/5 p-8 rounded-[3rem] w-full text-center border border-muted mb-4 group hover:bg-primary transition-colors duration-500">
                     <div className="w-16 h-16 bg-white rounded-2xl shadow-xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform">
@@ -142,7 +134,6 @@ export default function ParcoursJoueurPage() {
                   <Box label={t.journey_page.china} color="bg-[#e08b8b]" icon={<Target size={24} />} />
                 </ScrollReveal>
 
-                {/* Column 2: Sport Jobs */}
                 <ScrollReveal delay={100} className="space-y-8 flex flex-col items-center">
                   <div className="bg-primary/5 p-8 rounded-[3rem] w-full text-center border border-muted mb-4 group hover:bg-secondary transition-colors duration-500">
                     <div className="w-16 h-16 bg-white rounded-2xl shadow-xl flex items-center justify-center mx-auto mb-6 group-hover:-rotate-12 transition-transform">
@@ -158,7 +149,6 @@ export default function ParcoursJoueurPage() {
                   </div>
                 </ScrollReveal>
 
-                {/* Column 3: Higher Ed */}
                 <ScrollReveal delay={200} className="space-y-8 flex flex-col items-center">
                   <div className="bg-primary/5 p-8 rounded-[3rem] w-full text-center border border-muted mb-4 group hover:bg-primary transition-colors duration-500">
                     <div className="w-16 h-16 bg-white rounded-2xl shadow-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
@@ -174,16 +164,15 @@ export default function ParcoursJoueurPage() {
             </div>
           </section>
 
-          {/* Bottom CTA / Information */}
           <section className="mt-40 text-center">
             <ScrollReveal className="bg-muted/30 p-12 rounded-[4rem] border-2 border-dashed border-primary/10 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-headline font-bold text-primary mb-6">Prêt à construire votre avenir ?</h3>
+              <h3 className="text-2xl font-headline font-bold text-primary mb-6">{t.journey_page.ready_build_future}</h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-                Chaque parcours est unique. Nos tuteurs académiques et nos directeurs sportifs vous accompagnent individuellement pour définir la trajectoire la plus adaptée à vos ambitions.
+                {t.journey_page.interview_desc}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="bg-primary text-white font-bold py-5 px-10 rounded-full shadow-xl hover:bg-primary/90 transition-all uppercase tracking-widest text-xs flex items-center justify-center gap-2">
-                  Demander un entretien <ArrowRight size={16} />
+                  {t.journey_page.ask_interview} <ArrowRight size={16} />
                 </button>
               </div>
             </ScrollReveal>

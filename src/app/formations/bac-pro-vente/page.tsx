@@ -31,15 +31,14 @@ export default function BacProVentePage() {
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white">
-        {/* Hero Section */}
-        <section className="relative h-[65vh] flex items-center justify-center bg-[#0c3a2f] overflow-hidden">
+        <section className="relative h-[65vh] flex items-center justify-center bg-black overflow-hidden">
           <Image 
             src={heroImage}
             alt="Bac Pro Vente"
             fill
             className="object-cover opacity-50"
-            data-ai-hint="luxury retail store entrance"
             priority
+            data-ai-hint="luxury retail store entrance"
           />
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
@@ -54,7 +53,6 @@ export default function BacProVentePage() {
           </div>
         </section>
 
-        {/* Quick Info Bar */}
         <section className="bg-[#0c3a2f] py-6 text-white border-y border-white/10">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -83,14 +81,13 @@ export default function BacProVentePage() {
                 <ShoppingBag className="text-secondary" />
                 <div>
                   <p className="text-[10px] uppercase opacity-60">{t.common.diploma}</p>
-                  <p className="font-bold text-sm">Baccalauréat Professionnel</p>
+                  <p className="font-bold text-sm">{t.recognition_page.bac_label} Professionnel</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Intro Section */}
         <section className="py-24">
           <div className="container mx-auto px-4 max-w-5xl">
             <ScrollReveal className="mb-20 text-center">
@@ -122,7 +119,7 @@ export default function BacProVentePage() {
                 </div>
               </ScrollReveal>
               
-              <ScrollReveal delay={200} className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl bg-muted group">
+              <ScrollReveal delay={200} className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl bg-black group">
                 <Image 
                   src={introImage}
                   alt="Sales and Commerce luxury"
@@ -132,13 +129,12 @@ export default function BacProVentePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c3a2f]/60 to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8 text-white">
                   <p className="font-bold italic text-lg leading-tight">
-                    "Maîtriser les codes de l'excellence pour servir les plus grandes maisons."
+                    "{content.quote}"
                   </p>
                 </div>
               </ScrollReveal>
             </div>
 
-            {/* Objectives Section */}
             <ScrollReveal className="mb-24">
               <h3 className="text-3xl font-headline font-bold text-[#0c3a2f] mb-12 text-center uppercase tracking-widest underline underline-offset-8 decoration-secondary">
                 {content.objectives_title}
@@ -161,7 +157,6 @@ export default function BacProVentePage() {
               </div>
             </ScrollReveal>
 
-            {/* Profile & Qualities */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
               <ScrollReveal className="bg-[#0c3a2f] p-10 rounded-[3rem] text-white relative overflow-hidden shadow-2xl">
                 <div className="relative z-10">
@@ -203,7 +198,6 @@ export default function BacProVentePage() {
               </ScrollReveal>
             </div>
 
-            {/* SECTION 1: Un accès direct à l'emploi */}
             <ScrollReveal className="mb-24">
               <h2 className="text-4xl md:text-6xl font-headline font-bold text-black tracking-tighter uppercase mb-12">
                 {content.direct_employment_title}
@@ -231,7 +225,7 @@ export default function BacProVentePage() {
                 </div>
               </div>
               
-              <div className="relative aspect-[21/9] rounded-[3rem] overflow-hidden shadow-2xl bg-muted group mb-24">
+              <div className="relative aspect-[21/9] rounded-[3rem] overflow-hidden shadow-2xl bg-black group mb-24">
                 <Image 
                   src="https://picsum.photos/seed/sales-luxury-2/1200/500"
                   alt="Sales Luxury Store"
@@ -242,7 +236,6 @@ export default function BacProVentePage() {
               </div>
             </ScrollReveal>
 
-            {/* SECTION 2: Un accès aux études supérieures */}
             <ScrollReveal className="mb-12">
               <h2 className="text-4xl md:text-6xl font-headline font-bold text-black tracking-tighter uppercase">
                 {content.higher_ed_title}
@@ -252,11 +245,10 @@ export default function BacProVentePage() {
               </p>
             </ScrollReveal>
 
-            <FrenchSystemSchema bacType="Baccalauréat Professionnel Vente" />
+            <FrenchSystemSchema bacType={content.title} />
           </div>
         </section>
 
-        {/* Detailed Outlets Section */}
         <section className="py-24 bg-muted/10 border-y border-muted">
           <div className="container mx-auto px-4 max-w-6xl">
             <OutletsSection 
@@ -270,17 +262,16 @@ export default function BacProVentePage() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 text-center">
             <ScrollReveal className="max-w-3xl mx-auto bg-muted rounded-[3rem] p-12 shadow-inner">
-               <h2 className="text-3xl font-headline font-bold mb-6">Rejoignez l'élite du commerce</h2>
-               <p className="text-muted-foreground mb-8">Les inscriptions pour la filière Vente Luxe (Rentrée 2026) sont ouvertes. Places limitées pour garantir un encadrement d'exception.</p>
+               <h2 className="text-3xl font-headline font-bold mb-6">{t.common.join_elite}</h2>
+               <p className="text-muted-foreground mb-8">{t.common.enrollment_vente}</p>
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/inscription">
                     <Button className="rounded-full bg-primary py-8 px-10 font-bold uppercase tracking-widest">{t.common.apply}</Button>
                   </Link>
-                  <Link href="/contact"><Button variant="outline" className="rounded-full py-8 px-10 font-bold uppercase tracking-widest">Parler à un conseiller</Button></Link>
+                  <Link href="/contact"><Button variant="outline" className="rounded-full py-8 px-10 font-bold uppercase tracking-widest">{t.common.talk_advisor}</Button></Link>
                </div>
             </ScrollReveal>
           </div>

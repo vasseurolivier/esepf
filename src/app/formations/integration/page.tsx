@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -23,7 +24,7 @@ export default function IntegrationPage() {
 
   if (!t || !t.formations) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-black">
         <Loader2 className="animate-spin text-primary w-12 h-12" />
       </div>
     );
@@ -33,14 +34,14 @@ export default function IntegrationPage() {
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen">
-        <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
+        <section className="relative h-[60vh] flex items-center justify-center bg-black overflow-hidden">
           <Image 
             src={heroImage}
             alt="Integration"
             fill
             className="object-cover opacity-40"
-            data-ai-hint="international students group"
             priority
+            data-ai-hint="international students group"
           />
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
@@ -80,7 +81,7 @@ export default function IntegrationPage() {
                 </Button>
               </ScrollReveal>
               
-              <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-muted">
+              <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-black">
                 <Image 
                   src={introImage}
                   alt="Classroom"

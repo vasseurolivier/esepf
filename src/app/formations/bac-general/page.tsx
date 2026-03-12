@@ -31,15 +31,14 @@ export default function BacGeneralPage() {
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white">
-        {/* Hero Section */}
-        <section className="relative h-[65vh] flex items-center justify-center bg-[#0a192f] overflow-hidden">
+        <section className="relative h-[65vh] flex items-center justify-center bg-black overflow-hidden">
           <Image 
             src={heroImage}
             alt="Bac Général"
             fill
             className="object-cover opacity-40"
-            data-ai-hint="prestigious library university"
             priority
+            data-ai-hint="prestigious library university"
           />
           <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
@@ -54,7 +53,6 @@ export default function BacGeneralPage() {
           </div>
         </section>
 
-        {/* Quick Info Bar */}
         <section className="bg-primary py-6 text-white border-y border-white/10">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -83,14 +81,13 @@ export default function BacGeneralPage() {
                 <GraduationCap className="text-secondary" />
                 <div>
                   <p className="text-[10px] uppercase opacity-60">{t.common.diploma}</p>
-                  <p className="font-bold text-sm">Baccalauréat Général</p>
+                  <p className="font-bold text-sm">{t.recognition_page.bac_label} Général</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Main Content Section */}
         <section className="py-24">
           <div className="container mx-auto px-4 max-w-5xl">
             <ScrollReveal className="mb-20 text-center">
@@ -106,7 +103,7 @@ export default function BacGeneralPage() {
               <ScrollReveal className="space-y-8">
                 <div className="p-8 bg-muted/30 rounded-[2.5rem] border border-muted">
                   <h3 className="text-2xl font-headline font-bold text-primary mb-6 flex items-center gap-3">
-                    <BookOpen className="text-secondary" /> Fonctionnement
+                    <BookOpen className="text-secondary" /> {t.lycee_page.btn_formation}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed italic">
                     {content.system_desc}
@@ -122,7 +119,7 @@ export default function BacGeneralPage() {
                 </div>
               </ScrollReveal>
               
-              <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl bg-muted group">
+              <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl bg-black group">
                 <Image 
                   src={introImage}
                   alt="Languages and Cultures"
@@ -132,13 +129,12 @@ export default function BacGeneralPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8">
                   <p className="text-white font-bold italic text-lg leading-tight">
-                    "Maîtriser les langues, c'est s'ouvrir les portes du monde."
+                    "{content.quote}"
                   </p>
                 </div>
               </ScrollReveal>
             </div>
 
-            {/* Specialties Section */}
             <ScrollReveal className="mb-24">
               <h3 className="text-3xl font-headline font-bold text-primary mb-12 text-center uppercase tracking-widest underline underline-offset-8 decoration-secondary">
                 {content.specialties_title}
@@ -160,7 +156,6 @@ export default function BacGeneralPage() {
               </p>
             </ScrollReveal>
 
-            {/* Profile & Qualities */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
               <ScrollReveal className="bg-primary p-10 rounded-[3rem] text-white relative overflow-hidden shadow-2xl">
                 <div className="relative z-10">
@@ -202,16 +197,14 @@ export default function BacGeneralPage() {
               </ScrollReveal>
             </div>
 
-            {/* French System Schema */}
             <ScrollReveal className="text-center mb-12">
-              <h2 className="text-3xl font-headline font-bold text-primary mb-2 uppercase tracking-widest">Votre parcours de réussite</h2>
-              <p className="text-muted-foreground">Découvrez les opportunités après votre Baccalauréat Général à l'ESEPF</p>
+              <h2 className="text-3xl font-headline font-bold text-primary mb-2 uppercase tracking-widest">{content.success_journey}</h2>
+              <p className="text-muted-foreground">{content.discover_opp}</p>
             </ScrollReveal>
-            <FrenchSystemSchema bacType="Baccalauréat Général" />
+            <FrenchSystemSchema bacType={content.title} />
           </div>
         </section>
 
-        {/* Detailed Outlets Section */}
         <section className="py-24 bg-muted/10 border-y border-muted">
           <div className="container mx-auto px-4 max-w-6xl">
             <OutletsSection 
@@ -225,17 +218,16 @@ export default function BacGeneralPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 text-center">
             <ScrollReveal className="max-w-3xl mx-auto bg-muted rounded-[3rem] p-12 shadow-inner">
-               <h2 className="text-3xl font-headline font-bold mb-6">Prêt à nous rejoindre ?</h2>
-               <p className="text-muted-foreground mb-8">Les inscriptions pour la rentrée 2026-2027 sont ouvertes sur les campus d'Evron et Sainte-Bazeilles.</p>
+               <h2 className="text-3xl font-headline font-bold mb-6">{t.common.ready_join}</h2>
+               <p className="text-muted-foreground mb-8">{t.common.enrollment_open}</p>
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/inscription">
                     <Button className="rounded-full bg-primary py-8 px-10 font-bold uppercase tracking-widest">{t.common.apply}</Button>
                   </Link>
-                  <Link href="/projet-equipe"><Button variant="outline" className="rounded-full py-8 px-10 font-bold uppercase tracking-widest">Rencontrer l'équipe</Button></Link>
+                  <Link href="/projet-equipe"><Button variant="outline" className="rounded-full py-8 px-10 font-bold uppercase tracking-widest">{t.common.meet_team}</Button></Link>
                </div>
             </ScrollReveal>
           </div>
