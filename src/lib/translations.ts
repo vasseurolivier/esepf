@@ -316,14 +316,20 @@ export const translations = {
       bac_stmg: {
         title: "BAC TECHNO STMG",
         subtitle: "Métiers du management et de la gestion",
-        desc: "Une filière équilibrée pour comprendre le fonctionnement des organisations.",
+        hero_title: "La voie vers les métiers du management et de la finance !",
+        desc: "Le Baccalauréat Technologique STMG (Sciences et Technologies du Management et de la Gestion) est une filière qui prépare les élèves aux métiers de la gestion, du management et de l’économie. Ce diplôme allie enseignements généraux et technologiques pour développer des compétences en communication, analyse, organisation et prise de décision dans des contextes professionnels variés. Les élèves y découvrent les fondamentaux du droit, de l’économie, des sciences de gestion, ainsi que des outils numériques essentiels.",
+        outro: "Il ouvre la voie à des études supérieures telles que les BTS, BUT, licences ou écoles de commerce, et mène à des carrières dans les domaines de la gestion, du marketing, des ressources humaines ou de la finance.",
+        luxe_module_title: "Un Module Luxe en Hôtellerie et Restauration pour nos STMG",
+        luxe_module_p1: "Dans un monde où l’hôtellerie et la restauration de luxe sont des secteurs en pleine expansion, il est essentiel de préparer nos élèves aux exigences de cette industrie prestigieuse. C’est pourquoi notre Baccalauréat Technologique STMG inclura un module exclusif dédié à l’hôtellerie et à la restauration haut de gamme.",
+        luxe_module_p2: "Ce programme vise à offrir aux élèves une première immersion dans cet univers raffiné, en leur permettant de découvrir les standards de qualité, le service d’excellence et les codes du luxe appliqués à l’accueil, à la gestion et à la relation client. À travers des études de cas concrets, des rencontres avec des professionnels du secteur et des mises en situation, nos élèves développeront des compétences essentielles en management, marketing et gestion hôtelière, tout en cultivant un savoir-être adapté aux attentes de cette industrie exigeante.",
+        luxe_module_p3: "Ce module représente une véritable opportunité pour nos élèves, leur ouvrant les portes de formations spécialisées et de carrières internationales dans le domaine du luxe. Il s’inscrit pleinement dans notre engagement à proposer une éducation innovante et professionnalisante, en phase avec les réalités du marché du travail et les aspirations de nos étudiants.",
         campuses: "Tous les campus",
         duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Baccalauréat Technologique)",
-        bts_list: ["BTS Gestion PME", "BTS Comptabilité Gestion"],
-        bts_jobs: ["Assistant de gestion", "Comptable junior"],
-        univ_list: ["BUT GEA", "Licence Économie-Gestion"],
-        univ_jobs: ["Contrôleur de gestion", "RH Project Manager"]
+        bts_list: ["BTS Gestion PME", "BTS Comptabilité Gestion", "BTS MCO"],
+        bts_jobs: ["Assistant de gestion", "Comptable junior", "Manager de rayon"],
+        univ_list: ["BUT GEA", "Licence Économie-Gestion", "Bachelor Business"],
+        univ_jobs: ["Contrôleur de gestion", "RH Project Manager", "Analyste financier"]
       }
     },
     football_pages: {
@@ -811,14 +817,20 @@ export const translations = {
       bac_stmg: {
         title: "TECHNO STMG BAC",
         subtitle: "Management and Business",
-        desc: "A balanced track to understand organizations.",
+        hero_title: "The way to management and finance careers!",
+        desc: "The STMG Technological Baccalaureate (Management and Management Sciences and Technologies) is a track that prepares students for careers in management and economy. It combines general and technological teaching to develop communication, analysis, and decision-making skills.",
+        outro: "It opens doors to higher studies like BTS, BUT, licenses or business schools, and leads to careers in management, marketing, HR or finance.",
+        luxe_module_title: "A Luxury Module in Hospitality and Restoration for our STMG",
+        luxe_module_p1: "In a world where luxury hospitality is expanding, it is essential to prepare students for the requirements of this prestigious industry. Our STMG Bac will include an exclusive module dedicated to high-end hospitality.",
+        luxe_module_p2: "This program offers a first immersion in this refined universe, allowing students to discover standards of quality and service excellence. Through case studies and meetings with professionals, they develop essential management and marketing skills.",
+        luxe_module_p3: "This module represents a real opportunity, opening doors to specialized training and international careers in luxury.",
         campuses: "All campuses",
         duration: "3 years (4 for allophones)",
         level: "Level 4 (Technological Bac)",
-        bts_list: ["BTS SME Management", "BTS Accounting"],
-        bts_jobs: ["Management Assistant"],
-        univ_list: ["BUT GEA", "Economics Degree"],
-        univ_jobs: ["Management Controller"]
+        bts_list: ["BTS SME Management", "BTS Accounting", "BTS MCO"],
+        bts_jobs: ["Management Assistant", "Junior Accountant"],
+        univ_list: ["BUT GEA", "Economics Degree", "Business Bachelor"],
+        univ_jobs: ["Management Controller", "HR Project Manager", "Financial Analyst"]
       }
     },
     football_pages: {
@@ -1247,7 +1259,7 @@ export const translations = {
           { name: "数学", desc: "分析和逻辑技能的基础。" },
           { name: "数字与计算机科学 (NSI)", desc: "针对对编程和数字挑战感兴趣的学生。" }
         ],
-        conclusion: "这项完整的培训使学生能够获得适应当今世界的各种技能。",
+        conclusion: "这项完整的培训使学生能夠获得适应当今世界的各种技能。",
         profile_title: "招生对象",
         profile_desc: "普通高中毕业证书面向以下学生：",
         profile_list: ["初中毕业生进入高一", "高一或高二学生进入高二"],
@@ -1306,14 +1318,20 @@ export const translations = {
       bac_stmg: {
         title: "管理技术高中",
         subtitle: "管理与商务方向",
-        desc: "了解组织运作的平衡路径。",
+        hero_title: "通往管理与财务职业的道路！",
+        desc: "STMG（管理与管理科学与技术）技术高中毕业证书是一个培养学生进入管理、行政和经济领域的方向。该文凭结合了通用教学和技术教学，旨在培养学生在各种专业环境下的沟通、分析、组织和决策能力。",
+        outro: "它开启了通往高等教育的大门，如 BTS、BUT、本科或商学院，并引导学生进入管理、营销、人力资源或财务领域的职业生涯。",
+        luxe_module_title: "为我们的 STMG 学生提供的奢侈品酒店与餐饮模块",
+        luxe_module_p1: "在奢侈品酒店与餐饮业不断扩张的世界中，让我们的学生做好应对这一声誉显赫行业要求的准备至关重要。这就是为什么我们的 STMG 高中毕业证书将包含一个专门针对高端酒店与餐饮的独家模块。",
+        luxe_module_p2: "该计划旨在让学生首次沉浸在这一精致的领域，让他们发现质量标准、卓越服务以及应用于接待、管理和客户关系的奢侈品准则。通过具体的案例研究、与行业专业人士的会面以及情景模拟，我们的学生将培养管理、营销和酒店管理方面的基本技能，同时培养适应这一苛刻行业期望的职业素养。",
+        luxe_module_p3: "该模块代表了我们学生的真正机遇，为他们开启了奢侈品领域专业培训和国际职业生涯的大门。它完全符合我们提供创新和职业化教育的承诺，与劳动力市场的现实和学生的需求相契合。",
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级",
-        bts_list: ["中小企业 management BTS", "会计 BTS"],
-        bts_jobs: ["管理助理"],
-        univ_list: ["GEA BUT", "经济管理本科"],
-        univ_jobs: ["管理会计"]
+        bts_list: ["中小企业 management BTS", "会计 BTS", "MCO BTS"],
+        bts_jobs: ["管理助理", "初级会计师", "部门经理"],
+        univ_list: ["GEA BUT", "经济管理本科", "商业学士"],
+        univ_jobs: ["管理会计", "人力资源项目经理", "财务分析师"]
       }
     },
     football_pages: {
@@ -1323,7 +1341,7 @@ export const translations = {
       prog_intro_3: "我们特别注重运动员的心理 and 人文发展，培训他们应对高水平运动的心理挑战。团队精神、纪律、韧性和情绪管理是我们方法的核心. 每位运动员都享有助力其发挥潜能的专业指导.",
       prog_intro_4: "学校为运动员提供实现目标、充分发展的机会，最优秀者可获得职业合同或体育奖学金。",
       france_title: "法国：足球之乡",
-      france_desc_full: "21世纪，法国是为世界杯贡献球员最多的国家，共有216名球员出生于此，远超巴西（148人）。法国还大幅领先于德国和意大利这两支四冠王球队。",
+      france_desc_full: "21世纪，法国是为世界杯贡献球员最多的国家，共有216球员出生于此，远超巴西（148人）。法国还大幅领先于德国和意大利这两支四冠王球队。",
       france_examples: "例如：姆巴佩、齐达内、格列兹曼、亨利、德罗巴、普拉蒂尼、瓦拉内、坎特、科曼...",
       reconnaissance_title: "享誉全球的培训体系",
       reconnaissance_p1: "法国的人才辈出并非偶然，而是源于该国完善的青训检测和培养体系。这种方法的高效性已在全世界得到认可，是法国足球成功的核心。",
