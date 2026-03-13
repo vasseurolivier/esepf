@@ -355,7 +355,7 @@ export const translations = {
       card_hotel: "METIERS DE L'HOTELLERIE RESTAURATION",
       card_mode: "METIERS DE LA MODE ET DU DESIGN",
       btn_formation: "LA FORMATION",
-      btn_outlets: "LES DÉBOUCHÉS SCOLAIRES",
+      btn_outlets: "LES DÉBOUCHÉS SCOLAIÉS",
       btn_jobs: "LES MÉTIERS",
       schema: {
         integration: "Seconde \"d'intégration\"",
@@ -666,7 +666,8 @@ export const translations = {
       faq_q3: "Élèves internationaux ?",
       faq_a3: "Oui, classes FLE dédiées.",
       opening_hours: "Horaires d'ouverture",
-      mon_fri: "Lun - Ven : 08h30 - 18h00"
+      mon_fri: "Lun - Ven : 08h30 - 18h00",
+      phone_wechat: "+86 138 1738 9758 (Disponible sur WeChat)"
     },
     support_page: {
       title: "Un accompagnement Physique et Mental",
@@ -695,7 +696,7 @@ export const translations = {
       newsletter_desc: "Inscrivez-vous aux actualités.",
       placeholder: "Votre email",
       rights: "Tous droits réservés.",
-      hq_label: "France"
+      hq_label: "Contact"
     }
   },
   en: {
@@ -1139,7 +1140,7 @@ export const translations = {
         direct_employment_text: "The Bac Pro in Commerce and Sales (MCV) offers graduates an immediate entry into the labor market thanks to practical skills sought after by companies. By specializing in customer relationship management, sales, and commercial animation, holders of this diploma can occupy various positions in dynamic sectors, ranging from retail to luxury trade.",
         direct_employment_jobs: ["Sales advisor", "Sales assistant", "Customer advisor", "Merchandiser", "Sales animator", "Prospecting manager", "Inventory manager"],
         higher_ed_title: "2. Access to higher education",
-        higher_ed_intro: "After a Bac Pro in Commerce and Sales (MCV), you can pursue your studies in BTS (Negotiation, Commercial Management, International Trade, etc.) or in a university degree to deepen your skills and obtain positions of responsibility. These higher education courses open the way to many opportunities in growing sectors.",
+        higher_ed_intro: "After a Bac Pro in Commerce and Sales (MCV), you can pursue your studies in BTS (Négociation, Commercial Management, International Trade, etc.) or in a university degree to deepen your skills and obtain positions of responsibility. These higher education courses open the way to many opportunities in growing sectors.",
         bts_desc: "The BTS (Higher Technician's Certificate) is a two-year course that allows specialization after a Professional Baccalaureate. It offers practical and theoretical teaching in areas such as negotiation, commercial management, or international trade. Accessible on file, the BTS quickly prepares for positions of responsibility.",
         univ_desc: "Access to a degree after a Bac Pro allows specialization in fields such as marketing, commerce, or management. The degree is a 3-year university course (Bac+3 level), which combines theoretical and practical teaching. It strengthens skills and promises quick professional entry.",
         bts_list: ["BTS International Trade (CI)", "BTS Commercial Units Management (MUC)", "BTS Banking", "BTS Marketing Manager"],
@@ -1364,7 +1365,8 @@ export const translations = {
       faq_q3: "International students?",
       faq_a3: "Yes, dedicated FLE classes.",
       opening_hours: "Opening hours",
-      mon_fri: "Mon - Fri: 08:30 AM - 6:00 PM"
+      mon_fri: "Mon - Fri: 08:30 AM - 6:00 PM",
+      phone_wechat: "+86 138 1738 9758 (Available on WeChat)"
     },
     support_page: {
       title: "Physical and Mental Support",
@@ -1393,7 +1395,7 @@ export const translations = {
       newsletter_desc: "Subscribe to news.",
       placeholder: "Your email",
       rights: "All rights reserved.",
-      hq_label: "France"
+      hq_label: "Contact"
     }
   },
   zh: {
@@ -1785,7 +1787,7 @@ export const translations = {
           "对外语 和 外国文化的热情。",
           "良好的表达能力。",
           "好奇心 和 开放心态。",
-          "完善语言技能的意愿。",
+          "完善语言技能 host 的意愿。",
           "能力独立工作能力。"
         ],
         campuses: "所有校区",
@@ -1844,7 +1846,7 @@ export const translations = {
         subtitle: "管理 和 商务方向",
         hero_title: "通往管理 和 财务职业的道路！",
         desc: "STMG 技术高中是一个培养学生进入管理、行政 和 经济领域的方向. 它结合了通用 和 技术教学。",
-        outro: "它开启了通往高等教育的大门，如 BTS、商学院，并引导学生进入营销 或 财务领域的职业生涯。",
+        outro: "It opens doors to higher studies like BTS, BUT, licenses or business schools, and leads to careers in management, marketing, HR or finance.",
         luxe_module_title: "奢侈品酒店 和 餐饮模块",
         luxe_module_p1: "在奢侈品行业不断扩张的世界中，让我们的学生做好准备至关重要。",
         luxe_module_p2: "该计划旨在让学生首次沉浸在这一精致领域，让他们发现质量标准。",
@@ -2055,7 +2057,8 @@ export const translations = {
       faq_q3: "国际生？",
       faq_a3: "设有 FLE 班。",
       opening_hours: "开放时间",
-      mon_fri: "周一至周五: 08:30 - 18:00"
+      mon_fri: "周一至周五: 08:30 - 18:00",
+      phone_wechat: "+86 138 1738 9758 (微信同号)"
     },
     support_page: {
       title: "身心支持",
@@ -2084,7 +2087,7 @@ export const translations = {
       newsletter_desc: "订阅动态。",
       placeholder: "您的邮箱",
       rights: "版权所有。",
-      hq_label: "法国"
+      hq_label: "联系"
     }
   }
 };

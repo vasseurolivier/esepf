@@ -44,17 +44,17 @@ export default function ContactPage() {
   const contactInfos = [
     {
       title: t.contact_page.campus_evron,
-      phone: "+33 (0)1 88 44 22 00",
+      phone: t.contact_page.phone_wechat,
       email: "contact@esepf.fr"
     },
     {
       title: t.contact_page.campus_bazeilles,
-      phone: "+33 (0)5 53 94 40 40",
+      phone: t.contact_page.phone_wechat,
       email: "contact@esepf.fr"
     },
     {
       title: t.contact_page.campus_tulle,
-      phone: "+33 (0)4 92 78 20 05",
+      phone: t.contact_page.phone_wechat,
       email: "contact@esepf.fr"
     }
   ];
@@ -158,8 +158,8 @@ export default function ContactPage() {
                       <Clock size={32} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-primary uppercase text-xs tracking-widest">Horaires d'ouverture</h4>
-                      <p className="text-sm text-muted-foreground">Lun - Ven : 08h30 - 18h00</p>
+                      <h4 className="font-bold text-primary uppercase text-xs tracking-widest">{t.contact_page.opening_hours}</h4>
+                      <p className="text-sm text-muted-foreground">{t.contact_page.mon_fri}</p>
                     </div>
                   </div>
                 </ScrollReveal>

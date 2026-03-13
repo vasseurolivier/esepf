@@ -71,7 +71,7 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Phone size={18} className="text-secondary" />
-                <span>01 88 44 22 00</span>
+                <span>{t.contact_page.phone_wechat}</span>
               </li>
               <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Mail size={18} className="text-secondary" />
