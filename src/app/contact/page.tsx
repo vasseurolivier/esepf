@@ -44,21 +44,18 @@ export default function ContactPage() {
   const contactInfos = [
     {
       title: t.contact_page.campus_evron,
-      address: "1 rue de l'Abbaye, 53600 Evron, France",
       phone: "+33 (0)1 88 44 22 00",
-      email: "contact@esepf-academy.fr"
+      email: "contact@esepf.fr"
     },
     {
       title: t.contact_page.campus_bazeilles,
-      address: "Z.A. de la Prade, 47180 Sainte-Bazeilles, France",
       phone: "+33 (0)5 53 94 40 40",
-      email: "bazeilles@esepf-academy.fr"
+      email: "contact@esepf.fr"
     },
     {
       title: t.contact_page.campus_tulle,
-      address: "Avenue de la République, 04220 Sainte-Tulle, France",
       phone: "+33 (0)4 92 78 20 05",
-      email: "tulle@esepf-academy.fr"
+      email: "contact@esepf.fr"
     }
   ];
 
@@ -149,7 +146,6 @@ export default function ContactPage() {
                           {info.title}
                         </h3>
                         <div className="space-y-3 opacity-80 text-sm">
-                          <p className="flex items-start gap-3"><MapPin size={16} className="shrink-0 mt-1" /> {info.address}</p>
                           <p className="flex items-center gap-3"><Phone size={16} /> {info.phone}</p>
                           <p className="flex items-center gap-3"><Mail size={16} /> {info.email}</p>
                         </div>

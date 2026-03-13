@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -36,21 +37,21 @@ const IMAGE_CATEGORIES = [
     label: 'Campus',
     icon: <MapPin size={16} />,
     fields: [
-      { id: 'campus_evron', label: 'Hero Evron', location: 'Haut de page Evron' },
-      { id: 'evron_map', label: 'Carte Evron', location: 'Section localisation Evron' },
+      { id: 'campus_evron', label: 'Hero Evron (LAVAL)', location: 'Haut de page Evron' },
+      { id: 'evron_map', label: 'Carte Evron (LAVAL)', location: 'Section localisation Evron' },
       { id: 'evron_infra_1', label: 'Evron Infra 1', location: 'Galerie infrastructures' },
       { id: 'evron_infra_2', label: 'Evron Infra 2', location: 'Galerie infrastructures' },
       { id: 'evron_infra_3', label: 'Evron Infra 3', location: 'Galerie infrastructures' },
-      { id: 'campus_bazeilles', label: 'Hero Bazeilles', location: 'Haut de page Bazeilles' },
-      { id: 'bazeilles_map', label: 'Carte Bazeilles', location: 'Section localisation Bazeilles' },
-      { id: 'bazeilles_infra_1', label: 'Bazeilles Infra 1', location: 'Galerie infrastructures' },
-      { id: 'bazeilles_infra_2', label: 'Bazeilles Infra 2', location: 'Galerie infrastructures' },
-      { id: 'bazeilles_infra_3', label: 'Bazeilles Infra 3', location: 'Galerie infrastructures' },
-      { id: 'campus_tulle', label: 'Hero Tulle', location: 'Haut de page Tulle' },
-      { id: 'tulle_map', label: 'Carte Tulle', location: 'Section localisation Tulle' },
-      { id: 'tulle_infra_1', label: 'Tulle Infra 1', location: 'Galerie infrastructures' },
-      { id: 'tulle_infra_2', label: 'Tulle Infra 2', location: 'Galerie infrastructures' },
-      { id: 'tulle_infra_3', label: 'Tulle Infra 3', location: 'Galerie infrastructures' },
+      { id: 'campus_bazeilles', label: 'Hero Sainte-Bazeille (BORDEAUX)', location: 'Haut de page Sainte-Bazeille' },
+      { id: 'bazeilles_map', label: 'Carte Sainte-Bazeille (BORDEAUX)', location: 'Section localisation Sainte-Bazeille' },
+      { id: 'bazeilles_infra_1', label: 'Sainte-Bazeille Infra 1', location: 'Galerie infrastructures' },
+      { id: 'bazeilles_infra_2', label: 'Sainte-Bazeille Infra 2', location: 'Galerie infrastructures' },
+      { id: 'bazeilles_infra_3', label: 'Sainte-Bazeille Infra 3', location: 'Galerie infrastructures' },
+      { id: 'campus_tulle', label: 'Hero Sainte-Tulle (AIX)', location: 'Haut de page Sainte-Tulle' },
+      { id: 'tulle_map', label: 'Carte Sainte-Tulle (AIX)', location: 'Section localisation Sainte-Tulle' },
+      { id: 'tulle_infra_1', label: 'Sainte-Tulle Infra 1', location: 'Galerie infrastructures' },
+      { id: 'tulle_infra_2', label: 'Sainte-Tulle Infra 2', location: 'Galerie infrastructures' },
+      { id: 'tulle_infra_3', label: 'Sainte-Tulle Infra 3', location: 'Galerie infrastructures' },
     ]
   },
   {
@@ -223,12 +224,12 @@ export default function AdminPage() {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleUnlock} className="space-y-4">
-              <Input 
+              <input 
                 type="password" 
                 placeholder="Mot de passe" 
                 value={passwordInput}
                 onChange={(e) => setPasswordInput(e.target.value)}
-                className="text-center h-12 rounded-xl"
+                className="w-full text-center h-12 rounded-xl border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
               />
               <Button type="submit" className="w-full h-12 rounded-xl bg-primary">DÉVERROUILLER</Button>
             </form>

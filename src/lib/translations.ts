@@ -57,7 +57,7 @@ export const translations = {
       ready_join: "Prêt à nous rejoindre ?",
       ready_leader: "Prêt à devenir un leader ?",
       join_elite: "Rejoignez l'élite du commerce",
-      enrollment_open: "Les inscriptions pour la rentrée 2026-2027 sont ouvertes sur les campus d'Evron et Sainte-Bazeilles.",
+      enrollment_open: "Les inscriptions pour la rentrée 2026-2027 sont ouvertes sur les campus d'Evron et Sainte-Bazeille.",
       enrollment_stmg: "Les inscriptions pour la filière STMG & Luxe (Rentrée 2026) sont ouvertes. Développez votre potentiel management dès aujourd'hui.",
       enrollment_vente: "Les inscriptions pour la filière Vente Luxe (Rentrée 2026) sont ouvertes. Places limitées pour garantir un encadrement d'exception.",
       roadmap: "ESEPF ROADMAP",
@@ -152,9 +152,9 @@ export const translations = {
       three_axes_mobile_languages_btn: "DÉCOUVRIR LE PROGRAMME FLE/EFL"
     },
     campus_locations: {
-      evron: "Evron, Mayenne",
-      bazeilles: "Sainte-Bazeilles, Lot-et-Garonne",
-      tulle: "Sainte-Tulle, Provence"
+      evron: "Evron (LAVAL)",
+      bazeilles: "Sainte-Bazeille (BORDEAUX)",
+      tulle: "Sainte-Tulle (AIX-EN-PROVENCE)"
     },
     formations: {
       integration_title: "CLASSE d'INTEGRATION",
@@ -603,13 +603,13 @@ export const translations = {
       evron_sub: "Le cœur historique et administratif de l'ESEPF en Mayenne.",
       evron_region: "Mayenne (53)",
       evron_region_desc: "Pays de la Loire, France.",
-      bazeilles_hero: "Campus Sainte-Bazeilles",
+      bazeilles_hero: "Campus Sainte-Bazeille",
       bazeilles_sub: "L'innovation pédagogique au cœur du Sud-Ouest.",
       bazeilles_title: "Un carrefour stratégique en Lot-et-Garonne",
       bazeilles_desc: "Notre site de Sainte-Bazeille (47) vous accueille dans un cadre calme et verdoyant au cœur du Lot-et-Garonne. Idéal pour vos formations, il dispose de salles modulables entièrement équipées, d'un terrain de sport pour les activités de groupe, et d'un espace de détente chaleureux.\nL'hébergement sur place et la restauration vous garantissent un séjour tout compris et serein.",
       bazeilles_culture: "Culture & Terroir",
-      bazeilles_culture_desc: "Sainte-Bazeilles est réputée pour sa convivialité et ses infrastructures sportives de premier plan, parfaitement intégrées à la vie locale.",
-      bazeilles_infra_desc: "Le Campus de Sainte-Bazeilles se distingue par son architecture moderne et ses espaces de co-working.",
+      bazeilles_culture_desc: "Sainte-Bazeille est réputée pour sa convivialité et ses infrastructures sportives de premier plan, parfaitement intégrées à la vie locale.",
+      bazeilles_infra_desc: "Le Campus de Sainte-Bazeille se distingue par son architecture moderne et ses espaces de co-working.",
       tulle_hero: "Campus Sainte-Tulle",
       tulle_sub: "L'excellence au cœur de la Provence.",
       tulle_title: "Le charme et le soleil des Alpes-de-Haute-Provence",
@@ -656,7 +656,7 @@ export const translations = {
       form_success: "Message envoyé avec succès !",
       info_title: "Nos Coordonnées",
       campus_evron: "Campus Evron",
-      campus_bazeilles: "Sainte-Bazeilles",
+      campus_bazeilles: "Sainte-Bazeille",
       campus_tulle: "Campus Sainte-Tulle",
       faq_title: "Questions Fréquentes",
       faq_q1: "Comment s'inscrire ?",
@@ -695,7 +695,7 @@ export const translations = {
       newsletter_desc: "Inscrivez-vous aux actualités.",
       placeholder: "Votre email",
       rights: "Tous droits réservés.",
-      hq_label: "Siège : Evron, France"
+      hq_label: "France"
     }
   },
   en: {
@@ -755,7 +755,7 @@ export const translations = {
       ready_join: "Ready to join us?",
       ready_leader: "Ready to become a leader?",
       join_elite: "Join the trade elite",
-      enrollment_open: "Registration for 2026-2027 is open at Evron and Sainte-Bazeilles campuses.",
+      enrollment_open: "Registration for 2026-2027 is open at Evron and Sainte-Bazeille campuses.",
       enrollment_stmg: "Registration for STMG & Luxury (Fall 2026) is open. Develop your management potential today.",
       enrollment_vente: "Registration for Luxury Sales (Fall 2026) is open. Limited places to ensure exceptional coaching.",
       roadmap: "ESEPF ROADMAP",
@@ -850,9 +850,9 @@ export const translations = {
       three_axes_mobile_languages_btn: "DISCOVER FLE/EFL PROGRAM"
     },
     campus_locations: {
-      evron: "Evron, Mayenne",
-      bazeilles: "Sainte-Bazeilles, Lot-et-Garonne",
-      tulle: "Sainte-Tulle, Provence"
+      evron: "Evron (LAVAL)",
+      bazeilles: "Sainte-Bazeille (BORDEAUX)",
+      tulle: "Sainte-Tulle (AIX-EN-PROVENCE)"
     },
     formations: {
       integration_title: "INTEGRATION CLASS",
@@ -956,7 +956,7 @@ export const translations = {
       direction_label: "ESEPF General Management"
     },
     team_page: {
-      title: "The Project",
+      title: "THE PROJECT",
       subtitle: "Elite Football & Academics",
       p1: "At ESEPF, we offer young people aged 11 to 19 an exceptional dual project.",
       p2: "Students follow an excellent French curriculum.",
@@ -1091,7 +1091,7 @@ export const translations = {
           "Ability to work independently."
         ],
         campuses: "All campuses",
-        duration: "3 ans (4 for allophones)",
+        duration: "3 years (4 for allophones)",
         level: "Level 4 (Baccalaureate)",
         bts_desc: "The BTS (Higher Technician's Certificate) in applied Foreign Languages (LEA) is a two-year program that allows specialization after a General Baccalaureate.\nIt offers practical and theoretical teaching in areas such as translation, interpretation, international project management, and intercultural communication.\nAccessible by application, the BTS quickly prepares for positions of responsibility in growing sectors such as international trade, tourism, customer relationship management, or translation and interpretation professions.",
         univ_desc: "Access to a Bachelor's degree after a General Baccalaureate allows for specialization in fields such as translation, interpretation, international relations, or intercultural communication.\nThe Bachelor's degree is a 3-year university course (Bac+3 level) that combines theoretical and practical teaching. It strengthens the linguistic and cultural skills acquired in high school and prepares for a successful entry into the professional world.\nAfter a BTS in applied foreign languages or related fields, it is also possible to directly join the final year of a Bachelor's degree to deepen skills and broaden career prospects.",
@@ -1141,7 +1141,7 @@ export const translations = {
         higher_ed_title: "2. Access to higher education",
         higher_ed_intro: "After a Bac Pro in Commerce and Sales (MCV), you can pursue your studies in BTS (Negotiation, Commercial Management, International Trade, etc.) or in a university degree to deepen your skills and obtain positions of responsibility. These higher education courses open the way to many opportunities in growing sectors.",
         bts_desc: "The BTS (Higher Technician's Certificate) is a two-year course that allows specialization after a Professional Baccalaureate. It offers practical and theoretical teaching in areas such as negotiation, commercial management, or international trade. Accessible on file, the BTS quickly prepares for positions of responsibility.",
-        univ_desc: "Access to a degree after a Bac Pro allows specialization in areas such as marketing, commerce, or management. The degree is a 3-year university course (Bac+3 level), which combines theoretical and practical teaching. It allows for the reinforcement of acquired skills and promises a rapid entry into the professional world. After a BTS, it is possible to join the final year of a degree directly to continue improving.",
+        univ_desc: "Access to a degree after a Bac Pro allows specialization in fields such as marketing, commerce, or management. The degree is a 3-year university course (Bac+3 level), which combines theoretical and practical teaching. It strengthens skills and promises quick professional entry.",
         bts_list: ["BTS International Trade (CI)", "BTS Commercial Units Management (MUC)", "BTS Banking", "BTS Marketing Manager"],
         bts_jobs: ["Sales manager", "Marketing manager", "Communication advisor", "Marketing project manager", "Export manager", "Store manager"],
         univ_list: ["Pro License Negotiation and Customer Relations", "Pro License Business Management", "Bachelor in Digital Marketing", "Bachelor in Economics and Management", "Bachelor in Communication and Media", "Bachelor in Organization Management"],
@@ -1301,13 +1301,13 @@ export const translations = {
       evron_sub: "The historic and administrative heart of ESEPF in Mayenne.",
       evron_region: "Mayenne (53)",
       evron_region_desc: "Pays de la Loire, France.",
-      bazeilles_hero: "Sainte-Bazeilles Campus",
+      bazeilles_hero: "Sainte-Bazeille Campus",
       bazeilles_sub: "Educational innovation in the South-West.",
       bazeilles_title: "A strategic crossroads in Lot-et-Garonne",
       bazeilles_desc: "Our Sainte-Bazeille site (47) welcomes you to a calm and green setting in the heart of Lot-et-Garonne. Ideal for your training, it has fully equipped modular rooms, a sports field for group activities, and a warm relaxation area.\nOn-site accommodation and catering guarantee an all-inclusive and serene stay.",
       bazeilles_culture: "Culture & Terroir",
-      bazeilles_culture_desc: "Sainte-Bazeilles is known for its conviviality and top-notch sports infrastructures, perfectly integrated into local life.",
-      bazeilles_infra_desc: "The Sainte-Bazeilles Campus is distinguished by its modern architecture and co-working spaces.",
+      bazeilles_culture_desc: "Sainte-Bazeille is known for its conviviality and top-notch sports infrastructures, perfectly integrated into local life.",
+      bazeilles_infra_desc: "The Sainte-Bazeille Campus is distinguished by its modern architecture and co-working spaces.",
       tulle_hero: "Sainte-Tulle Campus",
       tulle_sub: "Excellence in the heart of Provence.",
       tulle_title: "The charm and sun of the Alpes-de-Haute-Provence",
@@ -1354,7 +1354,7 @@ export const translations = {
       form_success: "Message sent successfully!",
       info_title: "Contact Details",
       campus_evron: "Evron Campus",
-      campus_bazeilles: "Sainte-Bazeilles",
+      campus_bazeilles: "Sainte-Bazeille",
       campus_tulle: "Sainte-Tulle",
       faq_title: "Frequently Asked Questions",
       faq_q1: "How to register?",
@@ -1393,7 +1393,7 @@ export const translations = {
       newsletter_desc: "Subscribe to news.",
       placeholder: "Your email",
       rights: "All rights reserved.",
-      hq_label: "Headquarters: Evron, France"
+      hq_label: "France"
     }
   },
   zh: {
@@ -1548,9 +1548,9 @@ export const translations = {
       three_axes_mobile_languages_btn: "了解 FLE/EFL 课程"
     },
     campus_locations: {
-      evron: "埃夫龙 (马耶讷省)",
-      bazeilles: "圣巴泽耶 (洛特-加龙省)",
-      tulle: "圣蒂勒 (普罗旺斯)"
+      evron: "Evron (LAVAL)",
+      bazeilles: "Sainte-Bazeille (BORDEAUX)",
+      tulle: "Sainte-Tulle (AIX-EN-PROVENCE)"
     },
     formations: {
       integration_title: "整合班",
@@ -1725,7 +1725,7 @@ export const translations = {
       p3: "初中部丰富了我们的培训体系 并 陪伴年轻人。",
       prog_title: "我们的计划分为三年：",
       year1_title: "第一年：整合班",
-      year1_desc: "该计划允许他们掌握扎实的法语 (FLE)。",
+      year1_desc: "该计划允许 them 掌握扎实的法语 (FLE)。",
       year2_title: "第二年：八年级适配课程。",
       year2_desc: "深化学术 和 体育技能的关键一年，同时充分融入机构生活。",
       year3_title: "第三年：九年级准备初中毕业考。",
@@ -2084,7 +2084,7 @@ export const translations = {
       newsletter_desc: "订阅动态。",
       placeholder: "您的邮箱",
       rights: "版权所有。",
-      hq_label: "总部：埃夫龙 (法国)"
+      hq_label: "法国"
     }
   }
 };

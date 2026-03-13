@@ -42,9 +42,8 @@ export default function MentionsLegalesPage() {
                 <div className="p-8 bg-muted/30 rounded-3xl border border-muted text-lg leading-relaxed">
                   <p className="font-bold text-primary mb-2">ESEPF - École des Sports et du Prestige Français</p>
                   <p>Association loi 1901 / Organisme de formation</p>
-                  <p>Siège Social : 1 rue de l'Abbaye, 53600 Evron, France</p>
                   <p>Directeur de la publication : Direction Générale ESEPF</p>
-                  <p>Email : contact@esepf-academy.fr</p>
+                  <p>Email : contact@esepf.fr</p>
                 </div>
               </ScrollReveal>
 

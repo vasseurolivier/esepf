@@ -56,9 +56,9 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-headline font-bold mb-6 uppercase tracking-widest text-secondary">{t.footer.campus}</h4>
             <ul className="space-y-4">
-              <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/evron">Campus Evron</Link></li>
-              <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/sainte-bazeilles">Campus Sainte-Bazeilles</Link></li>
-              <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/sainte-tulle">Campus Sainte-Tulle</Link></li>
+              <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/evron">Campus Evron (LAVAL)</Link></li>
+              <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/sainte-bazeille">Campus Sainte-Bazeille (BORDEAUX)</Link></li>
+              <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/sainte-tulle">Campus Sainte-Tulle (AIX-EN-PROVENCE)</Link></li>
             </ul>
           </div>
 
@@ -75,7 +75,7 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Mail size={18} className="text-secondary" />
-                <Link href="/contact" className="hover:text-secondary transition-colors">contact@esepf-academy.fr</Link>
+                <Link href="/contact" className="hover:text-secondary transition-colors">contact@esepf.fr</Link>
               </li>
             </ul>
           </div>

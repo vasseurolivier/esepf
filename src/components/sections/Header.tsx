@@ -39,9 +39,9 @@ export function Header() {
   ];
 
   const campusSubLinks = [
-    { name: 'Campus Evron', href: '/campus/evron' },
-    { name: 'Campus Sainte-Bazeilles', href: '/campus/sainte-bazeilles' },
-    { name: 'Campus Sainte-Tulle', href: '/campus/sainte-tulle' },
+    { name: 'Campus Evron (LAVAL)', href: '/campus/evron' },
+    { name: 'Campus Sainte-Bazeille (BORDEAUX)', href: '/campus/sainte-bazeille' },
+    { name: 'Campus Sainte-Tulle (AIX-EN-PROVENCE)', href: '/campus/sainte-tulle' },
   ];
 
   const formationsSubLinks = [
@@ -95,7 +95,7 @@ export function Header() {
                 <img src={logoUrl} alt={schoolName} className="h-full w-auto object-contain" />
               ) : (
                 <div className="p-2 border-2 border-primary rounded-full">
-                  <GraduationCap className="text-primary h-12 w-12 md:h-16 md:w-16" />
+                  < GraduationCap className="text-primary h-12 w-12 md:h-16 md:w-16" />
                 </div>
               )}
             </div>

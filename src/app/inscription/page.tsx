@@ -120,7 +120,7 @@ export default function RegistrationPage() {
         {/* Hero Banner */}
         <section className="bg-primary text-white py-20 relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10 translate-x-1/4 -translate-y-1/4">
-            <GraduationCap size={600} />
+            < GraduationCap size={600} />
           </div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <ScrollReveal>
@@ -232,9 +232,9 @@ export default function RegistrationPage() {
                               <SelectValue placeholder="Choisir un campus" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="evron">Campus Evron</SelectItem>
-                              <SelectItem value="bazeilles">Campus Sainte-Bazeilles</SelectItem>
-                              <SelectItem value="tulle">Campus Sainte-Tulle</SelectItem>
+                              <SelectItem value="evron">Campus Evron (LAVAL)</SelectItem>
+                              <SelectItem value="bazeille">Campus Sainte-Bazeille (BORDEAUX)</SelectItem>
+                              <SelectItem value="tulle">Campus Sainte-Tulle (AIX-EN-PROVENCE)</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
