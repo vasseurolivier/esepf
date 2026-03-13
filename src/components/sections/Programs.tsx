@@ -8,15 +8,18 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTranslation } from '@/hooks/use-translation';
 import { ChevronRight, ArrowRight } from 'lucide-react';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 
 export function Programs() {
   const [isMounted, setIsMounted] = useState(false);
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings, isLoading } = useDoc(settingsRef);
+
+  const settings = clientSettings || serverSettings;
 
   useEffect(() => {
     setIsMounted(true);
@@ -90,7 +93,7 @@ export function Programs() {
           </TabsList>
           
           {programs.map((prog) => {
-            const customImage = isLoading ? null : settings?.images?.[prog.imageKey];
+            const customImage = settings?.images?.[prog.imageKey];
             return (
               <TabsContent key={prog.id} value={prog.id} className="focus-visible:outline-none">
                 <ScrollReveal>

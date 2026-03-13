@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Menu, X, GraduationCap, Settings, ChevronDown, Globe, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
 import {
@@ -23,9 +23,11 @@ export function Header() {
   const [expandedMobileMenu, setExpandedMobileMenu] = useState<string | null>(null);
   
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
   
+  const settings = clientSettings || serverSettings;
   const { t, language, setLanguage } = useTranslation();
 
   useEffect(() => {

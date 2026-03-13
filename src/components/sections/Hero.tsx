@@ -4,19 +4,21 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
 import Link from 'next/link';
 
 export function Hero() {
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings, isLoading } = useDoc(settingsRef);
   
+  const settings = clientSettings || serverSettings;
   const { t } = useTranslation();
   
-  const heroImgUrl = isLoading ? null : settings?.images?.hero_home;
+  const heroImgUrl = settings?.images?.hero_home;
 
   return (
     <section className="relative h-[80vh] md:h-[85vh] min-h-[500px] md:min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-black">
