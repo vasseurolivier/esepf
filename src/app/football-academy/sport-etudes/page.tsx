@@ -8,19 +8,22 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { GraduationCap, Trophy, Clock, CheckCircle2, Star, Zap, Activity } from 'lucide-react';
 
 export default function SportEtudesPage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
-  const bgImage = isLoading ? null : settings?.images?.sport_etudes_bg;
-  const footballImg = isLoading ? null : settings?.images?.sport_etudes_football;
-  const basketballImg = isLoading ? null : settings?.images?.sport_etudes_basketball;
+  const bgImage = settings?.images?.sport_etudes_bg;
+  const footballImg = settings?.images?.sport_etudes_football;
+  const basketballImg = settings?.images?.sport_etudes_basketball;
 
   return (
     <FirebaseClientProvider>

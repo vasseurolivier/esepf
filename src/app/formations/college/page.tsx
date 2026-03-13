@@ -8,17 +8,20 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { GraduationCap, BookOpen, UserCheck, ShieldCheck, Star, Sparkles } from 'lucide-react';
 
 export default function CollegePage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
-  const heroImage = isLoading ? null : settings?.images?.college_hero;
+  const heroImage = settings?.images?.college_hero;
 
   const successKeys = [
     { icon: <UserCheck className="text-secondary" />, title: t.college_page.autonomy_title, desc: t.college_page.autonomy_desc },

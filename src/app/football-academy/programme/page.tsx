@@ -8,20 +8,23 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { Target, Shield, Users, Calendar, Trophy, Zap, Activity, Brain, Star, CheckCircle2 } from 'lucide-react';
 
 export default function ProgrammeFootballPage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
   if (!t || !t.football_pages) return null;
 
-  const franceImage = isLoading ? null : settings?.images?.prog_france_bg;
-  const coachImage = isLoading ? null : settings?.images?.prog_coach_training;
+  const franceImage = settings?.images?.prog_france_bg;
+  const coachImage = settings?.images?.prog_coach_training;
 
   const methodologyAxes = [
     { icon: <Target className="text-secondary" />, title: t.football_pages.axes_tech.split(':')[0], desc: t.football_pages.axes_tech.split(':')[1] },

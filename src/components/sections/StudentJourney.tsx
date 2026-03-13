@@ -5,18 +5,21 @@ import React from 'react';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { GraduationCap, Book, ChevronDown } from 'lucide-react';
 
 export function StudentJourney() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
   const schoolLogo = settings?.logoUrl;
-  const panImgUrl = isLoading ? null : settings?.images?.campus_panoramic;
+  const panImgUrl = settings?.images?.campus_panoramic;
 
   const stages = [
     {

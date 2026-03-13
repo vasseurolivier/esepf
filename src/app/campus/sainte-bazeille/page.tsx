@@ -13,7 +13,7 @@ import { doc } from 'firebase/firestore';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-export default function CampusTullePage() {
+export default function CampusBazeillePage() {
   const { t } = useTranslation();
   const db = useFirestore();
   const { settings: serverSettings } = useFirebase();
@@ -22,13 +22,13 @@ export default function CampusTullePage() {
   
   const settings = clientSettings || serverSettings;
   
-  const heroImage = settings?.images?.campus_tulle;
-  const mapImage = settings?.images?.tulle_map;
+  const heroImage = settings?.images?.campus_bazeille;
+  const mapImage = settings?.images?.bazeille_map;
 
   const infraImages = [
-    settings?.images?.tulle_infra_1,
-    settings?.images?.tulle_infra_2,
-    settings?.images?.tulle_infra_3,
+    settings?.images?.bazeilles_infra_1,
+    settings?.images?.bazeilles_infra_2,
+    settings?.images?.bazeilles_infra_3,
   ].filter(Boolean) as string[];
 
   return (
@@ -38,7 +38,7 @@ export default function CampusTullePage() {
         {heroImage && (
           <Image 
             src={heroImage}
-            alt="Campus Sainte-Tulle"
+            alt="Campus Sainte-Bazeille"
             fill
             className="object-cover opacity-60"
             priority
@@ -46,8 +46,8 @@ export default function CampusTullePage() {
           />
         )}
         <div className="relative z-10 text-center text-white container px-4">
-          <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.campus_pages.tulle_hero}</h1>
-          <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto border-t border-white/30 pt-4">{t.campus_pages.tulle_sub}</p>
+          <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.campus_pages.bazeilles_hero}</h1>
+          <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto border-t border-white/30 pt-4">{t.campus_pages.bazeilles_sub}</p>
         </div>
       </section>
 
@@ -59,13 +59,13 @@ export default function CampusTullePage() {
                 <MapPin size={20} />
                 {t.campus_pages.city_title}
               </div>
-              <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.tulle_title}</h2>
+              <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.bazeilles_title}</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                {t.campus_pages.tulle_desc}
+                {t.campus_pages.bazeilles_desc}
               </p>
               <div className="p-6 bg-muted rounded-2xl border border-border">
                 <h4 className="font-bold text-primary mb-2 italic">{t.axes.academy_title}</h4>
-                <p className="text-sm text-muted-foreground">{t.campus_pages.tulle_sport_desc}</p>
+                <p className="text-sm text-muted-foreground">{t.campus_pages.bazeilles_culture_desc}</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={200} className="relative aspect-square bg-black rounded-3xl overflow-hidden flex items-center justify-center border-2 border-dashed border-primary/10">
@@ -74,7 +74,7 @@ export default function CampusTullePage() {
                   <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-white border border-muted">
                     <Image 
                       src={mapImage}
-                      alt="Localisation Sainte-Tulle"
+                      alt="Localisation Sainte-Bazeille"
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"
@@ -98,14 +98,14 @@ export default function CampusTullePage() {
             <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-6"><Building2 size={32} /></div>
             <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.infra_title}</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              {t.campus_pages.tulle_infra_desc}
+              {t.campus_pages.bazeilles_infra_desc}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
             {infraImages.map((img, i) => (
               <ScrollReveal key={i} delay={i * 100} className="relative group h-64 rounded-3xl overflow-hidden bg-black shadow-lg">
-                <Image src={img} alt="Campus" fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
+                <Image src={img} alt="Campus Infrastructure" fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
               </ScrollReveal>
             ))}
           </div>

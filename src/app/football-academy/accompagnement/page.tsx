@@ -7,17 +7,20 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import Image from 'next/image';
 
 export default function AccompagnementPage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
-  const heroImage = isLoading ? null : settings?.images?.support_hero;
+  const heroImage = settings?.images?.support_hero;
   
   const team = [
     { id: 'support_kine', label: t.support_page.kine },
@@ -68,7 +71,7 @@ export default function AccompagnementPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
               {team.map((member, idx) => {
-                const memberImg = isLoading ? null : settings?.images?.[member.id];
+                const memberImg = settings?.images?.[member.id];
                 return (
                   <ScrollReveal key={member.id} delay={idx * 150} className="flex flex-col items-center group">
                     <div className="relative w-full aspect-square border border-black mb-4 overflow-hidden bg-black">

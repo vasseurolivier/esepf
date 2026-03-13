@@ -17,7 +17,7 @@ export function Programs() {
   const db = useFirestore();
   const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: clientSettings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
 
   const settings = clientSettings || serverSettings;
 

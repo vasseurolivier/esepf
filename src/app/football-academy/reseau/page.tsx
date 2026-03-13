@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -7,7 +8,7 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import Image from 'next/image';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 
 const CLUBS_COUNT = 6;
@@ -15,8 +16,11 @@ const CLUBS_COUNT = 6;
 export default function ReseauClubsPage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
   return (
     <FirebaseClientProvider>
@@ -50,7 +54,7 @@ export default function ReseauClubsPage() {
             <ScrollReveal delay={200} className="max-w-5xl mx-auto">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center">
                 {Array.from({ length: CLUBS_COUNT }).map((_, idx) => {
-                  const customLogo = isLoading ? null : settings?.images?.[`club_logo_${idx}`];
+                  const customLogo = settings?.images?.[`club_logo_${idx}`];
                   
                   return (
                     <div key={idx} className="relative w-32 h-32 md:w-48 md:h-48 transition-transform duration-300 hover:scale-110 bg-white rounded-xl p-4 overflow-hidden border border-muted shadow-sm">

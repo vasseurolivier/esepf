@@ -7,19 +7,21 @@ import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Trophy, GraduationCap, Route, HeartPulse, Globe, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
 
 export function FootballAcademy() {
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
   
+  const settings = clientSettings || serverSettings;
   const { t } = useTranslation();
   
   const schoolName = settings?.schoolName || "ESEPF";
-  const footballImgUrl = isLoading ? null : settings?.images?.football_academy;
+  const footballImgUrl = settings?.images?.football_academy;
 
   const academyFeatures = useMemo(() => {
     if (!t?.academy_features) return [];

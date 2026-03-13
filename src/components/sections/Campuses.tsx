@@ -6,15 +6,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MapPin, ArrowRight } from 'lucide-react';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
 
 export function Campuses() {
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings, isLoading } = useDoc(settingsRef);
   
+  const settings = clientSettings || serverSettings;
   const { t } = useTranslation();
   
   const campuses = [
@@ -22,21 +24,21 @@ export function Campuses() {
       id: "evron",
       name: "Campus Evron",
       location: t.campus_locations.evron,
-      image: isLoading ? null : settings?.images?.campus_evron,
+      image: settings?.images?.campus_evron,
       href: "/campus/evron"
     },
     {
-      id: "sainte-bazeilles",
-      name: "Campus Sainte-Bazeilles",
+      id: "sainte-bazeille",
+      name: "Campus Sainte-Bazeille",
       location: t.campus_locations.bazeilles,
-      image: isLoading ? null : settings?.images?.campus_bazeilles,
-      href: "/campus/sainte-bazeilles"
+      image: settings?.images?.campus_bazeille,
+      href: "/campus/sainte-bazeille"
     },
     {
       id: "sainte-tulle",
       name: "Campus Sainte-Tulle",
       location: t.campus_locations.tulle,
-      image: isLoading ? null : settings?.images?.campus_tulle,
+      image: settings?.images?.campus_tulle,
       href: "/campus/sainte-tulle"
     }
   ];

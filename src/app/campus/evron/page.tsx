@@ -9,20 +9,23 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MapPin, School, GraduationCap, Building2, Target, BookOpen, ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import Link from 'next/link';
 
 export default function CampusEvronPage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings, isLoading } = useDoc(settingsRef);
   
-  const heroImage = isLoading ? null : settings?.images?.campus_evron;
-  const mapImage = isLoading ? null : settings?.images?.evron_map;
+  const settings = clientSettings || serverSettings;
   
-  const infraImages = isLoading ? [] : [
+  const heroImage = settings?.images?.campus_evron;
+  const mapImage = settings?.images?.evron_map;
+  
+  const infraImages = [
     settings?.images?.evron_infra_1,
     settings?.images?.evron_infra_2,
     settings?.images?.evron_infra_3,

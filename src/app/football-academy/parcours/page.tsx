@@ -9,16 +9,19 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import Image from 'next/image';
 import { GraduationCap, Trophy, Globe, Target, Briefcase, ArrowRight, Star, ChevronDown } from 'lucide-react';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 
 export default function ParcoursJoueurPage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
-  const conceptImage = isLoading ? null : settings?.images?.journey_player_concept;
+  const conceptImage = settings?.images?.journey_player_concept;
 
   const ChevronArrow = () => (
     <div className="flex flex-col items-center">

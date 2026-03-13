@@ -7,7 +7,7 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -16,8 +16,11 @@ import Image from 'next/image';
 export default function MetiersSportPage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
   const metiers = [
     { id: 'metiers_bpjeps', label: t.metiers_page.jobs.bpjeps },
@@ -58,7 +61,7 @@ export default function MetiersSportPage() {
           <div className="max-w-7xl mx-auto mb-24">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
               {metiers.map((job, idx) => {
-                const jobImg = isLoading ? null : settings?.images?.[job.id];
+                const jobImg = settings?.images?.[job.id];
                 return (
                   <ScrollReveal key={job.id} delay={idx * 100} className="flex flex-col items-center">
                     <div className="relative w-full aspect-[2/3] rounded-full overflow-hidden border-2 border-black shadow-2xl mb-6 group transition-transform duration-500 hover:scale-105 bg-black">

@@ -13,17 +13,20 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { FrenchSystemSchema } from '@/components/sections/FrenchSystemSchema';
 import { OutletsSection } from '@/components/sections/OutletsSection';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 
 export default function BacGeneralPage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
-  const heroImage = isLoading ? null : settings?.images?.bac_gen_hero;
-  const introImage = isLoading ? null : settings?.images?.bac_gen_intro;
+  const heroImage = settings?.images?.bac_gen_hero;
+  const introImage = settings?.images?.bac_gen_intro;
 
   const content = t.lycee_page.bac_gen;
 

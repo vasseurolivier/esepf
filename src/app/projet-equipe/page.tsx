@@ -8,20 +8,23 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { ShieldCheck, GraduationCap, Heart, Users, Target, Zap } from 'lucide-react';
 
 export default function TeamPage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
-  const projectHero = isLoading ? null : settings?.images?.team_project_hero;
-  const teamMember1 = isLoading ? null : settings?.images?.team_member_1;
-  const teamMember2 = isLoading ? null : settings?.images?.team_member_2;
-  const teamMember3 = isLoading ? null : settings?.images?.team_member_3;
+  const projectHero = settings?.images?.team_project_hero;
+  const teamMember1 = settings?.images?.team_member_1;
+  const teamMember2 = settings?.images?.team_member_2;
+  const teamMember3 = settings?.images?.team_member_3;
 
   const members = [
     { name: t.team_page.member1_name, role: t.team_page.member1_role, img: teamMember1 },

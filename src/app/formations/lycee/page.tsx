@@ -11,42 +11,45 @@ import { useTranslation } from '@/hooks/use-translation';
 import { ChevronRight, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 
 export default function LyceePage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
-  const introImage = isLoading ? null : settings?.images?.lycee_intro;
+  const introImage = settings?.images?.lycee_intro;
 
   const formationCards = [
     {
       title: t.lycee_page.card_langues,
-      image: isLoading ? null : settings?.images?.lycee_card_1,
+      image: settings?.images?.lycee_card_1,
       href: "/formations/bac-general"
     },
     {
       title: t.lycee_page.card_vente,
-      image: isLoading ? null : settings?.images?.lycee_card_2,
+      image: settings?.images?.lycee_card_2,
       href: "/formations/bac-pro-vente"
     },
     {
       title: t.lycee_page.card_management,
-      image: isLoading ? null : settings?.images?.lycee_card_3,
+      image: settings?.images?.lycee_card_3,
       href: "/formations/bac-techno-stmg"
     },
     {
       title: t.lycee_page.card_hotel,
-      image: isLoading ? null : settings?.images?.lycee_card_4,
+      image: settings?.images?.lycee_card_4,
       banner: "2027 - 2028",
       href: "#"
     },
     {
       title: t.lycee_page.card_mode,
-      image: isLoading ? null : settings?.images?.lycee_card_5,
+      image: settings?.images?.lycee_card_5,
       banner: "2027 - 2028",
       href: "#"
     }

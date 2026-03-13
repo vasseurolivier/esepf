@@ -10,17 +10,20 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Languages, Globe, CheckCircle2, Heart, Users, Compass, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 
 export default function IntegrationPage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
-  const heroImage = isLoading ? null : settings?.images?.integration_hero;
-  const introImage = isLoading ? null : settings?.images?.integration_intro;
+  const heroImage = settings?.images?.integration_hero;
+  const introImage = settings?.images?.integration_intro;
 
   if (!t || !t.formations) {
     return (

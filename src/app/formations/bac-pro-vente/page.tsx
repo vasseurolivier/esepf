@@ -12,19 +12,22 @@ import { ShoppingBag, Clock, MapPin, Award, Info, CheckCircle2, Star, User, Book
 import { Button } from '@/components/ui/button';
 import { FrenchSystemSchema } from '@/components/sections/FrenchSystemSchema';
 import { OutletsSection } from '@/components/sections/OutletsSection';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import Link from 'next/link';
 
 export default function BacProVentePage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
+  
+  const settings = clientSettings || serverSettings;
 
-  const heroImage = isLoading ? null : settings?.images?.bac_vente_hero;
-  const introImage = isLoading ? null : settings?.images?.bac_vente_intro;
-  const employImage = isLoading ? null : settings?.images?.bac_vente_employ;
+  const heroImage = settings?.images?.bac_vente_hero;
+  const introImage = settings?.images?.bac_vente_intro;
+  const employImage = settings?.images?.bac_vente_employ;
 
   const content = t.lycee_page.bac_vente;
 
