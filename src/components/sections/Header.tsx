@@ -130,12 +130,6 @@ export function Header() {
                 {t.nav.join}
               </Button>
             </Link>
-            
-            <Link href="/admin">
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-primary h-9 w-9">
-                <Settings size={18} />
-              </Button>
-            </Link>
 
             <button 
               onClick={() => setIsOpen(!isOpen)} 
