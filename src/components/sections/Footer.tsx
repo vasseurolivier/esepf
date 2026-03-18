@@ -58,7 +58,7 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-headline font-bold mb-6 uppercase tracking-widest text-secondary">{t.footer.campus}</h4>
             <ul className="space-y-4">
-              <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/evron">Campus Evron (LAVAL)</Link></li>
+              <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/evron">Campus Evron (LE MANS)</Link></li>
               <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/sainte-bazeille">Campus Sainte-Bazeille (BORDEAUX)</Link></li>
               <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/sainte-tulle">Campus Sainte-Tulle (AIX-EN-PROVENCE)</Link></li>
             </ul>
@@ -73,7 +73,7 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Phone size={18} className="text-secondary" />
-                <span>{t.contact_page.phone_wechat}</span>
+                <span>+86 138 1738 9758 (Disponible sur WeChat / 微信同号)</span>
               </li>
               <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Mail size={18} className="text-secondary" />

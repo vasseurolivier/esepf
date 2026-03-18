@@ -41,7 +41,7 @@ export function Header() {
   ];
 
   const campusSubLinks = [
-    { name: 'Campus Evron (LAVAL)', href: '/campus/evron' },
+    { name: 'Campus Evron (LE MANS)', href: '/campus/evron' },
     { name: 'Campus Sainte-Bazeille (BORDEAUX)', href: '/campus/sainte-bazeille' },
     { name: 'Campus Sainte-Tulle (AIX-EN-PROVENCE)', href: '/campus/sainte-tulle' },
   ];

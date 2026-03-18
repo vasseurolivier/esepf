@@ -152,7 +152,7 @@ export const translations = {
       three_axes_mobile_languages_btn: "DÉCOUVRIR LE PROGRAMME FLE/EFL"
     },
     campus_locations: {
-      evron: "Evron (LAVAL)",
+      evron: "Evron (LE MANS)",
       bazeilles: "Sainte-Bazeille (BORDEAUX)",
       tulle: "Sainte-Tulle (AIX-EN-PROVENCE)"
     },
@@ -600,8 +600,8 @@ export const translations = {
     },
     campus_pages: {
       evron_hero: "Campus Evron",
-      evron_sub: "Le cœur historique and administratif de l'ESEPF en Mayenne.",
-      evron_region: "Mayenne (53)",
+      evron_sub: "Le cœur historique and administratif de l'ESEPF en Sarthe (LE MANS).",
+      evron_region: "Sarthe (72)",
       evron_region_desc: "Pays de la Loire, France.",
       bazeilles_hero: "Campus Sainte-Bazeille",
       bazeilles_sub: "L'innovation pédagogique au cœur du Sud-Ouest.",
@@ -655,9 +655,9 @@ export const translations = {
       form_sending: "Envoi...",
       form_success: "Message envoyé avec succès !",
       info_title: "Nos Coordonnées",
-      campus_evron: "Campus Evron",
-      campus_bazeilles: "Sainte-Bazeille",
-      campus_tulle: "Campus Sainte-Tulle",
+      campus_evron: "Campus Evron (LE MANS)",
+      campus_bazeilles: "Sainte-Bazeille (BORDEAUX)",
+      campus_tulle: "Campus Sainte-Tulle (AIX-EN-PROVENCE)",
       faq_title: "Questions Fréquentes",
       faq_q1: "Comment s'inscrire ?",
       faq_a1: "Complétez le dossier d'inscription en ligne.",
@@ -667,7 +667,7 @@ export const translations = {
       faq_a3: "Oui, classes FLE dédiées.",
       opening_hours: "Horaires d'ouverture",
       mon_fri: "Lun - Ven : 08h30 - 18h00",
-      phone_wechat: "+86 138 1738 9758 (Disponible sur WeChat)"
+      phone_wechat: "+86 138 1738 9758 (Disponible sur WeChat / 微信同号)"
     },
     support_page: {
       title: "Un accompagnement Physique et Mental",
@@ -851,7 +851,7 @@ export const translations = {
       three_axes_mobile_languages_btn: "DISCOVER FLE/EFL PROGRAM"
     },
     campus_locations: {
-      evron: "Evron (LAVAL)",
+      evron: "Evron (LE MANS)",
       bazeilles: "Sainte-Bazeille (BORDEAUX)",
       tulle: "Sainte-Tulle (AIX-EN-PROVENCE)"
     },
@@ -1299,8 +1299,8 @@ export const translations = {
     },
     campus_pages: {
       evron_hero: "Evron Campus",
-      evron_sub: "The historic and administrative heart of ESEPF in Mayenne.",
-      evron_region: "Mayenne (53)",
+      evron_sub: "The historic and administrative heart of ESEPF in Sarthe (LE MANS).",
+      evron_region: "Sarthe (72)",
       evron_region_desc: "Pays de la Loire, France.",
       bazeilles_hero: "Sainte-Bazeille Campus",
       bazeilles_sub: "Educational innovation in the South-West.",
@@ -1354,9 +1354,9 @@ export const translations = {
       form_sending: "Sending...",
       form_success: "Message sent successfully!",
       info_title: "Contact Details",
-      campus_evron: "Evron Campus",
-      campus_bazeilles: "Sainte-Bazeille",
-      campus_tulle: "Sainte-Tulle",
+      campus_evron: "Evron Campus (LE MANS)",
+      campus_bazeilles: "Sainte-Bazeille (BORDEAUX)",
+      campus_tulle: "Sainte-Tulle (AIX-EN-PROVENCE)",
       faq_title: "Frequently Asked Questions",
       faq_q1: "How to register?",
       faq_a1: "Complete the online enrollment file.",
@@ -1366,7 +1366,7 @@ export const translations = {
       faq_a3: "Yes, dedicated FLE classes.",
       opening_hours: "Opening hours",
       mon_fri: "Mon - Fri: 08:30 AM - 6:00 PM",
-      phone_wechat: "+86 138 1738 9758 (Available on WeChat)"
+      phone_wechat: "+86 138 1738 9758 (Available on WeChat / 微信同号)"
     },
     support_page: {
       title: "Physical and Mental Support",
@@ -1550,7 +1550,7 @@ export const translations = {
       three_axes_mobile_languages_btn: "了解 FLE/EFL 课程"
     },
     campus_locations: {
-      evron: "Evron (LAVAL)",
+      evron: "Evron (LE MANS)",
       bazeilles: "Sainte-Bazeille (BORDEAUX)",
       tulle: "Sainte-Tulle (AIX-EN-PROVENCE)"
     },
@@ -1564,7 +1564,7 @@ export const translations = {
       bac_americain_title: "美国高中双文凭",
       bac_americain_sub: "双文凭：同时获得两个高中毕业证书。",
       high_school_diploma: "美国高中毕业证书",
-      high_school_desc: "得益`于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
+      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
       dual_diploma_official: "官方双学位",
       international_recognition: "国际认可",
       why_choose_title: "为什么选择这个路径？",
@@ -1991,8 +1991,8 @@ export const translations = {
     },
     campus_pages: {
       evron_hero: "埃夫龙校区",
-      evron_sub: "ESEPF 的历史 和 行政中心。",
-      evron_region: "马耶讷省 (53)",
+      evron_sub: "ESEPF 的历史 和 行政中心 (LE MANS)。",
+      evron_region: "萨尔特省 (72)",
       evron_region_desc: "法国卢瓦尔河地区。",
       bazeilles_hero: "圣巴泽耶校区",
       bazeilles_sub: "教学创新中心。",
@@ -2046,9 +2046,9 @@ export const translations = {
       form_sending: "发送中...",
       form_success: "消息已成功发送！",
       info_title: "联系详情",
-      campus_evron: "埃夫龙校区",
-      campus_bazeilles: "圣巴泽耶",
-      campus_tulle: "圣蒂勒校区",
+      campus_evron: "埃夫龙校区 (LE MANS)",
+      campus_bazeilles: "圣巴泽耶 (BORDEAUX)",
+      campus_tulle: "圣蒂勒校区 (AIX-EN-PROVENCE)",
       faq_title: "常见问题",
       faq_q1: "如何申请？",
       faq_a1: "在线填写注册文件。",
@@ -2058,7 +2058,7 @@ export const translations = {
       faq_a3: "设有 FLE 班。",
       opening_hours: "开放时间",
       mon_fri: "周一至周五: 08:30 - 18:00",
-      phone_wechat: "+86 138 1738 9758 (微信同号)"
+      phone_wechat: "+86 138 1738 9758 (Available on WeChat / 微信同号)"
     },
     support_page: {
       title: "身心支持",

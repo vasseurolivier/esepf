@@ -37,8 +37,8 @@ const IMAGE_CATEGORIES = [
     label: 'Campus',
     icon: <MapPin size={16} />,
     fields: [
-      { id: 'campus_evron', label: 'Hero Evron (LAVAL)', location: 'Haut de page Evron' },
-      { id: 'evron_map', label: 'Carte Evron (LAVAL)', location: 'Section localisation Evron' },
+      { id: 'campus_evron', label: 'Hero Evron (LE MANS)', location: 'Haut de page Evron' },
+      { id: 'evron_map', label: 'Carte Evron (LE MANS)', location: 'Section localisation Evron' },
       { id: 'evron_infra_1', label: 'Evron Infra 1', location: 'Galerie infrastructures' },
       { id: 'evron_infra_2', label: 'Evron Infra 2', location: 'Galerie infrastructures' },
       { id: 'evron_infra_3', label: 'Evron Infra 3', location: 'Galerie infrastructures' },
@@ -430,7 +430,7 @@ export default function AdminPage() {
                           <div className="p-4 bg-muted/30 rounded-2xl border border-muted">
                             <Label className="text-[10px] uppercase font-bold text-muted-foreground">Campus</Label>
                             <p className="font-bold text-primary flex items-center gap-2 uppercase tracking-wide">
-                              <MapPin size={14} className="text-secondary" /> {selectedReg.campusChoice}
+                              <MapPin size={14} className="text-secondary" /> {selectedReg.campusChoice === 'evron' ? 'Evron (LE MANS)' : selectedReg.campusChoice === 'bazeille' ? 'Sainte-Bazeille (BORDEAUX)' : selectedReg.campusChoice === 'tulle' ? 'Sainte-Tulle (AIX-EN-PROVENCE)' : selectedReg.campusChoice}
                             </p>
                           </div>
                           <div className="p-4 bg-muted/30 rounded-2xl border border-muted">
