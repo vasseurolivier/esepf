@@ -22,13 +22,14 @@ export default function CampusBazeillePage() {
   
   const settings = clientSettings || serverSettings;
   
-  const heroImage = settings?.images?.campus_bazeille;
-  const mapImage = settings?.images?.bazeille_map;
+  // Logic to handle potential key variations (with or without 's')
+  const heroImage = settings?.images?.campus_bazeille || settings?.images?.campus_bazeilles;
+  const mapImage = settings?.images?.bazeille_map || settings?.images?.bazeilles_map;
 
   const infraImages = [
-    settings?.images?.bazeille_infra_1,
-    settings?.images?.bazeille_infra_2,
-    settings?.images?.bazeille_infra_3,
+    settings?.images?.bazeille_infra_1 || settings?.images?.bazeilles_infra_1,
+    settings?.images?.bazeille_infra_2 || settings?.images?.bazeilles_infra_2,
+    settings?.images?.bazeille_infra_3 || settings?.images?.bazeilles_infra_3,
   ].filter(Boolean) as string[];
 
   return (
@@ -46,8 +47,8 @@ export default function CampusBazeillePage() {
           />
         )}
         <div className="relative z-10 text-center text-white container px-4">
-          <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.campus_pages.bazeilles_hero}</h1>
-          <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto border-t border-white/30 pt-4">{t.campus_pages.bazeilles_sub}</p>
+          <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.campus_pages.bazeille_hero}</h1>
+          <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto border-t border-white/30 pt-4">{t.campus_pages.bazeille_sub}</p>
         </div>
       </section>
 
@@ -59,13 +60,13 @@ export default function CampusBazeillePage() {
                 <MapPin size={20} />
                 {t.campus_pages.city_title}
               </div>
-              <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.bazeilles_title}</h2>
+              <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.bazeille_title}</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                {t.campus_pages.bazeilles_desc}
+                {t.campus_pages.bazeille_desc}
               </p>
               <div className="p-6 bg-muted rounded-2xl border border-border">
                 <h4 className="font-bold text-primary mb-2 italic">{t.axes.academy_title}</h4>
-                <p className="text-sm text-muted-foreground">{t.campus_pages.bazeilles_culture_desc}</p>
+                <p className="text-sm text-muted-foreground">{t.campus_pages.bazeille_culture_desc}</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={200} className="relative aspect-square bg-black rounded-3xl overflow-hidden flex items-center justify-center border-2 border-dashed border-primary/10">
@@ -98,7 +99,7 @@ export default function CampusBazeillePage() {
             <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-6"><Building2 size={32} /></div>
             <h2 className="text-4xl font-headline font-bold text-primary mb-6">{t.campus_pages.infra_title}</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              {t.campus_pages.bazeilles_infra_desc}
+              {t.campus_pages.bazeille_infra_desc}
             </p>
           </div>
 

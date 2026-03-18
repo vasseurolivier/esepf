@@ -31,7 +31,7 @@ export function Campuses() {
       id: "sainte-bazeille",
       name: "Campus Sainte-Bazeille",
       location: t.campus_locations.bazeille,
-      image: settings?.images?.campus_bazeille,
+      image: settings?.images?.campus_bazeille || settings?.images?.campus_bazeilles,
       href: "/campus/sainte-bazeille"
     },
     {
