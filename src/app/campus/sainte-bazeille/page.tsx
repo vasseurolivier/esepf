@@ -26,9 +26,9 @@ export default function CampusBazeillePage() {
   const mapImage = settings?.images?.bazeille_map;
 
   const infraImages = [
-    settings?.images?.bazeilles_infra_1,
-    settings?.images?.bazeilles_infra_2,
-    settings?.images?.bazeilles_infra_3,
+    settings?.images?.bazeille_infra_1,
+    settings?.images?.bazeille_infra_2,
+    settings?.images?.bazeille_infra_3,
   ].filter(Boolean) as string[];
 
   return (

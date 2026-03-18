@@ -42,11 +42,11 @@ const IMAGE_CATEGORIES = [
       { id: 'evron_infra_1', label: 'Evron Infra 1', location: 'Galerie infrastructures' },
       { id: 'evron_infra_2', label: 'Evron Infra 2', location: 'Galerie infrastructures' },
       { id: 'evron_infra_3', label: 'Evron Infra 3', location: 'Galerie infrastructures' },
-      { id: 'campus_bazeilles', label: 'Hero Sainte-Bazeille (BORDEAUX)', location: 'Haut de page Sainte-Bazeille' },
-      { id: 'bazeilles_map', label: 'Carte Sainte-Bazeille (BORDEAUX)', location: 'Section localisation Sainte-Bazeille' },
-      { id: 'bazeilles_infra_1', label: 'Sainte-Bazeille Infra 1', location: 'Galerie infrastructures' },
-      { id: 'bazeilles_infra_2', label: 'Sainte-Bazeille Infra 2', location: 'Galerie infrastructures' },
-      { id: 'bazeilles_infra_3', label: 'Sainte-Bazeille Infra 3', location: 'Galerie infrastructures' },
+      { id: 'campus_bazeille', label: 'Hero Sainte-Bazeille (BORDEAUX)', location: 'Haut de page Sainte-Bazeille' },
+      { id: 'bazeille_map', label: 'Carte Sainte-Bazeille (BORDEAUX)', location: 'Section localisation Sainte-Bazeille' },
+      { id: 'bazeille_infra_1', label: 'Sainte-Bazeille Infra 1', location: 'Galerie infrastructures' },
+      { id: 'bazeille_infra_2', label: 'Sainte-Bazeille Infra 2', location: 'Galerie infrastructures' },
+      { id: 'bazeille_infra_3', label: 'Sainte-Bazeille Infra 3', location: 'Galerie infrastructures' },
       { id: 'campus_tulle', label: 'Hero Sainte-Tulle (AIX)', location: 'Haut de page Sainte-Tulle' },
       { id: 'tulle_map', label: 'Carte Sainte-Tulle (AIX)', location: 'Section localisation Sainte-Tulle' },
       { id: 'tulle_infra_1', label: 'Sainte-Tulle Infra 1', location: 'Galerie infrastructures' },
@@ -314,7 +314,7 @@ export default function AdminPage() {
                                 {images[field.id] ? (
                                   <img src={images[field.id]} alt={field.label} className="object-cover w-full h-full" />
                                 ) : (
-                                  <div className="w-full h-full bg-muted/5" />
+                                  <div className="w-full h-full bg-black" />
                                 )}
                               </div>
                               <Input 

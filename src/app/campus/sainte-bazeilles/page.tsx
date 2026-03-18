@@ -8,24 +8,27 @@ import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MapPin, School, GraduationCap, Building2, Target, BookOpen, ImageIcon } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
-import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
+import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-export default function CampusBazeillesPage() {
+export default function CampusBazeillePage() {
   const { t } = useTranslation();
   const db = useFirestore();
+  const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: settings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings, isLoading } = useDoc(settingsRef);
   
-  const heroImage = isLoading ? null : settings?.images?.campus_bazeilles;
-  const mapImage = isLoading ? null : settings?.images?.bazeilles_map;
+  const settings = clientSettings || serverSettings;
+  
+  const heroImage = settings?.images?.campus_bazeille;
+  const mapImage = settings?.images?.bazeille_map;
 
-  const infraImages = isLoading ? [] : [
-    settings?.images?.bazeilles_infra_1,
-    settings?.images?.bazeilles_infra_2,
-    settings?.images?.bazeilles_infra_3,
+  const infraImages = [
+    settings?.images?.bazeille_infra_1,
+    settings?.images?.bazeille_infra_2,
+    settings?.images?.bazeille_infra_3,
   ].filter(Boolean) as string[];
 
   return (
@@ -35,7 +38,7 @@ export default function CampusBazeillesPage() {
         {heroImage && (
           <Image 
             src={heroImage}
-            alt="Campus Sainte-Bazeilles"
+            alt="Campus Sainte-Bazeille"
             fill
             className="object-cover opacity-60"
             priority
@@ -71,7 +74,7 @@ export default function CampusBazeillesPage() {
                   <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-white border border-muted">
                     <Image 
                       src={mapImage}
-                      alt="Localisation Sainte-Bazeilles"
+                      alt="Localisation Sainte-Bazeille"
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"
