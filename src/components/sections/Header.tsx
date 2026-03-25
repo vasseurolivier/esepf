@@ -156,11 +156,11 @@ export function Header() {
                 <DropdownMenu open={activeMenu === link.name} onOpenChange={(val) => !val && setActiveMenu(null)}>
                   <DropdownMenuTrigger asChild>
                     <div className="w-full flex items-center justify-center border-r border-white/10 hover:bg-white/10 transition-colors cursor-pointer outline-none group">
-                      <span className="pl-4 py-5 text-[10px] font-bold text-white uppercase tracking-widest group-hover:text-secondary transition-colors">
+                      <span className="pl-4 py-5 text-[10px] font-bold text-white uppercase tracking-widest group-hover:text-[#D4AF37] transition-colors">
                         {link.name}
                       </span>
                       <div className="px-3 py-5 text-white">
-                        <ChevronDown size={12} className={cn("transition-transform duration-200 group-hover:text-secondary", activeMenu === link.name && "rotate-180")} />
+                        <ChevronDown size={12} className={cn("transition-transform duration-200 group-hover:text-[#D4AF37]", activeMenu === link.name && "rotate-180")} />
                       </div>
                     </div>
                   </DropdownMenuTrigger>
@@ -171,7 +171,7 @@ export function Header() {
                   >
                     {getSubLinks(link.name).map((sub) => (
                       <DropdownMenuItem key={sub.name} asChild>
-                        <Link href={sub.href} className="text-white hover:bg-secondary cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider block border-b border-white/5 last:border-0 transition-colors">
+                        <Link href={sub.href} className="text-white hover:bg-gradient-to-r hover:from-[#D4AF37] hover:to-[#F9E2AF] hover:text-[#1a1a1a] cursor-pointer py-3 px-4 font-headline text-xs font-bold uppercase tracking-wider block border-b border-white/5 last:border-0 transition-all">
                           {sub.name}
                         </Link>
                       </DropdownMenuItem>
@@ -180,7 +180,7 @@ export function Header() {
                 </DropdownMenu>
               </div>
             ) : (
-              <Link key={link.name} href={link.href} className="flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 last:border-r-0 hover:text-secondary transition-colors">
+              <Link key={link.name} href={link.href} className="flex-1 flex items-center justify-center text-[10px] font-bold text-white py-5 hover:bg-white/10 uppercase tracking-widest border-r border-white/10 last:border-r-0 hover:text-[#D4AF37] transition-colors">
                 {link.name}
               </Link>
             )
@@ -207,7 +207,7 @@ export function Header() {
                 {link.hasDropdown && (
                   <ChevronDown 
                     size={18} 
-                    className={cn("text-white/40 transition-transform duration-300", expandedMobileMenu === link.name && "rotate-180 text-secondary")} 
+                    className={cn("text-white/40 transition-transform duration-300", expandedMobileMenu === link.name && "rotate-180 text-[#D4AF37]")} 
                   />
                 )}
               </div>
@@ -222,9 +222,9 @@ export function Header() {
                       key={sub.name} 
                       href={sub.href} 
                       onClick={() => setIsOpen(false)} 
-                      className="flex items-center gap-3 px-6 py-3.5 text-xs font-bold text-white/70 hover:text-secondary border-b border-white/5 last:border-0"
+                      className="flex items-center gap-3 px-6 py-3.5 text-xs font-bold text-white/70 hover:text-[#D4AF37] border-b border-white/5 last:border-0"
                     >
-                      <ChevronRight size={14} className="text-secondary" />
+                      <ChevronRight size={14} className="text-[#D4AF37]" />
                       {sub.name}
                     </Link>
                   ))}
@@ -235,7 +235,7 @@ export function Header() {
           
           <div className="pt-8">
             <Link href="/inscription" onClick={() => setIsOpen(false)}>
-              <Button className="w-full rounded-xl bg-secondary text-white font-bold py-7 uppercase tracking-widest shadow-xl">
+              <Button className="w-full rounded-xl bg-[#e31e24] text-white font-bold py-7 uppercase tracking-widest shadow-xl">
                 {t.nav.join}
               </Button>
             </Link>
