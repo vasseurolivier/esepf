@@ -38,7 +38,7 @@ export default function CampusTullePage() {
         {heroImage && (
           <Image 
             src={heroImage}
-            alt="Campus Sainte-Tulle"
+            alt="Campus Sainte-Tulle (AIX-EN-PROVENCE)"
             fill
             className="object-cover opacity-60"
             priority
@@ -47,6 +47,7 @@ export default function CampusTullePage() {
         )}
         <div className="relative z-10 text-center text-white container px-4">
           <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.campus_pages.tulle_hero}</h1>
+          <div className="w-24 h-1.5 bg-[#D4AF37] mx-auto mb-6 rounded-full" />
           <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto border-t border-white/30 pt-4">{t.campus_pages.tulle_sub}</p>
         </div>
       </section>
@@ -55,7 +56,7 @@ export default function CampusTullePage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal>
-              <div className="flex items-center gap-2 text-secondary font-bold uppercase tracking-widest mb-4">
+              <div className="flex items-center gap-2 text-[#D4AF37] font-bold uppercase tracking-widest mb-4">
                 <MapPin size={20} />
                 {t.campus_pages.city_title}
               </div>
@@ -68,13 +69,13 @@ export default function CampusTullePage() {
                 <p className="text-sm text-muted-foreground">{t.campus_pages.tulle_sport_desc}</p>
               </div>
             </ScrollReveal>
-            <ScrollReveal delay={200} className="relative aspect-square bg-black rounded-3xl overflow-hidden flex items-center justify-center border-2 border-dashed border-primary/10">
+            <ScrollReveal delay={200} className="relative aspect-square bg-white rounded-[3rem] overflow-hidden flex items-center justify-center border border-[#D4AF37]/20 shadow-xl">
               {mapImage ? (
-                <div className="relative w-full h-full p-8">
+                <div className="relative w-full h-full p-6">
                   <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-white border border-muted">
                     <Image 
                       src={mapImage}
-                      alt="Localisation Sainte-Tulle"
+                      alt="Localisation Sainte-Tulle (AIX-EN-PROVENCE)"
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"
@@ -82,7 +83,7 @@ export default function CampusTullePage() {
                   </div>
                 </div>
               ) : !isLoading && (
-                <div className="text-center p-8 flex flex-col items-center justify-center">
+                <div className="text-center p-8 bg-muted/30 backdrop-blur-sm rounded-3xl m-8 shadow-inner w-full flex flex-col items-center justify-center">
                   <ImageIcon size={48} className="text-muted mb-4" />
                   <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{t.campus_pages.map_not_defined}</p>
                 </div>
@@ -113,27 +114,27 @@ export default function CampusTullePage() {
           <div className="bg-primary rounded-[3rem] p-12 text-white shadow-2xl relative">
             <div className="relative z-10">
               <h3 className="text-3xl font-headline font-bold mb-12 flex items-center gap-3">
-                <School className="text-secondary" />
+                <School className="text-[#D4AF37]" />
                 {t.nav.formations} {t.campus_pages.available_on_campus}
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <div className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
-                  <div className="mt-1 text-secondary"><BookOpen size={24} /></div>
+                  <div className="mt-1 text-[#D4AF37]"><BookOpen size={24} /></div>
                   <div>
                     <h4 className="font-bold text-lg">{t.programs.college.title}</h4>
                     <p className="text-sm text-white/60">{t.programs.college.desc}</p>
                   </div>
                 </div>
                 <div className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
-                  <div className="mt-1 text-secondary"><GraduationCap size={24} /></div>
+                  <div className="mt-1 text-[#D4AF37]"><GraduationCap size={24} /></div>
                   <div>
                     <h4 className="font-bold text-lg">{t.programs.lycee.title}</h4>
                     <p className="text-sm text-white/60">{t.campus_pages.lycee_options}</p>
                   </div>
                 </div>
                 <div className="flex gap-4 p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
-                  <div className="mt-1 text-secondary"><Target size={24} /></div>
+                  <div className="mt-1 text-[#D4AF37]"><Target size={24} /></div>
                   <div>
                     <h4 className="font-bold text-lg">{t.programs.academy.title}</h4>
                     <p className="text-sm text-white/60">{t.programs.academy.desc}</p>
@@ -143,7 +144,7 @@ export default function CampusTullePage() {
 
               <div className="flex flex-col items-center">
                 <Link href="/inscription">
-                  <Button className="bg-secondary text-white font-bold py-8 px-12 rounded-full shadow-2xl hover:bg-secondary/90 transition-all uppercase tracking-widest text-base">
+                  <Button className="bg-[#D4AF37] text-white font-bold py-8 px-12 rounded-full shadow-2xl hover:bg-[#D4AF37]/90 transition-all uppercase tracking-widest text-base">
                     {t.common.register}
                   </Button>
                 </Link>
