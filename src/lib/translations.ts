@@ -646,7 +646,7 @@ export const translations = {
       stmg_desc: "Idéal pour comprendre les organisations.",
       gen_desc: "Parfait pour les profils académiques.",
       discover_btn: "Découvrir la filière",
-      restart_btn: "Recommencer"
+      restart_btn: "Récommencer"
     },
     contact_page: {
       title: "Contactez-nous",
@@ -1574,7 +1574,7 @@ export const translations = {
       bac_americain_title: "美国高中双文凭",
       bac_americain_sub: "双文凭：同时获得两个高中毕业证书。",
       high_school_diploma: "美国高中毕业证书",
-      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
+      high_school_desc: "得益’于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
       dual_diploma_official: "官方双学位",
       international_recognition: "国际认可",
       why_choose_title: "为什么选择这个路径？",

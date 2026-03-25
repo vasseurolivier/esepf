@@ -90,44 +90,40 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* New French Methodology Section - Image Design Inspired */}
+        {/* New French Methodology Section */}
         <section id="method-section" className="py-32 bg-white overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
               
               {/* Image Side */}
-              <div className="lg:w-[60%] relative h-[400px] md:h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl z-0 mb-8 lg:mb-0">
+              <div className="lg:w-[60%] relative h-[400px] md:h-[650px] w-full rounded-[2rem] overflow-hidden shadow-2xl z-0 mb-8 lg:mb-0 bg-black">
                 {methodImg && (
                   <Image 
                     src={methodImg} 
                     alt="French Football Methodology" 
                     fill 
-                    className="object-cover"
+                    className="object-cover opacity-90"
                     sizes="(max-width: 1024px) 100vw, 60vw"
                   />
                 )}
-                {/* Decorative silouhettes placeholders (concept) */}
-                <div className="absolute bottom-4 left-4 opacity-30">
-                   <div className="w-24 h-24 bg-white/20 rounded-full blur-2xl" />
-                </div>
               </div>
 
-              {/* Text Side - The Blue Box Overlap */}
+              {/* Text Side - Blue Box */}
               <div className="lg:w-[55%] lg:-ml-32 z-10">
-                <ScrollReveal className="bg-[#000080] p-8 md:p-16 text-white shadow-2xl relative">
-                  {/* Decorative Silouhette Icon Top */}
-                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-20 hidden md:block">
+                <div className="bg-[#000080] p-8 md:p-16 text-white shadow-2xl relative rounded-3xl">
+                  {/* Decorative Icon */}
+                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-20 hidden md:block">
                     <Trophy size={80} className="text-white" />
                   </div>
                   
-                  <h2 className="text-3xl md:text-5xl font-headline font-bold mb-10 leading-tight uppercase tracking-widest text-center lg:text-left">
+                  <h2 className="text-3xl md:text-5xl font-headline font-bold mb-10 leading-tight uppercase tracking-widest text-center lg:text-left text-white">
                     {t.football_pages.french_method_title}
                   </h2>
                   
-                  <div className="space-y-6 text-sm md:text-base leading-relaxed opacity-90 font-light text-justify">
+                  <div className="space-y-6 text-sm md:text-base leading-relaxed font-light text-white">
                     <p className="font-bold text-white opacity-100">{t.football_pages.french_method_p1}</p>
-                    <p>{t.football_pages.french_method_p2}</p>
-                    <p>{t.football_pages.french_method_p3}</p>
+                    <p className="text-white opacity-90">{t.football_pages.french_method_p2}</p>
+                    <p className="text-white opacity-90">{t.football_pages.french_method_p3}</p>
                     <p className="font-bold text-white opacity-100">{t.football_pages.french_method_p4}</p>
                   </div>
 
@@ -135,7 +131,7 @@ export default function ProgrammeFootballPage() {
                   <div className="absolute -bottom-16 -left-16 opacity-10 hidden lg:block">
                     <Users size={200} />
                   </div>
-                </ScrollReveal>
+                </div>
               </div>
             </div>
           </div>
