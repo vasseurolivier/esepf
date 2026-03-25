@@ -88,6 +88,8 @@ const IMAGE_CATEGORIES = [
     icon: <Trophy size={16} />,
     fields: [
       { id: 'football_academy', label: 'Photo Academy (Home)', location: 'Section Academy page accueil' },
+      { id: 'prog_hero', label: 'Hero Programme', location: 'Haut de page Programme Football' },
+      { id: 'prog_method_img', label: 'Photo Méthodologie', location: 'Section Méthodologie Française' },
       { id: 'competition_hero', label: 'Hero Compétition', location: 'Haut de page Compétition' },
       { id: 'competition_action', label: 'Photo Action', location: 'Section Championnat' },
       { id: 'prog_france_bg', label: 'Fond France', location: 'Section Terre de Football' },

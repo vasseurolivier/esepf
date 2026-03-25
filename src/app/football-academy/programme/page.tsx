@@ -23,8 +23,10 @@ export default function ProgrammeFootballPage() {
 
   if (!t || !t.football_pages) return null;
 
+  const heroImage = settings?.images?.prog_hero;
   const franceImage = settings?.images?.prog_france_bg;
   const coachImage = settings?.images?.prog_coach_training;
+  const methodImg = settings?.images?.prog_method_img;
 
   const methodologyAxes = [
     { icon: <Target className="text-secondary" />, title: t.football_pages.axes_tech.split(':')[0], desc: t.football_pages.axes_tech.split(':')[1] },
@@ -42,24 +44,36 @@ export default function ProgrammeFootballPage() {
     <FirebaseClientProvider>
       <Header />
       <main className="min-h-screen bg-white">
-        <section className="py-24 bg-white text-center">
-          <div className="container mx-auto px-4">
+        
+        {/* New Hero Section */}
+        <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
+          {heroImage && (
+            <Image 
+              src={heroImage}
+              alt="Football Program"
+              fill
+              className="object-cover opacity-60"
+              priority
+              sizes="100vw"
+            />
+          )}
+          <div className="relative z-10 text-center text-white container px-4">
             <ScrollReveal>
               <span className="text-lg font-bold tracking-[0.4em] text-secondary uppercase mb-4 block">- {t.football_pages.elite_label} -</span>
-              <h1 className="text-5xl md:text-8xl font-headline font-bold text-black uppercase mb-12 tracking-tighter leading-none">
+              <h1 className="text-5xl md:text-8xl font-headline font-bold uppercase mb-12 tracking-tighter leading-none">
                 {t.football_pages.prog_title}
               </h1>
-              <div className="flex flex-wrap justify-center gap-4 mb-16">
-                <button onClick={() => scrollToSection('fr-section')} className="bg-black text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">Football FR</button>
-                <button onClick={() => scrollToSection('method-section')} className="bg-black text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.method_title}</button>
-                <button onClick={() => scrollToSection('coachs-section')} className="bg-black text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.coaches_title}</button>
-                <button onClick={() => scrollToSection('prog-section')} className="bg-black text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.weekly_title}</button>
+              <div className="flex flex-wrap justify-center gap-4">
+                <button onClick={() => scrollToSection('fr-section')} className="bg-black/50 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">Football FR</button>
+                <button onClick={() => scrollToSection('method-section')} className="bg-black/50 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.method_title}</button>
+                <button onClick={() => scrollToSection('coachs-section')} className="bg-black/50 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.coaches_title}</button>
+                <button onClick={() => scrollToSection('prog-section')} className="bg-black/50 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.weekly_title}</button>
               </div>
             </ScrollReveal>
           </div>
         </section>
 
-        <section className="pb-32">
+        <section className="py-24">
           <div className="container mx-auto px-4 max-w-5xl">
             <ScrollReveal className="space-y-12 text-center">
               <div className="text-2xl md:text-3xl font-headline font-bold text-primary leading-tight">
@@ -73,6 +87,57 @@ export default function ProgrammeFootballPage() {
                 "{t.football_pages.prog_intro_4}"
               </div>
             </ScrollReveal>
+          </div>
+        </section>
+
+        {/* New French Methodology Section - Image Design Inspired */}
+        <section id="method-section" className="py-32 bg-white overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
+              
+              {/* Image Side */}
+              <div className="lg:w-[60%] relative h-[400px] md:h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl z-0 mb-8 lg:mb-0">
+                {methodImg && (
+                  <Image 
+                    src={methodImg} 
+                    alt="French Football Methodology" 
+                    fill 
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                  />
+                )}
+                {/* Decorative silouhettes placeholders (concept) */}
+                <div className="absolute bottom-4 left-4 opacity-30">
+                   <div className="w-24 h-24 bg-white/20 rounded-full blur-2xl" />
+                </div>
+              </div>
+
+              {/* Text Side - The Blue Box Overlap */}
+              <div className="lg:w-[55%] lg:-ml-32 z-10">
+                <ScrollReveal className="bg-[#000080] p-8 md:p-16 text-white shadow-2xl relative">
+                  {/* Decorative Silouhette Icon Top */}
+                  <div className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-20 hidden md:block">
+                    <Trophy size={80} className="text-white" />
+                  </div>
+                  
+                  <h2 className="text-3xl md:text-5xl font-headline font-bold mb-10 leading-tight uppercase tracking-widest text-center lg:text-left">
+                    {t.football_pages.french_method_title}
+                  </h2>
+                  
+                  <div className="space-y-6 text-sm md:text-base leading-relaxed opacity-90 font-light text-justify">
+                    <p className="font-bold text-white opacity-100">{t.football_pages.french_method_p1}</p>
+                    <p>{t.football_pages.french_method_p2}</p>
+                    <p>{t.football_pages.french_method_p3}</p>
+                    <p className="font-bold text-white opacity-100">{t.football_pages.french_method_p4}</p>
+                  </div>
+
+                  {/* Silouhettes decorative effect bottom */}
+                  <div className="absolute -bottom-16 -left-16 opacity-10 hidden lg:block">
+                    <Users size={200} />
+                  </div>
+                </ScrollReveal>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -103,7 +168,7 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        <section id="method-section" className="py-32 bg-white">
+        <section className="py-32 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <ScrollReveal className="text-center mb-24">
               <span className="text-secondary font-bold uppercase tracking-widest text-sm mb-2 block">{t.football_pages.method_subtitle}</span>
