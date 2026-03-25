@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, GraduationCap, Settings, ChevronDown, Globe, ChevronRight } from 'lucide-react';
+import { Menu, X, GraduationCap, ChevronDown, Globe, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -115,15 +115,15 @@ export function Header() {
           <div className="flex items-center space-x-2 md:space-x-4">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="flex items-center gap-1.5 font-bold text-[10px] md:text-xs uppercase tracking-widest outline-none h-9">
+                <Button variant="ghost" size="sm" className="flex items-center gap-1.5 font-bold text-[10px] md:text-xs uppercase tracking-widest outline-none h-9 hover:text-[#D4AF37] transition-colors">
                   <Globe size={14} className="md:w-4 md:h-4" />
                   {language}
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="bg-white border-muted">
-                <DropdownMenuItem onClick={() => setLanguage('fr')} className="font-bold cursor-pointer">FRANÇAIS</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('en')} className="font-bold cursor-pointer">ENGLISH</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('zh')} className="font-bold cursor-pointer">中文</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('fr')} className="font-bold cursor-pointer hover:bg-gradient-to-r hover:from-[#D4AF37] hover:to-[#F9E2AF]">FRANÇAIS</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('en')} className="font-bold cursor-pointer hover:bg-gradient-to-r hover:from-[#D4AF37] hover:to-[#F9E2AF]">ENGLISH</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('zh')} className="font-bold cursor-pointer hover:bg-gradient-to-r hover:from-[#D4AF37] hover:to-[#F9E2AF]">中文</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -160,7 +160,7 @@ export function Header() {
                         {link.name}
                       </span>
                       <div className="px-3 py-5 text-white">
-                        <ChevronDown size={12} className={cn("transition-transform duration-200 group-hover:text-[#D4AF37]", activeMenu === link.name && "rotate-180")} />
+                        <ChevronDown size={12} className={cn("transition-transform duration-200 group-hover:text-[#D4AF37]", activeMenu === link.name && "rotate-180 text-[#D4AF37]")} />
                       </div>
                     </div>
                   </DropdownMenuTrigger>
@@ -196,18 +196,18 @@ export function Header() {
           {navLinks.map((link) => (
             <div key={link.name} className="flex flex-col">
               <div 
-                className="flex items-center justify-between py-4 border-b border-white/5"
+                className="flex items-center justify-between py-4 border-b border-white/5 group"
                 onClick={() => link.hasDropdown ? setExpandedMobileMenu(expandedMobileMenu === link.name ? null : link.name) : setIsOpen(false)}
               >
                 {link.hasDropdown ? (
-                  <span className="text-sm font-bold text-white uppercase tracking-widest">{link.name}</span>
+                  <span className="text-sm font-bold text-white uppercase tracking-widest group-hover:text-[#D4AF37] transition-colors">{link.name}</span>
                 ) : (
-                  <Link href={link.href} className="text-sm font-bold text-white uppercase tracking-widest block w-full">{link.name}</Link>
+                  <Link href={link.href} className="text-sm font-bold text-white uppercase tracking-widest block w-full hover:text-[#D4AF37] transition-colors">{link.name}</Link>
                 )}
                 {link.hasDropdown && (
                   <ChevronDown 
                     size={18} 
-                    className={cn("text-white/40 transition-transform duration-300", expandedMobileMenu === link.name && "rotate-180 text-[#D4AF37]")} 
+                    className={cn("text-white/40 transition-transform duration-300 group-hover:text-[#D4AF37]", expandedMobileMenu === link.name && "rotate-180 text-[#D4AF37]")} 
                   />
                 )}
               </div>
@@ -222,7 +222,7 @@ export function Header() {
                       key={sub.name} 
                       href={sub.href} 
                       onClick={() => setIsOpen(false)} 
-                      className="flex items-center gap-3 px-6 py-3.5 text-xs font-bold text-white/70 hover:text-[#D4AF37] border-b border-white/5 last:border-0"
+                      className="flex items-center gap-3 px-6 py-3.5 text-xs font-bold text-white/70 hover:text-[#D4AF37] border-b border-white/5 last:border-0 transition-colors"
                     >
                       <ChevronRight size={14} className="text-[#D4AF37]" />
                       {sub.name}
