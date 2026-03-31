@@ -100,38 +100,7 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Entraîne-toi comme un professionnel Section */}
-        <section className="py-24 bg-[#0a192f] text-white overflow-hidden">
-          <div className="container mx-auto px-4">
-            <ScrollReveal className="text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-headline font-bold uppercase tracking-tight mb-8">
-                {t.football_pages.pro_training.title}
-              </h2>
-              <div className="w-24 h-1 bg-secondary mx-auto mb-8 rounded-full" />
-              <p className="text-lg md:text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
-                {t.football_pages.pro_training.subtitle}
-              </p>
-            </ScrollReveal>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
-              {proTrainingItems.map((item, i) => (
-                <ScrollReveal key={i} delay={i * 100} className="flex flex-col items-center text-center group cursor-pointer">
-                  <div className="mb-8 transform group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 text-white group-hover:text-secondary">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-lg font-bold mb-4 min-h-[3.5rem] flex items-center justify-center leading-tight px-4 uppercase tracking-wider group-hover:text-secondary transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-white/50 leading-relaxed px-2 font-medium">
-                    {item.desc}
-                  </p>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* NEW: Individualized Tracking Section */}
+        {/* Individualized Tracking Section */}
         <section className="bg-[#2c3e50] text-white overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             {/* Left Content */}
@@ -223,6 +192,7 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
+        {/* France: Terre de Football Section */}
         <section id="fr-section" className="bg-[#1a237e] text-white overflow-hidden relative">
           <div className="absolute top-0 right-0 p-20 opacity-5">
             <Trophy size={500} />
@@ -250,6 +220,7 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
+        {/* Methodology Pillars Section */}
         <section className="py-32 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <ScrollReveal className="text-center mb-24">
@@ -270,6 +241,7 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
+        {/* Coachs Section */}
         <section id="coachs-section" className="py-32 bg-muted/20 border-y border-muted">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center max-w-6xl mx-auto">
@@ -294,6 +266,38 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
+        {/* Entraîne-toi comme un professionnel Section - MOVED HERE */}
+        <section className="py-24 bg-[#0a192f] text-white overflow-hidden">
+          <div className="container mx-auto px-4">
+            <ScrollReveal className="text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-headline font-bold uppercase tracking-tight mb-8">
+                {t.football_pages.pro_training.title}
+              </h2>
+              <div className="w-24 h-1 bg-secondary mx-auto mb-8 rounded-full" />
+              <p className="text-lg md:text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
+                {t.football_pages.pro_training.subtitle}
+              </p>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
+              {proTrainingItems.map((item, i) => (
+                <ScrollReveal key={i} delay={i * 100} className="flex flex-col items-center text-center group cursor-pointer">
+                  <div className="mb-8 transform group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 text-white group-hover:text-secondary">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-lg font-bold mb-4 min-h-[3.5rem] flex items-center justify-center leading-tight px-4 uppercase tracking-wider group-hover:text-secondary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-white/50 leading-relaxed px-2 font-medium">
+                    {item.desc}
+                  </p>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Weekly Program Section */}
         <section id="prog-section" className="py-32 bg-primary text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10 -translate-y-1/4 translate-x-1/4">
             <Calendar size={600} />
