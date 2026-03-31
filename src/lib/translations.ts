@@ -180,10 +180,22 @@ export const translations = {
       languages_excellence_sub: "L'ouverture internationale au cœur de notre pédagogie.",
       passport_world_title: "Un Passeport pour le Monde",
       passport_world_desc: "Maîtriser plusieurs langues est une nécessité dans un monde globalisé. À l'ESEPF, nous proposons des parcours linguistiques renforcés dès le collège.",
+      fle_title: "Français Langue Étrangère (FLE)",
+      fle_desc: "Un parcours d'excellence pour les élèves non-francophones afin de maîtriser la langue de Molière et de s'intégrer sereinement dans le système éducatif français.",
       efl_title: "English First Language (EFL)",
       efl_desc: "Un programme intensif pour les élèves souhaitant atteindre un niveau bilingue, avec des cours de littérature et d'histoire en anglais.",
       cert_int_title: "Certifications Internationales",
-      cert_int_desc: "Préparation aux examens du Cambridge (PET, FCE, CAE) et du DELF pour valider officiellement les compétences acquises."
+      cert_int_desc: "Préparation aux examens du Cambridge (PET, FCE, CAE) et du DELF pour valider officiellement les compétences acquises.",
+      pedagogy_title: "Une Méthode Active et Personnalisée",
+      pedagogy_subtitle: "Plus qu'un cours de langue, une ouverture culturelle",
+      pedagogy_p1: "L’enseignement des langues à l’ESEPF repose sur une approche immersive et communicative. Nous croyons que la pratique constante est la clé de la maîtrise.",
+      pedagogy_p2: "Nos élèves ne se contentent pas d'apprendre des règles de grammaire ; ils vivent la langue à travers des projets, des débats et une interaction constante avec les cultures locales.",
+      pedagogy_item1: "Classes à effectifs réduits pour un suivi optimal",
+      pedagogy_item2: "Immersion culturelle via des sorties et voyages",
+      pedagogy_item3: "Outils numériques et plateformes interactives",
+      pedagogy_item4: "Tutorat individuel de progression",
+      resources_title: "Ressources & Environnement",
+      resources_desc: "Nos campus sont équipés de laboratoires de langues modernes, de bibliothèques internationales et d'espaces de co-working connectés."
     },
     outlets_labels: {
       higher_ed_title: "LES ÉTUDES SUPÉRIEURES FRANÇAISES",
@@ -922,10 +934,22 @@ export const translations = {
       languages_excellence_sub: "International openness at the heart of our pedagogy.",
       passport_world_title: "A Passport to the World",
       passport_world_desc: "Mastering several languages is a necessity in a globalized world. At ESEPF, we offer reinforced linguistic paths from middle school.",
+      fle_title: "French as a Foreign Language (FLE)",
+      fle_desc: "A path of excellence for non-French speaking students to master the language of Molière and integrate peacefully into the French educational system.",
       efl_title: "English First Language (EFL)",
       efl_desc: "An intensive program for students wishing to reach a bilingual level, with literature and history courses in English.",
       cert_int_title: "International Certifications",
-      cert_int_desc: "Preparation for Cambridge exams (PET, FCE, CAE) and DELF to officially validate acquired skills."
+      cert_int_desc: "Preparation for Cambridge exams (PET, FCE, CAE) and DELF to officially validate acquired skills.",
+      pedagogy_title: "An Active and Personalized Method",
+      pedagogy_subtitle: "More than a language course, a cultural opening",
+      pedagogy_p1: "Language teaching at ESEPF is based on an immersive and communicative approach. We believe that constant practice is the key to mastery.",
+      pedagogy_p2: "Our students don't just learn grammar rules; they live the language through projects, debates and constant interaction with local cultures.",
+      pedagogy_item1: "Small classes for optimal follow-up",
+      pedagogy_item2: "Cultural immersion via outings and trips",
+      pedagogy_item3: "Digital tools and interactive platforms",
+      pedagogy_item4: "Individual progression tutoring",
+      resources_title: "Resources & Environment",
+      resources_desc: "Our campuses are equipped with modern language labs, international libraries and connected co-working spaces."
     },
     outlets_labels: {
       higher_ed_title: "FRENCH HIGHER EDUCATION",
@@ -1659,10 +1683,22 @@ export const translations = {
       languages_excellence_sub: "国际化开放是我们教学法的核心。",
       passport_world_title: "通往世界的通行证",
       passport_world_desc: "在全球化的世界中，掌握多种语言是必要的. 在 ESEPF，我们 from 初中开始 offer 强化的语言路径。",
+      fle_title: "法语作为外语 (FLE)",
+      fle_desc: "为非法语母语学生打造的卓越路径，旨在帮助他们掌握莫里哀的语言并平稳融入法国教育体系。",
       efl_title: "英语第一语言 (EFL)",
       efl_desc: "为希望达到双语水平的学生 offer 强化计划，包括英语文学 和 历史课程。",
       cert_int_title: "国际认证",
-      cert_int_desc: "准备剑桥考试（PET、FCE、CAE）和 DELF，以官方验证所获技能。"
+      cert_int_desc: "准备剑桥考试（PET、FCE、CAE）和 DELF，以官方验证所获技能。",
+      pedagogy_title: "主动式与个性化教学法",
+      pedagogy_subtitle: "不仅是语言课，更是文化启蒙",
+      pedagogy_p1: "ESEPF 的语言教学基于沉浸式和沟通式的方法。我们相信不断的实践是掌握语言的关键。",
+      pedagogy_p2: "我们的学生不只是学习语法规则；他们通过项目、辩论和与当地文化的持续互动来体验语言。",
+      pedagogy_item1: "小班教学以实现最佳跟踪",
+      pedagogy_item2: "通过郊游和旅行进行文化沉浸",
+      pedagogy_item3: "数字工具和互动平台",
+      pedagogy_item4: "个人进步辅导",
+      resources_title: "资源与环境",
+      resources_desc: "我们的校园配备了现代化的语言实验室、国际图书馆和互联的协作办公空间。"
     },
     outlets_labels: {
       higher_ed_title: "法国高等教育",
@@ -1970,7 +2006,7 @@ export const translations = {
       french_method_p1: "我们借鉴了享誉全球的法国足球青训教学法，为您提供一套结构严谨且全面的发展计划，旨在全方位支持球员的成长与进步。",
       french_method_p2: "该计划基于多样化的训练课，融合了根据球员年龄、水平和具体需求量身定制的技术、战术及体能练习. 定期的测试将用于评估其进步情况，而比赛、特定挑战和个人互动则提供了持续调整与优化的机会。",
       french_method_p3: "除球场表现外，该计划还特别注重参与者的个人素养和情感发育. 通过精心设计的心理社会挑战，球员们将学习团队精神、纪律、韧性、情绪管理能力以及奉献精神。",
-      french_method_p4: "我们的目标是培养全面的球员：他们不仅在技术和体能上表现出色，还具备在集体环境中发展所需的优秀品质. 通过培养对足球真实且持久的热爱，该计划不仅让他们在球场上进步，更为他们的体育和个人未来奠定坚实的基础。"
+      french_method_p4: "我们的目标是培养全面的球员：他们不仅特技术和体能上表现出色，还具备在集体环境中发展所需的优秀品质. 通过培养对足球真实且持久的热爱，该计划不仅让他们在球场上进步，更为他们的体育和个人未来奠定坚实的基础。"
     },
     metiers_page: {
       title: "体育职业培训",
