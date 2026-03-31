@@ -56,7 +56,7 @@ export const translations = {
       contact_advisor: "Contactez un conseiller",
       ready_join: "Prêt à nous rejoindre ?",
       ready_leader: "Prêt à devenir un leader ?",
-      join_elite: "Rejoignez l'élite du commerce",
+      join_elite: "Rejoiniez l'élite du commerce",
       enrollment_open: "Les inscriptions pour la rentrée 2026-2027 sont ouvertes sur les campus d'Evron et Sainte-Bazeille.",
       enrollment_stmg: "Les inscriptions pour la filière STMG & Luxe (Rentrée 2026) sont ouvertes. Développez votre potentiel management dès aujourd'hui.",
       roadmap: "ESEPF ROADMAP",
@@ -254,7 +254,30 @@ export const translations = {
       intro_p3: "Offrir à chaque élève les clés pour exceller dans sa discipline tout en bâtissant un avenir académique et professionnel solide.",
       mission_label: "Notre mission :",
       quote: "Nous bâtissons un pont entre les cultures et les continents à travers l'excellence éducative.",
-      direction_label: "Direction Générale ESEPF"
+      direction_label: "Direction Générale ESEPF",
+      timeline_title: "QUELQUES DATES...",
+      events: [
+        {
+          year: "2000",
+          title: "1ère ACADÉMIE DE FOOTBALL POUR LES JEUNES ÉTRANGERS DE SHANGHAI",
+          desc: "Premier club de football pour les enfants expatriés de Shanghai. Signature avec une des écoles internationales de la ville. Organisation des premiers matchs amicaux contre les Académies locales pour toutes nos équipes U8 à U16."
+        },
+        {
+          year: "2018",
+          title: "FRANCHISE OLYMPIQUE LYONNAIS OL ACADEMY SHANGHAI",
+          desc: "Contribution au développement de la marque OL à Shanghai. Lancement de la 1ère compétition officielle des équipes de jeunes amateurs de la ville. Organisation tournées de pré-saisons en Europe pour les sélections féminines de Shanghai : U16 Elite Filles & Pro féminines."
+        },
+        {
+          year: "2021",
+          title: "FRANCHISE PARIS SAINT-GERMAIN PSG ACADEMY SHANGHAI",
+          desc: "Contribution au développement de la marque PSG en Chine. Signature avec plusieurs écoles internationales de la ville. Développement de notre Académie hors de Shanghai. Poursuite des tournées en Europe pour les sélections féminines de Shanghai : U16 Elite Filles & Pro féminines."
+        },
+        {
+          year: "2024",
+          title: "YOUTH ELITE SPORTS ACADEMY OUVERTURE AU MULTISPORT ET À L'ASIE DU SUD-EST",
+          desc: "Création de notre propre marque \"YES Academy\". Signature de nouvelles écoles internationales. Ouverture de la branche multisport. Lancement de de notre Académie dans d'autres villes en Asie. Invitations au tournoi international de Shanghai des Centres de Formation :\n2025 - OM - U17 Nationaux\n2026 - Paris FC féminines - U16 / U17"
+        }
+      ]
     },
     team_page: {
       title: "Le Projet",
@@ -910,7 +933,30 @@ export const translations = {
       intro_p3: "Give each student the keys to excel in their discipline.",
       mission_label: "Our mission:",
       quote: "We build a bridge between cultures and continents through educational excellence.",
-      direction_label: "ESEPF General Management"
+      direction_label: "ESEPF General Management",
+      timeline_title: "A FEW DATES...",
+      events: [
+        {
+          year: "2000",
+          title: "1st FOOTBALL ACADEMY FOR SHANGHAI INTERNATIONAL YOUTH",
+          desc: "First football club for expatriate children in Shanghai. Signing with one of the city's international schools. Organization of the first friendly matches against local academies for all our U8 to U16 teams."
+        },
+        {
+          year: "2018",
+          title: "OLYMPIQUE LYONNAIS FRANCHISE OL ACADEMY SHANGHAI",
+          desc: "Contribution to the development of the OL brand in Shanghai. Launch of the 1st official competition for local amateur youth teams. Organization of pre-season tours in Europe for Shanghai girls' selections: U16 Elite & Pro Women."
+        },
+        {
+          year: "2021",
+          title: "PARIS SAINT-GERMAIN FRANCHISE PSG ACADEMY SHANGHAI",
+          desc: "Contribution to the development of the PSG brand in China. Signing with several international schools in the city. Development of our Academy outside of Shanghai. Continued pre-season tours in Europe for Shanghai girls' selections: U16 Elite & Pro Women."
+        },
+        {
+          year: "2024",
+          title: "YOUTH ELITE SPORTS ACADEMY EXPANSION TO MULTISPORT & SE ASIA",
+          desc: "Creation of our own brand \"YES Academy\". Signing of new international schools. Opening of the multisport branch. Launch of our Academy in other cities in Asia. Invitations to the Shanghai international youth tournament: 2025 - OM - National U17, 2026 - Paris FC women - U16 / U17."
+        }
+      ]
     },
     team_page: {
       title: "THE PROJECT",
@@ -1491,7 +1537,7 @@ export const translations = {
       languages_excellence_title: "外语培训",
       languages_excellence_sub: "国际化开放是我们教学法的核心。",
       passport_world_title: "通往世界的通行证",
-      passport_world_desc: "在全球化的世界中，掌握多种语言是必要的。在 ESEPF，我们从初中开始 offer 强化的语言路径。",
+      passport_world_desc: "在全球化的世界中，掌握多种语言是必要的. 在 ESEPF，我们从初中开始 offer 强化的语言路径。",
       efl_title: "英语第一语言 (EFL)",
       efl_desc: "为希望达到双语水平的学生 offer 强化计划，包括英语文学和历史课程。",
       cert_int_title: "国际认证",
@@ -1542,7 +1588,7 @@ export const translations = {
       hero_sub: "体验官方比赛的激情，释放潜能。",
       p1: "得益于我们与当地俱乐部的合作，我们的体育学习足球部门球员享有参加法国官方比赛的特权。这种开放使他们能够参加公认的锦标赛，面对高水平球队，并体验结构化的竞争环境。",
       p2: "官方比赛每个周末举行，为年轻足球运动员 offer 持续的进步，并有机会面对法国足球的现实。该机制有利于选拔、技能提升和进入高水平体系。",
-      p3: "教练和管理人员密切监控球员的准备情况，根据比赛要求调整训练计划。目标是让每位球员在球场上充分表达自己，发挥潜能并建立雄心勃勃的道路，同时享受合适的学术支持。",
+      p3: "教练和管理人员密切监控球员的准备情况，根据比赛要求调整训练计划. 目标是让每位球员在球场上充分表达自己，发挥潜能并建立雄心勃勃的道路，同时享受合适的学术支持。",
       card_clubs: "特权访问",
       card_clubs_desc: "公认的锦标赛与高水平球队。",
       card_weekend: "周末比赛",
@@ -1566,7 +1612,30 @@ export const translations = {
       intro_p3: "为每位学生 offer 卓越的钥匙，同时建立稳固的学术 和 职业未来。",
       mission_label: "我们的使命：",
       quote: "我们通过卓越教育在不同文化 和 大陆之间架起桥梁。",
-      direction_label: "ESEPF 总管理部"
+      direction_label: "ESEPF 总管理部",
+      timeline_title: "重要里程碑...",
+      events: [
+        {
+          year: "2000",
+          title: "上海首家针对国际青少年的足球学院",
+          desc: "上海首家为外籍儿童开设的足球俱乐部. 与该市一所国际学校签约. 为我们所有 U8 至 U16 球队组织了首场与当地学院的友谊赛。"
+        },
+        {
+          year: "2018",
+          title: "里昂俱乐部特许经营 上海里昂学院",
+          desc: "助力里昂品牌在上海的发展. 启动了该市首个官方业余青少年球队比赛. 为上海女足选拔队组织欧洲季前巡赛：U16 精英女队 和 职业女队。"
+        },
+        {
+          year: "2021",
+          title: "巴黎圣日耳曼特许经营 上海巴黎圣日耳曼学院",
+          desc: "助力巴黎圣日耳曼品牌在中国的发展. 与该市多所国际学校签约. 在上海以外地区发展学院. 继续为上海女足选拔队组织欧洲巡赛：U16 精英女队 和 职业女队。"
+        },
+        {
+          year: "2024",
+          title: "YES 学院 扩展至多项运动及东南亚",
+          desc: "创立自主品牌 \"YES Academy\". 签约新的国际学校. 开设多项运动分支. 在亚洲其他城市启动学院. 受邀参加上海国际青少年锦标赛：2025 - 马赛 - U17 国家队, 2026 - 巴黎 FC 女足 - U16 / U17。"
+        }
+      ]
     },
     team_page: {
       title: "项目介绍",
@@ -1657,7 +1726,7 @@ export const translations = {
       intro_p1: "我们高中 offer 严谨且多样化的课程，适应每个学生的目标. 它 offer 两个主要方向：普通高中和 STMG 技术高中。",
       intro_p2: "每个项目都旨在让学生获得扎实的技能，并为进入高等教育 或 职业世界做好准备。",
       intro_p3: "普通高中培养分析能力 和 通识文化，STMG 高中为管理、商业 和 经济研究做准备。",
-      intro_p4: "我们 offer 个性化支持 和 定期监测，以确保每个学生在所选道路上取得成功。",
+      intro_p4: "我们 offer 个性化支持 和 定期监测，以确保每个学生 in 所选道路上取得成功。",
       formations_title: "课程设置",
       card_langues: "语言 和 文化职业",
       card_management: "管理职业",
@@ -1704,8 +1773,8 @@ export const translations = {
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级 (高中毕业)",
-        bts_desc: "应用外语 (LEA) 的 BTS 是一个为期两年的培训. 它在翻译、口译、国际项目 management 等领域 offer 教学。通过档案申请，BTS 可以快速为职业生涯做好准备。",
-        univ_desc: "攻读本科文凭允许在翻译、国际关系等领域进行专业化. 本科是 3 年制大学培训. 在 BTS 之后，也可以直接进入本科最后一年。",
+        bts_desc: "应用外语 (LEA) 的 BTS 是一个为期两年的培训. 它 in 翻译、口译、国际项目 management 等领域 offer 教学. 通过档案申请，BTS 可以快速为职业生涯做好准备。",
+        univ_desc: "攻读本科文凭允许 in 翻译、国际关系等领域进行专业化. 本科是 3 年制大学培训. In BTS 之后，也可以直接进入本科最后一年。",
         bts_list: ["旅游 BTS", "国际贸易 BTS", "中小企业管理 BTS", "翻译 与 口译 BTS", "传播 BTS", "公共关系 BTS", "运营商业管理 BTS", "农村开发 BTS"],
         bts_jobs: ["传播主管", "行政助理", "营销经理", "翻译", "项目经理", "国际关系负责人", "产品经理", "销售代表"],
         univ_list: ["应用外语 (LEA) 本科", "翻译 与 口译本科", "现代文学本科", "外国语言文化本科", "传播本科", "国际关系本科", "新闻学本科", "营销本科"],
@@ -1721,13 +1790,13 @@ export const translations = {
         desc: "STMG 技术高中是一个培养学生进入管理、行政 和 经济领域的方向. 它结合了通用 和 技术教学。",
         outro: "It opens doors to higher studies like BTS, BUT, licenses or business schools, and leads to careers in management, marketing, HR or finance.",
         luxe_module_title: "奢侈品酒店 和 餐饮模块",
-        luxe_module_p1: "在奢侈品行业不断扩张的世界中，让我们的学生做好准备至关重要。",
-        luxe_module_p2: "该计划旨在让学生首次沉浸在这一精致领域，让他们发现质量标准。",
+        luxe_module_p1: "In 奢侈品行业不断扩张的世界中，让我们的学生做好准备至关重要。",
+        luxe_module_p2: "该计划旨在让学生首次沉浸 in 这一精致领域，让他们发现质量标准。",
         luxe_module_p3: "该模块代表了真正的机遇。",
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级 (技术高中文凭)",
-        bts_desc: "管理 BTS 是两年的培训. 在团队 management、财务 和 营销等领域 offer 教学。",
+        bts_desc: "管理 BTS 是两年的培训. In 团队 management、财务 和 营销等领域 offer 教学。",
         univ_desc: "本科是 3 年制大学培训，结合理论与实践. 它加强了管理 和 分析技能。",
         bts_list: ["会计管理", "管理支持", "商业运营", "谈判数字化", "中小企业管理", "IT 服务", "保险", "旅游"],
         bts_jobs: ["营销经理", "产品经理", "销售员", "薪资管理员", "人力资源经理", "财务主管", "资产 management", "顾问"],
@@ -1776,9 +1845,9 @@ export const translations = {
       weekend_desc: "参加官方 FFF 锦标赛。",
       french_method_title: "法国足球教学法",
       french_method_p1: "我们借鉴了享誉全球的法国足球青训教学法，为您提供一套结构严谨且全面的发展计划，旨在全方位支持球员的成长与进步。",
-      french_method_p2: "该计划基于多样化的训练课，融合了根据球员年龄、水平和具体需求量身定制的技术、战术及体能练习。定期的测试将用于评估其进步情况，而比赛、特定挑战和个人互动则提供了持续调整与优化的机会。",
-      french_method_p3: "除球场表现外，该计划还特别注重参与者的个人素养和情感发育。通过精心设计的心理社会挑战，球员们将学习团队精神、纪律、韧性、情绪管理能力以及奉献精神。",
-      french_method_p4: "我们的目标是培养全面的球员：他们不仅在技术和体能上表现出色，还具备在集体环境中发展所需的优秀品质。通过培养对足球真实且持久的热爱，该计划不仅让他们在球场上进步，更为他们的体育和个人未来奠定坚实的基础。"
+      french_method_p2: "该计划基于多样化的训练课，融合了根据球员年龄、水平和具体需求量身定制的技术、战术及体能练习. 定期的测试将用于评估其进步情况，而比赛、特定挑战和个人互动则提供了持续调整与优化的机会。",
+      french_method_p3: "除球场表现外，该计划还特别注重参与者的个人素养和情感发育. 通过精心设计的心理社会挑战，球员们将学习团队精神、纪律、韧性、情绪管理能力以及奉献精神。",
+      french_method_p4: "我们的目标是培养全面的球员：他们不仅在技术和体能上表现出色，还具备在集体环境中发展所需的优秀品质. 通过培养对足球真实且持久的热爱，该计划不仅让他们在球场上进步，更为他们的体育和个人未来奠定坚实的基础。"
     },
     metiers_page: {
       title: "体育职业培训",

@@ -24,6 +24,13 @@ export default function HistoryPage() {
   const schoolName = settings?.schoolName || "ESEPF";
   const mainImage = settings?.images?.history_main;
 
+  const timelineLogos = [
+    null, // Pas de logo pour 2000
+    "https://picsum.photos/seed/ol-logo/100/100",
+    "https://picsum.photos/seed/psg-logo/100/100",
+    "https://picsum.photos/seed/yes-logo/100/100"
+  ];
+
   return (
     <FirebaseClientProvider>
       <Header />
@@ -45,9 +52,10 @@ export default function HistoryPage() {
                 <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                   <p>{t.history_page.intro_p1}</p>
                   <p>{t.history_page.intro_p2}</p>
-                  <p className="pt-4 p-6 bg-white rounded-2xl shadow-sm border border-muted italic">
-                    <span className="text-secondary font-bold block mb-2">{t.history_page.mission_label}</span> {t.history_page.intro_p3}
-                  </p>
+                  <div className="pt-4 p-6 bg-white rounded-2xl shadow-sm border border-muted italic">
+                    <span className="text-secondary font-bold block mb-2">{t.history_page.mission_label}</span> 
+                    {t.history_page.intro_p3}
+                  </div>
                 </div>
               </ScrollReveal>
 
@@ -62,6 +70,70 @@ export default function HistoryPage() {
                   />
                 )}
               </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* New Timeline Section */}
+        <section className="py-24 bg-white overflow-hidden">
+          <div className="container mx-auto px-4">
+            <ScrollReveal>
+              <h2 className="text-5xl md:text-7xl font-headline font-bold text-black uppercase tracking-tighter mb-20">
+                {t.history_page.timeline_title}
+              </h2>
+            </ScrollReveal>
+
+            <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-0">
+              {/* Desktop Timeline Line */}
+              <div className="hidden lg:block absolute top-[140px] left-0 w-full h-1 bg-black/10 z-0">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#1a3d2f] border-4 border-white shadow-md" />
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#1a3d2f] border-4 border-white shadow-md" />
+              </div>
+
+              {/* Events Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 w-full relative z-10">
+                {t.history_page.events.map((event: any, idx: number) => (
+                  <ScrollReveal key={idx} delay={idx * 150} className="flex flex-col items-center text-center">
+                    {/* Year Box */}
+                    <div className="flex flex-col items-center mb-8 h-[180px] justify-end">
+                      {timelineLogos[idx] && (
+                        <div className="mb-4 h-16 w-16 flex items-center justify-center">
+                          <img 
+                            src={timelineLogos[idx]} 
+                            alt="Brand Logo" 
+                            className="max-h-full max-w-full object-contain"
+                            data-ai-hint={idx === 1 ? "Olympique Lyonnais logo" : idx === 2 ? "Paris Saint-Germain logo" : "sports academy logo"}
+                          />
+                        </div>
+                      )}
+                      <div className="bg-[#f5f5f5] px-8 py-4 rounded-xl border border-black/5 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transform skew-x-[-10deg]">
+                        <span className="text-3xl font-headline font-bold text-black italic block skew-x-[10deg]">
+                          {event.year}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Timeline Node (Mobile Only) */}
+                    <div className="lg:hidden w-full h-px bg-black/10 my-4 relative">
+                       <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-[#1a3d2f]" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="space-y-4 px-2">
+                      <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-black leading-tight min-h-[40px] flex items-center justify-center">
+                        {event.title}
+                      </h3>
+                      <div className="w-12 h-0.5 bg-secondary mx-auto" />
+                      <p className="text-[11px] md:text-xs text-muted-foreground leading-relaxed text-center whitespace-pre-line">
+                        {event.desc}
+                      </p>
+                    </div>
+                  </ScrollReveal>
+                ))}
+              </div>
+
+              {/* Decorative Green Block (from image) */}
+              <div className="hidden xl:block absolute -right-20 top-0 w-32 h-[400px] bg-[#0c3a2f] -z-10" />
             </div>
           </div>
         </section>
