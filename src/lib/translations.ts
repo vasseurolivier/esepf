@@ -100,7 +100,7 @@ export const translations = {
       step4_date: "Date limite : 25 avril",
       step5: "PAIEMENT DES FRAIS DE SCOLARITÉ",
       step5_date: "Date limite : 17 mai",
-      step6: "FRAIS INTERNAT / CANTINE & FOOT",
+      step6: "PAIEMENT DES FRAIS INTERNAT / CANTINE & FOOT",
       step6_date: "Date limite : 30 juin",
       step7: "CHOIX DES ACTIVITÉS ANNEXES",
       step7_date: "Date limite : 20 septembre",
@@ -313,7 +313,7 @@ export const translations = {
     team_page: {
       title: "Le Projet",
       subtitle: "Le Programme Élite Football & Scolarité ESEPF",
-      p1: "À l'ESEPF, nous proposons aux jeunes de 11 à 19 ans un projet double exceptionnel.",
+      p1: "À l'ESEPF, we proposons aux jeunes de 11 à 19 ans un projet double exceptionnel.",
       p2: "En parallèle, les élèves suivent un excellent cursus scolaire français (de la 6ème à la Terminale).",
       p3: "Ce programme unique forge aussi bien l'athlète que l'élève, en inculquant discipline, rigueur et ambition.",
       team_title: "L'ÉQUIPE",
@@ -508,7 +508,7 @@ export const translations = {
       axes_phys: "Physique",
       axes_phys_desc: "Le développement athlétique est mené avec une rigueur scientifique. Nous forgeons des athlètes puissants, rapides et endurants grâce à un programme de préparation physique adapté à chaque tranche d'âge. La prévention des blessures, l'explosivité et l'optimisation de la récupération sont au cœur de notre suivi pour garantir une performance durable au plus haut niveau.",
       axes_ment: "Mental",
-      axes_ment_desc: "Nos méthodes d'entraînement poussent constamment les joueurs à leurs limites, les obligeant ainsi à mobiliser leurs ressources mentales. La force de caractère étant l'un des éléments influençant la performance, nous avons conçu de nombreux exercices permettant aux joueurs de travailler cette qualité spécifique (1 contre 1, matchs en infériorité numérique, travail athlétique exigeant, renforcement musculaire, exigences de haut niveau, etc.). Étant donné que le football professionnel nécessite une grande solidité mentale, il est essentiel que les joueurs la développent dès leur plus jeune âge.",
+      axes_ment_desc: "Nos méthodes d'entraînement poussent constamment les joueurs à leurs limites, obligeant ainsi à mobiliser leurs ressources mentales. La force de caractère étant l'un des éléments influençant la performance, we avons conçu de nombreux exercices permettant aux joueurs de travailler cette qualité spécifique (1 contre 1, matchs en infériorité numérique, travail athlétique exigeant, renforcement musculaire, exigences de haut niveau, etc.). Étant donné que le football professionnel nécessite une grande solidité mentale, il est essentiel que les joueurs la développent dès leur plus jeune âge.",
       axes_social: "Social",
       axes_social_school_title: "Suivi scolaire",
       axes_social_school_desc: "On ne peut concevoir une académie sans penser à l'éducation. Le football est un sport qui demande de l'intelligence, c'est pourquoi un projet éducatif scolaire est OBLIGATOIRE pour que les joueurs soient autorisés à rester dans notre académie.",
@@ -612,7 +612,7 @@ export const translations = {
     },
     reseau_page: {
       title: "Un Réseau de Clubs pour Révéler Nos Talents",
-      p1: "Grâce au réseau que nous avons construit au fil des années, issu de our passé dans le football professionnel en France, nous offerons à nos meilleurs joueurs des opportunités uniques de montrer l'étendue de leurs capacités. Ce réseau, composé de clubs prestigieux français et européens, leur permet de participer à des essais, des matchs amicaux ou d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptés à leur progression vers le plus haut niveau.",
+      p1: "Grâce au réseau que we avons construit au fil des années, issu de our passé dans le football professionnel en France, nous offerons à nos meilleurs joueurs des opportunités uniques de montrer l'étendue de leurs capacités. Ce réseau, composé de clubs prestigieux français et européens, leur permet de participer à des essais, des matchs amicaux ou d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptés à leur progression vers le plus haut niveau.",
       subtitle: "Un Réseau de Clubs pour offrir des opportunités..."
     },
     journey_page: {
@@ -918,7 +918,7 @@ export const translations = {
       step4_date: "Deadline: April 25",
       step5: "TUITION FEE PAYMENT",
       step5_date: "Deadline: May 17",
-      step6: "BOARDING / CANTEEN & FOOT FEES",
+      step6: "PAYMENT OF BOARDING / CANTEEN & FOOT FEES",
       step6_date: "Deadline: June 30",
       step7: "EXTRA ACTIVITIES CHOICE",
       step7_date: "Deadline: September 20",
@@ -1731,7 +1731,7 @@ export const translations = {
       step4_date: "截止日期：4月25日",
       step5: "学费支付",
       step5_date: "截止日期：5月17日",
-      step6: "寄宿/餐饮及足球费用",
+      step6: "支付寄宿/餐饮及足球费用",
       step6_date: "截止日期：6月30日",
       step7: "课外活动选择",
       step7_date: "截止日期：9月20日",
@@ -2053,7 +2053,7 @@ export const translations = {
       },
       bac_gen: {
         title: "普通高中",
-        subtitle: "语言 和 文化方向",
+        subtitle: "语言 和 文化职业",
         title_detail: "用所有语言表达自己",
         desc: "普通高中是一个为期三年的计划，旨在让高中生为高等教育做好准备. 它基于共同核心课程 和 专业选择。",
         system_desc: "在法国，所有学生首先遵循普通 与 技术高一. From 高二开始， they 选择三个专业. 在高三，他们保留其中两个专业。",
@@ -2191,7 +2191,7 @@ export const translations = {
       specialized_training: {
         title: "按位置进行的专项训练",
         gk_title: "守门员",
-        gk_desc: "守门员训练重点在于反应能力、接球、出击和选位。通过专项练习和实战模拟，培养守门员的技术能力和阅读比赛的能力。",
+        gk_desc: "守门员训练重点在于反应能力、接球、出击和选位. 通过专项练习和实战模拟，培养守门员的技术能力和阅读比赛的能力。",
         def_title: "后卫",
         def_desc: "针对后卫的专项训练旨在提高选位、预判、对抗和出球能力。有针对性的练习有助于增强防守稳定性并加深对比赛战术的理解。",
         mid_title: "中场",
@@ -2327,7 +2327,7 @@ export const translations = {
       bazeille_desc: "我们的阿基坦（47）校区欢迎您来到位于洛特-加龙省中心的宁静绿意环境. 这里是您进行培训s理想场所，拥有设备齐全s可调节教室、供团体活动使用s运动场 以及 温馨s休闲空间.\n酒店式s校内住宿 和 餐饮为您提供全方位且安心s全包式体验。",
       bazeille_culture: "文化 与 风土",
       bazeille_culture_desc: "阿基坦校区以其热情友好 和 一流s体育设施而闻名，这些设施与当地生活完美融合。",
-      bazeille_infra_desc: "阿基坦校区以其现代建筑 和 联合办公空间而闻名。",
+      bazeille_infra_desc: "阿基坦校区以其现代 architecture 和 联合办公空间而闻名。",
       bazeille_full_desc: {
         title: "体育学习表现与卓越中心",
         intro: "我们的机构是一所卓越学府，在非凡的环境中体验学术和体育的成长。我们现代且完善的基础设施旨在为每位学生提供有利于成功、体育实践和日常福祉的环境。",
