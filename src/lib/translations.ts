@@ -274,7 +274,7 @@ export const translations = {
         },
         {
           year: "2024",
-          title: "YOUTH ELITE SPORTS ACADEMY\nOUVERTURE AU MULTISPORT\nAND À L'ASIE DU SUD-EST",
+          title: "YOUTH ELITE SPORTS ACADEMY\nOUVERTURE AU MULTISPORT\nET À L'ASIE DU SUD-EST",
           desc: "Création de notre propre marque \"YES Academy\".\nSignature de nouvelles écoles internationales.\nOuverture de la branche multisport.\nLancement de de notre Académie dans d'autres villes en Asie.\nInvitations au tournoi international de Shanghai des Centres de Formation :\n2025 - OM - U17 Nationaux\n2026 - Paris FC féminines - U16 / U17"
         }
       ]
@@ -289,7 +289,7 @@ export const translations = {
       staff_title: "Notre Staff",
       staff_desc: "Une équipe de professeurs agrégés et de coachs certifiés UEFA pour un encadrement d'exception.",
       success_rate: "Parcours scolaire qualitatif",
-      uefa_cert: "Certification Staff",
+      uefa_cert: "Staff Certification",
       discipline_title: "Discipline",
       discipline_desc: "La clé de l'excellence sur le terrain comme en classe.",
       solidarity_title: "Solidarité",
@@ -1654,7 +1654,7 @@ export const translations = {
       languages_excellence_title: "外语培训",
       languages_excellence_sub: "国际化开放是我们教学法的核心。",
       passport_world_title: "通往世界的通行证",
-      passport_world_desc: "在全球化的世界中，掌握多种语言是必要的. 在 ESEPF，我们从初中开始 offer 强化的语言路径。",
+      passport_world_desc: "在全球化的世界中，掌握多种语言是必要的. 在 ESEPF，我们 from 初中开始 offer 强化的语言路径。",
       efl_title: "英语第一语言 (EFL)",
       efl_desc: "为希望达到双语水平的学生 offer 强化计划，包括英语文学 和 历史课程。",
       cert_int_title: "国际认证",
@@ -1830,7 +1830,7 @@ export const translations = {
       year2_desc: "深化学术 和 体育技能的关键一年，同时充分融入机构生活。",
       year3_title: "第三年：九年级准备初中毕业考。",
       year3_desc: "强化准备 DNB 考试 并 为进入高中 offer 个性化指导。",
-      conclusion: "初中毕业后，学生将直接进入高中。",
+      conclusion: "初中毕业后，学生 will 直接进入高中。",
       autonomy_title: "自主性",
       autonomy_desc: "从小学习组织，以在双重项目中取得成功。",
       excellence_title: "卓越",
@@ -1867,7 +1867,7 @@ export const translations = {
         subtitle: "语言 和 文化方向",
         title_detail: "用所有语言表达自己",
         desc: "普通高中是一个为期三年的计划，旨在让高中生为高等教育做好准备. 它基于共同核心课程 和 专业选择。",
-        system_desc: "在法国，所有学生首先遵循普通 与 技术高一. 从高二开始， they 选择三个专业. 在高三，他们保留其中两个专业。",
+        system_desc: "在法国，所有学生首先遵循普通 与 技术高一. From 高二开始， they 选择三个专业. 在高三，他们保留其中两个专业。",
         specialties_title: "普通高中专业 与 目标",
         specialties: [
           { name: "外国语言、文学 与 文化 (LLCE)", desc: "培养先进的语言掌握能力 和 深厚的文化知识。" },
@@ -1912,7 +1912,7 @@ export const translations = {
         luxe_module_p3: "该模块 represent 了真正的机遇。",
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
-        level: "4级 (技术高中文凭)",
+        level: "4级 (技术高中文pint)",
         bts_desc: "管理 BTS 是两年的培训. In 团队 management、财务 和 营销等领域 offer 教学。",
         univ_desc: "本科是 3 年制大学培训，结合理论与实践. 它加强了管理 和 分析技能。",
         bts_list: ["会计管理", "管理支持", "商业运营", "谈判数字化", "中小企业管理", "IT 服务", "保险", "旅游"],
