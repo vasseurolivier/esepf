@@ -282,7 +282,7 @@ export const translations = {
         {
           year: "2021",
           title: "PARIS SAINT-GERMAIN\nFRANCHISE\nPSG ACADEMY SHANGHAI",
-          desc: "Contribution au développement de la marque PSG en Chine.\nSignature avec plusieurs écoles internationales de la ville.\nDéveloppement de notre Académie hors de Shanghai.\nPoursuite des tournées en Europe pour les sélections féminines de Shanghai : U16 Elite Filles & Pro féminines."
+          desc: "Contribution au développement de la marque PSG en Chine.\nSignature avec plusieurs écoles internationales de la ville.\nDéveloppement de our Académie hors de Shanghai.\nPoursuite des tournées en Europe pour les sélections féminines de Shanghai : U16 Elite Filles & Pro féminines."
         },
         {
           year: "2024",
@@ -473,7 +473,7 @@ export const translations = {
       prog_intro_3: "Nous mettons également un accent particulier sur le développement mental et humain des athlètes, en les formant à gérer les défis psychologiques du sport de haut niveau. L'esprit d'équipe, la discipline, la résilience et la gestion des émotions sont au cœur de notre approche. Chaque athlète bénéficie d'un encadrement qui lui permet de s'épanouir et de donner le meilleur de lui-même.",
       prog_intro_4: "Notre école donne à ses athlètes la chance d'atteindre leurs objectifs, de s'épanouir et, pour les meilleurs d'entre eux, d'aspirer à devenir des athlètes professionnels ou d'obtenir des bourses grâce à leurs performances sportives.",
       france_title: "FRANCE : TERRE DE FOOTBALL",
-      france_desc_full: "Au total, la France est le pays qui a fourni le plus grand nombre de joueurs pour la Coupe du Monde au 21e siècle, avec 216 participants nés sur son sol, loin devant le Brésil et ses 148 joueurs, pourtant souvent perçu comme le plus grand exportateur de talents. La France devance également largement l'Allemagne et l'Italie, tous deux champions du monde à quatre reprises.",
+      france_desc_full: "Au total, la France est le pays qui a fourni le plus grand nombre de joueurs pour la Coupe du Monde au 21e siècle, avec 216 participants nés sur son sol, loin devant le Brésil et ses 148 joueurs, pourtant souvent perçu comme le plus grand exportateur de talents. France aussi devance également largement l'Allemagne et l'Italie, tous deux champions du monde à quatre reprises.",
       france_examples: "Exemples : Mbappé, Zidane, Griezmann, Henry, Drogba, Platini, Varane, Kanté, Coman...",
       reconnaissance_title: "UNE FORMATION RECONNUE DANS LE MONDE",
       reconnaissance_p1: "La France et ses environs ne manquent certainement pas de talents, et cela n'est en rien dû au hasard, mais bien à la manière dont les jeunes joueurs sont détectés et formés dans le pays. Cette méthode, dont l'efficacité est reconnue dans le monde entier, est au cœur du succès du football français.",
@@ -526,6 +526,17 @@ export const translations = {
         item2: "Tests physiques",
         item3: "Evaluations & bilans",
         item4: "Programmes individualisés"
+      },
+      specialized_training: {
+        title: "SPÉCIALISATION PAR POSTE",
+        gk_title: "Gardiens de But",
+        gk_desc: "Les entraînements des gardiens de but se concentrent sur les réflexes, prises de balle, sorties et positionnement. Des exercices spécifiques et des mises en situation permettent de développer leurs compétences techniques et leur lecture du jeu.",
+        def_title: "Défenseurs",
+        def_desc: "Les entraînements spécifiques pour défenseurs visent à améliorer le placement, l'anticipation, les duels et les relances. Des exercices ciblés permettent de renforcer leur solidité défensive et leur compréhension tactique du jeu.",
+        mid_title: "Milieux de terrain",
+        mid_desc: "Les entraînements spécifiques pour milieux de terrain développent la vision de jeu, la maîtrise technique et la gestion des transitions. Ils incluent des exercices de passes, de déplacements et de prises de décision rapides pour renforcer leur rôle central.",
+        fwd_title: "Attaquants",
+        fwd_desc: "Les entraînements spécifiques pour attaquants se concentrent sur la finition, les déplacements dans les zones offensives et la prise de décision rapide. Ils incluent des exercices de tirs, de duels 1 contre 1 et de coordination pour maximiser leur efficacité devant le but."
       }
     },
     metiers_page: {
@@ -1297,6 +1308,17 @@ export const translations = {
         item2: "Physical Tests",
         item3: "Evaluations & Reports",
         item4: "Individualized Programs"
+      },
+      specialized_training: {
+        title: "POSITION SPECIALIZATION",
+        gk_title: "Goalkeepers",
+        gk_desc: "Goalkeeper training focuses on reflexes, ball handling, positioning, and decision-making. Specific exercises and game situations help develop technical skills and game reading.",
+        def_title: "Defenders",
+        def_desc: "Specific training for defenders aims to improve positioning, anticipation, duels, and distribution. Targeted exercises strengthen defensive solidity and tactical understanding.",
+        mid_title: "Midfielders",
+        mid_desc: "Midfielder training develops vision, technical mastery, and transition management. It includes passing, movement, and quick decision-making drills to reinforce their central role.",
+        fwd_title: "Forwards",
+        fwd_desc: "Forward training focuses on finishing, movement in offensive areas, and rapid decision-making. It includes shooting, 1v1 duels, and coordination drills to maximize goal efficiency."
       }
     },
     metiers_page: {
@@ -1624,7 +1646,7 @@ export const translations = {
       section_choices: "学习计划",
       first_name: "名字",
       last_name: "姓氏",
-      birth_date: "出生日期",
+      birth_date: "Date of Birth",
       nationality: "国籍",
       grade: "目前年级",
       email: "联系邮箱",
@@ -1694,7 +1716,7 @@ export const translations = {
       student_life_activities: "校园活动",
       student_life_activities_list: "戏剧、合唱、象棋俱乐部、编程。",
       student_life_sports: "体育运动",
-      student_life_sports_list: "橄榄球、体操、攀岩、游泳。",
+      student_life_sports_list: "Rugby、体操、攀岩、游泳。",
       journey_title: "学生发展蓝图",
       three_axes_mobile_title: "我们的卓越支柱",
       three_axes_mobile_languages_btn: "了解 FLE/EFL 课程"
@@ -1791,7 +1813,7 @@ export const translations = {
       hero_sub: "体验官方比赛的激情，释放潜能。",
       p1: "得益于我们与当地俱乐部的合作，我们的体育学习足球部门球员享有参加法国官方比赛的特权. 这种开放使他们能够参加公认的锦标赛，面对高水平球队，并体验结构化的竞争环境。",
       p2: "官方比赛每个周末举行，为年轻足球运动员 offer 持续的进步，并有机会面对法国足球的现实. 该机制有利于选拔、技能提升 和 进入高水平体系。",
-      p3: "教练 和 管理人员密切监控球员的准备情况，根据比赛要求调整训练计划. 目标是让每位球员在球场上充分表达自己，发挥潜能 并 建立雄心勃勃的道路，同时享受合适的学术支持。",
+      p3: "教练 和 管理人员密切监控球员的准备情况，根据比赛要求调整训练计划. 目标是让每位球员 in 球场上充分表达自己，发挥潜能 并 建立雄心勃勃的道路，同时享受合适的学术支持。",
       card_clubs: "特权访问",
       card_clubs_desc: "公认的锦标赛与高水平球队。",
       card_weekend: "周末比赛",
@@ -2048,7 +2070,7 @@ export const translations = {
       mon_ven_desc: "学术课后的技战术训练（16:30 - 18:30）。",
       weekend: "周末",
       weekend_desc: "参加官方 FFF 锦标赛。",
-      french_method_title: "法国足球教学法",
+      french_method_title: "法国足球青训教学法",
       french_method_p1: "我们借鉴了享誉全球的法国足球青训教学法，为您提供一套结构严谨且全面的发展计划，旨在全方位支持球员的成长与进步。",
       french_method_p2: "该计划基于多样化的训练课，融合了根据球员年龄、水平和具体需求量身定制的技术、战术及体能练习. 定期的测试将用于评估其进步情况，而比赛、特定挑战和个人互动则提供了持续调整与优化的机会。",
       french_method_p3: "除球场表现外，该计划还特别注重参与者的个人素养和情感发育. 通过精心设计的心理社会挑战，球员们将学习团队精神、纪律、韧性、情绪管理能力以及奉献精神。",
@@ -2075,6 +2097,17 @@ export const translations = {
         item2: "体能测试",
         item3: "评估与总结",
         item4: "个性化计划"
+      },
+      specialized_training: {
+        title: "按位置进行的专项训练",
+        gk_title: "守门员",
+        gk_desc: "守门员训练重点在于反应能力、接球、出击和选位。通过专项练习和实战模拟，培养守门员的技术能力和阅读比赛的能力。",
+        def_title: "后卫",
+        def_desc: "针对后卫的专项训练旨在提高选位、预判、对抗和出球能力。有针对性的练习有助于增强防守稳定性并加深对比赛战术的理解。",
+        mid_title: "中场",
+        mid_desc: "中场球员的专项训练侧重于培养比赛视野、技术掌控和攻防转换管理. 训练内容包括传球、跑位和快速决策练习，以强化其核心枢纽作用。",
+        fwd_title: "前锋",
+        fwd_desc: "前锋专项训练集中于门前终结、进攻区域跑位和快速决策. 训练包括射门练习、1对1对抗和协调性训练，以最大限度地提高进攻效率。"
       }
     },
     metiers_page: {

@@ -44,6 +44,13 @@ export default function ProgrammeFootballPage() {
     { icon: <Target size={48} />, title: t.football_pages.pro_training.item5_title, desc: t.football_pages.pro_training.item5_desc },
   ];
 
+  const positions = [
+    { id: 'training_gk', title: t.football_pages.specialized_training.gk_title, desc: t.football_pages.specialized_training.gk_desc },
+    { id: 'training_def', title: t.football_pages.specialized_training.def_title, desc: t.football_pages.specialized_training.def_desc },
+    { id: 'training_mid', title: t.football_pages.specialized_training.mid_title, desc: t.football_pages.specialized_training.mid_desc },
+    { id: 'training_fwd', title: t.football_pages.specialized_training.fwd_title, desc: t.football_pages.specialized_training.fwd_desc },
+  ];
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -250,7 +257,7 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Individualized Tracking Section - MOVED HERE */}
+        {/* Individualized Tracking Section */}
         <section className="bg-[#2c3e50] text-white overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             {/* Left Content */}
@@ -293,6 +300,39 @@ export default function ProgrammeFootballPage() {
               {trackingMainImg && (
                 <Image src={trackingMainImg} alt="Tracking Support" fill className="object-cover" />
               )}
+            </div>
+          </div>
+        </section>
+
+        {/* Position Specialization Section */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <ScrollReveal className="text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-headline font-bold text-black uppercase tracking-tighter mb-4">
+                {t.football_pages.specialized_training.title}
+              </h2>
+              <div className="w-24 h-1 bg-secondary mx-auto rounded-full" />
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20 max-w-6xl mx-auto">
+              {positions.map((pos, i) => (
+                <ScrollReveal key={i} delay={i * 150} className="flex flex-col items-center text-center">
+                  <div className="relative w-48 h-48 mb-8 rounded-full overflow-hidden border-4 border-muted shadow-2xl bg-black group">
+                    {settings?.images?.[pos.id] && (
+                      <Image 
+                        src={settings.images[pos.id]} 
+                        alt={pos.title} 
+                        fill 
+                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                      />
+                    )}
+                  </div>
+                  <h3 className="text-2xl font-headline font-bold text-primary uppercase tracking-tight mb-6">{pos.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
+                    {pos.desc}
+                  </p>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
         </section>

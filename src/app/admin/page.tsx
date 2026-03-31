@@ -120,6 +120,10 @@ const IMAGE_CATEGORIES = [
       { id: 'tracking_img_2', label: 'Suivi - Cercle 2', location: 'Section Suivi Individualisé' },
       { id: 'tracking_img_3', label: 'Suivi - Cercle 3', location: 'Section Suivi Individualisé' },
       { id: 'tracking_img_4', label: 'Suivi - Cercle 4', location: 'Section Suivi Individualisé' },
+      { id: 'training_gk', label: 'Spé. - Gardien', location: 'Section Spécialisation Poste' },
+      { id: 'training_def', label: 'Spé. - Défenseur', location: 'Section Spécialisation Poste' },
+      { id: 'training_mid', label: 'Spé. - Milieu', location: 'Section Spécialisation Poste' },
+      { id: 'training_fwd', label: 'Spé. - Attaquant', location: 'Section Spécialisation Poste' },
     ]
   },
   {
