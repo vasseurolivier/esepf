@@ -1,10 +1,8 @@
-
 "use client";
 
 import React, { useState } from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { Button } from '@/components/ui/button';
@@ -24,15 +22,15 @@ import {
 export default function ContactPage() {
   const { t } = useTranslation();
   const { toast } = useToast();
-  const [isSubmitting, setIsSaving] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSaving(true);
+    setIsSubmitting(true);
     
     // Simulation d'envoi
     setTimeout(() => {
-      setIsSaving(false);
+      setIsSubmitting(false);
       toast({
         title: t.contact_page.form_success,
         description: t.contact_page.form_success,
@@ -60,7 +58,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         
@@ -212,6 +210,6 @@ export default function ContactPage() {
 
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

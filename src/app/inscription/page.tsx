@@ -1,10 +1,8 @@
-
 "use client";
 
 import React, { useState } from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { Button } from '@/components/ui/button';
@@ -94,7 +92,7 @@ export default function RegistrationPage() {
 
   if (isSuccess) {
     return (
-      <FirebaseClientProvider>
+      <>
         <Header />
         <main className="min-h-screen bg-muted/30 flex items-center justify-center p-4">
           <ScrollReveal>
@@ -120,18 +118,18 @@ export default function RegistrationPage() {
           </ScrollReveal>
         </main>
         <Footer />
-      </FirebaseClientProvider>
+      </>
     );
   }
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-muted/20">
         
         <section className="bg-primary text-white py-20 relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10 translate-x-1/4 -translate-y-1/4">
-            < GraduationCap size={600} />
+            <GraduationCap size={600} />
           </div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <ScrollReveal>
@@ -144,7 +142,7 @@ export default function RegistrationPage() {
           </div>
         </section>
 
-        {/* Joining Steps Section - Timeline Version */}
+        {/* Joining Steps Section */}
         <section className="py-24 bg-white overflow-hidden">
           <div className="container mx-auto px-4">
             <ScrollReveal className="text-center mb-24">
@@ -155,19 +153,16 @@ export default function RegistrationPage() {
             </ScrollReveal>
 
             <div className="relative max-w-7xl mx-auto">
-              {/* Desktop Connecting Line */}
               <div className="hidden lg:block absolute top-[45px] left-0 w-full h-0.5 bg-muted z-0" />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-8 relative z-10">
                 {steps.map((step, idx) => (
                   <ScrollReveal key={step.id} delay={idx * 100} className="relative">
                     <div className="flex flex-col items-center lg:items-start group">
-                      {/* Step Circle */}
                       <div className={`w-24 h-24 rounded-full border-4 ${step.color} bg-white flex items-center justify-center mb-8 shadow-xl transition-all duration-500 group-hover:scale-110 relative z-20`}>
                         <span className="text-3xl font-headline font-bold text-primary italic">{step.id}</span>
                       </div>
 
-                      {/* Content */}
                       <div className="text-center lg:text-left space-y-3 px-4 lg:px-0">
                         <h3 className="text-xs font-bold text-primary uppercase tracking-[0.2em] leading-tight min-h-[40px]">
                           {step.title}
@@ -181,16 +176,6 @@ export default function RegistrationPage() {
                   </ScrollReveal>
                 ))}
               </div>
-            </div>
-
-            <div className="mt-24 text-center">
-              <ScrollReveal>
-                <div className="inline-flex items-center gap-4 text-primary font-headline font-bold text-2xl md:text-4xl italic opacity-20">
-                  <span>Admissions</span>
-                  <div className="w-12 md:w-24 h-px bg-primary" />
-                  <span>Excellence</span>
-                </div>
-              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -276,7 +261,7 @@ export default function RegistrationPage() {
                   </Card>
                 </ScrollReveal>
 
-                {/* Project Info */}
+                {/* Choices Info */}
                 <ScrollReveal delay={200}>
                   <Card className="rounded-[2.5rem] border-none shadow-xl overflow-hidden bg-white">
                     <CardHeader className="bg-muted/30 border-b border-muted p-8">
@@ -343,7 +328,6 @@ export default function RegistrationPage() {
                   </Card>
                 </ScrollReveal>
 
-                {/* Submit Button */}
                 <div className="sticky bottom-8 z-50 pt-12">
                   <Button 
                     type="submit"
@@ -369,6 +353,6 @@ export default function RegistrationPage() {
 
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }
