@@ -12,6 +12,13 @@ import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function CampusBazeillePage() {
   const { t } = useTranslation();
@@ -29,6 +36,9 @@ export default function CampusBazeillePage() {
     settings?.images?.bazeille_infra_1 || settings?.images?.bazeilles_infra_1,
     settings?.images?.bazeille_infra_2 || settings?.images?.bazeilles_infra_2,
     settings?.images?.bazeille_infra_3 || settings?.images?.bazeilles_infra_3,
+    settings?.images?.bazeille_infra_4,
+    settings?.images?.bazeille_infra_5,
+    settings?.images?.bazeille_infra_6,
   ].filter(Boolean) as string[];
 
   return (
@@ -38,7 +48,7 @@ export default function CampusBazeillePage() {
         {heroImage && (
           <Image 
             src={heroImage}
-            alt="Campus Sainte-Bazeille (BORDEAUX)"
+            alt="Campus Aquitaine (Bordeaux)"
             fill
             className="object-cover opacity-60"
             priority
@@ -75,7 +85,7 @@ export default function CampusBazeillePage() {
                   <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-white border border-muted">
                     <Image 
                       src={mapImage}
-                      alt="Localisation Sainte-Bazeille (BORDEAUX)"
+                      alt="Localisation Campus Aquitaine (Bordeaux)"
                       fill
                       className="object-cover"
                       sizes="(max-width: 1024px) 100vw, 50vw"
@@ -103,12 +113,32 @@ export default function CampusBazeillePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-            {infraImages.map((img, i) => (
-              <ScrollReveal key={i} delay={i * 100} className="relative group h-64 rounded-3xl overflow-hidden bg-black shadow-lg">
-                <Image src={img} alt="Campus Infrastructure" fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
-              </ScrollReveal>
-            ))}
+          <div className="max-w-6xl mx-auto mb-24 px-12">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {infraImages.map((img, i) => (
+                  <CarouselItem key={i} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <ScrollReveal delay={i * 100} className="relative group rounded-[2rem] overflow-hidden bg-black shadow-xl aspect-video h-full">
+                      <Image 
+                        src={img} 
+                        alt={`Infrastructure ${i+1}`} 
+                        fill 
+                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                        sizes="(max-width: 768px) 100vw, 33vw" 
+                      />
+                    </ScrollReveal>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-[-3rem] md:left-[-4rem] h-12 w-12 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white" />
+              <CarouselNext className="right-[-3rem] md:right-[-4rem] h-12 w-12 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white" />
+            </Carousel>
           </div>
 
           <div className="bg-primary rounded-[3rem] p-12 text-white shadow-2xl relative">

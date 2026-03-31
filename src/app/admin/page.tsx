@@ -42,16 +42,27 @@ const IMAGE_CATEGORIES = [
       { id: 'evron_infra_1', label: 'Pays de la Loire Infra 1', location: 'Galerie infrastructures' },
       { id: 'evron_infra_2', label: 'Pays de la Loire Infra 2', location: 'Galerie infrastructures' },
       { id: 'evron_infra_3', label: 'Pays de la Loire Infra 3', location: 'Galerie infrastructures' },
+      { id: 'evron_infra_4', label: 'Pays de la Loire Infra 4', location: 'Galerie infrastructures' },
+      { id: 'evron_infra_5', label: 'Pays de la Loire Infra 5', location: 'Galerie infrastructures' },
+      { id: 'evron_infra_6', label: 'Pays de la Loire Infra 6', location: 'Galerie infrastructures' },
+      
       { id: 'campus_bazeille', label: 'Hero Aquitaine (BORDEAUX)', location: 'Haut de page Aquitaine' },
       { id: 'bazeille_map', label: 'Carte Aquitaine (BORDEAUX)', location: 'Section localisation' },
       { id: 'bazeille_infra_1', label: 'Aquitaine Infra 1', location: 'Galerie infrastructures' },
       { id: 'bazeille_infra_2', label: 'Aquitaine Infra 2', location: 'Galerie infrastructures' },
       { id: 'bazeille_infra_3', label: 'Aquitaine Infra 3', location: 'Galerie infrastructures' },
+      { id: 'bazeille_infra_4', label: 'Aquitaine Infra 4', location: 'Galerie infrastructures' },
+      { id: 'bazeille_infra_5', label: 'Aquitaine Infra 5', location: 'Galerie infrastructures' },
+      { id: 'bazeille_infra_6', label: 'Aquitaine Infra 6', location: 'Galerie infrastructures' },
+      
       { id: 'campus_tulle', label: 'Hero Provence (AIX-EN-PROVENCE)', location: 'Haut de page Provence' },
       { id: 'tulle_map', label: 'Carte Provence (AIX-EN-PROVENCE)', location: 'Section localisation' },
       { id: 'tulle_infra_1', label: 'Provence Infra 1', location: 'Galerie infrastructures' },
       { id: 'tulle_infra_2', label: 'Provence Infra 2', location: 'Galerie infrastructures' },
       { id: 'tulle_infra_3', label: 'Provence Infra 3', location: 'Galerie infrastructures' },
+      { id: 'tulle_infra_4', label: 'Provence Infra 4', location: 'Galerie infrastructures' },
+      { id: 'tulle_infra_5', label: 'Provence Infra 5', location: 'Galerie infrastructures' },
+      { id: 'tulle_infra_6', label: 'Provence Infra 6', location: 'Galerie infrastructures' },
     ]
   },
   {
@@ -243,9 +254,9 @@ export default function AdminPage() {
 
   const getCampusLabel = (choice: string) => {
     switch (choice) {
-      case 'evron': return 'Pays de la Loire (LE MANS)';
-      case 'bazeille': return 'Aquitaine (BORDEAUX)';
-      case 'tulle': return 'Provence (AIX-EN-PROVENCE)';
+      case 'evron': return 'Campus Pays de la Loire (Le Mans)';
+      case 'bazeille': return 'Campus Aquitaine (Bordeaux)';
+      case 'tulle': return 'Campus Provence (Aix en Provence)';
       default: return choice;
     }
   };
