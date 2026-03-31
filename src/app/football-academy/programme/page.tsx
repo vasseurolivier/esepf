@@ -72,7 +72,7 @@ export default function ProgrammeFootballPage() {
               <h1 className="text-5xl md:text-8xl font-headline font-bold uppercase mb-12 tracking-tighter leading-none">
                 {t.football_pages.prog_title}
               </h1>
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex wrap justify-center gap-4">
                 <button onClick={() => scrollToSection('fr-section')} className="bg-black/50 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">Football FR</button>
                 <button onClick={() => scrollToSection('method-section')} className="bg-black/50 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.method_title}</button>
                 <button onClick={() => scrollToSection('coachs-section')} className="bg-black/50 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.coaches_title}</button>
@@ -97,53 +97,6 @@ export default function ProgrammeFootballPage() {
                 "{t.football_pages.prog_intro_4}"
               </div>
             </ScrollReveal>
-          </div>
-        </section>
-
-        {/* Individualized Tracking Section */}
-        <section className="bg-[#2c3e50] text-white overflow-hidden">
-          <div className="flex flex-col lg:flex-row">
-            {/* Left Content */}
-            <div className="lg:w-[60%] p-8 md:p-16 lg:p-24 flex flex-col justify-center">
-              <ScrollReveal>
-                <h2 className="text-3xl md:text-5xl font-headline font-bold mb-4">
-                  {t.football_pages.individual_tracking.title}
-                </h2>
-                <p className="text-xl italic mb-12 opacity-80">
-                  {t.football_pages.individual_tracking.subtitle}
-                </p>
-                <p className="text-lg leading-relaxed mb-16 opacity-90 max-w-3xl">
-                  {t.football_pages.individual_tracking.desc}
-                </p>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                  {[
-                    { id: 'tracking_img_1', label: t.football_pages.individual_tracking.item1 },
-                    { id: 'tracking_img_2', label: t.football_pages.individual_tracking.item2 },
-                    { id: 'tracking_img_3', label: t.football_pages.individual_tracking.item3 },
-                    { id: 'tracking_img_4', label: t.football_pages.individual_tracking.item4 },
-                  ].map((item, i) => (
-                    <div key={i} className="flex flex-col items-center group cursor-pointer">
-                      <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white/20 group-hover:border-secondary transition-all duration-500 mb-4 shadow-xl bg-black">
-                        {settings?.images?.[item.id] && (
-                          <Image src={settings.images[item.id]} alt={item.label} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                        )}
-                      </div>
-                      <span className="text-xs md:text-sm font-bold uppercase tracking-wider text-center leading-tight">
-                        {item.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </ScrollReveal>
-            </div>
-
-            {/* Right Image */}
-            <div className="lg:w-[40%] relative min-h-[400px] lg:min-h-full bg-black">
-              {trackingMainImg && (
-                <Image src={trackingMainImg} alt="Tracking Support" fill className="object-cover" />
-              )}
-            </div>
           </div>
         </section>
 
@@ -266,7 +219,7 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Entraîne-toi comme un professionnel Section - MOVED HERE */}
+        {/* Entraîne-toi comme un professionnel Section */}
         <section className="py-24 bg-[#0a192f] text-white overflow-hidden">
           <div className="container mx-auto px-4">
             <ScrollReveal className="text-center mb-20">
@@ -293,6 +246,53 @@ export default function ProgrammeFootballPage() {
                   </p>
                 </ScrollReveal>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Individualized Tracking Section - MOVED HERE */}
+        <section className="bg-[#2c3e50] text-white overflow-hidden">
+          <div className="flex flex-col lg:flex-row">
+            {/* Left Content */}
+            <div className="lg:w-[60%] p-8 md:p-16 lg:p-24 flex flex-col justify-center">
+              <ScrollReveal>
+                <h2 className="text-3xl md:text-5xl font-headline font-bold mb-4">
+                  {t.football_pages.individual_tracking.title}
+                </h2>
+                <p className="text-xl italic mb-12 opacity-80">
+                  {t.football_pages.individual_tracking.subtitle}
+                </p>
+                <p className="text-lg leading-relaxed mb-16 opacity-90 max-w-3xl">
+                  {t.football_pages.individual_tracking.desc}
+                </p>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                  {[
+                    { id: 'tracking_img_1', label: t.football_pages.individual_tracking.item1 },
+                    { id: 'tracking_img_2', label: t.football_pages.individual_tracking.item2 },
+                    { id: 'tracking_img_3', label: t.football_pages.individual_tracking.item3 },
+                    { id: 'tracking_img_4', label: t.football_pages.individual_tracking.item4 },
+                  ].map((item, i) => (
+                    <div key={i} className="flex flex-col items-center group cursor-pointer">
+                      <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white/20 group-hover:border-secondary transition-all duration-500 mb-4 shadow-xl bg-black">
+                        {settings?.images?.[item.id] && (
+                          <Image src={settings.images[item.id]} alt={item.label} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                        )}
+                      </div>
+                      <span className="text-xs md:text-sm font-bold uppercase tracking-wider text-center leading-tight">
+                        {item.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* Right Image */}
+            <div className="lg:w-[40%] relative min-h-[400px] lg:min-h-full bg-black">
+              {trackingMainImg && (
+                <Image src={trackingMainImg} alt="Tracking Support" fill className="object-cover" />
+              )}
             </div>
           </div>
         </section>
