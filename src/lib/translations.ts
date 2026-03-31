@@ -47,7 +47,7 @@ export const translations = {
       campus_label: "Campus",
       duration: "Durée",
       level: "Niveau",
-      diploma: "Diplôme",
+      diploma: "Diplômes",
       higher_ed: "ÉTUDES SUPÉRIEURES",
       jobs_prefix: "MÉTIERS",
       allophone_mention: "4 ans pour les élèves allophones (classe d'intégration incluse)",
@@ -186,7 +186,9 @@ export const translations = {
     },
     campus_locations: {
       evron: "Pays de la Loire (LE MANS)",
+      evron_dept: "Évron Mayenne (53)",
       bazeille: "Aquitaine (BORDEAUX)",
+      bazeille_dept: "Sainte-Bazeille Lot-et-Garonne (47)",
       tulle: "Provence (AIX-EN-PROVENCE)"
     },
     formations: {
@@ -369,7 +371,7 @@ export const translations = {
       diploma_title: "Diplôme national français",
       diploma_text_1: "Nous préparons nos élèves aux diplômes nationaux français (DNB, Baccalauréat).",
       diploma_text_2: "De plus, ils bénéficient de la reconnaissance du ministère chinois de l'Éducation.",
-      bottom_title: "Diplôme",
+      bottom_title: "Diplômes",
       brevet_title: "Brevet des Collèges",
       bac_title: "Baccalauréat",
       bac_gen_label: "Baccalauréat Général",
@@ -414,7 +416,7 @@ export const translations = {
       autonomy_title: "Autonomie",
       autonomy_desc: "Apprendre à s'organiser dès le plus jeune âge pour réussir son double projet.",
       excellence_title: "Excellence",
-      excellence_desc: "Un programme académique validé par l'Éducation Nationale.",
+      excellence_desc: "An programme académique validé par l'Éducation Nationale.",
       fulfillment_title: "Épanouissement",
       fulfillment_desc: "Concilier passion sportive et amitiés durables dans un cadre sécurisant."
     },
@@ -916,7 +918,7 @@ export const translations = {
       campus_label: "Campus",
       duration: "Duration",
       level: "Level",
-      diploma: "Diploma",
+      diploma: "Diplomas",
       higher_ed: "HIGHER EDUCATION",
       jobs_prefix: "CAREERS",
       allophone_mention: "4 years for allophone students (integration class included)",
@@ -1055,7 +1057,9 @@ export const translations = {
     },
     campus_locations: {
       evron: "Pays de la Loire (LE MANS)",
+      evron_dept: "Évron Mayenne (53)",
       bazeille: "Aquitaine (BORDEAUX)",
+      bazeille_dept: "Sainte-Bazeille Lot-et-Garonne (47)",
       tulle: "Provence (AIX-EN-PROVENCE)"
     },
     formations: {
@@ -1238,7 +1242,7 @@ export const translations = {
       diploma_title: "French National Diploma",
       diploma_text_1: "We prepare students for national diplomas (DNB, Baccalaureate).",
       diploma_text_2: "They also benefit from Chinese Ministry recognition.",
-      bottom_title: "Diploma",
+      bottom_title: "Diplomas",
       brevet_title: "Middle School Diploma",
       bac_title: "Baccalaureate",
       bac_gen_label: "General Baccalaureate",
@@ -1924,7 +1928,9 @@ export const translations = {
     },
     campus_locations: {
       evron: "卢瓦尔河地区 (LE MANS)",
+      evron_dept: "Évron Mayenne (53)",
       bazeille: "阿基坦 (BORDEAUX)",
+      bazeille_dept: "Sainte-Bazeille Lot-et-Garonne (47)",
       tulle: "普罗旺斯 (AIX-EN-PROVENCE)"
     },
     formations: {
@@ -2158,7 +2164,7 @@ export const translations = {
     },
     lycee_page: {
       title: "高中毕业证书",
-      intro_p1: "我们高中 offer 多样化的课程，适应每个学生的目标. It offer 两个主要方向：普通高中和 STMG 技术高中。",
+      intro_p1: "我们高中 offer 多样化的课程，适应每个 student 的目标. It offer 两个主要方向：普通高中和 STMG 技术高中。",
       intro_p2: "每个项目都旨在让学生获得扎实的技能，并为进入高等教育 或 职业世界做好准备。",
       intro_p3: "普通高中培养分析能力 和 通识文化，STMG 高中为管理、商业 和 经济研究做准备。",
       intro_p4: "我们 offer 个性化支持 和 定期监测，以确保每个 student in 所选道路上取得成功。",
@@ -2268,7 +2274,7 @@ export const translations = {
       axes_phys: "体能",
       axes_phys_desc: "运动机能的开发以科学严谨的方式进行。通过针对不同年龄段量身定制的体能训练计划，我们打造出力量强、速度快、耐力持久的运动员。预防伤病、爆发力以及恢复的优化是我们监测的核心，以确保在最高水平上实现可持续的竞技表现。",
       axes_ment: "心理",
-      axes_ment_desc: "我们的训练方法不断挑战球员的极限，迫使他们调动心理资源。性格力量是影响表现的关键之一，我们设计了许多练习让球员锻炼这种特质（1对1、人数劣势比赛、高强度体能训练、肌肉强化、高标准要求等）。鉴于职业足球需要强大的心理素质，球员从小培养这种素质至关重要。",
+      axes_ment_desc: "我们的训练方法不断挑战球员的极限，迫使他们调动心理资源。性格力量是影响表现的关键之一，我们 design 了许多练习让球员工作这种特质。",
       axes_social: "社会",
       axes_social_school_title: "学业跟踪",
       axes_social_school_desc: "一不能想象一个没有教育的学院。足球是一项需要智慧的运动，这就是为什么学业教育项目是强制性的，球员必须参与才能留在学院。",
