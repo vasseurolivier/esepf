@@ -115,6 +115,11 @@ const IMAGE_CATEGORIES = [
       { id: 'support_mental', label: 'Photo Mental', location: 'Trombinoscope Santé' },
       { id: 'support_medecin', label: 'Photo Médecin', location: 'Trombinoscope Santé' },
       { id: 'support_physique', label: 'Photo Physio', location: 'Trombinoscope Santé' },
+      { id: 'tracking_main_img', label: 'Suivi - Photo Droite', location: 'Section Suivi Individualisé' },
+      { id: 'tracking_img_1', label: 'Suivi - Cercle 1', location: 'Section Suivi Individualisé' },
+      { id: 'tracking_img_2', label: 'Suivi - Cercle 2', location: 'Section Suivi Individualisé' },
+      { id: 'tracking_img_3', label: 'Suivi - Cercle 3', location: 'Section Suivi Individualisé' },
+      { id: 'tracking_img_4', label: 'Suivi - Cercle 4', location: 'Section Suivi Individualisé' },
     ]
   },
   {

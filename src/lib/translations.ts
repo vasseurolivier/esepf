@@ -517,6 +517,15 @@ export const translations = {
         item4_desc: "Vitesse, force, explosivité, travail mental...",
         item5_title: "Entraînements Spécialisés",
         item5_desc: "Spécifique par poste"
+      },
+      individual_tracking: {
+        title: "Un suivi Individualisé du joueur",
+        subtitle: "Le joueur au coeur de la formation",
+        desc: "Chaque joueur bénéficie d’un suivi individualisé tout au long de sa formation. De nombreux tests techniques et physiques sont régulièrement réalisés, accompagnés d’évaluations détaillées. Ces analyses permettent d’établir des programmes adaptés aux besoins spécifiques de chaque joueur, garantissant une progression optimale et personnalisée.",
+        item1: "Tests techniques",
+        item2: "Tests physiques",
+        item3: "Evaluations & bilans",
+        item4: "Programmes individualisés"
       }
     },
     metiers_page: {
@@ -1279,6 +1288,15 @@ export const translations = {
         item4_desc: "Speed, strength, explosiveness, mental work...",
         item5_title: "Specialized Training",
         item5_desc: "Position-specific training"
+      },
+      individual_tracking: {
+        title: "Individualized Player Tracking",
+        subtitle: "The player at the heart of training",
+        desc: "Each player benefits from individualized follow-up throughout their training. Numerous technical and physical tests are regularly carried out, accompanied by detailed evaluations. These analyses make it possible to establish programs adapted to the specific needs of each player, guaranteeing optimal and personalized progress.",
+        item1: "Technical Tests",
+        item2: "Physical Tests",
+        item3: "Evaluations & Reports",
+        item4: "Individualized Programs"
       }
     },
     metiers_page: {
@@ -1746,7 +1764,7 @@ export const translations = {
       college: {
         title: "初中部",
         subtitle: "11 - 15 岁",
-        desc: "卓越的学术教育。",
+        desc: "卓越的学术 education。",
         f1: "个性化跟踪",
         f2: "双语项目",
         f3: "精英体育学习"
@@ -1951,11 +1969,11 @@ export const translations = {
         profile_list: ["初中毕业生进入高一", "高一 或 高二学生进入高二"],
         qualities_title: "所需素质",
         qualities_list: [
-          "对外语 和 外国文化的热情。",
-          "良好的表达能力。",
-          "好奇心 和 开放心态。",
-          "完善语言技能 host 的意愿。",
-          "独立工作能力。"
+          "Passion for languages and foreign culture.",
+          "Writing and oral ease.",
+          "Curiosity and open-mindedness.",
+          "Willingness to perfect linguistic skills.",
+          "Ability to work independently."
         ],
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
@@ -2048,6 +2066,15 @@ export const translations = {
         item4_desc: "速度、力量、爆发力、心理训练...",
         item5_title: "专项训练",
         item5_desc: "针对特定位置的训练"
+      },
+      individual_tracking: {
+        title: "个人化球员跟踪",
+        subtitle: "以球员为核心的培训",
+        desc: "每位球员在整个培训过程中都受益于个人化的跟踪. 我们定期进行多次技术和体能测试，并提供详细的评估. 这些分析使我们能够建立适应每位球员特定需求的计划，确保护最佳且个性化的进步。",
+        item1: "技术测试",
+        item2: "体能测试",
+        item3: "评估与总结",
+        item4: "个性化计划"
       }
     },
     metiers_page: {
@@ -2097,7 +2124,7 @@ export const translations = {
     },
     reseau_page: {
       title: "俱乐部网络展示才华",
-      p1: "凭借 we 建立的网络，我们为球员 offer 独特机会。",
+      p1: "凭借 we 建立的网络，我们 for 球员 offer 独特机会。",
       subtitle: " offer 机会的俱乐部网络..."
     },
     journey_page: {
@@ -2177,7 +2204,7 @@ export const translations = {
         title: "体育学习表现与卓越中心",
         intro: "我们的机构是一所卓越学府，在非凡的环境中体验学术和体育的成长。我们现代且完善的基础设施旨在为每位学生提供有利于成功、体育实践和日常福祉的环境。",
         housing_title: "住宿与校园生活",
-        housing_desc: "我们宽敞安全的寄宿学校 offer 友好且有监管的生活环境. 每间客房的设计都旨在保证舒适与宁静，从而促进专注和休息。",
+        housing_desc: "我们宽敞安全的寄宿学校 offer 友好且有监管的生活 environment. 每间客房的设计都旨在保证舒适与宁静，从而促进专注和休息。",
         dining_title: "餐饮与休闲",
         dining_p1: "明亮宜人的餐厅提供均衡多样的饮食。",
         dining_p2: "咖啡厅是休息时间见面和分享的理想场所。",
