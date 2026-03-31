@@ -100,7 +100,7 @@ export const translations = {
     },
     axes: {
       scolarite: "SCOLARITÉ",
-      scolarite_desc: "Notre sport-études offre un cadre scolaire exigeant qui permet aux élèves de concilier projet sportif ambitieux et réussite académique.\nAu collège, l'accent est mis sur l'acquisition des fondamentaux, le suivi personnalisé et l'organisation de travail pour apprendre à gérer à la fois les cours et les entraînements.\nAu lycée, la scolarité s'oriente vers la préparation du baccalauréat, avec des exigences renforcées, un accompagnement méthodologique et une aide à l'orientation supérieure.\nL'objectif est de former des élèves autonomes, curieux et capables de s'épanouir autant sur le terrain qu'en classe.",
+      scolarite_desc: "Notre sport-études offre un cadre scolaire qui permet aux élèves de concilier projet sportif ambitieux et réussite académique.\nAu collège, l'accent est mis sur l'acquisition des fondamentaux, le suivi personnalisé et l'organisation de travail pour apprendre à gérer à la fois les cours et les entraînements.\nAu lycée, la scolarité s'oriente vers la préparation du baccalauréat, avec un accompagnement méthodologique et une aide à l'orientation supérieure.\nL'objectif est de former des élèves autonomes, curieux et capables de s'épanouir autant sur le terrain qu'en classe.",
       college_link: "Collège (11 ans - 15 ans)",
       lycee_link: "Lycée (15 ans - 18 ans)",
       academy_title: "FOOTBALL ACADEMY",
@@ -269,7 +269,7 @@ export const translations = {
         },
         {
           year: "2021",
-          title: "FRANCHISE\nPARIS SAINT-GERMAIN\nPSG ACADEMY SHANGHAI",
+          title: "PARIS SAINT-GERMAIN\nFRANCHISE\nPSG ACADEMY SHANGHAI",
           desc: "Contribution au développement de la marque PSG en Chine.\nSignature avec plusieurs écoles internationales de la ville.\nDéveloppement de notre Académie hors de Shanghai.\nPoursuite des tournées en Europe pour les sélections féminines de Shanghai : U16 Elite Filles & Pro féminines."
         },
         {
@@ -359,13 +359,13 @@ export const translations = {
       autonomy_title: "Autonomie",
       autonomy_desc: "Apprendre à s'organiser dès le plus jeune âge pour réussir son double projet.",
       excellence_title: "Excellence",
-      excellence_desc: "Un programme académique exigeant validé par l'Éducation Nationale.",
+      excellence_desc: "Un programme académique validé par l'Éducation Nationale.",
       fulfillment_title: "Épanouissement",
       fulfillment_desc: "Concilier passion sportive et amitiés durables dans un cadre sécurisant."
     },
     lycee_page: {
       title: "BACCALAUREATS",
-      intro_p1: "Notre lycée propose un parcours exigeant et diversifié, adapté aux aspirations et projets de chaque élève. Il offre deux filières principales : le baccalauréat général et le baccalauréat technologique STMG (Sciences et Technologies du Management et de la Gestion).",
+      intro_p1: "Notre lycée propose un parcours diversifié, adapté aux aspirations et projets de chaque élève. Il offre deux filières principales : le baccalauréat général et le baccalauréat technologique STMG (Sciences et Technologies du Management et de la Gestion).",
       intro_p2: "Chaque programme est conçu pour permettre aux élèves d’acquérir des compétences solides et de préparer leur orientation vers l’enseignement supérieur ou le monde professionnel.",
       intro_p3: "Le bac général développe l’esprit d’analyse et la culture générale, tandis que le bac STMG prépare à des études en gestion, commerce et économie.",
       intro_p4: "Un accompagnement personnalisé et un suivi régulier sont assurés pour garantir la réussite de chaque élève dans sa voie choisie.",
@@ -433,7 +433,7 @@ export const translations = {
         outro: "Il ouvre la voie à des études supérieures telles que les BTS, BUT, licences ou écoles de commerce, et mène à des carrières dans les domaines de la gestion, du marketing, des ressources humaines ou de la finance.",
         luxe_module_title: "Un Module Luxe en Hôtellerie et Restauration pour nos STMG",
         luxe_module_p1: "Dans un monde où l’hôtellerie et la restauration de luxe sont des secteurs en pleine expansion, il est essentiel de préparer nos élèves aux exigences de cette industrie prestigieuse. C’est pourquoi notre Baccalauréat Technologique STMG inclura un module exclusif dédié à l’hôtellerie et à la restauration haut de gamme.",
-        luxe_module_p2: "Ce programme vise à offrir aux élèves une première immersion dans cet univers raffiné, en leur permettant de découvrir les standards de qualité, le service d’excellence et les codes du luxe appliqués à l'accueil, à la gestion et à la relation client. À travers des études de cas concrets, des rencontres avec des professionnels du secteur et des mises en situation, nos élèves développeront des compétences essentielles en management, marketing et gestion hôtelière, tout en cultivant un savoir-être adapté aux attentes de cette industrie exigeante.",
+        luxe_module_p2: "Ce programme vise à offrir aux élèves une première immersion dans cet univers raffiné, en leur permettant de découvrir les standards de qualité, le service d’excellence et les codes du luxe appliqués à l'accueil, à la gestion et à la relation client. À travers des études de cas concrets, des rencontres avec des professionnels du secteur et des mises en situation, nos élèves développeront des compétences essentielles en management, marketing et gestion hôtelière, tout en cultivant un savoir-être adapté aux attentes de cette industrie.",
         luxe_module_p3: "Ce module représente une véritable opportunité pour nos élèves, leur ouvrant les portes de formations spécialisées et de carrières internationales dans le domaine du luxe. Il s’inscrit pleinement dans notre engagement à proposer une éducation innovante et professionnalisante, en phase avec les réalités du marché du travail et les aspirations de nos étudiants.",
         campuses: "Tous les campus",
         duration: "3 ans (4 ans pour les allophones)",
@@ -516,7 +516,7 @@ export const translations = {
       label2_2_sub: "(Bientôt disponible)",
       text2: "Notre établissement propose un programme sport-études axé sur le football, offrant des entraînements intensifs, des séances techniques, des matchs, et un accompagnement individualisé pour développer les compétences sportives et humaines des élèves. Prochainement, nous élargirons our offer avec un programme dédié au basketball, permettant aux passionnés de ce sport de bénéficier de la même qualité de formation et d'encadrement.",
       day_title: "UNE JOURNÉE TYPE À L'ESEPF",
-      day_desc: "Le rythme d'un athlète est exigeant et demande une organisation rigoureuse entre les cours et les terrains.",
+      day_desc: "Le rythme d'un athlète demande une organisation rigoureuse entre les cours et les terrains.",
       discipline_label: "Discipline & Rigueur",
       perf_cog_label: "Performance Cognitive",
       life_balance_label: "Équilibre de vie",
@@ -534,7 +534,7 @@ export const translations = {
     },
     reseau_page: {
       title: "Un Réseau de Clubs pour Révéler Nos Talents",
-      p1: "Grâce au réseau que nous avons construit au fil des années, issu de our passé dans le football professionnel en France, nous offrons à nos meilleurs joueurs des opportunités uniques de montrer l'étendue de leurs capacités. Ce réseau, composé de clubs prestigieux français et européens, leur permet de participer à des essais, des matchs amicaux ou d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptées à leur progression vers le plus haut niveau.",
+      p1: "Grâce au réseau que nous avons construit au fil des années, issu de our passé dans le football professionnel en France, nous offerons à nos meilleurs joueurs des opportunités uniques de montrer l'étendue de leurs capacités. Ce réseau, composé de clubs prestigieux français et européens, leur permet de participer à des essais, des matchs amicaux ou d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptées à leur progression vers le plus haut niveau.",
       subtitle: "Un Réseau de Clubs pour offrir des opportunités..."
     },
     journey_page: {
@@ -840,7 +840,7 @@ export const translations = {
     },
     axes: {
       scolarite: "ACADEMICS",
-      scolarite_desc: "Our sport-study program offers a demanding academic framework that allows students to combine ambitious sporting projects with academic success.\nIn middle school, the focus is on acquiring fundamentals, personalized follow-up, and work organization to learn how to manage both classes and training.\nIn high school, schooling is oriented towards baccalaureate preparation, with reinforced requirements, methodological support, and guidance for higher education.\nThe goal is to train autonomous, curious students capable of flourishing as much on the field as in the classroom.",
+      scolarite_desc: "Our sport-study program offers an academic framework that allows students to combine ambitious sporting projects with academic success.\nIn middle school, the focus is on acquiring fundamentals, personalized follow-up, and work organization to learn how to manage both classes and training.\nIn high school, schooling is oriented towards baccalaureate preparation, with methodological support and guidance for higher education.\nThe goal is to train autonomous, curious students capable of flourishing as much on the field as in the classroom.",
       college_link: "Middle School (11 - 15 years)",
       lycee_link: "High School (15 - 18 years)",
       academy_title: "FOOTBALL ACADEMY",
@@ -1105,7 +1105,7 @@ export const translations = {
     },
     lycee_page: {
       title: "BACCALAUREATS",
-      intro_p1: "Our high school offers a demanding and diverse curriculum, adapted to the aspirations and projects of each student. It offers two main tracks: the general baccalaureate and the STMG technological baccalaureate (Management and Management Sciences and Technologies).",
+      intro_p1: "Our high school offers a diverse curriculum, adapted to the aspirations and projects of each student. It offers two main tracks: the general baccalaureate and the STMG technological baccalaureate (Management and Management Sciences and Technologies).",
       intro_p2: "Each program is designed to enable students to acquire solid skills and prepare their orientation towards higher education or the professional world.",
       intro_p3: "The general baccalaureate develops analysis and general culture, while the STMG baccalaureate prepares for studies in management, commerce and economics.",
       intro_p4: "Personalized support and regular monitoring are provided to ensure the success of each student in their chosen path.",
@@ -1250,7 +1250,7 @@ export const translations = {
       label2_2_sub: "(Coming soon)",
       text2: "Our establishment offers a sport-study program focused on football, offering intensive training and individualized support. Soon, we will expand our offer with a program dedicated to basketball, allowing fans of this sport to benefit from the same quality of training.",
       day_title: "A TYPICAL DAY AT ESEPF",
-      day_desc: "The rhythm of an athlete is demanding and requires rigorous organization between classes and fields.",
+      day_desc: "The rhythm of an athlete requires rigorous organization between classes and fields.",
       discipline_label: "Discipline & Rigor",
       perf_cog_label: "Cognitive Performance",
       life_balance_label: "Life Balance",
@@ -1575,7 +1575,7 @@ export const translations = {
     },
     axes: {
       scolarite: "学术课程",
-      scolarite_desc: "我们的体育学习计划 offer 了一个严谨的学术框架，让学生能够将雄心勃勃的体育项目与学业成功相结合。\n在初中阶段，重点是获得基础知识、个性化跟踪和工作组织，学习如何平衡课程和训练。\n在高中阶段，学业以备考高中毕业会考为导和，要求更高，提供方法论支持和高等教育指导。\n目标是培养自主、好奇的学生，让他们在球场和教室里都能茁壮成长。",
+      scolarite_desc: "我们的体育学习计划 offer 了一个学术框架，让学生能够将雄心勃勃的体育项目与学业成功相结合。\n在初中阶段，重点是获得基础知识、个性化跟踪和工作组织，学习如何平衡课程和训练。\n在高中阶段，学业以备考高中毕业会考为导和，提供方法论支持和高等教育指导。\n目标是培养自主、好奇的学生，让他们在球场和教室里都能茁壮成长。",
       college_link: "初中 (11 - 15 岁)",
       lycee_link: "高中 (15 - 18 岁)",
       academy_title: "足球学院",
@@ -1834,13 +1834,13 @@ export const translations = {
       autonomy_title: "自主性",
       autonomy_desc: "从小学习组织，以在双重项目中取得成功。",
       excellence_title: "卓越",
-      excellence_desc: "由教育部验证的严谨学术计划。",
+      excellence_desc: "由教育部验证的学术计划。",
       fulfillment_title: "成长",
       fulfillment_desc: "在安全的环境中平衡体育热情 和 持久友谊。"
     },
     lycee_page: {
       title: "高中毕业证书",
-      intro_p1: "我们高中 offer 严谨且多样化的课程，适应每个学生的目标. 它 offer 两个主要方向：普通高中和 STMG 技术高中。",
+      intro_p1: "我们高中 offer 多样化的课程，适应每个学生的目标. 它 offer 两个主要方向：普通高中和 STMG 技术高中。",
       intro_p2: "每个项目都旨在让学生获得扎实的技能，并为进入高等教育 或 职业世界做好准备。",
       intro_p3: "普通高中培养分析能力 和 通识文化，STMG 高中为管理、商业 和 经济研究做准备。",
       intro_p4: "我们 offer 个性化支持 和 定期监测，以确保每个 student in 所选道路上取得成功。",
@@ -1930,7 +1930,7 @@ export const translations = {
     football_pages: {
       prog_title: "足球计划",
       prog_intro_1: "我们的学校是一个足球训练中心， offer 结构化计划。",
-      prog_intro_2: "我们通过严格的训练、比赛 和 个性化跟踪帮助学生实现目标。",
+      prog_intro_2: "我们通过严格的训练、比赛 和 个性化跟踪帮助 student 实现目标。",
       prog_intro_3: "我们特别注重运动员的心理发展. 团队精神、纪律 和 韧性是核心。",
       prog_intro_4: "学校为运动员 offer 实现目标 和 充分成长的机会。",
       france_title: "法国：足球之乡",
@@ -1991,7 +1991,7 @@ export const translations = {
       label2_2_sub: "(即将推出)",
       text2: "目前 offer 足球计划，很快将推出篮球计划。",
       day_title: "典型的一天",
-      day_desc: "运动员의 节奏要求严格组织。",
+      day_desc: "运动员的节奏要求严格组织。",
       discipline_label: "纪律 与 严谨",
       perf_cog_label: "认知性能",
       life_balance_label: "生活平衡",
@@ -2087,7 +2087,7 @@ export const translations = {
       bazeille_infra_desc: "阿基坦校区以其现代建筑 和 联合办公空间而闻名。",
       bazeille_full_desc: {
         title: "体育学习表现与卓越中心",
-        intro: "我们的机构是一所卓越的学府，在非凡的环境中体验学术和体育的成长。我们现代且完善的基础设施旨在为每位学生提供有利于成功、体育实践和日常福祉的环境。",
+        intro: "我们的机构是一所卓越学府，在非凡的环境中体验学术和体育的成长。我们现代且完善的基础设施旨在为每位学生提供有利于成功、体育实践和日常福祉的环境。",
         housing_title: "住宿与校园生活",
         housing_desc: "我们宽敞安全的寄宿学校提供友好且有监管的生活环境. 每间客房的设计都旨在保证舒适与宁静，从而促进专注和休息。",
         dining_title: "餐饮与休闲",
@@ -2114,7 +2114,7 @@ export const translations = {
       tulle_infra_desc: "普罗旺斯校区注重人性化 和 个性化的教学方法。",
       tulle_full_desc: {
         title: "法国体育与声望学院 - 普罗旺",
-        intro: "我们的机构是一所卓越的学府，在非凡的环境中体验学术和体育的成长. 我们现代且完善的基础设施旨在为每位学生提供有利于成功、体育实践和日常福祉的环境。",
+        intro: "我们的机构是一所卓越学府，在非凡的环境中体验学术和体育的成长. 我们现代且完善的基础设施旨在为每位学生提供有利于成功、体育实践和日常福祉的环境。",
         housing_title: "住宿与校园生活",
         housing_desc: "我们宽敞安全的寄宿学校提供友好且有监管的生活环境. 每间客房的设计都旨在保证舒适与宁静，从而促进专注和休息。",
         dining_title: "餐饮与休闲",
