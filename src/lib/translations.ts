@@ -34,7 +34,7 @@ export const translations = {
       btnRegister: "Déposer un dossier"
     },
     common: {
-      excellence: "L'excellence de la formation française",
+      excellence: "L'Excellence de la Formation Française",
       loading: "Chargement...",
       save: "ENREGISTRER POUR TOUT LE MONDE",
       back: "RETOUR",
@@ -274,7 +274,7 @@ export const translations = {
         },
         {
           year: "2024",
-          title: "YOUTH ELITE SPORTS ACADEMY\nOUVERTURE AU MULTISPORT\nET À L'ASIE DU SUD-EST",
+          title: "YOUTH ELITE SPORTS ACADEMY\nOUVERTURE AU MULTISPORT\nAND À L'ASIE DU SUD-EST",
           desc: "Création de notre propre marque \"YES Academy\".\nSignature de nouvelles écoles internationales.\nOuverture de la branche multisport.\nLancement de de notre Académie dans d'autres villes en Asie.\nInvitations au tournoi international de Shanghai des Centres de Formation :\n2025 - OM - U17 Nationaux\n2026 - Paris FC féminines - U16 / U17"
         }
       ]
@@ -1183,13 +1183,7 @@ export const translations = {
         bts_list: ["Accounting & Management", "Managerial Action Support", "Operational Commercial Management", "Negotiation & Customer Digitalization", "SME Management", "IT Services for Orgs", "Insurance", "Tourism"],
         bts_jobs: ["Marketing Manager", "Product Manager", "Commercial", "Payroll Manager", "HR Manager", "Management Controller", "Wealth Manager"],
         univ_list: ["Economics & Management", "Social & Economic Admin", "Management Sciences", "Law", "Innovation Management", "International Trade", "Digital Marketing"],
-        univ_jobs: ["Marketing Manager", "Communication Officer", "Management Consultant", "Financial Analyst", "Commercial Director", "Project Manager"],
-        management_tomorrow: "Tomorrow, Management",
-        future_manager: "Your manager future",
-        techno_filiere: "A technological track for ambitious careers",
-        service_excellence: "Excellence service",
-        luxury_codes: "Luxury Codes",
-        prestige_management: "Prestige Management"
+        univ_jobs: ["Marketing Manager", "Communication Officer", "Management Consultant", "Financial Analyst", "Commercial Director", "Project Manager"]
       }
     },
     football_pages: {
@@ -1510,7 +1504,7 @@ export const translations = {
     },
     hero: {
       subtitle: "追求卓越",
-      desc: "从初中到高中的激励性学习环境，包括我们的精英足球学院，为明天培养公民。",
+      desc: "从初中到高中的激励性学习 environment，包括我们的精英足球学院，为明天培养公民。",
       btnDiscover: "探索学院",
       btnRegister: "提交申请"
     },
@@ -1849,7 +1843,7 @@ export const translations = {
       intro_p1: "我们高中 offer 严谨且多样化的课程，适应每个学生的目标. 它 offer 两个主要方向：普通高中和 STMG 技术高中。",
       intro_p2: "每个项目都旨在让学生获得扎实的技能，并为进入高等教育 或 职业世界做好准备。",
       intro_p3: "普通高中培养分析能力 和 通识文化，STMG 高中为管理、商业 和 经济研究做准备。",
-      intro_p4: "我们 offer 个性化支持 和 定期监测，以确保每个学生 in 所选道路上取得成功。",
+      intro_p4: "我们 offer 个性化支持 和 定期监测，以确保每个 student in 所选道路上取得成功。",
       formations_title: "课程设置",
       card_langues: "语言 和 文化职业",
       card_management: "管理职业",
@@ -1957,7 +1951,7 @@ export const translations = {
       coaches_text: "教练均毕业于 FFF 或 UEFA (Pro, A, B, C), offer 高水平指导。",
       weekly_title: "每周计划",
       weekly_intro: "典型周包含每日训练 和 周末官方比赛。",
-      weekly_details: "包括视频分析 和 比赛准备。",
+      weekly_details: "包括视频 analysis 和 比赛准备。",
       elite_label: "精英绩效",
       terre_talents: "天才之地",
       expertise_cert: "认证专家",
@@ -2120,7 +2114,7 @@ export const translations = {
       tulle_infra_desc: "普罗旺斯校区注重人性化 和 个性化的教学方法。",
       tulle_full_desc: {
         title: "法国体育与声望学院 - 普罗旺",
-        intro: "我们的机构是一所卓越的学府，在非凡的环境中体验学术和体育的成长。我们现代且完善的基础设施旨在为每位学生提供有利于成功、体育实践和日常福祉的环境。",
+        intro: "我们的机构是一所卓越的学府，在非凡的环境中体验学术和体育的成长. 我们现代且完善的基础设施旨在为每位学生提供有利于成功、体育实践和日常福祉的环境。",
         housing_title: "住宿与校园生活",
         housing_desc: "我们宽敞安全的寄宿学校提供友好且有监管的生活环境. 每间客房的设计都旨在保证舒适与宁静，从而促进专注和休息。",
         dining_title: "餐饮与休闲",
