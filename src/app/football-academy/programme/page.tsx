@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -10,7 +9,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
-import { Target, Shield, Users, Calendar, Trophy, Zap, Activity, Brain, Star, CheckCircle2, Dumbbell, MapPin } from 'lucide-react';
+import { Target, Shield, Users, Calendar, Trophy, Zap, Activity, Brain, Star, CheckCircle2, Dumbbell, MapPin, Image as ImageIcon } from 'lucide-react';
 
 export default function ProgrammeFootballPage() {
   const { t } = useTranslation();
