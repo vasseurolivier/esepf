@@ -503,7 +503,21 @@ export const translations = {
       french_method_p1: "Nous nous inspirons de l'excellence reconnue de la méthodologie française en matière de formation de football pour proposer un programme de développement structuré et complet, conçu pour accompagner les joueurs dans leur progression globale.",
       french_method_p2: "Ce programme repose sur des séances variées intégrant des exercices techniques, tactiques et physiques adaptés à l'âge, au niveau et aux besoins spécifiques de chaque joueur. Des tests réguliers permettent d'évaluer leur progression, tandis que les matchs, les défis spécifiques et les interactions individuelles offrent des opportunités continues d'ajustement et d'amélioration.",
       french_method_p3: "Au-delà du terrain, le programme met un accent particulier sur le développement personnel et émotionnel des participants. Grâce à des défis psycho-sociaux soigneusement intégrés, les joueurs apprennent des valeurs essentielles telles que l'esprit d'équipe, la discipline, la résilience, la capacité à gérer leurs émotions et le dévouement.",
-      french_method_p4: "L'objectif est de former des joueurs complets, capables de briller techniquement et physiquement tout en possédant les qualités humaines nécessaires pour évoluer dans un environnement collectif. En cultivant une passion authentique et durable pour le football, ce programme leur permet non seulement de progresser sur le terrain mais aussi de construire des bases solides pour leur avenir sportif et personnel."
+      french_method_p4: "L'objectif est de former des joueurs complets, capables de briller techniquement et physiquement tout en possédant les qualités humaines nécessaires pour évoluer dans un environnement collectif. En cultivant une passion authentique et durable pour le football, ce programme leur permet non seulement de progresser sur le terrain mais aussi de construire des bases solides pour leur avenir sportif et personnel.",
+      pro_training: {
+        title: "ENTRAÎNE-TOI COMME UN PROFESSIONNEL",
+        subtitle: "Nous proposons un programme de développement basé sur la méthodologie et la formation française, structuré autour d'axes clefs tels que la technique, la tactique, le physique et le mental.",
+        item1_title: "Méthodologie Française d'entraînement",
+        item1_desc: "Une formation reconnue dans le monde",
+        item2_title: "Matchs réguliers",
+        item2_desc: "Opposition régulière contre des équipe françaises",
+        item3_title: "5 séances d'entraînement par semaine",
+        item3_desc: "Séances d'entraînement de 2h",
+        item4_title: "Programme préparation individualisé",
+        item4_desc: "Vitesse, force, explosivité, travail mental...",
+        item5_title: "Entraînements Spécialisés",
+        item5_desc: "Spécifique par poste"
+      }
     },
     metiers_page: {
       title: "UNE FORMATION AUX MÉTIERS DU SPORT",
@@ -1251,7 +1265,21 @@ export const translations = {
       french_method_p1: "We are inspired by the recognized excellence of the French methodology in football training to offer a structured and complete development program, designed to support players in their global progression.",
       french_method_p2: "This program is based on varied sessions integrating technical, tactical and physical exercises adapted to the age, level and specific needs of each player. Regular tests allow for evaluation of their progress, while matches, specific challenges and individual interactions provide continuous opportunities for adjustment and improvement.",
       french_method_p3: "Beyond the pitch, the program places special emphasis on the personal and emotional development of participants. Through carefully integrated psycho-social challenges, players learn essential values such as team spirit, discipline, resilience, the ability to manage emotions and devotion.",
-      french_method_p4: "The goal is to train complete players, capable of shining technically and physically while possessing the human qualities necessary to evolve in a collective environment. By cultivating an authentic and lasting passion for football, this program allows them not only to progress on the pitch but also to build a solid foundation for their sporting and personal future."
+      french_method_p4: "The goal is to train complete players, capable of shining technically and physically while possessing the human qualities necessary to evolve in a collective environment. By cultivating an authentic and lasting passion for football, this program allows them not only to progress on the pitch but also to build a solid foundation for their sporting and personal future.",
+      pro_training: {
+        title: "TRAIN LIKE A PROFESSIONAL",
+        subtitle: "We offer a development program based on French methodology and training, structured around key axes such as technique, tactics, physical and mental preparation.",
+        item1_title: "French Training Methodology",
+        item1_desc: "World-renowned training",
+        item2_title: "Regular Matches",
+        item2_desc: "Regular opposition against French teams",
+        item3_title: "5 Training Sessions per Week",
+        item3_desc: "2-hour training sessions",
+        item4_title: "Individualized Preparation Program",
+        item4_desc: "Speed, strength, explosiveness, mental work...",
+        item5_title: "Specialized Training",
+        item5_desc: "Position-specific training"
+      }
     },
     metiers_page: {
       title: "SPORT CAREERS TRAINING",
@@ -1668,7 +1696,7 @@ export const translations = {
       bac_americain_title: "美国高中双文凭",
       bac_americain_sub: "双文凭：同时获得两个高中毕业证书。",
       high_school_diploma: "美国高中毕业证书",
-      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程. 他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
+      high_school_desc: "得益`于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程. 他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
       dual_diploma_official: "官方双学位",
       international_recognition: "国际认可",
       why_choose_title: "为什么选择这个路径？",
@@ -2006,7 +2034,21 @@ export const translations = {
       french_method_p1: "我们借鉴了享誉全球的法国足球青训教学法，为您提供一套结构严谨且全面的发展计划，旨在全方位支持球员的成长与进步。",
       french_method_p2: "该计划基于多样化的训练课，融合了根据球员年龄、水平和具体需求量身定制的技术、战术及体能练习. 定期的测试将用于评估其进步情况，而比赛、特定挑战和个人互动则提供了持续调整与优化的机会。",
       french_method_p3: "除球场表现外，该计划还特别注重参与者的个人素养和情感发育. 通过精心设计的心理社会挑战，球员们将学习团队精神、纪律、韧性、情绪管理能力以及奉献精神。",
-      french_method_p4: "我们的目标是培养全面的球员：他们不仅在技术和体能上表现出色，还具备在集体环境中发展所需的优秀品质. 通过培养对足球真实且持久的热爱，该计划不仅让他们在球场上进步，更为他们的体育和个人未来奠定坚实的基础。"
+      french_method_p4: "我们的目标是培养全面的球员：他们不仅在技术和体能上表现出色，还具备在集体环境中发展所需的优秀品质. 通过培养对足球真实且持久的热爱，该计划不仅让他们在球场上进步，更为他们的体育和个人未来奠定坚实的基础。",
+      pro_training: {
+        title: "像职业球员一样训练",
+        subtitle: "我们提供基于法国教学法和培训的发展计划，围绕技术、战术、身体和心理等关键轴心构建。",
+        item1_title: "法国训练教学法",
+        item1_desc: "享誉世界的培训",
+        item2_title: "定期比赛",
+        item2_desc: "定期与法国球队交锋",
+        item3_title: "每周5次训练",
+        item3_desc: "每次2小时的训练课",
+        item4_title: "个性化准备计划",
+        item4_desc: "速度、力量、爆发力、心理训练...",
+        item5_title: "专项训练",
+        item5_desc: "针对特定位置的训练"
+      }
     },
     metiers_page: {
       title: "体育职业培训",

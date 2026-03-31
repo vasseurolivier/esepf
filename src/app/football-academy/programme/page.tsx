@@ -10,7 +10,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
-import { Target, Shield, Users, Calendar, Trophy, Zap, Activity, Brain, Star, CheckCircle2 } from 'lucide-react';
+import { Target, Shield, Users, Calendar, Trophy, Zap, Activity, Brain, Star, CheckCircle2, Dumbbell, MapPin } from 'lucide-react';
 
 export default function ProgrammeFootballPage() {
   const { t } = useTranslation();
@@ -35,6 +35,14 @@ export default function ProgrammeFootballPage() {
     { icon: <Brain className="text-secondary" />, title: t.football_pages.axes_ment.split(':')[0], desc: t.football_pages.axes_ment.split(':')[1] }
   ];
 
+  const proTrainingItems = [
+    { icon: <MapPin size={48} />, title: t.football_pages.pro_training.item1_title, desc: t.football_pages.pro_training.item1_desc },
+    { icon: <Users size={48} />, title: t.football_pages.pro_training.item2_title, desc: t.football_pages.pro_training.item2_desc },
+    { icon: <Zap size={48} />, title: t.football_pages.pro_training.item3_title, desc: t.football_pages.pro_training.item3_desc },
+    { icon: <Dumbbell size={48} />, title: t.football_pages.pro_training.item4_title, desc: t.football_pages.pro_training.item4_desc },
+    { icon: <Target size={48} />, title: t.football_pages.pro_training.item5_title, desc: t.football_pages.pro_training.item5_desc },
+  ];
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -45,7 +53,7 @@ export default function ProgrammeFootballPage() {
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* New Hero Section */}
+        {/* Hero Section */}
         <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
           {heroImage && (
             <Image 
@@ -73,6 +81,7 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
+        {/* Intro Section */}
         <section className="py-24">
           <div className="container mx-auto px-4 max-w-5xl">
             <ScrollReveal className="space-y-12 text-center">
@@ -90,7 +99,38 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* New French Methodology Section */}
+        {/* NEW: Entraîne-toi comme un professionnel Section */}
+        <section className="py-24 bg-[#0a192f] text-white overflow-hidden">
+          <div className="container mx-auto px-4">
+            <ScrollReveal className="text-center mb-20">
+              <h2 className="text-4xl md:text-6xl font-headline font-bold uppercase tracking-tight mb-8">
+                {t.football_pages.pro_training.title}
+              </h2>
+              <div className="w-24 h-1 bg-secondary mx-auto mb-8 rounded-full" />
+              <p className="text-lg md:text-xl text-white/70 max-w-4xl mx-auto leading-relaxed font-light">
+                {t.football_pages.pro_training.subtitle}
+              </p>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
+              {proTrainingItems.map((item, i) => (
+                <ScrollReveal key={i} delay={i * 100} className="flex flex-col items-center text-center group cursor-pointer">
+                  <div className="mb-8 transform group-hover:scale-125 group-hover:rotate-6 transition-all duration-500 text-white group-hover:text-secondary">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-lg font-bold mb-4 min-h-[3.5rem] flex items-center justify-center leading-tight px-4 uppercase tracking-wider group-hover:text-secondary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-white/50 leading-relaxed px-2 font-medium">
+                    {item.desc}
+                  </p>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* French Methodology Section */}
         <section id="method-section" className="py-32 bg-white overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
@@ -111,7 +151,6 @@ export default function ProgrammeFootballPage() {
               {/* Text Side - Blue Box */}
               <div className="lg:w-[55%] lg:-ml-32 z-10">
                 <div className="bg-[#000080] p-8 md:p-16 text-white shadow-2xl relative rounded-3xl">
-                  {/* Decorative Icon */}
                   <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-20 hidden md:block">
                     <Trophy size={80} className="text-white" />
                   </div>
@@ -127,7 +166,6 @@ export default function ProgrammeFootballPage() {
                     <p className="font-bold text-white opacity-100">{t.football_pages.french_method_p4}</p>
                   </div>
 
-                  {/* Silouhettes decorative effect bottom */}
                   <div className="absolute -bottom-16 -left-16 opacity-10 hidden lg:block">
                     <Users size={200} />
                   </div>
