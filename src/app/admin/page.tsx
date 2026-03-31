@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -112,6 +111,10 @@ const IMAGE_CATEGORIES = [
     icon: <Layers size={16} />,
     fields: [
       { id: 'history_main', label: 'Photo Histoire', location: 'Page Notre Histoire' },
+      { id: 'history_timeline_0', label: 'Logo Frise 2000', location: 'Timeline Histoire' },
+      { id: 'history_timeline_1', label: 'Logo Frise 2018', location: 'Timeline Histoire' },
+      { id: 'history_timeline_2', label: 'Logo Frise 2021', location: 'Timeline Histoire' },
+      { id: 'history_timeline_3', label: 'Logo Frise 2024', location: 'Timeline Histoire' },
       { id: 'team_project_hero', label: 'Photo Projet', location: 'Haut de page Projet' },
       { id: 'recognition_hero', label: 'Photo Reconnaissance', location: 'Haut de page Reconnaissance' },
       { id: 'team_member_1', label: 'Direction 1', location: 'Trombinoscope Équipe' },

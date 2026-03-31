@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -25,10 +24,10 @@ export default function HistoryPage() {
   const mainImage = settings?.images?.history_main;
 
   const timelineLogos = [
-    null, // Pas de logo pour 2000
-    "https://picsum.photos/seed/ol-logo/100/100",
-    "https://picsum.photos/seed/psg-logo/100/100",
-    "https://picsum.photos/seed/yes-logo/100/100"
+    settings?.images?.history_timeline_0,
+    settings?.images?.history_timeline_1,
+    settings?.images?.history_timeline_2,
+    settings?.images?.history_timeline_3,
   ];
 
   return (
@@ -74,7 +73,7 @@ export default function HistoryPage() {
           </div>
         </section>
 
-        {/* New Timeline Section */}
+        {/* Timeline Section */}
         <section className="py-24 bg-white overflow-hidden">
           <div className="container mx-auto px-4">
             <ScrollReveal>
@@ -102,7 +101,6 @@ export default function HistoryPage() {
                             src={timelineLogos[idx]} 
                             alt="Brand Logo" 
                             className="max-h-full max-w-full object-contain"
-                            data-ai-hint={idx === 1 ? "Olympique Lyonnais logo" : idx === 2 ? "Paris Saint-Germain logo" : "sports academy logo"}
                           />
                         </div>
                       )}
@@ -124,7 +122,7 @@ export default function HistoryPage() {
                         {event.title}
                       </h3>
                       <div className="w-12 h-0.5 bg-secondary mx-auto" />
-                      <p className="text-[11px] md:text-xs text-muted-foreground leading-relaxed text-center whitespace-pre-line">
+                      <p className="text-[11px] md:text-xs text-muted-foreground leading-relaxed text-justify whitespace-pre-line">
                         {event.desc}
                       </p>
                     </div>
@@ -132,7 +130,7 @@ export default function HistoryPage() {
                 ))}
               </div>
 
-              {/* Decorative Green Block (from image) */}
+              {/* Decorative Green Block */}
               <div className="hidden xl:block absolute -right-20 top-0 w-32 h-[400px] bg-[#0c3a2f] -z-10" />
             </div>
           </div>
