@@ -32,11 +32,6 @@ export default function LyceePage() {
       href: "/formations/bac-general"
     },
     {
-      title: t.lycee_page.card_vente,
-      image: settings?.images?.lycee_card_2,
-      href: "/formations/bac-pro-vente"
-    },
-    {
       title: t.lycee_page.card_management,
       image: settings?.images?.lycee_card_3,
       href: "/formations/bac-techno-stmg"
@@ -153,7 +148,7 @@ export default function LyceePage() {
               <div className="flex-1 h-px bg-white/20 mt-4" />
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0 border-t border-l border-white/20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-white/20">
               {formationCards.map((card, idx) => (
                 <ScrollReveal key={idx} delay={idx * 100} className="relative group border-r border-b border-white/20 bg-[#0c3a2f] flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden bg-black">

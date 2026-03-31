@@ -59,7 +59,6 @@ export const translations = {
       join_elite: "Rejoignez l'élite du commerce",
       enrollment_open: "Les inscriptions pour la rentrée 2026-2027 sont ouvertes sur les campus d'Evron et Sainte-Bazeille.",
       enrollment_stmg: "Les inscriptions pour la filière STMG & Luxe (Rentrée 2026) sont ouvertes. Développez votre potentiel management dès aujourd'hui.",
-      enrollment_vente: "Les inscriptions pour la filière Vente Luxe (Rentrée 2026) sont ouvertes. Places limitées pour garantir un encadrement d'exception.",
       roadmap: "ESEPF ROADMAP",
       vision_2026: "VISION 2026",
       humain_excellence: "Excellence Humaine",
@@ -215,7 +214,7 @@ export const translations = {
         desc: "Un accompagnement vers le Baccalauréat et l'enseignement supérieur.",
         f1: "Bac Général",
         f2: "Bac Techno STMG",
-        f3: "Bac Pro Vente"
+        f3: "Baccalauréat International"
       },
       academy: {
         title: "Academy",
@@ -299,7 +298,6 @@ export const translations = {
       bac_title: "Baccalauréat",
       bac_gen_label: "Baccalauréat Général",
       bac_techno_label: "Baccalauréat Technologique",
-      bac_pro_label: "Baccalauréat Professionnel",
       accreditations: "Accréditations",
       mne_label: "MINISTÈRE DE L'ÉDUCATION NATIONALE",
       nantes_label: "ACADÉMIE DE NANTES",
@@ -344,13 +342,12 @@ export const translations = {
     },
     lycee_page: {
       title: "BACCALAUREATS",
-      intro_p1: "Notre lycée propose un parcours exigeant et diversifié, adapté aux aspirations et projets de chaque élève. Il offre trois filières principales : le baccalauréat général, le baccalauréat technologique STMG (Sciences et Technologies du Management et de la Gestion) et le baccalauréat professionnel Vente.",
+      intro_p1: "Notre lycée propose un parcours exigeant et diversifié, adapté aux aspirations et projets de chaque élève. Il offre deux filières principales : le baccalauréat général et le baccalauréat technologique STMG (Sciences et Technologies du Management et de la Gestion).",
       intro_p2: "Chaque programme est conçu pour permettre aux élèves d’acquérir des compétences solides et de préparer leur orientation vers l’enseignement supérieur ou le monde professionnel.",
-      intro_p3: "Le bac général développe l’esprit d’analyse et la culture générale, le bac STMG prépare à des études en gestion, commerce et économie, tandis que le bac pro Vente offre une formation pratique et opérationnelle pour intégrer rapidement le secteur du commerce.",
+      intro_p3: "Le bac général développe l’esprit d’analyse et la culture générale, tandis que le bac STMG prépare à des études en gestion, commerce et économie.",
       intro_p4: "Un accompagnement personnalisé et un suivi régulier sont assurés pour garantir la réussite de chaque élève dans sa voie choisie.",
       formations_title: "LES FORMATIONS",
       card_langues: "METIERS DES LANGUES ET DES CULTURES",
-      card_vente: "METIERS DE LA VENTE",
       card_management: "METIERS DU MANAGEMENT",
       card_hotel: "METIERS DE L'HOTELLERIE RESTAURATION",
       card_mode: "METIERS DE LA MODE ET DU DESIGN",
@@ -404,51 +401,6 @@ export const translations = {
         quote: "Maîtriser les langues, c'est s'ouvrir les portes du monde.",
         success_journey: "Votre parcours de réussite",
         discover_opp: "Découvrez les opportunités après votre Baccalauréat Général à l'ESEPF"
-      },
-      bac_vente: {
-        title: "BAC PRO VENTE",
-        subtitle: "Métiers de la vente et du commerce",
-        title_detail: "Au service de l'excellence !",
-        luxury_universe: "L'Univers du Luxe",
-        desc: "Le Bac Pro Métiers du Commerce et de la Vente, spécialisé dans l'univers du luxe, prépare les étudiants à intégrer un secteur en forte demande, alliant expertise commerciale et connaissance des exigences particulières du marché du luxe. Ce cursus propose une formation complète en techniques de vente, gestion de la relation client et stratégie commerciale, tout en mettant un accent particulier sur les codes du luxe, la gestion des produits haut de gamme et le service client d'excellence.",
-        desc_extended: "Les étudiants acquièrent des compétences essentielles pour évoluer dans des boutiques prestigieuses, des maisons de haute couture ou des entreprises de produits de luxe. Grâce à des cours théoriques et pratiques, ce Bac Pro permet aux jeunes d'être immédiatement opérationnels, avec un savoir-faire adapté à un environnement professionnel exigeant et prestigieux.",
-        objectives_title: "Objectifs du Bac pro MCV option A et B",
-        objectives_desc: "Le titulaire du Bac Pro Métiers du Commerce et de la Vente (MCV), option A ou B, joue un rôle clé au sein de l'équipe commerciale :",
-        objectives_list: [
-          "Option A : Participer à l'approvisionnement, conseiller, vendre, fidéliser, et animer la surface de vente.",
-          "Option B : Gérer la prospection clientèle, valoriser l'offre commerciale et assurer la gestion commerciale liée à sa fonction."
-        ],
-        objectives_footer: "Cette formation offerte par l'ESEPF permet à ses élèves d'acquérir toutes les compétences nécessaires de l'option qu'ils auront choisie afin de les préparer aux missions variées et adaptées aux besoins du secteur du Commerce et de la Vente.",
-        profile_title: "Profil",
-        profile_desc: "Le Bac Pro Métiers du Commerce et de la Vente est accessible aux élèves issus de :",
-        profile_list: [
-          "3ème pour une entrée en 2nde professionnelle",
-          "2nde ou 1ère pour une entrée en 1ère professionnelle"
-        ],
-        qualities_title: "Qualités et compétences requises",
-        qualities_list: [
-          "Aisance relationnelle requise",
-          "Sens du contact et de l'organisation",
-          "Qualité d'écoute importante",
-          "Autonomie",
-          "Rigueur",
-          "Challenger"
-        ],
-        campuses: "Tous les campus",
-        duration: "3 ans (4 ans pour les allophones)",
-        level: "Niveau 4 (Diplôme Professionnel)",
-        direct_employment_title: "1. Un accès direct à l'emploi",
-        direct_employment_text: "Le Bac Pro Métiers du Commerce et de la Vente (MCV) offre aux diplômés une entrée immédiate sur le marché du travail grâce à des compétences pratiques et recherchées par les entreprises.\nEn se spécialisant dans la gestion de la relation client, la vente et l'animation commerciale, les titulaires de ce diplôme peuvent occuper des postes variés dans des secteurs dynamiques, allant de la grande distribution au commerce de luxe.",
-        direct_employment_jobs: ["Vendeur-conseil", "Assistant commercial", "Conseiller clientèle", "Merchandiseur", "Animateur commercial", "Chargé de prospection", "Gestionnaire de stocks"],
-        higher_ed_title: "2. Un accès aux études supérieures",
-        higher_ed_intro: "Après un Bac Pro Métiers du Commerce et de la Vente (MCV), vous pouvez poursuivre vos études en BTS (Négociation, Management Commercial, Commerce International, etc.) ou en licence universitaire pour approfondir vos compétences et obtenir des postes à responsabilités. Ces formations supérieures vous ouvrent la voie à de nombreuses opportunités dans des secteurs en pleine croissance.",
-        bts_desc: "Le BTS (Brevet de Technicien Supérieur) est une formation de deux ans qui permet de se spécialiser après un Bac Professionnel. Elle offre un enseignement pratique et théorique dans des domaines comme la négociation, le management commercial ou le commerce international. Accessible sur dossier, le BTS prépare rapidement à des postes à responsabilités.",
-        univ_desc: "L'accès à une licence après un Bac Pro permet de se spécialiser dans des domaines comme le marketing, le commerce ou la gestion. La licence est une formation universitaire de niveau Bac+3 d'une durée de 3 ans, qui combine des enseignements théoriques et pratiques. Elle permet de renforcer les compétences acquises et elle promet une entrée rapide dans le monde professionnel. Après un BTS, il est possible de rejoindre directement la dernière année de licence pour continuer à se perfectionner.",
-        bts_list: ["BTS Commerce International (CI)", "BTS Management des Unités Commerciales (MUC)", "BTS Banque", "BTS Responsable Marketing"],
-        bts_jobs: ["Responsable commercial", "Responsable marketing", "Conseiller en communication", "Chef de projet marketing", "Responsable export", "Directeur de magasin"],
-        univ_list: ["Licence pro. Négociation et Relation Client", "Licence pro. Gestion des Entreprises", "Licence en Marketing Digital", "Licence en Économie et Gestion", "Licence en Communication et Médias", "Licence en Management des Organisations"],
-        univ_jobs: ["Product manager", "Responsable de la relation client", "Chef de projet commercial", "Responsable de la communication", "Manager commercial", "Consultant en gestion d'entreprise", "Responsable de la stratégie digitale"],
-        quote: "Maîtriser les codes de l'excellence pour servir les plus grandes maisons."
       },
       bac_stmg: {
         title: "BAC TECHNO STMG",
@@ -534,7 +486,7 @@ export const translations = {
       title1: "QU'EST-CE QUE LE SPORT-ÉTUDES ?",
       label1_1: "Pratique d'un sport quotidien",
       label1_2: "Scolarité aménagée",
-      text1: "Un sport-études est un programme éducatif qui permet aux jeunes de concilier leur parcours scolaire avec une pratique sportive intensive. Conçu pour répondre aux besoins des athlètes en formation, il offre un emploi du temps aménagé qui allie cours académiques et entraînements réguliers. Ce dispositif vise à accompagner les élèves dans leur double projet, en favorisant leur réussite scolaire tout en leur permettant de progresser et d'exceller dans leur discipline sportive.",
+      text1: "Un sport-études est un programme éducatif qui permet aux jeunes de concilier leur parcours scolaire avec une pratique sportive intensive. Conçu pour répondre aux besoins des athlètes en formation, it offers un emploi du temps aménagé qui allie cours académiques et entraînements réguliers. Ce dispositif vise à accompagner les élèves dans leur double projet, en favorisant leur réussite scolaire tout en leur permettant de progresser et d'exceller dans leur discipline sportive.",
       title2: "QUELS SONT LES SPORTS DISPONIBLES ?",
       label2_1: "Football",
       label2_2: "Basketball",
@@ -627,7 +579,7 @@ export const translations = {
       apply_now: "Inscriptions ouvertes pour la rentrée 2026-2027",
       modern_infra_desc: "Des installations modernes conçues pour l'épanouissement académique et sportif.",
       available_on_campus: "disponibles sur ce campus",
-      lycee_options: "Général, STMG, Pro Vente",
+      lycee_options: "Général, STMG",
       map_not_defined: "Image de la carte non définie"
     },
     orientation: {
@@ -635,7 +587,7 @@ export const translations = {
       q1: "Quel est ton domaine d'intérêt principal ?",
       q1_o1: "Les matières générales",
       q1_o2: "Le management",
-      q1_o3: "La vente",
+      q1_o3: "Les langues",
       q2: "Vers quel type d'études te projettes-tu ?",
       q2_o1: "Université",
       q2_o2: "École de commerce",
@@ -763,7 +715,6 @@ export const translations = {
       join_elite: "Join the trade elite",
       enrollment_open: "Registration for 2026-2027 is open at Evron and Sainte-Bazeille campuses.",
       enrollment_stmg: "Registration for STMG & Luxury (Fall 2026) is open. Develop your management potential today.",
-      enrollment_vente: "Registration for Luxury Sales (Fall 2026) is open. Limited places to ensure exceptional coaching.",
       roadmap: "ESEPF ROADMAP",
       vision_2026: "VISION 2026",
       humain_excellence: "Human Excellence",
@@ -919,7 +870,7 @@ export const translations = {
         desc: "Support towards the Baccalaureate.",
         f1: "General Bac",
         f2: "STMG Techno Bac",
-        f3: "Sales Pro Bac"
+        f3: "International Baccalaureate"
       },
       academy: {
         title: "Academy",
@@ -1003,7 +954,6 @@ export const translations = {
       bac_title: "Baccalaureate",
       bac_gen_label: "General Baccalaureate",
       bac_techno_label: "Technological Baccalaureate",
-      bac_pro_label: "Professional Baccalaureate",
       accreditations: "Accreditations",
       mne_label: "MINISTRY OF NATIONAL EDUCATION",
       nantes_label: "ACADEMY OF NANTES",
@@ -1048,13 +998,12 @@ export const translations = {
     },
     lycee_page: {
       title: "BACCALAUREATS",
-      intro_p1: "Our high school offers a demanding and diverse curriculum, adapted to the aspirations and projects of each student. It offers three main tracks: the general baccalaureate, the STMG technological baccalaureate (Management and Management Sciences and Technologies) and the Professional Sales baccalaureate.",
+      intro_p1: "Our high school offers a demanding and diverse curriculum, adapted to the aspirations and projects of each student. It offers two main tracks: the general baccalaureate and the STMG technological baccalaureate (Management and Management Sciences and Technologies).",
       intro_p2: "Each program is designed to enable students to acquire solid skills and prepare their orientation towards higher education or the professional world.",
-      intro_p3: "The general baccalaureate develops analysis and general culture, the STMG baccalaureate prepares for studies in management, commerce and economics, while the Pro Sales baccalaureate offers practical and operational training to quickly integrate the commerce sector.",
+      intro_p3: "The general baccalaureate develops analysis and general culture, while the STMG baccalaureate prepares for studies in management, commerce and economics.",
       intro_p4: "Personalized support and regular monitoring are provided to ensure the success of each student in their chosen path.",
       formations_title: "PROGRAMS",
       card_langues: "LANGUAGES & CULTURE",
-      card_vente: "SALES CAREERS",
       card_management: "MANAGEMENT CAREERS",
       card_hotel: "HOSPITALITY CAREERS",
       card_mode: "FASHION & DESIGN",
@@ -1108,51 +1057,6 @@ export const translations = {
         quote: "Mastering languages is opening the doors to the world.",
         success_journey: "Your success journey",
         discover_opp: "Discover the opportunities after your General Baccalaureate at ESEPF"
-      },
-      bac_vente: {
-        title: "PRO SALES BAC",
-        subtitle: "Sales and Retail",
-        title_detail: "In the service of excellence!",
-        luxury_universe: "The Luxury Universe",
-        desc: "The Bac Pro in Commerce and Sales, specialized in the luxury universe, prepares students to integrate a high-demand sector, combining commercial expertise and knowledge of the specific requirements of the luxury market. This curriculum offers complete training in sales techniques, customer relationship management and commercial strategy, with a focus on luxury codes.",
-        desc_extended: "Students acquire essential skills to evolve in prestigious boutiques or high fashion houses. This Bac Pro allows young people to be immediately operational with a know-how adapted to an elite professional environment.",
-        objectives_title: "Objectives of Bac Pro MCV option A and B",
-        objectives_desc: "Holders of the Bac Pro in Commerce and Sales (MCV), option A or B, play a key role within the commercial team:",
-        objectives_list: [
-          "Option A: Participate in supply, advise, sell, build loyalty, and animate the sales area.",
-          "Option B: Manage customer prospecting, enhance the commercial offer and ensure commercial management."
-        ],
-        objectives_footer: "This training offered by ESEPF allows its students to acquire all the necessary skills of the chosen option to prepare them for varied missions in the Commerce sector.",
-        profile_title: "Profile",
-        profile_desc: "The Bac Pro in Commerce and Sales is accessible to students from:",
-        profile_list: [
-          "9th grade for entry into 10th grade pro",
-          "10th or 11th grade for entry into 11th grade pro"
-        ],
-        qualities_title: "Required Qualities",
-        qualities_list: [
-          "Required interpersonal ease",
-          "Sense of contact and organization",
-          "Important listening skills",
-          "Autonomy",
-          "Rigor",
-          "Challenger"
-        ],
-        campuses: "All campuses",
-        duration: "3 years (4 for allophones)",
-        level: "Level 4 (Professional Diploma)",
-        direct_employment_title: "1. Direct access to employment",
-        direct_employment_text: "The Bac Pro in Commerce and Sales (MCV) offers graduates an immediate entry into the labor market thanks to practical skills sought after by companies. By specializing in customer relationship management, sales, and commercial animation, holders of this diploma can occupy various positions in dynamic sectors, ranging from retail to luxury trade.",
-        direct_employment_jobs: ["Sales advisor", "Sales assistant", "Customer advisor", "Merchandiser", "Sales animator", "Prospecting manager", "Inventory manager"],
-        higher_ed_title: "2. Access to higher education",
-        higher_ed_intro: "After a Bac Pro in Commerce and Sales (MCV), you can pursue your studies in BTS (Négociation, Commercial Management, International Trade, etc.) or in a university degree to deepen your skills and obtain positions of responsibility. These higher education courses open the way to many opportunities in growing sectors.",
-        bts_desc: "The BTS (Higher Technician's Certificate) is a two-year course that allows specialization after a Professional Baccalaureate. It offers practical and theoretical teaching in areas such as negotiation, commercial management, or international trade. Accessible on file, the BTS quickly prepares for positions of responsibility.",
-        univ_desc: "Access to a degree after a Bac Pro allows specialization in fields such as marketing, commerce, or management. The degree is a 3-year university course (Bac+3 level), which combines theoretical and practical teaching. It strengthens skills and promises quick professional entry.",
-        bts_list: ["BTS International Trade (CI)", "BTS Commercial Units Management (MUC)", "BTS Banking", "BTS Marketing Manager"],
-        bts_jobs: ["Sales manager", "Marketing manager", "Communication advisor", "Marketing project manager", "Export manager", "Store manager"],
-        univ_list: ["Pro License Negotiation and Customer Relations", "Pro License Business Management", "Bachelor in Digital Marketing", "Bachelor in Economics and Management", "Bachelor in Communication and Media", "Bachelor in Organization Management"],
-        univ_jobs: ["Product manager", "Customer relations manager", "Sales project manager", "Communication manager", "Commercial manager", "Business consultant", "Digital strategy manager"],
-        quote: "Mastering the codes of excellence to serve the greatest houses."
       },
       bac_stmg: {
         title: "TECHNO STMG BAC",
@@ -1331,7 +1235,7 @@ export const translations = {
       apply_now: "Registration open for Fall 2026",
       modern_infra_desc: "Modern facilities designed for academic and sporting fulfillment.",
       available_on_campus: "available on this campus",
-      lycee_options: "General, STMG, Pro Sales",
+      lycee_options: "General, STMG",
       map_not_defined: "Map image not defined"
     },
     orientation: {
@@ -1339,7 +1243,7 @@ export const translations = {
       q1: "What is your main interest?",
       q1_o1: "General subjects",
       q1_o2: "Management",
-      q1_o3: "Sales",
+      q1_o3: "Languages",
       q2: "Desired studies?",
       q2_o1: "University",
       q2_o2: "Business School",
@@ -1467,7 +1371,6 @@ export const translations = {
       join_elite: "加入商业精英",
       enrollment_open: "2026-2027学年入学申请已在埃夫龙和圣巴泽耶校区开启。",
       enrollment_stmg: "STMG和奢侈品方向（2026年入学）申请已开启。今天就开始开发您的管理潜力。",
-      enrollment_vente: "奢侈品销售方向（2026年入学）申请已开启。名额有限，以衡量卓越的教学辅导。",
       roadmap: "ESEPF 路线图",
       vision_2026: "2026愿景",
       humain_excellence: "人文卓越",
@@ -1524,7 +1427,7 @@ export const translations = {
     academy_features: {
       f1_title: "欧足联教练",
       f1_desc: "由认证专家 offer 的专业培训。",
-      f2_title: "FFF 锦标赛",
+      f2_title: "FFF 锦赛",
       f2_desc: "参加法国官方联赛。",
       f3_title: "運動追踪",
       f3_desc: "个人体能准备与监测。",
@@ -1623,7 +1526,7 @@ export const translations = {
         desc: "通往高中毕业证书。",
         f1: "普通高中",
         f2: "技术类高中",
-        f3: "专业类高中"
+        f3: "国际高中"
       },
       academy: {
         title: "足球学院",
@@ -1707,7 +1610,6 @@ export const translations = {
       bac_title: "高中毕业证书",
       bac_gen_label: "普通高中毕业证书",
       bac_techno_label: "技术类高中毕业证书",
-      bac_pro_label: "专业类高中毕业证书",
       accreditations: "认证",
       mne_label: "国民教育部",
       nantes_label: "南特学区",
@@ -1715,7 +1617,7 @@ export const translations = {
         { title: "国家文凭", desc: "正式准备法国国家考试 (DNB, Bac)。" },
         { title: "教学监管", desc: "由国民教育部定期检查。" },
         { title: "中国认证", desc: "双重认可，便于国际流动。" },
-        { title: "精英标准", desc: "高水平体育认证 (FFF / UEFA)。" }
+        { title: "精英标准", desc: "高水平体育认证 (FFF / UEFA)." }
       ],
       international_opening: "国际化开放",
       international_desc: "我们的非法语母语学生受益于特定的 FLE（法语作为外语）路径，以平稳融入法国系统，同时保持对其国际成就公认的验证。",
@@ -1752,13 +1654,12 @@ export const translations = {
     },
     lycee_page: {
       title: "高中毕业证书",
-      intro_p1: "我们高中 offer 严谨且多样化的课程，适应每个学生的目标. 它 offer 三个主要方向：普通高中、STMG 技术高中 和 专业销售高中。",
+      intro_p1: "我们高中 offer 严谨且多样化的课程，适应每个学生的目标. 它 offer 两个主要方向：普通高中和 STMG 技术高中。",
       intro_p2: "每个项目都旨在让学生获得扎实的技能，并为进入高等教育 或 职业世界做好准备。",
-      intro_p3: "普通高中培养分析能力 和 通识文化，STMG 高中为管理、商业 和 经济研究做准备，而专业销售高中 offer 实用培训。",
+      intro_p3: "普通高中培养分析能力 和 通识文化，STMG 高中为管理、商业 和 经济研究做准备。",
       intro_p4: "我们 offer 个性化支持 和 定期监测，以确保每个学生在所选道路上取得成功。",
       formations_title: "课程设置",
       card_langues: "语言 和 文化职业",
-      card_vente: "销售职业",
       card_management: "管理职业",
       card_hotel: "酒店餐饮职业",
       card_mode: "时装 和 设计职业",
@@ -1812,44 +1713,6 @@ export const translations = {
         quote: "掌握语言，就是打开世界之门。",
         success_journey: "您的成功路径",
         discover_opp: "了解普通高中后的机会"
-      },
-      bac_vente: {
-        title: "专业销售高中",
-        subtitle: "销售 和 商业方向",
-        title_detail: "为卓越服务！",
-        luxury_universe: "奢侈品世界",
-        desc: "销售 和 商业专业高中，专注于奢侈品领域，将商业专业知识 与 奢侈品市场的要求相结合. 该课程 offer 销售 technique、客户关系管理 和 商业战略方面的全面培训。",
-        desc_extended: "学生获得在知名精品店发展的技能. 这是一个使年轻人能够立即进入职场的专业高中毕业证书。",
-        objectives_title: "专业高中毕业证书目标",
-        objectives_desc: "毕业生在商业团队中发挥关键作用：",
-        objectives_list: [
-          "选项 A：参与供货、咨询、销售、建立忠诚度。",
-          "选项 B：管理客户开发、提升商业报价。"
-        ],
-        objectives_footer: "该培训使学生能够获得所有必要技能。",
-        profile_title: "招生对象",
-        profile_desc: "面向以下学生：",
-        profile_list: [
-          "初中毕业生进入专业高一",
-          "高一 或 高二学生进入专业高二"
-        ],
-        qualities_title: "所需素质",
-        qualities_list: ["良好的人际交往能力", "组织意识", "倾听能力", "自主性", "严谨", "挑战者精神"],
-        campuses: "所有校区",
-        duration: "3年（非法语母语4年）",
-        level: "4级",
-        direct_employment_title: "1. 直接就业",
-        direct_employment_text: "该文凭持有者可以在从大型零售到奢侈品贸易的动态领域担任各种职位。",
-        direct_employment_jobs: ["销售顾问", "商业助理", "客户顾问", "理货员", "商业活动员", "勘探主管", "库存管理员"],
-        higher_ed_title: "2. 升学前景",
-        higher_ed_intro: "获得证书后，您可以继续攻读 BTS 或 大学本科。",
-        bts_desc: "BTS 是为期两年的培训. 它可以快速为担任负责任的职位做好准备。",
-        univ_desc: "本科是 3 年制大学培训. 它有助于加强获得的技能 和 承诺快速进入职业世界。",
-        bts_list: ["国际贸易 BTS", "商业单位管理 BTS", "银行 BTS", "营销经理 BTS"],
-        bts_jobs: ["销售经理", "营销经理", "传播顾问", "营销 project 经理", "出口经理", "门店经理"],
-        univ_list: ["谈判 与 客户关系本科", "企业管理本科", "数字营销本科", "经济管理本科", "传播媒体本科", "组织管理本科"],
-        univ_jobs: ["Product manager", "客户关系经理", "商业项目经理", "传播经理", "商业经理", "顾问", "数字战略经理"],
-        quote: "掌握卓越密码，为最伟大的品牌服务。"
       },
       bac_stmg: {
         title: "管理技术高中",
@@ -2028,7 +1891,7 @@ export const translations = {
       apply_now: "2026 学年报名开启",
       modern_infra_desc: "专为学业 和 体育设计的现代设施。",
       available_on_campus: "在此校区提供",
-      lycee_options: "普通、STMG、专业销售",
+      lycee_options: "普通、STMG",
       map_not_defined: "地图未定义"
     },
     orientation: {
@@ -2036,7 +1899,7 @@ export const translations = {
       q1: "主要兴趣？",
       q1_o1: "通识科目",
       q1_o2: "管理",
-      q1_o3: "销售",
+      q1_o3: "语言",
       q2: "意向研究？",
       q2_o1: "大学",
       q2_o2: "商学院",

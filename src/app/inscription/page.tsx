@@ -248,7 +248,6 @@ export default function RegistrationPage() {
                               <SelectItem value="college">Collège</SelectItem>
                               <SelectItem value="bac_gen">Bac Général</SelectItem>
                               <SelectItem value="bac_stmg">Bac Techno STMG</SelectItem>
-                              <SelectItem value="bac_pro">Bac Pro Vente</SelectItem>
                               <SelectItem value="integration">Classe d'Intégration (FLE)</SelectItem>
                             </SelectContent>
                           </Select>

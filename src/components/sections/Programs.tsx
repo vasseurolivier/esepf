@@ -49,7 +49,6 @@ export function Programs() {
         subLinks: [
           { label: t.programs.lycee?.f1, href: '/formations/bac-general' },
           { label: t.programs.lycee?.f2, href: '/formations/bac-techno-stmg' },
-          { label: t.programs.lycee?.f3, href: '/formations/bac-pro-vente' },
         ]
       },
       {
