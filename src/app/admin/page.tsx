@@ -115,15 +115,23 @@ const IMAGE_CATEGORIES = [
       { id: 'support_mental', label: 'Photo Mental', location: 'Trombinoscope Santé' },
       { id: 'support_medecin', label: 'Photo Médecin', location: 'Trombinoscope Santé' },
       { id: 'support_physique', label: 'Photo Physio', location: 'Trombinoscope Santé' },
+      
       { id: 'tracking_main_img', label: 'Suivi - Photo Droite', location: 'Section Suivi Individualisé' },
       { id: 'tracking_img_1', label: 'Suivi - Cercle 1', location: 'Section Suivi Individualisé' },
       { id: 'tracking_img_2', label: 'Suivi - Cercle 2', location: 'Section Suivi Individualisé' },
       { id: 'tracking_img_3', label: 'Suivi - Cercle 3', location: 'Section Suivi Individualisé' },
       { id: 'tracking_img_4', label: 'Suivi - Cercle 4', location: 'Section Suivi Individualisé' },
+      
       { id: 'training_gk', label: 'Spé. - Gardien', location: 'Section Spécialisation Poste' },
       { id: 'training_def', label: 'Spé. - Défenseur', location: 'Section Spécialisation Poste' },
       { id: 'training_mid', label: 'Spé. - Milieu', location: 'Section Spécialisation Poste' },
       { id: 'training_fwd', label: 'Spé. - Attaquant', location: 'Section Spécialisation Poste' },
+
+      { id: 'pillar_tech', label: 'Pilier - Technique', location: 'Section Piliers Performance' },
+      { id: 'pillar_tact', label: 'Pilier - Tactique', location: 'Section Piliers Performance' },
+      { id: 'pillar_phys', label: 'Pilier - Physique', location: 'Section Piliers Performance' },
+      { id: 'pillar_ment', label: 'Pilier - Mental', location: 'Section Piliers Performance' },
+      { id: 'pillar_social', label: 'Pilier - Social', location: 'Section Piliers Performance' },
     ]
   },
   {
@@ -369,11 +377,11 @@ export default function AdminPage() {
                         <h3 className="font-bold text-primary uppercase text-sm mb-2">Logos des Clubs Partenaires (6 Max)</h3>
                         <p className="text-xs text-muted-foreground">Ces logos apparaissent sur la page "Réseau de Clubs".</p>
                       </div>
-                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center">
                         {Array.from({ length: CLUBS_COUNT }).map((_, i) => {
                           const fieldId = `club_logo_${i}`;
                           return (
-                            <div key={fieldId} className="space-y-2 p-4 bg-white rounded-xl border border-border">
+                            <div key={fieldId} className="space-y-2 p-4 bg-white rounded-xl border border-border w-full">
                               <Label className="text-[9px] font-bold uppercase text-primary">Logo Club {i + 1}</Label>
                               <div className="aspect-square bg-white rounded-lg overflow-hidden flex items-center justify-center p-4 border border-muted shadow-inner">
                                 {images[fieldId] ? (

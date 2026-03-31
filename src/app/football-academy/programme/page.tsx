@@ -29,11 +29,21 @@ export default function ProgrammeFootballPage() {
   const methodImg = settings?.images?.prog_method_img;
   const trackingMainImg = settings?.images?.tracking_main_img;
 
-  const methodologyAxes = [
-    { icon: <Target className="text-secondary" />, title: t.football_pages.axes_tech.split(':')[0], desc: t.football_pages.axes_tech.split(':')[1] },
-    { icon: <Users className="text-secondary" />, title: t.football_pages.axes_tact.split(':')[0], desc: t.football_pages.axes_tact.split(':')[1] },
-    { icon: <Activity className="text-secondary" />, title: t.football_pages.axes_phys.split(':')[0], desc: t.football_pages.axes_phys.split(':')[1] },
-    { icon: <Brain className="text-secondary" />, title: t.football_pages.axes_ment.split(':')[0], desc: t.football_pages.axes_ment.split(':')[1] }
+  const performancePillars = [
+    { id: 'pillar_tech', title: t.football_pages.axes_tech, desc: t.football_pages.axes_tech_desc },
+    { id: 'pillar_tact', title: t.football_pages.axes_tact, desc: t.football_pages.axes_tact_desc },
+    { id: 'pillar_phys', title: t.football_pages.axes_phys, desc: t.football_pages.axes_phys_desc },
+    { id: 'pillar_ment', title: t.football_pages.axes_ment, desc: t.football_pages.axes_ment_desc },
+    { 
+      id: 'pillar_social', 
+      title: t.football_pages.axes_social, 
+      isSocial: true,
+      subsections: [
+        { title: t.football_pages.axes_social_school_title, desc: t.football_pages.axes_social_school_desc },
+        { title: t.football_pages.axes_social_social_title, desc: t.football_pages.axes_social_social_desc },
+        { title: t.football_pages.axes_social_psych_title, desc: t.football_pages.axes_social_psych_desc },
+      ]
+    }
   ];
 
   const proTrainingItems = [
@@ -180,27 +190,6 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Methodology Pillars Section */}
-        <section className="py-32 bg-white">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <ScrollReveal className="text-center mb-24">
-              <span className="text-secondary font-bold uppercase tracking-widest text-sm mb-2 block">{t.football_pages.method_subtitle}</span>
-              <h2 className="text-5xl md:text-7xl font-headline font-bold text-black uppercase tracking-tighter">{t.football_pages.method_title}</h2>
-              <div className="w-24 h-1.5 bg-black mx-auto mt-4 rounded-full" />
-            </ScrollReveal>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {methodologyAxes.map((axis, i) => (
-                <ScrollReveal key={i} delay={i * 100} className="p-10 bg-muted/20 rounded-[2.5rem] border border-muted hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
-                  <div className="bg-white p-5 rounded-2xl inline-block shadow-md mb-8 group-hover:scale-110 transition-transform">{axis.icon}</div>
-                  <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{axis.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{axis.desc}</p>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Coachs Section */}
         <section id="coachs-section" className="py-32 bg-muted/20 border-y border-muted">
           <div className="container mx-auto px-4">
@@ -213,8 +202,8 @@ export default function ProgrammeFootballPage() {
                 <p className="text-2xl text-muted-foreground leading-relaxed italic border-l-8 border-secondary pl-8">"{t.football_pages.coaches_text}"</p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> Diplômes UEFA Pro / A / B / C</div>
-                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_video} {t.football_pages.axes_ment.split(':')[0]}</div>
-                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_phys} {t.football_pages.axes_phys.split(':')[0]}</div>
+                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_video} {t.football_pages.axes_ment}</div>
+                  <div className="flex items-center gap-3 font-bold uppercase tracking-widest text-xs text-primary"><CheckCircle2 className="text-secondary" /> {t.competition_page.performance_phys} {t.football_pages.axes_phys}</div>
                 </div>
               </ScrollReveal>
               <div className="relative aspect-[4/3] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-black">
@@ -251,6 +240,53 @@ export default function ProgrammeFootballPage() {
                   <p className="text-sm text-white/50 leading-relaxed px-2 font-medium">
                     {item.desc}
                   </p>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Methodology Pillars Section - Renamed to Piliers de la Performance and moved */}
+        <section className="py-32 bg-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <ScrollReveal className="text-center mb-24">
+              <span className="text-secondary font-bold uppercase tracking-widest text-sm mb-2 block">{t.football_pages.method_subtitle}</span>
+              <h2 className="text-5xl md:text-7xl font-headline font-bold text-black uppercase tracking-tighter">{t.football_pages.method_title}</h2>
+              <div className="w-24 h-1.5 bg-black mx-auto mt-4 rounded-full" />
+            </ScrollReveal>
+            
+            <div className="space-y-24">
+              {performancePillars.map((pillar, i) => (
+                <ScrollReveal key={pillar.id} delay={i * 100} className="flex flex-col md:flex-row items-center gap-12 md:gap-20 group">
+                  <div className="w-full md:w-1/3 flex flex-col items-center text-center space-y-6">
+                    <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-8 border-muted shadow-2xl bg-black">
+                      {settings?.images?.[pillar.id] ? (
+                        <Image src={settings.images[pillar.id]} alt={pillar.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                      ) : (
+                        <div className="w-full h-full bg-primary/10 flex items-center justify-center text-primary/20">
+                          <ImageIcon size={64} />
+                        </div>
+                      )}
+                    </div>
+                    <h3 className="text-2xl font-headline font-bold text-black uppercase tracking-[0.2em]">{pillar.title}</h3>
+                  </div>
+                  
+                  <div className="w-full md:w-2/3">
+                    {pillar.isSocial ? (
+                      <div className="space-y-8">
+                        {pillar.subsections?.map((sub, idx) => (
+                          <div key={idx} className="space-y-2">
+                            <h4 className="text-lg font-bold text-black">{sub.title}</h4>
+                            <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{sub.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-muted-foreground leading-relaxed text-lg italic md:text-xl">
+                        {pillar.desc}
+                      </p>
+                    )}
+                  </div>
                 </ScrollReveal>
               ))}
             </div>
