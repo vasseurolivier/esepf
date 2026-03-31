@@ -22,22 +22,22 @@ export function Campuses() {
   const campuses = [
     {
       id: "evron",
-      name: "Campus Pays de la Loire",
-      location: "Le Mans",
+      name: t.registration.campuses.evron,
+      location: t.campus_locations.evron,
       image: settings?.images?.campus_evron,
       href: "/campus/evron"
     },
     {
       id: "sainte-bazeille",
-      name: "Campus Aquitaine",
-      location: "Bordeaux",
+      name: t.registration.campuses.bazeille,
+      location: t.campus_locations.bazeille,
       image: settings?.images?.campus_bazeille || settings?.images?.campus_bazeilles,
       href: "/campus/sainte-bazeille"
     },
     {
       id: "sainte-tulle",
-      name: "Campus Provence",
-      location: "Aix en Provence",
+      name: t.registration.campuses.tulle,
+      location: t.campus_locations.tulle,
       image: settings?.images?.campus_tulle,
       href: "/campus/sainte-tulle"
     }

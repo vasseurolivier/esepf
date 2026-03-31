@@ -4,10 +4,9 @@
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { Languages, CheckCircle2, Heart, Users, Compass, Loader2, BookOpen, GraduationCap } from 'lucide-react';
+import { Languages, Heart, Users, Compass, Loader2, BookOpen, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -35,9 +34,9 @@ export default function IntegrationPage() {
   }
 
   return (
-    <FirebaseClientProvider>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="min-h-screen bg-white">
+      <main className="flex-1 bg-white">
         
         {/* Hero Section */}
         <section className="relative h-[60vh] flex items-center justify-center bg-black overflow-hidden">
@@ -65,10 +64,9 @@ export default function IntegrationPage() {
           </div>
         </section>
 
-        {/* FLE Section - Detailed Content with model design */}
+        {/* FLE Section */}
         <section className="py-0 overflow-hidden">
           <div className="flex flex-col lg:flex-row min-h-[600px]">
-            {/* Left side: Image */}
             <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full bg-muted/20">
               {introImage ? (
                 <Image 
@@ -85,14 +83,13 @@ export default function IntegrationPage() {
               )}
             </div>
 
-            {/* Right side: Text on Light Grey background */}
             <div className="lg:w-1/2 bg-[#E5E7EB] flex flex-col justify-center p-8 md:p-16 lg:p-24">
               <ScrollReveal className="max-w-xl mx-auto lg:mx-0">
                 <h2 className="text-4xl md:text-6xl font-headline font-bold text-black mb-2 uppercase text-center lg:text-left">
                   FLE
                 </h2>
                 <h3 className="text-2xl md:text-4xl font-headline font-bold text-black mb-12 uppercase text-center lg:text-left">
-                  (Français Langue Étrangère)
+                  ({t.axes.fle_link})
                 </h3>
                 
                 <p className="text-lg md:text-xl text-black/80 leading-relaxed font-body text-center lg:text-left">
@@ -128,13 +125,13 @@ export default function IntegrationPage() {
                       <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
                         <span className="font-bold">∑</span>
                       </div>
-                      <span className="font-bold text-xs uppercase tracking-widest">Mathématiques</span>
+                      <span className="font-bold text-xs uppercase tracking-widest">{t.common.maths}</span>
                     </div>
                     <div className="flex items-center gap-3 bg-white p-4 rounded-xl border border-muted shadow-sm">
                       <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
                         <span className="font-bold">H₂O</span>
                       </div>
-                      <span className="font-bold text-xs uppercase tracking-widest">Sciences</span>
+                      <span className="font-bold text-xs uppercase tracking-widest">{t.common.sciences}</span>
                     </div>
                   </div>
                 </div>
@@ -142,9 +139,9 @@ export default function IntegrationPage() {
                   <div className="p-10 bg-primary rounded-[3rem] text-white shadow-2xl relative overflow-hidden group">
                     <div className="relative z-10 space-y-6">
                       <GraduationCap size={48} className="text-secondary" />
-                      <h3 className="text-2xl font-bold uppercase tracking-tight">Harmonisation des acquis</h3>
+                      <h3 className="text-2xl font-bold uppercase tracking-tight">{t.formations.integration_harmonization_title}</h3>
                       <p className="text-white/70 text-sm leading-relaxed">
-                        Un tuteur dédié suit la progression académique de chaque élève pour identifier les lacunes et les combler rapidement avant l'entrée en Seconde.
+                        {t.formations.integration_harmonization_desc}
                       </p>
                     </div>
                     <div className="absolute -bottom-10 -right-10 opacity-10 group-hover:scale-110 transition-transform">
@@ -202,6 +199,6 @@ export default function IntegrationPage() {
 
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </div>
   );
 }

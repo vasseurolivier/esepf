@@ -4,7 +4,6 @@
 import React, { useState } from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { Button } from '@/components/ui/button';
@@ -94,9 +93,9 @@ export default function RegistrationPage() {
 
   if (isSuccess) {
     return (
-      <FirebaseClientProvider>
+      <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="min-h-screen bg-muted/30 flex items-center justify-center p-4">
+        <main className="flex-1 bg-muted/30 flex items-center justify-center p-4">
           <ScrollReveal>
             <Card className="max-w-2xl w-full rounded-[3rem] shadow-2xl border-none text-center overflow-hidden">
               <div className="bg-primary p-12 text-white">
@@ -120,14 +119,14 @@ export default function RegistrationPage() {
           </ScrollReveal>
         </main>
         <Footer />
-      </FirebaseClientProvider>
+      </div>
     );
   }
 
   return (
-    <FirebaseClientProvider>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="min-h-screen bg-muted/20">
+      <main className="flex-1 bg-muted/20">
         
         <section className="bg-primary text-white py-20 relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10 translate-x-1/4 -translate-y-1/4">
@@ -240,7 +239,7 @@ export default function RegistrationPage() {
                       </div>
                       <div className="space-y-2 md:col-span-2">
                         <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.grade}</Label>
-                        <Input required placeholder="Ex: 4ème, Seconde..." value={formData.currentGrade} onChange={e => handleChange('currentGrade', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
+                        <Input required placeholder={t.registration.grade_placeholder} value={formData.currentGrade} onChange={e => handleChange('currentGrade', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                     </CardContent>
                   </Card>
@@ -291,12 +290,12 @@ export default function RegistrationPage() {
                           <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.campus_choice}</Label>
                           <Select required onValueChange={val => handleChange('campusChoice', val)}>
                             <SelectTrigger className="rounded-xl h-12 border-muted">
-                              <SelectValue placeholder="Choisir un campus" />
+                              <SelectValue placeholder={t.common.select_placeholder} />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="evron">Campus Pays de la Loire (Le Mans)</SelectItem>
-                              <SelectItem value="bazeille">Campus Aquitaine (Bordeaux)</SelectItem>
-                              <SelectItem value="tulle">Campus Provence (Aix en Provence)</SelectItem>
+                              <SelectItem value="evron">{t.registration.campuses.evron}</SelectItem>
+                              <SelectItem value="bazeille">{t.registration.campuses.bazeille}</SelectItem>
+                              <SelectItem value="tulle">{t.registration.campuses.tulle}</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
@@ -304,13 +303,13 @@ export default function RegistrationPage() {
                           <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.program_choice}</Label>
                           <Select required onValueChange={val => handleChange('programChoice', val)}>
                             <SelectTrigger className="rounded-xl h-12 border-muted">
-                              <SelectValue placeholder="Choisir une formation" />
+                              <SelectValue placeholder={t.common.select_placeholder} />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="college">Collège</SelectItem>
-                              <SelectItem value="bac_gen">Bac Général</SelectItem>
-                              <SelectItem value="bac_stmg">Bac Techno STMG</SelectItem>
-                              <SelectItem value="integration">Classe d'Intégration (FLE)</SelectItem>
+                              <SelectItem value="college">{t.registration.programs.college}</SelectItem>
+                              <SelectItem value="bac_gen">{t.registration.programs.bac_gen}</SelectItem>
+                              <SelectItem value="bac_stmg">{t.registration.programs.bac_stmg}</SelectItem>
+                              <SelectItem value="integration">{t.registration.programs.integration}</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
@@ -369,6 +368,6 @@ export default function RegistrationPage() {
 
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </div>
   );
 }

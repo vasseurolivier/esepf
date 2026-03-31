@@ -4,7 +4,6 @@
 import React, { useState } from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { Button } from '@/components/ui/button';
@@ -60,9 +59,9 @@ export default function ContactPage() {
   ];
 
   return (
-    <FirebaseClientProvider>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="min-h-screen bg-white">
+      <main className="flex-1 bg-white">
         
         {/* Hero Section */}
         <section className="bg-primary text-white py-24 relative overflow-hidden">
@@ -101,11 +100,11 @@ export default function ContactPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_name}</Label>
-                            <Input required placeholder="Ex: Jean Dupont" className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                            <Input required placeholder={t.contact_page.form_name_placeholder} className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
                           </div>
                           <div className="space-y-2">
                             <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_email}</Label>
-                            <Input required type="email" placeholder="Ex: jean@example.com" className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                            <Input required type="email" placeholder={t.contact_page.form_email_placeholder} className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
                           </div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -212,6 +211,6 @@ export default function ContactPage() {
 
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </div>
   );
 }
