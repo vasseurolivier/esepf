@@ -78,9 +78,15 @@ export default function CampusBazeillePage() {
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 {t.campus_pages.bazeille_desc}
               </p>
-              <div className="p-6 bg-muted rounded-2xl border border-border">
-                <h4 className="font-bold text-primary mb-2 italic">{t.axes.academy_title}</h4>
-                <p className="text-sm text-muted-foreground">{t.campus_pages.bazeille_culture_desc}</p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="p-6 bg-muted rounded-2xl border border-border">
+                  <h4 className="font-bold text-primary mb-2 italic">{t.campus_pages.bazeille_region}</h4>
+                  <p className="text-sm text-muted-foreground">{t.campus_pages.bazeille_region_desc}</p>
+                </div>
+                <div className="p-6 bg-muted rounded-2xl border border-border">
+                  <h4 className="font-bold text-primary mb-2 italic">{t.axes.academy_title}</h4>
+                  <p className="text-sm text-muted-foreground">{t.campus_pages.bazeille_culture_desc}</p>
+                </div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={200} className="relative aspect-square bg-white rounded-[3rem] overflow-hidden flex items-center justify-center border border-[#D4AF37]/20 shadow-xl">
