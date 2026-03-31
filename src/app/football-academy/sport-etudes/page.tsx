@@ -26,7 +26,7 @@ export default function SportEtudesPage() {
   const basketballImg = settings?.images?.sport_etudes_basketball;
 
   return (
-    <FirebaseClientProvider>
+    <div className="flex flex-col min-h-screen">
       <Header />
       <main className="min-h-screen bg-white relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
@@ -141,7 +141,7 @@ export default function SportEtudesPage() {
                   </div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed text-center px-4">
-                  {t.sport_etudes_page.text2.split('Prochainement')[0]}
+                  {t.sport_etudes_page.text2_football}
                 </p>
               </ScrollReveal>
 
@@ -159,7 +159,7 @@ export default function SportEtudesPage() {
                   </div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed text-center px-4">
-                  {t.sport_etudes_page.text2.includes('basketball') ? t.sport_etudes_page.text2.split('basketball,')[1] : ""}
+                  {t.sport_etudes_page.text2_basketball}
                 </p>
               </ScrollReveal>
             </div>
@@ -168,6 +168,6 @@ export default function SportEtudesPage() {
         </div>
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </div>
   );
 }

@@ -332,7 +332,7 @@ export const translations = {
         },
         {
           year: "2024",
-          title: "YOUTH ELITE SPORTS ACADEMY\nOUVERTURE AU MULTISPORT\nET À L'ASIE DU SUD-EST",
+          title: "YOUTH ELITE SPORTS ACADEMY\nOUVERTURE AL MULTISPORT\nET À L'ASIE DU SUD-EST",
           desc: "Création de notre propre marque \"YES Academy\".\nSignature de nouvelles écoles internationales.\nOuverture de la branche multisport.\nLancement de notre Académie dans d'autres villes en Asie.\nInvitations au tournoi international de Shanghai des Centres de Formation :\n2025 - OM - U17 Nationaux\n2026 - Paris FC féminines - U16 / U17"
         }
       ]
@@ -340,7 +340,7 @@ export const translations = {
     team_page: {
       title: "Le Projet",
       subtitle: "Le Programme Élite Football & Scolarité ESEPF",
-      p1: "À l'ESEPF, nous proposons aux jeunes de 11 à 19 ans un projet double exceptionnel.",
+      p1: "À l'ESEPF, we propose aux jeunes de 11 à 19 ans un projet double exceptionnel.",
       p2: "En parallèle, les élèves suivent un excellent cursus scolaire français (de la 6ème à la Terminale).",
       p3: "Ce programme unique forge aussi bien l'athlète que l'élève, en inculquant discipline, rigueur et ambition.",
       team_title: "L'ÉQUIPE",
@@ -405,7 +405,7 @@ export const translations = {
     college_page: {
       title: "ESEPF - Collège",
       age_label: "11 - 15 ANS",
-      p1: "Nous ouvrons les portes de notre Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
+      p1: "Nous ouvrons les portes de our Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
       p2: "À l'issue de leurs années collège, ils pourront accéder à nos programmes lycées.",
       p3: "Ce Collège viendra enrichir notre offre de formation et accompagner les jeunes.",
       prog_title: "Notre programme se décline en trois années :",
@@ -521,11 +521,6 @@ export const translations = {
       france_title: "FRANCE : TERRE DE FOOTBALL",
       france_desc_full: "Au total, la France est le pays qui a fourni le plus grand nombre de joueurs pour la Coupe du Monde au 21e siècle, avec 216 participants nés sur son sol, loin devant le Brésil et ses 148 joueurs, pourtant souvent perçu comme le plus grand exportateur de talents. La France devance également largement l'Allemagne et l'Italie, tous deux champions du monde à quatre reprises.",
       france_examples: "Exemples : Mbappé, Zidane, Griezmann, Henry, Drogba, Platini, Varane, Kanté, Coman...",
-      reconnaissance_title: "UNE FORMATION RECONNUE DANS LE MONDE",
-      reconnaissance_p1: "La France et ses environs ne manquent certainement pas de talents, et cela n'est en rien dû au hasard, mais bien à la manière dont les jeunes joueurs sont détectés et formés dans le pays. Cette méthode, dont l'efficacité est reconnue dans le monde entier, est au cœur du succès du football français.",
-      reconnaissance_p2: "La mission des centres de formation de football français est de développer nos jeunes footballeurs en les plaçant dans un environnement compétitif, avec un encadrement de haute qualité et un programme éducatif français conçu pour les aider à atteindre leur plein potentiel.",
-      reconnaissance_p3: "Grâce à un programme et une méthodologie structurés, et à travers des séances variées, des tests, des activités, des matchs, des défis et des interactions individuelles, nos joueurs évolueront émotionnellement, forgeront leur caractère et développeront leurs compétences techniques, tactiques et physiques (données ajustées en fonction de l'âge spécifique de chaque joueur).",
-      reconnaissance_p4: "Ils progresseront également dans leurs compétences humaines grâce à nos défis psycho-sociaux, apprenant l'esprit d'équipe, le dévouement, la résilience et, surtout, en nourrissant un amour durable pour le jeu.",
       method_title: "LES PILIERS DE LA PERFORMANCE",
       method_subtitle: "LES 5 AXES DE RÉUSSITE",
       axes_tech: "Technique",
@@ -603,7 +598,7 @@ export const translations = {
     metiers_page: {
       title: "UNE FORMATION AUX MÉTIERS DU SPORT",
       optional: "(OPTIONNEL)",
-      desc: "L'ESPF propose plusieurs formations spécialisées dans les métiers du sport, offrant ainsi à nos élèves la possibilité de se préparer à divers parcours professionnels dans ce secteur. Ces formations leur permettent d'acquérir des compétences pratiques et théoriques, adaptés aux exigences de différents domaines du sport. Elles ouvrent ainsi la voie à des carrières diversifiées, en offrant aux étudiants une large gamme d'opportunités dans des secteurs en pleine expansion.",
+      desc: "L'ESEPF propose plusieurs formations spécialisées dans les métiers du sport, offrant ainsi à nos élèves la possibilité de se préparer à divers parcours professionnels dans ce secteur. Ces formations leur permettent d'acquérir des compétences pratiques et théoriques, adaptés aux exigences de différents domaines du sport. Elles ouvrent ainsi la voie à des carrières diversifiées, en offrant aux étudiants une large gamme d'opportunités dans des secteurs en pleine expansion.",
       subtitle: "NOS FORMATIONS COMPLÉMENTAIRES",
       cta: "Pour plus de détails, contactez-nous",
       jobs: {
@@ -623,7 +618,8 @@ export const translations = {
       label2_1: "Football",
       label2_2: "Basketball",
       label2_2_sub: "(Bientôt disponible)",
-      text2: "Notre établissement propose un programme sport-études axé sur le football, offrant des entraînements intensifs, des séances techniques, des matchs, et un accompagnement individualisé pour développer les compétences sportives et humaines des élèves. Prochainement, nous élargirons notre offre avec un programme dédié au basketball, permettant aux passionnés de ce sport de bénéficier de la même qualité de formation et d'encadrement.",
+      text2_football: "Notre établissement propose un programme sport-études axé sur le football, offrant des entraînements intensifs, des séances techniques, des matchs, et un accompagnement individualisé pour développer les compétences sportives et humaines des élèves.",
+      text2_basketball: "Prochainement, nous élargirons notre offre avec un programme dédié au basketball, permettant aux passionnés de ce sport de bénéficier de la même qualité de formation et d'encadrement.",
       day_title: "UNE JOURNÉE TYPE À L'ESEPF",
       day_desc: "Le rythme d'un athlète demande une organisation rigoureuse entre les cours et les terrains.",
       discipline_label: "Discipline & Rigueur",
@@ -860,7 +856,8 @@ export const translations = {
       newsletter_desc: "Inscrivez-vous aux actualités.",
       placeholder: "Votre email",
       rights: "Tous droits réservés.",
-      hq_label: "Contact"
+      hq_label: "Contact",
+      phone_wechat: "+86 138 1738 9758 (Disponible sur WeChat / 微信同号)"
     }
   },
   en: {
@@ -1378,11 +1375,6 @@ export const translations = {
       france_title: "FRANCE: LAND OF FOOTBALL",
       france_desc_full: "In total, France is the country that has provided the largest number of players for the World Cup in the 21st century, with 216 participants born on its soil, far ahead of Brazil and its 148 players, yet often perceived as the largest exporter of talents. France leads Germany and Italy by a large margin, both four-time world champions.",
       france_examples: "Examples: Mbappé, Zidane, Griezmann, Henry, Drogba, Platini, Varane, Kanté, Coman...",
-      reconnaissance_title: "A GLOBALLY RECOGNIZED TRAINING",
-      reconnaissance_p1: "France and its surroundings certainly do not lack talent, and this is not due to chance, but to the way young players are detected and trained in the country. This method, whose effectiveness is recognized worldwide, is at the heart of French football success.",
-      reconnaissance_p2: "The mission of French Football Training Centers is to develop our young football players by placing them in a competitive environment, with high-quality coaching and a French education program designed to help them reach their full potential.",
-      reconnaissance_p3: "Thanks to a structured program and methodology, and through varied sessions, tests, activities, matches, challenges and individual interactions, our players will evolve emotionally, build their character and develop their technical, tactical and physical skills (data adjusted based on each player's specific age).",
-      reconnaissance_p4: "They will also progress in their human skills thanks to our psycho-social challenges, learning team spirit, devotion, resilience and, above all, nurturing a lasting love for the game.",
       method_title: "THE PERFORMANCE PILLARS",
       method_subtitle: "THE 5 SUCCESS AXES",
       axes_tech: "Technical",
@@ -1480,7 +1472,8 @@ export const translations = {
       label2_1: "Football",
       label2_2: "Basketball",
       label2_2_sub: "(Coming soon)",
-      text2: "Our establishment offers a sport-study program focused on football, offering intensive training and individualized support. Soon, we will expand our offer with a program dedicated to basketball, allowing fans of this sport to benefit from the same quality of training.",
+      text2_football: "Our establishment offers a sport-study program focused on football, offering intensive training, technical sessions, matches, and individualized support.",
+      text2_basketball: "Soon, we will expand our offer with a program dedicated to basketball, allowing fans of this sport to benefit from the same quality of training.",
       day_title: "A TYPICAL DAY AT ESEPF",
       day_desc: "The rhythm of an athlete requires rigorous organization between classes and fields.",
       discipline_label: "Discipline & Rigor",
@@ -1595,8 +1588,8 @@ export const translations = {
         sports_item2: "Bowling green",
         sports_item3: "Volleyball court",
         sports_item4: "Gymnasium",
-        nature_title: "A preserved natural setting",
-        nature_desc: "Beyond the infrastructure, our campus is integrated into a green and inspiring environment, where everyone can breathe, recharge and practice a multitude of outdoor activities."
+        nature_title: "Un cadre naturel préservé",
+        nature_desc: "Au-delà des infrastructures, notre campus s'intègre dans un environnement verdoyant et inspirant, où chacun peut respirer, se ressourcer et pratiquer une multitude d'activités en plein air."
       },
       tulle_hero: "Provence Campus",
       tulle_sub: "Excellence in the heart of Provence.",
@@ -1717,7 +1710,8 @@ export const translations = {
       newsletter_desc: "Subscribe to news.",
       placeholder: "Your email",
       rights: "All rights reserved.",
-      hq_label: "Contact"
+      hq_label: "Contact",
+      phone_wechat: "+86 138 1738 9758 (Available on WeChat / 微信同号)"
     }
   },
   zh: {
@@ -1863,7 +1857,7 @@ export const translations = {
       championships: "法国官方锦标赛",
       elite_prog: "精英足球计划",
       languages_title: "外语培训",
-      languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法语母语学生或者希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解和个人进步。教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功和国际化开放。",
+      languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法语母语学生或者希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解 and 个人进步。教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功和国际化开放。",
       fle_link: "法语对外汉语 (FLE)",
       efl_link: "英语对外汉语 (EFL)"
     },
@@ -1931,7 +1925,7 @@ export const translations = {
       bac_americain_title: "美国高中双文凭",
       bac_americain_sub: "双文凭：同时获得两个高中毕业证书。",
       high_school_diploma: "美国高中毕业证书",
-      high_school_desc: "得益 accessor 于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
+      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
       dual_diploma_official: "官方双学位",
       international_recognition: "国际认可",
       why_choose_title: "为什么选择这个路径？",
@@ -2172,7 +2166,7 @@ export const translations = {
         subtitle: "语言与文化职业",
         title_detail: "用所有语言表达自己",
         desc: "普通高中是一个为期三年的计划，旨在让高中生为高等教育做好准备。它基于共同核心课程与专业选择。",
-        system_desc: "在法国，所有学生首先遵循普通与技术高一。从高二开始，他们选择三个专业。在高三，他们保留其中两个专业。",
+        system_desc: "在法国，所有学生首先遵循普通与技术高一. 从高二开始，他们选择三个专业。在高三，他们保留其中两个专业。",
         specialties_title: "普通高中专业与目标",
         specialties: [
           { name: "外国语言、文学与文化 (LLCE)", desc: "培养先进的语言掌握能力与深厚的文化知识。" },
@@ -2219,17 +2213,11 @@ export const translations = {
         duration: "3年（非法语母语4年）",
         level: "4级 (技术高中毕业)",
         bts_desc: "管理 BTS 是两年的培训。在团队管理、财务与营销等领域提供教学。",
-        univ_desc: "本科是 3 年制大学培训，结合理论与实践。它加强了管理与分析技能。",
+        univ_desc: "本科是 3 年制大学培训，结合理论与实践. 它加强了管理与分析技能。",
         bts_list: ["会计管理", "管理支持", "商业运营", "谈判数字化", "中小企业管理", "IT 服务", "保险", "旅游"],
         bts_jobs: ["营销经理", "产品经理", "销售员", "薪资管理员", "人力资源经理", "财务主管", "资产管理", "顾问"],
         univ_list: ["经济管理", "社会经济管理", "管理科学", "法律", "创新管理", "国际贸易", "数字营销"],
-        univ_jobs: ["营销经理", "产品经理", "传播主管", "顾问", "人力资源经理", "财务分析师", "销售总监", "项目经理"],
-        management_tomorrow: "明天的管理",
-        future_manager: "您的经理未来",
-        techno_filiere: "一个雄心勃勃的职业技术方向",
-        service_excellence: "卓越服务",
-        luxury_codes: "奢侈品准则",
-        prestige_management: "声望管理"
+        univ_jobs: ["营销经理", "产品经理", "传播主管", "顾问", "人力资源经理", "财务分析师", "销售总监", "项目经理"]
       }
     },
     football_pages: {
@@ -2241,11 +2229,6 @@ export const translations = {
       france_title: "法国：足球之乡",
       france_desc_full: "法国是为世界杯贡献球员最多的国家。",
       france_examples: "例如：姆巴佩、齐达内、格列兹曼...",
-      reconnaissance_title: "享誉全球的培训",
-      reconnaissance_p1: "法国的人才辈出源于其完善的选拔与培养体系。",
-      reconnaissance_p2: "任务是在竞争环境中培养年轻球员。",
-      reconnaissance_p3: "凭借结构化方法，球员将在各方面全面发展。",
-      reconnaissance_p4: "他们还将提升人文技能，学习团队精神。",
       method_title: "绩效支柱",
       method_subtitle: "成功的5大轴心",
       axes_tech: "技术",
@@ -2343,7 +2326,8 @@ export const translations = {
       label2_1: "足球",
       label2_2: "篮球",
       label2_2_sub: "(即将推出)",
-      text2: "目前提供足球计划，很快将推出篮球计划。",
+      text2_football: "目前提供足球计划，提供密集训练、技战术课程、比赛和个性化支持。",
+      text2_basketball: "很快将推出篮球计划，让爱好者也能享受同等质量的培训。",
       day_title: "典型的一天",
       day_desc: "运动员的节奏要求严格组织。",
       discipline_label: "纪律与严谨",
@@ -2411,7 +2395,7 @@ export const translations = {
       evron_hero: "卢瓦尔河地区校区",
       evron_sub: "ESEPF 在马耶讷省的历史和行政核心，靠近勒芒。",
       evron_region: "Évron 马耶讷省 (53)",
-      evron_sub_loc: "法国卢瓦尔河地区。",
+      evron_region_desc: "法国卢瓦尔河地区。",
       evron_full_desc: {
         title: "École des Sports Et du Prestige Français (ESEPF)",
         intro: "我们的机构是一所追求卓越的机构，在特殊的环境中体验学术和体育的圆满。我们的现代化和完整的设施旨在为每个学生提供一个有利于成功、体育实践和日常福祉的环境。",
@@ -2580,7 +2564,8 @@ export const translations = {
       newsletter_desc: "订阅动态。",
       placeholder: "您的邮箱",
       rights: "版权所有。",
-      hq_label: "联系"
+      hq_label: "联系",
+      phone_wechat: "+86 138 1738 9758 (Disponible sur WeChat / 微信同号)"
     }
   }
 };

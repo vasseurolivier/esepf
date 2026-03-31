@@ -67,7 +67,7 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Phone size={18} className="text-secondary" />
-                <span>+86 138 1738 9758 (Disponible sur WeChat / 微信同号)</span>
+                <span>{t.footer.phone_wechat}</span>
               </li>
               <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Mail size={18} className="text-secondary" />
