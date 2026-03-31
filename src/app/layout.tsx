@@ -1,3 +1,4 @@
+
 import type {Metadata} from 'next';
 import './globals.css';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
@@ -11,19 +12,26 @@ export const metadata: Metadata = {
 };
 
 // Helper function to unwrap Firestore REST API response for initial settings
+// Using cache: 'no-store' to ensure real-time updates and avoid stale data issues
 async function getInitialSettings() {
   try {
     const url = `https://firestore.googleapis.com/v1/projects/${firebaseConfig.projectId}/databases/(default)/documents/settings/global`;
-    const res = await fetch(url, { next: { revalidate: 0 } });
+    const res = await fetch(url, { 
+      cache: 'no-store',
+      next: { revalidate: 0 } 
+    });
+    
     if (!res.ok) return null;
     const data = await res.json();
     
-    if (!data.fields) return null;
+    if (!data || !data.fields) return null;
 
     const unwrap = (fields: any) => {
       const result: any = {};
       for (const key in fields) {
         const val = fields[key];
+        if (!val) continue;
+        
         if (val.stringValue !== undefined) result[key] = val.stringValue;
         else if (val.booleanValue !== undefined) result[key] = val.booleanValue;
         else if (val.integerValue !== undefined) result[key] = parseInt(val.integerValue);
@@ -37,18 +45,20 @@ async function getInitialSettings() {
 
     return unwrap(data.fields);
   } catch (e) {
+    console.error("Failed to fetch initial settings:", e);
     return null;
   }
 }
 
-export default async function RootLayout(props: {
+export default async function RootLayout({
+  children,
+}: {
   children: React.ReactNode;
 }) {
-  const { children } = props;
   const initialSettings = await getInitialSettings();
 
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
