@@ -345,7 +345,7 @@ export const translations = {
     college_page: {
       title: "ESEPF - Collège",
       age_label: "11 - 15 ANS",
-      p1: "Nous ouvrons les portes de notre Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
+      p1: "Nous ouvrons les portes de our Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
       p2: "À l'issue de leurs années collège, ils pourront accéder à nos programmes lycées.",
       p3: "Ce Collège viendra enrichir notre offre de formation et accompagner les jeunes.",
       prog_title: "Notre programme se décline en trois années :",
@@ -581,7 +581,7 @@ export const translations = {
     campus_pages: {
       evron_hero: "Campus Pays de la Loire",
       evron_sub: "Le cœur historique et administratif de l'ESEPF en Mayenne, proche du Mans.",
-      evron_region: "Mayenne (53)",
+      evron_region: "Évron Mayenne (53)",
       evron_region_desc: "Pays de la Loire, France.",
       bazeille_hero: "Campus Aquitaine",
       bazeille_sub: "L'innovation pédagogique au cœur du Sud-Ouest.",
@@ -1260,7 +1260,7 @@ export const translations = {
     campus_pages: {
       evron_hero: "Pays de la Loire Campus",
       evron_sub: "The historic and administrative heart of ESEPF in Mayenne, near Le Mans.",
-      evron_region: "Mayenne (53)",
+      evron_region: "Évron Mayenne (53)",
       evron_region_desc: "Pays de la Loire, France.",
       bazeille_hero: "Aquitaine Campus",
       bazeille_sub: "Educational innovation in the South-West.",
@@ -1773,7 +1773,7 @@ export const translations = {
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级 (高中毕业)",
-        bts_desc: "应用外语 (LEA) 的 BTS 是一个为期两年的培训. 它 in 翻译、口译、国际项目 management 等领域 offer 教学. 通过档案申请，BTS 可以快速为职业生涯做好准备。",
+        bts_desc: "应用外语 (LEA) 的 BTS 是一个为期两年的培训. It in 翻译、口译、国际项目 management 等领域 offer 教学. 通过档案申请，BTS 可以快速为职业生涯做好准备。",
         univ_desc: "攻读本科文凭允许 in 翻译、国际关系等领域进行专业化. 本科是 3 年制大学培训. In BTS 之后，也可以直接进入本科最后一年。",
         bts_list: ["旅游 BTS", "国际贸易 BTS", "中小企业管理 BTS", "翻译 与 口译 BTS", "传播 BTS", "公共关系 BTS", "运营商业管理 BTS", "农村开发 BTS"],
         bts_jobs: ["传播主管", "行政助理", "营销经理", "翻译", "项目经理", "国际关系负责人", "产品经理", "销售代表"],
@@ -1892,7 +1892,7 @@ export const translations = {
     },
     reseau_page: {
       title: "俱乐部网络展示才华",
-      p1: "凭借我们建立的网络，我们为球员 offer 独特机会。",
+      p1: "凭借 we 建立的网络，我们为球员 offer 独特机会。",
       subtitle: " offer 机会的俱乐部网络..."
     },
     journey_page: {
@@ -1939,7 +1939,7 @@ export const translations = {
     campus_pages: {
       evron_hero: "Campus Pays de la Loire",
       evron_sub: "ESEPF 的历史 和 行政中心，位于马耶讷省 (Mayenne)，毗邻勒芒 (LE MANS)。",
-      evron_region: "马耶讷省 (53)",
+      evron_region: "Évron 马耶讷省 (53)",
       evron_region_desc: "法国卢瓦尔河地区。",
       bazeille_hero: "Campus Aquitaine",
       bazeille_sub: "教学创新中心。",
