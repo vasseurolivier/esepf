@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
+import { useRouter } from 'next/navigation';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +18,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function Header() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -155,7 +157,15 @@ export function Header() {
               >
                 <DropdownMenu open={activeMenu === link.name} onOpenChange={(val) => !val && setActiveMenu(null)}>
                   <DropdownMenuTrigger asChild>
-                    <div className="w-full flex items-center justify-center border-r border-white/10 hover:bg-white/10 transition-colors cursor-pointer outline-none group">
+                    <div 
+                      className="w-full flex items-center justify-center border-r border-white/10 hover:bg-white/10 transition-colors cursor-pointer outline-none group"
+                      onClick={() => {
+                        if (link.href !== '#') {
+                          router.push(link.href);
+                          setActiveMenu(null);
+                        }
+                      }}
+                    >
                       <span className="pl-4 py-5 text-[10px] font-bold text-white uppercase tracking-widest group-hover:text-[#D4AF37] transition-colors">
                         {link.name}
                       </span>
@@ -195,20 +205,40 @@ export function Header() {
         <div className="flex flex-col space-y-2 px-6">
           {navLinks.map((link) => (
             <div key={link.name} className="flex flex-col">
-              <div 
-                className="flex items-center justify-between py-4 border-b border-white/5 group"
-                onClick={() => link.hasDropdown ? setExpandedMobileMenu(expandedMobileMenu === link.name ? null : link.name) : setIsOpen(false)}
-              >
+              <div className="flex items-center justify-between py-4 border-b border-white/5 group">
                 {link.hasDropdown ? (
-                  <span className="text-sm font-bold text-white uppercase tracking-widest group-hover:text-[#D4AF37] transition-colors">{link.name}</span>
+                  <div 
+                    className="flex-1 text-sm font-bold text-white uppercase tracking-widest group-hover:text-[#D4AF37] transition-colors cursor-pointer"
+                    onClick={() => {
+                      if (link.href !== '#') {
+                        router.push(link.href);
+                        setIsOpen(false);
+                      } else {
+                        setExpandedMobileMenu(expandedMobileMenu === link.name ? null : link.name);
+                      }
+                    }}
+                  >
+                    {link.name}
+                  </div>
                 ) : (
-                  <Link href={link.href} className="text-sm font-bold text-white uppercase tracking-widest block w-full hover:text-[#D4AF37] transition-colors">{link.name}</Link>
+                  <Link 
+                    href={link.href} 
+                    className="text-sm font-bold text-white uppercase tracking-widest block w-full hover:text-[#D4AF37] transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
                 )}
                 {link.hasDropdown && (
-                  <ChevronDown 
-                    size={18} 
-                    className={cn("text-white/40 transition-transform duration-300 group-hover:text-[#D4AF37]", expandedMobileMenu === link.name && "rotate-180 text-[#D4AF37]")} 
-                  />
+                  <div 
+                    className="p-2 cursor-pointer"
+                    onClick={() => setExpandedMobileMenu(expandedMobileMenu === link.name ? null : link.name)}
+                  >
+                    <ChevronDown 
+                      size={18} 
+                      className={cn("text-white/40 transition-transform duration-300 group-hover:text-[#D4AF37]", expandedMobileMenu === link.name && "rotate-180 text-[#D4AF37]")} 
+                    />
+                  </div>
                 )}
               </div>
               
