@@ -77,7 +77,7 @@ export default function TeamPage() {
 
               <div className="pt-8 grid grid-cols-2 gap-6">
                 <div className="p-6 bg-white rounded-3xl shadow-sm border border-muted">
-                  <span className="text-3xl font-bold text-primary block mb-1">100%</span>
+                  <span className="text-3xl font-bold text-primary block mb-1">ELITE</span>
                   <span className="text-xs font-bold uppercase text-muted-foreground tracking-widest">{t.team_page.success_rate}</span>
                 </div>
                 <div className="p-6 bg-white rounded-3xl shadow-sm border border-muted">
