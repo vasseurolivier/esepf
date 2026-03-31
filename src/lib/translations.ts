@@ -112,7 +112,7 @@ export const translations = {
       lang_val: "3",
       lang_lab: "Langues d'enseignement",
       camp_val: "3",
-      camp_lab: "Modern Campuses",
+      camp_lab: "Campus Modernes",
       foot_val: "ELITE",
       foot_lab: "Formation Football",
       prog_val: "4",
@@ -310,7 +310,7 @@ export const translations = {
         {
           year: "2024",
           title: "YOUTH ELITE SPORTS ACADEMY\nOUVERTURE AU MULTISPORT\nET À L'ASIE DU SUD-EST",
-          desc: "Création de notre propre marque \"YES Academy\".\nSignature de nouvelles écoles internationales.\nOuverture de la branche multisport.\nLancement de de notre Académie dans d'autres villes en Asie.\nInvitations au tournoi international de Shanghai des Centres de Formation :\n2025 - OM - U17 Nationaux\n2026 - Paris FC féminines - U16 / U17"
+          desc: "Création de our propre marque \"YES Academy\".\nSignature de nouvelles écoles internationales.\nOuverture de la branche multisport.\nLancement de de notre Académie dans d'autres villes en Asie.\nInvitations au tournoi international de Shanghai des Centres de Formation :\n2025 - OM - U17 Nationaux\n2026 - Paris FC féminines - U16 / U17"
         }
       ]
     },
@@ -1762,7 +1762,7 @@ export const translations = {
     },
     axes: {
       scolarite: "学术课程",
-      scolarite_desc: "我们的体育学习计划 offer 了一个学术框架，让学生能够将雄心勃勃的体育项目与学业成功相结合。\n在初中阶段，重点 is 获得基础知识、个性化跟踪和工作组织，学习如何平衡课程和训练。\n在高中阶段，学业以备考高中毕业会考为导和，提供方法论支持和高等教育指导。\n目标 is 培养自主、好奇的学生，让他们在球场和教室里都能茁壮成长。",
+      scolarite_desc: "我们的体育学习计划 offer 了一个学术框架，让学生能够将雄心勃勃的体育项目与学业成功相结合。\n在初中阶段，重点 is 获得基础知识、个性化跟踪和工作组织，学习如何平衡课程 and 训练。\n在高中阶段，学业以备考高中毕业会考为导和，提供方法论支持和高等教育指导。\n目标 is 培养自主、好奇的学生，让他们在球场和教室里都能茁壮成长。",
       college_link: "初中 (11 - 15 岁)",
       lycee_link: "高中 (15 - 18 岁)",
       academy_title: "足球学院",
@@ -2176,10 +2176,10 @@ export const translations = {
       weekend: "周末",
       weekend_desc: "参加官方 FFF 锦标赛。",
       french_method_title: "法国足球青训教学法",
-      french_method_p1: "我们借鉴了享誉全球的法国足球青训教学法，为您提供一套结构严谨且全面的发展计划，旨在全方位支持球员的成长与进步。",
-      french_method_p2: "该计划基于多样化的训练课，融合了根据球员年龄、水平和具体需求量身定制的技术、战术及体能练习. 定期的测试将用于评估其进步情况，而比赛、特定挑战和个人互动则提供了持续调整与优化的机会。",
-      french_method_p3: "除球场表现外，该计划还特别注重参与者的个人素养和情感发育. 通过精心设计的心理社会挑战，球员们将学习团队精神、纪律、韧性、情绪管理能力以及奉献精神。",
-      french_method_p4: "我们的目标是培养全面的球员：他们不仅在技术和体能上表现出色，还具备在集体环境中发展所需的优秀品质. 通过培养对足球真实且持久的热爱，该计划不仅让他们在球场上进步，更为他们的体育和个人未来奠定坚实的基础。",
+      french_method_p1: "我们借鉴了享誉全球s法国足球青训教学法，为您提供一套结构严谨且全面s发展计划，旨在全方位支持球员s成长与进步。",
+      french_method_p2: "该计划基于多样化s训练课，融合了根据球员年龄、水平和具体需求量身定制s技术、战术及体能练习. 定期s测试将用于评估其进步情况，而比赛、特定挑战和个人互动则提供了持续调整与优化s机会。",
+      french_method_p3: "除球场表现外，该计划还特别注重参与者s个人素养和情感发育. 通过精心设计s心理社会挑战，球员们将学习团队精神、纪律、韧性、情绪管理能力以及奉献精神。",
+      french_method_p4: "我们s目标是培养全面s球员：他们不仅在技术和体能上表现出色，还具备在集体环境中发展所需s优秀品质. 通过培养对足球真实且持久s热爱，该计划不仅让他们在球场上进步，更为他们s体育和个人未来奠定坚实s基础。",
       pro_training: {
         title: "像职业球员一样训练",
         subtitle: "我们提供基于法国教学法和培训的发展计划，围绕技术、战术、身体和心理等关键轴心构建。",
