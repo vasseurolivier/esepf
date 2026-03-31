@@ -34,7 +34,7 @@ export default function ContactPage() {
     setTimeout(() => {
       setIsSaving(false);
       toast({
-        title: "Message Envoyé !",
+        title: t.contact_page.form_success,
         description: t.contact_page.form_success,
       });
       (e.target as HTMLFormElement).reset();
@@ -101,11 +101,11 @@ export default function ContactPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_name}</Label>
-                            <Input required placeholder="Ex: Jean Dupont" className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                            <Input required placeholder={t.common.placeholder_name} className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
                           </div>
                           <div className="space-y-2">
                             <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_email}</Label>
-                            <Input required type="email" placeholder="Ex: jean@example.com" className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                            <Input required type="email" placeholder={t.common.placeholder_email} className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
                           </div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -117,12 +117,12 @@ export default function ContactPage() {
                             <Label className="font-bold text-xs uppercase tracking-widest flex items-center gap-2">
                               <Hash size={14} /> {t.contact_page.form_code_ref}
                             </Label>
-                            <Input placeholder="ABC-123" className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                            <Input placeholder={t.common.placeholder_code} className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
                           </div>
                         </div>
                         <div className="space-y-2">
                           <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_message}</Label>
-                          <Textarea required placeholder="..." className="rounded-xl min-h-[200px] bg-muted/30 border-muted focus:border-secondary transition-all" />
+                          <Textarea required placeholder={t.common.placeholder_message} className="rounded-xl min-h-[200px] bg-muted/30 border-muted focus:border-secondary transition-all" />
                         </div>
                         <Button 
                           type="submit" 

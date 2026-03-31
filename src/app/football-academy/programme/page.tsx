@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -89,7 +90,9 @@ export default function ProgrammeFootballPage() {
                 {t.football_pages.prog_title}
               </h1>
               <div className="flex wrap justify-center gap-4">
-                <button onClick={() => scrollToSection('fr-section')} className="bg-black/50 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">Football FR</button>
+                <button onClick={() => scrollToSection('fr-section')} className="bg-secondary text-white px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary/90 transition-colors shadow-xl">
+                  {t.football_pages.btn_fr_foot}
+                </button>
                 <button onClick={() => scrollToSection('method-section')} className="bg-black/50 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.method_title}</button>
                 <button onClick={() => scrollToSection('coachs-section')} className="bg-black/50 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.coaches_title}</button>
                 <button onClick={() => scrollToSection('prog-section')} className="bg-black/50 backdrop-blur-md text-white border border-white/20 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-secondary transition-colors shadow-xl">{t.football_pages.weekly_title}</button>

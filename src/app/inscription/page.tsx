@@ -224,7 +224,7 @@ export default function RegistrationPage() {
                     <CardContent className="p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.first_name}</Label>
-                        <Input required value={formData.studentFirstName} onChange={e => handleChange('studentFirstName', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
+                        <Input required placeholder={t.common.placeholder_name} value={formData.studentFirstName} onChange={e => handleChange('studentFirstName', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                       <div className="space-y-2">
                         <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.last_name}</Label>
@@ -240,7 +240,7 @@ export default function RegistrationPage() {
                       </div>
                       <div className="space-y-2 md:col-span-2">
                         <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.grade}</Label>
-                        <Input required placeholder="Ex: 4ème, Seconde..." value={formData.currentGrade} onChange={e => handleChange('currentGrade', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
+                        <Input required placeholder={t.registration.placeholder_grade} value={formData.currentGrade} onChange={e => handleChange('currentGrade', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                     </CardContent>
                   </Card>
@@ -266,7 +266,7 @@ export default function RegistrationPage() {
                       </div>
                       <div className="space-y-2">
                         <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.email}</Label>
-                        <Input required type="email" value={formData.parentEmail} onChange={e => handleChange('parentEmail', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
+                        <Input required type="email" placeholder={t.common.placeholder_email} value={formData.parentEmail} onChange={e => handleChange('parentEmail', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                       <div className="space-y-2">
                         <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.phone}</Label>
@@ -291,12 +291,12 @@ export default function RegistrationPage() {
                           <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.campus_choice}</Label>
                           <Select required onValueChange={val => handleChange('campusChoice', val)}>
                             <SelectTrigger className="rounded-xl h-12 border-muted">
-                              <SelectValue placeholder="Choisir un campus" />
+                              <SelectValue placeholder={t.registration.campus_placeholder} />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="evron">Campus Pays de la Loire (Le Mans)</SelectItem>
-                              <SelectItem value="bazeille">Campus Aquitaine (Bordeaux)</SelectItem>
-                              <SelectItem value="tulle">Campus Provence (Aix en Provence)</SelectItem>
+                              <SelectItem value="evron">{t.registration.campus_evron_full}</SelectItem>
+                              <SelectItem value="bazeille">{t.registration.campus_bazeille_full}</SelectItem>
+                              <SelectItem value="tulle">{t.registration.campus_tulle_full}</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
@@ -304,13 +304,13 @@ export default function RegistrationPage() {
                           <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.program_choice}</Label>
                           <Select required onValueChange={val => handleChange('programChoice', val)}>
                             <SelectTrigger className="rounded-xl h-12 border-muted">
-                              <SelectValue placeholder="Choisir une formation" />
+                              <SelectValue placeholder={t.registration.program_placeholder} />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="college">Collège</SelectItem>
-                              <SelectItem value="bac_gen">Bac Général</SelectItem>
-                              <SelectItem value="bac_stmg">Bac Techno STMG</SelectItem>
-                              <SelectItem value="integration">Classe d'Intégration (FLE)</SelectItem>
+                              <SelectItem value="college">{t.registration.program_college}</SelectItem>
+                              <SelectItem value="bac_gen">{t.registration.program_bac_gen}</SelectItem>
+                              <SelectItem value="bac_stmg">{t.registration.program_bac_stmg}</SelectItem>
+                              <SelectItem value="integration">{t.registration.program_integration}</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
@@ -321,7 +321,7 @@ export default function RegistrationPage() {
                           <Hash size={14} /> {t.registration.code_ref}
                         </Label>
                         <Input 
-                          placeholder="ABC-123" 
+                          placeholder={t.common.placeholder_code} 
                           value={formData.codeRef} 
                           onChange={e => handleChange('codeRef', e.target.value)} 
                           className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" 

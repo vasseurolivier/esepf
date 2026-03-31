@@ -128,13 +128,13 @@ export default function IntegrationPage() {
                       <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
                         <span className="font-bold">∑</span>
                       </div>
-                      <span className="font-bold text-xs uppercase tracking-widest">Mathématiques</span>
+                      <span className="font-bold text-xs uppercase tracking-widest">{t.formations.integration_maths}</span>
                     </div>
                     <div className="flex items-center gap-3 bg-white p-4 rounded-xl border border-muted shadow-sm">
                       <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
                         <span className="font-bold">H₂O</span>
                       </div>
-                      <span className="font-bold text-xs uppercase tracking-widest">Sciences</span>
+                      <span className="font-bold text-xs uppercase tracking-widest">{t.formations.integration_sciences}</span>
                     </div>
                   </div>
                 </div>
@@ -142,9 +142,9 @@ export default function IntegrationPage() {
                   <div className="p-10 bg-primary rounded-[3rem] text-white shadow-2xl relative overflow-hidden group">
                     <div className="relative z-10 space-y-6">
                       <GraduationCap size={48} className="text-secondary" />
-                      <h3 className="text-2xl font-bold uppercase tracking-tight">Harmonisation des acquis</h3>
+                      <h3 className="text-2xl font-bold uppercase tracking-tight">{t.formations.integration_harmonization_title}</h3>
                       <p className="text-white/70 text-sm leading-relaxed">
-                        Un tuteur dédié suit la progression académique de chaque élève pour identifier les lacunes et les combler rapidement avant l'entrée en Seconde.
+                        {t.formations.integration_harmonization_desc}
                       </p>
                     </div>
                     <div className="absolute -bottom-10 -right-10 opacity-10 group-hover:scale-110 transition-transform">
