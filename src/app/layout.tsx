@@ -3,62 +3,17 @@ import './globals.css';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { LanguageProvider } from '@/context/LanguageContext';
-import { firebaseConfig } from '@/firebase/config';
 
 export const metadata: Metadata = {
   title: 'Institution ESEPF | Collège & Lycée',
   description: 'Un établissement d\'excellence pour la réussite de nos élèves, du collège au baccalauréat.',
 };
 
-/**
- * Récupère les paramètres globaux via l'API REST de Firestore côté serveur.
- * Utilise un mécanisme de secours (fallback) robuste pour éviter les erreurs de rendu.
- */
-async function getInitialSettings() {
-  try {
-    const url = `https://firestore.googleapis.com/v1/projects/${firebaseConfig.projectId}/databases/(default)/documents/settings/global`;
-    const res = await fetch(url, { 
-      cache: 'no-store',
-      next: { revalidate: 0 },
-      signal: AbortSignal.timeout(5000) // Timeout de 5s pour éviter de bloquer le rendu
-    });
-    
-    if (!res.ok) return null;
-    const data = await res.json();
-    
-    if (!data || !data.fields) return null;
-
-    const unwrap = (fields: any) => {
-      const result: any = {};
-      for (const key in fields) {
-        const val = fields[key];
-        if (!val) continue;
-        
-        if (val.stringValue !== undefined) result[key] = val.stringValue;
-        else if (val.booleanValue !== undefined) result[key] = val.booleanValue;
-        else if (val.integerValue !== undefined) result[key] = parseInt(val.integerValue);
-        else if (val.doubleValue !== undefined) result[key] = parseFloat(val.doubleValue);
-        else if (val.mapValue !== undefined) {
-          result[key] = val.mapValue.fields ? unwrap(val.mapValue.fields) : {};
-        }
-      }
-      return result;
-    };
-
-    return unwrap(data.fields);
-  } catch (e) {
-    console.error("SSR: Failed to fetch initial settings:", e);
-    return null;
-  }
-}
-
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const initialSettings = await getInitialSettings();
-
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
@@ -67,7 +22,7 @@ export default async function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased bg-background text-foreground">
-        <FirebaseClientProvider initialSettings={initialSettings}>
+        <FirebaseClientProvider>
           <LanguageProvider>
             {children}
             <Toaster />

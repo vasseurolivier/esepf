@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useMemo, type ReactNode } from 'react';
@@ -7,12 +6,10 @@ import { initializeFirebase } from '@/firebase';
 
 interface FirebaseClientProviderProps {
   children: ReactNode;
-  initialSettings?: any;
 }
 
-export function FirebaseClientProvider({ children, initialSettings }: FirebaseClientProviderProps) {
+export function FirebaseClientProvider({ children }: FirebaseClientProviderProps) {
   const firebaseServices = useMemo(() => {
-    // Initialize Firebase on the client side, once per component mount.
     return initializeFirebase();
   }, []); 
 
@@ -21,7 +18,6 @@ export function FirebaseClientProvider({ children, initialSettings }: FirebaseCl
       firebaseApp={firebaseServices.firebaseApp}
       auth={firebaseServices.auth}
       firestore={firebaseServices.firestore}
-      initialSettings={initialSettings}
     >
       {children}
     </FirebaseProvider>
