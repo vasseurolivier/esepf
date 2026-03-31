@@ -97,11 +97,12 @@ export default function HistoryPage() {
                     {/* Year Box */}
                     <div className="flex flex-col items-center mb-8 h-[180px] justify-end">
                       {timelineLogos[idx] && (
-                        <div className="mb-4 h-16 w-16 flex items-center justify-center">
-                          <img 
+                        <div className="mb-4 h-16 w-16 relative">
+                          <Image 
                             src={timelineLogos[idx]} 
                             alt="Brand Logo" 
-                            className="max-h-full max-w-full object-contain"
+                            fill
+                            className="object-contain"
                           />
                         </div>
                       )}

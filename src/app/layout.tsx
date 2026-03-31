@@ -14,8 +14,10 @@ export const metadata: Metadata = {
 // Helper function to unwrap Firestore REST API response for initial settings
 async function getInitialSettings() {
   try {
+    // We use revalidate: 0 to ensure the server-side fetch always gets the latest data
+    // This prevents the "old image then new image" flicker
     const url = `https://firestore.googleapis.com/v1/projects/${firebaseConfig.projectId}/databases/(default)/documents/settings/global`;
-    const res = await fetch(url, { next: { revalidate: 60 } });
+    const res = await fetch(url, { next: { revalidate: 0 } });
     if (!res.ok) return null;
     const data = await res.json();
     
@@ -27,6 +29,8 @@ async function getInitialSettings() {
         const val = fields[key];
         if (val.stringValue !== undefined) result[key] = val.stringValue;
         else if (val.booleanValue !== undefined) result[key] = val.booleanValue;
+        else if (val.integerValue !== undefined) result[key] = parseInt(val.integerValue);
+        else if (val.doubleValue !== undefined) result[key] = parseFloat(val.doubleValue);
         else if (val.mapValue !== undefined) result[key] = unwrap(val.mapValue.fields);
       }
       return result;
