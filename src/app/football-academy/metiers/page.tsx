@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -31,12 +29,11 @@ export default function MetiersSportPage() {
   ];
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-gradient-to-br from-[#a5a6d1] via-[#ffffff] to-[#e08b8b] py-20">
         <div className="container mx-auto px-4">
           
-          {/* Header Section */}
           <ScrollReveal className="text-center max-w-5xl mx-auto mb-20">
             <h1 className="text-5xl md:text-7xl font-headline font-bold text-black mb-2 tracking-tighter uppercase leading-none">
               {t.metiers_page.title}
@@ -50,14 +47,12 @@ export default function MetiersSportPage() {
             </div>
           </ScrollReveal>
 
-          {/* Subtitle Section */}
           <ScrollReveal delay={200} className="text-center mb-16">
             <h2 className="text-2xl md:text-3xl font-headline font-bold text-black uppercase tracking-widest inline-block border-b-2 border-black pb-2">
               {t.metiers_page.subtitle}
             </h2>
           </ScrollReveal>
 
-          {/* Jobs Grid */}
           <div className="max-w-7xl mx-auto mb-24">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
               {metiers.map((job, idx) => {
@@ -84,7 +79,6 @@ export default function MetiersSportPage() {
             </div>
           </div>
 
-          {/* CTA Section */}
           <ScrollReveal delay={600} className="flex justify-center">
             <Link href="/contact">
               <Button className="bg-[#262626] text-white hover:bg-black font-bold py-8 px-16 rounded-none text-lg transition-all shadow-xl uppercase tracking-widest border border-white/10">
@@ -96,6 +90,6 @@ export default function MetiersSportPage() {
         </div>
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

@@ -1,13 +1,11 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { Languages, CheckCircle2, Heart, Users, Compass, Loader2, BookOpen, GraduationCap } from 'lucide-react';
+import { Languages, Heart, Users, Compass, Loader2, BookOpen, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -35,11 +33,10 @@ export default function IntegrationPage() {
   }
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* Hero Section */}
         <section className="relative h-[60vh] flex items-center justify-center bg-black overflow-hidden">
           {heroImage ? (
             <Image 
@@ -65,10 +62,8 @@ export default function IntegrationPage() {
           </div>
         </section>
 
-        {/* FLE Section - Detailed Content with model design */}
         <section className="py-0 overflow-hidden">
           <div className="flex flex-col lg:flex-row min-h-[600px]">
-            {/* Left side: Image */}
             <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full bg-muted/20">
               {introImage ? (
                 <Image 
@@ -85,7 +80,6 @@ export default function IntegrationPage() {
               )}
             </div>
 
-            {/* Right side: Text on Light Grey background */}
             <div className="lg:w-1/2 bg-[#E5E7EB] flex flex-col justify-center p-8 md:p-16 lg:p-24">
               <ScrollReveal className="max-w-xl mx-auto lg:mx-0">
                 <h2 className="text-4xl md:text-6xl font-headline font-bold text-black mb-2 uppercase text-center lg:text-left">
@@ -111,7 +105,6 @@ export default function IntegrationPage() {
           </div>
         </section>
 
-        {/* Remise à niveau Section */}
         <section className="py-24 bg-muted/10">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
@@ -157,7 +150,6 @@ export default function IntegrationPage() {
           </div>
         </section>
 
-        {/* Key Values Section */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -176,7 +168,6 @@ export default function IntegrationPage() {
           </div>
         </section>
 
-        {/* Final CTA */}
         <section className="py-24 bg-primary text-white">
           <div className="container mx-auto px-4 text-center">
             <ScrollReveal className="max-w-3xl mx-auto space-y-8">
@@ -202,6 +193,6 @@ export default function IntegrationPage() {
 
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

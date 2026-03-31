@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -27,7 +25,7 @@ export default function CompetitionPage() {
   const actionImage = settings?.images?.competition_action;
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
@@ -148,6 +146,6 @@ export default function CompetitionPage() {
         </section>
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

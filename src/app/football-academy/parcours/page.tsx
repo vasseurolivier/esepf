@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import Image from 'next/image';
@@ -47,7 +45,7 @@ export default function ParcoursJoueurPage() {
   );
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white pb-32">
         
@@ -142,7 +140,7 @@ export default function ParcoursJoueurPage() {
                     <h3 className="text-2xl font-headline font-bold text-primary group-hover:text-white uppercase tracking-tight">{t.journey_page.athlete_title}</h3>
                   </div>
                   <Box label={t.journey_page.world} color="bg-[#e08b8b]" icon={<Globe size={24} />} />
-                  <Box label={t.journey_page.china} color="bg-[#e08b8b]" icon={<Target size={24} />} />
+                  <Box label={t.journey_page.world} color="bg-[#e08b8b]" icon={<Target size={24} />} />
                 </ScrollReveal>
 
                 <ScrollReveal delay={100} className="space-y-8 flex flex-col items-center">
@@ -192,6 +190,6 @@ export default function ParcoursJoueurPage() {
         </div>
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

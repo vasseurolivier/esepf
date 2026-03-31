@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
@@ -31,7 +29,7 @@ export default function RecognitionPage() {
   ];
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         
@@ -201,6 +199,6 @@ export default function RecognitionPage() {
         </section>
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

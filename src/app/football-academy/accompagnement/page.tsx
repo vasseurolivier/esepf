@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -30,7 +28,7 @@ export default function AccompagnementPage() {
   ];
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         
@@ -96,6 +94,6 @@ export default function AccompagnementPage() {
 
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

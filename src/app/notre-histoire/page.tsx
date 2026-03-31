@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
@@ -32,7 +30,7 @@ export default function HistoryPage() {
   ];
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         
@@ -74,7 +72,6 @@ export default function HistoryPage() {
           </div>
         </section>
 
-        {/* Timeline Section */}
         <section className="py-24 bg-white overflow-hidden">
           <div className="container mx-auto px-4">
             <ScrollReveal>
@@ -84,17 +81,14 @@ export default function HistoryPage() {
             </ScrollReveal>
 
             <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-0">
-              {/* Desktop Timeline Line */}
               <div className="hidden lg:block absolute top-[140px] left-0 w-full h-1 bg-black/10 z-0">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#1a3d2f] border-4 border-white shadow-md" />
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#1a3d2f] border-4 border-white shadow-md" />
               </div>
 
-              {/* Events Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 w-full relative z-10">
                 {t.history_page.events.map((event: any, idx: number) => (
                   <ScrollReveal key={idx} delay={idx * 150} className="flex flex-col items-center text-center">
-                    {/* Year Box */}
                     <div className="flex flex-col items-center mb-8 h-[180px] justify-end">
                       {timelineLogos[idx] && (
                         <div className="mb-4 h-16 w-16 relative">
@@ -113,12 +107,10 @@ export default function HistoryPage() {
                       </div>
                     </div>
 
-                    {/* Timeline Node (Mobile Only) */}
                     <div className="lg:hidden w-full h-px bg-black/10 my-4 relative">
                        <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-[#1a3d2f]" />
                     </div>
 
-                    {/* Content */}
                     <div className="space-y-4 px-2">
                       <h3 className="text-[10px] md:text-[11px] lg:text-[12px] font-bold uppercase tracking-widest text-black leading-tight min-h-[60px] flex items-center justify-center whitespace-pre-line">
                         {event.title}
@@ -132,7 +124,6 @@ export default function HistoryPage() {
                 ))}
               </div>
 
-              {/* Decorative Green Block */}
               <div className="hidden xl:block absolute -right-20 top-0 w-32 h-[400px] bg-[#0c3a2f] -z-10" />
             </div>
           </div>
@@ -157,6 +148,6 @@ export default function HistoryPage() {
 
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

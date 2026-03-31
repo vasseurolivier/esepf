@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
@@ -26,7 +24,7 @@ export default function SportEtudesPage() {
   const basketballImg = settings?.images?.sport_etudes_basketball;
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
@@ -168,6 +166,6 @@ export default function SportEtudesPage() {
         </div>
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

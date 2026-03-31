@@ -1,19 +1,17 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { ShieldCheck, Info, MapPin, Globe, FileText } from 'lucide-react';
+import { ShieldCheck, Info, Globe, FileText } from 'lucide-react';
 
 export default function MentionsLegalesPage() {
   const { t } = useTranslation();
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         <section className="bg-primary text-white py-20 relative overflow-hidden">
@@ -78,6 +76,6 @@ export default function MentionsLegalesPage() {
         </section>
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

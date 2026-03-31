@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Star, ShieldCheck } from 'lucide-react';
@@ -24,7 +22,7 @@ export default function BacAmericainPage() {
   const heroImage = settings?.images?.bac_americain_hero;
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen">
         <section className="relative h-[60vh] flex items-center justify-center bg-black overflow-hidden">
@@ -91,6 +89,6 @@ export default function BacAmericainPage() {
         </section>
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

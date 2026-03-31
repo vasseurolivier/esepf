@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import Image from 'next/image';
@@ -23,11 +21,10 @@ export default function ReseauClubsPage() {
   const settings = clientSettings || serverSettings;
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* Header Section */}
         <section className="py-24">
           <div className="container mx-auto px-4 max-w-4xl">
             <ScrollReveal className="space-y-12">
@@ -48,7 +45,6 @@ export default function ReseauClubsPage() {
           </div>
         </section>
 
-        {/* Logos Grid Section */}
         <section className="pb-32">
           <div className="container mx-auto px-4">
             <ScrollReveal delay={200} className="max-w-5xl mx-auto">
@@ -78,6 +74,6 @@ export default function ReseauClubsPage() {
 
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

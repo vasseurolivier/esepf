@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { Lock, Eye, Database, Share2, Mail } from 'lucide-react';
@@ -13,7 +11,7 @@ export default function PrivacyPolicyPage() {
   const { t } = useTranslation();
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         <section className="bg-primary text-white py-20 relative overflow-hidden">
@@ -86,6 +84,6 @@ export default function PrivacyPolicyPage() {
         </section>
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

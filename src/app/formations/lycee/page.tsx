@@ -1,14 +1,12 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -51,7 +49,7 @@ export default function LyceePage() {
   ];
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         <section className="py-20">
@@ -82,12 +80,10 @@ export default function LyceePage() {
           </div>
         </section>
 
-        {/* Academic Path Schema Section */}
         <section className="py-16 bg-muted/20 border-y border-muted">
           <div className="container mx-auto px-4">
             <ScrollReveal>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                {/* Integration Year */}
                 <div className="flex flex-col items-center text-center space-y-4">
                   <div className="w-full pb-4 border-b-4 border-primary">
                     <h3 className="text-lg md:text-xl font-headline font-bold text-black underline underline-offset-8 decoration-2">
@@ -99,7 +95,6 @@ export default function LyceePage() {
                   </p>
                 </div>
 
-                {/* Year 1 */}
                 <div className="flex flex-col items-center text-center space-y-4">
                   <div className="w-full pb-4 border-b-4 border-secondary">
                     <h3 className="text-lg md:text-xl font-headline font-bold text-black underline underline-offset-8 decoration-2">
@@ -111,7 +106,6 @@ export default function LyceePage() {
                   </p>
                 </div>
 
-                {/* Year 2 */}
                 <div className="flex flex-col items-center text-center space-y-4">
                   <div className="w-full pb-4 border-b-4 border-primary">
                     <h3 className="text-lg md:text-xl font-headline font-bold text-black underline underline-offset-8 decoration-2">
@@ -123,7 +117,6 @@ export default function LyceePage() {
                   </p>
                 </div>
 
-                {/* Year 3 */}
                 <div className="flex flex-col items-center text-center space-y-4">
                   <div className="w-full pb-4 border-b-4 border-secondary">
                     <h3 className="text-lg md:text-xl font-headline font-bold text-black underline underline-offset-8 decoration-2">
@@ -207,6 +200,6 @@ export default function LyceePage() {
         </section>
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

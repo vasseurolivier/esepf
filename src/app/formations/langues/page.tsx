@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Languages, Globe, MessageSquare, Award, Users, Cpu, Library, BookOpen, CheckCircle2 } from 'lucide-react';
@@ -33,11 +31,10 @@ export default function LanguesPage() {
   ];
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* Hero Section */}
         <section className="relative h-[60vh] flex items-center justify-center bg-black overflow-hidden">
           {heroImage && (
             <Image 
@@ -61,7 +58,6 @@ export default function LanguesPage() {
           </div>
         </section>
 
-        {/* Intro Section */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-24">
@@ -74,7 +70,6 @@ export default function LanguesPage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* FLE Section */}
               <ScrollReveal className="bg-[#f5f1e8] p-12 rounded-[3rem] border border-[#d1c7b7] shadow-xl relative overflow-hidden group">
                 <div className="absolute top-0 right-0 p-8 opacity-5 text-primary group-hover:scale-110 transition-transform">
                   <Languages size={200} />
@@ -94,7 +89,6 @@ export default function LanguesPage() {
                 </div>
               </ScrollReveal>
 
-              {/* EFL Section */}
               <ScrollReveal delay={200} className="bg-primary p-12 rounded-[3rem] shadow-xl relative overflow-hidden group text-white">
                 <div className="absolute top-0 right-0 p-8 opacity-10 text-white group-hover:rotate-12 transition-transform">
                   <BookOpen size={200} />
@@ -117,7 +111,6 @@ export default function LanguesPage() {
           </div>
         </section>
 
-        {/* Methodology Section */}
         <section className="py-32 bg-muted/30 border-y border-muted">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -148,12 +141,10 @@ export default function LanguesPage() {
           </div>
         </section>
 
-        {/* Resources & Certifications */}
         <section className="py-32 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
               
-              {/* Ressources */}
               <ScrollReveal className="lg:col-span-5 space-y-12">
                 <div className="p-12 bg-primary rounded-[4rem] text-white shadow-2xl relative overflow-hidden">
                   <div className="absolute -bottom-10 -right-10 opacity-10">
@@ -168,7 +159,6 @@ export default function LanguesPage() {
                 </div>
               </ScrollReveal>
 
-              {/* Certifications */}
               <ScrollReveal delay={200} className="lg:col-span-7 space-y-12">
                 <div className="border-l-8 border-secondary pl-12">
                   <h2 className="text-4xl md:text-5xl font-headline font-bold text-black uppercase tracking-tighter mb-6">
@@ -201,7 +191,6 @@ export default function LanguesPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="py-24 bg-[#f5f5f5]">
           <div className="container mx-auto px-4 text-center">
             <ScrollReveal className="max-w-3xl mx-auto bg-white rounded-[4rem] p-12 lg:p-20 shadow-2xl border border-muted">
@@ -226,6 +215,6 @@ export default function LanguesPage() {
 
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }

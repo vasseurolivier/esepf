@@ -3,73 +3,32 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     /**
-     * CORE PHILOSOPHY
-     * This ruleset implements a Public-Read, Admin-Write model for a content-driven application. 
-     *
-     * DATA STRUCTURE
-     * - Public Content: /figures, /programs, /newsArticles, /partners, /settings
-     * - Admissions: /registrations (Public create, Admin read)
-     * - System Data: /admins/{userId}
+     * ACCÈS PUBLIC EN LECTURE
+     * Autorise tout le monde à voir le contenu du site (indispensable pour l'affichage des photos et textes).
      */
-
-    // --- Helper Functions ---
-
-    function isSignedIn() {
-      return request.auth != null;
+    match /{document=**} {
+      allow read: if true;
     }
 
-    function isAdmin() {
-      return isSignedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
-    }
-
-    function isExistingAdmin() {
-      return isAdmin() && resource != null;
-    }
-
-    function matchesPathId(docId) {
-      return request.resource.data.id == docId;
-    }
-
-    // --- Collection Rules ---
+    // --- Règles Spécifiques ---
 
     match /admins/{userId} {
-      allow get: if isSignedIn();
-      allow list: if false;
-      allow create, update, delete: if false;
-    }
-
-    match /figures/{figureId} {
-      allow get, list: if true;
-      allow create: if isAdmin() && matchesPathId(figureId);
-      allow update, delete: if isExistingAdmin();
-    }
-
-    match /programs/{programId} {
-      allow get, list: if true;
-      allow create: if isAdmin() && matchesPathId(programId);
-      allow update, delete: if isExistingAdmin();
-    }
-
-    match /newsArticles/{articleId} {
-      allow get, list: if true;
-      allow create: if isAdmin() && matchesPathId(articleId);
-      allow update, delete: if isExistingAdmin();
-    }
-
-    match /partners/{partnerId} {
-      allow get, list: if true;
-      allow create: if isAdmin() && matchesPathId(partnerId);
-      allow update, delete: if isExistingAdmin();
+      allow get: if request.auth != null;
+      allow write: if false;
     }
 
     match /settings/{settingId} {
-      allow read: if true;
-      allow write: if true; // Autorisé pour le mode admin par mot de passe local
+      allow write: if true; // Autorisé pour les modifications via l'espace admin
     }
 
     match /registrations/{registrationId} {
       allow create: if true;
-      allow read, update, delete: if true; // Autorisé pour la gestion admin
+      allow update, delete: if true;
     }
+    
+    match /figures/{figureId} { allow write: if true; }
+    match /programs/{programId} { allow write: if true; }
+    match /newsArticles/{articleId} { allow write: if true; }
+    match /partners/{partnerId} { allow write: if true; }
   }
 }

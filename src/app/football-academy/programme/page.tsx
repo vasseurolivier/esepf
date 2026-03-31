@@ -1,10 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
@@ -67,11 +65,10 @@ export default function ProgrammeFootballPage() {
   };
 
   return (
-    <FirebaseClientProvider>
+    <>
       <Header />
       <main className="min-h-screen bg-white">
         
-        {/* Hero Section */}
         <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
           {heroImage && (
             <Image 
@@ -101,7 +98,6 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Intro Section */}
         <section className="py-24">
           <div className="container mx-auto px-4 max-w-5xl">
             <ScrollReveal className="space-y-12 text-center">
@@ -119,12 +115,10 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* French Methodology Section */}
         <section id="method-section" className="py-32 bg-white overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
               
-              {/* Image Side */}
               <div className="lg:w-[60%] relative h-[400px] md:h-[650px] w-full rounded-[2rem] overflow-hidden shadow-2xl z-0 mb-8 lg:mb-0 bg-black">
                 {methodImg && (
                   <Image 
@@ -137,7 +131,6 @@ export default function ProgrammeFootballPage() {
                 )}
               </div>
 
-              {/* Text Side - Blue Box */}
               <div className="lg:w-[55%] lg:-ml-32 z-10">
                 <div className="bg-[#000080] p-8 md:p-16 text-white shadow-2xl relative rounded-3xl">
                   <div className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-20 hidden md:block">
@@ -164,7 +157,6 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* France: Terre de Football Section */}
         <section id="fr-section" className="bg-[#1a237e] text-white overflow-hidden relative">
           <div className="absolute top-0 right-0 p-20 opacity-5">
             <Trophy size={500} />
@@ -192,7 +184,6 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Coachs Section */}
         <section id="coachs-section" className="py-32 bg-muted/20 border-y border-muted">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center max-w-6xl mx-auto">
@@ -217,7 +208,6 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Entraîne-toi comme un professionnel Section */}
         <section className="py-24 bg-[#0a192f] text-white overflow-hidden">
           <div className="container mx-auto px-4">
             <ScrollReveal className="text-center mb-20">
@@ -248,7 +238,6 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Methodology Pillars Section - Renamed to Piliers de la Performance and moved */}
         <section className="py-32 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
             <ScrollReveal className="text-center mb-24">
@@ -295,10 +284,8 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Individualized Tracking Section */}
         <section className="bg-[#2c3e50] text-white overflow-hidden">
           <div className="flex flex-col lg:flex-row">
-            {/* Left Content */}
             <div className="lg:w-[60%] p-8 md:p-16 lg:p-24 flex flex-col justify-center">
               <ScrollReveal>
                 <h2 className="text-3xl md:text-5xl font-headline font-bold mb-4">
@@ -333,7 +320,6 @@ export default function ProgrammeFootballPage() {
               </ScrollReveal>
             </div>
 
-            {/* Right Image */}
             <div className="lg:w-[40%] relative min-h-[400px] lg:min-h-full bg-black">
               {trackingMainImg && (
                 <Image src={trackingMainImg} alt="Tracking Support" fill className="object-cover" />
@@ -342,7 +328,6 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Position Specialization Section */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <ScrollReveal className="text-center mb-20">
@@ -375,7 +360,6 @@ export default function ProgrammeFootballPage() {
           </div>
         </section>
 
-        {/* Weekly Program Section */}
         <section id="prog-section" className="py-32 bg-primary text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10 -translate-y-1/4 translate-x-1/4">
             <Calendar size={600} />
@@ -401,6 +385,6 @@ export default function ProgrammeFootballPage() {
         </section>
       </main>
       <Footer />
-    </FirebaseClientProvider>
+    </>
   );
 }
