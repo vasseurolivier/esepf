@@ -1,3 +1,4 @@
+
 {
   "entities": {
     "Figure": {
@@ -44,6 +45,17 @@
       "properties": {
         "studentFirstName": { "type": "string" },
         "studentLastName": { "type": "string" },
+        "studentBirthDate": { "type": "string" },
+        "studentNationality": { "type": "string" },
+        "currentGrade": { "type": "string" },
+        "parentFirstName": { "type": "string" },
+        "parentLastName": { "type": "string" },
+        "parentEmail": { "type": "string" },
+        "parentPhone": { "type": "string" },
+        "campusChoice": { "type": "string" },
+        "programChoice": { "type": "string" },
+        "codeRef": { "type": "string" },
+        "footballAcademy": { "type": "boolean" },
         "status": { "type": "string", "enum": ["pending", "contacted"] },
         "createdAt": { "type": "string", "format": "date-time" }
       }

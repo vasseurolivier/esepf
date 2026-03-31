@@ -13,7 +13,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin, Send, Loader2, MessageSquare, Globe, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Loader2, MessageSquare, Globe, Clock, Hash } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -48,7 +48,7 @@ export default function ContactPage() {
       email: "contact@esepf.fr"
     },
     {
-      title: t.contact_page.campus_bazeilles,
+      title: t.contact_page.campus_bazeille,
       phone: t.contact_page.phone_wechat,
       email: "contact@esepf.fr"
     },
@@ -108,9 +108,17 @@ export default function ContactPage() {
                             <Input required type="email" placeholder="Ex: jean@example.com" className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
                           </div>
                         </div>
-                        <div className="space-y-2">
-                          <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_subject}</Label>
-                          <Input required placeholder={t.contact_page.form_subject} className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_subject}</Label>
+                            <Input required placeholder={t.contact_page.form_subject} className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                          </div>
+                          <div className="space-y-2">
+                            <Label className="font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                              <Hash size={14} /> {t.contact_page.form_code_ref}
+                            </Label>
+                            <Input placeholder="ABC-123" className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                          </div>
                         </div>
                         <div className="space-y-2">
                           <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_message}</Label>

@@ -22,7 +22,7 @@ import {
 import { useFirestore } from '@/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, GraduationCap, User, Users, MapPin, School, CheckCircle2, Home, Calendar, ArrowRight } from 'lucide-react';
+import { Loader2, GraduationCap, User, Users, MapPin, School, CheckCircle2, Home, Calendar, ArrowRight, Hash } from 'lucide-react';
 import Link from 'next/link';
 
 export default function RegistrationPage() {
@@ -46,6 +46,7 @@ export default function RegistrationPage() {
     parentPhone: '',
     campusChoice: '',
     programChoice: '',
+    codeRef: '',
     footballAcademy: false
   });
 
@@ -313,6 +314,18 @@ export default function RegistrationPage() {
                             </SelectContent>
                           </Select>
                         </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label className="font-bold text-xs uppercase text-primary tracking-widest flex items-center gap-2">
+                          <Hash size={14} /> {t.registration.code_ref}
+                        </Label>
+                        <Input 
+                          placeholder="ABC-123" 
+                          value={formData.codeRef} 
+                          onChange={e => handleChange('codeRef', e.target.value)} 
+                          className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" 
+                        />
                       </div>
 
                       <div className="flex items-center space-x-3 p-6 bg-primary/5 rounded-2xl border border-primary/10 transition-all hover:bg-primary/10">
