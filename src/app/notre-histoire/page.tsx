@@ -119,7 +119,7 @@ export default function HistoryPage() {
 
                     {/* Content */}
                     <div className="space-y-4 px-2">
-                      <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-black leading-tight min-h-[40px] flex items-center justify-center">
+                      <h3 className="text-[10px] md:text-[11px] lg:text-[12px] font-bold uppercase tracking-widest text-black leading-tight min-h-[60px] flex items-center justify-center whitespace-pre-line">
                         {event.title}
                       </h3>
                       <div className="w-12 h-0.5 bg-secondary mx-auto" />

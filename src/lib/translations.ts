@@ -239,7 +239,7 @@ export const translations = {
       card_detection_desc: "Passerelle vers les filières professionnelles.",
       performance_title: "Un suivi de performance sur-mesure",
       performance_video: "Analyse Vidéo",
-      performance_school: "Suivi Scolaire",
+      performance_school: "Scolarité adaptée",
       performance_phys: "Préparation Physique",
       official_title: "Fédéral & Officiel",
       official_subtitle: "Un accès privilégié à l'élite régionale et nationale",
@@ -259,22 +259,22 @@ export const translations = {
       events: [
         {
           year: "2000",
-          title: "1ère ACADÉMIE DE FOOTBALL POUR LES JEUNES ÉTRANGERS DE SHANGHAI",
+          title: "1ère ACADÉMIE DE FOOTBALL\nPOUR LES JEUNES ÉTRANGERS\nDE SHANGHAI",
           desc: "Premier club de football pour les enfants expatriés de Shanghai.\nSignature avec une des écoles internationales de la ville.\nOrganisation des premiers matchs amicaux contre les Académies locales pour toutes nos équipes U8 à U16."
         },
         {
           year: "2018",
-          title: "FRANCHISE OLYMPIQUE LYONNAIS OL ACADEMY SHANGHAI",
+          title: "FRANCHISE\nOLYMPIQUE LYONNAIS\nOL ACADEMY SHANGHAI",
           desc: "Contribution au développement de la marque OL à Shanghai.\nLancement de la 1ère compétition officielle des équipes de jeunes amateurs de la ville.\nOrganisation tournées de pré-saisons en Europe pour les sélections féminines de Shanghai : U16 Elite Filles & Pro féminines."
         },
         {
           year: "2021",
-          title: "FRANCHISE PARIS SAINT-GERMAIN PSG ACADEMY SHANGHAI",
+          title: "FRANCHISE\nPARIS SAINT-GERMAIN\nPSG ACADEMY SHANGHAI",
           desc: "Contribution au développement de la marque PSG en Chine.\nSignature avec plusieurs écoles internationales de la ville.\nDéveloppement de notre Académie hors de Shanghai.\nPoursuite des tournées en Europe pour les sélections féminines de Shanghai : U16 Elite Filles & Pro féminines."
         },
         {
           year: "2024",
-          title: "YOUTH ELITE SPORTS ACADEMY OUVERTURE AU MULTISPORT ET À L'ASIE DU SUD-EST",
+          title: "YOUTH ELITE SPORTS ACADEMY\nOUVERTURE AU MULTISPORT\nET À L'ASIE DU SUD-EST",
           desc: "Création de notre propre marque \"YES Academy\".\nSignature de nouvelles écoles internationales.\nOuverture de la branche multisport.\nLancement de de notre Académie dans d'autres villes en Asie.\nInvitations au tournoi international de Shanghai des Centres de Formation :\n2025 - OM - U17 Nationaux\n2026 - Paris FC féminines - U16 / U17"
         }
       ]
@@ -289,7 +289,7 @@ export const translations = {
       staff_title: "Notre Staff",
       staff_desc: "Une équipe de professeurs agrégés et de coachs certifiés UEFA pour un encadrement d'exception.",
       success_rate: "Parcours scolaire qualitatif",
-      uefa_cert: "Staff Certification",
+      uefa_cert: "Certification Staff",
       discipline_title: "Discipline",
       discipline_desc: "La clé de l'excellence sur le terrain comme en classe.",
       solidarity_title: "Solidarité",
@@ -330,7 +330,7 @@ export const translations = {
         { title: "Validation Chinoise", desc: "Double reconnaissance pour une mobilité internationale facilitée." },
         { title: "Standard Élite", desc: "Accréditations sportives de haut niveau (FFF / UEFA)." }
       ],
-      international_opening: "International Opening",
+      international_opening: "Ouverture Internationale",
       international_desc: "Nos élèves allophones bénéficient d'un parcours spécifique FLE (Français Langue Étrangère) pour intégrer sereinement le système français tout en conservant une validation de leurs acquis internationaux.",
       exam_objectives: "Objectifs Examens",
       dnb_label: "DNB",
@@ -346,7 +346,7 @@ export const translations = {
       title: "ESEPF - Collège",
       age_label: "11 - 15 ANS",
       p1: "Nous ouvrons les portes de notre Collège Sport-Etudes aux élèves âgés de 11 et 14 ans.",
-      p2: "After their middle school years, they will be able to access our high school programs.",
+      p2: "À l'issue de leurs années collège, ils pourront accéder à nos programmes lycées.",
       p3: "Ce Collège viendra enrichir notre offre de formation et accompagner les jeunes.",
       prog_title: "Notre programme se décline en trois années :",
       year1_title: "Année 1 : Classe d'intégration",
@@ -938,22 +938,22 @@ export const translations = {
       events: [
         {
           year: "2000",
-          title: "1st FOOTBALL ACADEMY FOR SHANGHAI INTERNATIONAL YOUTH",
+          title: "1st FOOTBALL ACADEMY\nFOR SHANGHAI INTERNATIONAL\nYOUTH",
           desc: "First football club for expatriate children in Shanghai.\nSigning with one of the city's international schools.\nOrganization of the first friendly matches against local academies for all our U8 to U16 teams."
         },
         {
           year: "2018",
-          title: "OLYMPIQUE LYONNAIS FRANCHISE OL ACADEMY SHANGHAI",
+          title: "OLYMPIQUE LYONNAIS\nFRANCHISE\nOL ACADEMY SHANGHAI",
           desc: "Contribution to the development of the OL brand in Shanghai.\nLaunch of the 1st official competition for local amateur youth teams.\nOrganization of pre-season tours in Europe for Shanghai girls' selections: U16 Elite & Pro Women."
         },
         {
           year: "2021",
-          title: "PARIS SAINT-GERMAIN FRANCHISE PSG ACADEMY SHANGHAI",
+          title: "PARIS SAINT-GERMAIN\nFRANCHISE\nPSG ACADEMY SHANGHAI",
           desc: "Contribution to the development of the PSG brand in China.\nSigning with several international schools in the city.\nDevelopment of our Academy outside of Shanghai.\nContinued pre-season tours in Europe for Shanghai girls' selections: U16 Elite & Pro Women."
         },
         {
           year: "2024",
-          title: "YOUTH ELITE SPORTS ACADEMY EXPANSION TO MULTISPORT & SE ASIA",
+          title: "YOUTH ELITE SPORTS ACADEMY\nEXPANSION TO MULTISPORT\n& SE ASIA",
           desc: "Creation of our own brand \"YES Academy\".\nSigning of new international schools.\nOpening of the multisport branch.\nLaunch of our Academy in other cities in Asia.\nInvitations to the Shanghai international youth tournament:\n2025 - OM - National U17\n2026 - Paris FC women - U16 / U17"
         }
       ]
@@ -962,7 +962,7 @@ export const translations = {
       title: "THE PROJECT",
       subtitle: "Elite Football & Academics",
       p1: "At ESEPF, we offer young people aged 11 to 19 an exceptional dual project.",
-      p2: "En parallèle, les élèves suivent un excellent cursus scolaire français (de la 6ème à la Terminale).",
+      p2: "In parallel, students follow an excellent French academic curriculum (from Grade 6 to Grade 12).",
       p3: "This program shapes both the athlete and the student.",
       team_title: "THE TEAM",
       staff_title: "Our Staff",
@@ -1038,7 +1038,7 @@ export const translations = {
       autonomy_title: "Autonomy",
       autonomy_desc: "Learning to organize from a young age to succeed in the double project.",
       excellence_title: "Excellence",
-      excellence_desc: "A demanding academic program validated by the Ministry of Education.",
+      excellence_desc: "An academic program validated by the Ministry of Education.",
       fulfillment_title: "Fulfillment",
       fulfillment_desc: "Conciliate sporting passion and lasting friendships in a safe environment."
     },
@@ -1160,6 +1160,7 @@ export const translations = {
       terre_talents: "Land of Talents",
       expertise_cert: "Certified Expertise",
       rythme_champions: "The rhythm of champions",
+      mon_ven: "Monday to Friday",
       mon_ven: "Monday to Friday",
       mon_ven_desc: "Technical & tactical sessions (4:30 PM - 6:30 PM) after academic classes. Weekly video analysis.",
       weekend: "Weekend",
@@ -1466,14 +1467,14 @@ export const translations = {
       championships: "法国官方锦标赛",
       elite_prog: "精英足球计划",
       languages_title: "外语培训",
-      languages_desc: "我们的机构 offer 强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法语母语学生或希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解 和 个人进步。教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功 和 国际化开放。",
+      languages_desc: "我们的机构 offer 强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法语母语学生 or 者希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解 和 个人进步. 教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功 和 国际化开放。",
       fle_link: "法语对外汉语 (FLE)",
       efl_link: "英语对外汉语 (EFL)"
     },
     academy_features: {
       f1_title: "欧足联教练",
       f1_desc: "由认证专家 offer 的专业培训。",
-      f2_title: "FFF 锦赛",
+      f2_title: "FFF 锦标赛",
       f2_desc: "参加法国官方联赛。",
       f3_title: "運動追踪",
       f3_desc: "个人体能准备与监测。",
@@ -1523,7 +1524,7 @@ export const translations = {
       bac_americain_title: "美国高中双文凭",
       bac_americain_sub: "双文凭：同时获得两个高中毕业证书。",
       high_school_diploma: "美国高中毕业证书",
-      high_school_desc: "得益’于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
+      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程. 他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
       dual_diploma_official: "官方双学位",
       international_recognition: "国际认可",
       why_choose_title: "为什么选择这个路径？",
@@ -1588,7 +1589,7 @@ export const translations = {
       hero_sub: "体验官方比赛的激情，释放潜能。",
       p1: "得益于我们与当地俱乐部的合作，我们的体育学习足球部门球员享有参加法国官方比赛的特权. 这种开放使他们能够参加公认的锦标赛，面对高水平球队，并体验结构化的竞争环境。",
       p2: "官方比赛每个周末举行，为年轻足球运动员 offer 持续的进步，并有机会面对法国足球的现实. 该机制有利于选拔、技能提升 和 进入高水平体系。",
-      p3: "教练 和 管理人员密切监控球员的准备情况，根据比赛要求调整训练计划. 目标是让每位球员在球场上充分表达自己，发挥潜能 并 建立雄心勃勃的道路，同时享受合适的学术支持。",
+      p3: "教练 和 管理人员密切监控球员의 准备情况，根据比赛要求调整训练计划. 目标是让每位球员在球场上充分表达自己，发挥潜能 并 建立雄心勃勃的道路，同时享受合适的学术支持。",
       card_clubs: "特权访问",
       card_clubs_desc: "公认的锦标赛与高水平球队。",
       card_weekend: "周末比赛",
@@ -1597,7 +1598,7 @@ export const translations = {
       card_detection_desc: "通往职业足球体系的桥梁。",
       performance_title: "量身定制的绩效监控",
       performance_video: "视频分析",
-      performance_school: "学术跟踪",
+      performance_school: "学业支持",
       performance_phys: "体能准备",
       official_title: "联邦 和 官方",
       official_subtitle: "优先进入地区 和 国家精英阶层",
@@ -1617,22 +1618,22 @@ export const translations = {
       events: [
         {
           year: "2000",
-          title: "上海首家针对国际青少年的足球学院",
+          title: "上海首家\n针对国际青少年的\n足球学院",
           desc: "上海首家为外籍儿童开设的足球俱乐部。\n与该市一所国际学校签约。\n为我们所有 U8 至 U16 球队组织了首场与当地学院的友谊赛。"
         },
         {
           year: "2018",
-          title: "里昂俱乐部特许经营 上海里昂学院",
+          title: "里昂俱乐部\n特许经营\n上海里昂学院",
           desc: "助力里昂品牌在上海的发展。\n启动了该市首个官方业余青少年球队比赛。\n为上海女足选拔队组织欧洲季前巡赛：U16 精英女队 和 职业女队。"
         },
         {
           year: "2021",
-          title: "巴黎圣日耳曼特许经营 上海巴黎圣日耳曼学院",
+          title: "巴黎圣日耳曼\n特许经营\n上海巴黎圣日耳曼学院",
           desc: "助力巴黎圣日耳曼品牌在中国的发展。\n与该市多所国际学校签约。\n在上海以外地区发展学院。\n继续为上海女足选拔队组织欧洲巡赛：U16 精英女队 和 职业女队。"
         },
         {
           year: "2024",
-          title: "YES 学院 扩展至多项运动及东南亚",
+          title: "YES 学院\n扩展至多项运动\n及东南亚",
           desc: "创立自主品牌 \"YES Academy\"。\n签约新的国际学校。\n开设多项运动分支。\n在亚洲其他城市启动学院。\n受邀参加上海国际青少年锦标赛：\n2025 - 马赛 - U17 国家队\n2026 - 巴黎 FC 女足 - U16 / U17"
         }
       ]
