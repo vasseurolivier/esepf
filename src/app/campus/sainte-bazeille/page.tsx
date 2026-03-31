@@ -6,7 +6,7 @@ import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { MapPin, School, GraduationCap, Building2, Target, BookOpen, ImageIcon } from 'lucide-react';
+import { MapPin, School, GraduationCap, Building2, Target, BookOpen, ImageIcon, Home, Utensils, Palmtree, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
@@ -41,6 +41,8 @@ export default function CampusBazeillePage() {
     settings?.images?.bazeille_infra_6,
   ].filter(Boolean) as string[];
 
+  const fullDesc = t.campus_pages.bazeille_full_desc;
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -56,9 +58,11 @@ export default function CampusBazeillePage() {
           />
         )}
         <div className="relative z-10 text-center text-white container px-4">
-          <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.campus_pages.bazeille_hero}</h1>
-          <div className="w-24 h-1.5 bg-[#D4AF37] mx-auto mb-6 rounded-full" />
-          <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto border-t border-white/30 pt-4">{t.campus_pages.bazeille_sub}</p>
+          <ScrollReveal>
+            <h1 className="text-5xl md:text-8xl font-headline font-bold mb-4 uppercase tracking-tighter">{t.campus_pages.bazeille_hero}</h1>
+            <div className="w-24 h-1.5 bg-[#D4AF37] mx-auto mb-6 rounded-full" />
+            <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto border-t border-white/30 pt-4">{t.campus_pages.bazeille_sub}</p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -102,6 +106,93 @@ export default function CampusBazeillePage() {
           </div>
         </div>
       </section>
+
+      {/* Cadre d'Excellence Section */}
+      {fullDesc && (
+        <section className="py-24 bg-muted/20 border-y border-muted/50">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <ScrollReveal className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary mb-6">{fullDesc.title}</h2>
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto italic">
+                {fullDesc.intro}
+              </p>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Housing */}
+              <ScrollReveal delay={100} className="bg-white p-10 rounded-[3rem] shadow-xl border border-muted flex flex-col gap-6 group hover:scale-[1.02] transition-all duration-500">
+                <div className="bg-secondary/10 p-4 rounded-3xl w-fit text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                  <Home size={32} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-primary uppercase tracking-tight mb-4">{fullDesc.housing_title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{fullDesc.housing_desc}</p>
+                </div>
+              </ScrollReveal>
+
+              {/* Dining */}
+              <ScrollReveal delay={200} className="bg-white p-10 rounded-[3rem] shadow-xl border border-muted flex flex-col gap-6 group hover:scale-[1.02] transition-all duration-500">
+                <div className="bg-secondary/10 p-4 rounded-3xl w-fit text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                  <Utensils size={32} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-primary uppercase tracking-tight mb-4">{fullDesc.dining_title}</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3 text-muted-foreground text-sm">
+                      <CheckCircle2 size={18} className="text-secondary shrink-0 mt-0.5" /> {fullDesc.dining_p1}
+                    </li>
+                    <li className="flex items-start gap-3 text-muted-foreground text-sm">
+                      <CheckCircle2 size={18} className="text-secondary shrink-0 mt-0.5" /> {fullDesc.dining_p2}
+                    </li>
+                    <li className="flex items-start gap-3 text-muted-foreground text-sm">
+                      <CheckCircle2 size={18} className="text-secondary shrink-0 mt-0.5" /> {fullDesc.dining_p3}
+                    </li>
+                  </ul>
+                </div>
+              </ScrollReveal>
+
+              {/* Learning */}
+              <ScrollReveal delay={300} className="bg-white p-10 rounded-[3rem] shadow-xl border border-muted flex flex-col gap-6 group hover:scale-[1.02] transition-all duration-500">
+                <div className="bg-secondary/10 p-4 rounded-3xl w-fit text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                  <BookOpen size={32} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-primary uppercase tracking-tight mb-4">{fullDesc.learning_title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{fullDesc.learning_desc}</p>
+                </div>
+              </ScrollReveal>
+
+              {/* Nature & Sports */}
+              <ScrollReveal delay={400} className="bg-white p-10 rounded-[3rem] shadow-xl border border-muted flex flex-col gap-6 group hover:scale-[1.02] transition-all duration-500">
+                <div className="bg-secondary/10 p-4 rounded-3xl w-fit text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                  <Palmtree size={32} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-primary uppercase tracking-tight mb-4">{fullDesc.nature_title}</h3>
+                  <p className="text-muted-foreground mb-4 text-sm font-medium">{fullDesc.nature_desc}</p>
+                  <div className="pt-4 border-t border-muted">
+                    <h4 className="font-bold text-primary mb-4 text-xs uppercase tracking-widest">{fullDesc.sports_title}</h4>
+                    <ul className="grid grid-cols-2 gap-3">
+                      <li className="flex items-center gap-2 text-[11px] font-bold uppercase text-muted-foreground">
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full" /> {fullDesc.sports_item1}
+                      </li>
+                      <li className="flex items-center gap-2 text-[11px] font-bold uppercase text-muted-foreground">
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full" /> {fullDesc.sports_item2}
+                      </li>
+                      <li className="flex items-center gap-2 text-[11px] font-bold uppercase text-muted-foreground">
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full" /> {fullDesc.sports_item3}
+                      </li>
+                      <li className="flex items-center gap-2 text-[11px] font-bold uppercase text-muted-foreground">
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full" /> {fullDesc.sports_item4}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
