@@ -23,6 +23,13 @@ export default function RecognitionPage() {
 
   const heroImage = settings?.images?.recognition_hero;
 
+  const accreditationLogos = [
+    { id: 'recog_logo_mne', label: t.recognition_page.mne_label },
+    { id: 'recog_logo_nantes', label: t.recognition_page.nantes_label },
+    { id: 'recog_logo_aix', label: t.recognition_page.aix_label },
+    { id: 'recog_logo_bordeaux', label: t.recognition_page.bordeaux_label },
+  ];
+
   return (
     <FirebaseClientProvider>
       <Header />
@@ -57,19 +64,26 @@ export default function RecognitionPage() {
                 {t.recognition_page.hero_text}
               </p>
 
-              <div className="flex flex-wrap items-center gap-12 pt-8">
-                <div className="flex flex-col items-center max-w-[140px] group">
-                  <div className="relative w-20 h-20 mb-4 border border-muted p-2 rounded-xl group-hover:border-primary transition-colors bg-white">
-                     <Image src="https://picsum.photos/seed/mne-logo/100/100" alt="MNE" width={100} height={100} className="grayscale group-hover:grayscale-0 transition-all" />
+              <div className="grid grid-cols-2 sm:grid-cols-4 items-start gap-8 pt-8">
+                {accreditationLogos.map((logo) => (
+                  <div key={logo.id} className="flex flex-col items-center group">
+                    <div className="relative w-full aspect-square mb-4 border border-muted p-2 rounded-xl group-hover:border-primary transition-colors bg-white flex items-center justify-center overflow-hidden">
+                      {settings?.images?.[logo.id] ? (
+                        <Image 
+                          src={settings.images[logo.id]} 
+                          alt={logo.label} 
+                          fill 
+                          className="object-contain grayscale group-hover:grayscale-0 transition-all p-2" 
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-muted/10" />
+                      )}
+                    </div>
+                    <span className="text-[8px] md:text-[9px] font-bold text-center uppercase leading-tight opacity-60">
+                      {logo.label}
+                    </span>
                   </div>
-                  <span className="text-[9px] font-bold text-center uppercase leading-tight opacity-60">{t.recognition_page.mne_label}</span>
-                </div>
-                <div className="flex flex-col items-center max-w-[140px] group">
-                   <div className="relative w-20 h-20 mb-4 border border-muted p-2 rounded-xl group-hover:border-secondary transition-colors bg-white">
-                      <Image src="https://picsum.photos/seed/nantes-logo/100/100" alt="Nantes" width={100} height={100} className="grayscale group-hover:grayscale-0 transition-all" />
-                   </div>
-                   <span className="text-[9px] font-bold text-center uppercase leading-tight opacity-60">{t.recognition_page.nantes_label}</span>
-                </div>
+                ))}
               </div>
             </ScrollReveal>
           </div>
