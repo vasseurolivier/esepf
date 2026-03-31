@@ -10,7 +10,7 @@ import { useTranslation } from '@/hooks/use-translation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import {
   Select,
@@ -22,7 +22,7 @@ import {
 import { useFirestore } from '@/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, GraduationCap, User, Users, MapPin, School, CheckCircle2, ArrowRight, Home } from 'lucide-react';
+import { Loader2, GraduationCap, User, Users, MapPin, School, CheckCircle2, Home, Calendar, FileText, Search, CreditCard, Plane, Wallet, PlusCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export default function RegistrationPage() {
@@ -80,6 +80,17 @@ export default function RegistrationPage() {
     }
   };
 
+  const steps = [
+    { id: '01', title: t.registration_steps.step1, date: t.registration_steps.step1_date, icon: <FileText />, color: 'bg-blue-600' },
+    { id: '02', title: t.registration_steps.step2, date: t.registration_steps.step2_date, icon: <Search />, color: 'bg-blue-500' },
+    { id: '03', title: t.registration_steps.step3, date: t.registration_steps.step3_date, icon: <CreditCard />, color: 'bg-cyan-500' },
+    { id: '04', title: t.registration_steps.step4, date: t.registration_steps.step4_date, icon: <Plane />, color: 'bg-cyan-400' },
+    { id: '05', title: t.registration_steps.step5, date: t.registration_steps.step5_date, icon: <Wallet />, color: 'bg-green-500' },
+    { id: '06', title: t.registration_steps.step6, date: t.registration_steps.step6_date, icon: <Home />, color: 'bg-green-600' },
+    { id: '07', title: t.registration_steps.step7, date: t.registration_steps.step7_date, icon: <PlusCircle />, color: 'bg-blue-800' },
+    { id: '08', title: t.registration_steps.step8, date: t.registration_steps.step8_date, icon: <School />, color: 'bg-blue-400' },
+  ];
+
   if (isSuccess) {
     return (
       <FirebaseClientProvider>
@@ -117,7 +128,6 @@ export default function RegistrationPage() {
       <Header />
       <main className="min-h-screen bg-muted/20">
         
-        {/* Hero Banner */}
         <section className="bg-primary text-white py-20 relative overflow-hidden">
           <div className="absolute top-0 right-0 opacity-10 translate-x-1/4 -translate-y-1/4">
             < GraduationCap size={600} />
@@ -130,6 +140,53 @@ export default function RegistrationPage() {
               <div className="w-24 h-1.5 bg-secondary mx-auto mb-6 rounded-full" />
               <p className="text-xl md:text-2xl text-white/70 font-medium">{t.registration.subtitle}</p>
             </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Joining Steps Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <ScrollReveal className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary uppercase tracking-tighter mb-4">{t.registration_steps.title}</h2>
+              <div className="w-24 h-1 bg-secondary mx-auto rounded-full" />
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              {steps.map((step, idx) => (
+                <ScrollReveal key={step.id} delay={idx * 100} className="relative group">
+                  <div className="bg-muted/30 rounded-[2rem] p-8 h-full border border-muted transition-all duration-500 hover:shadow-2xl hover:bg-white hover:-translate-y-2 group">
+                    <div className={`${step.color} w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg transform group-hover:rotate-12 transition-transform`}>
+                      {React.cloneElement(step.icon as React.ReactElement, { size: 28 })}
+                    </div>
+                    <div className="absolute top-8 right-8 text-4xl font-headline font-bold opacity-5 group-hover:opacity-10 transition-opacity">
+                      {step.id}
+                    </div>
+                    <div className="space-y-4">
+                      <h3 className="text-sm font-bold text-primary uppercase tracking-wider leading-tight min-h-[40px]">
+                        {step.title}
+                      </h3>
+                      <div className="flex items-center gap-2 text-secondary font-bold text-[10px] uppercase tracking-widest">
+                        <Calendar size={14} />
+                        {step.date}
+                      </div>
+                    </div>
+                  </div>
+                  {idx < steps.length - 1 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 z-10 opacity-20 group-hover:opacity-100 transition-opacity">
+                      <PlusCircle className="text-muted-foreground" size={24} />
+                    </div>
+                  )}
+                </ScrollReveal>
+              ))}
+            </div>
+
+            <div className="mt-16 text-center">
+              <ScrollReveal>
+                <div className="inline-block bg-primary p-4 rounded-3xl transform -rotate-2">
+                  <span className="text-white font-serif italic text-4xl px-8">Welcome</span>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </section>
 

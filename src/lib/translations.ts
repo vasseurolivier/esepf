@@ -88,6 +88,25 @@ export const translations = {
       success_desc: "Votre demande de pré-inscription a bien été transmise à notre secrétariat. Nous reviendrons vers vous très prochainement.",
       btn_back_home: "RETOUR À L'ACCUEIL"
     },
+    registration_steps: {
+      title: "NOUS REJOINDRE - LES ÉTAPES",
+      step1: "PRÉ-INSCRIPTION DES CANDIDATS",
+      step1_date: "À partir du 13 mars",
+      step2: "SÉLECTION DES ÉLÈVES",
+      step2_date: "À partir du 13 avril",
+      step3: "VERSEMENT DES ARRHES (10%)",
+      step3_date: "Date limite : 20 avril",
+      step4: "DÉPÔT DOCUMENTS DOSSIER VISA",
+      step4_date: "Date limite : 25 avril",
+      step5: "PAIEMENT DES FRAIS DE SCOLARITÉ",
+      step5_date: "Date limite : 17 mai",
+      step6: "FRAIS INTERNAT / CANTINE & FOOT",
+      step6_date: "Date limite : 30 juin",
+      step7: "CHOIX DES ACTIVITÉS ANNEXES",
+      step7_date: "Date limite : 20 septembre",
+      step8: "RENTRÉE SCOLAIRE",
+      step8_date: "Accueil le 28 septembre"
+    },
     figures: {
       lang_val: "3",
       lang_lab: "Langues d'enseignement",
@@ -272,17 +291,17 @@ export const translations = {
         {
           year: "2000",
           title: "1ère ACADÉMIE DE FOOTBALL\nPOUR LES JEUNES ÉTRANGERS\nDE SHANGHAI",
-          desc: "Premier club de football pour les enfants expatriés de Shanghai.\nSignature avec une des écoles internationales de la ville.\nOrganisation des premiers matchs amicaux contre les Académies locales pour toutes nos équipes U8 à U16."
+          desc: "Premier club de football for les enfants expatriés de Shanghai.\nSignature avec une des écoles internationales de la ville.\nOrganisation des premiers matchs amicaux contre les Académies locales for toutes nos équipes U8 à U16."
         },
         {
           year: "2018",
           title: "FRANCHISE\nOLYMPIQUE LYONNAIS\nOL ACADEMY SHANGHAI",
-          desc: "Contribution au développement de la marque OL à Shanghai.\nLancement de la 1ère compétition officielle des équipes de jeunes amateurs de la ville.\nOrganisation tournées de pré-saisons en Europe pour les sélections féminines de Shanghai : U16 Elite Filles & Pro féminines."
+          desc: "Contribution au développement de la marque OL à Shanghai.\nLancement de la 1ère compétition officielle des équipes de jeunes amateurs de la ville.\nOrganisation tournées de pré-saisons en Europe for les sélections féminines de Shanghai : U16 Elite Filles & Pro féminines."
         },
         {
           year: "2021",
           title: "PARIS SAINT-GERMAIN\nFRANCHISE\nPSG ACADEMY SHANGHAI",
-          desc: "Contribution au développement de la marque PSG en Chine.\nSignature avec plusieurs écoles internationales de la ville.\nDéveloppement de our Académie hors de Shanghai.\nPoursuite des tournées en Europe pour les sélections féminines de Shanghai : U16 Elite Filles & Pro féminines."
+          desc: "Contribution au développement de la marque PSG en Chine.\nSignature avec plusieurs écoles internationales de la ville.\nDéveloppement de our Académie hors de Shanghai.\nPoursuite des tournées en Europe for les sélections féminines de Shanghai : U16 Elite Filles & Pro féminines."
         },
         {
           year: "2024",
@@ -410,8 +429,8 @@ export const translations = {
         specialties_title: "Spécialités & Objectifs du Baccalauréat Général",
         specialties: [
           { name: "Langues, Littératures et Cultures Étrangères (LLCE)", desc: "pour développer une maîtrise avancée des langues étrangères, ainsi qu'une connaissance approfondie des cultures associées." },
-          { name: "Éducation Physique, Pratiques et Culture Sportive (EPPCS)", desc: "idéale pour les élèves passionnés de sport, souhaitant allier théorie et pratique dans une perspective de performance et de compréhension du monde sportif." },
-          { name: "Mathématiques", desc: "une spécialité essentielle pour acquérir des compétences analytiques et logiques, ouvrant la voie aux études scientifiques et économiques." },
+          { name: "Éducation Physique, Pratiques et Culture Sportive (EPPCS)", desc: "idéale for les élèves passionnés de sport, souhaitant allier théorie et pratique dans une perspective de performance et de compréhension du monde sportif." },
+          { name: "Mathématiques", desc: "une spécialité essentielle for acquérir des compétences analytiques et logiques, ouvrant la voie aux études scientifiques et économiques." },
           { name: "Numérique et Sciences Informatiques (NSI)", desc: "destinée aux élèves intéressés par l'informatique, la programmation et les enjeux du numérique dans our société." }
         ],
         conclusion: "Cette formation complète permet aux élèves d'acquérir des compétences variées et adaptées aux exigences du monde d'aujourd'hui, tout en leur offrant une grande liberté dans le choix de leur parcours post-bac.",
@@ -886,6 +905,25 @@ export const translations = {
       success_title: "File Received!",
       success_desc: "Your pre-registration request has been transmitted. We will get back to you shortly.",
       btn_back_home: "BACK HOME"
+    },
+    registration_steps: {
+      title: "JOINING US - THE STEPS",
+      step1: "CANDIDATE PRE-REGISTRATION",
+      step1_date: "From March 13",
+      step2: "STUDENT SELECTION",
+      step2_date: "From April 13",
+      step3: "DEPOSIT PAYMENT (10%)",
+      step3_date: "Deadline: April 20",
+      step4: "VISA DOCUMENT SUBMISSION",
+      step4_date: "Deadline: April 25",
+      step5: "TUITION FEE PAYMENT",
+      step5_date: "Deadline: May 17",
+      step6: "BOARDING / CANTEEN & FOOT FEES",
+      step6_date: "Deadline: June 30",
+      step7: "EXTRA ACTIVITIES CHOICE",
+      step7_date: "Deadline: September 20",
+      step8: "SCHOOL START",
+      step8_date: "Welcome on September 28"
     },
     figures: {
       lang_val: "3",
@@ -1681,6 +1719,25 @@ export const translations = {
       success_desc: "您的预登记申请已成功提交. 我们将尽快与您联系。",
       btn_back_home: "返回首页"
     },
+    registration_steps: {
+      title: "加入我们：申请步骤",
+      step1: "候选人预登记",
+      step1_date: "3月13日起",
+      step2: "学生选拔",
+      step2_date: "4月13日起",
+      step3: "支付定金 (10%)",
+      step3_date: "截止日期：4月20日",
+      step4: "签证材料提交",
+      step4_date: "截止日期：4月25日",
+      step5: "学费支付",
+      step5_date: "截止日期：5月17日",
+      step6: "寄宿/餐饮及足球费用",
+      step6_date: "截止日期：6月30日",
+      step7: "课外活动选择",
+      step7_date: "截止日期：9月20日",
+      step8: "正式开学",
+      step8_date: "9月28日欢迎入学"
+    },
     figures: {
       lang_val: "3",
       lang_lab: "教学语言",
@@ -1972,7 +2029,7 @@ export const translations = {
     },
     lycee_page: {
       title: "高中毕业证书",
-      intro_p1: "我们高中 offer 多样化的课程，适应每个学生的目标. 它 offer 两个主要方向：普通高中和 STMG 技术高中。",
+      intro_p1: "我们高中 offer 多样化的课程，适应每个学生的目标. It offer 两个主要方向：普通高中和 STMG 技术高中。",
       intro_p2: "每个项目都旨在让学生获得扎实的技能，并为进入高等教育 或 职业世界做好准备。",
       intro_p3: "普通高中培养分析能力 和 通识文化，STMG 高中为管理、商业 和 经济研究做准备。",
       intro_p4: "我们 offer 个性化支持 和 定期监测，以确保每个 student in 所选道路上取得成功。",
@@ -2046,7 +2103,7 @@ export const translations = {
         duration: "3年（非法语母语4年）",
         level: "4级 (技术高中毕业)",
         bts_desc: "管理 BTS 是两年的培训. In 团队 management、财务 和 营销等领域 offer 教学。",
-        univ_desc: "本科是 3 年制大学培训，结合理论与实践. 它加强了管理 和 分析技能。",
+        univ_desc: "本科 is 3 年制大学培训，结合理论与实践. 它加强了管理 和 分析技能。",
         bts_list: ["会计管理", "管理支持", "商业运营", "谈判数字化", "中小企业管理", "IT 服务", "保险", "旅游"],
         bts_jobs: ["营销经理", "产品经理", "销售员", "薪资管理员", "人力资源经理", "财务主管", "资产 management", "顾问"],
         univ_list: ["经济管理", "社会经济管理", "管理科学", "法律", "创新管理", "国际贸易", "数字营销"],
@@ -2085,7 +2142,7 @@ export const translations = {
       axes_ment_desc: "我们的训练方法不断挑战球员的极限，迫使他们调动心理资源。性格力量是影响表现s之一，我们设计了许多练习让球员锻炼这种特质（1对1、人数劣势比赛、高强度体能训练、肌肉强化、高标准要求等）。鉴于职业足球需要强大的心理素质，球员从小培养这种素质至关重要。",
       axes_social: "社会",
       axes_social_school_title: "学业跟踪",
-      axes_social_school_desc: "不能想象一个没有教育的学院。足球是一项需要智慧的运动，这就是为什么学业教育项目是强制性的，球员必须参与才能留在学院。",
+      axes_social_school_desc: "一不能想象一个没有教育的学院。足球是一项需要智慧的运动，这就是为什么学业教育项目是强制性的，球员必须参与才能留在学院。",
       axes_social_social_title: "社会跟踪",
       axes_social_social_desc: "年轻学员与周围世界保持联系至关重要。为此，我们采取了多项措施，确保球员在足球之外保持社交关系（家人、朋友、培训、教育等）。",
       axes_social_psych_title: "心理跟踪",
@@ -2168,7 +2225,7 @@ export const translations = {
       label2_2_sub: "(即将推出)",
       text2: "目前 offer 足球计划，很快将推出篮球计划。",
       day_title: "典型的一天",
-      day_desc: "运动员的节奏要求严格组织。",
+      day_desc: "运动员s节奏要求严格组织。",
       discipline_label: "纪律 与 严谨",
       perf_cog_label: "认知性能",
       life_balance_label: "生活平衡",
@@ -2234,6 +2291,11 @@ export const translations = {
       years_18_plus_desc: "BTS, 本科, 硕士",
       years_20_plus: "20 岁及以上"
     },
+    campus_locations: {
+      evron: "卢瓦尔河地区 (LE MANS)",
+      bazeille: "阿基坦 (BORDEAUX)",
+      tulle: "普罗旺斯 (AIX-EN-PROVENCE)"
+    },
     campus_pages: {
       evron_hero: "Campus Pays de la Loire",
       evron_sub: "ESEPF 的历史 和 行政中心，位于马耶讷省 (Mayenne)，毗邻勒芒 (LE MANS)。",
@@ -2261,51 +2323,51 @@ export const translations = {
       },
       bazeille_hero: "Campus Aquitaine",
       bazeille_sub: "教学创新中心。",
-      bazeille_title: "洛特-加龙省的战略十字路口",
-      bazeille_desc: "我们的阿基坦（47）校区欢迎您来到位于洛特-加龙省中心的宁静绿意环境. 这里是您进行培训的理想场所，拥有设备齐全的可调节教室、供团体活动使用的运动场 以及 温馨的休闲空间.\n酒店式的校内住宿 和 餐饮为您提供全方位且安心的全包式体验。",
+      bazeille_title: "洛特-加龙省s战略十字路口",
+      bazeille_desc: "我们的阿基坦（47）校区欢迎您来到位于洛特-加龙省中心的宁静绿意环境. 这里是您进行培训s理想场所，拥有设备齐全s可调节教室、供团体活动使用s运动场 以及 温馨s休闲空间.\n酒店式s校内住宿 和 餐饮为您提供全方位且安心s全包式体验。",
       bazeille_culture: "文化 与 风土",
-      bazeille_culture_desc: "阿基坦校区以其热情友好 和 一流的体育设施而闻名，这些设施与当地生活完美融合。",
+      bazeille_culture_desc: "阿基坦校区以其热情友好 和 一流s体育设施而闻名，这些设施与当地生活完美融合。",
       bazeille_infra_desc: "阿基坦校区以其现代建筑 和 联合办公空间而闻名。",
       bazeille_full_desc: {
         title: "体育学习表现与卓越中心",
         intro: "我们的机构是一所卓越学府，在非凡的环境中体验学术和体育的成长。我们现代且完善的基础设施旨在为每位学生提供有利于成功、体育实践和日常福祉的环境。",
         housing_title: "住宿与校园生活",
-        housing_desc: "我们宽敞安全的寄宿学校 offer 友好且有监管的生活 environment. 每间客房的设计都旨在保证舒适与宁静，从而促进专注和休息。",
+        housing_desc: "我们宽敞安全s寄宿学校 offer 友好且有监管s生活 environment. 每间客房s设计都旨在保证舒适与宁静，从而促进专注和休息。",
         dining_title: "餐饮与休闲",
-        dining_p1: "明亮宜人的餐厅提供均衡多样的饮食。",
-        dining_p2: "咖啡厅是休息时间见面和分享的理想场所。",
-        dining_p3: "设备齐全、温馨的休息室/游戏室让学生可以放松身心并建立联系。",
+        dining_p1: "明亮宜人s餐厅提供均衡多样s饮食。",
+        dining_p2: "咖啡厅是休息时间见面和分享s理想场所。",
+        dining_p3: "设备齐全、温馨s休息室/游戏室让学生可以放松身心并建立联系。",
         learning_title: "学习空间",
         learning_desc: "我们的教室现代、联网，旨在促进互动和教学创新。",
         sports_title: "自然中心：我们的体育设施",
-        sports_intro: "ESEPF 受益于同类中独特的领域，致力于体育实践和户外逃生：",
+        sports_intro: "ESEPF 受益于同类中独特s领域，致力于体育实践和户外逃生：",
         sports_item1: "足球场",
         sports_item2: "滚球场",
         sports_item3: "排球场",
         sports_item4: "体育馆",
         nature_title: "受保护的自然环境",
-        nature_desc: "除了基础设施之外，我们的校园还融入了绿色且鼓舞人心的环境中，每个人都可以在这里呼吸、充电并进行多种户外活动。"
+        nature_desc: "除了基础设施之外，我们的校园还融入了绿色且鼓舞人心s环境中，每个人都可以在这里呼吸、充电并进行多种户外活动。"
       },
       tulle_hero: "Provence Campus",
-      tulle_sub: "普罗旺斯的卓越。",
-      tulle_title: "上普罗旺斯阿尔卑斯省的魅力 与 阳光",
-      tulle_desc: "我们位于普罗旺斯中心地带的普罗旺斯 (04) 校区为您的大型研讨会 和 培训开启大门.\n我们为您提供配备空调且光线充足的培训室、多功能运动场 以及 有利于社交的休闲空间.\n校内提供住宿 和 餐饮服务，确保您享受完全沉浸且无后顾之忧的体验。",
+      tulle_sub: "普罗旺斯s卓越。",
+      tulle_title: "上普罗旺斯阿尔卑斯省s魅力 与 阳光",
+      tulle_desc: "我们位于普罗旺斯中心地带s普罗旺斯 (04) 校区为您s大型研讨会 和 培训开启大门.\n我们为您提供配备空调且光线充足s培训室、多功能运动场 以及 有利于社交s休闲空间.\n校内提供住宿 和 餐饮服务，确保您享受完全沉浸且无后顾之忧s体验。",
       tulle_sport: "体育之城",
-      tulle_sport_desc: "普罗旺斯校区所在地全年气候宜人，是进行密集户外运动的理想场所。",
-      tulle_infra_desc: "普罗旺斯校区注重人性化 和 个性化的教学方法。",
+      tulle_sport_desc: "普罗旺斯校区所在地全年气候宜人，是进行密集户外运动s理想场所。",
+      tulle_infra_desc: "普罗旺斯校区注重人性化 和 个性化s教学方法。",
       tulle_full_desc: {
         title: "法国体育与声望学院 - 普罗旺",
         intro: "我们的机构是一所卓越学府，在非凡的环境中体验学术和体育的成长. 我们现代且完善的基础设施旨在为每位学生提供有利于成功、体育实践和日常福祉的环境。",
         housing_title: "住宿与校园生活",
-        housing_desc: "我们宽敞安全的寄宿学校提供友好且有监管的生活环境. 每间客房的设计都旨在保证舒适与宁静，从而促进专注和休息。",
+        housing_desc: "我们宽敞安全s寄宿学校提供友好且有监管s生活环境. 每间客房s设计都旨在保证舒适与宁静，从而促进专注和休息。",
         dining_title: "餐饮与休闲",
-        dining_p1: "明亮宜人的餐厅提供均衡多样的饮食。",
-        dining_p2: "咖啡厅是休息时间见面和分享的理想场所。",
-        dining_p3: "设备齐全、温馨的休息室/游戏室让学生可以放松身心并建立联系。",
+        dining_p1: "明亮宜人s餐厅提供均衡多样s饮食。",
+        dining_p2: "咖啡厅是休息时间见面和分享s理想场所。",
+        dining_p3: "设备齐全、温馨s休息室/游戏室让学生可以放松身心并建立联系。",
         learning_title: "学习空间",
         learning_desc: "我们的教室现代、联网，旨在促进互动和教学创新。",
         sports_title: "自然中心：我们的体育设施",
-        sports_intro: "ESEPF 受益于同类中独特的领域，致力于体育实践和户外逃生：",
+        sports_intro: "ESEPF 受益于同类中独特s领域，致力于体育实践和户外逃生：",
         sports_item1: "足球场",
         sports_item2: "网球场",
         sports_item3: "橄榄球场",
@@ -2313,12 +2375,12 @@ export const translations = {
         sports_item5: "游泳池",
         sports_item6: "健身房",
         nature_title: "受保护的自然环境",
-        nature_desc: "除了基础设施之外，我们的校园还融入了绿色且鼓舞人心的环境中，每个人都可以在这里呼吸、充电并进行多种户外活动。"
+        nature_desc: "除了基础设施之外，我们的校园还融入了绿色且鼓舞人心s环境中，每个人都可以在这里呼吸、充电并进行多种户外活动。"
       },
       infra_title: "卓越的基础设施",
       city_title: "生活环境",
       apply_now: "2026 学年报名开启",
-      modern_infra_desc: "专为学业 和 体育设计的现代设施。",
+      modern_infra_desc: "专为学业 和 体育设计s现代设施。",
       available_on_campus: "在此校区提供",
       lycee_options: "普通、STMG",
       map_not_defined: "地图未定义"
