@@ -7,7 +7,7 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { Languages, CheckCircle2, Heart, Users, Compass, Loader2 } from 'lucide-react';
+import { Languages, CheckCircle2, Heart, Users, Compass, Loader2, BookOpen, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -105,6 +105,52 @@ export default function IntegrationPage() {
                       {t.common.apply}
                     </Button>
                   </Link>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Remise à niveau Section */}
+        <section className="py-24 bg-muted/10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <ScrollReveal className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="lg:col-span-7 space-y-8">
+                  <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary uppercase tracking-tighter">
+                    {t.formations.integration_refresher_title}
+                  </h2>
+                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                    {t.formations.integration_refresher_desc}
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="flex items-center gap-3 bg-white p-4 rounded-xl border border-muted shadow-sm">
+                      <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                        <span className="font-bold">∑</span>
+                      </div>
+                      <span className="font-bold text-xs uppercase tracking-widest">Mathématiques</span>
+                    </div>
+                    <div className="flex items-center gap-3 bg-white p-4 rounded-xl border border-muted shadow-sm">
+                      <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                        <span className="font-bold">H₂O</span>
+                      </div>
+                      <span className="font-bold text-xs uppercase tracking-widest">Sciences</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="lg:col-span-5">
+                  <div className="p-10 bg-primary rounded-[3rem] text-white shadow-2xl relative overflow-hidden group">
+                    <div className="relative z-10 space-y-6">
+                      <GraduationCap size={48} className="text-secondary" />
+                      <h3 className="text-2xl font-bold uppercase tracking-tight">Harmonisation des acquis</h3>
+                      <p className="text-white/70 text-sm leading-relaxed">
+                        Un tuteur dédié suit la progression académique de chaque élève pour identifier les lacunes et les combler rapidement avant l'entrée en Seconde.
+                      </p>
+                    </div>
+                    <div className="absolute -bottom-10 -right-10 opacity-10 group-hover:scale-110 transition-transform">
+                      <BookOpen size={250} />
+                    </div>
+                  </div>
                 </div>
               </ScrollReveal>
             </div>
