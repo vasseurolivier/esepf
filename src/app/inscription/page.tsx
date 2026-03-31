@@ -232,9 +232,9 @@ export default function RegistrationPage() {
                               <SelectValue placeholder="Choisir un campus" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="evron">Campus Evron (LE MANS)</SelectItem>
-                              <SelectItem value="bazeille">Campus Sainte-Bazeille (BORDEAUX)</SelectItem>
-                              <SelectItem value="tulle">Campus Sainte-Tulle (AIX-EN-PROVENCE)</SelectItem>
+                              <SelectItem value="evron">Campus Pays de la Loire (Le Mans)</SelectItem>
+                              <SelectItem value="bazeille">Campus Aquitaine (Bordeaux)</SelectItem>
+                              <SelectItem value="tulle">Campus Provence (Aix en Provence)</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>

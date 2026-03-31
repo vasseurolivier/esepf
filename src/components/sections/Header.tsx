@@ -41,9 +41,9 @@ export function Header() {
   ];
 
   const campusSubLinks = [
-    { name: 'Campus Evron (LE MANS)', href: '/campus/evron' },
-    { name: 'Campus Sainte-Bazeille (BORDEAUX)', href: '/campus/sainte-bazeille' },
-    { name: 'Campus Sainte-Tulle (AIX-EN-PROVENCE)', href: '/campus/sainte-tulle' },
+    { name: 'Campus Pays de la Loire (Le Mans)', href: '/campus/evron' },
+    { name: 'Campus Aquitaine (Bordeaux)', href: '/campus/sainte-bazeille' },
+    { name: 'Campus Provence (Aix en Provence)', href: '/campus/sainte-tulle' },
   ];
 
   const formationsSubLinks = [

@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -36,21 +37,21 @@ const IMAGE_CATEGORIES = [
     label: 'Campus',
     icon: <MapPin size={16} />,
     fields: [
-      { id: 'campus_evron', label: 'Hero Evron (LE MANS)', location: 'Haut de page Evron' },
-      { id: 'evron_map', label: 'Carte Evron (LE MANS)', location: 'Section localisation Evron' },
-      { id: 'evron_infra_1', label: 'Evron Infra 1', location: 'Galerie infrastructures' },
-      { id: 'evron_infra_2', label: 'Evron Infra 2', location: 'Galerie infrastructures' },
-      { id: 'evron_infra_3', label: 'Evron Infra 3', location: 'Galerie infrastructures' },
-      { id: 'campus_bazeille', label: 'Hero Sainte-Bazeille (BORDEAUX)', location: 'Haut de page Sainte-Bazeille' },
-      { id: 'bazeille_map', label: 'Carte Sainte-Bazeille (BORDEAUX)', location: 'Section localisation Sainte-Bazeille' },
-      { id: 'bazeille_infra_1', label: 'Sainte-Bazeille Infra 1', location: 'Galerie infrastructures' },
-      { id: 'bazeille_infra_2', label: 'Sainte-Bazeille Infra 2', location: 'Galerie infrastructures' },
-      { id: 'bazeille_infra_3', label: 'Sainte-Bazeille Infra 3', location: 'Galerie infrastructures' },
-      { id: 'campus_tulle', label: 'Hero Sainte-Tulle (AIX-EN-PROVENCE)', location: 'Haut de page Sainte-Tulle' },
-      { id: 'tulle_map', label: 'Carte Sainte-Tulle (AIX-EN-PROVENCE)', location: 'Section localisation Sainte-Tulle' },
-      { id: 'tulle_infra_1', label: 'Sainte-Tulle Infra 1', location: 'Galerie infrastructures' },
-      { id: 'tulle_infra_2', label: 'Sainte-Tulle Infra 2', location: 'Galerie infrastructures' },
-      { id: 'tulle_infra_3', label: 'Sainte-Tulle Infra 3', location: 'Galerie infrastructures' },
+      { id: 'campus_evron', label: 'Hero Pays de la Loire (LE MANS)', location: 'Haut de page Pays de la Loire' },
+      { id: 'evron_map', label: 'Carte Pays de la Loire (LE MANS)', location: 'Section localisation' },
+      { id: 'evron_infra_1', label: 'Pays de la Loire Infra 1', location: 'Galerie infrastructures' },
+      { id: 'evron_infra_2', label: 'Pays de la Loire Infra 2', location: 'Galerie infrastructures' },
+      { id: 'evron_infra_3', label: 'Pays de la Loire Infra 3', location: 'Galerie infrastructures' },
+      { id: 'campus_bazeille', label: 'Hero Aquitaine (BORDEAUX)', location: 'Haut de page Aquitaine' },
+      { id: 'bazeille_map', label: 'Carte Aquitaine (BORDEAUX)', location: 'Section localisation' },
+      { id: 'bazeille_infra_1', label: 'Aquitaine Infra 1', location: 'Galerie infrastructures' },
+      { id: 'bazeille_infra_2', label: 'Aquitaine Infra 2', location: 'Galerie infrastructures' },
+      { id: 'bazeille_infra_3', label: 'Aquitaine Infra 3', location: 'Galerie infrastructures' },
+      { id: 'campus_tulle', label: 'Hero Provence (AIX-EN-PROVENCE)', location: 'Haut de page Provence' },
+      { id: 'tulle_map', label: 'Carte Provence (AIX-EN-PROVENCE)', location: 'Section localisation' },
+      { id: 'tulle_infra_1', label: 'Provence Infra 1', location: 'Galerie infrastructures' },
+      { id: 'tulle_infra_2', label: 'Provence Infra 2', location: 'Galerie infrastructures' },
+      { id: 'tulle_infra_3', label: 'Provence Infra 3', location: 'Galerie infrastructures' },
     ]
   },
   {
@@ -240,6 +241,15 @@ export default function AdminPage() {
     );
   }
 
+  const getCampusLabel = (choice: string) => {
+    switch (choice) {
+      case 'evron': return 'Pays de la Loire (LE MANS)';
+      case 'bazeille': return 'Aquitaine (BORDEAUX)';
+      case 'tulle': return 'Provence (AIX-EN-PROVENCE)';
+      default: return choice;
+    }
+  };
+
   return (
     <main className="min-h-screen bg-muted/20 pb-20">
       <Header />
@@ -391,7 +401,7 @@ export default function AdminPage() {
                             </div>
                             <div>
                               <h4 className="font-bold">{reg.studentFirstName} {reg.studentLastName}</h4>
-                              <p className="text-xs text-muted-foreground">{reg.programChoice} - {reg.campusChoice}</p>
+                              <p className="text-xs text-muted-foreground">{reg.programChoice} - {getCampusLabel(reg.campusChoice)}</p>
                             </div>
                           </div>
                           <div className="text-right">
@@ -431,7 +441,7 @@ export default function AdminPage() {
                           <div className="p-4 bg-muted/30 rounded-2xl border border-muted">
                             <Label className="text-[10px] uppercase font-bold text-muted-foreground">Campus</Label>
                             <p className="font-bold text-primary flex items-center gap-2 uppercase tracking-wide">
-                              <MapPin size={14} className="text-secondary" /> {selectedReg.campusChoice === 'evron' ? 'Evron (LE MANS)' : selectedReg.campusChoice === 'bazeille' ? 'Sainte-Bazeille (BORDEAUX)' : selectedReg.campusChoice === 'tulle' ? 'Sainte-Tulle (AIX-EN-PROVENCE)' : selectedReg.campusChoice}
+                              <MapPin size={14} className="text-secondary" /> {getCampusLabel(selectedReg.campusChoice)}
                             </p>
                           </div>
                           <div className="p-4 bg-muted/30 rounded-2xl border border-muted">
