@@ -22,7 +22,7 @@ import {
 import { useFirestore } from '@/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, GraduationCap, User, Users, MapPin, School, CheckCircle2, Home, Calendar, FileText, Search, CreditCard, Plane, Wallet, PlusCircle } from 'lucide-react';
+import { Loader2, GraduationCap, User, Users, MapPin, School, CheckCircle2, Home, Calendar, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function RegistrationPage() {
@@ -81,14 +81,14 @@ export default function RegistrationPage() {
   };
 
   const steps = [
-    { id: '01', title: t.registration_steps.step1, date: t.registration_steps.step1_date, icon: <FileText />, color: 'bg-blue-600' },
-    { id: '02', title: t.registration_steps.step2, date: t.registration_steps.step2_date, icon: <Search />, color: 'bg-blue-500' },
-    { id: '03', title: t.registration_steps.step3, date: t.registration_steps.step3_date, icon: <CreditCard />, color: 'bg-cyan-500' },
-    { id: '04', title: t.registration_steps.step4, date: t.registration_steps.step4_date, icon: <Plane />, color: 'bg-cyan-400' },
-    { id: '05', title: t.registration_steps.step5, date: t.registration_steps.step5_date, icon: <Wallet />, color: 'bg-green-500' },
-    { id: '06', title: t.registration_steps.step6, date: t.registration_steps.step6_date, icon: <Home />, color: 'bg-green-600' },
-    { id: '07', title: t.registration_steps.step7, date: t.registration_steps.step7_date, icon: <PlusCircle />, color: 'bg-blue-800' },
-    { id: '08', title: t.registration_steps.step8, date: t.registration_steps.step8_date, icon: <School />, color: 'bg-blue-400' },
+    { id: '01', title: t.registration_steps.step1, date: t.registration_steps.step1_date, color: 'border-blue-600' },
+    { id: '02', title: t.registration_steps.step2, date: t.registration_steps.step2_date, color: 'border-blue-500' },
+    { id: '03', title: t.registration_steps.step3, date: t.registration_steps.step3_date, color: 'border-cyan-500' },
+    { id: '04', title: t.registration_steps.step4, date: t.registration_steps.step4_date, color: 'border-cyan-400' },
+    { id: '05', title: t.registration_steps.step5, date: t.registration_steps.step5_date, color: 'border-green-500' },
+    { id: '06', title: t.registration_steps.step6, date: t.registration_steps.step6_date, color: 'border-green-600' },
+    { id: '07', title: t.registration_steps.step7, date: t.registration_steps.step7_date, color: 'border-blue-800' },
+    { id: '08', title: t.registration_steps.step8, date: t.registration_steps.step8_date, color: 'border-blue-400' },
   ];
 
   if (isSuccess) {
@@ -143,47 +143,51 @@ export default function RegistrationPage() {
           </div>
         </section>
 
-        {/* Joining Steps Section */}
-        <section className="py-20 bg-white">
+        {/* Joining Steps Section - Timeline Version */}
+        <section className="py-24 bg-white overflow-hidden">
           <div className="container mx-auto px-4">
-            <ScrollReveal className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary uppercase tracking-tighter mb-4">{t.registration_steps.title}</h2>
+            <ScrollReveal className="text-center mb-24">
+              <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary uppercase tracking-tighter mb-4">
+                {t.registration_steps.title}
+              </h2>
               <div className="w-24 h-1 bg-secondary mx-auto rounded-full" />
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-              {steps.map((step, idx) => (
-                <ScrollReveal key={step.id} delay={idx * 100} className="relative group">
-                  <div className="bg-muted/30 rounded-[2rem] p-8 h-full border border-muted transition-all duration-500 hover:shadow-2xl hover:bg-white hover:-translate-y-2 group">
-                    <div className={`${step.color} w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg transform group-hover:rotate-12 transition-transform`}>
-                      {React.cloneElement(step.icon as React.ReactElement, { size: 28 })}
-                    </div>
-                    <div className="absolute top-8 right-8 text-4xl font-headline font-bold opacity-5 group-hover:opacity-10 transition-opacity">
-                      {step.id}
-                    </div>
-                    <div className="space-y-4">
-                      <h3 className="text-sm font-bold text-primary uppercase tracking-wider leading-tight min-h-[40px]">
-                        {step.title}
-                      </h3>
-                      <div className="flex items-center gap-2 text-secondary font-bold text-[10px] uppercase tracking-widest">
-                        <Calendar size={14} />
-                        {step.date}
+            <div className="relative max-w-7xl mx-auto">
+              {/* Desktop Connecting Line */}
+              <div className="hidden lg:block absolute top-[45px] left-0 w-full h-0.5 bg-muted z-0" />
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-8 relative z-10">
+                {steps.map((step, idx) => (
+                  <ScrollReveal key={step.id} delay={idx * 100} className="relative">
+                    <div className="flex flex-col items-center lg:items-start group">
+                      {/* Step Circle */}
+                      <div className={`w-24 h-24 rounded-full border-4 ${step.color} bg-white flex items-center justify-center mb-8 shadow-xl transition-all duration-500 group-hover:scale-110 relative z-20`}>
+                        <span className="text-3xl font-headline font-bold text-primary italic">{step.id}</span>
+                      </div>
+
+                      {/* Content */}
+                      <div className="text-center lg:text-left space-y-3 px-4 lg:px-0">
+                        <h3 className="text-xs font-bold text-primary uppercase tracking-[0.2em] leading-tight min-h-[40px]">
+                          {step.title}
+                        </h3>
+                        <div className="flex items-center justify-center lg:justify-start gap-2 text-secondary font-bold text-[10px] uppercase tracking-widest bg-muted/30 py-2 px-4 rounded-full w-fit mx-auto lg:mx-0">
+                          <Calendar size={12} />
+                          {step.date}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  {idx < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 z-10 opacity-20 group-hover:opacity-100 transition-opacity">
-                      <PlusCircle className="text-muted-foreground" size={24} />
-                    </div>
-                  )}
-                </ScrollReveal>
-              ))}
+                  </ScrollReveal>
+                ))}
+              </div>
             </div>
 
-            <div className="mt-16 text-center">
+            <div className="mt-24 text-center">
               <ScrollReveal>
-                <div className="inline-block bg-primary p-4 rounded-3xl transform -rotate-2">
-                  <span className="text-white font-serif italic text-4xl px-8">Welcome</span>
+                <div className="inline-flex items-center gap-4 text-primary font-headline font-bold text-2xl md:text-4xl italic opacity-20">
+                  <span>Admissions</span>
+                  <div className="w-12 md:w-24 h-px bg-primary" />
+                  <span>Excellence</span>
                 </div>
               </ScrollReveal>
             </div>
@@ -195,11 +199,11 @@ export default function RegistrationPage() {
             <div className="max-w-4xl mx-auto">
               
               <ScrollReveal className="mb-12">
-                <div className="bg-white p-8 rounded-3xl shadow-sm border border-border flex items-center gap-6">
-                  <div className="bg-secondary/10 p-4 rounded-2xl text-secondary">
+                <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-border flex items-center gap-6">
+                  <div className="bg-primary text-white p-4 rounded-2xl shadow-lg">
                     <School size={32} />
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                     {t.registration.intro}
                   </p>
                 </div>
@@ -209,33 +213,33 @@ export default function RegistrationPage() {
                 
                 {/* Student Info */}
                 <ScrollReveal>
-                  <Card className="rounded-[2rem] border-none shadow-xl overflow-hidden">
-                    <CardHeader className="bg-muted/50 border-b border-muted p-8">
+                  <Card className="rounded-[2.5rem] border-none shadow-xl overflow-hidden bg-white">
+                    <CardHeader className="bg-muted/30 border-b border-muted p-8">
                       <div className="flex items-center gap-3 text-primary">
                         <User size={24} className="text-secondary" />
-                        <CardTitle className="text-2xl uppercase tracking-wider">{t.registration.section_student}</CardTitle>
+                        <CardTitle className="text-2xl font-headline font-bold uppercase tracking-wider">{t.registration.section_student}</CardTitle>
                       </div>
                     </CardHeader>
                     <CardContent className="p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label className="font-bold text-xs uppercase text-primary">{t.registration.first_name}</Label>
-                        <Input required value={formData.studentFirstName} onChange={e => handleChange('studentFirstName', e.target.value)} className="rounded-xl h-12" />
+                        <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.first_name}</Label>
+                        <Input required value={formData.studentFirstName} onChange={e => handleChange('studentFirstName', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                       <div className="space-y-2">
-                        <Label className="font-bold text-xs uppercase text-primary">{t.registration.last_name}</Label>
-                        <Input required value={formData.studentLastName} onChange={e => handleChange('studentLastName', e.target.value)} className="rounded-xl h-12" />
+                        <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.last_name}</Label>
+                        <Input required value={formData.studentLastName} onChange={e => handleChange('studentLastName', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                       <div className="space-y-2">
-                        <Label className="font-bold text-xs uppercase text-primary">{t.registration.birth_date}</Label>
-                        <Input required type="date" value={formData.studentBirthDate} onChange={e => handleChange('studentBirthDate', e.target.value)} className="rounded-xl h-12" />
+                        <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.birth_date}</Label>
+                        <Input required type="date" value={formData.studentBirthDate} onChange={e => handleChange('studentBirthDate', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                       <div className="space-y-2">
-                        <Label className="font-bold text-xs uppercase text-primary">{t.registration.nationality}</Label>
-                        <Input required value={formData.studentNationality} onChange={e => handleChange('studentNationality', e.target.value)} className="rounded-xl h-12" />
+                        <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.nationality}</Label>
+                        <Input required value={formData.studentNationality} onChange={e => handleChange('studentNationality', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                       <div className="space-y-2 md:col-span-2">
-                        <Label className="font-bold text-xs uppercase text-primary">{t.registration.grade}</Label>
-                        <Input required placeholder="Ex: 4ème, Seconde..." value={formData.currentGrade} onChange={e => handleChange('currentGrade', e.target.value)} className="rounded-xl h-12" />
+                        <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.grade}</Label>
+                        <Input required placeholder="Ex: 4ème, Seconde..." value={formData.currentGrade} onChange={e => handleChange('currentGrade', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                     </CardContent>
                   </Card>
@@ -243,29 +247,29 @@ export default function RegistrationPage() {
 
                 {/* Parent Info */}
                 <ScrollReveal delay={100}>
-                  <Card className="rounded-[2rem] border-none shadow-xl overflow-hidden">
-                    <CardHeader className="bg-muted/50 border-b border-muted p-8">
+                  <Card className="rounded-[2.5rem] border-none shadow-xl overflow-hidden bg-white">
+                    <CardHeader className="bg-muted/30 border-b border-muted p-8">
                       <div className="flex items-center gap-3 text-primary">
                         <Users size={24} className="text-secondary" />
-                        <CardTitle className="text-2xl uppercase tracking-wider">{t.registration.section_parent}</CardTitle>
+                        <CardTitle className="text-2xl font-headline font-bold uppercase tracking-wider">{t.registration.section_parent}</CardTitle>
                       </div>
                     </CardHeader>
                     <CardContent className="p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label className="font-bold text-xs uppercase text-primary">{t.registration.first_name}</Label>
-                        <Input required value={formData.parentFirstName} onChange={e => handleChange('parentFirstName', e.target.value)} className="rounded-xl h-12" />
+                        <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.first_name}</Label>
+                        <Input required value={formData.parentFirstName} onChange={e => handleChange('parentFirstName', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                       <div className="space-y-2">
-                        <Label className="font-bold text-xs uppercase text-primary">{t.registration.last_name}</Label>
-                        <Input required value={formData.parentLastName} onChange={e => handleChange('parentLastName', e.target.value)} className="rounded-xl h-12" />
+                        <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.last_name}</Label>
+                        <Input required value={formData.parentLastName} onChange={e => handleChange('parentLastName', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                       <div className="space-y-2">
-                        <Label className="font-bold text-xs uppercase text-primary">{t.registration.email}</Label>
-                        <Input required type="email" value={formData.parentEmail} onChange={e => handleChange('parentEmail', e.target.value)} className="rounded-xl h-12" />
+                        <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.email}</Label>
+                        <Input required type="email" value={formData.parentEmail} onChange={e => handleChange('parentEmail', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                       <div className="space-y-2">
-                        <Label className="font-bold text-xs uppercase text-primary">{t.registration.phone}</Label>
-                        <Input required type="tel" value={formData.parentPhone} onChange={e => handleChange('parentPhone', e.target.value)} className="rounded-xl h-12" />
+                        <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.phone}</Label>
+                        <Input required type="tel" value={formData.parentPhone} onChange={e => handleChange('parentPhone', e.target.value)} className="rounded-xl h-12 border-muted focus:border-secondary transition-colors" />
                       </div>
                     </CardContent>
                   </Card>
@@ -273,19 +277,19 @@ export default function RegistrationPage() {
 
                 {/* Project Info */}
                 <ScrollReveal delay={200}>
-                  <Card className="rounded-[2rem] border-none shadow-xl overflow-hidden">
-                    <CardHeader className="bg-muted/50 border-b border-muted p-8">
+                  <Card className="rounded-[2.5rem] border-none shadow-xl overflow-hidden bg-white">
+                    <CardHeader className="bg-muted/30 border-b border-muted p-8">
                       <div className="flex items-center gap-3 text-primary">
                         <MapPin size={24} className="text-secondary" />
-                        <CardTitle className="text-2xl uppercase tracking-wider">{t.registration.section_choices}</CardTitle>
+                        <CardTitle className="text-2xl font-headline font-bold uppercase tracking-wider">{t.registration.section_choices}</CardTitle>
                       </div>
                     </CardHeader>
                     <CardContent className="p-8 space-y-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <Label className="font-bold text-xs uppercase text-primary">{t.registration.campus_choice}</Label>
+                          <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.campus_choice}</Label>
                           <Select required onValueChange={val => handleChange('campusChoice', val)}>
-                            <SelectTrigger className="rounded-xl h-12">
+                            <SelectTrigger className="rounded-xl h-12 border-muted">
                               <SelectValue placeholder="Choisir un campus" />
                             </SelectTrigger>
                             <SelectContent>
@@ -296,9 +300,9 @@ export default function RegistrationPage() {
                           </Select>
                         </div>
                         <div className="space-y-2">
-                          <Label className="font-bold text-xs uppercase text-primary">{t.registration.program_choice}</Label>
+                          <Label className="font-bold text-xs uppercase text-primary tracking-widest">{t.registration.program_choice}</Label>
                           <Select required onValueChange={val => handleChange('programChoice', val)}>
-                            <SelectTrigger className="rounded-xl h-12">
+                            <SelectTrigger className="rounded-xl h-12 border-muted">
                               <SelectValue placeholder="Choisir une formation" />
                             </SelectTrigger>
                             <SelectContent>
@@ -311,14 +315,14 @@ export default function RegistrationPage() {
                         </div>
                       </div>
 
-                      <div className="flex items-center space-x-3 p-6 bg-primary/5 rounded-2xl border border-primary/10">
+                      <div className="flex items-center space-x-3 p-6 bg-primary/5 rounded-2xl border border-primary/10 transition-all hover:bg-primary/10">
                         <Checkbox 
                           id="football" 
                           checked={formData.footballAcademy} 
                           onCheckedChange={val => handleChange('footballAcademy', val)}
-                          className="w-6 h-6 rounded-md border-primary"
+                          className="w-6 h-6 rounded-md border-primary data-[state=checked]:bg-secondary data-[state=checked]:border-secondary"
                         />
-                        <Label htmlFor="football" className="text-lg font-bold text-primary cursor-pointer">
+                        <Label htmlFor="football" className="text-lg font-bold text-primary cursor-pointer tracking-tight">
                           {t.registration.football_interest}
                         </Label>
                       </div>
@@ -327,18 +331,19 @@ export default function RegistrationPage() {
                 </ScrollReveal>
 
                 {/* Submit Button */}
-                <div className="sticky bottom-8 z-50">
+                <div className="sticky bottom-8 z-50 pt-12">
                   <Button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-20 rounded-2xl text-xl font-bold bg-primary text-white hover:bg-primary/90 shadow-2xl transition-all border-4 border-white flex items-center justify-center gap-4"
+                    className="w-full h-20 rounded-[2rem] text-xl font-bold bg-primary text-white hover:bg-primary/90 shadow-2xl transition-all border-4 border-white flex items-center justify-center gap-4 group"
                   >
                     {isSubmitting ? (
                       <Loader2 className="animate-spin" size={32} />
                     ) : (
                       <>
-                        <CheckCircle2 size={32} />
+                        <CheckCircle2 size={32} className="text-secondary" />
                         {t.registration.submit}
+                        <ArrowRight size={24} className="ml-2 opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0" />
                       </>
                     )}
                   </Button>
