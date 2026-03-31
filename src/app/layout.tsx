@@ -1,4 +1,3 @@
-
 import type {Metadata} from 'next';
 import './globals.css';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
@@ -11,14 +10,17 @@ export const metadata: Metadata = {
   description: 'Un établissement d\'excellence pour la réussite de nos élèves, du collège au baccalauréat.',
 };
 
-// Helper function to unwrap Firestore REST API response for initial settings
-// Using cache: 'no-store' to ensure real-time updates and avoid stale data issues
+/**
+ * Récupère les paramètres globaux via l'API REST de Firestore côté serveur.
+ * Utilise un mécanisme de secours (fallback) robuste pour éviter les erreurs de rendu.
+ */
 async function getInitialSettings() {
   try {
     const url = `https://firestore.googleapis.com/v1/projects/${firebaseConfig.projectId}/databases/(default)/documents/settings/global`;
     const res = await fetch(url, { 
       cache: 'no-store',
-      next: { revalidate: 0 } 
+      next: { revalidate: 0 },
+      signal: AbortSignal.timeout(5000) // Timeout de 5s pour éviter de bloquer le rendu
     });
     
     if (!res.ok) return null;
@@ -45,7 +47,7 @@ async function getInitialSettings() {
 
     return unwrap(data.fields);
   } catch (e) {
-    console.error("Failed to fetch initial settings:", e);
+    console.error("SSR: Failed to fetch initial settings:", e);
     return null;
   }
 }

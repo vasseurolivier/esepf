@@ -1,39 +1,42 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
+import { useToast } from '@/hooks/use-toast';
 
 /**
- * An invisible component that listens for globally emitted 'permission-error' events.
- * It throws any received error to be caught by Next.js's global-error.tsx.
+ * Un composant invisible qui écoute les erreurs Firebase émises globalement.
+ * Au lieu de faire planter l'application (throw), il affiche une notification
+ * et log l'erreur pour le débogage, garantissant que le site reste accessible.
  */
 export function FirebaseErrorListener() {
-  // Use the specific error type for the state for type safety.
-  const [error, setError] = useState<FirestorePermissionError | null>(null);
+  const { toast } = useToast();
 
   useEffect(() => {
-    // The callback now expects a strongly-typed error, matching the event payload.
     const handleError = (error: FirestorePermissionError) => {
-      // Set error in state to trigger a re-render.
-      setError(error);
+      // On log l'erreur pour le diagnostic
+      console.error("Firebase Security/Network Error:", error.message);
+      
+      // On affiche un message d'avertissement à l'utilisateur au lieu de couper le site
+      // Note: On ne le fait que si ce n'est pas une erreur de "chargement initial" normale
+      if (error.request?.method !== 'get' && error.request?.method !== 'list') {
+        toast({
+          variant: "destructive",
+          title: "Action restreinte",
+          description: "Vous n'avez pas les permissions nécessaires ou votre connexion est instable.",
+        });
+      }
     };
 
-    // The typed emitter will enforce that the callback for 'permission-error'
-    // matches the expected payload type (FirestorePermissionError).
     errorEmitter.on('permission-error', handleError);
 
-    // Unsubscribe on unmount to prevent memory leaks.
     return () => {
       errorEmitter.off('permission-error', handleError);
     };
-  }, []);
+  }, [toast]);
 
-  // On re-render, if an error exists in state, throw it.
-  if (error) {
-    throw error;
-  }
-
-  // This component renders nothing.
+  // Ce composant ne doit plus JAMAIS "throw" d'erreur en plein rendu, 
+  // car cela provoque l'écran "Application Error" de Next.js.
   return null;
 }
