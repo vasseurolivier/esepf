@@ -59,6 +59,20 @@
         "status": { "type": "string", "enum": ["pending", "contacted"] },
         "createdAt": { "type": "string", "format": "date-time" }
       }
+    },
+    "ContactMessage": {
+      "title": "ContactMessage",
+      "type": "object",
+      "description": "A message sent from the contact form.",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "subject": { "type": "string" },
+        "message": { "type": "string" },
+        "codeRef": { "type": "string" },
+        "status": { "type": "string", "enum": ["new", "read"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
     }
   },
   "auth": {
@@ -96,6 +110,14 @@
           "entityName": "Registration",
           "schema": { "$ref": "#/backend/entities/Registration" },
           "description": "Student applications."
+        }
+      },
+      {
+        "path": "/messages",
+        "definition": {
+          "entityName": "ContactMessage",
+          "schema": { "$ref": "#/backend/entities/ContactMessage" },
+          "description": "Messages from contact form."
         }
       },
       {

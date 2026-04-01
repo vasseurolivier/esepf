@@ -11,7 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useFirestore, useDoc, useCollection, useMemoFirebase } from '@/firebase';
 import { doc, setDoc, serverTimestamp, collection, query, orderBy, updateDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, History, BookOpen, Briefcase, Languages, Star, Map as MapIcon, Share2 } from 'lucide-react';
+import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, MessageSquare, Share2, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { format } from 'date-fns';
@@ -166,6 +166,9 @@ export default function AdminPage() {
   const registrationsQuery = useMemoFirebase(() => query(collection(db, 'registrations'), orderBy('createdAt', 'desc')), [db]);
   const { data: registrations, isLoading: regLoading } = useCollection(registrationsQuery);
 
+  const messagesQuery = useMemoFirebase(() => query(collection(db, 'messages'), orderBy('createdAt', 'desc')), [db]);
+  const { data: messages, isLoading: msgLoading } = useCollection(messagesQuery);
+
   const { toast } = useToast();
   
   const [passwordInput, setPasswordInput] = useState('');
@@ -175,6 +178,7 @@ export default function AdminPage() {
   const [images, setImages] = useState<Record<string, string>>({});
   const [isSaving, setIsSaving] = useState(false);
   const [selectedReg, setSelectedReg] = useState<any>(null);
+  const [selectedMsg, setSelectedMsg] = useState<any>(null);
 
   useEffect(() => {
     if (settings) {
@@ -243,6 +247,22 @@ export default function AdminPage() {
       });
   };
 
+  const updateMsgStatus = (id: string, newStatus: string) => {
+    const msgRef = doc(db, 'messages', id);
+    updateDoc(msgRef, { status: newStatus })
+      .then(() => {
+        toast({ title: "Message marqué comme lu" });
+      })
+      .catch(async (error) => {
+        const permissionError = new FirestorePermissionError({
+          path: msgRef.path,
+          operation: 'update',
+          requestResourceData: { status: newStatus },
+        });
+        errorEmitter.emit('permission-error', permissionError);
+      });
+  };
+
   if (settingsLoading) {
     return <div className="min-h-screen flex items-center justify-center bg-background"><Loader2 className="animate-spin text-primary" /></div>;
   }
@@ -294,12 +314,15 @@ export default function AdminPage() {
           </div>
 
           <Tabs defaultValue="config" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 h-16 bg-white p-1 rounded-2xl shadow-sm mb-8">
+            <TabsList className="grid w-full grid-cols-3 h-16 bg-white p-1 rounded-2xl shadow-sm mb-8">
               <TabsTrigger value="config" className="rounded-xl text-lg font-bold data-[state=active]:bg-primary data-[state=active]:text-white">
-                <Settings className="mr-2" size={20} /> Configuration Site
+                <Settings className="mr-2" size={20} /> Configuration
               </TabsTrigger>
               <TabsTrigger value="registrations" className="rounded-xl text-lg font-bold data-[state=active]:bg-secondary data-[state=active]:text-white">
                 <Users className="mr-2" size={20} /> Candidatures ({registrations?.length || 0})
+              </TabsTrigger>
+              <TabsTrigger value="messages" className="rounded-xl text-lg font-bold data-[state=active]:bg-[#1a3d2f] data-[state=active]:text-white">
+                <MessageSquare className="mr-2" size={20} /> Messages ({messages?.filter(m => m.status === 'new').length || 0})
               </TabsTrigger>
             </TabsList>
 
@@ -523,6 +546,99 @@ export default function AdminPage() {
                     <div className="h-[400px] border-2 border-dashed border-muted rounded-[2.5rem] flex flex-col items-center justify-center text-muted-foreground gap-4 bg-white/50">
                       <FileText size={48} className="opacity-20" />
                       <p>Sélectionnez un dossier pour voir les détails</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="messages">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div className="lg:col-span-5 space-y-4">
+                  {msgLoading ? (
+                    <div className="p-12 text-center bg-white rounded-3xl"><Loader2 className="animate-spin mx-auto text-primary" /></div>
+                  ) : messages?.length === 0 ? (
+                    <div className="p-12 text-center bg-white rounded-3xl text-muted-foreground italic">Aucun message pour le moment.</div>
+                  ) : (
+                    messages?.map((msg: any) => (
+                      <Card 
+                        key={msg.id} 
+                        onClick={() => setSelectedMsg(msg)}
+                        className={`cursor-pointer transition-all rounded-2xl border-none shadow-sm hover:shadow-md ${selectedMsg?.id === msg.id ? 'ring-2 ring-[#1a3d2f]' : ''}`}
+                      >
+                        <CardContent className="p-4 flex items-center justify-between">
+                          <div className="flex items-center gap-4">
+                            <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold ${msg.status === 'new' ? 'bg-[#1a3d2f]' : 'bg-muted text-muted-foreground'}`}>
+                              <MessageSquare size={20} />
+                            </div>
+                            <div>
+                              <h4 className="font-bold truncate max-w-[150px]">{msg.name}</h4>
+                              <p className="text-xs text-muted-foreground truncate max-w-[150px]">{msg.subject}</p>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className={`text-[10px] font-bold uppercase px-2 py-1 rounded-full mb-1 inline-block ${
+                              msg.status === 'new' ? 'bg-red-100 text-red-600' : 'bg-gray-100 text-gray-600'
+                            }`}>
+                              {msg.status === 'new' ? 'Nouveau' : 'Lu'}
+                            </div>
+                            <p className="text-[10px] text-muted-foreground">
+                              {msg.createdAt ? format(msg.createdAt.toDate(), 'dd/MM HH:mm') : ''}
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))
+                  )}
+                </div>
+
+                <div className="lg:col-span-7">
+                  {selectedMsg ? (
+                    <Card className="rounded-[2.5rem] overflow-hidden shadow-xl border-none bg-white sticky top-24">
+                      <div className="bg-[#1a3d2f] p-8 text-white">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <h2 className="text-2xl font-headline font-bold">{selectedMsg.subject}</h2>
+                            <p className="text-white/70">De : {selectedMsg.name}</p>
+                          </div>
+                          <div className="flex gap-2">
+                            {selectedMsg.status === 'new' && (
+                              <Button onClick={() => updateMsgStatus(selectedMsg.id, 'read')} size="sm" className="bg-white text-[#1a3d2f] hover:bg-white/90 rounded-full font-bold">
+                                <Check size={16} className="mr-1" /> MARQUER LU
+                              </Button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      <CardContent className="p-8 space-y-8">
+                        <div className="space-y-6">
+                          <div className="p-6 bg-muted/30 rounded-2xl border border-muted italic text-lg text-primary">
+                            "{selectedMsg.message}"
+                          </div>
+
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-muted">
+                            <div className="space-y-4">
+                              <h4 className="text-xs font-bold uppercase text-[#1a3d2f] flex items-center gap-2">
+                                <User size={14} /> Expéditeur
+                              </h4>
+                              <p className="font-medium">{selectedMsg.name}</p>
+                              <p className="text-sm text-muted-foreground flex items-center gap-2"><Mail size={14} /> {selectedMsg.email}</p>
+                            </div>
+                            <div className="space-y-4">
+                              <h4 className="text-xs font-bold uppercase text-[#1a3d2f] flex items-center gap-2">
+                                <Calendar size={14} /> Infos Envoi
+                              </h4>
+                              <p className="text-sm">Envoyé le : <span className="font-medium">{selectedMsg.createdAt ? format(selectedMsg.createdAt.toDate(), 'dd MMMM yyyy à HH:mm') : '-'}</span></p>
+                              {selectedMsg.codeRef && <p className="text-sm flex items-center gap-2"><Hash size={14} /> Code Réf : <span className="font-bold">{selectedMsg.codeRef}</span></p>}
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ) : (
+                    <div className="h-[400px] border-2 border-dashed border-muted rounded-[2.5rem] flex flex-col items-center justify-center text-muted-foreground gap-4 bg-white/50">
+                      <MessageSquare size={48} className="opacity-20" />
+                      <p>Sélectionnez un message pour lire le contenu</p>
                     </div>
                   )}
                 </div>

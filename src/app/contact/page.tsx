@@ -13,6 +13,8 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, MapPin, Send, Loader2, MessageSquare, Globe, Clock, Hash } from 'lucide-react';
+import { useFirestore } from '@/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import {
   Accordion,
   AccordionContent,
@@ -23,21 +25,56 @@ import {
 export default function ContactPage() {
   const { t } = useTranslation();
   const { toast } = useToast();
-  const [isSubmitting, setIsSaving] = useState(false);
+  const db = useFirestore();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+    codeRef: ''
+  });
+
+  const handleChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSaving(true);
+    if (!db) return;
     
-    // Simulation d'envoi
-    setTimeout(() => {
-      setIsSaving(false);
+    setIsSubmitting(true);
+    
+    try {
+      await addDoc(collection(db, 'messages'), {
+        ...formData,
+        status: 'new',
+        createdAt: serverTimestamp()
+      });
+
       toast({
         title: "Message Envoyé !",
         description: t.contact_page.form_success,
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+      
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+        codeRef: ''
+      });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        variant: "destructive",
+        title: "Erreur",
+        description: "Impossible d'envoyer votre message. Veuillez réessayer plus tard."
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfos = [
@@ -100,28 +137,58 @@ export default function ContactPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_name}</Label>
-                            <Input required placeholder={t.contact_page.form_name_placeholder} className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                            <Input 
+                              required 
+                              placeholder={t.contact_page.form_name_placeholder} 
+                              value={formData.name}
+                              onChange={(e) => handleChange('name', e.target.value)}
+                              className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" 
+                            />
                           </div>
                           <div className="space-y-2">
                             <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_email}</Label>
-                            <Input required type="email" placeholder={t.contact_page.form_email_placeholder} className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                            <Input 
+                              required 
+                              type="email" 
+                              placeholder={t.contact_page.form_email_placeholder} 
+                              value={formData.email}
+                              onChange={(e) => handleChange('email', e.target.value)}
+                              className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" 
+                            />
                           </div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_subject}</Label>
-                            <Input required placeholder={t.contact_page.form_subject} className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                            <Input 
+                              required 
+                              placeholder={t.contact_page.form_subject} 
+                              value={formData.subject}
+                              onChange={(e) => handleChange('subject', e.target.value)}
+                              className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" 
+                            />
                           </div>
                           <div className="space-y-2">
                             <Label className="font-bold text-xs uppercase tracking-widest flex items-center gap-2">
                               <Hash size={14} /> {t.contact_page.form_code_ref}
                             </Label>
-                            <Input placeholder="ABC-123" className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" />
+                            <Input 
+                              placeholder="ABC-123" 
+                              value={formData.codeRef}
+                              onChange={(e) => handleChange('codeRef', e.target.value)}
+                              className="rounded-xl h-14 bg-muted/30 border-muted focus:border-secondary transition-all" 
+                            />
                           </div>
                         </div>
                         <div className="space-y-2">
                           <Label className="font-bold text-xs uppercase tracking-widest">{t.contact_page.form_message}</Label>
-                          <Textarea required placeholder="..." className="rounded-xl min-h-[200px] bg-muted/30 border-muted focus:border-secondary transition-all" />
+                          <Textarea 
+                            required 
+                            placeholder="..." 
+                            value={formData.message}
+                            onChange={(e) => handleChange('message', e.target.value)}
+                            className="rounded-xl min-h-[200px] bg-muted/30 border-muted focus:border-secondary transition-all" 
+                          />
                         </div>
                         <Button 
                           type="submit" 
