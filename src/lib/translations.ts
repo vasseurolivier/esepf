@@ -407,7 +407,7 @@ export const translations = {
       age_label: "11 - 15 ANS",
       p1: "Nous ouvrons les portes de notre Collège Sport-Etudes aux élèves âgés de 11 à 14 ans.",
       p2: "À l'issue de leurs quatre années de collège, ils pourront accéder à nos programmes lycées.",
-      p3: "Ce Collège vient enrichir notre offre de formation et accompagner les jeunes vers l'excellence.",
+      p3: "Ce Collège vient enrichir notre offer de formation et accompagner les jeunes vers l'excellence.",
       prog_title: "Notre programme se décline en quatre années :",
       year1_title: "Année 1 : Classe d'intégration",
       year1_desc: "Le programme proposé leur permettra d'acquérir une maîtrise solide de la langue française (FLE) tout en suivant les fondamentaux académiques.",
@@ -835,10 +835,10 @@ export const translations = {
     promo_popup: {
       title: "Journée de détection Shanghai",
       date: "19 Avril 2026",
-      desc: "En partenariat avec la XIE HUE Academy France.",
+      desc: "Xiehui Football Academy en France",
       cta: "Scanner pour s'enregistrer",
       close: "Fermer",
-      ticker: "Journée de détection Shanghai - 19 Avril 2026 - Xie Hue Academy France - Cliquez ici pour vous enregistrer !"
+      ticker: "Journée de détection Shanghai - 19 Avril 2026 - Xiehui Football Academy en France - Cliquez ici pour vous enregistrer !"
     },
     legal: {
       mentions: "Mentions Légales",
@@ -1699,10 +1699,10 @@ export const translations = {
     promo_popup: {
       title: "Shanghai Scouting Day",
       date: "April 19, 2026",
-      desc: "In partnership with XIE HUE Academy France.",
+      desc: "Xiehui Football Academy in France",
       cta: "Scan to register",
       close: "Close",
-      ticker: "Shanghai Scouting Day - April 19, 2026 - Xie Hue Academy France - Click here to register!"
+      ticker: "Shanghai Scouting Day - April 19, 2026 - Xiehui Football Academy in France - Click here to register!"
     },
     legal: {
       mentions: "Legal Mentions",
@@ -1969,7 +1969,7 @@ export const translations = {
       pedagogy_title: "主动式与个性化教学法",
       pedagogy_subtitle: "不仅是语言课，更是文化启蒙",
       pedagogy_p1: "ESEPF 的语言教学基于沉浸式和沟通式的方法. 我们相信不断的实践是掌握语言的关键。",
-      pedagogy_p2: "我们的学生不只是学习语法规则；他们通过项目、辩论和与当地文化的持续互动来体验语言。",
+      pedagogy_p2: "我们的学生不只是学习语法 rules；他们通过项目、辩论和与当地文化的持续互动来体验语言。",
       pedagogy_item1: "小班教学以实现最佳跟踪",
       pedagogy_item2: "通过郊游和旅行进行文化沉浸",
       pedagogy_item3: "数字工具和互动平台",
@@ -2139,7 +2139,7 @@ export const translations = {
     college_page: {
       title: "ESEPF - 初中部",
       age_label: "11 - 15 岁",
-      p1: "我们向 11 至 14 岁的学生敞开大门。",
+      p1: "We open the doors of our Sport-Study Middle School to students aged 11 to 14.",
       p2: "在完成四年的初中课程后，他们可以进入我们的高中计划。",
       p3: "初中部丰富了我们的培训体系，并陪伴年轻人追求卓越。",
       prog_title: "我们的计划分为四年：",
@@ -2470,7 +2470,7 @@ export const translations = {
       tulle_hero: "普罗旺斯校区",
       tulle_sub: "普罗旺斯核心的卓越。",
       tulle_title: "上普罗旺斯阿尔卑斯省的魅力和阳光",
-      tulle_desc: "我们的普罗旺斯基地 (04) 在普罗旺斯核心地带为您敞开大门，用于您的研讨会和培训课程。\n我们为您提供空调且明亮的培训教室、一个多功能运动场以及一个有利于社交的休息空间。\n现场提供住宿和餐饮，让您完全沉浸其中，不受任何限制。",
+      tulle_desc: "我们的普罗旺斯基地 (04) 在普罗旺斯核心地带为您敞开大门，用于您的研讨会 and 培训课程。\n我们为您提供空调且明亮的培训教室、一个多功能运动场以及一个有利于社交的休息空间。\n现场提供住宿和餐饮，让您完全沉浸其中，不受任何限制。",
       tulle_sport: "运动之城",
       tulle_sport_desc: "普罗旺斯校区所在的区域享有特殊的气候，非常适合户外体育锻炼。",
       tulle_infra_desc: "普罗旺斯校区主张人性化和个性化的教学方法。",
@@ -2563,10 +2563,10 @@ export const translations = {
     promo_popup: {
       title: "上海选拔日",
       date: "2026年4月19日",
-      desc: "与谢晖法国学院合作。",
+      desc: "法国谢晖足球学院",
       cta: "扫码报名",
       close: "关闭",
-      ticker: "上海选拔日 - 2026年4月19日 - 谢晖法国学院 - 点击此处进行注册！"
+      ticker: "上海选拔日 - 2026年4月19日 - 法国谢晖足球学院 - 点击此处进行注册！"
     },
     legal: {
       mentions: "法律声明",

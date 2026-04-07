@@ -91,7 +91,7 @@ export function PromoAnnouncement() {
                 <TrophyIcon size={120} className="text-white" />
               </div>
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-                <span className="text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-1">XIE HUE ACADEMY FRANCE</span>
+                <span className="text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-1">XIEHUI FOOTBALL ACADEMY</span>
                 <h2 className="text-white text-2xl font-headline font-bold uppercase tracking-tight">
                   {t.promo_popup.title}
                 </h2>
