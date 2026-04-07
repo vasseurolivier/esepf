@@ -85,14 +85,16 @@ export function PromoAnnouncement() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-500">
           <div className="relative w-full max-w-lg bg-white rounded-[2.5rem] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300">
             
-            {/* Header Decor */}
-            <div className="h-32 bg-primary relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-8 opacity-10">
-                <TrophyIcon size={120} className="text-white" />
+            {/* Header Decor - Enlarged for impact */}
+            <div className="h-48 bg-primary relative overflow-hidden flex flex-col items-center justify-center p-8">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <TrophyIcon size={160} className="text-white" />
               </div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-                <span className="text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-1">XIEHUI FOOTBALL ACADEMY</span>
-                <h2 className="text-white text-2xl font-headline font-bold uppercase tracking-tight">
+              <div className="relative z-10 text-center space-y-2">
+                <span className="text-secondary font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs block">
+                  {t.promo_popup.desc}
+                </span>
+                <h2 className="text-white text-3xl md:text-5xl font-headline font-bold uppercase tracking-tighter leading-none">
                   {t.promo_popup.title}
                 </h2>
               </div>
@@ -100,35 +102,35 @@ export function PromoAnnouncement() {
 
             <button 
               onClick={closePopup}
-              className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors p-2 bg-black/20 rounded-full"
+              className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors p-2 bg-black/20 rounded-full z-20"
             >
               <X size={20} />
             </button>
 
             <div className="p-8 text-center space-y-6">
               <div className="flex flex-col items-center gap-2">
-                <div className="flex items-center gap-2 text-primary font-bold">
-                  <Calendar size={18} className="text-secondary" />
+                <div className="flex items-center gap-2 text-primary font-bold text-xl">
+                  <Calendar size={22} className="text-secondary" />
                   <span>{t.promo_popup.date}</span>
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground text-sm font-medium">
+                <div className="flex items-center gap-2 text-muted-foreground text-sm font-medium uppercase tracking-widest">
                   <MapPin size={16} />
                   <span>Shanghai, China</span>
                 </div>
               </div>
 
-              <p className="text-primary font-medium leading-relaxed italic">
+              <p className="text-primary font-medium leading-relaxed italic text-lg">
                 {t.promo_popup.desc}
               </p>
 
-              <div className="flex flex-col items-center space-y-4 py-4 bg-muted/30 rounded-3xl border border-muted">
+              <div className="flex flex-col items-center space-y-4 py-6 bg-muted/30 rounded-3xl border border-muted">
                 {qrUrl ? (
-                  <div className="relative w-48 h-48 bg-white p-2 rounded-xl shadow-inner overflow-hidden border border-border">
+                  <div className="relative w-56 h-56 bg-white p-2 rounded-xl shadow-inner overflow-hidden border border-border">
                     <Image src={qrUrl} alt="Registration QR Code" fill className="object-contain p-2" />
                   </div>
                 ) : (
-                  <div className="w-48 h-48 bg-white p-4 rounded-xl shadow-inner flex flex-col items-center justify-center text-muted-foreground gap-2">
-                    <QrCode size={48} className="opacity-20" />
+                  <div className="w-56 h-56 bg-white p-4 rounded-xl shadow-inner flex flex-col items-center justify-center text-muted-foreground gap-2">
+                    <QrCode size={64} className="opacity-20" />
                     <span className="text-[10px] uppercase font-bold tracking-widest">QR Code Pending</span>
                   </div>
                 )}
@@ -139,7 +141,7 @@ export function PromoAnnouncement() {
 
               <Button 
                 onClick={closePopup}
-                className="w-full h-14 rounded-xl bg-primary text-white font-bold uppercase tracking-widest hover:bg-primary/90"
+                className="w-full h-16 rounded-xl bg-primary text-white font-bold uppercase tracking-widest hover:bg-primary/90 text-sm"
               >
                 {t.promo_popup.close}
               </Button>
