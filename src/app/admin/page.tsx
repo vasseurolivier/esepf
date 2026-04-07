@@ -11,7 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useFirestore, useDoc, useCollection, useMemoFirebase } from '@/firebase';
 import { doc, setDoc, serverTimestamp, collection, query, orderBy, updateDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, MessageSquare, Share2, Calendar, Hash } from 'lucide-react';
+import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, MessageSquare, Share2, Calendar, Hash, QrCode } from 'lucide-react';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { format } from 'date-fns';
@@ -30,6 +30,7 @@ const IMAGE_CATEGORIES = [
     fields: [
       { id: 'hero_home', label: 'Bannière Accueil', location: 'Haut de page accueil' },
       { id: 'campus_panoramic', label: 'Bandeau Panoramique', location: 'Transition section campus' },
+      { id: 'shanghai_scouting_qr', label: 'QR Code Shanghai (Popup)', location: 'Fenêtre pub Shanghai 2026' },
     ]
   },
   {
@@ -373,7 +374,9 @@ export default function AdminPage() {
                           {cat.fields.map((field) => (
                             <div key={field.id} className="space-y-2 p-4 bg-white rounded-2xl border border-border shadow-sm">
                               <div className="flex flex-col mb-2">
-                                <Label className="font-bold text-[10px] uppercase text-primary">{field.label}</Label>
+                                <Label className="font-bold text-[10px] uppercase text-primary flex items-center gap-2">
+                                  {field.id.includes('qr') ? <QrCode size={12} /> : null} {field.label}
+                                </Label>
                                 <span className="text-[9px] text-muted-foreground italic">{field.location}</span>
                               </div>
                               <div className="aspect-video bg-white rounded-xl overflow-hidden mb-2 flex items-center justify-center border border-muted/50 shadow-inner">

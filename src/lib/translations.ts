@@ -832,6 +832,13 @@ export const translations = {
       medecin: "Médecin",
       physique: "Préparateur physique"
     },
+    promo_popup: {
+      title: "Journée de détection Shanghai",
+      date: "19 Avril 2026",
+      desc: "En partenariat avec la XIE HUI Academy France.",
+      cta: "Scanner pour s'enregistrer",
+      close: "Fermer"
+    },
     legal: {
       mentions: "Mentions Légales",
       privacy: "Politique de Confidentialité",
@@ -1194,7 +1201,7 @@ export const translations = {
         },
         {
           year: "2024",
-          title: "YOUTH ELITE SPORTS ACADEMY\nEXPANSION TO MULTISPORT\n& SE ASIA",
+          title: "YOUTH ELITE SPORTS ACADEMY\nOUVERTURE AL MULTISPORT\nET À L'ASIE DU SUD-EST",
           desc: "Creation of our own brand \"YES Academy\".\nSigning of new international schools.\nOpening of the multisport branch.\nLaunch of our Academy in other cities in Asia.\nInvitations to the Shanghai international youth tournament:\n2025 - OM - National U17\n2026 - Paris FC women - U16 / U17"
         }
       ]
@@ -1688,6 +1695,13 @@ export const translations = {
       medecin: "Doctor",
       physique: "Physical trainer"
     },
+    promo_popup: {
+      title: "Shanghai Scouting Day",
+      date: "April 19, 2026",
+      desc: "In partnership with XIE HUI Academy France.",
+      cta: "Scan to register",
+      close: "Close"
+    },
     legal: {
       mentions: "Legal Mentions",
       privacy: "Privacy Policy",
@@ -1884,7 +1898,7 @@ export const translations = {
     },
     sections: {
       campuses: "我们的3个校区",
-      campuses_desc: "ESEPF 在三个战略地点部署其卓越教育。",
+      campuses_desc: "ESEPF 在三个战略地点部署其卓越 education。",
       formations: "我们的课程",
       formations_desc: "三大卓越支柱，共筑学生未来。",
       football_title: "足球学院：体育和学习",
@@ -1929,7 +1943,7 @@ export const translations = {
       bac_americain_title: "美国高中双文凭",
       bac_americain_sub: "双文凭：同时获得两个高中毕业证书。",
       high_school_diploma: "美国高中毕业证书",
-      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书和美国高中毕业证书。",
+      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书 and 美国高中毕业证书。",
       dual_diploma_official: "官方双学位",
       international_recognition: "国际认可",
       why_choose_title: "为什么选择这个路径？",
@@ -2379,7 +2393,7 @@ export const translations = {
       horizon_title: "愿景和机遇",
       horizon_sub: "三大卓越路径。",
       ready_build_future: "准备建立未来？",
-      interview_desc: "每个路径都是独特的. 我们的学术导师和体育总监会为您提供个性化的支持，以确定最适合您愿景的轨迹。",
+      interview_desc: "每个路径都是独特的. 我们的学术导师 and 体育总监会为您提供个性化的支持，以确定最适合您愿景的轨迹。",
       ask_interview: "索取面试"
     },
     journey: {
@@ -2406,7 +2420,7 @@ export const translations = {
         title: "École des Sports Et du Prestige Français (ESEPF)",
         intro: "我们的机构是一所追求卓越的机构，在特殊的环境中体验学术和体育的圆满. 我们的现代化和完整的设施旨在为每个学生提供一个有利于成功、体育实践和日常福祉的环境。",
         housing_title: "住宿和居住生活",
-        housing_desc: "我们的寄宿学校宽敞且安全，提供友好且受监督的生活环境. 每个房间的设计都旨在保证舒适和安宁，从而促进集中注意力和休息。",
+        housing_desc: "我们的寄宿学校宽敞且安全，提供友好且受监督的生活环境. 每个房间的设计都旨在保证舒适 and 安宁，从而促进集中注意力和休息。",
         dining_title: "餐饮和休闲",
         dining_p1: "明亮且受欢迎的食堂提供均衡多样的饮食。",
         dining_p2: "自助餐厅是休息时间聚会和分享的理想场所。",
@@ -2443,7 +2457,7 @@ export const translations = {
         learning_title: "学习空间",
         learning_desc: "我们的教室现代化、互联且旨在鼓励互动和教学创新。",
         sports_title: "在自然的核心：我们的体育设施",
-        sports_intro: "ESEPF 受益于一个独特的领域，致力于体育实践和户外逃生：",
+        sports_intro: "ESEPF 受益于一个独特的领域，致力于体育实践 and 户外逃生：",
         sports_item1: "足球场",
         sports_item2: "滚球场",
         sports_item3: "排球场",
@@ -2456,7 +2470,7 @@ export const translations = {
       tulle_title: "上普罗旺斯阿尔卑斯省的魅力和阳光",
       tulle_desc: "我们的普罗旺斯基地 (04) 在普罗旺斯核心地带为您敞开大门，用于您的研讨会和培训课程。\n我们为您提供空调且明亮的培训教室、一个多功能运动场以及一个有利于社交的休息空间。\n现场提供住宿和餐饮，让您完全沉浸其中，不受任何限制。",
       tulle_sport: "运动之城",
-      tulle_sport_desc: "普罗旺斯校区所在的区域全年享有特殊的气候，非常适合全天候的高强度户外体育锻炼。",
+      tulle_sport_desc: "普罗旺斯校区所在的区域享有特殊的气候，非常适合户外体育锻炼。",
       tulle_infra_desc: "普罗旺斯校区主张人性化和个性化的教学方法。",
       tulle_full_desc: {
         title: "体育学习声望与抱负学校",
@@ -2543,6 +2557,13 @@ export const translations = {
       mental: "心理教练",
       medecin: "医生",
       physique: "体能教练"
+    },
+    promo_popup: {
+      title: "上海选拔日",
+      date: "2026年4月19日",
+      desc: "与谢晖法国学院合作。",
+      cta: "扫码报名",
+      close: "关闭"
     },
     legal: {
       mentions: "法律声明",
