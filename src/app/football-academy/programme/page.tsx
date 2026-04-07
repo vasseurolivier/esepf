@@ -67,6 +67,7 @@ export default function ProgrammeFootballPage() {
 
   return (
     <main className="min-h-screen bg-white">
+      <Header />
       
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
@@ -243,7 +244,7 @@ export default function ProgrammeFootballPage() {
         </div>
       </section>
 
-      {/* Methodology Pillars Section - Renamed to Piliers de la Performance and moved */}
+      {/* Piliers de la Performance Section */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <ScrollReveal className="text-center mb-24">

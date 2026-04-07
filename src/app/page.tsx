@@ -10,12 +10,10 @@ import { FootballAcademy } from '@/components/sections/FootballAcademy';
 import { OrientationSimulator } from '@/components/sections/OrientationSimulator';
 import { StudentLife } from '@/components/sections/StudentLife';
 import { Footer } from '@/components/sections/Footer';
-import { PromoAnnouncement } from '@/components/ui/PromoAnnouncement';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <PromoAnnouncement />
       <Header />
       <Hero />
       <Figures />
