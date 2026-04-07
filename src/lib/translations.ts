@@ -225,7 +225,7 @@ export const translations = {
       languages_excellence_title: "Langues Étrangères",
       languages_excellence_sub: "L'ouverture internationale au cœur de notre pédagogie.",
       passport_world_title: "Un Passeport pour le Monde",
-      passport_world_desc: "Maîtriser plusieurs langues est une nécessité dans un monde globalisé. À l'ESEPF, nous proposons des parcours linguistiques renforcés dès le collège.",
+      passport_world_desc: "Maîtriser plusieurs langues est une nécessité dans un monde globalisé. À l'ESEPF, we propose des parcours linguistiques renforcés dès le collège.",
       fle_title: "Français Langue Étrangère (FLE)",
       fle_desc: "Un parcours d'excellence pour les élèves non-francophones afin de maîtriser la langue de Molière et de s'intégrer sereinement dans le système éducatif français.",
       efl_title: "English First Language (EFL)",
@@ -835,9 +835,10 @@ export const translations = {
     promo_popup: {
       title: "Journée de détection Shanghai",
       date: "19 Avril 2026",
-      desc: "En partenariat avec la XIE HUI Academy France.",
+      desc: "En partenariat avec la XIE HUE Academy France.",
       cta: "Scanner pour s'enregistrer",
-      close: "Fermer"
+      close: "Fermer",
+      ticker: "Journée de détection Shanghai - 19 Avril 2026 - Xie Hue Academy France - Cliquez ici pour vous enregistrer !"
     },
     legal: {
       mentions: "Mentions Légales",
@@ -1457,7 +1458,7 @@ export const translations = {
         mid_title: "Midfielders",
         mid_desc: "Midfielder training develops vision, technical mastery, and transition management. It includes passing, movement, and quick decision-making drills to reinforce their central role.",
         fwd_title: "Forwards",
-        fwd_desc: "Forward training focuses on finishing, movement in offensive areas, and rapid decision-making. It includes shooting, 1v1 duels, and coordination drills to maximize goal efficiency."
+        fwd_desc: "Forward training focuses on finishing, representation in offensive areas, and rapid decision-making. It includes shooting, 1v1 duels, and coordination drills to maximize goal efficiency."
       }
     },
     metiers_page: {
@@ -1698,9 +1699,10 @@ export const translations = {
     promo_popup: {
       title: "Shanghai Scouting Day",
       date: "April 19, 2026",
-      desc: "In partnership with XIE HUI Academy France.",
+      desc: "In partnership with XIE HUE Academy France.",
       cta: "Scan to register",
-      close: "Close"
+      close: "Close",
+      ticker: "Shanghai Scouting Day - April 19, 2026 - Xie Hue Academy France - Click here to register!"
     },
     legal: {
       mentions: "Legal Mentions",
@@ -2072,7 +2074,7 @@ export const translations = {
     team_page: {
       title: "项目介绍",
       subtitle: "精英足球与学术计划",
-      p1: "在 ESEPF，我们为 11 至 19 岁的年轻人提供卓越的双重项目。",
+      p1: "在 ESEPF， we 为 11 至 19 岁的年轻人提供卓越的双重项目。",
       p2: "学生遵循卓越的法国学术课程（从6年级到12年级）。",
       p3: "这一独特的计划不仅塑造运动员也塑造学生，灌输纪律、严谨与雄心。",
       team_title: "团队介绍",
@@ -2232,7 +2234,7 @@ export const translations = {
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
         level: "4级 (技术高中毕业)",
-        bts_desc: "管理 BTS 是两年的培训. 在团队管理、财务与营销等领域提供教学。",
+        bts_desc: "管理 BTS 是两年的培训. 在团队 management、财务与营销等领域提供教学。",
         univ_desc: "本科是 3 年制大学培训，结合理论与实践. 它加强了管理与分析技能。",
         bts_list: ["会计管理", "管理支持", "商业运营", "谈判数字化", "中小企业管理", "IT 服务", "保险", "旅游"],
         bts_jobs: ["营销经理", "产品经理", "销售员", "薪资管理员", "人力资源经理", "财务主管", "资产管理", "顾问"],
@@ -2563,7 +2565,8 @@ export const translations = {
       date: "2026年4月19日",
       desc: "与谢晖法国学院合作。",
       cta: "扫码报名",
-      close: "关闭"
+      close: "关闭",
+      ticker: "上海选拔日 - 2026年4月19日 - 谢晖法国学院 - 点击此处进行注册！"
     },
     legal: {
       mentions: "法律声明",
@@ -2577,7 +2580,7 @@ export const translations = {
       editor_content: "ESEPF - 法国体育与威望学校\n1901法协会 / 培训机构\n出版总监：ESEPF 总管理部\n电子邮件：contact@esepf.fr",
       hosting_content: "Google Cloud Platform (Firebase App Hosting)\nGoogle Ireland Limited\nGordon House, Barrow Street, Dublin 4, Ireland",
       hosting_note: "我们的服务器部署在全球边缘节点，以确保极速访问。",
-      property_content: "本网站及其所有内容（文字、图片、视频、标志）均为 ESEPF 的专有财产. 未经事先书面许可，严禁任何形式的复制、修改或传播。\n本站所引用的合作俱乐部标志其版权归各自所有者所有。",
+      property_content: "本网站及其所有内容（文字、图片、视频、标志）均为 ESEPF 的专有财产. 未经事先书面许可，严禁任何形式 de 复制、修改或传播。\n本站所引用的合作俱乐部标志其版权归各自所有者所有。",
       privacy_collect: "我们通过在线申请表收集有关学生及其法定监护人的信息. 收集的信息包括但不限于：姓名、出生日期、国籍、目前就读年级以及联系方式。",
       privacy_use: "入学申请研究。\n面试组织。\n关于学术和足球学院的沟通。\n遵守法律教育义务（法国和中国）。",
       privacy_share: "ESEPF 承诺绝不向第三方出售或出租您的数据. 它们仅传输给内部行政和教学服务部门。",
