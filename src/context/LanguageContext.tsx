@@ -13,7 +13,8 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('fr');
+  // Définition du chinois comme langue par défaut au lieu du français
+  const [language, setLanguageState] = useState<Language>('zh');
 
   useEffect(() => {
     const savedLang = localStorage.getItem('app-language') as Language;

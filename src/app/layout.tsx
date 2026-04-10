@@ -17,7 +17,7 @@ export default async function RootLayout(props: {
   const { children } = props;
 
   return (
-    <html lang="fr">
+    <html lang="zh">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
