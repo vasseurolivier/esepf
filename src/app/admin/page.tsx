@@ -30,7 +30,8 @@ const IMAGE_CATEGORIES = [
     fields: [
       { id: 'hero_home', label: 'Bannière Accueil', location: 'Haut de page accueil' },
       { id: 'campus_panoramic', label: 'Bandeau Panoramique', location: 'Transition section campus' },
-      { id: 'shanghai_scouting_qr', label: 'QR Code Shanghai (Popup)', location: 'Fenêtre pub Shanghai 2026' },
+      { id: 'flyer_shanghai_intl', label: 'Flyer Shanghai (FR/EN)', location: 'Popup publicitaire (FR/EN)' },
+      { id: 'flyer_shanghai_zh', label: 'Flyer Shanghai (Chinois)', location: 'Popup publicitaire (ZH)' },
     ]
   },
   {
@@ -375,7 +376,7 @@ export default function AdminPage() {
                             <div key={field.id} className="space-y-2 p-4 bg-white rounded-2xl border border-border shadow-sm">
                               <div className="flex flex-col mb-2">
                                 <Label className="font-bold text-[10px] uppercase text-primary flex items-center gap-2">
-                                  {field.id.includes('qr') ? <QrCode size={12} /> : null} {field.label}
+                                  {field.id.includes('flyer') ? <ImageIcon size={12} /> : null} {field.label}
                                 </Label>
                                 <span className="text-[9px] text-muted-foreground italic">{field.location}</span>
                               </div>
