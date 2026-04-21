@@ -288,7 +288,7 @@ export const translations = {
       hero_sub: "Vivez l'adrénaline des compétitions officielles et révélez votre potentiel.",
       p1: "Grâce à nos partenariats avec les clubs locaux, les joueurs de notre section sport-études football bénéficient d’un accès privilégié aux compétitions officielles françaises. Cette ouverture leur permet de s’inscrire dans des championnats reconnus, d’affronter des équipes de niveau élevé et de vivre l’expérience d’un environnement compétitif structuré.",
       p2: "Les matchs officiels se déroulent chaque week-end, offrant aux jeunes footballeurs une continuité dans leur progression et la possibilité de se confronter à la réalité du football hexagonal. Ce dispositif favorise la détection, la montée en compétence et l’intégration dans les filières de haut niveau.",
-      p3: "Les entraîneurs et les encadrants suivent de près la préparation des joueurs, en adaptant le programme d’entraînement aux exigences des matchs. L’objectif est de permettre à chaque joueur de s’exprimer pleinement sur le terrain, de développer son potentiel et de construire un parcours ambitieux, tout en bénéficiant d’un accompagnement scolaire adapté.",
+      p3: "Les entraîneurs et les encadrants suivent de près la préparation des joueurs, en adaptant le programme d’entraînement aux exigences des matchs. L’objectif est de permettre à chaque joueur de s’exprimer pleinement sur le terrain, de développer son potentiel and de construire un parcours ambitieux, tout en bénéficiant d’un accompagnement scolaire adapté.",
       card_clubs: "Accès Privilégié",
       card_clubs_desc: "Championnats reconnus et équipes de haut niveau.",
       card_weekend: "Matchs du Week-end",
@@ -831,14 +831,6 @@ export const translations = {
       mental: "Préparateur mental",
       medecin: "Médecin",
       physique: "Préparateur physique"
-    },
-    promo_popup: {
-      title: "Journée de détection Shanghai",
-      date: "19 Avril 2026",
-      desc: "Xiehui Football Academy en France",
-      cta: "Scanner pour s'enregistrer",
-      close: "Fermer",
-      ticker: "Journée de détection Shanghai - 19 Avril 2026 - Xiehui Football Academy en France - Cliquez ici pour vous enregistrer !"
     },
     legal: {
       mentions: "Mentions Légales",
@@ -1696,14 +1688,6 @@ export const translations = {
       medecin: "Doctor",
       physique: "Physical trainer"
     },
-    promo_popup: {
-      title: "Shanghai Scouting Day",
-      date: "April 19, 2026",
-      desc: "Xiehui Football Academy in France",
-      cta: "Scan to register",
-      close: "Close",
-      ticker: "Shanghai Scouting Day - April 19, 2026 - Xiehui Football Academy in France - Click here to register!"
-    },
     legal: {
       mentions: "Legal Mentions",
       privacy: "Privacy Policy",
@@ -1937,7 +1921,7 @@ export const translations = {
       integration_immersion: "沉浸",
       integration_guidance: "指导",
       integration_step: "步骤",
-      integration_full_desc: "在这一年里，进入整合班的学生将学习强化法语作为外语（FLE）课程。该计划专为帮助他们快速掌握必要的语言技能而设计，以便顺利融入法国教育体系。FLE课程根据每个学生的具体需求进行调整，重点关注书面和口语理解以及书面和口语表达。到本学年结束时，学生将能够有效地使用法语进行理解和交流。",
+      integration_full_desc: "在这一年里，进入整合班的学生将学习强化法语作为外语（FLE）课程。该计划专为帮助他们快速掌握必要的语言技能而设计，以便顺利融入法国教育体系. FLE课程根据每个学生的具体需求进行调整，重点关注书面和口语理解以及书面和口语表达。到本学年结束时，学生将能够有效地使用法语进行理解和交流。",
       integration_refresher_title: "学术水平衔接",
       integration_refresher_desc: "为了确保顺利过渡到法国课程，我们的学生受益于数学和科学等核心科目的辅导和补习课程。这种与法国国家教学大纲要求的对接，对于他们平稳进入高中阶段的学习至关重要。",
       integration_harmonization_title: "学习成果整合",
@@ -1945,11 +1929,11 @@ export const translations = {
       bac_americain_title: "美国高中双文凭",
       bac_americain_sub: "双文凭：同时获得两个高中毕业证书。",
       high_school_diploma: "美国高中毕业证书",
-      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程。他们因此同时获得法国高中毕业证书 and 美国高中毕业证书。",
+      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程. 他们因此同时获得法国高中毕业证书 and 美国高中毕业证书。",
       dual_diploma_official: "官方双学位",
       international_recognition: "国际认可",
       why_choose_title: "为什么选择这个路径？",
-      why_choose_desc: "这是进入美国大学或欧洲国际课程的重要资产。学生在高等学术水平上培养自主性与英语掌握能力。",
+      why_choose_desc: "这是进入美国大学或欧洲国际课程的重要资产. 学生在高等学术水平上培养自主性与英语掌握能力。",
       modalities_title: "形式",
       modalities_list: [
         "与美国教师进行视频会议课程",
@@ -2020,8 +2004,8 @@ export const translations = {
     competition_page: {
       title: "法国足球锦标赛",
       hero_sub: "体验官方比赛的激情，释放潜能。",
-      p1: "得益于我们与当地俱乐部的合作，我们的体育学习足球部门球员享有参加法国官方比赛的特权。这种开放使他们能够参加公认的锦标赛，面对高水平球队，并体验结构化的竞争环境。",
-      p2: "官方比赛每个周末举行，为年轻足球运动员提供持续的进步，并有机会面对法国足球的现实。该机制有利于选拔、技能提升与进入高水平体系。",
+      p1: "得益于我们与当地俱乐部的合作，我们的体育学习足球部门球员享有参加法国官方比赛的特权. 这种开放使他们能够参加公认的锦标赛，面对高水平球队，并体验结构化的竞争环境。",
+      p2: "官方比赛每个周末举行，为年轻足球运动员提供持续的进步，并有机会面对法国足球的现实. 该机制有利于选拔、技能提升与进入高水平体系。",
       p3: "教练与管理人员密切监控球员的准备情况，根据比赛要求调整训练计划. 目标是让每位球员在球场上充分表达自己，发挥潜能并建立雄心勃勃的道路，同时享受合适的学术支持。",
       card_clubs: "特权访问",
       card_clubs_desc: "公认的锦标赛与高水平球队。",
@@ -2074,7 +2058,7 @@ export const translations = {
     team_page: {
       title: "项目介绍",
       subtitle: "精英足球与学术计划",
-      p1: "在 ESEPF， we 为 11 至 19 岁的年轻人提供卓越的双重项目。",
+      p1: "在 ESEPF， we 为 11 至 19 岁的年轻人 offer 卓越的双重项目。",
       p2: "学生遵循卓越的法国学术课程（从6年级到12年级）。",
       p3: "这一独特的计划不仅塑造运动员也塑造学生，灌输纪律、严谨与雄心。",
       team_title: "团队介绍",
@@ -2547,7 +2531,7 @@ export const translations = {
       faq_a2: "技术水平和学业。",
       faq_q3: "国际生？",
       faq_a3: "设有 FLE 班。",
-      opening_hours: "开放时间",
+      opening_hours: "开校时间",
       mon_fri: "周一至周五: 08:30 - 18:00",
       phone_wechat: "+86 138 1738 9758 (Available on WeChat / 微信同号)"
     },
@@ -2559,14 +2543,6 @@ export const translations = {
       mental: "心理教练",
       medecin: "医生",
       physique: "体能教练"
-    },
-    promo_popup: {
-      title: "上海选拔日",
-      date: "2026年4月19日",
-      desc: "法国谢晖足球学院",
-      cta: "扫码报名",
-      close: "关闭",
-      ticker: "上海选拔日 - 2026年4月19日 - 法国谢晖足球学院 - 点击此处进行注册！"
     },
     legal: {
       mentions: "法律声明",

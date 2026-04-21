@@ -4,7 +4,6 @@ import './globals.css';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { LanguageProvider } from '@/context/LanguageContext';
-import { PromoAnnouncement } from '@/components/ui/PromoAnnouncement';
 
 export const metadata: Metadata = {
   title: 'Institution ESEPF | Collège & Lycée',
@@ -26,7 +25,6 @@ export default async function RootLayout(props: {
       <body className="font-body antialiased bg-background text-foreground">
         <FirebaseClientProvider>
           <LanguageProvider>
-            <PromoAnnouncement />
             {children}
             <Toaster />
           </LanguageProvider>
