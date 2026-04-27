@@ -39,7 +39,6 @@ export default function RegistrationPage() {
     setCurrentDate(format(new Date(), 'dd/MM/yyyy'));
   }, []);
 
-  // Form State based on visual reference
   const [formData, setFormData] = useState({
     studentFirstName: '',
     studentLastName: '',
@@ -86,15 +85,6 @@ export default function RegistrationPage() {
       handleChange('languagesSpoken', current.filter(l => l !== lang));
     } else {
       handleChange('languagesSpoken', [...current, lang]);
-    }
-  };
-
-  const toggleProgram = (prog: string) => {
-    const current = formData.selectedPrograms;
-    if (current.includes(prog)) {
-      handleChange('selectedPrograms', current.filter(p => l !== prog));
-    } else {
-      handleChange('selectedPrograms', [...current, prog]);
     }
   };
 

@@ -11,7 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useFirestore, useDoc, useCollection, useMemoFirebase } from '@/firebase';
 import { doc, setDoc, serverTimestamp, collection, query, orderBy, updateDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
-import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, MessageSquare, Share2, Calendar, Hash } from 'lucide-react';
+import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, MessageSquare, Share2, Calendar, Hash, Languages } from 'lucide-react';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { format } from 'date-fns';
@@ -302,6 +302,15 @@ export default function AdminPage() {
     }
   };
 
+  const getEnrollmentDateLabel = (choice: string) => {
+    switch (choice) {
+      case 'sep_2026': return 'Septembre 2026';
+      case 'feb_2027': return 'Février 2027';
+      case 'sep_2027': return 'Septembre 2027';
+      default: return choice;
+    }
+  };
+
   return (
     <main className="min-h-screen bg-muted/20 pb-20">
       <Header />
@@ -439,7 +448,7 @@ export default function AdminPage() {
 
             <TabsContent value="registrations">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div className="lg:col-span-5 space-y-4">
+                <div className="lg:col-span-4 space-y-4">
                   {regLoading ? (
                     <div className="p-12 text-center bg-white rounded-3xl"><Loader2 className="animate-spin mx-auto text-primary" /></div>
                   ) : registrations?.length === 0 ? (
@@ -453,12 +462,12 @@ export default function AdminPage() {
                       >
                         <CardContent className="p-4 flex items-center justify-between">
                           <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-primary font-bold">
+                            <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-primary font-bold uppercase">
                               {reg.studentFirstName?.[0]}{reg.studentLastName?.[0]}
                             </div>
-                            <div>
-                              <h4 className="font-bold">{reg.studentFirstName} {reg.studentLastName}</h4>
-                              <p className="text-xs text-muted-foreground">{reg.programChoice} - {getCampusLabel(reg.campusChoice)}</p>
+                            <div className="max-w-[150px]">
+                              <h4 className="font-bold truncate">{reg.studentFirstName} {reg.studentLastName}</h4>
+                              <p className="text-[10px] text-muted-foreground truncate">{reg.selectedPrograms?.join(', ') || 'N/A'}</p>
                             </div>
                           </div>
                           <div className="text-right">
@@ -467,7 +476,7 @@ export default function AdminPage() {
                             }`}>
                               {reg.status === 'pending' ? 'Attente' : 'Contacté'}
                             </div>
-                            <p className="text-[10px] text-muted-foreground">
+                            <p className="text-[9px] text-muted-foreground">
                               {reg.createdAt ? format(reg.createdAt.toDate(), 'dd/MM HH:mm') : ''}
                             </p>
                           </div>
@@ -477,14 +486,14 @@ export default function AdminPage() {
                   )}
                 </div>
 
-                <div className="lg:col-span-7">
+                <div className="lg:col-span-8">
                   {selectedReg ? (
-                    <Card className="rounded-[2.5rem] overflow-hidden shadow-xl border-none bg-white sticky top-24">
-                      <div className="bg-secondary p-8 text-white">
+                    <Card className="rounded-[2.5rem] overflow-hidden shadow-xl border-none bg-white sticky top-24 max-h-[85vh] overflow-y-auto">
+                      <div className="bg-secondary p-8 text-white sticky top-0 z-10">
                         <div className="flex justify-between items-start">
                           <div>
-                            <h2 className="text-3xl font-headline font-bold">{selectedReg.studentFirstName} {selectedReg.studentLastName}</h2>
-                            <p className="text-white/70">Pré-inscription Rentrée 2026</p>
+                            <h2 className="text-3xl font-headline font-bold uppercase">{selectedReg.studentFirstName} {selectedReg.studentLastName}</h2>
+                            <p className="text-white/70">Dossier de candidature n°{selectedReg.id.substring(0, 8)}</p>
                           </div>
                           <div className="flex gap-2">
                             <Button onClick={() => updateRegStatus(selectedReg.id, 'contacted')} size="sm" className="bg-white text-secondary hover:bg-white/90 rounded-full font-bold">
@@ -493,54 +502,108 @@ export default function AdminPage() {
                           </div>
                         </div>
                       </div>
-                      <CardContent className="p-8 space-y-8">
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="p-4 bg-muted/30 rounded-2xl border border-muted">
-                            <Label className="text-[10px] uppercase font-bold text-muted-foreground">Campus</Label>
-                            <p className="font-bold text-primary flex items-center gap-2 uppercase tracking-wide">
-                              <MapPin size={14} className="text-secondary" /> {getCampusLabel(selectedReg.campusChoice)}
-                            </p>
-                          </div>
-                          <div className="p-4 bg-muted/30 rounded-2xl border border-muted">
-                            <Label className="text-[10px] uppercase font-bold text-muted-foreground">Formation</Label>
-                            <p className="font-bold text-primary flex items-center gap-2 uppercase tracking-wide">
-                              <FileText size={14} className="text-secondary" /> {selectedReg.programChoice}
-                            </p>
-                          </div>
+                      <CardContent className="p-8 space-y-10">
+                        {/* Section 1: Scolarité & Campus */}
+                        <div className="space-y-4">
+                           <h3 className="text-xs font-bold uppercase text-secondary tracking-widest flex items-center gap-2 border-b pb-2">
+                             <MapPin size={14} /> Projet Pédagogique
+                           </h3>
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <div className="p-4 bg-muted/20 rounded-2xl">
+                                 <Label className="text-[9px] uppercase font-bold text-muted-foreground">Campus de destination</Label>
+                                 <p className="font-bold text-primary">{getCampusLabel(selectedReg.campusChoice)}</p>
+                              </div>
+                              <div className="p-4 bg-muted/20 rounded-2xl">
+                                 <Label className="text-[9px] uppercase font-bold text-muted-foreground">Programmes sélectionnés</Label>
+                                 <p className="font-bold text-primary uppercase">{selectedReg.selectedPrograms?.join(', ')}</p>
+                              </div>
+                              <div className="p-4 bg-muted/20 rounded-2xl">
+                                 <Label className="text-[9px] uppercase font-bold text-muted-foreground">Date d'entrée souhaitée</Label>
+                                 <p className="font-bold text-primary">{getEnrollmentDateLabel(selectedReg.enrollmentDateGoal)}</p>
+                              </div>
+                              <div className="p-4 bg-muted/20 rounded-2xl">
+                                 <Label className="text-[9px] uppercase font-bold text-muted-foreground">Code de parrainage</Label>
+                                 <p className="font-bold text-secondary">{selectedReg.codeRef || '-'}</p>
+                              </div>
+                           </div>
                         </div>
 
-                        {selectedReg.footballAcademy && (
-                          <div className="p-4 bg-primary text-white rounded-2xl flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                              <School size={20} className="text-secondary" />
-                              <span className="font-bold uppercase text-xs tracking-widest">Inscrit Football Academy</span>
-                            </div>
-                            <CheckCircle2 size={20} />
-                          </div>
-                        )}
+                        {/* Section 2: Élève */}
+                        <div className="space-y-4">
+                           <h3 className="text-xs font-bold uppercase text-secondary tracking-widest flex items-center gap-2 border-b pb-2">
+                             <User size={14} /> Informations de l'Élève
+                           </h3>
+                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                              <div>
+                                 <Label className="text-[9px] uppercase text-muted-foreground">Nationalité</Label>
+                                 <p className="font-medium">{selectedReg.studentNationality}</p>
+                              </div>
+                              <div>
+                                 <Label className="text-[9px] uppercase text-muted-foreground">Sexe</Label>
+                                 <p className="font-medium uppercase">{selectedReg.studentGender === 'boy' ? 'Garçon' : 'Fille'}</p>
+                              </div>
+                              <div>
+                                 <Label className="text-[9px] uppercase text-muted-foreground">Né(e) le</Label>
+                                 <p className="font-medium">{selectedReg.studentBirthDate}</p>
+                              </div>
+                              <div>
+                                 <Label className="text-[9px] uppercase text-muted-foreground">Lieu de naissance</Label>
+                                 <p className="font-medium">{selectedReg.studentPlaceOfBirth}</p>
+                              </div>
+                              <div className="md:col-span-2">
+                                 <Label className="text-[9px] uppercase text-muted-foreground">Adresse</Label>
+                                 <p className="font-medium">{selectedReg.studentAddress}</p>
+                              </div>
+                           </div>
+                           <div className="mt-4 pt-4 border-t border-muted/30">
+                              <Label className="text-[9px] uppercase text-muted-foreground block mb-2">Langues parlées</Label>
+                              <div className="flex flex-wrap gap-2">
+                                 {selectedReg.languagesSpoken?.map((lang: string) => (
+                                    <span key={lang} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-wider">
+                                       {lang}
+                                    </span>
+                                 ))}
+                              </div>
+                           </div>
+                        </div>
 
+                        {/* Section 3: Parents */}
                         <div className="space-y-6">
-                          <div>
-                            <h4 className="text-xs font-bold uppercase text-secondary mb-4 flex items-center gap-2">
-                              <User size={14} /> Profil Élève
-                            </h4>
-                            <div className="grid grid-cols-2 gap-y-4 text-sm">
-                              <div><span className="text-muted-foreground">Né(e) le :</span> <span className="font-medium ml-2">{selectedReg.studentBirthDate}</span></div>
-                              <div><span className="text-muted-foreground">Nationalité :</span> <span className="font-medium ml-2">{selectedReg.studentNationality}</span></div>
-                              <div><span className="text-muted-foreground">Classe Actuelle :</span> <span className="font-medium ml-2">{selectedReg.currentGrade}</span></div>
-                            </div>
-                          </div>
-
-                          <div className="pt-6 border-t border-muted">
-                            <h4 className="text-xs font-bold uppercase text-secondary mb-4 flex items-center gap-2">
-                              <Users size={14} /> Responsable Légal
-                            </h4>
-                            <div className="grid grid-cols-1 gap-y-4 text-sm">
-                              <div className="flex items-center gap-3"><User size={16} className="text-muted-foreground" /> <span className="font-medium">{selectedReg.parentFirstName} {selectedReg.parentLastName}</span></div>
-                              <div className="flex items-center gap-3"><Mail size={16} className="text-muted-foreground" /> <span className="font-medium">{selectedReg.parentEmail}</span></div>
-                              <div className="flex items-center gap-3"><Phone size={16} className="text-muted-foreground" /> <span className="font-medium">{selectedReg.parentPhone}</span></div>
-                            </div>
-                          </div>
+                           <h3 className="text-xs font-bold uppercase text-secondary tracking-widest flex items-center gap-2 border-b pb-2">
+                             <Users size={14} /> Responsables Légaux
+                           </h3>
+                           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                              {/* Parent 1 */}
+                              <div className="space-y-4 p-6 border border-muted rounded-[2rem] bg-muted/5">
+                                 <h4 className="text-[10px] font-bold uppercase text-primary border-b pb-1">Parent / Tuteur 1</h4>
+                                 <div className="space-y-3 text-sm">
+                                    <p className="font-bold">{selectedReg.parent1?.name}</p>
+                                    <p className="text-xs text-muted-foreground uppercase">{selectedReg.parent1?.nationality}</p>
+                                    <div className="flex flex-col gap-1 pt-2">
+                                       <a href={`tel:${selectedReg.parent1?.phone}`} className="flex items-center gap-2 text-primary hover:underline"><Phone size={12} /> {selectedReg.parent1?.phone}</a>
+                                       <p className="flex items-center gap-2 text-primary"><MessageSquare size={12} /> {selectedReg.parent1?.wechat}</p>
+                                       <a href={`mailto:${selectedReg.parent1?.email}`} className="flex items-center gap-2 text-primary hover:underline"><Mail size={12} /> {selectedReg.parent1?.email}</a>
+                                    </div>
+                                 </div>
+                              </div>
+                              {/* Parent 2 */}
+                              <div className="space-y-4 p-6 border border-muted rounded-[2rem] bg-muted/5">
+                                 <h4 className="text-[10px] font-bold uppercase text-primary border-b pb-1">Parent / Tuteur 2</h4>
+                                 {selectedReg.parent2?.name ? (
+                                    <div className="space-y-3 text-sm">
+                                       <p className="font-bold">{selectedReg.parent2?.name}</p>
+                                       <p className="text-xs text-muted-foreground uppercase">{selectedReg.parent2?.nationality}</p>
+                                       <div className="flex flex-col gap-1 pt-2">
+                                          <a href={`tel:${selectedReg.parent2?.phone}`} className="flex items-center gap-2 text-primary hover:underline"><Phone size={12} /> {selectedReg.parent2?.phone}</a>
+                                          <p className="flex items-center gap-2 text-primary"><MessageSquare size={12} /> {selectedReg.parent2?.wechat}</p>
+                                          <a href={`mailto:${selectedReg.parent2?.email}`} className="flex items-center gap-2 text-primary hover:underline"><Mail size={12} /> {selectedReg.parent2?.email}</a>
+                                       </div>
+                                    </div>
+                                 ) : (
+                                    <p className="text-xs text-muted-foreground italic">Non renseigné</p>
+                                 )}
+                              </div>
+                           </div>
                         </div>
                       </CardContent>
                     </Card>
