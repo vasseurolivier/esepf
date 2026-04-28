@@ -162,7 +162,7 @@ export default function RegistrationPage() {
                 {t.registration.title}
               </h1>
               <div className="flex items-center justify-center gap-4 text-white/50 font-bold uppercase tracking-widest text-sm mb-4">
-                 <span>Date Registration / 注册日期</span>
+                 <span>{t.registration.date_label}</span>
                  <span className="text-secondary">{currentDate}</span>
               </div>
               <div className="w-24 h-1.5 bg-secondary mx-auto mb-6 rounded-full" />
@@ -177,7 +177,7 @@ export default function RegistrationPage() {
               
               <form onSubmit={handleSubmit} className="space-y-12">
                 
-                {/* 1. PERSONAL INFORMATION / 个人信息 */}
+                {/* 1. PERSONAL INFORMATION */}
                 <ScrollReveal>
                   <Card className="rounded-[2.5rem] border-none shadow-xl overflow-hidden bg-white">
                     <CardHeader className="bg-muted/30 border-b border-muted p-8">
@@ -263,7 +263,7 @@ export default function RegistrationPage() {
                   </Card>
                 </ScrollReveal>
 
-                {/* 2. PARENT/GUARDIAN INFORMATION / 家长/监护人信息 */}
+                {/* 2. PARENT/GUARDIAN INFORMATION */}
                 <ScrollReveal delay={100}>
                   <Card className="rounded-[2.5rem] border-none shadow-xl overflow-hidden bg-white">
                     <CardHeader className="bg-muted/30 border-b border-muted p-8">
@@ -356,7 +356,7 @@ export default function RegistrationPage() {
                   </Card>
                 </ScrollReveal>
 
-                {/* 3. PROGRAM SELECTED / 所选计划 */}
+                {/* 3. PROGRAM SELECTED */}
                 <ScrollReveal delay={200}>
                   <Card className="rounded-[2.5rem] border-none shadow-xl overflow-hidden bg-white">
                     <CardHeader className="bg-muted/30 border-b border-muted p-8">
