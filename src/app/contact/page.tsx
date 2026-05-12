@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from 'react';
@@ -78,11 +77,6 @@ export default function ContactPage() {
   };
 
   const contactInfos = [
-    {
-      title: t.contact_page.campus_evron,
-      phone: t.contact_page.phone_wechat,
-      email: "contact@esepf.fr"
-    },
     {
       title: t.contact_page.campus_bazeille,
       phone: t.contact_page.phone_wechat,
