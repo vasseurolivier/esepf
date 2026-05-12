@@ -382,7 +382,7 @@ export const translations = {
       hero_text: "Notre établissement bénéficie d’une reconnaissance officielle du Ministère Français de l’Éducation Nationale.",
       diploma_title: "Diplômes Nationaux Français",
       diploma_text_1: "Nous préparons nos élèves aux Diplômes Nationaux Français (DNB, Baccalauréat).",
-      diploma_text_2: "De plus, ils bénéficient de la reconnaissance du Ministère chinois de l'Éducation.",
+      diploma_text_2: "De plus, ils bénéficient de la reconnaissance du Ministère Chinois de l'Éducation.",
       bottom_title: "Diplômes",
       brevet_title: "Brevet des Collèges",
       bac_title: "Baccalauréat",
@@ -395,7 +395,6 @@ export const translations = {
       guarantees: [
         { title: "Diplôme d'État", desc: "Préparation officielle aux examens Nationaux Français (DNB, Bac)." },
         { title: "Contrôle Pédagogique", desc: "Inspection régulière par les rectorats de l'Éducation Nationale." },
-        { title: "Validation Chinoise", desc: "Double reconnaissance pour une mobilité internationale facilitée." },
         { title: "Standard Élite", desc: "Accréditations sportives de haut niveau (FFF / UEFA)." }
       ],
       international_opening: "Ouverture Internationale",
@@ -409,6 +408,29 @@ export const translations = {
       cert_desc: "Certifications Linguistiques",
       level_brevet: "Niveau Fin de 3ème",
       level_terminale: "Niveau Terminale"
+    },
+    college_page: {
+      title: "ESEPE - Collège",
+      age_label: "11 - 15 ANS",
+      p1: "Nous ouvrons les portes de notre Collège Sport-Études aux élèves de 11 à 14 ans.",
+      p2: "À l'issue de leurs quatre années de Collège, ils pourront accéder à nos programmes Lycée.",
+      p3: "Ce Collège enrichit notre offre de formation et accompagne les jeunes vers l'excellence.",
+      prog_title: "Notre programme s'étend sur quatre années :",
+      year1_title: "Année 1 : Classe d'intégration ou 6ème",
+      year1_desc: "Le programme proposé leur permettra d'acquérir une maîtrise solide de la langue française (FLE pour les élèves étrangers) tout en suivant les fondamentaux académiques.",
+      year2_title: "Année 2 : 5ème",
+      year2_desc: "Une année pour consolider les bases académiques, renforcer l'autonomie et approfondir la pratique sportive intensive.",
+      year3_title: "Année 3 : 4ème adaptée",
+      year3_desc: "Une année pivot pour approfondir les compétences académiques et sportives tout en s'intégrant pleinement à la vie de l'Institution.",
+      year4_title: "Année 4 : 3ème préparation Lycée",
+      year4_desc: "Préparation intensive au Brevet (DNB) et orientation personnalisée vers nos parcours d'excellence du Lycée.",
+      conclusion: "Les élèves intègrent directement notre Lycée par la suite.",
+      autonomy_title: "Autonomie",
+      autonomy_desc: "Apprendre à s'organiser dès le plus jeune âge pour réussir le double projet.",
+      excellence_title: "Excellence",
+      excellence_desc: "Un programme académique validé par le Ministère de l'Éducation Nationale.",
+      fulfillment_title: "Épanouissement",
+      fulfillment_desc: "Concilier passion sportive et amitiés durables dans un cadre sécurisant."
     },
     lycee_page: {
       title: "BACCALAUREATS",
@@ -480,7 +502,7 @@ export const translations = {
         outro: "Il ouvre la voie à des études supérieures telles que les BTS, BUT, licences ou écoles de commerce, et mène à des carrières dans les domaines de la gestion, du marketing, des ressources humaines ou de la finance.",
         luxe_module_title: "Un Module Luxe en Hôtellerie et Restauration pour nos STMG",
         luxe_module_p1: "Dans un monde où l’hôtellerie et la restauration de luxe sont des secteurs en pleine expansion, il est essentiel de préparer nos élèves aux exigences de cette industrie prestigieuse. C’est pourquoi notre Baccalauréat Technologique STMG inclura un module exclusif dédié à l’hôtellerie et à la restauration haut de gamme.",
-        luxe_module_p2: "Ce programme vise à offrir aux élèves une première immersion dans cet univers raffiné, en leur permettant de découvrir les standards de qualité, le service d’excellence et les codes du luxe appliqués à l'accueil, à la gestion et à la relation client. À travers des études de cas concrets, des rencontres avec des professionnels du secteur et des mises en situation, nos élèves développent des compétences essentielles en management, marketing et gestion hôtelière, tout en cultivant un savoir-être adapté aux attentes de cette industrie.",
+        luxe_module_p2: "Ce programme vise à offrir aux élèves un première immersion dans cet univers raffiné, en leur permettant de découvrir les standards de qualité, le service d’excellence et les codes du luxe appliqués à l'accueil, à la gestion et à la relation client. À travers des études de cas concrets, des rencontres avec des professionnels du secteur et des mises en situation, nos élèves développent des compétences essentielles en management, marketing et gestion hôtelière, tout en cultivant un savoir-être adapté aux attentes de cette industrie.",
         luxe_module_p3: "Ce module représente une véritable opportunité pour nos élèves, leur ouvrant les portes de formations spécialisées et de carrières internationales dans le domaine du luxe. Il s’inscrit pleinement dans notre engagement à proposer une éducation innovante et professionnalisante, en phase avec les réalités du marché du travail et les aspirations de nos étudiants.",
         campuses: "Aquitaine, Provence",
         duration: "3 ans (4 ans pour les allophones)",
@@ -624,7 +646,7 @@ export const translations = {
         { time: "20:00 - 21:30", activity: "Étude et temps calme" }
       ]
     },
-    forward_reseau_page: {
+    reseau_page: {
       title: "Un Réseau de Clubs pour Révéler Nos Talents",
       p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, we offrons à nos meilleurs joueurs des opportunités uniques de montrer l'étendue de leurs capacités. Ce réseau, composé de clubs prestigieux Français et européens, leur permet de participer à des essais, des matchs amicaux ou d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptés à leur progression vers le plus haut niveau.",
       subtitle: "Un Réseau de Clubs pour offrir des opportunités..."
@@ -827,7 +849,7 @@ export const translations = {
       home: "HOME",
       history: "OUR HISTORY",
       project_team: "PROJECT & TEAM",
-      recognition: "RECOGNITION",
+      recognition: "RECONNAISSANCE",
       campus: "CAMPUSES",
       formations: "PROGRAMS",
       football: "FOOTBALL ACADEMY",
@@ -1218,7 +1240,6 @@ export const translations = {
       guarantees: [
         { title: "State Diploma", desc: "Official preparation for French national exams (DNB, Bac)." },
         { title: "Pedagogical Control", desc: "Regular inspection by the National Education rectorates." },
-        { title: "Chinese Validation", desc: "Double recognition for facilitated international mobility." },
         { title: "Elite Standard", desc: "High-level sports accreditations (FFF / UEFA)." }
       ],
       international_opening: "International Opening",
@@ -1818,7 +1839,7 @@ export const translations = {
       championships: "法国官方锦标赛",
       elite_prog: "精英足球计划",
       languages_title: "外语培训",
-      languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法国母语学生或者希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解 and 个人进步. 教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功和国际化开放。",
+      languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持 non-French speaking students or those wishing to perfect their level。\nClasses are organized in small groups to encourage oral participation, understanding, and individual progress。教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功和国际化开放。",
       fle_link: "法语对外汉语 (FLE)",
       efl_link: "英语对外汉语 (EFL)"
     },
@@ -2058,7 +2079,6 @@ export const translations = {
       guarantees: [
         { title: "国家文凭", desc: "正式准备法国国家考试 (DNB, Bac)。" },
         { title: "教学监管", desc: "由国民教育部定期检查。" },
-        { title: "中国认证", desc: "双重认可，便于国际流动。" },
         { title: "精英标准", desc: "高水平体育认证 (FFF / UEFA)。" }
       ],
       international_opening: "国际化开放",
@@ -2072,6 +2092,29 @@ export const translations = {
       cert_desc: "语言认证",
       level_brevet: "初中毕业水平",
       level_terminale: "高三毕业水平"
+    },
+    college_page: {
+      title: "ESEPE - 初中",
+      age_label: "11 - 15 岁",
+      p1: "我们向 11 至 14 岁的学生敞开体育学习初中的大门。",
+      p2: "完成四年初中学习后，他们可以升入我们的高中计划。",
+      p3: "该初中丰富了我们的培训体系，助力青少年追求卓越。",
+      prog_title: "我们的课程涵盖四年：",
+      year1_title: "第一年：整合班或六年级",
+      year1_desc: "课程将让他们在学习学术基础知识的同时，掌握扎实的法语（针对外国学生的 FLE）。",
+      year2_title: "第二年：七年级",
+      year2_desc: "巩固学术基础、增强自主性并深化密集体育实践的一年。",
+      year3_title: "第三年：八年级（适配版）",
+      year3_desc: "深化项学术与体育技能并完全融入机构生活的关键一年。",
+      year4_title: "第四年：九年级（高中预备）",
+      year4_desc: "密集准备初中毕业考试 (DNB) 并提供通往高中卓越路径的个性化指导。",
+      conclusion: "学生之后直接升入我们高中。",
+      autonomy_title: "自主性",
+      autonomy_desc: "学习从年轻开始组织，以在双重项目中取得成功。",
+      excellence_title: "卓越",
+      excellence_desc: "经法国教育部验证的学术课程。",
+      fulfillment_title: "圆满",
+      fulfillment_desc: "在安全的环境中兼顾体育激情与持久的友谊。"
     },
     lycee_page: {
       title: "高中毕业证书",
@@ -2181,7 +2224,7 @@ export const translations = {
       axes_social_social_title: "社会跟踪",
       axes_social_social_desc: "年轻学员与周围世界保持联系至关重要. 为此，我们采取了多项措施，确保球员在足球之外保持社交关系（家人、朋友、培训、教育等）。",
       axes_social_psych_title: "心理跟踪",
-      axes_social_psych_desc: "高水平 sport 要求强大的意志力，因此 we 为球员提供所有必要的支持，帮助他们全面发展. 这让他们能够自由表达，预防任何心理不适或其他问题。",
+      axes_social_psych_desc: "高水平 sport 要求强大的意志力，因此 we 为球员提供所有必要的支持，帮助 them 全面发展. 这让 they 能够自由表达，预防任何心理不适或其他问题。",
       coaches_title: "资深认证教练",
       coaches_text: "教练均毕业于 FFF 或 UEFA (Pro, A, B, C)，提供高水平指导。",
       coaches_list_1: "欧足联 / A / B / C 级教练文凭",
@@ -2464,7 +2507,7 @@ export const translations = {
       property_content: "本网站及其所有内容（文字、图片、视频、标志）均为 ESEPE 的专有财产. 未经事先书面许可，严禁任何形式的复制、修改或传播。\n本站所引用的合作俱乐部标志其版权归各自所有者所有。",
       privacy_collect: "我们通过在线申请表收集有关学生及其法定监护人的信息. 收集的信息包括但不限于：姓名、出生日期、国籍、目前就读年级以及联系方式。",
       privacy_use: "入学申请研究。\n面试组织。\n关于学术和足球学院的沟通。\n遵守法律教育义务（法国和中国）。",
-      privacy_share: "ESEPE 承诺绝不向第三方出售或出租您的数据. 它们仅传输给内部行政和教学服务部门。",
+      privacy_share: "ESEPE 承诺绝不向第三方出售或出租您的数据. 它们仅传输给内部行政 and 教学服务部门。",
       privacy_rights: "根据《通用数据保护条例》(GDPR)，您拥有访问、更正和删除数据的权利。\n要行使您的权利，请联系我们的数据保护官：\ncontact@esepf.fr"
     },
     footer: {
