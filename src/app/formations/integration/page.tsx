@@ -4,7 +4,6 @@
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Languages, Heart, Users, Compass, Loader2, BookOpen, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -41,12 +40,10 @@ export default function IntegrationPage() {
         {/* Hero Section */}
         <section className="relative h-[60vh] flex items-center justify-center bg-black overflow-hidden">
           {heroImage ? (
-            <Image 
+            <img 
               src={heroImage}
               alt="Integration"
-              fill
-              className="object-cover opacity-40"
-              priority
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
             />
           ) : (
             <div className="absolute inset-0 bg-black" />
@@ -69,12 +66,10 @@ export default function IntegrationPage() {
           <div className="flex flex-col lg:flex-row min-h-[600px]">
             <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-full bg-muted/20">
               {introImage ? (
-                <Image 
+                <img 
                   src={introImage} 
                   alt="FLE Programme" 
-                  fill 
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">

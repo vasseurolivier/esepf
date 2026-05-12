@@ -5,7 +5,6 @@ import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { ChevronRight, ArrowRight } from 'lucide-react';
@@ -70,11 +69,10 @@ export default function LyceePage() {
               </ScrollReveal>
               <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-black">
                 {introImage && (
-                  <Image 
+                  <img 
                     src={introImage} 
                     alt="Lycée Life" 
-                    fill 
-                    className="object-cover"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 )}
               </ScrollReveal>
@@ -153,7 +151,7 @@ export default function LyceePage() {
                 <ScrollReveal key={idx} delay={idx * 100} className="relative group border-r border-b border-white/20 bg-[#0c3a2f] flex flex-col h-full">
                   <div className="relative aspect-[4/3] overflow-hidden bg-black">
                     {card.image && (
-                      <Image src={card.image} alt={card.title} fill className="object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
+                      <img src={card.image} alt={card.title} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" />
                     )}
                     {card.banner && (
                       <div className="absolute top-4 -right-8 bg-red-600 text-white font-bold py-1 px-12 rotate-45 text-[10px] shadow-lg">

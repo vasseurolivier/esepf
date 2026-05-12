@@ -1,10 +1,10 @@
+
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -46,12 +46,10 @@ export default function TeamPage() {
         <section className="flex flex-col lg:flex-row min-h-[700px]">
           <div className="lg:w-[45%] bg-[#1a3d2f] p-12 lg:p-24 flex flex-col justify-center items-start relative overflow-hidden">
             {projectHero && (
-              <Image 
+              <img 
                 src={projectHero}
                 alt="Project Hero"
-                fill
-                className="object-cover opacity-20"
-                priority
+                className="absolute inset-0 w-full h-full object-cover opacity-20"
               />
             )}
             <ScrollReveal className="relative z-10 w-full">
@@ -118,7 +116,7 @@ export default function TeamPage() {
                 <ScrollReveal key={i} delay={i * 150} className="text-center group">
                   <div className="relative w-64 h-64 mx-auto mb-8 rounded-[3rem] overflow-hidden border-4 border-white shadow-2xl group-hover:translate-y-[-10px] transition-all duration-500 bg-black">
                     {member.img && (
-                      <Image src={member.img} alt={member.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <img src={member.img} alt={member.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     )}
                   </div>
                   <h3 className="text-2xl font-headline font-bold text-black uppercase tracking-tight">{member.name}</h3>

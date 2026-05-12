@@ -5,7 +5,6 @@ import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { GraduationCap, Clock, MapPin, Award, Info, BookOpen, CheckCircle2, Languages, User, Star } from 'lucide-react';
@@ -36,12 +35,10 @@ export default function BacGeneralPage() {
       <main className="min-h-screen bg-white">
         <section className="relative h-[65vh] flex items-center justify-center bg-black overflow-hidden">
           {heroImage && (
-            <Image 
+            <img 
               src={heroImage}
               alt={content.title}
-              fill
-              className="object-cover opacity-40"
-              priority
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
             />
           )}
           <div className="relative z-10 text-center text-white container px-4">
@@ -125,11 +122,10 @@ export default function BacGeneralPage() {
               
               <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl bg-black group">
                 {introImage && (
-                  <Image 
+                  <img 
                     src={introImage}
                     alt={content.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />

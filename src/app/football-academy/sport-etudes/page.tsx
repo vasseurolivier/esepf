@@ -5,7 +5,6 @@ import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -30,7 +29,7 @@ export default function SportEtudesPage() {
       <Header />
       <main className="min-h-screen bg-white relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
-          {bgImage && <Image src={bgImage} alt="Background" fill className="object-cover" />}
+          {bgImage && <img src={bgImage} alt="Background" className="w-full h-full object-cover" />}
         </div>
 
         <div className="container mx-auto px-4 py-24 relative z-10">
@@ -131,7 +130,7 @@ export default function SportEtudesPage() {
                 <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl mb-8 bg-black">
                   {footballImg && (
                     <>
-                      <Image src={footballImg} alt="Football" fill className="object-cover group-hover:scale-110 transition-transform duration-700" priority />
+                      <img src={footballImg} alt="Football" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                     </>
                   )}
@@ -149,7 +148,7 @@ export default function SportEtudesPage() {
                 <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl mb-8 bg-black">
                   {basketballImg && (
                     <>
-                      <Image src={basketballImg} alt="Basketball" fill className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" />
+                      <img src={basketballImg} alt="Basketball" className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                     </>
                   )}

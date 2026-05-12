@@ -5,7 +5,6 @@ import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Languages, Globe, MessageSquare, Award, Users, Cpu, Library, BookOpen, CheckCircle2 } from 'lucide-react';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -40,12 +39,10 @@ export default function LanguesPage() {
         {/* Hero Section */}
         <section className="relative h-[60vh] flex items-center justify-center bg-black overflow-hidden">
           {heroImage && (
-            <Image 
+            <img 
               src={heroImage}
               alt="Langues Étrangères"
-              fill
-              className="object-cover opacity-40"
-              priority
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
             />
           )}
           <div className="relative z-10 text-center text-white container px-4">

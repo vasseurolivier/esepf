@@ -5,7 +5,6 @@ import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Flag, Trophy, Shield, Users, Calendar, Rocket, Target } from 'lucide-react';
@@ -33,12 +32,10 @@ export default function CompetitionPage() {
         <section className="relative h-[60vh] flex items-center justify-center bg-primary overflow-hidden">
           <div className="absolute inset-0 z-0 bg-black">
             {heroImage && (
-              <Image 
+              <img 
                 src={heroImage}
                 alt="Compétition FFF"
-                fill
-                className="object-cover opacity-30"
-                priority
+                className="w-full h-full object-cover opacity-30"
               />
             )}
           </div>
@@ -77,7 +74,7 @@ export default function CompetitionPage() {
               </ScrollReveal>
               <ScrollReveal delay={200} className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-muted/20 bg-black">
                 {actionImage && (
-                  <Image src={actionImage} alt="Action Football" fill className="object-cover" />
+                  <img src={actionImage} alt="Action Football" className="w-full h-full object-cover" />
                 )}
               </ScrollReveal>
             </div>

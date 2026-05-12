@@ -4,7 +4,6 @@
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -72,13 +71,10 @@ export default function ProgrammeFootballPage() {
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
         {heroImage && (
-          <Image 
+          <img 
             src={heroImage}
             alt="Football Program"
-            fill
-            className="object-cover opacity-60"
-            priority
-            sizes="100vw"
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
         )}
         <div className="relative z-10 text-center text-white container px-4">
@@ -123,12 +119,10 @@ export default function ProgrammeFootballPage() {
             {/* Image Side */}
             <div className="lg:w-[60%] relative h-[400px] md:h-[650px] w-full rounded-[2rem] overflow-hidden shadow-2xl z-0 mb-8 lg:mb-0 bg-black">
               {methodImg && (
-                <Image 
+                <img 
                   src={methodImg} 
                   alt="French Football Methodology" 
-                  fill 
-                  className="object-cover opacity-90"
-                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  className="absolute inset-0 w-full h-full object-cover opacity-90"
                 />
               )}
             </div>
@@ -182,7 +176,7 @@ export default function ProgrammeFootballPage() {
           </div>
           <div className="lg:w-1/2 relative min-h-[450px] bg-black">
             {franceImage && (
-              <Image src={franceImage} alt="France Winners" fill className="object-cover" />
+              <img src={franceImage} alt="France Winners" className="absolute inset-0 w-full h-full object-cover" />
             )}
           </div>
         </div>
@@ -206,7 +200,7 @@ export default function ProgrammeFootballPage() {
             </ScrollReveal>
             <div className="relative aspect-[4/3] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white bg-black">
               {coachImage && (
-                <Image src={coachImage} alt="Coach Training" fill className="object-cover" />
+                <img src={coachImage} alt="Coach Training" className="absolute inset-0 w-full h-full object-cover" />
               )}
             </div>
           </div>
@@ -259,7 +253,7 @@ export default function ProgrammeFootballPage() {
                 <div className="w-full md:w-1/3 flex flex-col items-center text-center space-y-6">
                   <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-8 border-muted shadow-2xl bg-black">
                     {settings?.images?.[pillar.id] ? (
-                      <Image src={settings.images[pillar.id]} alt={pillar.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <img src={settings.images[pillar.id]} alt={pillar.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     ) : (
                       <div className="w-full h-full bg-primary/10 flex items-center justify-center text-primary/20">
                         <ImageIcon size={64} />
@@ -317,7 +311,7 @@ export default function ProgrammeFootballPage() {
                   <div key={i} className="flex flex-col items-center group cursor-pointer">
                     <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white/20 group-hover:border-secondary transition-all duration-500 mb-4 shadow-xl bg-black">
                       {settings?.images?.[item.id] && (
-                        <Image src={settings.images[item.id]} alt={item.label} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <img src={settings.images[item.id]} alt={item.label} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                       )}
                     </div>
                     <span className="text-xs md:text-sm font-bold uppercase tracking-wider text-center leading-tight">
@@ -332,7 +326,7 @@ export default function ProgrammeFootballPage() {
           {/* Right Image */}
           <div className="lg:w-[40%] relative min-h-[400px] lg:min-h-full bg-black">
             {trackingMainImg && (
-              <Image src={trackingMainImg} alt="Tracking Support" fill className="object-cover" />
+              <img src={trackingMainImg} alt="Tracking Support" className="absolute inset-0 w-full h-full object-cover" />
             )}
           </div>
         </div>
@@ -353,11 +347,10 @@ export default function ProgrammeFootballPage() {
               <ScrollReveal key={i} delay={i * 150} className="flex flex-col items-center text-center">
                 <div className="relative w-48 h-48 mb-8 rounded-full overflow-hidden border-4 border-muted shadow-2xl bg-black group">
                   {settings?.images?.[pos.id] && (
-                    <Image 
+                    <img 
                       src={settings.images[pos.id]} 
                       alt={pos.title} 
-                      fill 
-                      className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                     />
                   )}
                 </div>

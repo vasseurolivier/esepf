@@ -5,7 +5,6 @@ import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { Briefcase, Clock, MapPin, Award, Info, BookOpen, Hotel, Star, CheckCircle2 } from 'lucide-react';
@@ -36,12 +35,10 @@ export default function BacStmgPage() {
       <main className="min-h-screen bg-white">
         <section className="relative h-[65vh] flex items-center justify-center bg-black overflow-hidden">
           {heroImage && (
-            <Image 
+            <img 
               src={heroImage}
               alt={content.title}
-              fill
-              className="object-cover opacity-40"
-              priority
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
             />
           )}
           <div className="relative z-10 text-center text-white container px-4">
@@ -121,11 +118,10 @@ export default function BacStmgPage() {
               </ScrollReveal>
               <ScrollReveal delay={200} className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-black">
                 {introImage && (
-                  <Image 
+                  <img 
                     src={introImage}
                     alt={content.management_tomorrow}
-                    fill
-                    className="object-cover"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 )}
               </ScrollReveal>

@@ -5,7 +5,6 @@ import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -61,12 +60,10 @@ export default function HistoryPage() {
 
               <ScrollReveal delay={200} className="relative aspect-[4/5] rounded-[3rem] overflow-hidden bg-black shadow-2xl">
                 {mainImage && (
-                  <Image 
+                  <img 
                     src={mainImage}
                     alt="Students"
-                    fill
-                    className="object-cover"
-                    priority
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 )}
               </ScrollReveal>

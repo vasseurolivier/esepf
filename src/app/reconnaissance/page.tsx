@@ -1,10 +1,10 @@
+
 "use client";
 
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -36,12 +36,10 @@ export default function RecognitionPage() {
         <section className="flex flex-col lg:flex-row min-h-[600px] border-b border-muted">
           <div className="lg:w-1/2 relative min-h-[450px] bg-black">
             {heroImage && (
-              <Image 
+              <img 
                 src={heroImage}
                 alt="Institution Building"
-                fill
-                className="object-cover"
-                priority
+                className="absolute inset-0 w-full h-full object-cover"
               />
             )}
             <div className="absolute inset-0 bg-primary/10" />
@@ -67,11 +65,10 @@ export default function RecognitionPage() {
                   <div key={logo.id} className="flex flex-col items-center group">
                     <div className="relative w-full aspect-square mb-4 border border-muted p-2 rounded-xl group-hover:border-primary transition-colors bg-white flex items-center justify-center overflow-hidden">
                       {settings?.images?.[logo.id] ? (
-                        <Image 
+                        <img 
                           src={settings.images[logo.id]} 
                           alt={logo.label} 
-                          fill 
-                          className="object-contain grayscale group-hover:grayscale-0 transition-all p-2" 
+                          className="absolute inset-0 w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all p-2" 
                         />
                       ) : (
                         <div className="w-full h-full bg-muted/10" />

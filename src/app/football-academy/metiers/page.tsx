@@ -11,7 +11,6 @@ import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function MetiersSportPage() {
   const { t } = useTranslation();
@@ -66,11 +65,10 @@ export default function MetiersSportPage() {
                   <ScrollReveal key={job.id} delay={idx * 100} className="flex flex-col items-center">
                     <div className="relative w-full aspect-[2/3] rounded-full overflow-hidden border-2 border-black shadow-2xl mb-6 group transition-transform duration-500 hover:scale-105 bg-black">
                       {jobImg && (
-                        <Image 
+                        <img 
                           src={jobImg} 
                           alt={job.label}
-                          fill
-                          className="object-cover group-hover:scale-110 transition-transform duration-700"
+                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                       )}
                       <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />

@@ -2,7 +2,6 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useDoc, useFirestore, useMemoFirebase } from '@/firebase';
@@ -53,11 +52,10 @@ export function News() {
                 <article className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                   <div className="relative h-72 w-full overflow-hidden">
                     {article.imageUrl && (
-                      <Image
+                      <img
                         src={article.imageUrl}
                         alt={article.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                     )}
                   </div>

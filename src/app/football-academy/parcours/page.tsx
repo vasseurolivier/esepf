@@ -7,8 +7,7 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import Image from 'next/image';
-import { GraduationCap, Trophy, Globe, Target, Briefcase, ArrowRight, Star, ChevronDown } from 'lucide-react';
+import { Trophy, GraduationCap, Globe, Target, Briefcase, ArrowRight, Star, ChevronDown } from 'lucide-react';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 
@@ -78,11 +77,10 @@ export default function ParcoursJoueurPage() {
               <ScrollReveal className="flex flex-col items-center text-center w-full lg:w-1/4">
                 <div className="relative w-48 h-48 mb-6 rounded-3xl overflow-hidden border-4 border-muted shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 bg-black">
                   {conceptImage && (
-                    <Image 
+                    <img 
                       src={conceptImage} 
                       alt="Student Athlete" 
-                      fill 
-                      className="object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   )}
                 </div>
