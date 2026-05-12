@@ -43,6 +43,19 @@ export default function CampusEvronPage() {
 
   const fullDesc = t.campus_pages.evron_full_desc;
 
+  // Safe guard to prevent build errors if translations are missing
+  if (!fullDesc) {
+    return (
+      <main className="min-h-screen bg-white">
+        <Header />
+        <div className="container mx-auto py-24 text-center">
+          <p className="text-muted-foreground italic">Chargement des informations du campus...</p>
+        </div>
+        <Footer />
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
