@@ -9,6 +9,7 @@ import { useTranslation } from '@/hooks/use-translation';
 import { ChevronRight, ArrowRight } from 'lucide-react';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Programs() {
   const [isMounted, setIsMounted] = useState(false);
@@ -33,6 +34,7 @@ export function Programs() {
         title: t.programs.college?.title || "Collège",
         subtitle: t.programs.college?.subtitle || "",
         imageKey: 'programs_college',
+        fallbackId: 'college-life',
         desc: t.programs.college?.desc || "",
         href: '/formations/college',
         features: [t.programs.college?.f1, t.programs.college?.f2, t.programs.college?.f3].filter(Boolean)
@@ -42,6 +44,7 @@ export function Programs() {
         title: t.programs.lycee?.title || "Lycée",
         subtitle: t.programs.lycee?.subtitle || "",
         imageKey: 'programs_lycee',
+        fallbackId: 'bac-general',
         desc: t.programs.lycee?.desc || "",
         href: '/formations/lycee',
         features: [t.programs.lycee?.f1, t.programs.lycee?.f2, t.programs.lycee?.f3].filter(Boolean),
@@ -55,6 +58,7 @@ export function Programs() {
         title: t.programs.academy?.title || "Academy",
         subtitle: t.programs.academy?.subtitle || "",
         imageKey: 'programs_academy',
+        fallbackId: 'football-academy',
         desc: t.programs.academy?.desc || "",
         href: '/football-academy/programme',
         features: [t.programs.academy?.f1, t.programs.academy?.f2, t.programs.academy?.f3].filter(Boolean)
@@ -91,7 +95,9 @@ export function Programs() {
           </TabsList>
           
           {programs.map((prog) => {
-            const customImage = settings?.images?.[prog.imageKey];
+            const fallbackUrl = PlaceHolderImages.find(img => img.id === prog.fallbackId)?.imageUrl;
+            const customImage = settings?.images?.[prog.imageKey] || fallbackUrl;
+            
             return (
               <TabsContent key={prog.id} value={prog.id} className="focus-visible:outline-none">
                 <ScrollReveal>
@@ -112,7 +118,6 @@ export function Programs() {
                         {prog.desc}
                       </p>
                       
-                      {/* Sub-links for Lycée */}
                       {prog.subLinks ? (
                         <div className="grid grid-cols-1 gap-3 mb-10">
                           {prog.subLinks.map((link, i) => (

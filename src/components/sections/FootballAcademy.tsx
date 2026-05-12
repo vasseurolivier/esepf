@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function FootballAcademy() {
   const db = useFirestore();
@@ -20,7 +21,8 @@ export function FootballAcademy() {
   const { t } = useTranslation();
   
   const schoolName = settings?.schoolName || "ESEPE";
-  const footballImgUrl = settings?.images?.football_academy;
+  const fallbackImg = PlaceHolderImages.find(img => img.id === 'football-academy')?.imageUrl;
+  const footballImgUrl = settings?.images?.football_academy || fallbackImg;
 
   const academyFeatures = useMemo(() => {
     if (!t?.academy_features) return [];

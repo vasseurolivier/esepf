@@ -7,6 +7,7 @@ import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { GraduationCap, Book, ChevronDown } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function StudentJourney() {
   const { t } = useTranslation();
@@ -18,7 +19,8 @@ export function StudentJourney() {
   const settings = clientSettings || serverSettings;
 
   const schoolLogo = settings?.logoUrl;
-  const panImgUrl = settings?.images?.campus_panoramic;
+  const fallbackPanoramic = PlaceHolderImages.find(img => img.id === 'campus-panoramic')?.imageUrl;
+  const panImgUrl = settings?.images?.campus_panoramic || fallbackPanoramic;
 
   const stages = [
     {

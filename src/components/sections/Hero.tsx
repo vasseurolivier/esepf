@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { useTranslation } from '@/hooks/use-translation';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 
 export function Hero() {
@@ -17,7 +18,9 @@ export function Hero() {
   const settings = clientSettings || serverSettings;
   const { t } = useTranslation();
   
-  const heroImgUrl = settings?.images?.hero_home;
+  // Utilisation d'une image de secours si la base de données n'est pas accessible
+  const fallbackHero = PlaceHolderImages.find(img => img.id === 'hero-school')?.imageUrl;
+  const heroImgUrl = settings?.images?.hero_home || fallbackHero;
 
   return (
     <section className="relative h-[80vh] md:h-[85vh] min-h-[500px] md:min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-black">
