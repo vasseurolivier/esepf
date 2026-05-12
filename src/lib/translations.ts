@@ -435,9 +435,9 @@ export const translations = {
       autonomy_title: "Autonomie",
       autonomy_desc: "Apprendre à s'organiser dès le plus jeune âge pour réussir son double projet.",
       excellence_title: "Excellence",
-      excellence_desc: "An academic program validated by the Ministry of Education.",
+      excellence_desc: "Un programme académique validé par le Ministère de l'Éducation.",
       fulfillment_title: "Épanouissement",
-      fulfillment_desc: "Conciliate passion sportive et amitiés durables dans un cadre sécurisant."
+      fulfillment_desc: "Concilier passion sportive et amitiés durables dans un cadre sécurisant."
     },
     lycee_page: {
       title: "BACCALAUREATS",
@@ -862,7 +862,7 @@ export const translations = {
       privacy_collect: "Dans le cadre de votre demande d'inscription ou de contact, l'ESEPE collecte des données à caractère personnel vous concernant. Ces données sont traitées uniquement pour la gestion de votre dossier pédagogique et sportif.",
       privacy_use: "Etude de la candidature à l'entrée de l'établissement.\nOrganisation des entretiens de motivation.\nCommunication relative à la scolarité et à l'Academy de football.\nMise en conformité avec les obligations légales éducatives (France & Chine).",
       privacy_share: "L'ESEPE s'engage à ne jamais vendre ni louer vos données à des tiers. Elles ne sont transmises qu'aux services internes administratifs et pédagogiques de l'ESEPE.",
-      privacy_rights: "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données.\nPour exercer vos droits, contactez notre délégué à la protection des données :\nprivacy@esepf-academy.fr"
+      privacy_rights: "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données.\nPour exercer vos droits, contactez notre délégué à la protection des données :\ncontact@esepf.fr"
     },
     footer: {
       desc: "L'excellence éducative au service de la réussite de nos élèves.",
@@ -1425,7 +1425,7 @@ export const translations = {
       axes_social_psych_title: "Psychological Follow-up",
       axes_social_psych_desc: "High-level sport requires great mental strength, which is why we offer our players all the support necessary for their fulfillment. This allows them to express themselves freely and prevent any malaise or other problem.",
       coaches_title: "OUR CERTIFIED COACHES",
-      coaches_text: "Our coaches are all graduated from FFF or UEFA (Pro, A, B, C), ensuring high-level expertise for daily professional guidance.",
+      coaches_text: "OUR certified coaches are all graduated from FFF or UEFA (Pro, A, B, C), ensuring high-level expertise for daily professional guidance.",
       coaches_list_1: "UEFA Pro / A / B / C Diplomas",
       coaches_list_2: "Video Analysis & Mental",
       coaches_list_3: "Physical & Athletic Preparation",
@@ -1620,8 +1620,8 @@ export const translations = {
         sports_item2: "Bowling green",
         sports_item3: "Volleyball court",
         sports_item4: "Gymnasium",
-        nature_title: "Un cadre naturel préservé",
-        nature_desc: "Au-delà des infrastructures, our campus s'intègre dans un environnement verdoyant et inspirant, où chacun peut respirer, se ressourcer et pratiquer une multitude d'activités en plein air."
+        nature_title: "A preserved natural setting",
+        nature_desc: "Beyond the infrastructure, our campus is integrated into a green and inspiring environment, where everyone can breathe, recharge and practice a multitude of outdoor activities."
       },
       tulle_hero: "Provence Campus",
       tulle_sub: "Excellence in the heart of Provence.",
@@ -1732,7 +1732,7 @@ export const translations = {
       privacy_collect: "As part of your registration or contact request, ESEPE collects personal data concerning you. This data is processed only for the management of your pedagogical and sporting file.",
       privacy_use: "Study of the application for entry to the establishment.\nOrganization of motivation interviews.\nCommunication relative to schooling and the Football Academy.\nCompliance with legal educational obligations (France & China).",
       privacy_share: "ESEPE undertakes never to sell or rent your data to third parties. They are only transmitted to ESEPE's internal administrative and pedagogical services.",
-      privacy_rights: "In accordance with the General Data Protection Regulation (GDPR), you have a right of access, rectification and deletion of your data.\nTo exercise your rights, contact our data protection officer:\nprivacy@esepf-academy.fr"
+      privacy_rights: "In accordance with the General Data Protection Regulation (GDPR), you have a right of access, rectification and deletion of your data.\nTo exercise your rights, contact our data protection officer:\ncontact@esepf.fr"
     },
     footer: {
       desc: "Educational excellence at the service of student success.",
@@ -2232,7 +2232,7 @@ export const translations = {
           "优秀的口头和书面表达能力。",
           "对国际文化充满好奇心和开放心态。",
           "完善语言技能并探索多样化视野的愿望。",
-          "能够独立工作并进行深入研究的能力。"
+          "能够独立 work and 进行深入研究的能力。"
         ],
         campuses: "所有校区",
         duration: "3年（非法语母语4年）",
@@ -2293,7 +2293,7 @@ export const translations = {
       axes_social_social_title: "社会跟踪",
       axes_social_social_desc: "年轻学员与周围世界保持联系至关重要. 为此，我们采取了多项措施，确保球员在足球之外保持社交关系（家人、朋友、培训、教育等）。",
       axes_social_psych_title: "心理跟踪",
-      axes_social_psych_desc: "高水平运动需要强大的意志力，因此我们为球员提供所有必要的支持，帮助他们全面发展. 这让他们能够自由表达，预防任何心理不适或其他问题。",
+      axes_social_psych_desc: "高水平 sport 要求强大的意志力，因此我们为球员提供所有必要的支持，帮助他们全面发展. 这让他们能够自由表达，预防任何心理不适或其他问题。",
       coaches_title: "资深认证教练",
       coaches_text: "教练均毕业于 FFF 或 UEFA (Pro, A, B, C)，提供高水平指导。",
       coaches_list_1: "欧足联职业 / A / B / C 级教练文凭",
@@ -2496,7 +2496,7 @@ export const translations = {
       tulle_hero: "普罗旺斯校区",
       tulle_sub: "普罗旺斯核心的卓越。",
       tulle_title: "上普罗旺斯阿尔卑斯省的魅力和阳光",
-      tulle_desc: "我们的普罗旺斯基地 (04) 在普罗旺斯核心地带为您敞开大门，用于您的研讨会和培训课程. 我们为您提供空调且明亮的培训教室、一个多功能运动场以及一个有利于社交的休息空间.\n现场提供住宿和餐饮，让您完全沉浸其中，不受任何限制。",
+      tulle_desc: "我们的普罗旺斯基地 (04) 在普罗旺斯核心地带为您敞开大门，用于您的研讨会 and 培训课程. 我们为您提供空调且明亮的培训教室、一个多功能运动场以及一个有利于社交的休息空间.\n现场提供住宿和餐饮，让您完全沉浸其中，不受任何限制。",
       tulle_sport: "运动之城",
       tulle_sport_desc: "普罗旺斯校区所在的区域享有特殊的气候，非常适合户外体育锻炼。",
       tulle_infra_desc: "普罗旺斯校区主张人性化和个性化的教学方法。",
@@ -2544,7 +2544,7 @@ export const translations = {
       result_stmg: "STMG 技术高中毕业证书",
       result_gen: "普通高中毕业证书",
       stmg_desc: "了解组织运作。",
-      gen_desc: "Perfect for academic profiles.",
+      gen_desc: "适合学术型人才。",
       discover_btn: "探索路径",
       restart_btn: "重新开始"
     },
@@ -2602,7 +2602,7 @@ export const translations = {
       privacy_collect: "我们通过在线申请表收集有关学生及其法定监护人的信息. 收集的信息包括但不限于：姓名、出生日期、国籍、目前就读年级以及联系方式。",
       privacy_use: "入学申请研究。\n面试组织。\n关于学术和足球学院的沟通。\n遵守法律教育义务（法国和中国）。",
       privacy_share: "ESEPE 承诺绝不向第三方出售或出租您的数据. 它们仅传输给内部行政和教学服务部门。",
-      privacy_rights: "根据《通用数据保护条例》(GDPR)，您拥有访问、更正和删除数据的权利。\n要行使您的权利，请联系我们的数据保护官：\nprivacy@esepf-academy.fr"
+      privacy_rights: "根据《通用数据保护条例》(GDPR)，您拥有访问、更正和删除数据的权利。\n要行使您的权利，请联系我们的数据保护官：\ncontact@esepf.fr"
     },
     footer: {
       desc: "卓越教育成就学生成功。",

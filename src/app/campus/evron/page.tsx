@@ -49,7 +49,7 @@ export default function CampusEvronPage() {
       <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
         {heroImage && (
           <Image 
-            src={heroImage}
+            src={heroImage} 
             alt="Campus Pays de la Loire (Le Mans)"
             fill
             className="object-cover opacity-60"

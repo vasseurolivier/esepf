@@ -42,7 +42,7 @@ export default function CollegePage() {
         {heroImage && (
           <Image 
             src={heroImage}
-            alt="Collège ESEPF"
+            alt="Collège ESEPE"
             fill
             className="object-cover opacity-50"
             priority
