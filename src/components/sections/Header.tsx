@@ -60,9 +60,7 @@ export function Header() {
     { name: t.header.comp_off, href: '/football-academy/competition' },
     { name: t.header.sport_etudes, href: '/football-academy/sport-etudes' },
     { name: t.header.parcours, href: '/football-academy/parcours' },
-    { name: t.header.accomp, href: '/football-academy/accompagnement' },
     { name: t.header.metiers, href: '/football-academy/metiers' },
-    { name: t.header.reseau, href: '/football-academy/reseau' },
   ];
 
   const navLinks = [
