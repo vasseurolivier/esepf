@@ -18,7 +18,6 @@ export function Hero() {
   const settings = clientSettings || serverSettings;
   const { t } = useTranslation();
   
-  // Utilisation d'une image de secours si la base de données n'est pas accessible
   const fallbackHero = PlaceHolderImages.find(img => img.id === 'hero-school')?.imageUrl;
   const heroImgUrl = settings?.images?.hero_home || fallbackHero;
 
