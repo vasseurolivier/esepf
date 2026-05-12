@@ -55,7 +55,6 @@ export default function TeamPage() {
               />
             )}
             <ScrollReveal className="relative z-10 w-full">
-              <span className="text-secondary font-bold uppercase tracking-[0.4em] text-xs mb-4 block">- {t.common.vision_2026} -</span>
               <h1 className="text-6xl md:text-8xl font-headline font-bold text-white mb-12 tracking-tighter uppercase leading-none">
                 {t.team_page.title}
               </h1>
