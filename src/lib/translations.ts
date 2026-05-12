@@ -113,7 +113,6 @@ export const translations = {
       success_desc: "Votre demande de pré-inscription a bien été transmise à notre secrétariat. Nous reviendrons vers vous très prochainement.",
       btn_back_home: "RETOUR À L'ACCUEIL",
       campuses: {
-        evron: "Campus Pays de la Loire (Le Mans)",
         bazeille: "Campus Aquitaine (Bordeaux)",
         tulle: "Campus Provence (Aix en Provence)"
       }
@@ -200,9 +199,6 @@ export const translations = {
       three_axes_mobile_languages_btn: "DÉCOUVRIR LE PROGRAMME FLE/EFL"
     },
     campus_locations: {
-      evron: "Pays de la Loire (LE MANS)",
-      evron_region: "Évron Mayenne (53)",
-      evron_sub: "Pays de la Loire, France.",
       bazeille: "Aquitaine (BORDEAUX)",
       bazeille_region: "Sainte-Bazeille Lot-et-Garonne (47)",
       bazeille_sub: "Nouvelle-Aquitaine, France.",
@@ -488,7 +484,7 @@ export const translations = {
           "Volonté de perfectionner ses compétences linguistiques et d'explorer des horizons variés.",
           "Capacité à travailler de manière autonome et à effectuer des recherches approfondies."
         ],
-        campuses: "Tous les campus",
+        campuses: "Aquitaine, Provence",
         duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Baccalauréat)",
         bts_desc: "Le BTS (Brevet de Technicien Supérieur) en Langues Étrangères Appliquées (LEA) est une formation de deux ans qui permet de se spécialiser après un Baccalauréat Général.\nElle offre un enseignement pratique et théorique dans des domaines tels que la traduction, l'interprétation, la gestion de projets internationaux, ainsi que la communication interculturelle.\nAccessible sur dossier, le BTS prépare rapidement à des postes à responsabilités dans des secteurs en pleine expansion, comme le commerce international, le tourisme, la gestion de la relation client, ou encore les métiers de la traduction et de l'interprétariat.",
@@ -511,7 +507,7 @@ export const translations = {
         luxe_module_p1: "Dans un monde où l’hôtellerie et la restauration de luxe sont des secteurs en pleine expansion, il est essentiel de préparer nos élèves aux exigences de cette industrie prestigieuse. C’est pourquoi notre Baccalauréat Technologique STMG inclura un module exclusif dédié à l’hôtellerie et à la restauration haut de gamme.",
         luxe_module_p2: "Ce programme vise à offrir aux élèves une première immersion dans cet univers raffiné, en leur permettant de découvrir les standards de qualité, le service d’excellence et les codes du luxe appliqués à l'accueil, à la gestion et à la relation client. À travers des études de cas concrets, des rencontres avec des professionnels du secteur et des mises en situation, nos élèves développent des compétences essentielles en management, marketing et gestion hôtelière, tout en cultivant un savoir-être adapté aux attentes de cette industrie.",
         luxe_module_p3: "Ce module représente une véritable opportunité pour nos élèves, leur ouvrant les portes de formations spécialisées et de carrières internationales dans le domaine du luxe. Il s’inscrit pleinement dans notre engagement à proposer une éducation innovante et professionnalisante, en phase avec les réalités du marché du travail et les aspirations de nos étudiants.",
-        campuses: "Tous les campus",
+        campuses: "Aquitaine, Provence",
         duration: "3 ans (4 ans pour les allophones)",
         level: "Niveau 4 (Baccalauréat Technologique)",
         bts_desc: "Le BTS (Brevet de Technicien Supérieur) en management ou gestion est une formation de deux ans qui permet de se spécialiser après un Baccalauréat Technologique STMG. Elle offre un enseignement pratique et théorique dans des domaines tels que le management d'équipe, la gestion d'entreprise, la communication, la finance, la comptabilité et le marketing. Accessible sur dossier, le BTS prépare rapidement à des postes à responsabilités dans des secteurs variés comme le commerce, le marketing, la gestion des ressources humaines, ou la gestion d'entreprise, tout en permettant d'évoluer dans un environnement dynamique.",
@@ -823,7 +819,6 @@ export const translations = {
       form_sending: "Envoi...",
       form_success: "Message envoyé avec succès !",
       info_title: "Nos Coordonnées",
-      campus_evron: "Campus Pays de la Loire (LE MANS)",
       campus_bazeille: "Campus Aquitaine (BORDEAUX)",
       campus_tulle: "Campus Provence (AIX-EN-PROVENCE)",
       faq_title: "Questions Fréquentes",
@@ -989,7 +984,6 @@ export const translations = {
       success_desc: "Your pre-registration request has been transmitted. We will get back to you shortly.",
       btn_back_home: "BACK HOME",
       campuses: {
-        evron: "Pays de la Loire Campus (Le Mans)",
         bazeille: "Aquitaine Campus (Bordeaux)",
         tulle: "Provence Campus (Aix en Provence)"
       }
@@ -1076,9 +1070,6 @@ export const translations = {
       three_axes_mobile_languages_btn: "DISCOVER FLE/EFL PROGRAM"
     },
     campus_locations: {
-      evron: "Pays de la Loire (LE MANS)",
-      evron_region: "Évron Mayenne",
-      evron_sub: "Pays de la Loire, France.",
       bazeille: "Aquitaine (BORDEAUX)",
       bazeille_region: "Sainte-Bazeille",
       bazeille_sub: "Nouvelle-Aquitaine, France.",
@@ -1364,7 +1355,7 @@ export const translations = {
           "Willingness to perfect linguistic skills.",
           "Ability to work independently."
         ],
-        campuses: "All campuses",
+        campuses: "Aquitaine, Provence",
         duration: "3 years (4 for allophones)",
         level: "Level 4 (Baccalaureate)",
         bts_desc: "The BTS (Higher Technician's Certificate) in applied Foreign Languages (LEA) is a two-year program that allows specialization after a General Baccalaureate.\nIt offers practical and theoretical teaching in areas such as translation, interpretation, international project management, and intercultural communication.\nAccessible by application, the BTS quickly prepares for positions of responsibility in growing sectors such as international trade, tourism, customer relationship management, or translation and interpretation professions.",
@@ -1387,7 +1378,7 @@ export const translations = {
         luxe_module_p1: "In a world where luxury hospitality is expanding, it is essential to prepare students for the requirements of this prestigious industry. Our STMG Bac will include an exclusive module dedicated to high-end hospitality.",
         luxe_module_p2: "This program offers a first immersion in this refined universe, allowing students to discover standards of quality and service excellence. Through case studies and meetings with professionals, they develop essential management and marketing skills.",
         luxe_module_p3: "This module represents a real opportunity, opening doors to specialized training and international careers in luxury.",
-        campuses: "All campuses",
+        campuses: "Aquitaine, Provence",
         duration: "3 years (4 for allophones)",
         level: "Level 4 (Technological Bac)",
         bts_desc: "The BTS (Higher Technician's Certificate) in management or business is a two-year program allowing specialization after a STMG Technological Baccalaureate. It offers practical and theoretical teaching in team management, business management, finance, and marketing.",
@@ -1693,7 +1684,6 @@ export const translations = {
       form_sending: "Sending...",
       form_success: "Message sent successfully!",
       info_title: "Contact Details",
-      campus_evron: "Pays de la Loire Campus (LE MANS)",
       campus_bazeille: "Aquitaine Campus (BORDEAUX)",
       campus_tulle: "Provence Campus (AIX-EN-PROVENCE)",
       faq_title: "Frequently Asked Questions",
@@ -1859,7 +1849,6 @@ export const translations = {
       success_desc: "您的预登记申请已成功提交。我们将尽快与您联系。",
       btn_back_home: "返回首页",
       campuses: {
-        evron: "卢瓦尔河地区校区 (勒芒)",
         bazeille: "阿基坦校区 (波尔多)",
         tulle: "普罗旺斯校区 (艾克斯)"
       }
@@ -1946,9 +1935,6 @@ export const translations = {
       three_axes_mobile_languages_btn: "了解 FLE/EFL 课程"
     },
     campus_locations: {
-      evron: "卢瓦尔河地区 (LE MANS)",
-      evron_region: "Évron 马耶讷省",
-      evron_sub: "法国卢瓦尔河地区。",
       bazeille: "阿基坦 (BORDEAUX)",
       bazeille_region: "圣巴泽耶",
       bazeille_sub: "新阿基坦大区, 法国",
@@ -1994,7 +1980,7 @@ export const translations = {
       cert_int_desc: "准备剑桥考试（PET、FCE、CAE）和 DELF，以官方验证所获技能。",
       pedagogy_title: "主动式与个性化教学法",
       pedagogy_subtitle: "不仅是语言课，更是文化启蒙",
-      pedagogy_p1: "ESEPE 的语言教学 based on an immersive and communicative approach. 我们相信不断的实践是掌握语言的关键。",
+      pedagogy_p1: "Language teaching at ESEPE is based on an immersive and communicative approach. 我们相信不断的实践是掌握语言的关键。",
       pedagogy_p2: "我们的学生不只是学习语法规则；他们通过项目、辩论和与当地文化的持续互动来体验语言。",
       pedagogy_item1: "小班教学以实现最佳跟踪",
       pedagogy_item2: "通过郊游和旅行进行文化沉浸",
@@ -2165,19 +2151,19 @@ export const translations = {
     college_page: {
       title: "ESEPE - 初中部",
       age_label: "11 - 15 岁",
-      p1: "我们为 11 至 14 岁的学生开启体育学习初中部的大门。",
-      p2: "在完成四年的初中课程后，他们可以进入我们的高中计划。",
-      p3: "初中部丰富了我们的培训体系，并陪伴年轻人追求卓越。",
-      prog_title: "我们的计划分为四年：",
+      p1: "We open the doors of our Sport-Study Middle School to students aged 11 to 14.",
+      p2: "After their four years of Middle School, they can access our High School programs.",
+      p3: "This Middle School enriches our training offer and supports young people towards excellence.",
+      prog_title: "Our program covers four years:",
       year1_title: "第一年：整合班 或 六年级",
-      year1_desc: "该计划允许学生在学习学术基础知识的同时，掌握扎实的法语（针对外国学生的 FLE）。",
+      year1_desc: "The proposed program will allow them to acquire solid mastery of the French language (FLE for foreign students) while following academic fundamentals.",
       year2_title: "第二年：七年级",
-      year2_desc: "在整合班之后，这一年旨在巩固学业基础，加强自主性，并开始深化的体育练习。",
+      year2_desc: "A year to consolidate academic bases, reinforce autonomy and deepen intensive sports practice.",
       year3_title: "第三年：八年级适配课程",
-      year3_desc: "关键的一年，在全面融入机构生活的同时，深化学术和体育技能。",
+      year3_desc: "A pivotal year to deepen academic and sporting skills while fully integrating into the life of the Institution.",
       year4_title: "第四年：九年级准备初中毕业考",
-      year4_desc: "强化准备初中毕业国家文凭 (DNB) 考试，并为进入我们高中的卓越方向提供个性化指导。",
-      conclusion: "初中毕业后，学生将直接进入高中。",
+      year4_desc: "Intensive preparation for the Brevet (DNB) and personalized guidance towards our High School excellence paths.",
+      conclusion: "Students directly integrate our High School afterwards.",
       autonomy_title: "自主性",
       autonomy_desc: "从小学习组织，以在双重项目中取得成功。",
       excellence_title: "卓越",
@@ -2228,13 +2214,13 @@ export const translations = {
         profile_list: ["初中毕业生进入高一", "高一或高二学生进入高二"],
         qualities_title: "所需素质",
         qualities_list: [
-          "对语言和外国 culture 充满热情。",
+          "Passion for languages and foreign culture.",
           "优秀的口头和书面表达能力。",
           "对国际文化充满好奇心和开放心态。",
           "完善语言技能并探索多样化视野的愿望。",
           "能够独立 work and 进行深入研究的能力。"
         ],
-        campuses: "所有校区",
+        campuses: "阿基坦, 普罗旺斯",
         duration: "3年（非法语母语4年）",
         level: "4级 (高中毕业)",
         bts_desc: "应用外语 (LEA) 的 BTS 是一个为期两年的培训. 在翻译、口译、国际项目管理等领域提供教学. 通过档案申请，BTS 可以快速为职业生涯做好准备。",
@@ -2257,7 +2243,7 @@ export const translations = {
         luxe_module_p1: "在奢侈品行业不断扩张的世界中，让我们的学生做好准备至关重要。",
         luxe_module_p2: "该计划旨在让学生首次沉浸在这一精致领域，让他们发现质量标准。",
         luxe_module_p3: "该模块体现了真正的机遇。",
-        campuses: "所有校区",
+        campuses: "阿基坦, 普罗旺斯",
         duration: "3年（非法语母语4年）",
         level: "4级 (技术高中毕业)",
         bts_desc: "管理 BTS 是两年的培训. 在团队 management、财务与营销等领域提供教学。",
@@ -2280,7 +2266,7 @@ export const translations = {
       method_title: "绩效支柱",
       method_subtitle: "成功的5大轴心",
       axes_tech: "技术",
-      axes_tech_desc: "技术掌握是我们教学法的基础. 我们致力于球感的细腻度、传球的精准度，以及在高强度的时间和空间压力下执行正确技术动作的能力。目标是将每位球员培养成能够解决对手提出的复杂问题的技术型人才。",
+      axes_tech_desc: "技术掌握是我们教学法的基础. 我们致力于球感的细腻度、传球의精准度，以及在高强度的时间和空间压力下执行正确技术动作的能力。目标是将每位球员培养成能够解决对手提出的复杂问题的技术型人才。",
       axes_tact: "战术",
       axes_tact_desc: "现代足球要求极高的比赛智慧. 我们教授对比赛形势的阅读、战略选位以及对比赛系统的深刻理解. 我们的训练课强调快速转换、协调的进攻组织和防守的整体性，让球员在场上成为真正的战术家。",
       axes_phys: "体能",
@@ -2289,7 +2275,7 @@ export const translations = {
       axes_ment_desc: "我们的训练方法不断挑战球员的极限，迫使他们调动心理资源. 性格力量是影响表现的关键因素之一，我们设计了许多练习让球员锻炼这种特质（1对1、人数劣势比赛、高强度体能训练、肌肉强化、高标准要求等）。鉴于职业足球需要强大的心理素质，球员从小培养这种素质至关重要。",
       axes_social: "社会",
       axes_social_school_title: "学业跟踪",
-      axes_social_school_desc: "不能想象一个没有教育的学院. 足球是一项需要智慧的运动，这就是为什么学业教育项目是强制性的，球员必须参与才能留在学院。",
+      axes_social_school_desc: "One cannot conceive of an academy without thinking of education. 足球是一项需要智慧的运动，这就是为什么学业教育项目是强制性的，球员必须参与才能留在学院。",
       axes_social_social_title: "社会跟踪",
       axes_social_social_desc: "年轻学员与周围世界保持联系至关重要. 为此，我们采取了多项措施，确保球员在足球之外保持社交关系（家人、朋友、培训、教育等）。",
       axes_social_psych_title: "心理跟踪",
@@ -2563,7 +2549,6 @@ export const translations = {
       form_sending: "发送中...",
       form_success: "消息已成功发送！",
       info_title: "联系详情",
-      campus_evron: "卢瓦尔河地区校区 (勒芒)",
       campus_bazeille: "阿基坦校区 (波尔多)",
       campus_tulle: "普罗旺斯校区 (艾克斯)",
       faq_title: "常见问题",

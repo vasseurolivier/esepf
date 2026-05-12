@@ -286,7 +286,6 @@ export default function AdminPage() {
 
   const getCampusLabel = (choice: string) => {
     switch (choice) {
-      case 'evron': return 'Campus Pays de la Loire (Le Mans)';
       case 'bazeille': return 'Campus Aquitaine (Bordeaux)';
       case 'tulle': return 'Campus Provence (Aix en Provence)';
       default: return choice;
