@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -25,7 +24,6 @@ export default function RecognitionPage() {
 
   const accreditationLogos = [
     { id: 'recog_logo_mne', label: t.recognition_page.mne_label },
-    { id: 'recog_logo_nantes', label: t.recognition_page.nantes_label },
     { id: 'recog_logo_aix', label: t.recognition_page.aix_label },
     { id: 'recog_logo_bordeaux', label: t.recognition_page.bordeaux_label },
   ];
@@ -64,7 +62,7 @@ export default function RecognitionPage() {
                 {t.recognition_page.hero_text}
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 items-start gap-8 pt-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 items-start gap-8 pt-8">
                 {accreditationLogos.map((logo) => (
                   <div key={logo.id} className="flex flex-col items-center group">
                     <div className="relative w-full aspect-square mb-4 border border-muted p-2 rounded-xl group-hover:border-primary transition-colors bg-white flex items-center justify-center overflow-hidden">

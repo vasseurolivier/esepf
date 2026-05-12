@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -8,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { useFirestore, useDoc, useCollection, useMemoFirebase } from '@/firebase';
+import { useFirestore, useDoc, useCollection, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc, setDoc, serverTimestamp, collection, query, orderBy, updateDoc } from 'firebase/firestore';
 import { useToast } from '@/hooks/use-toast';
 import { Save, Loader2, Lock, Image as ImageIcon, ArrowLeft, Camera, Globe, Users, Settings, FileText, Check, MapPin, School, CheckCircle2, User, Mail, Phone, Layers, GraduationCap, Trophy, MessageSquare, Share2, Calendar, Hash, Languages } from 'lucide-react';
@@ -138,7 +137,6 @@ const IMAGE_CATEGORIES = [
       { id: 'team_project_hero', label: 'Photo Projet', location: 'Haut de page Projet' },
       { id: 'recognition_hero', label: 'Photo Reconnaissance', location: 'Haut de page Reconnaissance' },
       { id: 'recog_logo_mne', label: 'Logo Ministère', location: 'Reconnaissance - Accréditations' },
-      { id: 'recog_logo_nantes', label: 'Logo Académie Nantes', location: 'Reconnaissance - Accréditations' },
       { id: 'recog_logo_aix', label: 'Logo Académie Aix', location: 'Reconnaissance - Accréditations' },
       { id: 'recog_logo_bordeaux', label: 'Logo Académie Bordeaux', location: 'Reconnaissance - Accréditations' },
       { id: 'team_member_1', label: 'Direction 1', location: 'Trombinoscope Équipe' },
