@@ -43,7 +43,7 @@ export default function MentionsLegalesPage() {
                   <p className="font-bold text-primary mb-2">ESEPE - École Sport-Études Performance & Excellence</p>
                   <p>Association loi 1901 / Organisme de formation</p>
                   <p>Directeur de la publication : Direction Générale ESEPE</p>
-                  <p>Email : contact@esepe.fr</p>
+                  <p>Email : contact@esepf.fr</p>
                 </div>
               </ScrollReveal>
 

@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
                 <div className="prose prose-lg text-muted-foreground max-w-none">
                   <p>
                     {language === 'zh'
-                      ? "除为了遵守法律义务或履行我们对您的教育服务合同外，我们不会将您的个人数据共享、出售或出租给第三方。在遵守 RGPD 的前提下，数据可能在 ESEPE 的法国校区与行政部门之间流转。"
+                      ? "除为了遵守法律义务或履行我们对您的教育服务合同外，我们不会将您的个人数据共享、出售 or 出租给第三方。在遵守 RGPD 的前提下，数据可能在 ESEPE 的法国校区与行政部门之间流转。"
                       : "L'ESEPE s'engage à ne jamais vendre ni louer vos données à des tiers. Elles ne sont transmises qu'aux services internes administratifs et pédagogiques de l'ESEPE."}
                   </p>
                 </div>
@@ -90,7 +90,7 @@ export default function PrivacyPolicyPage() {
                   <p className="font-bold text-primary">
                     Pour exercer vos droits, contactez notre délégué à la protection des données :
                   </p>
-                  <p className="mt-2 text-secondary font-bold">privacy@esepe.fr</p>
+                  <p className="mt-2 text-secondary font-bold">contact@esepf.fr</p>
                 </div>
               </ScrollReveal>
 

@@ -70,7 +70,7 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Mail size={18} className="text-secondary" />
-                <Link href="/contact" className="hover:text-secondary transition-colors">contact@esepe.fr</Link>
+                <Link href="/contact" className="hover:text-secondary transition-colors">contact@esepf.fr</Link>
               </li>
             </ul>
           </div>
