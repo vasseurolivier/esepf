@@ -4,7 +4,6 @@
 import React from 'react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MapPin, School, GraduationCap, Building2, Target, BookOpen, ImageIcon, Home, Utensils, Palmtree, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
@@ -48,13 +47,10 @@ export default function CampusBazeillePage() {
       <Header />
       <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
         {heroImage && (
-          <Image 
+          <img 
             src={heroImage}
             alt="Campus Aquitaine (Bordeaux)"
-            fill
-            className="object-cover opacity-60"
-            priority
-            sizes="100vw"
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
         )}
         <div className="relative z-10 text-center text-white container px-4">
@@ -93,12 +89,10 @@ export default function CampusBazeillePage() {
               {mapImage ? (
                 <div className="relative w-full h-full p-6">
                   <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl bg-white border border-muted">
-                    <Image 
+                    <img 
                       src={mapImage}
                       alt="Localisation Campus Aquitaine (Bordeaux)"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
                 </div>
@@ -222,12 +216,10 @@ export default function CampusBazeillePage() {
                 {infraImages.map((img, i) => (
                   <CarouselItem key={i} className="pl-4 md:basis-1/2 lg:basis-1/3">
                     <ScrollReveal delay={i * 100} className="relative group rounded-[2rem] overflow-hidden bg-black shadow-xl aspect-video h-full">
-                      <Image 
+                      <img 
                         src={img} 
                         alt={`Infrastructure ${i+1}`} 
-                        fill 
-                        className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                        sizes="(max-width: 768px) 100vw, 33vw" 
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                       />
                     </ScrollReveal>
                   </CarouselItem>

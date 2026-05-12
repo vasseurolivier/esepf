@@ -2,7 +2,6 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
@@ -81,13 +80,10 @@ export function StudentJourney() {
     <>
       <div className="w-full h-[250px] md:h-[450px] relative overflow-hidden bg-black">
         {panImgUrl && (
-          <Image
+          <img
             src={panImgUrl}
             alt="Campus Panoramic View"
-            fill
-            className="object-cover animate-in fade-in duration-700"
-            priority
-            sizes="100vw"
+            className="absolute inset-0 w-full h-full object-cover animate-in fade-in duration-700"
           />
         )}
         <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />

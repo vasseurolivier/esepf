@@ -2,7 +2,6 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
@@ -13,7 +12,7 @@ export function Hero() {
   const db = useFirestore();
   const { settings: serverSettings } = useFirebase();
   const settingsRef = useMemoFirebase(() => doc(db, 'settings', 'global'), [db]);
-  const { data: clientSettings, isLoading } = useDoc(settingsRef);
+  const { data: clientSettings } = useDoc(settingsRef);
   
   const settings = clientSettings || serverSettings;
   const { t } = useTranslation();
@@ -24,14 +23,11 @@ export function Hero() {
     <section className="relative h-[80vh] md:h-[85vh] min-h-[500px] md:min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
         {heroImgUrl && (
-          <Image
+          <img
             src={heroImgUrl}
             alt="Hero Background"
-            fill
-            className="object-cover animate-in fade-in duration-700"
-            priority
-            sizes="100vw"
-            quality={90}
+            className="w-full h-full object-cover animate-in fade-in duration-700"
+            loading="eager"
           />
         )}
       </div>

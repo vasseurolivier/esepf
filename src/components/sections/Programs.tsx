@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useState, useEffect, useMemo } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -99,11 +98,10 @@ export function Programs() {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white p-8 rounded-3xl shadow-xl">
                     <div className="relative h-[400px] w-full rounded-2xl overflow-hidden bg-black shadow-inner">
                       {customImage && (
-                        <Image
+                        <img
                           src={customImage}
                           alt={prog.title}
-                          fill
-                          className="object-cover"
+                          className="absolute inset-0 w-full h-full object-cover"
                         />
                       )}
                     </div>

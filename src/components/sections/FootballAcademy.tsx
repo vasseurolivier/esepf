@@ -2,7 +2,6 @@
 "use client";
 
 import React, { useMemo } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Trophy, GraduationCap, Route, HeartPulse, Globe, Briefcase } from 'lucide-react';
@@ -78,12 +77,10 @@ export function FootballAcademy() {
 
           <div className="lg:w-1/2 relative h-[600px] w-full rounded-3xl overflow-hidden bg-black shadow-2xl">
             {footballImgUrl && (
-              <Image
+              <img
                 src={footballImgUrl}
                 alt="Football Academy"
-                fill
-                className="object-cover animate-in fade-in duration-700"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="w-full h-full object-cover animate-in fade-in duration-700"
               />
             )}
             <div className="absolute bottom-8 left-8 right-8 bg-black/80 backdrop-blur-sm p-6 rounded-2xl border-l-8 border-secondary">

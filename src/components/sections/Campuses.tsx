@@ -2,7 +2,6 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { MapPin, ArrowRight } from 'lucide-react';
@@ -53,12 +52,10 @@ export function Campuses() {
               <Link href={campus.href} className="group relative block overflow-hidden rounded-[2.5rem] shadow-lg hover:shadow-2xl transition-all duration-500 bg-black border border-white h-[400px] md:h-auto">
                 <div className="relative h-full md:h-80 w-full overflow-hidden bg-black">
                   {campus.image && (
-                    <Image
+                    <img
                       src={campus.image}
                       alt={campus.name}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent" />
