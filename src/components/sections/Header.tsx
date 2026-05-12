@@ -43,7 +43,6 @@ export function Header() {
   ];
 
   const campusSubLinks = [
-    { name: 'Campus Pays de la Loire (Le Mans)', href: '/campus/evron' },
     { name: 'Campus Aquitaine (Bordeaux)', href: '/campus/sainte-bazeille' },
     { name: 'Campus Provence (Aix en Provence)', href: '/campus/sainte-tulle' },
   ];
@@ -74,7 +73,7 @@ export function Header() {
     { name: t.nav.contact, href: '/contact' },
   ];
 
-  const schoolName = settings?.schoolName || "ESEPF";
+  const schoolName = settings?.schoolName || "ESEPE";
   const logoUrl = settings?.logoUrl;
 
   const getSubLinks = (name: string) => {

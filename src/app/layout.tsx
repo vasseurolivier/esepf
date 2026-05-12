@@ -6,7 +6,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { LanguageProvider } from '@/context/LanguageContext';
 
 export const metadata: Metadata = {
-  title: 'Institution ESEPF | Collège & Lycée',
+  title: 'ESEPE | École Sport-Études Performance & Excellence',
   description: 'Un établissement d\'excellence pour la réussite de nos élèves, du collège au baccalauréat.',
 };
 

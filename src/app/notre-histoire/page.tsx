@@ -21,7 +21,7 @@ export default function HistoryPage() {
   
   const settings = clientSettings || serverSettings;
   
-  const schoolName = settings?.schoolName || "ESEPF";
+  const schoolName = settings?.schoolName || "ESEPE";
   const mainImage = settings?.images?.history_main;
 
   const timelineLogos = [

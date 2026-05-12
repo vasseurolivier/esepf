@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
                   <p>
                     {language === 'zh'
                       ? "我们通过在线申请表收集有关学生及其法定监护人的信息。收集的信息包括但不限于：姓名、出生日期、国籍、目前就读年级以及联系方式（电话、邮箱）。"
-                      : "Dans le cadre de votre demande d'inscription ou de contact, l'ESEPF collecte des données à caractère personnel vous concernant. Ces données sont traitées uniquement pour la gestion de votre dossier pédagogique et sportif."}
+                      : "Dans le cadre de votre demande d'inscription ou de contact, l'ESEPE collecte des données à caractère personnel vous concernant. Ces données sont traitées uniquement pour la gestion de votre dossier pédagogique et sportif."}
                   </p>
                 </div>
               </ScrollReveal>
@@ -72,8 +72,8 @@ export default function PrivacyPolicyPage() {
                 <div className="prose prose-lg text-muted-foreground max-w-none">
                   <p>
                     {language === 'zh'
-                      ? "除为了遵守法律义务或履行我们对您的教育服务合同外，我们不会将您的个人数据共享、出售或出租给第三方。在遵守 RGPD 的前提下，数据可能在 ESEPF 的法国校区与行政部门之间流转。"
-                      : "L'ESEPF s'engage à ne jamais vendre ni louer vos données à des tiers. Elles ne sont transmises qu'aux services internes administratifs et pédagogiques de l'ESEPF."}
+                      ? "除为了遵守法律义务或履行我们对您的教育服务合同外，我们不会将您的个人数据共享、出售或出租给第三方。在遵守 RGPD 的前提下，数据可能在 ESEPE 的法国校区与行政部门之间流转。"
+                      : "L'ESEPE s'engage à ne jamais vendre ni louer vos données à des tiers. Elles ne sont transmises qu'aux services internes administratifs et pédagogiques de l'ESEPE."}
                   </p>
                 </div>
               </ScrollReveal>

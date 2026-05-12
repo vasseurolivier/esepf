@@ -37,15 +37,6 @@ const IMAGE_CATEGORIES = [
     label: 'Campus',
     icon: <MapPin size={16} />,
     fields: [
-      { id: 'campus_evron', label: 'Hero Pays de la Loire (LE MANS)', location: 'Haut de page Pays de la Loire' },
-      { id: 'evron_map', label: 'Carte Pays de la Loire (LE MANS)', location: 'Section localisation' },
-      { id: 'evron_infra_1', label: 'Pays de la Loire Infra 1', location: 'Galerie infrastructures' },
-      { id: 'evron_infra_2', label: 'Pays de la Loire Infra 2', location: 'Galerie infrastructures' },
-      { id: 'evron_infra_3', label: 'Pays de la Loire Infra 3', location: 'Galerie infrastructures' },
-      { id: 'evron_infra_4', label: 'Pays de la Loire Infra 4', location: 'Galerie infrastructures' },
-      { id: 'evron_infra_5', label: 'Pays de la Loire Infra 5', location: 'Galerie infrastructures' },
-      { id: 'evron_infra_6', label: 'Pays de la Loire Infra 6', location: 'Galerie infrastructures' },
-      
       { id: 'campus_bazeille', label: 'Hero Aquitaine (BORDEAUX)', location: 'Haut de page Aquitaine' },
       { id: 'bazeille_map', label: 'Carte Aquitaine (BORDEAUX)', location: 'Section localisation' },
       { id: 'bazeille_infra_1', label: 'Aquitaine Infra 1', location: 'Galerie infrastructures' },
@@ -182,7 +173,7 @@ export default function AdminPage() {
 
   useEffect(() => {
     if (settings) {
-      setSchoolName(settings.schoolName || '');
+      setSchoolName(settings.schoolName || 'ESEPE');
       setLogoUrl(settings.logoUrl || '');
       setImages(settings.images || {});
     }
@@ -208,7 +199,7 @@ export default function AdminPage() {
     setIsSaving(true);
     const settingsRef = doc(db, 'settings', 'global');
     const updateData = {
-      schoolName: schoolName.trim() || 'Institution ESEPF',
+      schoolName: schoolName.trim() || 'ESEPE',
       logoUrl: logoUrl.trim(),
       images: images,
       updatedAt: serverTimestamp()
@@ -273,7 +264,7 @@ export default function AdminPage() {
         <Card className="w-full max-w-md rounded-3xl shadow-2xl border-none">
           <CardHeader className="text-center">
             <Lock size={48} className="mx-auto text-primary mb-4" />
-            <CardTitle>Administration ESEPF</CardTitle>
+            <CardTitle>Administration ESEPE</CardTitle>
             <CardDescription>Entrez le code pour accéder à la gestion du site</CardDescription>
           </CardHeader>
           <CardContent>

@@ -17,7 +17,7 @@ export function Footer() {
   const settings = clientSettings || serverSettings;
   const { t } = useTranslation();
   
-  const schoolName = settings?.schoolName || "ESEPF";
+  const schoolName = settings?.schoolName || "ESEPE";
   const logoUrl = settings?.logoUrl;
   const [currentYear, setCurrentYear] = useState<number | null>(null);
 
@@ -52,7 +52,6 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-headline font-bold mb-6 uppercase tracking-widest text-secondary">{t.footer.campus}</h4>
             <ul className="space-y-4">
-              <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/evron">Campus Pays de la Loire (Le Mans)</Link></li>
               <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/sainte-bazeille">Campus Aquitaine (Bordeaux)</Link></li>
               <li className="text-white/70 hover:text-secondary transition-colors text-sm"><Link href="/campus/sainte-tulle">Campus Provence (Aix en Provence)</Link></li>
             </ul>

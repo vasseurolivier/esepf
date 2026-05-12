@@ -21,13 +21,6 @@ export function Campuses() {
   
   const campuses = [
     {
-      id: "evron",
-      name: t.registration.campuses.evron,
-      location: t.campus_locations.evron,
-      image: settings?.images?.campus_evron,
-      href: "/campus/evron"
-    },
-    {
       id: "sainte-bazeille",
       name: t.registration.campuses.bazeille,
       location: t.campus_locations.bazeille,
@@ -54,7 +47,7 @@ export function Campuses() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-4xl mx-auto">
           {campuses.map((campus, idx) => (
             <ScrollReveal key={idx} delay={idx * 150}>
               <Link href={campus.href} className="group relative block overflow-hidden rounded-[2.5rem] shadow-lg hover:shadow-2xl transition-all duration-500 bg-black border border-white h-[400px] md:h-auto">

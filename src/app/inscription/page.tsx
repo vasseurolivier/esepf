@@ -374,7 +374,6 @@ export default function RegistrationPage() {
                               <SelectValue placeholder={t.common.select_placeholder} />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="evron">{t.registration.campuses.evron}</SelectItem>
                               <SelectItem value="bazeille">{t.registration.campuses.bazeille}</SelectItem>
                               <SelectItem value="tulle">{t.registration.campuses.tulle}</SelectItem>
                             </SelectContent>

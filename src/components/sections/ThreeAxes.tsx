@@ -19,7 +19,7 @@ export function ThreeAxes() {
   const { t } = useTranslation();
   
   const logoUrl = settings?.logoUrl;
-  const schoolName = settings?.schoolName || (settingsLoading && !serverSettings ? "" : "ESEPF");
+  const schoolName = settings?.schoolName || (settingsLoading && !serverSettings ? "" : "ESEPE");
 
   return (
     <section className="py-24 md:py-32 bg-white overflow-hidden">
