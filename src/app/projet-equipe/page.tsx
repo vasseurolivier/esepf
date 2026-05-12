@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -129,31 +128,23 @@ export default function TeamPage() {
               ))}
             </div>
             
-            <div className="mt-40 max-w-5xl mx-auto bg-primary rounded-[4rem] p-12 lg:p-20 text-white shadow-2xl relative overflow-hidden">
+            <div className="mt-40 max-w-4xl mx-auto bg-primary rounded-[4rem] p-12 lg:p-20 text-white shadow-2xl relative overflow-hidden">
                <div className="absolute top-0 right-0 opacity-10 -translate-y-1/4 translate-x-1/4">
                  <GraduationCap size={400} />
                </div>
-               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+               <div className="relative z-10 text-center space-y-8">
                   <ScrollReveal className="space-y-6">
                     <h3 className="text-4xl font-headline font-bold leading-tight">
                        {t.team_page.staff_title}
                     </h3>
-                    <p className="text-lg text-white/70 leading-relaxed">
+                    <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
                       {t.team_page.staff_desc}
                     </p>
-                    <div className="flex gap-4">
+                    <div className="flex justify-center gap-4">
                       <div className="bg-secondary p-4 rounded-2xl font-bold uppercase tracking-widest text-xs">{t.team_page.agreges}</div>
-                      <div className="bg-white/10 p-4 rounded-2xl font-bold uppercase tracking-widest text-xs border border-white/20">{t.team_page.uefa_pro}</div>
+                      <div className="bg-white/10 p-4 rounded-2xl font-bold uppercase tracking-widest text-xs border border-white/20">{t.team_page.uefa}</div>
                     </div>
                   </ScrollReveal>
-                  <div className="grid grid-cols-2 gap-6">
-                     {[1,2,3,4].map(i => (
-                        <div key={i} className="bg-white/5 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/10 flex flex-col items-center justify-center group hover:bg-white/10 transition-colors">
-                           <ShieldCheck size={40} className="text-secondary mb-4 group-hover:scale-110 transition-transform" />
-                           <span className="text-[10px] font-bold uppercase text-white tracking-[0.2em] text-center">{t.team_page.official_label}</span>
-                        </div>
-                     ))}
-                  </div>
                </div>
             </div>
           </div>
