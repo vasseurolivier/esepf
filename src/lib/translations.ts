@@ -378,7 +378,7 @@ export const translations = {
     recognition_page: {
       title: "Reconnaissance & Accréditations",
       hero_title: "ESEPE",
-      hero_subtitle: "Une école reconnue par le Ministère Français de l'Éducation Nationale",
+      hero_subtitle: "Une École Reconnue par le Ministère Français de l'Éducation Nationale",
       hero_text: "Notre établissement bénéficie d’une reconnaissance officielle du Ministère Français de l’Éducation Nationale.",
       diploma_title: "Diplômes Nationaux Français",
       diploma_text_1: "Nous préparons nos élèves aux Diplômes Nationaux Français (DNB, Baccalauréat).",
@@ -525,7 +525,7 @@ export const translations = {
       prog_title: "Programme de football",
       prog_intro_1: "Notre école est un centre de formation de football qui offre à ses athlètes un programme complet et structuré, inspiré des meilleures méthodes de formation Françaises.",
       prog_intro_2: "Nous préparons nos joueurs et athlètes à atteindre leurs objectifs, qu'ils soient de haut niveau ou personnels. Grâce à un entraînement rigoureux, des compétitions et un suivi personnalisé, chaque élève progresse sur les plans technique, tactique et physique.",
-      prog_intro_3: "Nous mettons également un accent particulier sur le développement mental et humain des athlètes, en les formant à gérer les défis psychologiques du sport de haut niveau. L'esprit d'équipe, la discipline, la résilience et la gestion des émotions sont au cœur de notre approche. Chaque athlète bénéficie d'un encadrement qui lui permet de s'épanouir et de donner le meilleur de lui-même.",
+      prog_intro_3: "Nous metttons également un accent particulier sur le développement mental et humain des athlètes, en les formant à gérer les défis psychologiques du sport de haut niveau. L'esprit d'équipe, la discipline, la résilience et la gestion des émotions sont au cœur de notre approche. Chaque athlète bénéficie d'un encadrement qui lui permet de s'épanouir et de donner le meilleur de lui-même.",
       prog_intro_4: "Notre école donne à ses athlètes la chance d'atteindre leurs objectifs, de s'épanouir et, pour les meilleurs d'entre eux, d'aspirer à devenir des athlètes professionnels ou d'obtenir des bourses grâce à leurs performances sportives.",
       france_title: "FRANCE : TERRE DE FOOTBALL",
       france_desc_full: "Au total, la France est le pays qui a fourni le plus grand nombre de joueurs pour la Coupe du Monde au 21e siècle, avec 216 participants nés sur son sol, loin devant le Brésil et ses 148 joueurs, pourtant souvent perçu comme le plus grand exportateur de talents. France devance également largement l'Allemagne et l'Italie, tous deux champions du monde à quatre reprises.",
@@ -725,7 +725,7 @@ export const translations = {
       tulle_hero: "Campus Provence",
       tulle_sub: "L'excellence au cœur de la Provence.",
       tulle_title: "Le charme et le soleil des Alpes-de-Haute-Provence",
-      tulle_desc: "Notre site de Provence (04) vous ouvre ses portes au cœur de la Provence pour vos séminaires et formations.\nNous mettons à votre disposition des salles de formation climatisées et lumineuses, un terrain de sport polyvalent, ainsi qu'un espace de détente propice à la convivialité.\nL'hébergement et la restauration sont assurés sur place pour une immersion totale et sans contrainte.",
+      tulle_desc: "Notre site de Provence (04) vous ouvre ses portes au cœur de la Provence pour vos séminaires et formations.\nNous metttons à votre disposition des salles de formation climatisées et lumineuses, un terrain de sport polyvalent, ainsi qu'un espace de détente propice à la convivialité.\nL'hébergement et la restauration sont assurés sur place pour une immersion totale et sans contrainte.",
       tulle_sport: "Une Ville Sportive",
       tulle_sport_desc: "Le secteur du campus Provence bénéficie d'un climat exceptionnel toute l'année, idéal pour la pratique sportive intensive en plein air.",
       tulle_infra_desc: "Le Campus Provence privilégie une approche humaine et individualisée de l'enseignement.",
@@ -1904,7 +1904,7 @@ export const translations = {
       bac_americain_title: "美国高中双文凭",
       bac_americain_sub: "双文凭：同时获得两个高中毕业证书。",
       high_school_diploma: "美国高中毕业证书",
-      high_school_desc: "得益于我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程. 他们因此同时获得法国高中毕业证书与美国高中毕业证书。",
+      high_school_desc: "得益キュ我们的独家合作伙伴关系，我们的学生可以在学习法国课程的同时修读美国数字课程. 他们因此同时获得法国高中毕业证书与美国高中毕业证书。",
       dual_diploma_official: "官方双学位",
       international_recognition: "国际认可",
       why_choose_title: "为什么选择这个路径？",
@@ -2224,7 +2224,7 @@ export const translations = {
       axes_social_social_title: "社会跟踪",
       axes_social_social_desc: "年轻学员与周围世界保持联系至关重要. 为此，我们采取了多项措施，确保球员在足球之外保持社交关系（家人、朋友、培训、教育等）。",
       axes_social_psych_title: "心理跟踪",
-      axes_social_psych_desc: "高水平 sport 要求强大的意志力，因此 we 为球员提供所有必要的支持，帮助 them 全面发展. 这让 they 能够自由表达，预防任何心理不适或其他问题。",
+      axes_social_psych_desc: "高水平 sport 要求强大的意志力，因此 we 为球员提供所有必要的支持，帮助 them 全面发展. 这让 they 能够自由表达，预防 any 心理不适或其他问题。",
       coaches_title: "资深认证教练",
       coaches_text: "教练均毕业于 FFF 或 UEFA (Pro, A, B, C)，提供高水平指导。",
       coaches_list_1: "欧足联 / A / B / C 级教练文凭",
@@ -2324,7 +2324,7 @@ export const translations = {
         { time: "20:00 - 21:30", activity: "研究和安静时间" }
       ]
     },
-    forward_reseau_page: {
+    reseau_page: {
       title: "一个学校一个俱乐部网络",
       p1: "得益于 we 多年来在法国职业足球领域建立的深厚网络，we 为最优秀的球员提供独特的机会，展示 their 全部能力. 该网络由法国和欧洲的知名俱乐部组成，允许 them 参加试训、友谊赛或其他体育赛事. They 将因此有机会被发掘，如果被选中，将进入适合 they 向最高水平发展的体系。",
       subtitle: "一个提供机遇的俱乐部网络..."
@@ -2409,7 +2409,7 @@ export const translations = {
       tulle_infra_desc: "普罗旺斯校区主张人性化和个性化的教学方法。",
       tulle_full_desc: {
         title: "体育学习声望与抱负学校",
-        intro: "我们的机构是一所追求卓越的机构，在特殊的环境中体验学术和体育的圆满. 我们的现代化和完整的设施旨在为每个学生提供一个有利于成功、体育实践和日常福祉的环境。",
+        intro: "我们的机构是一所追求卓越的机构，在特殊的环境中体验学术和体育的圆满. 我们的现代化 and 完整的设施旨在为每个学生提供一个有利于成功、体育实践 and 日常福祉的环境。",
         housing_title: "住宿和居住生活",
         housing_desc: "我们的寄宿学校宽敞且安全，提供友好且受监督的生活环境。",
         dining_title: "餐饮和休闲",
