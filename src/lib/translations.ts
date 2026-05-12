@@ -366,7 +366,7 @@ export const translations = {
       innovation_title: "Innovation",
       innovation_desc: "Des méthodes pédagogiques modernes et adaptées.",
       agreges: "Agrégés",
-      uefa_pro: "UEFA Pro",
+      uefa_pro: "UEFA",
       official_label: "Label Officiel État",
       member1_name: "Direction",
       member1_role: "Responsable Académique",
@@ -550,7 +550,7 @@ export const translations = {
       axes_social_psych_desc: "Le sport de haut niveau exige une grande force mentale, c'est pourquoi nous offrons à nos joueurs tout le soutien nécessaire à leur épanouissement. Cela leur permet de s'exprimer librement et de prévenir tout mal-être ou autre problème.",
       coaches_title: "NOS COACHS CERTIFIÉS",
       coaches_text: "Nos coachs sont tous diplômés de la FFF ou de l'UEFA (Pro, A, B, C), garantissant une expertise pédagogique et sportive de haut niveau pour un encadrement professionnel quotidien.",
-      coaches_list_1: "Diplômes UEFA Pro / A / B / C",
+      coaches_list_1: "Diplômes UEFA / A / B / C",
       coaches_list_2: "Analyse Vidéo & Mental",
       coaches_list_3: "Préparation Physique & Athlétique",
       weekly_title: "PROGRAMME HEBDOMADAIRE",
@@ -647,7 +647,7 @@ export const translations = {
         { time: "20:00 - 21:30", activity: "Étude et temps calme" }
       ]
     },
-    reseau_page: {
+    forward_reseau_page: {
       title: "Un Réseau de Clubs pour Révéler Nos Talents",
       p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, nous offrons à nos meilleurs joueurs des opportunités uniques de montrer l'étendue de leurs capacités. Ce réseau, composé de clubs prestigieux français et européens, leur permet de participer à des essais, des matchs amicaux ou d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptés à leur progression vers le plus haut niveau.",
       subtitle: "Un Réseau de Clubs pour offrir des opportunités..."
@@ -674,7 +674,7 @@ export const translations = {
       fundamental_concept: "Le Concept Fondamental",
       horizon_title: "Horizon & Opportunités",
       horizon_sub: "Trois voies d'excellence s'ouvrent à nos diplômés.",
-      ready_build_future: "Prêt à construire votre avenir ?",
+      ready_build_future: "Ready build your future?",
       interview_desc: "Chaque parcours est unique. Nos tuteurs académiques et nos directeurs sportifs vous accompagnent individuellement pour définir la trajectoire la plus adaptée à vos ambitions.",
       ask_interview: "Demander un entretien"
     },
@@ -1212,7 +1212,7 @@ export const translations = {
       innovation_title: "Innovation",
       innovation_desc: "Modern and adapted pedagogical methods.",
       agreges: "Agrégés",
-      uefa_pro: "UEFA Pro",
+      uefa_pro: "UEFA",
       official_label: "Official State Label",
       member1_name: "Management",
       member1_role: "Academic Manager",
@@ -1390,7 +1390,7 @@ export const translations = {
       axes_social_psych_desc: "High-level sport requires great mental strength, which is why we offer our players all the support necessary for their fulfillment. This allows them to express themselves freely and prevent any malaise or other problem.",
       coaches_title: "OUR CERTIFIED COACHES",
       coaches_text: "OUR certified coaches are all graduated from FFF or UEFA (Pro, A, B, C), ensuring high-level expertise for daily professional guidance.",
-      coaches_list_1: "UEFA Pro / A / B / C Diplomas",
+      coaches_list_1: "UEFA / A / B / C Diplomas",
       coaches_list_2: "Video Analysis & Mental",
       coaches_list_3: "Physical & Athletic Preparation",
       weekly_title: "WEEKLY PROGRAM",
@@ -1514,7 +1514,7 @@ export const translations = {
       fundamental_concept: "The Fundamental Concept",
       horizon_title: "Horizon & Opportunities",
       horizon_sub: "Three excellence paths open to our graduates.",
-      ready_build_future: "Ready to build your future?",
+      ready_build_future: "Ready build your future?",
       interview_desc: "Every journey is unique. Our academic tutors and sporting directors support you individually to define the trajectory best suited to your ambitions.",
       ask_interview: "Request an interview"
     },
@@ -1841,7 +1841,7 @@ export const translations = {
       championships: "法国官方锦标赛",
       elite_prog: "精英足球计划",
       languages_title: "外语培训",
-      languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法语母语学生或者希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解和个人进步. 教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功和国际化开放。",
+      languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持非法语母语学生或者希望完善其水平的学生。\n课程以小组形式组织，以鼓励口语参与、理解 and 个人进步. 教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功和国际化开放。",
       fle_link: "法语对外汉语 (FLE)",
       efl_link: "英语对外汉语 (EFL)"
     },
@@ -2052,7 +2052,7 @@ export const translations = {
       innovation_title: "创新",
       innovation_desc: "现代且适配的教学方法。",
       agreges: "高级教师",
-      uefa_pro: "欧足联职业",
+      uefa_pro: "欧足联",
       official_label: "官方国家标签",
       member1_name: "管理层",
       member1_role: "学术负责人",
@@ -2230,7 +2230,7 @@ export const translations = {
       axes_social_psych_desc: "高水平 sport 要求强大的意志力，因此我们为球员提供所有必要的支持，帮助他们全面发展. 这让他们能够自由表达，预防任何心理不适或其他问题。",
       coaches_title: "资深认证教练",
       coaches_text: "教练均毕业于 FFF 或 UEFA (Pro, A, B, C)，提供高水平指导。",
-      coaches_list_1: "欧足联职业 / A / B / C 级教练文凭",
+      coaches_list_1: "欧足联 / A / B / C 级教练文凭",
       coaches_list_2: "视频分析与心理素质",
       coaches_list_3: "体能与运动素质准备",
       weekly_title: "每周计划",
@@ -2327,8 +2327,8 @@ export const translations = {
         { time: "20:00 - 21:30", activity: "研究和安静时间" }
       ]
     },
-    reseau_page: {
-      title: "俱乐部网络展示才华",
+    forward_reseau_page: {
+      title: "一所学校一个俱乐部网络",
       p1: "得益于我们多年来在法国职业足球领域建立的深厚网络，我们为最优秀的球员提供独特的机会，展示他们的全部能力. 该网络由法国和欧洲的知名俱乐部组成，允许他们参加试训、友谊赛或其他体育赛事. 他们将因此有机会被发掘，如果被选中，将进入适合他们向最高水平发展的体系。",
       subtitle: "一个提供机遇的俱乐部网络..."
     },
@@ -2354,7 +2354,7 @@ export const translations = {
       fundamental_concept: "基本概念",
       horizon_title: "愿景和机遇",
       horizon_sub: "三大卓越路径。",
-      ready_build_future: "准备建立未来？",
+      ready_build_future: "Ready build your future?",
       interview_desc: "每个路径都是独特的. 我们的学术导师和体育总监会为您提供个性化的支持，以确定最适合您愿景的轨迹。",
       ask_interview: "索取面试"
     },
