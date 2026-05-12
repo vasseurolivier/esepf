@@ -20,7 +20,7 @@ export function FootballAcademy() {
   const settings = clientSettings || serverSettings;
   const { t } = useTranslation();
   
-  const schoolName = settings?.schoolName || "ESEPF";
+  const schoolName = settings?.schoolName || "ESEPE";
   const footballImgUrl = settings?.images?.football_academy;
 
   const academyFeatures = useMemo(() => {

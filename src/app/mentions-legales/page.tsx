@@ -43,7 +43,7 @@ export default function MentionsLegalesPage() {
                   <p className="font-bold text-primary mb-2">ESEPE - École Sport-Études Performance & Excellence</p>
                   <p>Association loi 1901 / Organisme de formation</p>
                   <p>Directeur de la publication : Direction Générale ESEPE</p>
-                  <p>Email : contact@esepf.fr</p>
+                  <p>Email : contact@esepe.fr</p>
                 </div>
               </ScrollReveal>
 
@@ -70,7 +70,7 @@ export default function MentionsLegalesPage() {
                 <div className="p-8 bg-muted/30 rounded-3xl border border-muted text-lg leading-relaxed space-y-4">
                   <p>
                     {language === 'zh' 
-                      ? "本网站及其所有内容（文字、图片、视频、标志）均为 ESEPE 的专有财产。未经事先书面许可，严禁任何形式的复制、修改或传播。"
+                      ? "本网站及其所有内容（文字、图片、视频、标志）均为 ESEPE 的专有财产。未经事先书面许可，严禁任何形式的复制、修改 or 传播。"
                       : "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques."}
                   </p>
                   <p>

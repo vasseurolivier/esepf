@@ -81,17 +81,17 @@ export default function ContactPage() {
     {
       title: t.contact_page.campus_evron,
       phone: t.contact_page.phone_wechat,
-      email: "contact@esepf.fr"
+      email: "contact@esepe.fr"
     },
     {
       title: t.contact_page.campus_bazeille,
       phone: t.contact_page.phone_wechat,
-      email: "contact@esepf.fr"
+      email: "contact@esepe.fr"
     },
     {
       title: t.contact_page.campus_tulle,
       phone: t.contact_page.phone_wechat,
-      email: "contact@esepf.fr"
+      email: "contact@esepe.fr"
     }
   ];
 

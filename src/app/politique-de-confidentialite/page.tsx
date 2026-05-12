@@ -90,7 +90,7 @@ export default function PrivacyPolicyPage() {
                   <p className="font-bold text-primary">
                     Pour exercer vos droits, contactez notre délégué à la protection des données :
                   </p>
-                  <p className="mt-2 text-secondary font-bold">privacy@esepf-academy.fr</p>
+                  <p className="mt-2 text-secondary font-bold">privacy@esepe.fr</p>
                 </div>
               </ScrollReveal>
 
