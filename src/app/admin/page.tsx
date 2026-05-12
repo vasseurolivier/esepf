@@ -327,24 +327,51 @@ export default function AdminPage() {
             </TabsList>
 
             <TabsContent value="config" className="space-y-8">
-              <Card className="rounded-[2rem] overflow-hidden shadow-xl border-none">
+              {/* LOGO AND BRANDING SECTION - HIGHLIGHTED */}
+              <Card className="rounded-[2rem] overflow-hidden shadow-2xl border-4 border-secondary/20">
                 <CardHeader className="bg-primary text-white p-6">
-                  <CardTitle className="flex items-center gap-2"><Globe size={20} /> Identité Visuelle</CardTitle>
+                  <CardTitle className="flex items-center gap-2"><Globe size={24} /> Identité & Logo du Site</CardTitle>
+                  <CardDescription className="text-white/60">Configurez ici le nom et le logo principal qui apparaissent dans l'en-tête et le pied de page.</CardDescription>
                 </CardHeader>
-                <CardContent className="p-8 space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-4">
-                      <div>
-                        <Label className="font-bold">Nom de l'Etablissement</Label>
-                        <Input value={schoolName} onChange={(e) => setSchoolName(e.target.value)} className="mt-1 rounded-xl" />
+                <CardContent className="p-8 space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="space-y-6">
+                      <div className="p-4 bg-muted/20 rounded-2xl border border-muted">
+                        <Label className="font-black text-xs uppercase tracking-widest text-primary mb-2 block">1. Nom de l'Établissement</Label>
+                        <Input 
+                          value={schoolName} 
+                          onChange={(e) => setSchoolName(e.target.value)} 
+                          className="mt-1 rounded-xl h-12 text-lg font-bold border-muted-foreground/20"
+                          placeholder="Ex: ESEPE"
+                        />
+                        <p className="text-[10px] text-muted-foreground mt-2 italic">Ce nom s'affiche à côté du logo et dans les textes automatiques.</p>
                       </div>
-                      <div>
-                        <Label className="font-bold">URL du Logo Principal</Label>
-                        <Input value={logoUrl} onChange={(e) => setLogoUrl(e.target.value)} placeholder="https://..." className="mt-1 rounded-xl" />
+
+                      <div className="p-4 bg-muted/20 rounded-2xl border border-muted">
+                        <Label className="font-black text-xs uppercase tracking-widest text-primary mb-2 block">2. URL du Logo Principal (PNG recommandé)</Label>
+                        <Input 
+                          value={logoUrl} 
+                          onChange={(e) => setLogoUrl(e.target.value)} 
+                          placeholder="https://votre-image.png" 
+                          className="mt-1 rounded-xl h-12 border-muted-foreground/20"
+                        />
+                        <p className="text-[10px] text-muted-foreground mt-2 italic">Collez ici l'adresse Web de votre logo. Préférez un format transparent.</p>
                       </div>
                     </div>
-                    <div className="bg-white rounded-2xl flex items-center justify-center p-4 border-2 border-dashed border-muted min-h-32 shadow-inner">
-                      {logoUrl ? <img src={logoUrl} alt="Logo" className="max-h-24 object-contain" /> : <ImageIcon size={48} className="text-muted" />}
+
+                    <div className="flex flex-col items-center justify-center gap-4">
+                      <Label className="font-black text-xs uppercase tracking-widest text-muted-foreground">Aperçu du Logo</Label>
+                      <div className="w-full h-48 bg-white rounded-[2rem] flex items-center justify-center p-8 border-4 border-dashed border-muted shadow-inner group relative overflow-hidden">
+                        {logoUrl ? (
+                          <img src={logoUrl} alt="Aperçu Logo" className="max-h-full max-w-full object-contain drop-shadow-md" />
+                        ) : (
+                          <div className="text-center space-y-2 text-muted">
+                            <ImageIcon size={64} className="mx-auto opacity-20" />
+                            <p className="text-xs font-bold uppercase tracking-widest">Aucun logo défini</p>
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                      </div>
                     </div>
                   </div>
                 </CardContent>
