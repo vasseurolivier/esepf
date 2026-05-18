@@ -414,7 +414,7 @@ export const translations = {
       age_label: "11 - 15 ANS",
       p1: "Nous ouvrons les portes de notre Collège Sport-Études aux élèves de 11 à 14 ans.",
       p2: "À l'issue de leurs quatre années de Collège, ils pourront accéder à nos programmes Lycée.",
-      p3: "Ce Collège enrichit notre offre de formation et accompagne les jeunes vers l'excellence.",
+      p3: "Ce Collège enrichit notre offer de formation et accompagne les jeunes vers l'excellence.",
       prog_title: "Notre programme s'étend sur quatre années :",
       year1_title: "Année 1 : Classe d'intégration ou 6ème",
       year1_desc: "Le programme proposé leur permettra d'acquérir une maîtrise solide de la langue française (FLE pour les élèves étrangers) tout en suivant les fondamentaux académiques.",
@@ -535,7 +535,7 @@ export const translations = {
       axes_tech: "Technique",
       axes_tech_desc: "La maîtrise technique est le foundation de notre pédagogie. Nous travaillons sur la finesse du toucher de balle, la précision des transmissions, et la capacité à exécuter des gestes techniques justes sous une pression temporelle et spatiale intense. L'objectif est de transformer chaque joueur en un technicien capable de résoudre les problèmes complexes posés par l'adversaire.",
       axes_tact: "Tactique",
-      axes_tact_desc: "Le football moderne exige une intelligence de jeu supérieure. Nous enseignons la lecture des situations, le placement stratégique et la compréhension profonde des systèmes de jeu. Nos séances mettent l'accent sur les transitions rapides, l'animation offensive coordonnée et la solidarité défensive, permettant aux joueurs de devenir de véritables stratèges sur le terrain.",
+      axes_tact_desc: "Le football moderne exige une intelligence de jeu supérieure. Nous enseignons la lecture des situations, le placement stratégique and la compréhension profonde des systèmes de jeu. Nos séances mettent l'accent sur les transitions rapides, l'animation offensive coordonnée et la solidarité défensive, permettant aux joueurs de devenir de véritables stratèges sur le terrain.",
       axes_phys: "Physique",
       axes_phys_desc: "Le développement athlétique est mené avec une rigueur scientifique. Nous forgeons des athlètes puissants, rapides et endurants grâce à un programme de préparation physique adapté à chaque tranche d'âge. La prévention des blessures, l'explosivité et l'optimisation de la récupération sont au cœur de notre suivi pour garantir une performance durable au plus haut niveau.",
       axes_ment: "Mental",
@@ -605,10 +605,10 @@ export const translations = {
       }
     },
     metiers_page: {
-      title: "UNE FORMATION AUX MÉTIERS DU SPORT",
+      title: "PRÉPARATION AUX MÉTIERS DU SPORT",
       optional: "(OPTIONNEL)",
-      desc: "L'ESEPE propose plusieurs formations spécialisées dans les métiers du sport, offrant ainsi à nos élèves la possibilité de se préparer à divers parcours professionnels dans ce secteur. Ces formations leur permettent d'acquérir des compétences pratiques et théoriques, adaptés aux exigences de différents domaines du sport. Elles ouvrent ainsi la voie à des carrières diversifiées, en offrant aux étudiants une large gamme d'opportunités dans des secteurs en pleine expansion.",
-      subtitle: "NOS FORMATIONS COMPLÉMENTAIRES",
+      desc: "L'ESEPE accompagne ses élèves dans la préparation aux concours et certifications des métiers du sport. Ce programme spécifique permet d'acquérir les bases pratiques et théoriques nécessaires pour intégrer avec succès les filières spécialisées (Coach, Arbitre, BPJEPS, Agent, Analyste). Nous préparons nos athlètes pour qu'ils possèdent toutes les compétences requises afin de réussir leurs futures formations et certifications professionnelles.",
+      subtitle: "NOS PRÉPARATIONS COMPLÉMENTAIRES",
       cta: "Pour plus de détails, contactez-nous",
       jobs: {
         bpjeps: "BPJEPS",
@@ -1444,10 +1444,10 @@ export const translations = {
       }
     },
     metiers_page: {
-      title: "SPORT CAREERS TRAINING",
+      title: "SPORT CAREERS PREPARATION",
       optional: "(OPTIONAL)",
-      desc: "ESEPE offers several specialized formations in sports careers, offering our students the possibility to prepare for various professional paths. These formations allow them to acquire practical and theoretical skills, adapted to the requirements of different sports fields. They thus open the way to diversified careers, offering students a wide range of opportunities in growing sectors.",
-      subtitle: "OUR ADDITIONAL TRAINING",
+      desc: "ESEPE accompanies its students in the preparation for exams and certifications of sport careers. This specific program allows to acquire the practical and theoretical bases necessary to successfully integrate specialized branches (Coach, Referee, BPJEPS, Agent, Analyst). We prepare our athletes so that they possess all the required skills to succeed in their future professional training and certifications.",
+      subtitle: "OUR ADDITIONAL PREPARATION",
       cta: "For more details, contact us",
       jobs: {
         bpjeps: "BPJEPS",
@@ -2283,13 +2283,13 @@ export const translations = {
       }
     },
     metiers_page: {
-      title: "体育职业培训",
+      title: "体育职业准备课程",
       optional: "(可选)",
-      desc: "ESEPE 提供体育职业专业培训，为多元化的职业生涯开辟道路。",
-      subtitle: "我们的补充培训",
+      desc: "ESEPE 助力学生准备体育职业相关的考试与认证. 该计划旨在帮助学生掌握报考专业领域（如教练、裁判、BPJEPS、经纪人等）所需的实战与理论基础. 我们为运动员提供全方位支持，确保他们具备成功通过未来职业培训与资格认证所需的各项技能。",
+      subtitle: "我们的准备课程",
       cta: "了解详情，请联系我们",
       jobs: {
-        bpjeps: "BPJEPS 证书",
+        bpjeps: "BPJEPS",
         coach: "教练员",
         agent: "FIFA 经纪人",
         referee: "裁判员",
@@ -2422,7 +2422,7 @@ export const translations = {
         sports_intro: "ESEPE 受益于一个独特的领域，致力于体育实践和户外逃生：",
         sports_item1: "足球场",
         sports_item2: "网球场",
-        sports_item3: "橄榄球场",
+        sports_item3: "橄垒球场",
         sports_item4: "体育馆",
         sports_item5: "游泳池",
         sports_item6: "健身房",
