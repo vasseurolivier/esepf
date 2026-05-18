@@ -309,7 +309,7 @@ export const translations = {
       performance_school: "Scolarité adaptée",
       performance_phys: "Préparation Physique",
       official_title: "Fédéral & Officiel",
-      official_subtitle: "Un accès privilégié à l'élite régionale et Nationale",
+      official_subtitle: "Un accès privilégié à l'élite Régionale et Nationale",
       quote: "Affronter les meilleures équipes Françaises pour forger le caractère et l'excellence technique.",
       hexagonal_title: "La réalité du football hexagonal"
     },
@@ -622,7 +622,7 @@ export const translations = {
       title1: "QU'EST-CE QUE LE SPORT-ÉTUDES ?",
       label1_1: "Pratique d'un sport quotidien",
       label1_2: "Scolarité aménagée",
-      text1: "Un sport-études est un programme éducatif qui permet aux jeunes de concilier leur parcours scolaire avec une pratique sportive intensive. Conçu pour répondre aux besoins des athlètes en formation, il offre un emploi du temps aménagé qui allie cours académiques et entraînements réguliers. Ce dispositif vise à accompagner les élèves dans leur double projet, en favorisant leur réussite scolaire tout en leur permettant de progresser et d'exceller dans leur discipline sportive.",
+      text1: "Un sport-études est un programme éducatif qui permet aux jeunes de concilier leur parcours scolaire avec une pratique sportive intensive. Conçu pour répondre aux besoins des athlètes en formation, it offre un emploi du temps aménagé qui allie cours académiques et entraînements réguliers. Ce dispositif vise à accompagner les élèves dans leur double projet, en favorisant leur réussite scolaire tout en leur permettant de progresser et d'exceller dans leur discipline sportive.",
       title2: "QUELS SONT LES SPORTS DISPONIBLES ?",
       label2_1: "Football",
       label2_2: "Basketball",
@@ -1154,7 +1154,7 @@ export const translations = {
       performance_school: "Academic Follow-up",
       performance_phys: "Physical Preparation",
       official_title: "Federal & Official",
-      official_subtitle: "Privileged access to regional and national elite",
+      official_subtitle: "Privileged access to Regional and National elite",
       quote: "Face the best French teams to build character and technical excellence.",
       hexagonal_title: "The reality of hexagonal football"
     },
@@ -1703,7 +1703,7 @@ export const translations = {
       langues: "外语培训",
       bac_americain: "美国高中双文凭",
       prog_foot: "足球计划",
-      comp_off: "官方锦标赛",
+      comp_off: "官方锦办赛",
       sport_etudes: "什么是体育学习？",
       parcours: "学生发展蓝图",
       accomp: "身心支持",
@@ -1836,7 +1836,7 @@ export const translations = {
       lycee_link: "高中 (15 - 18 岁)",
       academy_title: "足球学院",
       academy_desc: "足球学院提供了一个精英法国培训计划，旨在培养全面的球员，使其能够在最高水平上发展，同时符合法国足球的要求. 课程结构合理，由具备资质且经验丰富的教练授课。\n凭借其地位和合作伙伴关系，学院允许球员参加法国官方比赛，从而提供了一个公认且具有教育意义的竞争环境。\n目标是为每位球员提供进步、被发掘并长期致力于高水平项目的最佳工具。",
-      championships: "法国官方锦标赛",
+      championships: "法国官方锦办赛",
       elite_prog: "精英足球计划",
       languages_title: "外语培训",
       languages_desc: "我们的机构提供强化的法语对外汉语（FLE）和英语对外汉语（EFL）培训，以最好地支持 non-French speaking students or those wishing to perfect their level。\nClasses are organized in small groups to encourage oral participation, understanding, and individual progress。教师根据每个学生的需求调整教材，从语法、词汇到具体的交流场景。\n这种强化方法促进了学校融合、考试成功和国际化开放。",
@@ -1977,13 +1977,13 @@ export const translations = {
       }
     },
     competition_page: {
-      title: "法国足球锦标赛",
+      title: "法国足球锦办赛",
       hero_sub: "体验官方比赛的激情，释放潜能。",
-      p1: "得益于 we 与当地俱乐部的合作，我们的体育学习足球部门球员享有参加法国官方比赛的特权. 这种开放使他们能够参加公认的锦标赛，面对高水平球队，并体验结构化的竞争环境。",
+      p1: "得益于 we 与当地俱乐部的合作，我们的体育学习足球部门球员享有参加法国官方比赛的特权. 这种开放使他们能够参加公认的锦办赛，面对高水平球队，并体验结构化的竞争环境。",
       p2: "官方比赛每个周末举行，为年轻足球运动员提供持续的进步，并有机会面对法国足球的现实. 该机制有利于选拔、技能提升与进入高水平体系。",
       p3: "教练与管理人员密切监控球员的准备情况，根据比赛要求调整训练计划. 目标是让每位球员在球场上充分表达自己，发挥潜能并建立雄心勃勃的道路，同时享受合适的学术支持。",
       card_clubs: "特权访问",
-      card_clubs_desc: "公认的锦标赛与高水平球队。",
+      card_clubs_desc: "公认的锦办赛与高水平球队。",
       card_weekend: "周末比赛",
       card_weekend_desc: "定期比赛，确保持续进步。",
       card_detection: "选拔与精英",
@@ -2026,7 +2026,7 @@ export const translations = {
         {
           year: "2024",
           title: "YES 学院\n扩展至多项运动\n及东南亚",
-          desc: "创立自主品牌 \"YES Academy\"。\n签约新的国际学校。\n开设多项运动分支。\n在亚洲其他城市启动学院。\n受邀参加上海国际青少年锦标赛：\n2025 - 马赛 - U17 国家队\n2026 - 巴黎 FC 女足 - U16 / U17"
+          desc: "创立自主品牌 \"YES Academy\"。\n签约新的国际学校。\n开设多项运动分支。\n在亚洲其他城市启动学院。\n受邀参加上海国际青少年锦办赛：\n2025 - 马赛 - U17 国家队\n2026 - 巴黎 FC 女足 - U16 / U17"
         }
       ]
     },
@@ -2079,7 +2079,7 @@ export const translations = {
       guarantees: [
         { title: "国家文凭", desc: "正式准备法国国家考试 (DNB, Bac)。" },
         { title: "教学监管", desc: "由国民教育部定期检查。" },
-        { title: "精英标准", desc: "高水平体育认证 (FFF / UEFA)。" }
+        { title: "精英标准", desc: "高水平体育认证 (FFF / UEFA)." }
       ],
       international_opening: "国际化开放",
       international_desc: "我们的非法国母语学生受益于特定的 FLE（法语作为外语）路径，以平稳融入法国系统，同时保持对其国际成就公认的验证。",
@@ -2241,7 +2241,7 @@ export const translations = {
       mon_ven: "周一至周五",
       mon_ven_desc: "学术课后的技战术训练（16:30 - 18:30）。",
       weekend: "周末",
-      weekend_desc: "参加官方 FFF 锦标赛。",
+      weekend_desc: "参加官方 FFF 锦办赛。",
       french_method_title: "法国足球青训教学法",
       french_method_p1: "我们借鉴了享誉全球的法国足球青训教学法，为您提供一套结构严谨且全面的发展计划，旨在全方位支持球员的成长与进步。",
       french_method_p2: "该计划基于多样化的训练课，融合了根据球员年龄、水平和具体需求量身定制的技术、战术及体能练习. 测试将用于评估其进步情况，而比赛、特定挑战和个人互动则提供了持续调整与优化的机会。",
