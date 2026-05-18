@@ -605,7 +605,8 @@ export const translations = {
       }
     },
     metiers_page: {
-      title: "PRÉPARATION AUX MÉTIERS DU SPORT",
+      title1: "PRÉPARATION AUX MÉTIERS",
+      title2: "DU SPORT",
       optional: "(OPTIONNEL)",
       desc: "L'ESEPE accompagne ses élèves dans la préparation aux concours et certifications des métiers du sport. Ce programme spécifique permet d'acquérir les bases pratiques et théoriques nécessaires pour intégrer avec succès les filières spécialisées (Coach, Arbitre, BPJEPS, Agent, Analyste). Nous préparons nos athlètes pour qu'ils possèdent toutes les compétences requises afin de réussir leurs futures formations et certifications professionnelles.",
       subtitle: "NOS PRÉPARATIONS COMPLÉMENTAIRES",
@@ -1444,7 +1445,8 @@ export const translations = {
       }
     },
     metiers_page: {
-      title: "SPORT CAREERS PREPARATION",
+      title1: "SPORT CAREERS",
+      title2: "PREPARATION",
       optional: "(OPTIONAL)",
       desc: "ESEPE accompanies its students in the preparation for exams and certifications of sport careers. This specific program allows to acquire the practical and theoretical bases necessary to successfully integrate specialized branches (Coach, Referee, BPJEPS, Agent, Analyst). We prepare our athletes so that they possess all the required skills to succeed in their future professional training and certifications.",
       subtitle: "OUR ADDITIONAL PREPARATION",
@@ -1831,7 +1833,7 @@ export const translations = {
     },
     axes: {
       scolarite: "学术课程",
-      scolarite_desc: "我们的体育学习计划提供了一个学术框架，让学生能够将雄心勃勃的体育项目与学业成功相结合。\n在初中阶段，重点是获得基础知识、个性化跟踪和工作组织，学习如何平衡课程与训练。\n在高中阶段，学业以备考高中毕业会考为导向，提供方法论支持和高等教育指导。\n目标是培养自主、好奇的学生，让他们在球场和教室里都能茁壮成长。",
+      scolarite_desc: "我们的体育学习计划提供了一个学术框架，让学生能够将雄心勃勃的体育项目与学业成功相结合。\n在初中阶段，重点是获得基础知识、个性化跟踪和工作组织，学习如何平衡课程与训练。\n在高中阶段，学业以备考高中毕业会考为导向，提供方法论支持 and 高等教育指导。\n目标是培养自主、好奇的学生，让他们在球场和教室里都能茁壮成长。",
       college_link: "初中 (11 - 15 岁)",
       lycee_link: "高中 (15 - 18 岁)",
       academy_title: "足球学院",
@@ -1896,7 +1898,7 @@ export const translations = {
       integration_immersion: "沉浸",
       integration_guidance: "指导",
       integration_step: "步骤",
-      integration_full_desc: "在这一年里，进入整合班的学生将学习强化法语作为外语（FLE）课程。该计划专为帮助他们快速掌握必要的语言技能而设计，以便顺利融入法国教育体系. FLE课程根据每个学生的具体需求进行调整，重点关注书面和口语理解以及书面和口语表达. 到本学年结束时，学生将能够有效地使用法语进行理解和交流。",
+      integration_full_desc: "在这一年里，进入整合班的学生将学习强化法语作为外语（FLE）课程。该计划专为帮助他们快速掌握必要的语言技能而设计，以便顺利融入法国教育体系. FLE课程根据每个学生的具体需求进行调整，重点关注书面和口语理解以及书面和口语表达. 到本学年结束时，学生将能够有效地使用法语进行理解 and 交流。",
       integration_refresher_title: "学术水平衔接",
       integration_refresher_desc: "为了确保顺利过渡到法国课程，我们的学生受益于数学和科学等核心科目的辅导和补习课程. 这种与法国国家教学大纲要求的对接，对于他们平稳进入高中阶段的学习至关重要。",
       integration_harmonization_title: "学习成果整合",
@@ -2215,7 +2217,7 @@ export const translations = {
       axes_tact: "战术",
       axes_tact_desc: "现代足球要求极高的比赛智慧. 我们教授对比赛形势的阅读、战略选位以及对比赛系统的深刻理解. 我们的训练课强调快速转换、协调的进攻组织和防守的整体性，让球员在场上成为真正的战术家。",
       axes_phys: "体能",
-      axes_phys_desc: "运动机能의开发以科学严谨的方式进行. 通过针对不同年龄段量身定制的体能训练计划，我们打造出力量强、速度快、耐力持久的运动员. 预防伤病、爆发力以及恢复的优化是我们监测的核心，以确保在最高水平上实现可持续的竞技表现。",
+      axes_phys_desc: "运动机机开发以科学严谨的方式进行. 通过针对不同年龄段量身定制的体能训练计划，我们打造出力量强、速度快、耐力持久的运动员. 预防伤病、爆发力以及恢复的优化是我们监测的核心，以确保在最高水平上实现可持续的竞技表现。",
       axes_ment: "心理",
       axes_ment_desc: "我们的训练方法不断挑战球员的极限，迫使 them 调动心理资源. 性格力量是影响表现的关键因素之一，我们 design 了许多练习让球员锻炼这种特质（1对1、人数劣势比赛、高强度体能训练、肌肉强化、高标准要求等）。鉴于职业足球需要强大的心理素质，球员从小培养这种素质至关重要。",
       axes_social: "社会",
@@ -2283,7 +2285,8 @@ export const translations = {
       }
     },
     metiers_page: {
-      title: "体育职业准备课程",
+      title1: "体育职业",
+      title2: "准备课程",
       optional: "(可选)",
       desc: "ESEPE 助力学生准备体育职业相关的考试与认证. 该计划旨在帮助学生掌握报考专业领域（如教练、裁判、BPJEPS、经纪人等）所需的实战与理论基础. 我们为运动员提供全方位支持，确保他们具备成功通过未来职业培训与资格认证所需的各项技能。",
       subtitle: "我们的准备课程",
@@ -2504,7 +2507,7 @@ export const translations = {
       editor_content: "ESEPE - 教学性能与卓越体育学校\n1901法协会 / 培训机构\n出版总监：ESEPE 总管理部\n电子邮件：contact@esepf.fr",
       hosting_content: "Google Cloud Platform (Firebase App Hosting)\nGoogle Ireland Limited\nGordon House, Barrow Street, Dublin 4, Ireland",
       hosting_note: "我们的服务器部署在全球边缘节点，以确保极速访问。",
-      property_content: "本网站及其所有内容（文字、图片、视频、标志）均为 ESEPE 的专有财产. 未经事先书面许可，严禁任何形式的复制、修改或传播。\n本站所引用的合作俱乐部标志其版权归各自所有者所有。",
+      property_content: "本网站及其所有内容（文字、图片、视频、标志）均为 ESEPE 的专有财产. 未经事先书面许可，严禁任何形式孩复制、修改或传播。\n本站所引用的合作俱乐部标志其版权归各自所有者所有。",
       privacy_collect: "我们通过在线申请表收集有关学生及其法定监护人的信息. 收集的信息包括但不限于：姓名、出生日期、国籍、目前就读年级以及联系方式。",
       privacy_use: "入学申请研究。\n面试组织。\n关于学术和足球学院的沟通。\n遵守法律教育义务（法国和中国）。",
       privacy_share: "ESEPE 承诺绝不向第三方出售或出租您的数据. 它们仅传输给内部行政 and 教学服务部门。",
