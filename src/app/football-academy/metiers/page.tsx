@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -37,12 +36,13 @@ export default function MetiersSportPage() {
           
           {/* Header Section */}
           <ScrollReveal className="text-center max-w-5xl mx-auto mb-20">
-            <h1 className="text-5xl md:text-7xl font-headline font-bold text-black mb-4 tracking-tighter uppercase leading-tight">
-              {t.metiers_page.title1} <br /> {t.metiers_page.title2}
+            <h1 className="text-5xl md:text-7xl font-headline font-bold text-black mb-8 tracking-tighter uppercase leading-tight">
+              {t.metiers_page.title1} <br /> 
+              {t.metiers_page.title2} <br />
+              <span className="text-2xl md:text-4xl italic opacity-80 block mt-4">
+                {t.metiers_page.optional}
+              </span>
             </h1>
-            <p className="text-2xl md:text-4xl font-headline font-bold text-black mb-12 italic opacity-80 uppercase">
-              {t.metiers_page.optional}
-            </p>
             
             <div className="text-lg md:text-xl text-black/70 leading-relaxed font-body space-y-6 max-w-4xl mx-auto">
               <p>{t.metiers_page.desc}</p>

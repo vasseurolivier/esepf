@@ -570,7 +570,7 @@ export const translations = {
       french_method_p3: "Au-delà du terrain, le programme met un accent particulier sur le développement personnel et émotionnel des participants. Grâce à des défis psycho-sociaux soigneusement intégrés, les joueurs apprennent des valeurs essentielles telles que l'esprit d'équipe, la discipline, la résilience, la capacité à gérer leurs émotions et le dévouement.",
       french_method_p4: "L'objectif est de former des joueurs complets, capables de briller techniquement et physiquement tout en possédant les qualités humaines nécessaires pour évoluer dans un environnement collectif. En cultivant une passion authentique et durable pour le football, ce programme leur permet non seulement de progresser sur le terrain mais aussi de construire des bases solides pour leur avenir sportif et personnel.",
       pro_training: {
-        title: "ENTRAÎNE-TOI COMSI UN PROFESSIONNEL",
+        title: "ENTRAÎNE-TOI COMME UN PROFESSIONNEL",
         subtitle: "Nous proposons un programme de développement basé sur la méthodologie et la formation Française, structuré autour d'axes clefs tels que la technique, la tactique, le physique et le mental.",
         item1_title: "Méthodologie Française d'entraînement",
         item1_desc: "Une formation reconnue dans le monde",
@@ -605,8 +605,8 @@ export const translations = {
       }
     },
     metiers_page: {
-      title1: "PRÉPARATION AUX MÉTIERS",
-      title2: "DU SPORT",
+      title1: "PRÉPARATION AUX",
+      title2: "MÉTIERS DU SPORT",
       optional: "(OPTIONNEL)",
       desc: "L'ESEPE accompagne ses élèves dans la préparation aux concours et certifications des métiers du sport. Ce programme spécifique permet d'acquérir les bases pratiques et théoriques nécessaires pour intégrer avec succès les filières spécialisées (Coach, Arbitre, BPJEPS, Agent, Analyste). Nous préparons nos athlètes pour qu'ils possèdent toutes les compétences requises afin de réussir leurs futures formations et certifications professionnelles.",
       subtitle: "NOS PRÉPARATIONS COMPLÉMENTAIRES",
@@ -1833,7 +1833,7 @@ export const translations = {
     },
     axes: {
       scolarite: "学术课程",
-      scolarite_desc: "我们的体育学习计划提供了一个学术框架，让学生能够将雄心勃勃的体育项目与学业成功相结合。\n在初中阶段，重点是获得基础知识、个性化跟踪和工作组织，学习如何平衡课程与训练。\n在高中阶段，学业以备考高中毕业会考为导向，提供方法论支持 and 高等教育指导。\n目标是培养自主、好奇的学生，让他们在球场和教室里都能茁壮成长。",
+      scolarite_desc: "我们的体育学习计划提供了一个学术框架，让学生能够将雄心勃勃的体育项目 with 学业成功相结合。\n在初中阶段，重点是获得基础知识、个性化跟踪和工作组织，学习如何平衡课程与训练。\n在高中阶段，学业以备考高中毕业会考为导向，提供方法论支持 and 高等教育指导。\n目标是培养自主、好奇的学生，让他们在球场和教室里都能茁壮成长。",
       college_link: "初中 (11 - 15 岁)",
       lycee_link: "高中 (15 - 18 岁)",
       academy_title: "足球学院",
@@ -2023,7 +2023,7 @@ export const translations = {
         {
           year: "2021",
           title: "巴黎圣日耳曼\n特许经营\n上海巴黎圣日耳曼学院",
-          desc: "助力巴黎圣日耳曼品牌在中国的发展。\n与该市多所国际学校签约。\n在上海以外地区发展学院。\n继续为上海女足选拔队组织欧洲巡赛：U16 精英女队与职业女队。"
+          desc: "助力巴黎圣日耳曼 brand 在中国的发展。\n与该市多所国际学校签约。\n在上海以外地区发展学院。\n继续为上海女足选拔队组织欧洲巡赛：U16 精英女队与职业女队。"
         },
         {
           year: "2024",
