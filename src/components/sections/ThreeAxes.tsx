@@ -87,9 +87,6 @@ export function ThreeAxes() {
                     {t.axes.academy_desc}
                   </p>
                   <div className="space-y-2">
-                    <Link href="/football-academy/competition" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors italic">
-                      {t.axes.championships}
-                    </Link>
                     <Link href="/football-academy/programme" className="block text-primary font-bold border-b-2 border-primary/20 w-fit hover:border-secondary transition-colors italic">
                       {t.axes.elite_prog}
                     </Link>
