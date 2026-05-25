@@ -21,9 +21,7 @@ export const translations = {
       prog_foot: "Programme Football",
       sport_etudes: "Qu'est-ce que le Sport-Études ?",
       parcours: "Le Parcours du Joueur",
-      accomp: "Accompagnement",
-      metiers: "Les Métiers du Sport",
-      reseau: "Notre Réseau de Clubs"
+      metiers: "Les Métiers du Sport"
     },
     hero: {
       subtitle: "Cultiver l'Excellence",
@@ -166,8 +164,6 @@ export const translations = {
       f3_desc: "Préparation physique et monitoring individuel.",
       f4_title: "SOINS MÉDICAUX",
       f4_desc: "Accompagnement médical et récupération complète.",
-      f5_title: "RÉSEAU MONDIAL",
-      f5_desc: "Liens directs avec des clubs pro internationaux.",
       f6_title: "ORIENTATION MÉTIERS",
       f6_desc: "Préparation aux carrières sportives et académiques.",
       cta: "S'INSCRIRE À L'ACADÉMIE",
@@ -289,27 +285,6 @@ export const translations = {
         f2: "MÉTHODOLOGIE ÉLITE",
         f3: "SUIVI ATHLÉTIQUE"
       }
-    },
-    competition_page: {
-      title: "FORMATION ÉLITE FOOTBALL",
-      hero_sub: "Développez votre potentiel technique et tactique au sein de notre académie.",
-      p1: "Notre section sport-études football offre un cadre d'entraînement de haut niveau. Les joueurs bénéficient d'une immersion totale dans la culture du football français, visant l'excellence et la progression constante au sein d'un environnement structuré.",
-      p2: "Les séances d'entraînement sont conçues pour confronter les jeunes footballeurs à la réalité du haut niveau. Ce dispositif favorise la détection, la montée en compétence et l’intégration dans les filières professionnelles.",
-      p3: "Les entraîneurs et les encadrants suivent de près la préparation des joueurs, en adaptant le programme d’entraînement aux besoins individuels. L’objectif est de permettre à chaque joueur de s’exprimer pleinement sur le terrain et de construire un parcours ambitieux.",
-      card_clubs: "Cadre d'Excellence",
-      card_clubs_desc: "Infrastructures de qualité et encadrement expert.",
-      card_weekend: "Progression Continue",
-      card_weekend_desc: "Suivi régulier pour une évolution constante des performances.",
-      card_detection: "Passerelle Professionnelle",
-      card_detection_desc: "Orientation vers les filières de haut niveau.",
-      performance_title: "Un suivi de performance sur-mesure",
-      performance_video: "Analyse Vidéo",
-      performance_school: "Scolarité adaptée",
-      performance_phys: "Préparation Physique",
-      official_title: "Excellence & Performance",
-      official_subtitle: "Un accès privilégié à la formation de haut niveau",
-      quote: "Se former avec exigence pour forger le caractère et l'excellence technique.",
-      hexagonal_title: "La formation à la française"
     },
     history_page: {
       title: "Notre Histoire",
@@ -645,11 +620,6 @@ export const translations = {
         { time: "20:00 - 21:30", activity: "Étude et temps calme" }
       ]
     },
-    reseau_page: {
-      title: "Un Réseau de Clubs pour Révéler Nos Talents",
-      p1: "Grâce au réseau que nous avons construit au fil des années, issu de notre passé dans le football professionnel en France, we offrons à nos meilleurs joueurs des opportunités uniques de montrer l'étendue de leurs capacités. Ce réseau, composé de clubs prestigieux Français et européens, leur permet de participer à des essais, des matchs amicaux ou d'autres événements sportifs. Ils auront ainsi la possibilité de se faire remarquer et, s'ils sont choisis, d'intégrer des structures adaptés à leur progression vers le plus haut niveau.",
-      subtitle: "Un Réseau de Clubs pour offrir des opportunités..."
-    },
     journey_page: {
       title: "Le Parcours du Joueur",
       formation_title: "Formation de 3 ou 4 ans",
@@ -865,9 +835,7 @@ export const translations = {
       prog_foot: "Football Program",
       sport_etudes: "What is Sport-Study?",
       parcours: "Player Journey",
-      accomp: "Support",
-      metiers: "Sports Careers",
-      reseau: "Our Club Network"
+      metiers: "Sports Careers"
     },
     hero: {
       subtitle: "Cultivating Excellence",
@@ -1010,8 +978,6 @@ export const translations = {
       f3_desc: "Physical preparation and monitoring.",
       f4_title: "MEDICAL CARE",
       f4_desc: "Medical support and full recovery.",
-      f5_title: "GLOBAL NETWORK",
-      f5_desc: "Direct links with international pro clubs.",
       f6_title: "CAREER GUIDANCE",
       f6_desc: "Preparation for sports and academic careers.",
       cta: "ENROLL IN ACADEMY",
@@ -1082,7 +1048,7 @@ export const translations = {
       efl_title: "English First Language (EFL)",
       efl_desc: "An intensive program for students wishing to reach a bilingual level, with literature and history courses in English.",
       cert_int_title: "International Certifications",
-      cert_int_desc: "Preparation for Cambridge exams (PET, FCE, CAE) and DELF to officially validate acquired skills.",
+      cert_int_desc: "Preparation for Cambridge exams (PET, fCE, CAE) and DELF to officially validate acquired skills.",
       pedagogy_title: "An Active and Personalized Method",
       pedagogy_subtitle: "More than a language course, a cultural opening",
       pedagogy_p1: "Language teaching at ESEPE is based on an immersive and communicative approach. We believe that constant practice is the key to mastery.",
@@ -1133,27 +1099,6 @@ export const translations = {
         f2: "Elite Methodology",
         f3: "Athletic follow-up"
       }
-    },
-    competition_page: {
-      title: "ELITE FOOTBALL TRAINING",
-      hero_sub: "Develop your technical and tactical potential within our academy.",
-      p1: "Our sport-studies football section offers a high-level training environment. Players benefit from total immersion in the culture of French football, aiming for excellence and constant progress within a structured environment.",
-      p2: "Training sessions are designed to confront young footballers with the reality of the high level. This system encourages detection, skills building and integration into professional paths.",
-      p3: "Coaches and staff closely monitor players' preparation, adapting the training program to individual needs. The goal is to allow every player to fully express themselves on the pitch and build an ambitious path.",
-      card_clubs: "Excellence Framework",
-      card_clubs_desc: "Quality infrastructure and expert supervision.",
-      card_weekend: "Continuous Progress",
-      card_weekend_desc: "Regular monitoring for constant performance evolution.",
-      card_detection: "Professional Bridge",
-      card_detection_desc: "Orientation towards high-level pathways.",
-      performance_title: "Customized performance monitoring",
-      performance_video: "Video Analysis",
-      performance_school: "Academic Follow-up",
-      performance_phys: "Physical Preparation",
-      official_title: "Excellence & Performance",
-      official_subtitle: "Privileged access to high-level training",
-      quote: "Train with requirement to forge character and technical excellence.",
-      hexagonal_title: "French-style training"
     },
     history_page: {
       title: "Our History",
@@ -1481,11 +1426,6 @@ export const translations = {
         { time: "20:00 - 21:30", activity: "Study & Relax Time" }
       ]
     },
-    reseau_page: {
-      title: "A Club Network to Reveal Our Talents",
-      p1: "Thanks to the network we have built over the years, stemming from our past in professional football in France, we offer our best players unique opportunities to show their full abilities. This network, composed of prestigious French and European clubs, allows them to participate in trials, friendly matches, or other sporting events. They will thus have the possibility to be noticed and, if chosen, to integrate structures adapted to their progression towards the highest level.",
-      subtitle: "A Club Network to offer opportunities..."
-    },
     journey_page: {
       title: "THE PLAYER JOURNEY",
       formation_title: "3 or 4 Year Training",
@@ -1701,9 +1641,7 @@ export const translations = {
       prog_foot: "足球计划",
       sport_etudes: "什么是体育学习？",
       parcours: "学生发展蓝图",
-      accomp: "身心支持",
-      metiers: "体育相关职业",
-      reseau: "我们的俱乐部网络"
+      metiers: "体育相关职业"
     },
     hero: {
       subtitle: "追求卓越",
@@ -1846,8 +1784,6 @@ export const translations = {
       f3_desc: "个人体能准备与监测。",
       f4_title: "医疗护理",
       f4_desc: "完善的医疗与康复支持。",
-      f5_title: "全球网络",
-      f5_desc: "与全球职业俱乐部直接联系。",
       f6_title: "职业指导",
       f6_desc: "为体育与学术职业做好准备。",
       cta: "立即申请",
@@ -1918,7 +1854,7 @@ export const translations = {
       efl_title: "英语第一语言 (EFL)",
       efl_desc: "为希望达到双语水平的学生提供强化计划，包括英语文学与历史课程。",
       cert_int_title: "国际认证",
-      cert_int_desc: "准备剑桥考试（PET、FCE、CAE）和 DELF，以官方验证所获技能。",
+      cert_int_desc: "准备剑桥考试（PET、fCE、CAE）和 DELF，以官方验证所获技能。",
       pedagogy_title: "主动式与个性化教学法",
       pedagogy_subtitle: "不仅是语言课，更是文化启蒙",
       pedagogy_p1: "Language teaching at ESEPE is based on an immersive and communicative approach. 我们相信不断的实践是掌握语言的关键。",
@@ -1969,27 +1905,6 @@ export const translations = {
         f2: "精英教学法",
         f3: "SUIVI ATHLÉTIQUE"
       }
-    },
-    competition_page: {
-      title: "精英足球培训",
-      hero_sub: "在我们的学院内开发您的技术和战术潜力。",
-      p1: "我们的体育学习足球部门提供高水平的训练环境. 球员受益于完全沉浸在法国足球文化中，旨在追求卓越并在结构化环境中不断进步。",
-      p2: "训练课旨在让年轻足球运动员面对高水平的现实. 该机制有利于发掘、技能提升与进入职业体系。",
-      p3: "教练与管理人员密切监控球员的准备情况，根据个人需求调整训练计划. 目标是让每位球员在球场上充分表达自己并建立雄心勃勃的道路。",
-      card_clubs: "卓越框架",
-      card_clubs_desc: "优质基础设施与专家监督。",
-      card_weekend: "持续进步",
-      card_weekend_desc: "定期监测，确保竞技表现不断进化。",
-      card_detection: "职业桥梁",
-      card_detection_desc: "导向高水平路径。",
-      performance_title: "量身定制的绩效监控",
-      performance_video: "视频分析",
-      performance_school: "学业支持",
-      performance_phys: "体能准备",
-      official_title: "卓越与性能",
-      official_subtitle: "优先获得高水平培训",
-      quote: "以高标准进行训练，塑造性格并追求技术卓越。",
-      hexagonal_title: "法式培训"
     },
     history_page: {
       title: "我们的历史",
@@ -2220,7 +2135,7 @@ export const translations = {
       axes_social_psych_title: "心理跟踪",
       axes_social_psych_desc: "高水平 sport 要求强大的意志力，因此 we 为球员提供所有必要的支持，帮助 them 全面发展. 这让 they 能够自由表达，预防 any 心理不适或其他问题。",
       coaches_title: "资深认证教练",
-      coaches_text: "教练均毕业于 FFF 或 UEFA (Pro, A, B, C)，提供高水平指导。",
+      coaches_text: "教练均毕业 host 级，提供高水平指导。",
       coaches_list_1: "欧足联 / A / B / C 级教练文凭",
       coaches_list_2: "视频分析与心理素质",
       coaches_list_3: "体能与运动素质准备",
@@ -2243,7 +2158,7 @@ export const translations = {
       french_method_p4: "我们的目标是培养全面的球员：他们不仅在技术和体能上表现出色，还具备在集体环境中发展所需的优秀品质. 通过培养对足球真实且持久的热爱，该计划不仅让他们在球场上进步，更为 their 的体育和个人未来奠定坚实的基础。",
       pro_training: {
         title: "像职业球员一样训练",
-        subtitle: "我们提供基于法国教学法和培训的发展计划，围绕技术、战术、身体和心理等关键轴心构建。",
+        subtitle: "我们 offer 了基于法国教学法和培训的发展计划，围绕技术、战术、身体和心理等关键轴心构建。",
         item1_title: "法国训练教学法",
         item1_desc: "享誉世界的培训",
         item2_title: "高绩效跟踪",
@@ -2318,11 +2233,6 @@ export const translations = {
         { time: "19:00 - 20:00", activity: "晚餐" },
         { time: "20:00 - 21:30", activity: "研究和安静时间" }
       ]
-    },
-    reseau_page: {
-      title: "一个学校一个俱乐部网络",
-      p1: "得益于 we 多年来在法国职业足球领域建立的深厚网络，we 为最优秀的球员提供独特的机会，展示 their 全部能力. 该网络由法国和欧洲的知名俱乐部组成，允许 them 参加试训、或其他体育赛事. They 将因此有机会被发掘，如果被选中，将进入适合 they 向最高水平发展的体系。",
-      subtitle: "一个提供机遇的俱乐部网络..."
     },
     journey_page: {
       title: "学生发展蓝图",

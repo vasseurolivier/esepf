@@ -32,7 +32,6 @@ export function FootballAcademy() {
       { icon: <GraduationCap className="text-secondary" />, title: t.academy_features.f2_title, desc: t.academy_features.f2_desc },
       { icon: <Route className="text-secondary" />, title: t.academy_features.f3_title, desc: t.academy_features.f3_desc },
       { icon: <HeartPulse className="text-secondary" />, title: t.academy_features.f4_title, desc: t.academy_features.f4_desc },
-      { icon: <Globe className="text-secondary" />, title: t.academy_features.f5_title, desc: t.academy_features.f5_desc },
       { icon: <Briefcase className="text-secondary" />, title: t.academy_features.f6_title, desc: t.academy_features.f6_desc },
     ].filter(item => item.title && item.desc);
   }, [t.academy_features]);
