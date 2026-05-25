@@ -148,7 +148,7 @@ export const translations = {
       college_link: "Collège (11 ans - 15 ans)",
       lycee_link: "Lycée (15 ans - 18 ans)",
       academy_title: "FOOTBALL ACADEMY",
-      academy_desc: "L'Academy de football propose un programme de formation élite Français visant à développer des joueurs complets, capables d'évoluer au plus haut niveau tout en respectant l'exigence du football hexagonal. Les séances sont structurées et assurées par des entraîneurs diplômés et expérimentés.\nL'objectif est de donner à chaque joueur les meilleurs outils pour progresser, se faire repérer et s'inscrire durablement dans un projet de haut niveau.",
+      academy_desc: "L'Academy de football propose un programme de formation d'élite français visant à développer des joueurs complets, capables d'évoluer au plus haut niveau tout en respectant l'exigence du football hexagonal. Les séances sont structurées et assurées par des entraîneurs diplômés et expérimentés.\nL'objectif est de donner à chaque joueur les meilleurs outils pour progresser, se faire repérer et s'inscrire durablement dans un projet de haut niveau.",
       elite_prog: "Elite Football programme",
       languages_title: "LANGUES ÉTRANGÈRES",
       languages_desc: "Notre établissement propose une formation renforcée en Français Langue Étrangère (FLE) et en Anglais Langue Étrangère (EFL) afin d'accompagner au mieux les élèves non francophones ou souhaitant perfectionner leur niveau.\nLes cours sont organisés en petits groupes pour favoriser la participation orale, la compréhension et la progression individuelle. Les enseignants adaptent leurs supports aux besoins de chaque élève, en travaillant aussi bien la grammaire que le vocabulaire et les situations concrètes de communication.\nCette approche intensive facilite l'intégration scolaire, la réussite aux examens et l'ouverture à l'international.",
@@ -496,7 +496,7 @@ export const translations = {
     },
     football_pages: {
       prog_title: "Programme de football",
-      prog_intro_1: "Notre école est un centre de formation de football qui offre à ses athlètes un programme complet et structuré, inspiré des meilleures méthodes de formation Françaises.",
+      prog_intro_1: "Notre établissement propose un programme sport-études football complet et structuré, inspiré des meilleures méthodes de formation françaises.",
       prog_intro_2: "Nous préparons nos joueurs et athlètes à atteindre leurs objectifs, qu'ils soient de haut niveau ou personnels. Grâce à un entraînement rigoureux et un suivi personnalisé, chaque élève progresse sur les plans technique, tactique et physique.",
       prog_intro_3: "Nous metttons également un accent particulier sur le développement mental et humain des athlètes, en les formant à gérer les défis psychologiques du sport de haut niveau. L'esprit d'équipe, la discipline, la résilience et la gestion des émotions sont au cœur de notre approche. Chaque athlète bénéficie d'un encadrement qui lui permet de s'épanouir et de donner le meilleur de lui-même.",
       prog_intro_4: "Notre école donne à ses athlètes la chance d'atteindre leurs objectifs, de s'épanouir et, pour les meilleurs d'entre eux, d'aspirer à devenir des athlètes professionnels ou d'obtenir des bourses grâce à leurs performances sportives.",
@@ -1303,7 +1303,7 @@ export const translations = {
     },
     football_pages: {
       prog_title: "Football Program",
-      prog_intro_1: "Our school is a football training center that offers its athletes a complete and structured program, inspired by the best French training methods.",
+      prog_intro_1: "Our school offers a complete and structured football sport-study program, inspired by the best French training methods.",
       prog_intro_2: "We prepare our players and athletes to reach their goals, whether high level or personal. Through rigorous training and personalized tracking, each student progresses on technical, tactical and physical levels.",
       prog_intro_3: "We also place a particular emphasis on the mental and human development of athletes, training them to manage the psychological challenges of high-level sport. Team spirit, discipline, resilience and emotion management are at the core of our approach. Each athlete benefits from coaching that allows them to thrive and give their best.",
       prog_intro_4: "Our school gives its athletes the chance to reach their goals, to thrive and, for the best of them, to aspire to become professional athletes or obtain scholarships through their sporting performance.",
@@ -1766,7 +1766,7 @@ export const translations = {
     },
     axes: {
       scolarite: "学术课程",
-      scolarite_desc: "我们的体育学习计划提供了一个学术框架，让学生能够将雄心勃勃的体育项目 with 学业成功相结合。\n在初中阶段，重点是获得基础知识、个性化跟踪和工作组织，学习如何平衡课程与训练。\n在高中阶段，学业以备考高中毕业会考为导向，提供方法论支持 and 高等教育指导。\n目标是培养自主、好奇的学生，让他们在球场和教室里都能茁壮成长。",
+      scolarite_desc: "我们的体育学习计划提供了一个学术框架，让学生能够将雄心勃勃的体育项目 with 学业成功相结合。\n在初中阶段，重点是获得基础知识、个性化跟踪和工作组织，学习如何平衡课程 with 训练。\n在高中阶段，学业以备考高中毕业会考为导向，提供方法论支持 and 高等教育指导。\n目标是培养自主、好奇的学生，让他们在球场和教室里都能茁壮成长。",
       college_link: "初中 (11 - 15 岁)",
       lycee_link: "高中 (15 - 18 岁)",
       academy_title: "足球学院",
@@ -1816,7 +1816,7 @@ export const translations = {
     campus_locations: {
       bazeille: "阿基坦 (BORDEAUX)",
       bazeille_region: "圣巴泽耶",
-      bazeille_sub: "新阿基坦大区, 法国",
+      bazeille_region_desc: "新阿基坦大区, 法国",
       tulle: "普罗旺斯 (AIX-EN-PROVENCE)",
       tulle_region: "圣蒂勒",
       tulle_sub: "普罗旺斯-阿尔卑斯-蓝色海岸, 法国"
@@ -2007,7 +2007,7 @@ export const translations = {
     college_page: {
       title: "ESEPE - 初中",
       age_label: "11 - 15 岁",
-      p1: "我们向 11 至 14 岁的学生敞开体育学习初中的大门。",
+      p1: "We open the doors of our Sport-Study Middle School to students aged 11 to 14.",
       p2: "完成四年初中学习后，他们可以升入我们的高中计划。",
       p3: "该初中丰富了我们的培训体系，助力青少年追求卓越。",
       prog_title: "我们的课程涵盖四年：",
@@ -2112,7 +2112,7 @@ export const translations = {
     },
     football_pages: {
       prog_title: "足球计划",
-      prog_intro_1: "我们的学校是一个足球训练中心，提供结构化计划。",
+      prog_intro_1: "我们的学校提供完善的足球体育学习计划，提供结构化计划。",
       prog_intro_2: "我们通过严格的训练与个性化跟踪帮助学生实现目标。",
       prog_intro_3: "我们特别注重运动员的心理发展. 团队精神、纪律与韧性是核心。",
       prog_intro_4: "学校为运动员提供实现目标与充分成长的机会。",
@@ -2175,7 +2175,7 @@ export const translations = {
       individual_tracking: {
         title: "个人化球员跟踪",
         subtitle: "以球员为核心的培训",
-        desc: "每位球员在整个培训过程中都受益于个人化的跟踪. 我们定期进行多次技术和体能测试，并提供详细的评估. 这些分析使我们能够建立适应每位球员特定需求的计划，确保护最佳且个性化的进步。",
+        desc: "每位球员在整个培训过程中都受益于个人化的跟踪. 我们定期进行多次技术和体能测试，并提供详细的评估. 这些 analyses 使我们能够建立适应每位球员特定需求的计划，确保护最佳且个性化的进步。",
         item1: "技术测试",
         item2: "体能测试",
         item3: "评估与总结",
