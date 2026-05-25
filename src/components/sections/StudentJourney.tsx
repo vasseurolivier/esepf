@@ -66,7 +66,7 @@ export function StudentJourney() {
     {
       id: 4,
       academic: {
-        title: t.journey.metiers,
+        title: t.journey.metiers_others,
         age: t.journey.years_20_plus,
         desc: ""
       }
@@ -126,10 +126,7 @@ export function StudentJourney() {
 
                     <div className="flex-1 pb-12 md:pb-0">
                       <div className="mb-4 md:mb-8 text-left md:text-center md:h-40 flex flex-col justify-end transition-all group-hover:-translate-y-2">
-                        <h3 className={cn(
-                          "text-lg font-headline font-bold border-b-2 w-fit md:mx-auto pb-1 mb-1 uppercase tracking-wide",
-                          stage.id === 4 ? "text-[#e31e24] border-[#e31e24]/20 md:border-[#e31e24]" : "text-black border-black/10 md:border-black"
-                        )}>
+                        <h3 className="text-lg font-headline font-bold border-b-2 w-fit md:mx-auto pb-1 mb-1 uppercase tracking-wide text-black border-black/10 md:border-black">
                           {stage.academic.title}
                         </h3>
                         <p className="text-xs text-secondary font-bold italic mb-0.5">{stage.academic.age}</p>
