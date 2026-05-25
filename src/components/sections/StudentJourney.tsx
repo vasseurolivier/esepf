@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -8,6 +7,7 @@ import { useDoc, useFirestore, useMemoFirebase, useFirebase } from '@/firebase';
 import { doc } from 'firebase/firestore';
 import { GraduationCap, Book, ChevronDown } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { cn } from '@/lib/utils';
 
 export function StudentJourney() {
   const { t } = useTranslation();
@@ -61,11 +61,6 @@ export function StudentJourney() {
       middle: {
         title: t.journey.metiers,
         age: t.journey.years_18_plus
-      },
-      football: {
-        title: t.journey.pro_footballer,
-        age: t.journey.years_18_plus,
-        desc: ""
       }
     },
     {
@@ -131,7 +126,10 @@ export function StudentJourney() {
 
                     <div className="flex-1 pb-12 md:pb-0">
                       <div className="mb-4 md:mb-8 text-left md:text-center md:h-40 flex flex-col justify-end transition-all group-hover:-translate-y-2">
-                        <h3 className="text-lg font-headline font-bold text-black border-b-2 border-black/10 md:border-black w-fit md:mx-auto pb-1 mb-1 uppercase tracking-wide">
+                        <h3 className={cn(
+                          "text-lg font-headline font-bold border-b-2 w-fit md:mx-auto pb-1 mb-1 uppercase tracking-wide",
+                          stage.id === 4 ? "text-[#e31e24] border-[#e31e24]/20 md:border-[#e31e24]" : "text-black border-black/10 md:border-black"
+                        )}>
                           {stage.academic.title}
                         </h3>
                         <p className="text-xs text-secondary font-bold italic mb-0.5">{stage.academic.age}</p>
@@ -141,7 +139,12 @@ export function StudentJourney() {
                       <div className="md:mt-8 text-left md:text-center md:h-40 transition-all group-hover:translate-y-2">
                         {stage.middle && (
                            <div className="mb-4">
-                              <h4 className="text-lg font-headline font-bold text-black uppercase tracking-wide">{stage.middle.title}</h4>
+                              <h4 className={cn(
+                                "text-lg font-headline font-bold uppercase tracking-wide",
+                                stage.id === 3 ? "text-[#e31e24]" : "text-black"
+                              )}>
+                                {stage.middle.title}
+                              </h4>
                               <p className="text-xs text-gray-500">{stage.middle.age}</p>
                            </div>
                         )}
