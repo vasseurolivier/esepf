@@ -605,8 +605,8 @@ export const translations = {
       }
     },
     metiers_page: {
-      title1: "PRÉPARATION AUX",
-      title2: "MÉTIERS DU SPORT",
+      title1: "PRÉPARATION AUX MÉTIERS",
+      title2: "DU SPORT",
       optional: "(OPTIONNEL)",
       desc: "L'ESEPE accompagne ses élèves dans la préparation aux concours et certifications des métiers du sport. Ce programme spécifique permet d'acquérir les bases pratiques et théoriques nécessaires pour intégrer avec succès les filières spécialisées (Coach, Arbitre, BPJEPS, Agent, Analyste). Nous préparons nos athlètes pour qu'ils possèdent toutes les compétences requises afin de réussir leurs futures formations et certifications professionnelles.",
       subtitle: "NOS PRÉPARATIONS COMPLÉMENTAIRES",
@@ -2171,7 +2171,7 @@ export const translations = {
         duration: "3年（非法国母语4年）",
         level: "4级 (高中毕业)",
         bts_desc: "应用外语 (LEA) 的 BTS 是一个为期两年的培训. 在翻译、口译、国际项目管理等领域提供教学. 通过档案申请，BTS 可以快速为职业生涯做好准备。",
-        univ_desc: "攻读本科文凭允许在翻译、国际关系等领域进行专业化. 本科是 3 年制大学培训. 在 BTS 之后，也可以直接进入本科最后一年。",
+        univ_desc: "攻读本科文凭允许在翻译、国际关系等领域进行专业化. 本科 is a 3-year university course (Bac+3 level). 在 BTS 之后，也可以直接进入本科最后一年。",
         bts_list: ["旅游 BTS", "国际贸易 BTS", "中小企业管理 BTS", "翻译与口译 BTS", "传播 BTS", "公共关系 BTS", "运营商业管理 BTS", "农村开发 BTS"],
         bts_jobs: ["传播主管", "行政助理", "营销经理", "翻译", "项目经理", "国际关系负责人", "产品经理", "销售代表"],
         univ_list: ["应用外语 (LEA) 本科", "翻译与口译本科", "现代文学本科", "外国语言文化本科", "传播本科", "国际关系本科", "新闻学本科", "营销本科"],
@@ -2191,7 +2191,7 @@ export const translations = {
         luxe_module_p2: "该计划旨在让学生首次沉浸在这一精致领域，让他们发现质量标准。",
         luxe_module_p3: "该模块体现了真正的机遇。",
         campuses: "阿基坦, 普罗旺斯",
-        duration: "3年（非法国母语4年）",
+        duration: "3 ans (4 ans pour les allophones)",
         level: "4级 (技术高中毕业)",
         bts_desc: "管理 BTS 是两年的培训. 在团队 management、财务与营销等领域提供教学。",
         univ_desc: "本科是 3 年制大学培训，结合理论与实践. 它加强了管理与分析技能. 在 BTS 之后，也可以直接进入本科最后一年。",
@@ -2454,7 +2454,7 @@ export const translations = {
       result_stmg: "STMG 技术高中毕业证书",
       result_gen: "普通高中毕业证书",
       stmg_desc: "了解组织运作。",
-      gen_desc: "适合学术型人才。",
+      gen_desc: "Perfect for academic profiles.",
       discover_btn: "探索路径",
       restart_btn: "重新开始"
     },
