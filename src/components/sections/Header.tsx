@@ -57,7 +57,6 @@ export function Header() {
 
   const footballSubLinks = [
     { name: t.header.prog_foot, href: '/football-academy/programme' },
-    { name: t.header.comp_off, href: '/football-academy/competition' },
     { name: t.header.sport_etudes, href: '/football-academy/sport-etudes' },
     { name: t.header.parcours, href: '/football-academy/parcours' },
     { name: t.header.metiers, href: '/football-academy/metiers' },
