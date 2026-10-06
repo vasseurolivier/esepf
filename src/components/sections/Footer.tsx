@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -64,10 +63,12 @@ export function Footer() {
                 <MapPin size={18} className="text-secondary" />
                 <span>{t.footer.hq_label}</span>
               </li>
-              <li className="flex items-center space-x-3 text-white/70 text-sm">
-                <Phone size={18} className="text-secondary" />
-                <span>{t.footer.phone_wechat}</span>
-              </li>
+              {t.footer.phone_wechat && (
+                <li className="flex items-center space-x-3 text-white/70 text-sm">
+                  <Phone size={18} className="text-secondary" />
+                  <span>{t.footer.phone_wechat}</span>
+                </li>
+              )}
               <li className="flex items-center space-x-3 text-white/70 text-sm">
                 <Mail size={18} className="text-secondary" />
                 <Link href="/contact" className="hover:text-secondary transition-colors">contact@esepf.fr</Link>

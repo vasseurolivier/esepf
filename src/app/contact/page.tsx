@@ -214,7 +214,7 @@ export default function ContactPage() {
                           {info.title}
                         </h3>
                         <div className="space-y-3 opacity-80 text-sm">
-                          <p className="flex items-center gap-3"><Phone size={16} /> {info.phone}</p>
+                          {info.phone && <p className="flex items-center gap-3"><Phone size={16} /> {info.phone}</p>}
                           <p className="flex items-center gap-3"><Mail size={16} /> {info.email}</p>
                         </div>
                       </div>

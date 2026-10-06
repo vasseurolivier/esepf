@@ -773,7 +773,7 @@ export const translations = {
       faq_a3: "Oui, classes FLE dédiées.",
       opening_hours: "Horaires d'ouverture",
       mon_fri: "Lun - Ven : 08h30 - 18h00",
-      phone_wechat: "+86 138 1738 9758"
+      phone_wechat: ""
     },
     support_page: {
       title: "Un accompagnement Physique et Mental",
@@ -811,7 +811,7 @@ export const translations = {
       placeholder: "Votre email",
       rights: "Tous droits réservés.",
       hq_label: "Contact",
-      phone_wechat: "+86 138 1738 9758"
+      phone_wechat: ""
     }
   },
   en: {
@@ -1580,7 +1580,7 @@ export const translations = {
       faq_a3: "Yes, dedicated FLE classes.",
       opening_hours: "Opening hours",
       mon_fri: "Mon - Fri: 08:30 AM - 6:00 PM",
-      phone_wechat: "+86 138 1738 9758"
+      phone_wechat: ""
     },
     support_page: {
       title: "Physical and Mental Support",
@@ -1618,7 +1618,7 @@ export const translations = {
       placeholder: "Your email",
       rights: "All rights reserved.",
       hq_label: "Contact",
-      phone_wechat: "+86 138 1738 9758"
+      phone_wechat: ""
     }
   },
   zh: {
@@ -1830,7 +1830,7 @@ export const translations = {
       integration_step: "步骤",
       integration_full_desc: "在这一年里，进入整合班的学生将学习强化法语作为外语（FLE）课程。该计划专为帮助 them 快速掌握必要的语言技能而设计，以便顺利融入法国教育体系. FLE课程根据每个学生的具体需求进行调整，重点关注书面和口语理解以及书面和口语表达. 到本学年结束时，学生将能够有效地使用法语进行理解 and 交流。",
       integration_refresher_title: "学术水平衔接",
-      integration_refresher_desc: "为了确保顺利过渡到法国课程，我们的学生受益于数学和科学等核心科目的辅导和补习课程. 这种 with 法国国家教学大纲要求的对接，对于 them 平稳进入高中阶段的学习至关重要。",
+      integration_refresher_desc: "为了确保顺利过渡到法国课程，我们的学生受益于数学和科学等核心科目的辅导和补习课程. 这种 with 法国国家教学大纲要求的对接，对于 them 平稳进入高中阶段的学习至关old至关重要。",
       integration_harmonization_title: "学习成果整合",
       integration_harmonization_desc: "专属导师将跟踪每位学生的学术进展，在高一入学前及时发现并填补知识空白。",
       bac_americain_title: "美国高中双文凭",
@@ -2129,7 +2129,7 @@ export const translations = {
       axes_ment_desc: "我们的训练方法不断挑战球员的极限，迫使 them 调动心理资源. 性格力量是影响表现的关键因素之一，我们 design 了许多练习让球员锻炼这种特质（1对1、人数劣势比赛、高强度体能训练、肌肉强化、高标准要求等）。鉴于足球需要强大的心理素质，球员从小培养这种素质至关重要。",
       axes_social: "社会",
       axes_social_school_title: "学业跟踪",
-      axes_social_school_desc: "One cannot conceive of an academy without thinking of education. 足球是一项需要智慧的运动，这就是为什么学业教育项目是强制性的，球员必须参与才能留在学院。",
+      axes_social_school_desc: "One cannot conceive of an academy without thinking of education. 足球是一项需要智慧的运动，这就是为什么学业教育项目 is OBLIGATOIRE for球员。目标是将 every player 培养成全面的 individual。",
       axes_social_social_title: "社会跟踪",
       axes_social_social_desc: "年轻学员与周围世界保持联系至关重要. 为此，我们采取了多项措施，确保球员在足球之外保持社交关系（家人、朋友、培训、教育等）。",
       axes_social_psych_title: "心理跟踪",
@@ -2387,7 +2387,7 @@ export const translations = {
       faq_a3: "设有 FLE 班。",
       opening_hours: "开校时间",
       mon_fri: "周一至周五: 08:30 - 18:00",
-      phone_wechat: "+86 138 1738 9758"
+      phone_wechat: ""
     },
     support_page: {
       title: "身心支持",
@@ -2425,7 +2425,7 @@ export const translations = {
       placeholder: "您的邮箱",
       rights: "版权所有。",
       hq_label: "Contact",
-      phone_wechat: "+86 138 1738 9758"
+      phone_wechat: ""
     }
   }
 };
