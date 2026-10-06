@@ -76,7 +76,7 @@ export default function MentionsLegalesPage() {
                   <div className="space-y-2">
                     <p className="font-bold underline uppercase text-sm tracking-widest">{t.legal.privacy_use.split('\n')[0]}</p>
                     <ul className="list-disc pl-6 space-y-1 text-base">
-                      {t.legal.privacy_use.split('\n').map((item, i) => (
+                      {t.legal.privacy_use.split('\n').slice(1).map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
@@ -102,8 +102,8 @@ export default function MentionsLegalesPage() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    </FirebaseClientProvider>
   );
 }
