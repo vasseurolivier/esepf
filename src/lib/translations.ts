@@ -315,7 +315,7 @@ export const translations = {
         {
           year: "2024",
           title: "YOUTH ELITE SPORTS ACADEMY\nOUVERTURE AL MULTISPORT\nET À L'ASIE DU SUD-EST",
-          desc: "Création de notre propre marque \"YES Academy\".\nSignature de nouvelles écoles internationales.\nOuverture de la branche multisport.\nLancement de notre Académie dans d'autres villes en Asie.\nInvitations au tournoi international de Shanghai des Centres de Formation :\n2025 - OM - U17 Nationaux\n2026 - Paris FC féminines - U16 / U17"
+          desc: "Création de notre propre marque \"YES Academy\".\nSignature de nouvelles écoles internationales.\nOuverture de la branch multisport.\nLancement de notre Académie dans d'autres villes en Asie.\nInvitations au tournoi international de Shanghai des Centres de Formation :\n2025 - OM - U17 Nationaux\n2026 - Paris FC féminines - U16 / U17"
         }
       ]
     },
@@ -497,7 +497,7 @@ export const translations = {
     football_pages: {
       prog_title: "Programme de football",
       prog_intro_1: "Notre établissement propose un programme sport-études football complet et structuré, inspiré des meilleures méthodes de formation françaises.",
-      prog_intro_2: "Nous préparons nos joueurs et athlètes à atteindre leurs objectifs, qu'ils soient de haut niveau ou personnels. Grâce à un entraînement rigoureux et un suivi personnalisé, chaque élève progresse sur les plans technique, tactique et physique.",
+      prog_intro_2: "We prepare our players and athletes to reach their goals, whether high level or personal. Grâce à un entraînement rigoureux et un suivi personnalisé, chaque élève progresse sur les plans technique, tactique et physique.",
       prog_intro_3: "Nous metttons également un accent particulier sur le développement mental et humain des athlètes, en les formant à gérer les défis psychologiques du sport de haut niveau. L'esprit d'équipe, la discipline, la résilience et la gestion des émotions sont au cœur de notre approche. Chaque athlète bénéficie d'un encadrement qui lui permet de s'épanouir et de donner le meilleur de lui-même.",
       prog_intro_4: "Notre école donne à ses athlètes la chance d'atteindre leurs objectifs, de s'épanouir et, pour les meilleurs d'entre eux, d'aspirer à devenir des athlètes de haut niveau ou d'obtenir des bourses grâce à leurs performances sportives.",
       france_title: "FRANCE : TERRE DE FOOTBALL",
@@ -512,12 +512,12 @@ export const translations = {
       axes_phys: "Physique",
       axes_phys_desc: "Le développement athlétique est mené avec une rigueur scientifique. Nous forgeons des athlètes puissants, rapides et endurants grâce à un programme de préparation physique adapté à chaque tranche d'âge. La prévention des blessures, l'explosivité et l'optimisation de la récupération sont au cœur de notre suivi pour garantir une performance durable au plus haut niveau.",
       axes_ment: "Mental",
-      axes_ment_desc: "Nos méthodes d'entraînement poussent constamment les joueurs à leurs limites, obligeant ainsi à mobiliser leurs ressources mentales. La force de caractère étant l'un des éléments influençant la performance, nous avons conçu de nombreux exercices permettant aux joueurs de travailler cette qualité spécifique (1 contre 1, matchs en infériorité numérique, travail athlétique exigeant, renforcement musculaire, exigences de haut niveau, etc.). Étant donné que le football nécessite une grande solidité mentale, il est essentiel que les joueurs la développent dès leur plus jeune âge.",
+      axes_ment_desc: "Nos méthodes d'entraînement poussent constamment les joueurs à leurs limites, obligeant ainsi à mobiliser leurs ressources mentales. La force de caractère étant l'un des éléments influençant la performance, we have designed numerous exercises allowing players to work on this specific quality (1 contre 1, matchs en infériorité numérique, travail athlétique exigeant, renforcement musculaire, exigences de haut niveau, etc.). Étant donné que le football nécessite une grande solidité mentale, il est essentiel que les joueurs la développent dès leur plus jeune âge.",
       axes_social: "Social",
       axes_social_school_title: "Suivi scolaire",
       axes_social_school_desc: "On ne peut concevoir une académie sans penser à l'éducation. Le football est un sport qui demande de l'intelligence, c'est pourquoi un projet éducatif scolaire est OBLIGATOIRE pour que les joueurs soient autorisés à rester dans notre académie.",
       axes_social_social_title: "Suivi social",
-      axes_social_social_desc: "Il est essentiel que our jeunes académiciens gardent un lien avec le monde qui les entoure. À cet effet, de nombreuses actions sont mises en place pour que nos joueurs maintiennent des relations sociales en dehors du football (famille, amis, formation, education, etc.).",
+      axes_social_social_desc: "Il est essentiel que our jeunes académiciens gardent un lien with le monde qui les entoure. À cet effet, de nombreuses actions sont mises en place pour que nos joueurs maintiennent des relations sociales en dehors du football (famille, amis, formation, education, etc.).",
       axes_social_psych_title: "Suivi psychologique",
       axes_social_psych_desc: "Le sport de haut niveau exige une grande force mentale, c'est pourquoi nous offrons à nos joueurs tout le soutien nécessaire à leur épanouissement. Cela leur permet de s'exprimer librement et de prévenir tout mal-être ou autre problème.",
       coaches_title: "NOS COACHS CERTIFIÉS",
@@ -574,7 +574,7 @@ export const translations = {
         mid_title: "Milieux de terrain",
         mid_desc: "Les entraînements spécifiques pour milieux de terrain développent la vision de jeu, la maîtrise technique et la gestion des transitions. Ils incluent des exercices de passes, de déplacements et de prises de décision rapides pour renforcer leur rôle central.",
         fwd_title: "Attaquants",
-        fwd_desc: "Les entraînements spécifiques pour attaquants se concentrent sur la finition, les déplacements dans les zones offensives et la prise de décision rapide. Ils incluent des exercices de tirs, de duels 1 contre 1 et de coordination pour maximiser leur efficacité devant le but."
+        fwd_desc: "Les entraînements spécifiques pour attaquants se concentrent sur la finition, les déplacements dans les zones offensives et la prise de décision rapide. Il incluent des exercices de tirs, de duels 1 contre 1 et de coordination pour maximiser leur efficacité devant le but."
       }
     },
     metiers_page: {
@@ -793,14 +793,16 @@ export const translations = {
       data: "Protection des Données",
       cookies: "Cookies",
       contact_info: "Contact Légal",
-      editor_content: "ESEPE - École Sport-Études Performance & Excellence\nAssociation loi 1901 / Organisme de formation\nDirecteur de la publication : Direction Générale ESEPE\nEmail : contact@esepf.fr",
-      hosting_content: "Google Cloud Platform (Firebase App Hosting)\nGoogle Ireland Limited\nGordon House, Barrow Street, Dublin 4, Ireland",
-      hosting_note: "Nos serveurs sont déployés sur des infrastructures mondiales pour garantir une accessibilité optimale.",
-      property_content: "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.\nLes logos des clubs partenaires et fédérations cités restent la propriété exclusive de leurs détenteurs respectifs.",
-      privacy_collect: "Nous travers l'étude de candidature collectons des données à caractère personnel vous concernant. Ces données sont traitées uniquement pour la gestion de votre dossier pédagogique et sportif.",
-      privacy_use: "Etude de la candidature à l'entrée de l'établissement.\nOrganisation des entretiens de motivation.\nCommunication relative à la scolarité et à l'Academy de football.\nMise en conformité avec les obligations légales éducatives (France & Chine).",
-      privacy_share: "L'ESEPE s'engage à ne jamais vendre ni louer vos données à des tiers. Elles ne sont transmises qu'aux services internes administratifs et pédagogiques de l'ESEPE.",
-      privacy_rights: "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données.\nPour exercer vos droits, contactez notre délégué à la protection des données :\ncontact@esepf.fr"
+      editor_content: "L'ESEPE - École Sport-Études Performance & Excellence est un établissement d'enseignement privé. Association loi 1901 à but non lucratif.\nSiège social : [ADRESSE SIÈGE EN FRANCE]\nNuméro de SIRET : [NUMÉRO SIRET]\nDirecteur de la publication : Direction Générale ESEPE\nEmail : contact@esepf.fr",
+      hosting_content: "Google Cloud Platform (Firebase App Hosting)\nGoogle Ireland Limited\nGordon House, Barrow Street, Dublin 4, Ireland\nConformément à la réglementation Chinoise pour les services accessibles en Chine continentale, les infrastructures de distribution de contenu (CDN) sont optimisées pour une accessibilité locale.",
+      hosting_note: "Nos serveurs sont déployés sur des infrastructures mondiales pour garantir une accessibilité optimale et une conformité aux lois locales de stockage de données.",
+      property_content: "L'ensemble de ce site (structure, textes, logos, photographies, vidéos) relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés. Toute reproduction, représentation, modification ou diffusion, totale ou partielle, est strictement interdite sans autorisation préalable écrite.\nLes logos des clubs partenaires et fédérations (FFF, UEFA, etc.) restent la propriété exclusive de leurs détenteurs respectifs et sont utilisés à titre illustratif.",
+      privacy_collect: "L'ESEPE s'engage à traiter vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD) en Europe et à la Personal Information Protection Law (PIPL) en République Populaire de Chine.",
+      privacy_use: "Étude de la candidature à l'entrée de l'établissement.\nOrganisation des entretiens de motivation.\nCommunication relative à la scolarité et à la vie étudiante.\nRespect des obligations légales d'archivage éducatif.",
+      privacy_share: "L'ESEPE s'engage à ne jamais vendre ni louer vos données à des tiers. Les données peuvent être transférées entre nos services administratifs en France et nos bureaux de liaison à l'international dans le strict respect de la sécurité des transferts transfrontaliers.",
+      privacy_rights: "Conformément au RGPD et à la PIPL, vous disposez d'un droit d'accès, de rectification, de portabilité et de suppression de vos données.\nPour exercer vos droits, contactez notre délégué à la protection des données : contact@esepf.fr",
+      liability: "Responsabilité",
+      liability_content: "L'ESEPE s'efforce d'assurer l'exactitude des informations diffusées mais ne saurait être tenue responsable des erreurs ou omissions. Les liens vers des sites tiers ne sont fournis que pour commodité et n'engagent pas la responsabilité de l'école."
     },
     footer: {
       desc: "L'excellence éducative au service de la réussite de nos élèves.",
@@ -1600,14 +1602,16 @@ export const translations = {
       data: "Data Protection",
       cookies: "Cookies",
       contact_info: "Legal Contact",
-      editor_content: "ESEPE - École Sport-Études Performance & Excellence\nAssociation loi 1901 / Organisme de formation\nPublication Director: ESEPE General Management\nEmail: contact@esepf.fr",
-      hosting_content: "Google Cloud Platform (Firebase App Hosting)\nGoogle Ireland Limited\nGordon House, Barrow Street, Dublin 4, Ireland",
-      hosting_note: "Our servers are deployed on worldwide infrastructures to ensure optimal accessibility.",
-      property_content: "This entire site is subject to French and international legislation on copyright and intellectual property. All reproduction rights are reserved, including for downloadable documents and iconographic and photographic representations.\nThe logos of the partner clubs and federations mentioned remain the exclusive property of their respective owners.",
-      privacy_collect: "As part of your registration or contact request, ESEPE collects personal data concerning you. This data is processed only for the management of your pedagogical and sporting file.",
-      privacy_use: "Study of the application for entry to the establishment.\nOrganization of motivation interviews.\nCommunication relative to schooling and the Football Academy.\nCompliance with legal educational obligations (France & China).",
-      privacy_share: "ESEPE undertakes never to sell or rent your data to third parties. They are only transmitted to ESEPE's internal administrative and pedagogical services.",
-      privacy_rights: "In accordance with the General Data Protection Regulation (GDPR), you have a right of access, rectification and deletion of your data.\nTo exercise your rights, contact our data protection officer:\ncontact@esepf.fr"
+      editor_content: "ESEPE - École Sport-Études Performance & Excellence is a private educational institution. Non-profit association under the French law of 1901.\nHeadquarters: [ADDRESS IN FRANCE]\nSIRET Number: [SIRET NUMBER]\nPublication Director: ESEPE General Management\nEmail: contact@esepf.fr",
+      hosting_content: "Google Cloud Platform (Firebase App Hosting)\nGoogle Ireland Limited\nGordon House, Barrow Street, Dublin 4, Ireland\nIn accordance with Chinese regulations for services accessible in mainland China, Content Delivery Network (CDN) infrastructures are optimized for local accessibility.",
+      hosting_note: "Our servers are deployed on worldwide infrastructures to ensure optimal accessibility and compliance with local data storage laws.",
+      property_content: "The entire site (structure, texts, logos, photographs, videos) is subject to French and international legislation on copyright and intellectual property. All reproduction rights are reserved. Any total or partial reproduction, representation, modification, or distribution is strictly prohibited without prior written authorization.\nPartner club and federation logos (FFF, UEFA, etc.) remain the exclusive property of their holders and are used for illustrative purposes.",
+      privacy_collect: "ESEPE is committed to processing your personal data in accordance with the General Data Protection Regulation (GDPR) in Europe and the Personal Information Protection Law (PIPL) in the People's Republic of China.",
+      privacy_use: "Study of the application for entry to the establishment.\nOrganization of motivation interviews.\nCommunication regarding schooling and student life.\nCompliance with legal educational archiving obligations.",
+      privacy_share: "ESEPE undertakes never to sell or rent your data to third parties. Data may be transferred between our administrative services in France and our international liaison offices in strict compliance with cross-border transfer security.",
+      privacy_rights: "In accordance with GDPR and PIPL, you have a right of access, rectification, portability, and deletion of your data.\nTo exercise your rights, contact our data protection officer: contact@esepf.fr",
+      liability: "Liability",
+      liability_content: "ESEPE strives to ensure the accuracy of the information disseminated but cannot be held responsible for errors or omissions. Links to third-party sites are provided only for convenience and do not engage the responsibility of the school."
     },
     footer: {
       desc: "Educational excellence at the service of student success.",
@@ -1885,7 +1889,7 @@ export const translations = {
       college: {
         title: "初中部",
         subtitle: "11 - 15 岁",
-        desc: "卓越的学术教育。",
+        desc: "卓越的学术 education。",
         f1: "个性化跟踪",
         f2: "双语项目",
         f3: "精英体育学习"
@@ -2101,7 +2105,7 @@ export const translations = {
         duration: "3 ans (4 ans pour les allophones)",
         level: "4级 (技术高中毕业)",
         bts_desc: "管理 BTS 是两年的培训. 在团队 management、财务与营销等领域提供教学。",
-        univ_desc: "本科是 3 年制大学培训，结合理论与实践. 它加强了管理与分析技能. 在 BTS 之后，也可以直接进入本科最后一年。",
+        univ_desc: "本科是 3 年制 university 培训，结合理论与实践. 它加强了管理与分析技能. 在 BTS 之后，也可以直接进入本科最后一年。",
         bts_list: ["会计管理", "管理支持", "商业运营", "谈判数字化", "中小企业管理", "IT 服务", "保险", "旅游"],
         bts_jobs: ["营销经理", "产品经理", "销售员", "薪资管理员", "人力资源经理", "财务主管", "资产管理", "顾问"],
         univ_list: ["经济管理", "社会经济管理", "管理科学", "法律", "创新管理", "国际贸易", "数字营销"],
@@ -2110,7 +2114,7 @@ export const translations = {
     },
     football_pages: {
       prog_title: "足球计划",
-      prog_intro_1: "我们的学校提供完善的足球体育学习计划，提供结构化计划。",
+      prog_intro_1: "我们的学校 offer完善的足球体育学习计划，提供结构化计划。",
       prog_intro_2: "我们通过严格的训练与个性化跟踪帮助学生实现目标。",
       prog_intro_3: "我们特别注重运动员的心理发展. 团队精神、纪律与韧性是核心。",
       prog_intro_4: "学校为运动员提供实现目标与充分成长的机会。",
@@ -2155,7 +2159,7 @@ export const translations = {
       french_method_p1: "我们借鉴了享誉全球的法国足球青训教学法，为您提供一套结构严谨且全面的发展计划，旨在全方位支持球员的成长与进步。",
       french_method_p2: "该计划基于多样化的训练课，融合了根据球员年龄、水平和具体需求量身定制的技术、战术及体能练习. 测试将用于评估其进步情况，而特定挑战和个人互动则提供了持续调整与优化的机会。",
       french_method_p3: "除球场表现外，该计划还特别注重参与者的个人素养和情感发育. 通过精心设计的心理社会挑战，球员们将学习团队精神、纪律、韧性、情绪管理能力以及奉献精神。",
-      french_method_p4: "我们的目标是培养全面的球员：他们不仅在技术和体能上表现出色，还具备在集体环境中发展所需的优秀品质. 通过培养对足球真实且持久的热爱，该计划不仅让他们在球场上进步，更为 their 的体育和个人未来奠定坚实的基础。",
+      french_method_p4: "我们的目标 is to 培养全面的球员：他们不仅在技术和体能上表现出色，还具备在集体环境中发展所需的优秀品质. 通过培养对足球真实且持久的热爱，该计划不仅让他们在球场上进步，更为 their 的体育和个人未来奠定坚实的基础。",
       pro_training: {
         title: "像专业球员一样训练",
         subtitle: "我们 offer 了基于法国教学法和培训的发展计划，围绕技术、战术、身体和心理等关键轴心构建。",
@@ -2407,14 +2411,16 @@ export const translations = {
       data: "数据保护",
       cookies: "Cookies",
       contact_info: "法律联系",
-      editor_content: "ESEPE - 教学性能与卓越体育学校\n1901法协会 / 培训机构\n出版总监：ESEPE 总管理部\n电子邮件：contact@esepf.fr",
-      hosting_content: "Google Cloud Platform (Firebase App Hosting)\nGoogle Ireland Limited\nGordon House, Barrow Street, Dublin 4, Ireland",
-      hosting_note: "我们的服务器部署在全球边缘节点，以确保极速访问。",
-      property_content: "本网站及其所有内容（文字、图片、视频、标志）均为 ESEPE 的专有财产. 未经事先书面许可，严禁任何形式孩复制、修改或传播。\n本站所引用的合作俱乐部标志其版权归各自所有者所有。",
-      privacy_collect: "我们通过在线申请表收集有关学生及其法定监护人的信息. 收集的信息包括但不限于：姓名、出生日期、国籍、目前就读年级以及联系方式。",
-      privacy_use: "入学申请研究。\n面试组织。\n关于学术和足球学院的沟通。\n遵守法律教育义务（法国和中国）。",
-      privacy_share: "ESEPE 承诺绝不向第三方出售或出租您的数据. 它们仅传输给内部行政 and 教学服务部门。",
-      privacy_rights: "根据《通用数据保护条例》(GDPR)，您拥有访问、更正和删除数据的权利。\n要行使您的权利，请联系我们的数据保护官：\ncontact@esepf.fr"
+      editor_content: "ESEPE - 教学性能与卓越体育学校是一所私立教育机构。根据1901年法案设立的非营利协会。\n总部地址：[法国总部地址]\nSIRET编号：[SIRET编号]\n出版总监：ESEPE 总管理部\n电子邮件：contact@esepf.fr",
+      hosting_content: "Google Cloud Platform (Firebase App Hosting)\nGoogle Ireland Limited\nGordon House, Barrow Street, Dublin 4, Ireland\n根据中国大陆关于提供互联网服务的相关法律法规，内容分发网络（CDN）针对本地访问进行了优化。",
+      hosting_note: "我们的服务器部署在全球边缘节点，以确保极速访问并符合当地数据存储法规。",
+      property_content: "本网站及其所有内容（文字、图片、视频、标志）均为 ESEPE 的专有财产。根据法国及国际版权和知识产权法律，未经事先书面许可，严禁任何形式的复制、修改、传播。违者必究。\n本站引用的合作俱乐部及联合会标志（如FFF、UEFA等）其版权归原权利人所有，本站仅作说明使用。",
+      privacy_collect: "ESEPE 致力于根据欧洲《通用数据保护条例》(GDPR) 和中华人民共和国《个人信息保护法》(PIPL) 处理您的个人数据。我们在收集涉及跨境传输的敏感个人信息时将采取必要的加密和安全措施。",
+      privacy_use: "入学申请评估与档案管理。\n组织面试及沟通录用事宜。\n关于日常教学及校园生活的必要通知。\n履行法律规定的教育档案保存义务。",
+      privacy_share: "ESEPE 承诺绝不向任何第三方出售或出租您的个人数据。数据可能在法国总部与国际联络处之间进行必要传输，我们将严格遵守跨境数据流动的安全标准。",
+      privacy_rights: "根据 GDPR 和 PIPL 的规定，您有权访问、更正、转移或要求删除您的个人数据。如需行使权利，请联系我们的数据保护官：contact@esepf.fr",
+      liability: "法律责任",
+      liability_content: "ESEPE 尽力确保网站信息的准确性，但不对应信息滞后或疏漏承担法律责任。本站提供的第三方链接仅为方便用户使用，其实际内容并不代表本校立场。",
     },
     footer: {
       desc: "卓越教育成就学生成功。",

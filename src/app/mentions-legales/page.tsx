@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -7,10 +6,10 @@ import { Footer } from '@/components/sections/Footer';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { useTranslation } from '@/hooks/use-translation';
-import { ShieldCheck, Info, MapPin, Globe, FileText } from 'lucide-react';
+import { ShieldCheck, Info, MapPin, Globe, FileText, Lock, AlertTriangle } from 'lucide-react';
 
 export default function MentionsLegalesPage() {
-  const { t, language } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <FirebaseClientProvider>
@@ -39,11 +38,8 @@ export default function MentionsLegalesPage() {
                   <Info size={24} />
                   <h2 className="text-2xl font-bold uppercase tracking-wide">{t.legal.editor}</h2>
                 </div>
-                <div className="p-8 bg-muted/30 rounded-3xl border border-muted text-lg leading-relaxed">
-                  <p className="font-bold text-primary mb-2">ESEPE - École Sport-Études Performance & Excellence</p>
-                  <p>Association loi 1901 / Organisme de formation</p>
-                  <p>Directeur de la publication : Direction Générale ESEPE</p>
-                  <p>Email : contact@esepf.fr</p>
+                <div className="p-8 bg-muted/30 rounded-3xl border border-muted text-lg leading-relaxed whitespace-pre-line">
+                  {t.legal.editor_content}
                 </div>
               </ScrollReveal>
 
@@ -52,12 +48,10 @@ export default function MentionsLegalesPage() {
                   <Globe size={24} />
                   <h2 className="text-2xl font-bold uppercase tracking-wide">{t.legal.hosting}</h2>
                 </div>
-                <div className="p-8 bg-muted/30 rounded-3xl border border-muted text-lg leading-relaxed">
-                  <p className="font-bold text-primary mb-2">Google Cloud Platform (Firebase App Hosting)</p>
-                  <p>Google Ireland Limited</p>
-                  <p>Gordon House, Barrow Street, Dublin 4, Ireland</p>
+                <div className="p-8 bg-muted/30 rounded-3xl border border-muted text-lg leading-relaxed space-y-4">
+                  <p className="whitespace-pre-line">{t.legal.hosting_content}</p>
                   <p className="mt-4 text-sm text-muted-foreground italic">
-                    {language === 'zh' ? "我们的服务器部署在全球边缘节点，以确保极速访问。" : "Nos serveurs sont déployés sur des infrastructures mondiales pour garantir une accessibilité optimale."}
+                    {t.legal.hosting_note}
                   </p>
                 </div>
               </ScrollReveal>
@@ -67,25 +61,49 @@ export default function MentionsLegalesPage() {
                   <FileText size={24} />
                   <h2 className="text-2xl font-bold uppercase tracking-wide">{t.legal.property}</h2>
                 </div>
-                <div className="p-8 bg-muted/30 rounded-3xl border border-muted text-lg leading-relaxed space-y-4">
-                  <p>
-                    {language === 'zh' 
-                      ? "本网站及其所有内容（文字、图片、视频、标志）均为 ESEPE 的专有财产。未经事先书面许可，严禁任何形式的复制、修改 or 传播。"
-                      : "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques."}
-                  </p>
-                  <p>
-                    {language === 'zh'
-                      ? "本站所引用的合作俱乐部标志（法国足球俱乐部、欧足联等）其版权归各自所有者所有。"
-                      : "Les logos des clubs partenaires et fédérations cités restent la propriété exclusive de leurs détenteurs respectifs."}
-                  </p>
+                <div className="p-8 bg-muted/30 rounded-3xl border border-muted text-lg leading-relaxed space-y-4 whitespace-pre-line">
+                  {t.legal.property_content}
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={300} className="space-y-6">
+                <div className="flex items-center gap-3 text-secondary">
+                  <Lock size={24} />
+                  <h2 className="text-2xl font-bold uppercase tracking-wide">{t.legal.data}</h2>
+                </div>
+                <div className="p-8 bg-muted/30 rounded-3xl border border-muted text-lg leading-relaxed space-y-6">
+                  <p className="font-bold text-primary">{t.legal.privacy_collect}</p>
+                  <div className="space-y-2">
+                    <p className="font-bold underline uppercase text-sm tracking-widest">{t.legal.privacy_use.split('\n')[0]}</p>
+                    <ul className="list-disc pl-6 space-y-1 text-base">
+                      {t.legal.privacy_use.split('\n').map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <p>{t.legal.privacy_share}</p>
+                  <div className="p-4 bg-white rounded-xl border border-secondary/20">
+                    <p className="font-bold text-secondary mb-2">{t.legal.privacy_rights.split('\n')[0]}</p>
+                    <p className="text-sm">{t.legal.privacy_rights.split('\n')[1]}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={400} className="space-y-6">
+                <div className="flex items-center gap-3 text-secondary">
+                  <AlertTriangle size={24} />
+                  <h2 className="text-2xl font-bold uppercase tracking-wide">{t.legal.liability}</h2>
+                </div>
+                <div className="p-8 bg-muted/30 rounded-3xl border border-muted text-lg leading-relaxed italic">
+                  {t.legal.liability_content}
                 </div>
               </ScrollReveal>
 
             </div>
           </div>
         </section>
-      </main>
+      </div>
       <Footer />
-    </FirebaseClientProvider>
+    </main>
   );
 }
